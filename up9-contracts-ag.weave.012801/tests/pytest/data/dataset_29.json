@@ -1,13 +1,28 @@
 {
  "parameters": [
   {
-   "name": "customerId",
-   "uuid": "5879fcdb-2397-4bbb-96ed-3cb65d28023d"
+   "name": "addresseId",
+   "uuid": "34f66863-d4b1-4c06-8f5e-7243af6fb37d"
+  },
+  {
+   "name": "amount",
+   "uuid": "5198a3af-5338-4ce8-a73f-2430058f1158"
+  },
+  {
+   "name": "cardId",
+   "uuid": "8aa09267-9b00-4d00-afc8-a27c08ae5eaf"
+  },
+  {
+   "name": "ccv",
+   "uuid": "ff380756-ddea-4543-aa4f-539741fbdc50"
   }
  ],
  "rows": [
   {
-   "customerId": "57a98d98e4b00679b4a830b2"
+   "addresseId": "57a98d98e4b00679b4a830b0",
+   "amount": 15.98,
+   "cardId": "57a98d98e4b00679b4a830b1",
+   "ccv": "958"
   }
  ]
 }

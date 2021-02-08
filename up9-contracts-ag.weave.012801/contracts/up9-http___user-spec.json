@@ -7,7 +7,7 @@
  "paths": {
   "/addresses/{addresseId}": {
    "get": {
-    "operationId": "59e1a3e5-001d-4836-908e-ac89dd9bd918",
+    "operationId": "b3190031-7196-4ec9-8a93-3f8bd6183aea",
     "parameters": [
      {
       "in": "header",
@@ -109,7 +109,7 @@
       "description": "200"
      }
     },
-    "summary": "Seen 6 requests"
+    "summary": "Seen 30 requests"
    },
    "parameters": [
     {
@@ -128,7 +128,7 @@
   },
   "/cards/{cardId}": {
    "get": {
-    "operationId": "e06ffd1c-6d23-452d-bdef-5a7fdcf8880d",
+    "operationId": "881535b9-0288-40af-8115-d6c7e5f4e252",
     "parameters": [
      {
       "in": "header",
@@ -220,7 +220,7 @@
       "description": "200"
      }
     },
-    "summary": "Seen 6 requests"
+    "summary": "Seen 30 requests"
    },
    "parameters": [
     {
@@ -239,7 +239,7 @@
   },
   "/customers/{customerId}": {
    "get": {
-    "operationId": "88032625-1fcc-4d7f-8c35-717e7c5e631e",
+    "operationId": "ff07e886-835f-4756-b412-6a37bb5e12db",
     "parameters": [
      {
       "in": "header",
@@ -361,13 +361,14 @@
       "description": "200"
      }
     },
-    "summary": "Seen 31 requests",
+    "summary": "Seen 56 requests",
     "tags": [
      "customers"
     ]
    },
    "parameters": [
     {
+     "description": "Origin: GET http://user/login &rarr; json: $.user.id",
      "in": "path",
      "name": "customerId",
      "required": true,
@@ -383,7 +384,7 @@
   },
   "/customers/{customerId}/addresses": {
    "get": {
-    "operationId": "e356d22f-fd01-4d7b-b9fe-9d7edf1abbb7",
+    "operationId": "d9b0e341-783f-4b27-8ae2-9471d1e0dfcd",
     "parameters": [],
     "responses": {
      "200": {
@@ -505,6 +506,7 @@
    },
    "parameters": [
     {
+     "description": "Origin: GET http://user/login &rarr; json: $.user.id",
      "in": "path",
      "name": "customerId",
      "required": true,
@@ -520,7 +522,7 @@
   },
   "/customers/{customerId}/cards": {
    "get": {
-    "operationId": "1bfa6928-39a4-47d8-92e7-5ccce9e73544",
+    "operationId": "3dc652af-2bf0-4c93-969f-98e70a8b7d3c",
     "parameters": [],
     "responses": {
      "200": {
@@ -632,6 +634,7 @@
    },
    "parameters": [
     {
+     "description": "Origin: GET http://user/login &rarr; json: $.user.id",
      "in": "path",
      "name": "customerId",
      "required": true,
@@ -647,7 +650,7 @@
   },
   "/login": {
    "get": {
-    "operationId": "1441b1cf-0b80-40c4-bfe1-568ea6caa393",
+    "operationId": "16b9373e-654a-47ab-aa71-4971d133249f",
     "parameters": [],
     "responses": {
      "200": {
@@ -767,7 +770,7 @@
       "description": "200"
      }
     },
-    "summary": "Seen 35 requests"
+    "summary": "Seen 40 requests"
    },
    "parameters": []
   }

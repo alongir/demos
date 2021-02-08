@@ -32,7 +32,7 @@ services:
       status: 202
   - path: /carts/{{customerId}}/items
     response:
-      body: '[{"id":"6013624736d1a00006ef29fd","itemId":"510a0d7e-8e83-4193-b483-e27e09ddc34d","quantity":1,"unitPrice":15.0}]'
+      body: '[]'
       headers:
         Content-Type: application/json
       useTemplating: false
@@ -52,64 +52,6 @@ services:
         Content-Type: application/json
   name: http://catalogue
   port: 8002
-  ssl: false
-- endpoints:
-  - path: /
-    response:
-      body: '@mock-data/resp_11.html'
-      headers:
-        Content-Type: text/html
-      useTemplating: false
-  - path: /basket.html
-    response:
-      body: '@mock-data/resp_12.html'
-      headers:
-        Content-Type: text/html
-      useTemplating: false
-  - method: delete
-    path: /cart
-    response:
-      headers:
-        Content-Type: text/plain
-      status: 202
-  - method: post
-    path: /cart
-    response:
-      headers:
-        Content-Type: text/plain
-      status: 201
-  - path: /catalogue
-    response:
-      body: '@mock-data/resp_15.json'
-      headers:
-        Content-Type: application/json
-  - path: /category.html
-    response:
-      body: '@mock-data/resp_16.html'
-      headers:
-        Content-Type: text/html
-      useTemplating: false
-  - path: /detail.html
-    response:
-      body: '@mock-data/resp_17.html'
-      headers:
-        Content-Type: text/html
-      useTemplating: false
-  - path: /login
-    response:
-      body: Cookie is set
-      headers:
-        Content-Type: text/html
-      useTemplating: false
-  - method: post
-    path: /orders
-    response:
-      body: '@mock-data/resp_19.json'
-      headers:
-        Content-Type: application/json
-      status: 201
-  name: http://edge-router
-  port: 8003
   ssl: false
 - endpoints:
   - path: /
@@ -150,6 +92,82 @@ services:
   - method: delete
     path: /cart
     response:
+      headers:
+        Content-Type: text/plain
+      status: 202
+  - method: post
+    path: /cart
+    response:
+      headers:
+        Content-Type: text/plain
+      status: 201
+  - method: post
+    path: /orders
+    response:
+      body: '@mock-data/resp_39.json'
+      headers:
+        Content-Type: application/json
+      status: 201
+  - path: /cart
+    response:
+      body: '[]'
+      headers:
+        Content-Type: application/json
+      useTemplating: false
+  - path: /navbar.html
+    response:
+      body: '@mock-data/resp_48.html'
+      headers:
+        Content-Type: text/html
+      useTemplating: false
+  - path: /topbar.html
+    response:
+      body: '@mock-data/resp_49.html'
+      headers:
+        Content-Type: text/html
+      useTemplating: false
+  name: http://edge-router
+  port: 8003
+  ssl: false
+- endpoints:
+  - path: /
+    response:
+      body: '@mock-data/resp_11.html'
+      headers:
+        Content-Type: text/html
+      useTemplating: false
+  - path: /basket.html
+    response:
+      body: '@mock-data/resp_12.html'
+      headers:
+        Content-Type: text/html
+      useTemplating: false
+  - path: /catalogue
+    response:
+      body: '@mock-data/resp_13.json'
+      headers:
+        Content-Type: application/json
+  - path: /category.html
+    response:
+      body: '@mock-data/resp_14.html'
+      headers:
+        Content-Type: text/html
+      useTemplating: false
+  - path: /detail.html
+    response:
+      body: '@mock-data/resp_15.html'
+      headers:
+        Content-Type: text/html
+      useTemplating: false
+  - path: /login
+    response:
+      body: Cookie is set
+      headers:
+        Content-Type: text/html
+      useTemplating: false
+  - method: delete
+    path: /cart
+    response:
       status: 202
   - method: post
     path: /cart
@@ -158,10 +176,28 @@ services:
   - method: post
     path: /orders
     response:
-      body: '@mock-data/resp_28.json'
+      body: '@mock-data/resp_19.json'
       headers:
         Content-Type: application/json
       status: 201
+  - path: /cart
+    response:
+      body: '[]'
+      headers:
+        Content-Type: application/json
+      useTemplating: false
+  - path: /navbar.html
+    response:
+      body: '@mock-data/resp_43.html'
+      headers:
+        Content-Type: text/html
+      useTemplating: false
+  - path: /topbar.html
+    response:
+      body: '@mock-data/resp_44.html'
+      headers:
+        Content-Type: text/html
+      useTemplating: false
   name: http://front-end
   port: 8004
   ssl: false
@@ -228,7 +264,7 @@ services:
       useTemplating: false
   - path: /addresses/{{addresseId}}
     response:
-      body: '@mock-data/resp_30.json'
+      body: '@mock-data/resp_27.json'
       headers:
         Content-Type: application/json
   - path: /cards/{{cardId}}

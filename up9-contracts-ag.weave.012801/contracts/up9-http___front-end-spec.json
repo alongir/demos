@@ -7,7 +7,7 @@
  "paths": {
   "/": {
    "get": {
-    "operationId": "e30702e7-8adf-4786-aa6f-41472449d9a3",
+    "operationId": "9de66239-266a-4a87-9a82-617328fed681",
     "parameters": [],
     "responses": {
      "200": {
@@ -19,13 +19,13 @@
       "description": "200"
      }
     },
-    "summary": "Seen 37 requests"
+    "summary": "Seen 38 requests"
    },
    "parameters": []
   },
   "/basket.html": {
    "get": {
-    "operationId": "bda31be7-268d-42c5-b6c8-26ab7eb2b404",
+    "operationId": "0b46b94c-c954-459e-b8c8-dacf0c282683",
     "parameters": [],
     "responses": {
      "200": {
@@ -37,27 +37,61 @@
       "description": "200"
      }
     },
-    "summary": "Seen 24 requests"
+    "summary": "Seen 26 requests"
    },
    "parameters": []
   },
   "/cart": {
    "delete": {
-    "operationId": "6ef5d2a8-3e45-4927-ac67-375685f43537",
+    "operationId": "ab48b1a6-ce8b-42ed-bd5b-48bd06777fb4",
     "parameters": [],
     "responses": {
      "202": {
       "description": "202"
      }
     },
-    "summary": "Seen 10 requests",
+    "summary": "Seen 12 requests",
+    "tags": [
+     "cart"
+    ]
+   },
+   "get": {
+    "operationId": "9f6c6c00-1545-45be-a39c-c7b8d43a7a47",
+    "parameters": [
+     {
+      "in": "header",
+      "name": "x-requested-with",
+      "required": false,
+      "schema": {
+       "enum": [
+        "XMLHttpRequest"
+       ],
+       "type": "string"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "content": {
+       "application/json": {
+        "example": [],
+        "schema": {
+         "items": {},
+         "type": "array"
+        }
+       }
+      },
+      "description": "200"
+     }
+    },
+    "summary": "Seen 1 requests",
     "tags": [
      "cart"
     ]
    },
    "parameters": [],
    "post": {
-    "operationId": "262aa3b2-b438-4028-8fb3-86f862c06bad",
+    "operationId": "7955d90b-4ffd-431a-bd2f-04b6a5fae0a2",
     "parameters": [],
     "requestBody": {
      "content": {
@@ -86,7 +120,7 @@
       "description": "201"
      }
     },
-    "summary": "Seen 10 requests",
+    "summary": "Seen 12 requests",
     "tags": [
      "cart"
     ]
@@ -94,8 +128,31 @@
   },
   "/catalogue": {
    "get": {
-    "operationId": "ffe1f6d8-9e74-4e8d-ae6f-096351b6a702",
-    "parameters": [],
+    "operationId": "fbcde84a-576b-4672-a321-6fcb3fefdf5c",
+    "parameters": [
+     {
+      "in": "query",
+      "name": "size",
+      "required": false,
+      "schema": {
+       "enum": [
+        "5"
+       ],
+       "type": "string"
+      }
+     },
+     {
+      "in": "header",
+      "name": "x-requested-with",
+      "required": false,
+      "schema": {
+       "enum": [
+        "XMLHttpRequest"
+       ],
+       "type": "string"
+      }
+     }
+    ],
     "responses": {
      "200": {
       "content": {
@@ -291,13 +348,13 @@
       "description": "200"
      }
     },
-    "summary": "Seen 36 requests"
+    "summary": "Seen 37 requests"
    },
    "parameters": []
   },
   "/category.html": {
    "get": {
-    "operationId": "4b05aeea-a466-4088-af22-27eb49ea248f",
+    "operationId": "72698545-307b-4c78-b241-c1952a1b367e",
     "parameters": [],
     "responses": {
      "200": {
@@ -315,9 +372,10 @@
   },
   "/detail.html": {
    "get": {
-    "operationId": "f109e6e5-70af-42c2-8250-281fc2309f4b",
+    "operationId": "c7577676-3bd0-4ef0-80f3-4b4d2845d3c5",
     "parameters": [
      {
+      "description": "Origin: GET http://front-end/catalogue &rarr; json: $.[*].id",
       "in": "query",
       "name": "id",
       "required": true,
@@ -343,13 +401,13 @@
       "description": "200"
      }
     },
-    "summary": "Seen 28 requests"
+    "summary": "Seen 30 requests"
    },
    "parameters": []
   },
   "/login": {
    "get": {
-    "operationId": "f8e44808-002c-4869-a556-8d1bc961f918",
+    "operationId": "e7d11bfa-1eb0-4d56-890b-801e88f9866d",
     "parameters": [],
     "responses": {
      "200": {
@@ -365,10 +423,40 @@
    },
    "parameters": []
   },
+  "/navbar.html": {
+   "get": {
+    "operationId": "da4eca2c-b3e4-49c1-9aa4-69ba583997fc",
+    "parameters": [
+     {
+      "in": "header",
+      "name": "x-requested-with",
+      "required": false,
+      "schema": {
+       "enum": [
+        "XMLHttpRequest"
+       ],
+       "type": "string"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "content": {
+       "text/html": {
+        "example": "<!-- *** NAVBAR ***\n_________________________________________________________ -->\n\n<div class=\"navbar navbar-default yamm\" role=\"navigation\" id=\"navbar\">\n    <div class=\"container\">\n        <div class=\"navbar-header\">\n\n            <a class=\"navbar-brand home\" href=\"index.html\"\n               data-animate-hover=\"bounce\">\n                <img src=\"img/logo.png\" alt=\"WeaveSocks logo\" class=\"hidden-xs\">\n                <img src=\"img/logo-small.png\" alt=\"WeaveSocks logo\"\n                     class=\"visible-xs\"><span class=\"sr-only\">WeaveSocks - go to homepage</span>\n            </a>\n        </div>\n        <!--/.navbar-header -->\n\n        <div class=\"navbar-collapse collapse\" id=\"navigation\">\n\n            <ul class=\"nav navbar-nav navbar-left\">\n                <li id=\"tabIndex\"><a href=\"index.html\">Home</a>\n                </li>\n                <li id=\"tabCatalogue\" class=\"dropdown yamm-fw\">\n                    <a href=\"category.html\" class=\"dropdown-toggle\">Catalogue <b\n                            class=\"caret\"></b></a>\n                    <ul class=\"dropdown-menu\">\n                        <li>\n                            <div class=\"yamm-content\">\n                                <div class=\"row\">\n                                    <div class=\"col-sm-3\">\n                                        <h5>Colours</h5>\n                                        <ul>\n                                            <li>\n                                                <a href=\"category.html?tags=blue\">Blue</a>\n                                            </li>\n                                            <li>\n                                                <a href=\"category.html?tags=brown\">Brown</a>\n                                            </li>\n                                            <li>\n                                                <a href=\"category.html?tags=green\">Green</a>\n                                            </li>\n                                        </ul>\n                                    </div>\n                                    <div class=\"col-sm-3\">\n                                        <h5>Size</h5>\n                                        <ul>\n                                            <li>\n                                                <a href=\"category.html?tags=large\">Large</a>\n                                            </li>\n                                            <li>\n                                                <a href=\"category.html?tags=short\">Short</a>\n                                            </li>\n                                        </ul>\n                                        <h5>Function</h5>\n                                        <ul>\n                                            <li>\n                                                <a href=\"category.html?tags=toes\">Toes</a>\n                                            </li>\n                                            <li>\n                                                <a href=\"category.html?tags=magic\">Magic</a>\n                                            </li>\n                                        </ul>\n                                    </div>\n                                    <div class=\"col-sm-3\">\n                                        <h5>Featured</h5>\n                                        <ul>\n                                            <li><a href=\"category.html?tags=formal\">Formal</a>\n                                            </li>\n                                            <li><a href=\"category.html?tags=smelly\">Smelly</a>\n                                            </li>\n                                        </ul>\n                                    </div>\n                                </div>\n                            </div>\n                            <!-- /.yamm-content -->\n                        </li>\n                    </ul>\n                </li>\n                <li id=\"tabAccount\"><a href=\"customer-orders.html\">Account</a>\n                </li>\n                <!--<li class=\"dropdown yamm-fw\">-->\n                <!--<a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" data-hover=\"dropdown\" data-delay=\"200\">Template <b class=\"caret\"></b></a>-->\n                <!--<ul class=\"dropdown-menu\">-->\n                <!--<li>-->\n                <!--<div class=\"yamm-content\">-->\n                <!--<div class=\"row\">-->\n                <!--<div class=\"col-sm-3\">-->\n                <!--<h5>Shop</h5>-->\n                <!--<ul>-->\n                <!--<li><a href=\"index.html\">Homepage</a>-->\n                <!--</li>-->\n                <!--<li><a href=\"category.html\">Category - sidebar left</a>-->\n                <!--</li>-->\n                <!--<li><a href=\"category-right.html\">Category - sidebar right</a>-->\n                <!--</li>-->\n                <!--<li><a href=\"category-full.html\">Category - full width</a>-->\n                <!--</li>-->\n                <!--<li><a href=\"detail.html\">Product detail</a>-->\n                <!--</li>-->\n                <!--</ul>-->\n                <!--</div>-->\n                <!--<div class=\"col-sm-3\">-->\n                <!--<h5>User</h5>-->\n                <!--<ul>-->\n                <!--<li><a href=\"register.html\">Register / login</a>-->\n                <!--</li>-->\n                <!--<li><a href=\"customer-orders.html\">Orders history</a>-->\n                <!--</li>-->\n                <!--<li><a href=\"customer-order.html\">Order history detail</a>-->\n                <!--</li>-->\n                <!--<li><a href=\"customer-wishlist.html\">Wishlist</a>-->\n                <!--</li>-->\n                <!--<li><a href=\"customer-account.html\">Customer account / change password</a>-->\n                <!--</li>-->\n                <!--</ul>-->\n                <!--</div>-->\n                <!--<div class=\"col-sm-3\">-->\n                <!--<h5>Order process</h5>-->\n                <!--<ul>-->\n                <!--<li><a href=\"basket.html\">Shopping cart</a>-->\n                <!--</li>-->\n                <!--<li><a href=\"checkout1.html\">Checkout - step 1</a>-->\n                <!--</li>-->\n                <!--<li><a href=\"checkout2.html\">Checkout - step 2</a>-->\n                <!--</li>-->\n                <!--<li><a href=\"checkout3.html\">Checkout - step 3</a>-->\n                <!--</li>-->\n                <!--<li><a href=\"checkout4.html\">Checkout - step 4</a>-->\n                <!--</li>-->\n                <!--</ul>-->\n                <!--</div>-->\n                <!--<div class=\"col-sm-3\">-->\n                <!--<h5>Pages and blog</h5>-->\n                <!--<ul>-->\n                <!--<li><a href=\"blog.html\">Blog listing</a>-->\n                <!--</li>-->\n                <!--<li><a href=\"post.html\">Blog Post</a>-->\n                <!--</li>-->\n                <!--<li><a href=\"faq.html\">FAQ</a>-->\n                <!--</li>-->\n                <!--<li><a href=\"text.html\">Text page</a>-->\n                <!--</li>-->\n                <!--<li><a href=\"text-right.html\">Text page - right sidebar</a>-->\n                <!--</li>-->\n                <!--<li><a href=\"404.html\">404 page</a>-->\n                <!--</li>-->\n                <!--<li><a href=\"contact.html\">Contact</a>-->\n                <!--</li>-->\n                <!--</ul>-->\n                <!--</div>-->\n                <!--</div>-->\n                <!--</div>-->\n                <!--&lt;!&ndash; /.yamm-content &ndash;&gt;-->\n                <!--</li>-->\n                <!--</ul>-->\n                <!--</li>-->\n            </ul>\n\n        </div>\n        <!--/.nav-collapse -->\n\n        <div class=\"navbar-buttons\">\n\n            <div class=\"navbar-collapse collapse right\" id=\"basket-overview\">\n                <a href=\"basket.html\" class=\"btn btn-primary navbar-btn\"><i\n                        class=\"fa fa-shopping-cart\"></i><span class=\"hidden-sm\"\n                                                              id=\"numItemsInCart\">0 items in cart</span></a>\n            </div>\n            <!--/.nav-collapse -->\n\n            <!--<div class=\"navbar-collapse collapse right\" id=\"search-not-mobile\">-->\n            <!--<button type=\"button\" class=\"btn navbar-btn btn-primary\" data-toggle=\"collapse\" data-target=\"#search\">-->\n            <!--<span class=\"sr-only\">Toggle search</span>-->\n            <!--<i class=\"fa fa-search\"></i>-->\n            <!--</button>-->\n            <!--</div>-->\n\n        </div>\n\n        <!--<div class=\"collapse clearfix\" id=\"search\">-->\n\n        <!--<form class=\"navbar-form\" role=\"search\">-->\n        <!--<div class=\"input-group\">-->\n        <!--<input type=\"text\" class=\"form-control\" placeholder=\"Search\">-->\n        <!--<span class=\"input-group-btn\">-->\n\n        <!--<button type=\"submit\" class=\"btn btn-primary\"><i class=\"fa fa-search\"></i></button>-->\n\n        <!--</span>-->\n        <!--</div>-->\n        <!--</form>-->\n\n        <!--</div>-->\n\n        <!--/.nav-collapse -->\n\n    </div>\n    <!-- /.container -->\n</div>\n<!-- /#navbar -->\n\n<!-- *** NAVBAR END *** -->\n\n<script>\n    $(document).ready(function () {\n        $.ajaxSetup({\n            contentType: \"application/json; charset=utf-8\"\n        });\n\n        if ($.cookie('logged_in') == null || $.cookie('logged_in') == \"\") {\n            $(\"#tabAccount\").remove()\n        }\n\n        $.getJSON('/cart', {}, function (data) {\n            if (data != null) {\n                var numItemsInCart = 0;\n                $.each(data, function (index, element) {\n                    if (element != null && element.itemId != null && element.itemId != \"null\") {\n                        $.getJSON('/catalogue/' + element.itemId, function (data) {\n                            numItemsInCart = numItemsInCart + element.quantity;\n                        }).always(function () {\n                            $('#numItemsInCart').text(numItemsInCart + ' item(s) in cart');\n                        });\n                    }\n                });\n            }\n        }).error(function () {\n            $('#basket-overview').remove();\n        });\n\n        //Add Hover effect to menus\n        jQuery('ul.nav li.dropdown').hover(function () {\n            jQuery(this).find('.dropdown-menu').stop(true, true).delay(100).fadeIn();\n        }, function () {\n            jQuery(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut();\n        });\n\n        // Set active tabs\n        if (window.location.toString().indexOf(\"category.html\") > -1) {\n            $('#tabCatalogue').addClass(\"active\");\n        } else if (window.location.toString().indexOf(\"customer-\") > -1) {\n            $('#tabAccount').addClass(\"active\");\n        } else {\n            $('#tabIndex').addClass(\"active\");\n        }\n    });\n</script>\n"
+       }
+      },
+      "description": "200"
+     }
+    },
+    "summary": "Seen 1 requests"
+   },
+   "parameters": []
+  },
   "/orders": {
    "parameters": [],
    "post": {
-    "operationId": "a12fcf12-386d-4963-8b32-c49b4c7a77da",
+    "operationId": "53f742f6-5e1c-4f94-9abc-673f07c3b53c",
     "parameters": [],
     "responses": {
      "201": {
@@ -571,6 +659,36 @@
     },
     "summary": "Seen 10 requests"
    }
+  },
+  "/topbar.html": {
+   "get": {
+    "operationId": "dad4249f-f05f-42ce-95ae-17c3c3727e95",
+    "parameters": [
+     {
+      "in": "header",
+      "name": "x-requested-with",
+      "required": false,
+      "schema": {
+       "enum": [
+        "XMLHttpRequest"
+       ],
+       "type": "string"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "content": {
+       "text/html": {
+        "example": "<!-- *** TOPBAR ***\n_________________________________________________________ -->\n<div id=\"top\">\n    <div class=\"container\">\n        <div class=\"col-md-6 offer\" data-animate=\"fadeInDown\">\n            <a href=\"#\" class=\"btn btn-success btn-sm\"\n               data-animate-hover=\"shake\">Offer of the day</a> <a href=\"#\">Buy\n            1000 socks, get a shoe for free!</a>\n        </div>\n        <div class=\"col-md-6\" data-animate=\"fadeInDown\">\n            <ul class=\"menu\">\n                <li id=\"login\"><a href=\"#\" data-toggle=\"modal\" data-target=\"#login-modal\">Login</a></li>\n                <li id=\"howdy\"></li>\n                <li id=\"logout\"><a href=\"index.html\" onclick=\"logout()\">Logout</a></li>\n                <li id=\"register\"><a href=\"#\" data-toggle=\"modal\" data-target=\"#register-modal\">Register</a></li>\n                <!--<li><a href=\"contact.html\">Contact</a></li>-->\n                <!--<li><a href=\"#\">Recently viewed</a></li>-->\n            </ul>\n        </div>\n    </div>\n    <div class=\"modal fade\" id=\"login-modal\" tabindex=\"-1\" role=\"dialog\"\n         aria-labelledby=\"Login\" aria-hidden=\"true\">\n        <div class=\"modal-dialog modal-sm\">\n\n            <div class=\"modal-content\">\n                <div class=\"modal-header\">\n                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\"\n                            aria-hidden=\"true\">&times;</button>\n                    <h4 class=\"modal-title\" id=\"Login\">Customer login</h4>\n                </div>\n                <div class=\"modal-body\">\n\n                    <div id=\"login-message\"> </div>\n\n                    <form action=\"index.html\" method=\"get\">\n                        <div class=\"form-group\">\n                            <input type=\"text\" class=\"form-control\"\n                                   name=\"username\"\n                                   id=\"username-modal\" placeholder=\"username\">\n                        </div>\n                        <div class=\"form-group\">\n                            <input type=\"password\" class=\"form-control\"\n                                   name=\"password\"\n                                   id=\"password-modal\" placeholder=\"password\">\n                        </div>\n\n                        <p class=\"text-center\">\n                            <button class=\"btn btn-primary\" href=\"#\" onclick=\"return login()\"><i\n                                    class=\"fa fa-sign-in\"></i> Log in\n                            </button>\n                        </p>\n\n                    </form>\n\n                    <!--<p class=\"text-center text-muted\">Not registered yet?</p>-->\n                    <!--<p class=\"text-center text-muted\"><a href=\"register.html\"><strong>Register now</strong></a>! It is easy and done in 1&nbsp;minute and gives you access to special discounts and much more!</p>-->\n\n                </div>\n            </div>\n        </div>\n    </div>\n    <div class=\"modal fade\" id=\"register-modal\" tabindex=\"-1\" role=\"dialog\"\n         aria-labelledby=\"Register\" aria-hidden=\"true\">\n        <div class=\"modal-dialog modal-sm\">\n\n            <div class=\"modal-content\">\n                <div class=\"modal-header\">\n                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\"\n                            aria-hidden=\"true\">&times;</button>\n                    <h4 class=\"modal-title\" id=\"Login\">Register</h4>\n                </div>\n                <div class=\"modal-body\">\n\n                    <div id=\"registration-message\"> </div>\n\n                    <form action=\"index.html\" method=\"get\">\n\n                        <div class=\"form-group\">\n                            <label for=\"name\">Username</label>\n                            <input type=\"text\" class=\"form-control\" name=\"username\"\n\t\t\t    \tid=\"register-username-modal\" placeholder=\"username\"required>\n                        </div>\n                        <div class=\"form-group\">\n                            <label for=\"first-name\">First name</label>\n                            <input type=\"text\" class=\"form-control\" name=\"first-name\"\n\t\t\t    \tid=\"register-first-modal\" placeholder=\"first name\" required>\n                        </div>\n                        <div class=\"form-group\">\n                            <label for=\"last-name\">Last name</label>\n                            <input type=\"text\" class=\"form-control\" name=\"last-name\"\n\t\t\t    \tid=\"register-last-modal\" placeholder=\"last name\"required>\n                        </div>\n                        <div class=\"form-group\">\n                            <label for=\"email\">Email</label>\n                            <input type=\"text\" class=\"form-control\" name=\"email\"\n\t\t\t    \tid=\"register-email-modal\" placeholder=\"email\" required>\n                        </div>\n                        <div class=\"form-group\">\n                            <label for=\"password\">Password</label>\n                            <input type=\"password\" class=\"form-control\" name=\"password\"\n\t\t\t    \tid=\"register-password-modal\"required>\n                        </div>\n                        <p class=\"text-center\">\n                            <button class=\"btn btn-primary\" href=\"#\" onclick=\"return register()\"><i\n                                    class=\"fa fa-sign-in\"></i> Register\n                            </button>\n                        </p>\n\n                    </form>\n\n                    <!--<p class=\"text-center text-muted\">Not registered yet?</p>-->\n                    <!--<p class=\"text-center text-muted\"><a href=\"register.html\"><strong>Register now</strong></a>! It is easy and done in 1&nbsp;minute and gives you access to special discounts and much more!</p>-->\n\n                </div>\n            </div>\n        </div>\n    </div>\n\n</div>\n\n<!-- *** TOP BAR END *** -->\n\n<script>\n\n    $(document).ready(function () {\n        $.ajaxSetup({\n            contentType: \"application/json; charset=utf-8\"\n        });\n\n        if ($.cookie('logged_in') != null && $.cookie('logged_in') != \"\") {\n\n            username($.cookie('logged_in'), function (username) {\n                if (typeof username !== 'undefined') {\n                    $(\"#login\").remove();\n                    $(\"#register\").remove();\n                    $(\"#howdy\").append('<a href=\"#\">Logged in as ' + username + '<\\/a>').hide().fadeIn(200);\n                    $(\"#logout\").hide().fadeIn(200);\n                } else {\n                    $(\"#howdy\").remove()\n                    $(\"#logout\").remove()\n                }\n            });\n        } else {\n            $(\"#howdy\").remove()\n            $(\"#logout\").remove()\n        }\n\n    })\n</script>\n"
+       }
+      },
+      "description": "200"
+     }
+    },
+    "summary": "Seen 1 requests"
+   },
+   "parameters": []
   }
  },
  "tags": [

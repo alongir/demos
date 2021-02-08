@@ -7,8 +7,20 @@
  "paths": {
   "/catalogue": {
    "get": {
-    "operationId": "baea0312-5133-4cad-abba-48726daf63d6",
-    "parameters": [],
+    "operationId": "67d270d5-d5e5-4758-b003-627ac9d295ee",
+    "parameters": [
+     {
+      "in": "query",
+      "name": "size",
+      "required": false,
+      "schema": {
+       "enum": [
+        "5"
+       ],
+       "type": "string"
+      }
+     }
+    ],
     "responses": {
      "200": {
       "content": {
@@ -204,7 +216,7 @@
       "description": "200"
      }
     },
-    "summary": "Seen 48 requests",
+    "summary": "Seen 65 requests",
     "tags": [
      "catalogue"
     ]
@@ -213,25 +225,26 @@
   },
   "/catalogue/{id}": {
    "get": {
-    "operationId": "623b46b1-55c6-4650-816e-60a5afc49488",
+    "operationId": "1e3e5448-9a35-49cd-8aff-1cb699a17fdb",
     "parameters": [],
     "responses": {
      "200": {
       "content": {
        "application/json": {
         "example": {
-         "count": 1,
-         "description": "Socks fit for a Messiah. You too can experience walking in water with these special edition beauties. Each hole is lovingly proggled to leave smooth edges. The only sock approved by a higher power.",
-         "id": "03fef6ac-1896-4ce8-bd69-b798f85c6e0b",
+         "count": 820,
+         "description": "Ready for action. Engineers: be ready to smash that next bug! Be ready, with these super-action-sport-masterpieces. This particular engineer was chased away from the office with a stick.",
+         "id": "510a0d7e-8e83-4193-b483-e27e09ddc34d",
          "imageUrl": [
-          "/catalogue/images/holy_1.jpeg",
-          "/catalogue/images/holy_2.jpeg"
+          "/catalogue/images/puma_1.jpeg",
+          "/catalogue/images/puma_2.jpeg"
          ],
-         "name": "Holy",
-         "price": 99.99,
+         "name": "SuperSport XL",
+         "price": 15,
          "tag": [
-          "magic",
-          "action"
+          "sport",
+          "black",
+          "formal"
          ]
         },
         "schema": {
@@ -280,13 +293,14 @@
       "description": "200"
      }
     },
-    "summary": "Seen 33 requests",
+    "summary": "Seen 43 requests",
     "tags": [
      "catalogue"
     ]
    },
    "parameters": [
     {
+     "description": "Origin: GET http://catalogue/catalogue &rarr; json: $.[*].id",
      "in": "path",
      "name": "id",
      "required": true,
