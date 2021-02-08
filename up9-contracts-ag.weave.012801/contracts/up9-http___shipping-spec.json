@@ -8,7 +8,7 @@
   "/shipping": {
    "parameters": [],
    "post": {
-    "operationId": "1fc1b311-6e4d-4cd9-b2c7-973c179a4fab",
+    "operationId": "c6b8d3de-d70f-4c8e-b2d6-93fecc7eb317",
     "parameters": [
      {
       "in": "header",
@@ -72,7 +72,7 @@
       "description": "201"
      }
     },
-    "summary": "Seen 42 requests"
+    "summary": "Seen 10 requests"
    }
   }
  },

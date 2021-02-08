@@ -7,7 +7,7 @@
  "paths": {
   "/": {
    "get": {
-    "operationId": "e7eb3c05-29d3-42c6-b7db-2a303e7a158f",
+    "operationId": "e30702e7-8adf-4786-aa6f-41472449d9a3",
     "parameters": [],
     "responses": {
      "200": {
@@ -19,13 +19,13 @@
       "description": "200"
      }
     },
-    "summary": "Seen 7 requests"
+    "summary": "Seen 37 requests"
    },
    "parameters": []
   },
   "/basket.html": {
    "get": {
-    "operationId": "1d47154d-32e7-4362-b574-0950e9a1a50a",
+    "operationId": "bda31be7-268d-42c5-b6c8-26ab7eb2b404",
     "parameters": [],
     "responses": {
      "200": {
@@ -37,13 +37,64 @@
       "description": "200"
      }
     },
-    "summary": "Seen 3 requests"
+    "summary": "Seen 24 requests"
    },
    "parameters": []
   },
+  "/cart": {
+   "delete": {
+    "operationId": "6ef5d2a8-3e45-4927-ac67-375685f43537",
+    "parameters": [],
+    "responses": {
+     "202": {
+      "description": "202"
+     }
+    },
+    "summary": "Seen 10 requests",
+    "tags": [
+     "cart"
+    ]
+   },
+   "parameters": [],
+   "post": {
+    "operationId": "262aa3b2-b438-4028-8fb3-86f862c06bad",
+    "parameters": [],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "properties": {
+         "id": {
+          "type": "string"
+         },
+         "quantity": {
+          "type": "integer"
+         }
+        },
+        "required": [
+         "id",
+         "quantity"
+        ],
+        "type": "object"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "201": {
+      "description": "201"
+     }
+    },
+    "summary": "Seen 10 requests",
+    "tags": [
+     "cart"
+    ]
+   }
+  },
   "/catalogue": {
    "get": {
-    "operationId": "46002e23-8572-4890-8a80-9ee605438cda",
+    "operationId": "ffe1f6d8-9e74-4e8d-ae6f-096351b6a702",
     "parameters": [],
     "responses": {
      "200": {
@@ -240,13 +291,13 @@
       "description": "200"
      }
     },
-    "summary": "Seen 6 requests"
+    "summary": "Seen 36 requests"
    },
    "parameters": []
   },
   "/category.html": {
    "get": {
-    "operationId": "0c68df64-fdd8-4ec5-9513-7b956bd1f371",
+    "operationId": "4b05aeea-a466-4088-af22-27eb49ea248f",
     "parameters": [],
     "responses": {
      "200": {
@@ -258,13 +309,13 @@
       "description": "200"
      }
     },
-    "summary": "Seen 6 requests"
+    "summary": "Seen 31 requests"
    },
    "parameters": []
   },
   "/detail.html": {
    "get": {
-    "operationId": "8cd2736a-b0fa-477a-92d1-52e522ec217b",
+    "operationId": "f109e6e5-70af-42c2-8250-281fc2309f4b",
     "parameters": [
      {
       "in": "query",
@@ -275,7 +326,8 @@
         "zzz4f044-b040-410d-8ead-4de0446aec7e",
         "a0a4f044-b040-410d-8ead-4de0446aec7e",
         "837ab141-399e-4c1f-9abc-bace40296bac",
-        "03fef6ac-1896-4ce8-bd69-b798f85c6e0b"
+        "03fef6ac-1896-4ce8-bd69-b798f85c6e0b",
+        "510a0d7e-8e83-4193-b483-e27e09ddc34d"
        ],
        "type": "string"
       }
@@ -291,13 +343,13 @@
       "description": "200"
      }
     },
-    "summary": "Seen 4 requests"
+    "summary": "Seen 28 requests"
    },
    "parameters": []
   },
   "/login": {
    "get": {
-    "operationId": "0c16d4ea-7af0-49fe-b562-39abed43107a",
+    "operationId": "f8e44808-002c-4869-a556-8d1bc961f918",
     "parameters": [],
     "responses": {
      "200": {
@@ -309,10 +361,221 @@
       "description": "200"
      }
     },
-    "summary": "Seen 6 requests"
+    "summary": "Seen 31 requests"
    },
    "parameters": []
+  },
+  "/orders": {
+   "parameters": [],
+   "post": {
+    "operationId": "a12fcf12-386d-4963-8b32-c49b4c7a77da",
+    "parameters": [],
+    "responses": {
+     "201": {
+      "content": {
+       "application/json": {
+        "example": {
+         "address": {
+          "city": "Glasgow",
+          "country": "United Kingdom",
+          "id": null,
+          "number": "246",
+          "postcode": "G67 3DL",
+          "street": "Whitelees Road"
+         },
+         "card": {
+          "ccv": "958",
+          "expires": "08/19",
+          "id": null,
+          "longNum": "5544154011345918"
+         },
+         "customer": {
+          "addresses": [],
+          "cards": [],
+          "firstName": "User",
+          "id": null,
+          "lastName": "Name",
+          "username": "user"
+         },
+         "customerId": "57a98d98e4b00679b4a830b2",
+         "date": "2021-01-29T01:18:01.003+0000",
+         "id": "601362492ab79c0008ccb3d5",
+         "items": [
+          {
+           "id": "6013624736d1a00006ef29fd",
+           "itemId": "510a0d7e-8e83-4193-b483-e27e09ddc34d",
+           "quantity": 1,
+           "unitPrice": 15
+          }
+         ],
+         "shipment": {
+          "id": "efcf4159-432f-404e-bf06-1ab786bf7ff2",
+          "name": "57a98d98e4b00679b4a830b2"
+         },
+         "total": 19.99
+        },
+        "schema": {
+         "properties": {
+          "address": {
+           "properties": {
+            "city": {
+             "type": "string"
+            },
+            "country": {
+             "type": "string"
+            },
+            "id": {},
+            "number": {
+             "type": "string"
+            },
+            "postcode": {
+             "type": "string"
+            },
+            "street": {
+             "type": "string"
+            }
+           },
+           "required": [
+            "city",
+            "country",
+            "id",
+            "number",
+            "postcode",
+            "street"
+           ],
+           "type": "object"
+          },
+          "card": {
+           "properties": {
+            "ccv": {
+             "type": "string"
+            },
+            "expires": {
+             "type": "string"
+            },
+            "id": {},
+            "longNum": {
+             "type": "string"
+            }
+           },
+           "required": [
+            "ccv",
+            "expires",
+            "id",
+            "longNum"
+           ],
+           "type": "object"
+          },
+          "customer": {
+           "properties": {
+            "addresses": {
+             "items": {},
+             "type": "array"
+            },
+            "cards": {
+             "items": {},
+             "type": "array"
+            },
+            "firstName": {
+             "type": "string"
+            },
+            "id": {},
+            "lastName": {
+             "type": "string"
+            },
+            "username": {
+             "type": "string"
+            }
+           },
+           "required": [
+            "addresses",
+            "cards",
+            "firstName",
+            "id",
+            "lastName",
+            "username"
+           ],
+           "type": "object"
+          },
+          "customerId": {
+           "type": "string"
+          },
+          "date": {
+           "type": "string"
+          },
+          "id": {
+           "type": "string"
+          },
+          "items": {
+           "items": {
+            "properties": {
+             "id": {
+              "type": "string"
+             },
+             "itemId": {
+              "type": "string"
+             },
+             "quantity": {
+              "type": "integer"
+             },
+             "unitPrice": {
+              "type": "number"
+             }
+            },
+            "required": [
+             "id",
+             "itemId",
+             "quantity",
+             "unitPrice"
+            ],
+            "type": "object"
+           },
+           "type": "array"
+          },
+          "shipment": {
+           "properties": {
+            "id": {
+             "type": "string"
+            },
+            "name": {
+             "type": "string"
+            }
+           },
+           "required": [
+            "id",
+            "name"
+           ],
+           "type": "object"
+          },
+          "total": {
+           "type": "number"
+          }
+         },
+         "required": [
+          "address",
+          "card",
+          "customer",
+          "customerId",
+          "date",
+          "id",
+          "items",
+          "shipment",
+          "total"
+         ],
+         "type": "object"
+        }
+       }
+      },
+      "description": "201"
+     }
+    },
+    "summary": "Seen 10 requests"
+   }
   }
  },
- "tags": []
+ "tags": [
+  {
+   "name": "cart"
+  }
+ ]
 }

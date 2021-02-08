@@ -1,6 +1,0 @@
-{
- "TARGET_CATALOGUE": "http://catalogue",
- "TARGET_EDGE_ROUTER": "http://edge-router",
- "TARGET_FRONT_END": "http://front-end",
- "TARGET_USER": "http://user"
-}

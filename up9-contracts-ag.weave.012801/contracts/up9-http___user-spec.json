@@ -5,10 +5,254 @@
  },
  "openapi": "3.0.2",
  "paths": {
-  "/customers/{id}": {
+  "/addresses/{addresseId}": {
    "get": {
-    "operationId": "7a0f86fa-ecf9-405e-88e3-8ca320a2b533",
-    "parameters": [],
+    "operationId": "59e1a3e5-001d-4836-908e-ac89dd9bd918",
+    "parameters": [
+     {
+      "in": "header",
+      "name": "accept",
+      "required": false,
+      "schema": {
+       "enum": [
+        "application/hal+json"
+       ],
+       "type": "string"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "content": {
+       "application/json": {
+        "example": {
+         "_links": {
+          "address": {
+           "href": "http://user/addresses/57a98d98e4b00679b4a830b0"
+          },
+          "self": {
+           "href": "http://user/addresses/57a98d98e4b00679b4a830b0"
+          }
+         },
+         "city": "Glasgow",
+         "country": "United Kingdom",
+         "id": "57a98d98e4b00679b4a830b0",
+         "number": "246",
+         "postcode": "G67 3DL",
+         "street": "Whitelees Road"
+        },
+        "schema": {
+         "properties": {
+          "_links": {
+           "properties": {
+            "address": {
+             "properties": {
+              "href": {
+               "type": "string"
+              }
+             },
+             "required": [
+              "href"
+             ],
+             "type": "object"
+            },
+            "self": {
+             "properties": {
+              "href": {
+               "type": "string"
+              }
+             },
+             "required": [
+              "href"
+             ],
+             "type": "object"
+            }
+           },
+           "required": [
+            "address",
+            "self"
+           ],
+           "type": "object"
+          },
+          "city": {
+           "type": "string"
+          },
+          "country": {
+           "type": "string"
+          },
+          "id": {
+           "type": "string"
+          },
+          "number": {
+           "type": "string"
+          },
+          "postcode": {
+           "type": "string"
+          },
+          "street": {
+           "type": "string"
+          }
+         },
+         "required": [
+          "_links",
+          "city",
+          "country",
+          "id",
+          "number",
+          "postcode",
+          "street"
+         ],
+         "type": "object"
+        }
+       }
+      },
+      "description": "200"
+     }
+    },
+    "summary": "Seen 6 requests"
+   },
+   "parameters": [
+    {
+     "in": "path",
+     "name": "addresseId",
+     "required": true,
+     "schema": {
+      "enum": [
+       "57a98d98e4b00679b4a830b0"
+      ],
+      "type": "string"
+     },
+     "style": "simple"
+    }
+   ]
+  },
+  "/cards/{cardId}": {
+   "get": {
+    "operationId": "e06ffd1c-6d23-452d-bdef-5a7fdcf8880d",
+    "parameters": [
+     {
+      "in": "header",
+      "name": "accept",
+      "required": false,
+      "schema": {
+       "enum": [
+        "application/hal+json"
+       ],
+       "type": "string"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "content": {
+       "application/json": {
+        "example": {
+         "_links": {
+          "card": {
+           "href": "http://user/cards/57a98d98e4b00679b4a830b1"
+          },
+          "self": {
+           "href": "http://user/cards/57a98d98e4b00679b4a830b1"
+          }
+         },
+         "ccv": "958",
+         "expires": "08/19",
+         "id": "57a98d98e4b00679b4a830b1",
+         "longNum": "5544154011345918"
+        },
+        "schema": {
+         "properties": {
+          "_links": {
+           "properties": {
+            "card": {
+             "properties": {
+              "href": {
+               "type": "string"
+              }
+             },
+             "required": [
+              "href"
+             ],
+             "type": "object"
+            },
+            "self": {
+             "properties": {
+              "href": {
+               "type": "string"
+              }
+             },
+             "required": [
+              "href"
+             ],
+             "type": "object"
+            }
+           },
+           "required": [
+            "card",
+            "self"
+           ],
+           "type": "object"
+          },
+          "ccv": {
+           "type": "string"
+          },
+          "expires": {
+           "type": "string"
+          },
+          "id": {
+           "type": "string"
+          },
+          "longNum": {
+           "type": "string"
+          }
+         },
+         "required": [
+          "_links",
+          "ccv",
+          "expires",
+          "id",
+          "longNum"
+         ],
+         "type": "object"
+        }
+       }
+      },
+      "description": "200"
+     }
+    },
+    "summary": "Seen 6 requests"
+   },
+   "parameters": [
+    {
+     "in": "path",
+     "name": "cardId",
+     "required": true,
+     "schema": {
+      "enum": [
+       "57a98d98e4b00679b4a830b1"
+      ],
+      "type": "string"
+     },
+     "style": "simple"
+    }
+   ]
+  },
+  "/customers/{customerId}": {
+   "get": {
+    "operationId": "88032625-1fcc-4d7f-8c35-717e7c5e631e",
+    "parameters": [
+     {
+      "in": "header",
+      "name": "accept",
+      "required": false,
+      "schema": {
+       "enum": [
+        "application/hal+json"
+       ],
+       "type": "string"
+      }
+     }
+    ],
     "responses": {
      "200": {
       "content": {
@@ -117,7 +361,7 @@
       "description": "200"
      }
     },
-    "summary": "Seen 10 requests",
+    "summary": "Seen 31 requests",
     "tags": [
      "customers"
     ]
@@ -125,7 +369,7 @@
    "parameters": [
     {
      "in": "path",
-     "name": "id",
+     "name": "customerId",
      "required": true,
      "schema": {
       "enum": [
@@ -137,9 +381,9 @@
     }
    ]
   },
-  "/customers/{id}/addresses": {
+  "/customers/{customerId}/addresses": {
    "get": {
-    "operationId": "3bc42315-3f8e-45ea-9946-1469c0bc984f",
+    "operationId": "e356d22f-fd01-4d7b-b9fe-9d7edf1abbb7",
     "parameters": [],
     "responses": {
      "200": {
@@ -254,7 +498,7 @@
       "description": "200"
      }
     },
-    "summary": "Seen 10 requests",
+    "summary": "Seen 23 requests",
     "tags": [
      "customers"
     ]
@@ -262,7 +506,7 @@
    "parameters": [
     {
      "in": "path",
-     "name": "id",
+     "name": "customerId",
      "required": true,
      "schema": {
       "enum": [
@@ -274,9 +518,9 @@
     }
    ]
   },
-  "/customers/{id}/cards": {
+  "/customers/{customerId}/cards": {
    "get": {
-    "operationId": "6729ea15-4418-4020-8fc0-9ae92c72023e",
+    "operationId": "1bfa6928-39a4-47d8-92e7-5ccce9e73544",
     "parameters": [],
     "responses": {
      "200": {
@@ -381,7 +625,7 @@
       "description": "200"
      }
     },
-    "summary": "Seen 10 requests",
+    "summary": "Seen 23 requests",
     "tags": [
      "customers"
     ]
@@ -389,7 +633,7 @@
    "parameters": [
     {
      "in": "path",
-     "name": "id",
+     "name": "customerId",
      "required": true,
      "schema": {
       "enum": [
@@ -403,7 +647,7 @@
   },
   "/login": {
    "get": {
-    "operationId": "db2902d1-4b1c-4623-8fc6-9878051e16bc",
+    "operationId": "1441b1cf-0b80-40c4-bfe1-568ea6caa393",
     "parameters": [],
     "responses": {
      "200": {
@@ -523,7 +767,7 @@
       "description": "200"
      }
     },
-    "summary": "Seen 17 requests"
+    "summary": "Seen 35 requests"
    },
    "parameters": []
   }

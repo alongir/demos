@@ -8,7 +8,7 @@
   "/paymentAuth": {
    "parameters": [],
    "post": {
-    "operationId": "b88fbd30-c10a-4b96-a595-1922e9429745",
+    "operationId": "dddfa7a3-bcc4-4e66-8a53-d72c9deeb2e9",
     "parameters": [
      {
       "in": "header",
@@ -152,7 +152,7 @@
       "description": "200"
      }
     },
-    "summary": "Seen 47 requests"
+    "summary": "Seen 10 requests"
    }
   }
  },
