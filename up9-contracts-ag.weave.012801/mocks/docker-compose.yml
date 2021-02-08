@@ -1,4 +1,19 @@
 services:
+  catalogue:
+    cap_add:
+    - NET_BIND_SERVICE
+    cap_drop:
+    - all
+    command: /config/mockintosh.yml 'http://catalogue'
+    environment:
+    - MOCKINTOSH_FORCE_PORT=80
+    hostname: catalogue
+    image: testrio/mockintosh:latest
+    ports:
+    - 80
+    read_only: true
+    volumes:
+    - .:/config
   edge-router:
     cap_add:
     - NET_BIND_SERVICE
@@ -23,6 +38,21 @@ services:
     environment:
     - MOCKINTOSH_FORCE_PORT=80
     hostname: front-end
+    image: testrio/mockintosh:latest
+    ports:
+    - 80
+    read_only: true
+    volumes:
+    - .:/config
+  user:
+    cap_add:
+    - NET_BIND_SERVICE
+    cap_drop:
+    - all
+    command: /config/mockintosh.yml 'http://user'
+    environment:
+    - MOCKINTOSH_FORCE_PORT=80
+    hostname: user
     image: testrio/mockintosh:latest
     ports:
     - 80
