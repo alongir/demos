@@ -32,7 +32,7 @@ services:
       TIMING_90_PERCENTILE: 30ms
       TIMING_99_PERCENTILE: 40ms
       TIMING_VARIANCE: 10
-      ERROR_RATE: 0.0
+      ERROR_RATE: 1.0
       ERROR_TYPE: "http_error"
       HTTP_CLIENT_APPEND_REQUEST: "true"
     ports:
