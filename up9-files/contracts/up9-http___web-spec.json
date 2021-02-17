@@ -1,0 +1,372 @@
+{
+ "info": {
+  "title": "http://web",
+  "version": "0.0"
+ },
+ "openapi": "3.0.2",
+ "paths": {
+  "/": {
+   "get": {
+    "operationId": "581f5d7f-509d-4a7f-9530-41790bc79a29",
+    "parameters": [],
+    "responses": {
+     "200": {
+      "content": {
+       "application/json": {
+        "example": {
+         "body": "Hello World",
+         "code": 200,
+         "duration": "32.766ms",
+         "end_time": "2021-02-17T17:28:14.866297",
+         "name": "web",
+         "start_time": "2021-02-17T17:28:14.833502",
+         "type": "HTTP",
+         "upstream_calls": [
+          {
+           "body": "API response",
+           "code": 200,
+           "duration": "21.7936ms",
+           "end_time": "2021-02-17T17:28:14.856398",
+           "name": "api",
+           "start_time": "2021-02-17T17:28:14.834618",
+           "type": "HTTP",
+           "upstream_calls": [
+            {
+             "body": "Currency response",
+             "code": 200,
+             "duration": "308.2\u00b5s",
+             "end_time": "2021-02-17T17:28:14.839362",
+             "name": "currency",
+             "start_time": "2021-02-17T17:28:14.839054",
+             "type": "HTTP",
+             "uri": "http://currency:9090"
+            },
+            {
+             "body": "Payments response",
+             "code": 200,
+             "duration": "1.7244ms",
+             "end_time": "2021-02-17T17:28:14.843044",
+             "name": "payments",
+             "start_time": "2021-02-17T17:28:14.841322",
+             "type": "HTTP",
+             "upstream_calls": [
+              {
+               "body": "Currency response",
+               "code": 200,
+               "duration": "102.5\u00b5s",
+               "end_time": "2021-02-17T17:28:14.842574",
+               "name": "currency",
+               "start_time": "2021-02-17T17:28:14.842470",
+               "type": "HTTP",
+               "uri": "http://currency:9090"
+              }
+             ],
+             "uri": "http://payments:9090"
+            },
+            {
+             "body": "Cache response",
+             "code": 200,
+             "duration": "7.1383ms",
+             "end_time": "2021-02-17T17:28:14.845428",
+             "name": "cache",
+             "start_time": "2021-02-17T17:28:14.838297",
+             "type": "HTTP",
+             "upstream_calls": [
+              {
+               "body": "Payments response",
+               "code": 200,
+               "duration": "4.1635ms",
+               "end_time": "2021-02-17T17:28:14.844056",
+               "name": "payments",
+               "start_time": "2021-02-17T17:28:14.839873",
+               "type": "HTTP",
+               "upstream_calls": [
+                {
+                 "body": "Currency response",
+                 "code": 200,
+                 "duration": "130.4\u00b5s",
+                 "end_time": "2021-02-17T17:28:14.840982",
+                 "name": "currency",
+                 "start_time": "2021-02-17T17:28:14.840849",
+                 "type": "HTTP",
+                 "uri": "http://currency:9090"
+                }
+               ],
+               "uri": "http://payments:9090"
+              }
+             ],
+             "uri": "http://cache:9090"
+            }
+           ],
+           "uri": "http://api:9090"
+          }
+         ],
+         "uri": "/"
+        },
+        "schema": {
+         "properties": {
+          "body": {
+           "type": "string"
+          },
+          "code": {
+           "type": "integer"
+          },
+          "duration": {
+           "type": "string"
+          },
+          "end_time": {
+           "type": "string"
+          },
+          "name": {
+           "type": "string"
+          },
+          "start_time": {
+           "type": "string"
+          },
+          "type": {
+           "type": "string"
+          },
+          "upstream_calls": {
+           "items": {
+            "properties": {
+             "body": {
+              "type": "string"
+             },
+             "code": {
+              "type": "integer"
+             },
+             "duration": {
+              "type": "string"
+             },
+             "end_time": {
+              "type": "string"
+             },
+             "name": {
+              "type": "string"
+             },
+             "start_time": {
+              "type": "string"
+             },
+             "type": {
+              "type": "string"
+             },
+             "upstream_calls": {
+              "items": {
+               "properties": {
+                "body": {
+                 "type": "string"
+                },
+                "code": {
+                 "type": "integer"
+                },
+                "duration": {
+                 "type": "string"
+                },
+                "end_time": {
+                 "type": "string"
+                },
+                "name": {
+                 "type": "string"
+                },
+                "start_time": {
+                 "type": "string"
+                },
+                "type": {
+                 "type": "string"
+                },
+                "upstream_calls": {
+                 "items": {
+                  "type": "object"
+                 },
+                 "type": "array"
+                },
+                "uri": {
+                 "type": "string"
+                }
+               },
+               "required": [
+                "body",
+                "code",
+                "duration",
+                "end_time",
+                "name",
+                "start_time",
+                "type",
+                "uri"
+               ],
+               "type": "object"
+              },
+              "type": "array"
+             },
+             "uri": {
+              "type": "string"
+             }
+            },
+            "required": [
+             "body",
+             "code",
+             "duration",
+             "end_time",
+             "name",
+             "start_time",
+             "type",
+             "upstream_calls",
+             "uri"
+            ],
+            "type": "object"
+           },
+           "type": "array"
+          },
+          "uri": {
+           "type": "string"
+          }
+         },
+         "required": [
+          "body",
+          "code",
+          "duration",
+          "end_time",
+          "name",
+          "start_time",
+          "type",
+          "upstream_calls",
+          "uri"
+         ],
+         "type": "object"
+        }
+       }
+      },
+      "description": "OK"
+     }
+    },
+    "summary": "Seen 4 requests"
+   },
+   "parameters": []
+  },
+  "/ui/": {
+   "get": {
+    "operationId": "afb7347c-d2a7-4956-ac4c-75f859cd2ebb",
+    "parameters": [],
+    "responses": {
+     "200": {
+      "content": {
+       "text/html": {
+        "example": "<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\"/><link rel=\"icon\" href=\"/ui/favicon.ico\"/><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"/><meta name=\"theme-color\" content=\"#000000\"/><meta name=\"description\" content=\"Web site created using create-react-app\"/><link rel=\"apple-touch-icon\" href=\"logo192.png\"/><link rel=\"manifest\" href=\"/ui/manifest.json\"/><title>Fake Service</title><link href=\"/ui/static/css/2.0624914a.chunk.css\" rel=\"stylesheet\"><link href=\"/ui/static/css/main.9fb0a97d.chunk.css\" rel=\"stylesheet\"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id=\"root\"></div><script>!function(f){function e(e){for(var r,t,n=e[0],o=e[1],u=e[2],i=0,l=[];i<n.length;i++)t=n[i],Object.prototype.hasOwnProperty.call(p,t)&&p[t]&&l.push(p[t][0]),p[t]=0;for(r in o)Object.prototype.hasOwnProperty.call(o,r)&&(f[r]=o[r]);for(s&&s(e);l.length;)l.shift()();return c.push.apply(c,u||[]),a()}function a(){for(var e,r=0;r<c.length;r++){for(var t=c[r],n=!0,o=1;o<t.length;o++){var u=t[o];0!==p[u]&&(n=!1)}n&&(c.splice(r--,1),e=i(i.s=t[0]))}return e}var t={},p={1:0},c=[];function i(e){if(t[e])return t[e].exports;var r=t[e]={i:e,l:!1,exports:{}};return f[e].call(r.exports,r,r.exports,i),r.l=!0,r.exports}i.m=f,i.c=t,i.d=function(e,r,t){i.o(e,r)||Object.defineProperty(e,r,{enumerable:!0,get:t})},i.r=function(e){\"undefined\"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:\"Module\"}),Object.defineProperty(e,\"__esModule\",{value:!0})},i.t=function(r,e){if(1&e&&(r=i(r)),8&e)return r;if(4&e&&\"object\"==typeof r&&r&&r.__esModule)return r;var t=Object.create(null);if(i.r(t),Object.defineProperty(t,\"default\",{enumerable:!0,value:r}),2&e&&\"string\"!=typeof r)for(var n in r)i.d(t,n,function(e){return r[e]}.bind(null,n));return t},i.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return i.d(r,\"a\",r),r},i.o=function(e,r){return Object.prototype.hasOwnProperty.call(e,r)},i.p=\"/ui/\";var r=this.webpackJsonpui=this.webpackJsonpui||[],n=r.push.bind(r);r.push=e,r=r.slice();for(var o=0;o<r.length;o++)e(r[o]);var s=n;a()}([])</script><script src=\"/ui/static/js/2.cf23c796.chunk.js\"></script><script src=\"/ui/static/js/main.36e8fd44.chunk.js\"></script></body></html>"
+       }
+      },
+      "description": "OK"
+     }
+    },
+    "summary": "Seen 2 requests",
+    "tags": [
+     "ui"
+    ]
+   },
+   "parameters": []
+  },
+  "/ui/manifest.json": {
+   "get": {
+    "operationId": "2f033cdb-8cd9-492a-8a6b-c9e470e03eea",
+    "parameters": [],
+    "responses": {
+     "200": {
+      "content": {
+       "application/json": {
+        "example": {
+         "background_color": "#ffffff",
+         "display": "standalone",
+         "icons": [
+          {
+           "sizes": "64x64 32x32 24x24 16x16",
+           "src": "favicon.ico",
+           "type": "image/x-icon"
+          },
+          {
+           "sizes": "192x192",
+           "src": "logo192.png",
+           "type": "image/png"
+          },
+          {
+           "sizes": "512x512",
+           "src": "logo512.png",
+           "type": "image/png"
+          }
+         ],
+         "name": "Create React App Sample",
+         "short_name": "React App",
+         "start_url": ".",
+         "theme_color": "#000000"
+        },
+        "schema": {
+         "properties": {
+          "background_color": {
+           "type": "string"
+          },
+          "display": {
+           "type": "string"
+          },
+          "icons": {
+           "items": {
+            "properties": {
+             "sizes": {
+              "type": "string"
+             },
+             "src": {
+              "type": "string"
+             },
+             "type": {
+              "type": "string"
+             }
+            },
+            "required": [
+             "sizes",
+             "src",
+             "type"
+            ],
+            "type": "object"
+           },
+           "type": "array"
+          },
+          "name": {
+           "type": "string"
+          },
+          "short_name": {
+           "type": "string"
+          },
+          "start_url": {
+           "type": "string"
+          },
+          "theme_color": {
+           "type": "string"
+          }
+         },
+         "required": [
+          "background_color",
+          "display",
+          "icons",
+          "name",
+          "short_name",
+          "start_url",
+          "theme_color"
+         ],
+         "type": "object"
+        }
+       }
+      },
+      "description": "OK"
+     }
+    },
+    "summary": "Seen 1 requests",
+    "tags": [
+     "ui"
+    ]
+   },
+   "parameters": []
+  }
+ },
+ "tags": [
+  {
+   "name": "ui"
+  }
+ ]
+}

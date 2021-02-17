@@ -1,0 +1,131 @@
+{
+ "info": {
+  "title": "http://payments",
+  "version": "0.0"
+ },
+ "openapi": "3.0.2",
+ "paths": {
+  "/": {
+   "get": {
+    "operationId": "cf3486cd-b13f-4c55-80d3-e35ce151342b",
+    "parameters": [],
+    "responses": {
+     "200": {
+      "content": {
+       "application/json": {
+        "example": {
+         "body": "Payments response",
+         "code": 200,
+         "duration": "4.1635ms",
+         "end_time": "2021-02-17T17:28:14.844056",
+         "name": "payments",
+         "start_time": "2021-02-17T17:28:14.839873",
+         "type": "HTTP",
+         "upstream_calls": [
+          {
+           "body": "Currency response",
+           "code": 200,
+           "duration": "130.4\u00b5s",
+           "end_time": "2021-02-17T17:28:14.840982",
+           "name": "currency",
+           "start_time": "2021-02-17T17:28:14.840849",
+           "type": "HTTP",
+           "uri": "http://currency:9090"
+          }
+         ],
+         "uri": "/"
+        },
+        "schema": {
+         "properties": {
+          "body": {
+           "type": "string"
+          },
+          "code": {
+           "type": "integer"
+          },
+          "duration": {
+           "type": "string"
+          },
+          "end_time": {
+           "type": "string"
+          },
+          "name": {
+           "type": "string"
+          },
+          "start_time": {
+           "type": "string"
+          },
+          "type": {
+           "type": "string"
+          },
+          "upstream_calls": {
+           "items": {
+            "properties": {
+             "body": {
+              "type": "string"
+             },
+             "code": {
+              "type": "integer"
+             },
+             "duration": {
+              "type": "string"
+             },
+             "end_time": {
+              "type": "string"
+             },
+             "name": {
+              "type": "string"
+             },
+             "start_time": {
+              "type": "string"
+             },
+             "type": {
+              "type": "string"
+             },
+             "uri": {
+              "type": "string"
+             }
+            },
+            "required": [
+             "body",
+             "code",
+             "duration",
+             "end_time",
+             "name",
+             "start_time",
+             "type",
+             "uri"
+            ],
+            "type": "object"
+           },
+           "type": "array"
+          },
+          "uri": {
+           "type": "string"
+          }
+         },
+         "required": [
+          "body",
+          "code",
+          "duration",
+          "end_time",
+          "name",
+          "start_time",
+          "type",
+          "upstream_calls",
+          "uri"
+         ],
+         "type": "object"
+        }
+       }
+      },
+      "description": "OK"
+     }
+    },
+    "summary": "Seen 8 requests"
+   },
+   "parameters": []
+  }
+ },
+ "tags": []
+}
