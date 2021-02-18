@@ -7,7 +7,7 @@
  "paths": {
   "/carts/{cartId}/items": {
    "get": {
-    "operationId": "d3a803f3-cf30-40d1-bd4a-5f04bf26661d",
+    "operationId": "99cc9b71-ebb5-4796-8cb5-a66710b91922",
     "parameters": [],
     "responses": {
      "200": {
@@ -65,7 +65,7 @@
     }
    ],
    "post": {
-    "operationId": "c0db2c0c-cb4e-4b64-b2d5-bcc5070142a8",
+    "operationId": "baed1f26-4c68-4e3c-8851-2540701a9bad",
     "parameters": [
      {
       "in": "header",

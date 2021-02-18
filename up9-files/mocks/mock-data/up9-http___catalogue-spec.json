@@ -7,7 +7,7 @@
  "paths": {
   "/catalogue": {
    "get": {
-    "operationId": "945c67cc-be27-4e1e-b2bd-2d91d01deb38",
+    "operationId": "370a9bdd-a950-4a43-9b4f-27b1704d5221",
     "parameters": [
      {
       "in": "query",
@@ -249,7 +249,7 @@
   },
   "/catalogue/{id}": {
    "get": {
-    "operationId": "8221e64a-be3f-40d1-b843-0fe12d3eff5b",
+    "operationId": "8241ee9f-d0b2-4c8c-9210-1c65dafa7804",
     "parameters": [],
     "responses": {
      "200": {

@@ -46,12 +46,12 @@ services:
     response:
       headers:
         Content-Type: application/json
-      body: '@mock-data/resp_17.json'
+      body: '@mock-data/resp_5.json'
   - path: /catalogue/{{id}}
     response:
       headers:
         Content-Type: application/json
-      body: '@mock-data/resp_18.json'
+      body: '@mock-data/resp_6.json'
 - name: http://edge-router
   port: 8003
   ssl: false
@@ -62,30 +62,30 @@ services:
     response:
       headers:
         Content-Type: text/html
-      body: '@mock-data/resp_1.html'
+      body: '@mock-data/resp_15.html'
       useTemplating: false
   - path: /basket.html
     response:
       headers:
         Content-Type: text/html
-      body: '@mock-data/resp_2.html'
+      body: '@mock-data/resp_16.html'
       useTemplating: false
   - path: /catalogue
     response:
       headers:
         Content-Type: application/json
-      body: '@mock-data/resp_3.json'
+      body: '@mock-data/resp_17.json'
   - path: /category.html
     response:
       headers:
         Content-Type: text/html
-      body: '@mock-data/resp_4.html'
+      body: '@mock-data/resp_18.html'
       useTemplating: false
   - path: /detail.html
     response:
       headers:
         Content-Type: text/html
-      body: '@mock-data/resp_5.html'
+      body: '@mock-data/resp_19.html'
       useTemplating: false
   - path: /login
     response:
@@ -93,6 +93,17 @@ services:
         Content-Type: text/html
       body: Cookie is set
       useTemplating: false
+  - path: /cart
+    response:
+      headers:
+        Content-Type: application/json
+      body: '[{"id":"602dd0a57401b100072c2945","itemId":"3395a43e-2d88-40de-b95f-e00e1502085b","quantity":1,"unitPrice":18.0}]'
+      useTemplating: false
+  - path: /catalogue/{{param}}
+    response:
+      headers:
+        Content-Type: application/json
+      body: '@mock-data/resp_22.json'
 - name: http://front-end
   port: 8004
   ssl: false
@@ -103,30 +114,30 @@ services:
     response:
       headers:
         Content-Type: text/html
-      body: '@mock-data/resp_7.html'
+      body: '@mock-data/resp_9.html'
       useTemplating: false
   - path: /basket.html
     response:
       headers:
         Content-Type: text/html
-      body: '@mock-data/resp_8.html'
+      body: '@mock-data/resp_10.html'
       useTemplating: false
   - path: /catalogue
     response:
       headers:
         Content-Type: application/json
-      body: '@mock-data/resp_9.json'
+      body: '@mock-data/resp_11.json'
   - path: /category.html
     response:
       headers:
         Content-Type: text/html
-      body: '@mock-data/resp_10.html'
+      body: '@mock-data/resp_12.html'
       useTemplating: false
   - path: /detail.html
     response:
       headers:
         Content-Type: text/html
-      body: '@mock-data/resp_11.html'
+      body: '@mock-data/resp_13.html'
       useTemplating: false
   - path: /login
     response:
@@ -144,12 +155,12 @@ services:
     response:
       headers:
         Content-Type: application/json
-      body: '@mock-data/resp_13.json'
+      body: '@mock-data/resp_1.json'
   - path: /customers/{{id}}/addresses
     response:
       headers:
         Content-Type: application/json
-      body: '@mock-data/resp_14.json'
+      body: '@mock-data/resp_2.json'
       useTemplating: false
   - path: /customers/{{id}}/cards
     response:
@@ -161,5 +172,5 @@ services:
     response:
       headers:
         Content-Type: application/json
-      body: '@mock-data/resp_16.json'
+      body: '@mock-data/resp_4.json'
       useTemplating: false

@@ -7,7 +7,7 @@
  "paths": {
   "/customers/{id}": {
    "get": {
-    "operationId": "e557cf60-7d2f-4719-a2dc-251f4a18aa3b",
+    "operationId": "cfcf397d-bdd3-4f23-bef6-867b0ba8bbe2",
     "parameters": [],
     "responses": {
      "200": {
@@ -139,7 +139,7 @@
   },
   "/customers/{id}/addresses": {
    "get": {
-    "operationId": "e9512eb5-969c-4a0c-a66f-39292d5ebc4a",
+    "operationId": "044de9e3-7a26-4eba-a5d8-148cb54beda0",
     "parameters": [],
     "responses": {
      "200": {
@@ -276,7 +276,7 @@
   },
   "/customers/{id}/cards": {
    "get": {
-    "operationId": "56013888-a112-4b97-b6e6-c32e236ed1ee",
+    "operationId": "382ab07b-c260-4319-94fc-d5b929866710",
     "parameters": [],
     "responses": {
      "200": {
@@ -403,7 +403,7 @@
   },
   "/login": {
    "get": {
-    "operationId": "850e425d-4e18-4f0d-af75-0c621a1f533a",
+    "operationId": "7509d518-fc83-4d90-a995-17c9e390cc2c",
     "parameters": [],
     "responses": {
      "200": {
