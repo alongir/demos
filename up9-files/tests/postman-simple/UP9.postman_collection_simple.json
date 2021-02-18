@@ -1,0 +1,1057 @@
+{
+    "info": {
+        "id": "73d54414-2adf-45c8-969a-c9cb942a20d0",
+        "name": "Simple Unknown - ag.weave.021703/all rev 16 (by UP9.com)",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "id": "33cdcf9a-c322-4cc9-a821-f538c55feb76",
+            "name": "carts",
+            "item": [
+                {
+                    "id": "a6c4cf8e-6af7-4092-a0c0-2d40f9849b2b",
+                    "name": "carts",
+                    "item": [
+                        {
+                            "id": "ce33904f-b438-46e8-8091-4e276f424f87",
+                            "name": "/carts/{{id}}/items",
+                            "request": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{carts}}/carts/{{id}}/items",
+                                    "protocol": "",
+                                    "host": "{{carts}}",
+                                    "path": [
+                                        "carts",
+                                        "{{id}}",
+                                        "items"
+                                    ]
+                                }
+                            },
+                            "response": [],
+                            "event": [
+                                {
+                                    "listen": "prerequest",
+                                    "script": {
+                                        "id": "a13b6e69-e84d-4e25-90c2-e4cad01c3bc6",
+                                        "exec": [
+                                            "// Some of the environment variables might be set in the parent folders.",
+                                            "pm.variables.set(\"id\", \"m2ocBH96TVeKzn9aWgu1llMQAVUvsVhx\");"
+                                        ],
+                                        "type": "text/javascript"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "id": "397f2124-1732-4a12-ac94-88e09f215537",
+                            "name": "/carts/{{id}}/items",
+                            "request": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "accept",
+                                        "value": "application/json",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "key": "content-type",
+                                        "value": "application/json",
+                                        "type": "text"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{carts}}/carts/{{id}}/items",
+                                    "protocol": "",
+                                    "host": "{{carts}}",
+                                    "path": [
+                                        "carts",
+                                        "{{id}}",
+                                        "items"
+                                    ]
+                                },
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"itemId\": \"{{itemId}}\",\n    \"unitPrice\": {{unitPrice}}\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                }
+                            },
+                            "response": [],
+                            "event": [
+                                {
+                                    "listen": "prerequest",
+                                    "script": {
+                                        "id": "0062b573-ea3d-4dc7-a694-84d50abf0545",
+                                        "exec": [
+                                            "// Some of the environment variables might be set in the parent folders.",
+                                            "pm.variables.set(\"id\", \"m2ocBH96TVeKzn9aWgu1llMQAVUvsVhx\");",
+                                            "pm.variables.set(\"itemId\", \"3395a43e-2d88-40de-b95f-e00e1502085b\");",
+                                            "pm.variables.set(\"unitPrice\", 18);"
+                                        ],
+                                        "type": "text/javascript"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "id": "ba43ceee-f145-4d71-8129-4914f9875a92",
+                            "name": "/carts/{{id}}/merge",
+                            "request": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{carts}}/carts/{{id}}/merge",
+                                    "protocol": "",
+                                    "host": "{{carts}}",
+                                    "path": [
+                                        "carts",
+                                        "{{id}}",
+                                        "merge"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "sessionId",
+                                            "value": "{{sessionId}}"
+                                        }
+                                    ]
+                                }
+                            },
+                            "response": [],
+                            "event": [
+                                {
+                                    "listen": "prerequest",
+                                    "script": {
+                                        "id": "450890a9-35ef-4ad0-8564-58df95a17cfe",
+                                        "exec": [
+                                            "// Some of the environment variables might be set in the parent folders.",
+                                            "pm.variables.set(\"id\", \"m2ocBH96TVeKzn9aWgu1llMQAVUvsVhx\");",
+                                            "pm.variables.set(\"sessionId\", \"m2ocBH96TVeKzn9aWgu1llMQAVUvsVhx\");"
+                                        ],
+                                        "type": "text/javascript"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "event": [],
+                    "protocolProfileBehavior": {}
+                }
+            ],
+            "event": [
+                {
+                    "listen": "prerequest",
+                    "script": {
+                        "id": "6e72fd4a-9f0b-4300-8b76-93668e8333d3",
+                        "exec": [],
+                        "type": "text/javascript"
+                    }
+                }
+            ],
+            "protocolProfileBehavior": {}
+        },
+        {
+            "id": "aafd4764-c40d-4bdb-ae8f-0f423052c614",
+            "name": "catalogue",
+            "item": [
+                {
+                    "id": "a2129f9e-5121-4735-b1f7-1e739a132939",
+                    "name": "catalogue",
+                    "item": [
+                        {
+                            "id": "15761b18-de1e-4cfb-823e-47f3b7b1bf2c",
+                            "name": "/catalogue",
+                            "request": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{catalogue}}/catalogue",
+                                    "protocol": "",
+                                    "host": "{{catalogue}}",
+                                    "path": [
+                                        "catalogue"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "size",
+                                            "value": "{{size}}"
+                                        },
+                                        {
+                                            "key": "sort",
+                                            "value": "id"
+                                        },
+                                        {
+                                            "key": "tags",
+                                            "value": "{{tags}}"
+                                        }
+                                    ]
+                                }
+                            },
+                            "response": [],
+                            "event": [
+                                {
+                                    "listen": "prerequest",
+                                    "script": {
+                                        "id": "b4e5f972-5d85-467d-93f3-5d45c20252aa",
+                                        "exec": [
+                                            "// Some of the environment variables might be set in the parent folders.",
+                                            "pm.variables.set(\"size\", \"5\");",
+                                            "pm.variables.set(\"tags\", \"brown\");"
+                                        ],
+                                        "type": "text/javascript"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1c0b4494-d5a1-40fd-9ce0-47f01530a787",
+                            "name": "/catalogue/{{id}}",
+                            "request": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{catalogue}}/catalogue/{{id}}",
+                                    "protocol": "",
+                                    "host": "{{catalogue}}",
+                                    "path": [
+                                        "catalogue",
+                                        "{{id}}"
+                                    ]
+                                }
+                            },
+                            "response": [],
+                            "event": [
+                                {
+                                    "listen": "prerequest",
+                                    "script": {
+                                        "id": "0b62af3a-3a48-4767-9998-7ed13b89cc97",
+                                        "exec": [
+                                            "// Some of the environment variables might be set in the parent folders.",
+                                            "pm.variables.set(\"id\", \"510a0d7e-8e83-4193-b483-e27e09ddc34d\");"
+                                        ],
+                                        "type": "text/javascript"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "event": [],
+                    "protocolProfileBehavior": {}
+                }
+            ],
+            "event": [
+                {
+                    "listen": "prerequest",
+                    "script": {
+                        "id": "d351f668-eadb-467f-92c1-2da76a226d08",
+                        "exec": [],
+                        "type": "text/javascript"
+                    }
+                }
+            ],
+            "protocolProfileBehavior": {}
+        },
+        {
+            "id": "fc569433-adcc-482c-a5e0-7783573924f9",
+            "name": "edge-router",
+            "item": [
+                {
+                    "id": "0443a6a5-99fb-483d-a735-717507e07f0f",
+                    "name": "/",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{edge_router}}",
+                            "protocol": "",
+                            "host": "{{edge_router}}",
+                            "path": []
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "id": "6e4b3f67-4dfb-49c2-9e4b-bb9599483c6d",
+                                "exec": [],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "88f700bc-d807-42d3-b81e-82ea9dedfd05",
+                    "name": "/basket.html",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{edge_router}}/basket.html",
+                            "protocol": "",
+                            "host": "{{edge_router}}",
+                            "path": [
+                                "basket.html"
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "id": "3976716f-391e-4bd8-9d03-317b68c52f49",
+                                "exec": [],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "95737a12-1ef2-46b9-896b-1700e57d7ba7",
+                    "name": "/cart",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "x-requested-with",
+                                "value": "XMLHttpRequest",
+                                "type": "text"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{edge_router}}/cart",
+                            "protocol": "",
+                            "host": "{{edge_router}}",
+                            "path": [
+                                "cart"
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "id": "80530962-8a0d-4203-890a-e3bdf2ae27ea",
+                                "exec": [],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "c30ed8f9-ffe9-42e3-bfe7-9b990e8646c5",
+                    "name": "catalogue",
+                    "item": [
+                        {
+                            "id": "b477b7d5-4362-49b8-9d00-843271fdb077",
+                            "name": "/catalogue",
+                            "request": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "x-requested-with",
+                                        "value": "XMLHttpRequest",
+                                        "type": "text"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{edge_router}}/catalogue",
+                                    "protocol": "",
+                                    "host": "{{edge_router}}",
+                                    "path": [
+                                        "catalogue"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "size",
+                                            "value": "{{size}}"
+                                        },
+                                        {
+                                            "key": "sort",
+                                            "value": "id"
+                                        },
+                                        {
+                                            "key": "tags",
+                                            "value": "brown"
+                                        }
+                                    ]
+                                }
+                            },
+                            "response": [],
+                            "event": [
+                                {
+                                    "listen": "prerequest",
+                                    "script": {
+                                        "id": "df4eff84-7194-451d-8ede-ba9314c763b5",
+                                        "exec": [
+                                            "// Some of the environment variables might be set in the parent folders.",
+                                            "pm.variables.set(\"size\", \"5\");"
+                                        ],
+                                        "type": "text/javascript"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "id": "a4cc6de7-a2da-425f-bbad-2d5c6a1c752f",
+                            "name": "/catalogue/{{id}}",
+                            "request": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "x-requested-with",
+                                        "value": "XMLHttpRequest",
+                                        "type": "text"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{edge_router}}/catalogue/{{id}}",
+                                    "protocol": "",
+                                    "host": "{{edge_router}}",
+                                    "path": [
+                                        "catalogue",
+                                        "{{id}}"
+                                    ]
+                                }
+                            },
+                            "response": [],
+                            "event": [
+                                {
+                                    "listen": "prerequest",
+                                    "script": {
+                                        "id": "e3b42ff7-259a-40b0-a97e-488a3f010c5e",
+                                        "exec": [
+                                            "// Some of the environment variables might be set in the parent folders.",
+                                            "pm.variables.set(\"id\", \"3395a43e-2d88-40de-b95f-e00e1502085b\");"
+                                        ],
+                                        "type": "text/javascript"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "event": [],
+                    "protocolProfileBehavior": {}
+                },
+                {
+                    "id": "e730cd15-0eda-44de-8fa7-cdb6098ca089",
+                    "name": "/category.html",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{edge_router}}/category.html",
+                            "protocol": "",
+                            "host": "{{edge_router}}",
+                            "path": [
+                                "category.html"
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "id": "57b0c8ae-d1f4-4862-94d9-36b07138e102",
+                                "exec": [],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "558fb8af-75d8-49af-8e29-a1a673426fc1",
+                    "name": "/customers/{{customerId}}",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "x-requested-with",
+                                "value": "XMLHttpRequest",
+                                "type": "text"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{edge_router}}/customers/{{customerId}}",
+                            "protocol": "",
+                            "host": "{{edge_router}}",
+                            "path": [
+                                "customers",
+                                "{{customerId}}"
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "id": "d31ae42f-b445-4e08-a4a9-f5b364f3616c",
+                                "exec": [
+                                    "// Some of the environment variables might be set in the parent folders.",
+                                    "pm.variables.set(\"customerId\", \"m2ocBH96TVeKzn9aWgu1llMQAVUvsVhx\");"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "17b77921-fdb5-410f-bed3-3d446314cbb2",
+                    "name": "/detail.html",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{edge_router}}/detail.html",
+                            "protocol": "",
+                            "host": "{{edge_router}}",
+                            "path": [
+                                "detail.html"
+                            ],
+                            "query": [
+                                {
+                                    "key": "id",
+                                    "value": "{{id}}"
+                                }
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "id": "2d641bab-c3c2-4e3d-ad7f-b09f69fd9721",
+                                "exec": [
+                                    "// Some of the environment variables might be set in the parent folders.",
+                                    "pm.variables.set(\"id\", \"510a0d7e-8e83-4193-b483-e27e09ddc34d\");"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "44fc33fc-65d8-4204-a6e5-88df3bc7f30e",
+                    "name": "/index.html",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{edge_router}}/index.html",
+                            "protocol": "",
+                            "host": "{{edge_router}}",
+                            "path": [
+                                "index.html"
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "id": "999f2f16-fb1c-4ec9-9ffd-4b97db0ad45e",
+                                "exec": [],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "event": [
+                {
+                    "listen": "prerequest",
+                    "script": {
+                        "id": "cba56924-6be0-4570-b9dd-2846c2d13695",
+                        "exec": [],
+                        "type": "text/javascript"
+                    }
+                }
+            ],
+            "protocolProfileBehavior": {}
+        },
+        {
+            "id": "e2d0f4f7-5e30-48de-992e-aed24be9def6",
+            "name": "front-end",
+            "item": [
+                {
+                    "id": "0857f175-57aa-432c-acdd-44ef62791989",
+                    "name": "/",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{front_end}}",
+                            "protocol": "",
+                            "host": "{{front_end}}",
+                            "path": []
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "id": "648d9780-0837-4e7a-91a2-5df73345aa04",
+                                "exec": [],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "6e4ebeb3-9764-4c45-b765-ef5f09ed905a",
+                    "name": "/basket.html",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{front_end}}/basket.html",
+                            "protocol": "",
+                            "host": "{{front_end}}",
+                            "path": [
+                                "basket.html"
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "id": "cabd87e0-9058-416e-8c4e-31ebc40a7c09",
+                                "exec": [],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "2a75b7e2-e134-43ae-a9b2-88ab5091a136",
+                    "name": "/cart",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "x-requested-with",
+                                "value": "XMLHttpRequest",
+                                "type": "text"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{front_end}}/cart",
+                            "protocol": "",
+                            "host": "{{front_end}}",
+                            "path": [
+                                "cart"
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "id": "c345f24a-d1d5-4a3b-89e1-b86f6b4a3bdf",
+                                "exec": [],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "e3eee154-9d70-4e02-9cbd-ecfb9c84113c",
+                    "name": "catalogue",
+                    "item": [
+                        {
+                            "id": "dd473f82-c05e-4011-add5-363f4abf10b6",
+                            "name": "/catalogue",
+                            "request": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "x-requested-with",
+                                        "value": "XMLHttpRequest",
+                                        "type": "text"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{front_end}}/catalogue",
+                                    "protocol": "",
+                                    "host": "{{front_end}}",
+                                    "path": [
+                                        "catalogue"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "size",
+                                            "value": "{{size}}"
+                                        },
+                                        {
+                                            "key": "sort",
+                                            "value": "id"
+                                        },
+                                        {
+                                            "key": "tags",
+                                            "value": "brown"
+                                        }
+                                    ]
+                                }
+                            },
+                            "response": [],
+                            "event": [
+                                {
+                                    "listen": "prerequest",
+                                    "script": {
+                                        "id": "a64822c3-7a58-4cda-91ae-fa8a5c1f426f",
+                                        "exec": [
+                                            "// Some of the environment variables might be set in the parent folders.",
+                                            "pm.variables.set(\"size\", \"5\");"
+                                        ],
+                                        "type": "text/javascript"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "id": "461011ec-acc8-4f7a-8c58-a96656186294",
+                            "name": "/catalogue/{{id}}",
+                            "request": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "x-requested-with",
+                                        "value": "XMLHttpRequest",
+                                        "type": "text"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{front_end}}/catalogue/{{id}}",
+                                    "protocol": "",
+                                    "host": "{{front_end}}",
+                                    "path": [
+                                        "catalogue",
+                                        "{{id}}"
+                                    ]
+                                }
+                            },
+                            "response": [],
+                            "event": [
+                                {
+                                    "listen": "prerequest",
+                                    "script": {
+                                        "id": "8f019140-98fe-4b70-9bb9-e0dfaba1937e",
+                                        "exec": [
+                                            "// Some of the environment variables might be set in the parent folders.",
+                                            "pm.variables.set(\"id\", \"3395a43e-2d88-40de-b95f-e00e1502085b\");"
+                                        ],
+                                        "type": "text/javascript"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "event": [],
+                    "protocolProfileBehavior": {}
+                },
+                {
+                    "id": "3a421f2b-4286-48cf-bb9d-5ed84bb99d59",
+                    "name": "/category.html",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{front_end}}/category.html",
+                            "protocol": "",
+                            "host": "{{front_end}}",
+                            "path": [
+                                "category.html"
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "id": "a61077e8-c262-4331-a386-db3bcb7fe6c6",
+                                "exec": [],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "0b79e2c0-5956-4457-9b33-ffb25dbe36e4",
+                    "name": "/customers/{{customerId}}",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "x-requested-with",
+                                "value": "XMLHttpRequest",
+                                "type": "text"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{front_end}}/customers/{{customerId}}",
+                            "protocol": "",
+                            "host": "{{front_end}}",
+                            "path": [
+                                "customers",
+                                "{{customerId}}"
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "id": "94175440-7e6b-4aab-912f-a80c4a2eb0d0",
+                                "exec": [
+                                    "// Some of the environment variables might be set in the parent folders.",
+                                    "pm.variables.set(\"customerId\", \"m2ocBH96TVeKzn9aWgu1llMQAVUvsVhx\");"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "882eee71-da40-41cf-aaec-ce37233e2f9e",
+                    "name": "/detail.html",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{front_end}}/detail.html",
+                            "protocol": "",
+                            "host": "{{front_end}}",
+                            "path": [
+                                "detail.html"
+                            ],
+                            "query": [
+                                {
+                                    "key": "id",
+                                    "value": "{{id}}"
+                                }
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "id": "6df4db3c-e675-4228-af58-dd952e72102c",
+                                "exec": [
+                                    "// Some of the environment variables might be set in the parent folders.",
+                                    "pm.variables.set(\"id\", \"510a0d7e-8e83-4193-b483-e27e09ddc34d\");"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "354da24e-219c-466a-b60e-321b20ff6d7e",
+                    "name": "/index.html",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{front_end}}/index.html",
+                            "protocol": "",
+                            "host": "{{front_end}}",
+                            "path": [
+                                "index.html"
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "id": "2ee0f01f-f685-440a-975f-ec415bce1134",
+                                "exec": [],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "event": [
+                {
+                    "listen": "prerequest",
+                    "script": {
+                        "id": "4110f880-8a05-4562-8691-c214d5fb7885",
+                        "exec": [],
+                        "type": "text/javascript"
+                    }
+                }
+            ],
+            "protocolProfileBehavior": {}
+        },
+        {
+            "id": "f2318036-728c-4374-82c7-003f9286ad05",
+            "name": "user",
+            "item": [
+                {
+                    "id": "41049057-1ed2-45d4-ae7d-1b05493e7360",
+                    "name": "customers",
+                    "item": [
+                        {
+                            "id": "6df44109-134d-40dc-8d9f-d0d11eea8973",
+                            "name": "/customers/{{id}}",
+                            "request": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{user}}/customers/{{id}}",
+                                    "protocol": "",
+                                    "host": "{{user}}",
+                                    "path": [
+                                        "customers",
+                                        "{{id}}"
+                                    ]
+                                }
+                            },
+                            "response": [],
+                            "event": [
+                                {
+                                    "listen": "prerequest",
+                                    "script": {
+                                        "id": "88e40dc0-60fe-4316-9393-7c164a548b01",
+                                        "exec": [
+                                            "// Some of the environment variables might be set in the parent folders.",
+                                            "pm.variables.set(\"id\", \"57a98d98e4b00679b4a830b2\");"
+                                        ],
+                                        "type": "text/javascript"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "id": "d8191bd9-46d2-43e4-b0e9-d59267ee1c79",
+                            "name": "/customers/{{id}}/addresses",
+                            "request": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{user}}/customers/{{id}}/addresses",
+                                    "protocol": "",
+                                    "host": "{{user}}",
+                                    "path": [
+                                        "customers",
+                                        "{{id}}",
+                                        "addresses"
+                                    ]
+                                }
+                            },
+                            "response": [],
+                            "event": [
+                                {
+                                    "listen": "prerequest",
+                                    "script": {
+                                        "id": "61971628-6653-4e4a-aa7e-4d50b8784218",
+                                        "exec": [
+                                            "// Some of the environment variables might be set in the parent folders.",
+                                            "pm.variables.set(\"id\", \"57a98d98e4b00679b4a830b2\");"
+                                        ],
+                                        "type": "text/javascript"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3db237d7-b441-4d8e-81c2-7bfb86523edf",
+                            "name": "/customers/{{id}}/cards",
+                            "request": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{user}}/customers/{{id}}/cards",
+                                    "protocol": "",
+                                    "host": "{{user}}",
+                                    "path": [
+                                        "customers",
+                                        "{{id}}",
+                                        "cards"
+                                    ]
+                                }
+                            },
+                            "response": [],
+                            "event": [
+                                {
+                                    "listen": "prerequest",
+                                    "script": {
+                                        "id": "f7d0f3fa-4f21-4faf-a375-6526b3db3467",
+                                        "exec": [
+                                            "// Some of the environment variables might be set in the parent folders.",
+                                            "pm.variables.set(\"id\", \"57a98d98e4b00679b4a830b2\");"
+                                        ],
+                                        "type": "text/javascript"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "event": [],
+                    "protocolProfileBehavior": {}
+                }
+            ],
+            "event": [
+                {
+                    "listen": "prerequest",
+                    "script": {
+                        "id": "8f5f7b2a-e3f2-4546-b69a-070d7fa6cbf3",
+                        "exec": [],
+                        "type": "text/javascript"
+                    }
+                }
+            ],
+            "protocolProfileBehavior": {}
+        }
+    ],
+    "event": [],
+    "variable": [
+        {
+            "id": "7cb1ee53-940a-487e-930f-85f0afe1956f",
+            "key": "carts",
+            "value": "http://carts"
+        },
+        {
+            "id": "dac66ebf-e5c9-43d0-9b29-c806fa9394ad",
+            "key": "catalogue",
+            "value": "http://catalogue"
+        },
+        {
+            "id": "ebfd96f2-c1ef-4f20-963a-0f557f15313e",
+            "key": "edge_router",
+            "value": "http://edge-router"
+        },
+        {
+            "id": "b1e3ac80-1261-40f3-a34b-103835950302",
+            "key": "front_end",
+            "value": "http://front-end"
+        },
+        {
+            "id": "364ea41f-b778-4057-ab71-22ceb75518df",
+            "key": "user",
+            "value": "http://user"
+        }
+    ],
+    "protocolProfileBehavior": {}
+}

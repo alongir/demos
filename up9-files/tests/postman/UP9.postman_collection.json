@@ -1,0 +1,2036 @@
+{
+    "info": {
+        "id": "97aad2a0-8096-4bb7-a9e9-f41f8c596d68",
+        "name": "Unknown - ag.weave.021703/all rev 16 (by UP9.com)",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "id": "7076d8ae-c253-42de-a820-afe3d78b9372",
+            "name": "Tests_carts",
+            "item": [
+                {
+                    "id": "af4f381f-2767-4f82-ba78-7876091be411",
+                    "name": "test_07_get_carts_id_items",
+                    "item": [
+                        {
+                            "id": "51273a51-385b-421d-931e-1db9f778cd78",
+                            "name": "carts/carts/{{id}}/items",
+                            "request": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{carts}}/carts/{{id}}/items",
+                                    "protocol": "",
+                                    "host": "{{carts}}",
+                                    "path": [
+                                        "carts",
+                                        "{{id}}",
+                                        "items"
+                                    ]
+                                }
+                            },
+                            "response": [],
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "id": "eae984f9-b859-4df2-9ebe-306c488ae746",
+                                        "exec": [
+                                            "// Some of the environment variables might be set in the parent folders.",
+                                            "pm.test(\"GET http://carts/carts/{id}/items (endp 7)\", function() {",
+                                            "    pm.response.to.have.status(200);",
+                                            "});"
+                                        ],
+                                        "type": "text/javascript"
+                                    }
+                                },
+                                {
+                                    "listen": "prerequest",
+                                    "script": {
+                                        "id": "338c3047-22d6-45ea-afe9-9b0a4291f0eb",
+                                        "exec": [
+                                            "// Some of the environment variables might be set in the parent folders.",
+                                            "pm.variables.set(\"id\", \"m2ocBH96TVeKzn9aWgu1llMQAVUvsVhx\");"
+                                        ],
+                                        "type": "text/javascript"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "event": [
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "id": "d538b654-c77a-48de-9b57-8025f95f8ba2",
+                                "exec": [],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "protocolProfileBehavior": {}
+                },
+                {
+                    "id": "eb21bd75-e0dd-4c52-afc1-36a861149e13",
+                    "name": "test_08_post_carts_id_items",
+                    "item": [
+                        {
+                            "id": "18d7684c-156b-40fd-a81f-b4aa9022f1c8",
+                            "name": "catalogue/catalogue",
+                            "request": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{catalogue}}/catalogue",
+                                    "protocol": "",
+                                    "host": "{{catalogue}}",
+                                    "path": [
+                                        "catalogue"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "size",
+                                            "value": "{{size}}"
+                                        },
+                                        {
+                                            "key": "sort",
+                                            "value": "id"
+                                        },
+                                        {
+                                            "key": "tags",
+                                            "value": "{{tags}}"
+                                        }
+                                    ]
+                                }
+                            },
+                            "response": [],
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "id": "67386955-bf76-47ba-a290-89effdcf98cc",
+                                        "exec": [
+                                            "// Some of the environment variables might be set in the parent folders.",
+                                            "pm.test(\"GET http://catalogue/catalogue (endp 5)\", function() {",
+                                            "    eval(globals.up9lib);",
+                                            "    const jsonBody = pm.response.json();",
+                                            "    pm.response.to.have.status(200);",
+                                            "    pm.collectionVariables.set(\"itemId\", JSONPath.JSONPath({",
+                                            "        path: \"$.[*].id\",",
+                                            "        json: jsonBody",
+                                            "    })[0]);",
+                                            "    pm.collectionVariables.set(\"unitPrice\", JSONPath.JSONPath({",
+                                            "        path: \"$.[*].price\",",
+                                            "        json: jsonBody",
+                                            "    })[0]);",
+                                            "});"
+                                        ],
+                                        "type": "text/javascript"
+                                    }
+                                },
+                                {
+                                    "listen": "prerequest",
+                                    "script": {
+                                        "id": "33258ac6-0ced-430a-8dd3-f5d3fe03e451",
+                                        "exec": [
+                                            "// Some of the environment variables might be set in the parent folders.",
+                                            "pm.variables.set(\"size\", \"3\");",
+                                            "pm.variables.set(\"tags\", \"brown\");"
+                                        ],
+                                        "type": "text/javascript"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "id": "27b1ae2d-4f00-4863-b87d-c4c65e920c37",
+                            "name": "carts/carts/{{id}}/items",
+                            "request": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "accept",
+                                        "value": "application/json",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "key": "content-type",
+                                        "value": "application/json",
+                                        "type": "text"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{carts}}/carts/{{id}}/items",
+                                    "protocol": "",
+                                    "host": "{{carts}}",
+                                    "path": [
+                                        "carts",
+                                        "{{id}}",
+                                        "items"
+                                    ]
+                                },
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"itemId\": \"{{itemId}}\",\n    \"unitPrice\": {{unitPrice}}\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                }
+                            },
+                            "response": [],
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "id": "4fe15761-c2c8-4ecf-91b7-cb75de91020c",
+                                        "exec": [
+                                            "// Some of the environment variables might be set in the parent folders.",
+                                            "pm.test(\"POST http://carts/carts/{id}/items (endp 8)\", function() {",
+                                            "    pm.response.to.have.status(201);",
+                                            "});"
+                                        ],
+                                        "type": "text/javascript"
+                                    }
+                                },
+                                {
+                                    "listen": "prerequest",
+                                    "script": {
+                                        "id": "67f96f8d-f82d-4ccd-8aab-64821b9c72cd",
+                                        "exec": [
+                                            "// Some of the environment variables might be set in the parent folders.",
+                                            "pm.variables.set(\"id\", \"m2ocBH96TVeKzn9aWgu1llMQAVUvsVhx\");"
+                                        ],
+                                        "type": "text/javascript"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "event": [
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "id": "3700702a-0ba7-433f-b7b5-3b2a7002d7ab",
+                                "exec": [],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "protocolProfileBehavior": {}
+                },
+                {
+                    "id": "df49a6a9-b990-4e96-909c-627fef90454a",
+                    "name": "test_21_get_carts_id_merge",
+                    "item": [
+                        {
+                            "id": "e85c2b2c-b488-4959-b5e8-6d25e1c5d163",
+                            "name": "carts/carts/{{id}}/merge",
+                            "request": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{carts}}/carts/{{id}}/merge",
+                                    "protocol": "",
+                                    "host": "{{carts}}",
+                                    "path": [
+                                        "carts",
+                                        "{{id}}",
+                                        "merge"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "sessionId",
+                                            "value": "{{sessionId}}"
+                                        }
+                                    ]
+                                }
+                            },
+                            "response": [],
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "id": "e7f5cb71-a50e-4e99-a0fe-dbd614cafbbd",
+                                        "exec": [
+                                            "// Some of the environment variables might be set in the parent folders.",
+                                            "pm.test(\"GET http://carts/carts/{id}/merge (endp 21)\", function() {",
+                                            "    pm.response.to.have.status(202);",
+                                            "});"
+                                        ],
+                                        "type": "text/javascript"
+                                    }
+                                },
+                                {
+                                    "listen": "prerequest",
+                                    "script": {
+                                        "id": "abb87077-45a0-40bd-93e5-52e6d2b23697",
+                                        "exec": [
+                                            "// Some of the environment variables might be set in the parent folders.",
+                                            "pm.variables.set(\"id\", \"m2ocBH96TVeKzn9aWgu1llMQAVUvsVhx\");",
+                                            "pm.variables.set(\"sessionId\", \"m2ocBH96TVeKzn9aWgu1llMQAVUvsVhx\");"
+                                        ],
+                                        "type": "text/javascript"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "event": [
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "id": "321051c2-0e92-4c82-900d-0091527de01e",
+                                "exec": [],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "protocolProfileBehavior": {}
+                }
+            ],
+            "event": [
+                {
+                    "listen": "prerequest",
+                    "script": {
+                        "id": "c36cefac-9361-4ff0-8aae-c4d3d4dcd83c",
+                        "exec": [],
+                        "type": "text/javascript"
+                    }
+                }
+            ],
+            "protocolProfileBehavior": {}
+        },
+        {
+            "id": "02f2acc3-6607-4617-bfca-98e573ecfd97",
+            "name": "Tests_catalogue",
+            "item": [
+                {
+                    "id": "79fe4def-4624-4552-a9da-2d841ce9de60",
+                    "name": "test_06_get_catalogue_id",
+                    "item": [
+                        {
+                            "id": "2939e5de-1dbe-41ce-8de4-dbd391392584",
+                            "name": "catalogue/catalogue",
+                            "request": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{catalogue}}/catalogue",
+                                    "protocol": "",
+                                    "host": "{{catalogue}}",
+                                    "path": [
+                                        "catalogue"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "size",
+                                            "value": "{{size}}"
+                                        },
+                                        {
+                                            "key": "sort",
+                                            "value": "id"
+                                        },
+                                        {
+                                            "key": "tags",
+                                            "value": "{{tags}}"
+                                        }
+                                    ]
+                                }
+                            },
+                            "response": [],
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "id": "03db7382-429b-442c-92c7-61de3ad0808b",
+                                        "exec": [
+                                            "// Some of the environment variables might be set in the parent folders.",
+                                            "pm.test(\"GET http://catalogue/catalogue (endp 5)\", function() {",
+                                            "    eval(globals.up9lib);",
+                                            "    const jsonBody = pm.response.json();",
+                                            "    pm.response.to.have.status(200);",
+                                            "    pm.collectionVariables.set(\"id\", JSONPath.JSONPath({",
+                                            "        path: \"$.[*].id\",",
+                                            "        json: jsonBody",
+                                            "    })[0]);",
+                                            "});"
+                                        ],
+                                        "type": "text/javascript"
+                                    }
+                                },
+                                {
+                                    "listen": "prerequest",
+                                    "script": {
+                                        "id": "b8abba68-1e11-4449-8d29-687e2fb0b247",
+                                        "exec": [
+                                            "// Some of the environment variables might be set in the parent folders.",
+                                            "pm.variables.set(\"size\", \"5\");",
+                                            "pm.variables.set(\"tags\", \"brown\");"
+                                        ],
+                                        "type": "text/javascript"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "id": "ecbdf40b-7a4f-45ad-9088-ce60350360d1",
+                            "name": "catalogue/catalogue/{{id}}",
+                            "request": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{catalogue}}/catalogue/{{id}}",
+                                    "protocol": "",
+                                    "host": "{{catalogue}}",
+                                    "path": [
+                                        "catalogue",
+                                        "{{id}}"
+                                    ]
+                                }
+                            },
+                            "response": [],
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "id": "160d2005-339d-4ed3-a430-5517e50d9128",
+                                        "exec": [
+                                            "// Some of the environment variables might be set in the parent folders.",
+                                            "pm.test(\"GET http://catalogue/catalogue/{id} (endp 6)\", function() {",
+                                            "    pm.response.to.have.status(200);",
+                                            "});"
+                                        ],
+                                        "type": "text/javascript"
+                                    }
+                                },
+                                {
+                                    "listen": "prerequest",
+                                    "script": {
+                                        "id": "e777c99f-2248-4444-8843-aed7a26389b5",
+                                        "exec": [],
+                                        "type": "text/javascript"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "event": [
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "id": "f1de536c-5b75-42c5-a286-0d93ab5d2c8e",
+                                "exec": [],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "protocolProfileBehavior": {}
+                }
+            ],
+            "event": [
+                {
+                    "listen": "prerequest",
+                    "script": {
+                        "id": "bc9c498b-2950-4bb7-9813-803173054686",
+                        "exec": [],
+                        "type": "text/javascript"
+                    }
+                }
+            ],
+            "protocolProfileBehavior": {}
+        },
+        {
+            "id": "17803f45-7aa3-4106-99a6-0953f769615f",
+            "name": "Tests_edge_router",
+            "item": [
+                {
+                    "id": "db5e8d03-944f-4c2d-ab3b-2c66d2c0160c",
+                    "name": "test_15_get_",
+                    "item": [
+                        {
+                            "id": "676d21aa-2259-4201-9aa7-dce846c0e0eb",
+                            "name": "edge_router",
+                            "request": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{edge_router}}",
+                                    "protocol": "",
+                                    "host": "{{edge_router}}",
+                                    "path": []
+                                }
+                            },
+                            "response": [],
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "id": "a941a8a7-7b9a-4288-a9e1-d92968afcf1c",
+                                        "exec": [
+                                            "// Some of the environment variables might be set in the parent folders.",
+                                            "pm.test(\"GET http://edge-router/ (endp 15)\", function() {",
+                                            "    eval(globals.up9lib);",
+                                            "    const responseText = pm.response.text();",
+                                            "    pm.response.to.have.status(200);",
+                                            "    pm.expect(CSSselect(\"div#hot div.box div.container div h2\", responseText)).to.have.string(\"Hot this week\");",
+                                            "});"
+                                        ],
+                                        "type": "text/javascript"
+                                    }
+                                },
+                                {
+                                    "listen": "prerequest",
+                                    "script": {
+                                        "id": "94a251c9-3d2a-425b-8069-9f62d8b794b5",
+                                        "exec": [],
+                                        "type": "text/javascript"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "event": [
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "id": "36ad85a7-fa58-4e49-ba79-ea1613da79f4",
+                                "exec": [],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "protocolProfileBehavior": {}
+                },
+                {
+                    "id": "f33eb11a-8a51-4de3-8217-1bd10c70ffeb",
+                    "name": "test_16_get_basket_html",
+                    "item": [
+                        {
+                            "id": "ed1ceb10-83f6-478f-b771-5d456cd05614",
+                            "name": "edge_router/basket.html",
+                            "request": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{edge_router}}/basket.html",
+                                    "protocol": "",
+                                    "host": "{{edge_router}}",
+                                    "path": [
+                                        "basket.html"
+                                    ]
+                                }
+                            },
+                            "response": [],
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "id": "2f56476e-2b62-4ad4-a52c-46b8bb705634",
+                                        "exec": [
+                                            "// Some of the environment variables might be set in the parent folders.",
+                                            "pm.test(\"GET http://edge-router/basket.html (endp 16)\", function() {",
+                                            "    eval(globals.up9lib);",
+                                            "    const responseText = pm.response.text();",
+                                            "    pm.response.to.have.status(200);",
+                                            "    pm.expect(CSSselect(\"div#basket div.box form h1\", responseText)).to.have.string(\"Shopping cart\");",
+                                            "});"
+                                        ],
+                                        "type": "text/javascript"
+                                    }
+                                },
+                                {
+                                    "listen": "prerequest",
+                                    "script": {
+                                        "id": "8096e043-33c2-4105-bac4-f818d8613f64",
+                                        "exec": [],
+                                        "type": "text/javascript"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "event": [
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "id": "20d01282-b7f9-4685-8aaf-358bf7bcbc63",
+                                "exec": [],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "protocolProfileBehavior": {}
+                },
+                {
+                    "id": "3b1bb751-145a-4d7a-ae2e-197cf5da2564",
+                    "name": "test_18_get_category_html",
+                    "item": [
+                        {
+                            "id": "51be2bdd-f6af-4bd7-8b10-b859322e2831",
+                            "name": "edge_router/category.html",
+                            "request": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{edge_router}}/category.html",
+                                    "protocol": "",
+                                    "host": "{{edge_router}}",
+                                    "path": [
+                                        "category.html"
+                                    ]
+                                }
+                            },
+                            "response": [],
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "id": "31d4c803-2b3e-4562-925c-5a9b210a1198",
+                                        "exec": [
+                                            "// Some of the environment variables might be set in the parent folders.",
+                                            "pm.test(\"GET http://edge-router/category.html (endp 18)\", function() {",
+                                            "    eval(globals.up9lib);",
+                                            "    const responseText = pm.response.text();",
+                                            "    pm.response.to.have.status(200);",
+                                            "    pm.expect(CSSselect(\"div#content div.container div div.panel.panel-default.sidebar-menu div.panel-heading h3.panel-title\", responseText)).to.have.string(\"Filters \");",
+                                            "});"
+                                        ],
+                                        "type": "text/javascript"
+                                    }
+                                },
+                                {
+                                    "listen": "prerequest",
+                                    "script": {
+                                        "id": "770f9460-2231-41cc-a267-fd801b65f37a",
+                                        "exec": [],
+                                        "type": "text/javascript"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "event": [
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "id": "79a073c7-2644-4909-bc4c-039c899592ae",
+                                "exec": [],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "protocolProfileBehavior": {}
+                },
+                {
+                    "id": "a39e2892-10fc-44ed-a8f3-06c6930fdce1",
+                    "name": "test_19_get_detail_html",
+                    "item": [
+                        {
+                            "id": "cbde4f2e-e2c9-4d63-a22a-3bbcf3719533",
+                            "name": "edge_router/catalogue",
+                            "request": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "x-requested-with",
+                                        "value": "XMLHttpRequest",
+                                        "type": "text"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{edge_router}}/catalogue",
+                                    "protocol": "",
+                                    "host": "{{edge_router}}",
+                                    "path": [
+                                        "catalogue"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "size",
+                                            "value": "{{size}}"
+                                        },
+                                        {
+                                            "key": "sort",
+                                            "value": "id"
+                                        },
+                                        {
+                                            "key": "tags",
+                                            "value": "brown"
+                                        }
+                                    ]
+                                }
+                            },
+                            "response": [],
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "id": "2cff6526-c2cc-4eee-9660-43460131cb6b",
+                                        "exec": [
+                                            "// Some of the environment variables might be set in the parent folders.",
+                                            "pm.test(\"GET http://edge-router/catalogue (endp 17)\", function() {",
+                                            "    eval(globals.up9lib);",
+                                            "    const jsonBody = pm.response.json();",
+                                            "    pm.response.to.have.status(200);",
+                                            "    pm.collectionVariables.set(\"id\", JSONPath.JSONPath({",
+                                            "        path: \"$.[*].id\",",
+                                            "        json: jsonBody",
+                                            "    })[0]);",
+                                            "});"
+                                        ],
+                                        "type": "text/javascript"
+                                    }
+                                },
+                                {
+                                    "listen": "prerequest",
+                                    "script": {
+                                        "id": "2f5e3fb5-35d9-4452-87b4-7911504fca65",
+                                        "exec": [
+                                            "// Some of the environment variables might be set in the parent folders.",
+                                            "pm.variables.set(\"size\", \"5\");"
+                                        ],
+                                        "type": "text/javascript"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2dadfe8b-d393-4ecc-89cc-a7353576ffdb",
+                            "name": "edge_router/detail.html",
+                            "request": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{edge_router}}/detail.html",
+                                    "protocol": "",
+                                    "host": "{{edge_router}}",
+                                    "path": [
+                                        "detail.html"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "id",
+                                            "value": "{{id}}"
+                                        }
+                                    ]
+                                }
+                            },
+                            "response": [],
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "id": "a5c556e3-f018-4864-bf2b-ab582f9a29c5",
+                                        "exec": [
+                                            "// Some of the environment variables might be set in the parent folders.",
+                                            "pm.test(\"GET http://edge-router/detail.html (endp 19)\", function() {",
+                                            "    eval(globals.up9lib);",
+                                            "    const responseText = pm.response.text();",
+                                            "    pm.response.to.have.status(200);",
+                                            "    pm.expect(CSSselect(\"div#content div.container div div.row.same-height-row div div.box.same-height h3\", responseText)).to.have.string(\"You may also like these products\");",
+                                            "});"
+                                        ],
+                                        "type": "text/javascript"
+                                    }
+                                },
+                                {
+                                    "listen": "prerequest",
+                                    "script": {
+                                        "id": "13262804-cf6b-4eac-8501-84d5c811dd96",
+                                        "exec": [],
+                                        "type": "text/javascript"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "event": [
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "id": "d080c9db-9123-409c-9f71-fb91706153e7",
+                                "exec": [],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "protocolProfileBehavior": {}
+                },
+                {
+                    "id": "2cdfdc41-2321-434c-a4fa-00d5bb637f59",
+                    "name": "test_27_get_cart",
+                    "item": [
+                        {
+                            "id": "2f24ad83-b5f7-4fad-a32a-2dba5dcdd8fd",
+                            "name": "edge_router/cart",
+                            "request": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "x-requested-with",
+                                        "value": "XMLHttpRequest",
+                                        "type": "text"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{edge_router}}/cart",
+                                    "protocol": "",
+                                    "host": "{{edge_router}}",
+                                    "path": [
+                                        "cart"
+                                    ]
+                                }
+                            },
+                            "response": [],
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "id": "919e981b-6f15-456a-9079-aae256a66bb3",
+                                        "exec": [
+                                            "// Some of the environment variables might be set in the parent folders.",
+                                            "pm.test(\"GET http://edge-router/cart (endp 27)\", function() {",
+                                            "    pm.response.to.have.status(200);",
+                                            "});"
+                                        ],
+                                        "type": "text/javascript"
+                                    }
+                                },
+                                {
+                                    "listen": "prerequest",
+                                    "script": {
+                                        "id": "dad06300-bd97-4113-9d76-f0270a457a51",
+                                        "exec": [],
+                                        "type": "text/javascript"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "event": [
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "id": "345cfa7f-0a47-45a0-8480-a982439c9153",
+                                "exec": [],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "protocolProfileBehavior": {}
+                },
+                {
+                    "id": "d8acc1fb-f1af-4adf-8cf2-3b3f395f7720",
+                    "name": "test_28_get_catalogue_id",
+                    "item": [
+                        {
+                            "id": "9d27f70e-1e10-46b3-82d2-2f416777b2f1",
+                            "name": "edge_router/catalogue",
+                            "request": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "x-requested-with",
+                                        "value": "XMLHttpRequest",
+                                        "type": "text"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{edge_router}}/catalogue",
+                                    "protocol": "",
+                                    "host": "{{edge_router}}",
+                                    "path": [
+                                        "catalogue"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "size",
+                                            "value": "{{size}}"
+                                        },
+                                        {
+                                            "key": "sort",
+                                            "value": "id"
+                                        },
+                                        {
+                                            "key": "tags",
+                                            "value": "brown"
+                                        }
+                                    ]
+                                }
+                            },
+                            "response": [],
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "id": "e6b045d1-069b-4112-86d0-f0347f75c11e",
+                                        "exec": [
+                                            "// Some of the environment variables might be set in the parent folders.",
+                                            "pm.test(\"GET http://edge-router/catalogue (endp 17)\", function() {",
+                                            "    eval(globals.up9lib);",
+                                            "    const jsonBody = pm.response.json();",
+                                            "    pm.response.to.have.status(200);",
+                                            "    pm.collectionVariables.set(\"id\", JSONPath.JSONPath({",
+                                            "        path: \"$.[*].id\",",
+                                            "        json: jsonBody",
+                                            "    })[0]);",
+                                            "});"
+                                        ],
+                                        "type": "text/javascript"
+                                    }
+                                },
+                                {
+                                    "listen": "prerequest",
+                                    "script": {
+                                        "id": "873e002a-b14d-4694-bede-7706023996fa",
+                                        "exec": [
+                                            "// Some of the environment variables might be set in the parent folders.",
+                                            "pm.variables.set(\"size\", \"5\");"
+                                        ],
+                                        "type": "text/javascript"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5de6e659-f2f1-478c-9506-5f97c5aa742f",
+                            "name": "edge_router/catalogue/{{id}}",
+                            "request": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "x-requested-with",
+                                        "value": "XMLHttpRequest",
+                                        "type": "text"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{edge_router}}/catalogue/{{id}}",
+                                    "protocol": "",
+                                    "host": "{{edge_router}}",
+                                    "path": [
+                                        "catalogue",
+                                        "{{id}}"
+                                    ]
+                                }
+                            },
+                            "response": [],
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "id": "bacda94a-0ee5-4de1-877d-a059d2173564",
+                                        "exec": [
+                                            "// Some of the environment variables might be set in the parent folders.",
+                                            "pm.test(\"GET http://edge-router/catalogue/{id} (endp 28)\", function() {",
+                                            "    eval(globals.up9lib);",
+                                            "    const jsonBody = pm.response.json();",
+                                            "    pm.response.to.have.status(200);",
+                                            "    pm.expect(JSONPath.JSONPath({",
+                                            "        path: \"$.imageUrl.[*]\",",
+                                            "        json: jsonBody",
+                                            "    })).to.include(\"/catalogue/images/colourful_socks.jpg\");",
+                                            "});"
+                                        ],
+                                        "type": "text/javascript"
+                                    }
+                                },
+                                {
+                                    "listen": "prerequest",
+                                    "script": {
+                                        "id": "9ada298d-1f58-48c8-b861-c6088034a28d",
+                                        "exec": [],
+                                        "type": "text/javascript"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "event": [
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "id": "cfc03c1d-299b-4273-a11a-8a4cee32b66c",
+                                "exec": [],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "protocolProfileBehavior": {}
+                },
+                {
+                    "id": "ea971f91-7a05-42ee-90a8-5c4788f98fb4",
+                    "name": "test_30_get_customers_customerId",
+                    "item": [
+                        {
+                            "id": "fe3c1cb9-2bc2-426f-bcee-4045dea1b73e",
+                            "name": "edge_router/customers/{{customerId}}",
+                            "request": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "x-requested-with",
+                                        "value": "XMLHttpRequest",
+                                        "type": "text"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{edge_router}}/customers/{{customerId}}",
+                                    "protocol": "",
+                                    "host": "{{edge_router}}",
+                                    "path": [
+                                        "customers",
+                                        "{{customerId}}"
+                                    ]
+                                }
+                            },
+                            "response": [],
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "id": "964bca1c-3d0f-44b3-b374-b4b70e234105",
+                                        "exec": [
+                                            "// Some of the environment variables might be set in the parent folders.",
+                                            "pm.test(\"GET http://edge-router/customers/{customerId} (endp 30)\", function() {",
+                                            "    eval(globals.up9lib);",
+                                            "    const jsonBody = pm.response.json();",
+                                            "    pm.response.to.have.status(200);",
+                                            "    pm.expect(JSONPath.JSONPath({",
+                                            "        path: \"$.lastName\",",
+                                            "        json: jsonBody",
+                                            "    })).to.include(\"Name\");",
+                                            "});"
+                                        ],
+                                        "type": "text/javascript"
+                                    }
+                                },
+                                {
+                                    "listen": "prerequest",
+                                    "script": {
+                                        "id": "353daf2b-fbe7-4ddb-ae19-32ab0de1d69f",
+                                        "exec": [
+                                            "// Some of the environment variables might be set in the parent folders.",
+                                            "pm.variables.set(\"customerId\", \"m2ocBH96TVeKzn9aWgu1llMQAVUvsVhx\");"
+                                        ],
+                                        "type": "text/javascript"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "event": [
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "id": "aa522001-37ed-4586-8223-7ac19a64c116",
+                                "exec": [],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "protocolProfileBehavior": {}
+                },
+                {
+                    "id": "867f4985-5513-4399-851c-dee4b42c876d",
+                    "name": "test_31_get_index_html",
+                    "item": [
+                        {
+                            "id": "94289ecf-fd88-48d7-a194-1e4cbed69edc",
+                            "name": "edge_router/index.html",
+                            "request": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{edge_router}}/index.html",
+                                    "protocol": "",
+                                    "host": "{{edge_router}}",
+                                    "path": [
+                                        "index.html"
+                                    ]
+                                }
+                            },
+                            "response": [],
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "id": "b4f56d44-9464-437c-9ba5-bfaf80713fca",
+                                        "exec": [
+                                            "// Some of the environment variables might be set in the parent folders.",
+                                            "pm.test(\"GET http://edge-router/index.html (endp 31)\", function() {",
+                                            "    eval(globals.up9lib);",
+                                            "    const responseText = pm.response.text();",
+                                            "    pm.response.to.have.status(200);",
+                                            "    pm.expect(CSSselect(\"div#hot div.box div.container div h2\", responseText)).to.have.string(\"Hot this week\");",
+                                            "});"
+                                        ],
+                                        "type": "text/javascript"
+                                    }
+                                },
+                                {
+                                    "listen": "prerequest",
+                                    "script": {
+                                        "id": "685c1c75-55fe-4522-8904-5ee7dd9d3e32",
+                                        "exec": [],
+                                        "type": "text/javascript"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "event": [
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "id": "9eb8fec6-184e-48ab-afe5-4f4a6abc7ee1",
+                                "exec": [],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "protocolProfileBehavior": {}
+                }
+            ],
+            "event": [
+                {
+                    "listen": "prerequest",
+                    "script": {
+                        "id": "49364b49-59cd-46c2-8511-7ecc6883101d",
+                        "exec": [],
+                        "type": "text/javascript"
+                    }
+                }
+            ],
+            "protocolProfileBehavior": {}
+        },
+        {
+            "id": "9f4d35d2-a83b-476f-9f0b-54e3547e0638",
+            "name": "Tests_front_end",
+            "item": [
+                {
+                    "id": "f2861292-3ac1-4288-964a-2f845d506afb",
+                    "name": "test_09_get_",
+                    "item": [
+                        {
+                            "id": "847e4a04-2336-4ac8-89be-b9833bb27638",
+                            "name": "front_end",
+                            "request": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{front_end}}",
+                                    "protocol": "",
+                                    "host": "{{front_end}}",
+                                    "path": []
+                                }
+                            },
+                            "response": [],
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "id": "832a3ac6-eafe-43cd-8f96-a6b613491f57",
+                                        "exec": [
+                                            "// Some of the environment variables might be set in the parent folders.",
+                                            "pm.test(\"GET http://front-end/ (endp 9)\", function() {",
+                                            "    eval(globals.up9lib);",
+                                            "    const responseText = pm.response.text();",
+                                            "    pm.response.to.have.status(200);",
+                                            "    pm.expect(CSSselect(\"div#hot div.box div.container div h2\", responseText)).to.have.string(\"Hot this week\");",
+                                            "});"
+                                        ],
+                                        "type": "text/javascript"
+                                    }
+                                },
+                                {
+                                    "listen": "prerequest",
+                                    "script": {
+                                        "id": "443f01c6-1a16-4d1e-8bc7-cbe42d84f80c",
+                                        "exec": [],
+                                        "type": "text/javascript"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "event": [
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "id": "00fcadab-24a2-4337-8589-29106be4b762",
+                                "exec": [],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "protocolProfileBehavior": {}
+                },
+                {
+                    "id": "3cdd1312-f7ff-402f-b849-45cc4e53526e",
+                    "name": "test_10_get_basket_html",
+                    "item": [
+                        {
+                            "id": "d73ef47f-d73e-4161-b007-6ccb63b51707",
+                            "name": "front_end/basket.html",
+                            "request": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{front_end}}/basket.html",
+                                    "protocol": "",
+                                    "host": "{{front_end}}",
+                                    "path": [
+                                        "basket.html"
+                                    ]
+                                }
+                            },
+                            "response": [],
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "id": "47850ad4-861e-4671-a130-1eccc4b767d3",
+                                        "exec": [
+                                            "// Some of the environment variables might be set in the parent folders.",
+                                            "pm.test(\"GET http://front-end/basket.html (endp 10)\", function() {",
+                                            "    eval(globals.up9lib);",
+                                            "    const responseText = pm.response.text();",
+                                            "    pm.response.to.have.status(200);",
+                                            "    pm.expect(CSSselect(\"div#basket div.box form h1\", responseText)).to.have.string(\"Shopping cart\");",
+                                            "});"
+                                        ],
+                                        "type": "text/javascript"
+                                    }
+                                },
+                                {
+                                    "listen": "prerequest",
+                                    "script": {
+                                        "id": "bceb1481-7d3b-43ca-9903-ab7c9bfa3808",
+                                        "exec": [],
+                                        "type": "text/javascript"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "event": [
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "id": "b64332a2-08f5-4b2d-a533-468ed394b506",
+                                "exec": [],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "protocolProfileBehavior": {}
+                },
+                {
+                    "id": "610099f6-c7de-4347-ad17-3e5c7aa44302",
+                    "name": "test_12_get_category_html",
+                    "item": [
+                        {
+                            "id": "3b324230-12de-49f4-b11f-81f10f80b0b6",
+                            "name": "front_end/category.html",
+                            "request": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{front_end}}/category.html",
+                                    "protocol": "",
+                                    "host": "{{front_end}}",
+                                    "path": [
+                                        "category.html"
+                                    ]
+                                }
+                            },
+                            "response": [],
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "id": "10b32d6c-e984-479c-80b1-6611868dc6cf",
+                                        "exec": [
+                                            "// Some of the environment variables might be set in the parent folders.",
+                                            "pm.test(\"GET http://front-end/category.html (endp 12)\", function() {",
+                                            "    eval(globals.up9lib);",
+                                            "    const responseText = pm.response.text();",
+                                            "    pm.response.to.have.status(200);",
+                                            "    pm.expect(CSSselect(\"div#content div.container div div.panel.panel-default.sidebar-menu div.panel-heading h3.panel-title\", responseText)).to.have.string(\"Filters \");",
+                                            "});"
+                                        ],
+                                        "type": "text/javascript"
+                                    }
+                                },
+                                {
+                                    "listen": "prerequest",
+                                    "script": {
+                                        "id": "641fefef-bfcd-4ff7-89bd-0ee4125226ee",
+                                        "exec": [],
+                                        "type": "text/javascript"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "event": [
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "id": "10addfc6-836c-4a53-847b-eb620b6e64ae",
+                                "exec": [],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "protocolProfileBehavior": {}
+                },
+                {
+                    "id": "cb3d272a-7e0a-409a-9609-4b968499c51c",
+                    "name": "test_13_get_detail_html",
+                    "item": [
+                        {
+                            "id": "29a07877-8575-4098-81f9-bd31433e7721",
+                            "name": "front_end/catalogue",
+                            "request": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "x-requested-with",
+                                        "value": "XMLHttpRequest",
+                                        "type": "text"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{front_end}}/catalogue",
+                                    "protocol": "",
+                                    "host": "{{front_end}}",
+                                    "path": [
+                                        "catalogue"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "size",
+                                            "value": "{{size}}"
+                                        },
+                                        {
+                                            "key": "sort",
+                                            "value": "id"
+                                        },
+                                        {
+                                            "key": "tags",
+                                            "value": "brown"
+                                        }
+                                    ]
+                                }
+                            },
+                            "response": [],
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "id": "afe04d97-4427-4b84-83a2-0ebf4cd3d9c1",
+                                        "exec": [
+                                            "// Some of the environment variables might be set in the parent folders.",
+                                            "pm.test(\"GET http://front-end/catalogue (endp 11)\", function() {",
+                                            "    eval(globals.up9lib);",
+                                            "    const jsonBody = pm.response.json();",
+                                            "    pm.response.to.have.status(200);",
+                                            "    pm.collectionVariables.set(\"id\", JSONPath.JSONPath({",
+                                            "        path: \"$.[*].id\",",
+                                            "        json: jsonBody",
+                                            "    })[0]);",
+                                            "});"
+                                        ],
+                                        "type": "text/javascript"
+                                    }
+                                },
+                                {
+                                    "listen": "prerequest",
+                                    "script": {
+                                        "id": "74bf103a-7270-4aad-b9cc-976a4dcfce57",
+                                        "exec": [
+                                            "// Some of the environment variables might be set in the parent folders.",
+                                            "pm.variables.set(\"size\", \"5\");"
+                                        ],
+                                        "type": "text/javascript"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "id": "597b9775-6fc7-48c6-a04c-957a50f609e7",
+                            "name": "front_end/detail.html",
+                            "request": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{front_end}}/detail.html",
+                                    "protocol": "",
+                                    "host": "{{front_end}}",
+                                    "path": [
+                                        "detail.html"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "id",
+                                            "value": "{{id}}"
+                                        }
+                                    ]
+                                }
+                            },
+                            "response": [],
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "id": "402f7abe-f5a0-4ab3-abc6-f8ce1dc79165",
+                                        "exec": [
+                                            "// Some of the environment variables might be set in the parent folders.",
+                                            "pm.test(\"GET http://front-end/detail.html (endp 13)\", function() {",
+                                            "    eval(globals.up9lib);",
+                                            "    const responseText = pm.response.text();",
+                                            "    pm.response.to.have.status(200);",
+                                            "    pm.expect(CSSselect(\"div#content div.container div div.row.same-height-row div div.box.same-height h3\", responseText)).to.have.string(\"You may also like these products\");",
+                                            "});"
+                                        ],
+                                        "type": "text/javascript"
+                                    }
+                                },
+                                {
+                                    "listen": "prerequest",
+                                    "script": {
+                                        "id": "51dc49d7-051c-4459-8da2-0a1e9aab813c",
+                                        "exec": [],
+                                        "type": "text/javascript"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "event": [
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "id": "b02f6337-46bd-4cfb-8978-6d838cf9563f",
+                                "exec": [],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "protocolProfileBehavior": {}
+                },
+                {
+                    "id": "c8676d6d-00fe-4ac5-a710-2aa4c111ac58",
+                    "name": "test_22_get_cart",
+                    "item": [
+                        {
+                            "id": "857a0a85-dd4d-4648-a748-55dfb4327238",
+                            "name": "front_end/cart",
+                            "request": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "x-requested-with",
+                                        "value": "XMLHttpRequest",
+                                        "type": "text"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{front_end}}/cart",
+                                    "protocol": "",
+                                    "host": "{{front_end}}",
+                                    "path": [
+                                        "cart"
+                                    ]
+                                }
+                            },
+                            "response": [],
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "id": "e390b7c0-261b-4f31-acc4-7bf107a7c520",
+                                        "exec": [
+                                            "// Some of the environment variables might be set in the parent folders.",
+                                            "pm.test(\"GET http://front-end/cart (endp 22)\", function() {",
+                                            "    pm.response.to.have.status(200);",
+                                            "});"
+                                        ],
+                                        "type": "text/javascript"
+                                    }
+                                },
+                                {
+                                    "listen": "prerequest",
+                                    "script": {
+                                        "id": "ae148855-fa56-46a0-bb66-897dbb2e59dc",
+                                        "exec": [],
+                                        "type": "text/javascript"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "event": [
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "id": "69142b33-1f91-471b-a8c7-d4e071a8784d",
+                                "exec": [],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "protocolProfileBehavior": {}
+                },
+                {
+                    "id": "f4d3f5e1-a835-41f0-a01d-db09b35d5f46",
+                    "name": "test_23_get_catalogue_id",
+                    "item": [
+                        {
+                            "id": "1510d35d-5838-4413-be53-df558f30344c",
+                            "name": "front_end/catalogue",
+                            "request": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "x-requested-with",
+                                        "value": "XMLHttpRequest",
+                                        "type": "text"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{front_end}}/catalogue",
+                                    "protocol": "",
+                                    "host": "{{front_end}}",
+                                    "path": [
+                                        "catalogue"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "size",
+                                            "value": "{{size}}"
+                                        },
+                                        {
+                                            "key": "sort",
+                                            "value": "id"
+                                        },
+                                        {
+                                            "key": "tags",
+                                            "value": "brown"
+                                        }
+                                    ]
+                                }
+                            },
+                            "response": [],
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "id": "fda28758-7845-43e0-b66b-05cb35152f5e",
+                                        "exec": [
+                                            "// Some of the environment variables might be set in the parent folders.",
+                                            "pm.test(\"GET http://front-end/catalogue (endp 11)\", function() {",
+                                            "    eval(globals.up9lib);",
+                                            "    const jsonBody = pm.response.json();",
+                                            "    pm.response.to.have.status(200);",
+                                            "    pm.collectionVariables.set(\"id\", JSONPath.JSONPath({",
+                                            "        path: \"$.[*].id\",",
+                                            "        json: jsonBody",
+                                            "    })[0]);",
+                                            "});"
+                                        ],
+                                        "type": "text/javascript"
+                                    }
+                                },
+                                {
+                                    "listen": "prerequest",
+                                    "script": {
+                                        "id": "d6b8a0ae-c598-41d3-ad7e-7ebc11f022c1",
+                                        "exec": [
+                                            "// Some of the environment variables might be set in the parent folders.",
+                                            "pm.variables.set(\"size\", \"5\");"
+                                        ],
+                                        "type": "text/javascript"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "id": "7eb18219-d018-4069-8ba5-eb7de67e605c",
+                            "name": "front_end/catalogue/{{id}}",
+                            "request": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "x-requested-with",
+                                        "value": "XMLHttpRequest",
+                                        "type": "text"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{front_end}}/catalogue/{{id}}",
+                                    "protocol": "",
+                                    "host": "{{front_end}}",
+                                    "path": [
+                                        "catalogue",
+                                        "{{id}}"
+                                    ]
+                                }
+                            },
+                            "response": [],
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "id": "039c1f93-2424-4c39-ada4-565adf5fc55f",
+                                        "exec": [
+                                            "// Some of the environment variables might be set in the parent folders.",
+                                            "pm.test(\"GET http://front-end/catalogue/{id} (endp 23)\", function() {",
+                                            "    eval(globals.up9lib);",
+                                            "    const jsonBody = pm.response.json();",
+                                            "    pm.response.to.have.status(200);",
+                                            "    pm.expect(JSONPath.JSONPath({",
+                                            "        path: \"$.imageUrl.[*]\",",
+                                            "        json: jsonBody",
+                                            "    })).to.include(\"/catalogue/images/colourful_socks.jpg\");",
+                                            "});"
+                                        ],
+                                        "type": "text/javascript"
+                                    }
+                                },
+                                {
+                                    "listen": "prerequest",
+                                    "script": {
+                                        "id": "b8b7378a-f4bd-4025-94f6-884f8373c9dc",
+                                        "exec": [],
+                                        "type": "text/javascript"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "event": [
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "id": "da2cfbd7-f4fb-4b7b-85e8-2de3e2a7e445",
+                                "exec": [],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "protocolProfileBehavior": {}
+                },
+                {
+                    "id": "5bcfcd58-8e1a-4ba3-a302-242345d7156b",
+                    "name": "test_25_get_customers_customerId",
+                    "item": [
+                        {
+                            "id": "76bee330-8737-4d6d-b631-a6ca80f8ab30",
+                            "name": "front_end/customers/{{customerId}}",
+                            "request": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "x-requested-with",
+                                        "value": "XMLHttpRequest",
+                                        "type": "text"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{front_end}}/customers/{{customerId}}",
+                                    "protocol": "",
+                                    "host": "{{front_end}}",
+                                    "path": [
+                                        "customers",
+                                        "{{customerId}}"
+                                    ]
+                                }
+                            },
+                            "response": [],
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "id": "e36a9736-f678-4937-9378-79cc5bfb26b5",
+                                        "exec": [
+                                            "// Some of the environment variables might be set in the parent folders.",
+                                            "pm.test(\"GET http://front-end/customers/{customerId} (endp 25)\", function() {",
+                                            "    eval(globals.up9lib);",
+                                            "    const jsonBody = pm.response.json();",
+                                            "    pm.response.to.have.status(200);",
+                                            "    pm.expect(JSONPath.JSONPath({",
+                                            "        path: \"$.lastName\",",
+                                            "        json: jsonBody",
+                                            "    })).to.include(\"Name\");",
+                                            "});"
+                                        ],
+                                        "type": "text/javascript"
+                                    }
+                                },
+                                {
+                                    "listen": "prerequest",
+                                    "script": {
+                                        "id": "e39f4c3e-8535-4074-92de-9900fad939e4",
+                                        "exec": [
+                                            "// Some of the environment variables might be set in the parent folders.",
+                                            "pm.variables.set(\"customerId\", \"m2ocBH96TVeKzn9aWgu1llMQAVUvsVhx\");"
+                                        ],
+                                        "type": "text/javascript"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "event": [
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "id": "23b30f27-e76a-4df6-abb7-c80324cb0ed7",
+                                "exec": [],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "protocolProfileBehavior": {}
+                },
+                {
+                    "id": "25840df2-5c02-490b-bc08-9d67de769c5c",
+                    "name": "test_26_get_index_html",
+                    "item": [
+                        {
+                            "id": "c4a0980b-e2f3-4c86-a3da-da6f854f767d",
+                            "name": "front_end/index.html",
+                            "request": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{front_end}}/index.html",
+                                    "protocol": "",
+                                    "host": "{{front_end}}",
+                                    "path": [
+                                        "index.html"
+                                    ]
+                                }
+                            },
+                            "response": [],
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "id": "45c15483-9980-4dd8-868b-df4136aa54c6",
+                                        "exec": [
+                                            "// Some of the environment variables might be set in the parent folders.",
+                                            "pm.test(\"GET http://front-end/index.html (endp 26)\", function() {",
+                                            "    eval(globals.up9lib);",
+                                            "    const responseText = pm.response.text();",
+                                            "    pm.response.to.have.status(200);",
+                                            "    pm.expect(CSSselect(\"div#hot div.box div.container div h2\", responseText)).to.have.string(\"Hot this week\");",
+                                            "});"
+                                        ],
+                                        "type": "text/javascript"
+                                    }
+                                },
+                                {
+                                    "listen": "prerequest",
+                                    "script": {
+                                        "id": "696b3b61-f060-4a04-8cef-d6129e7ac6cb",
+                                        "exec": [],
+                                        "type": "text/javascript"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "event": [
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "id": "6b866e5a-e1a6-4036-8fa4-7f1c26a31ed4",
+                                "exec": [],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "protocolProfileBehavior": {}
+                }
+            ],
+            "event": [
+                {
+                    "listen": "prerequest",
+                    "script": {
+                        "id": "8a0c2ccc-8e4c-49af-923b-d33faef8b4cb",
+                        "exec": [],
+                        "type": "text/javascript"
+                    }
+                }
+            ],
+            "protocolProfileBehavior": {}
+        },
+        {
+            "id": "0e253aa5-a164-4415-a0ef-280f73b7e912",
+            "name": "Tests_user",
+            "item": [
+                {
+                    "id": "15a13d3e-382e-45c7-bd63-2f952938be92",
+                    "name": "test_01_get_customers_id",
+                    "item": [
+                        {
+                            "id": "45e1cc2e-b2a2-474a-a4dd-9c39aa96da07",
+                            "name": "user/customers/{{id}}",
+                            "request": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{user}}/customers/{{id}}",
+                                    "protocol": "",
+                                    "host": "{{user}}",
+                                    "path": [
+                                        "customers",
+                                        "{{id}}"
+                                    ]
+                                }
+                            },
+                            "response": [],
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "id": "eb401066-18e2-44c3-bd03-cb8bc56cb5cd",
+                                        "exec": [
+                                            "// Some of the environment variables might be set in the parent folders.",
+                                            "pm.test(\"GET http://user/customers/{id} (endp 1)\", function() {",
+                                            "    eval(globals.up9lib);",
+                                            "    const jsonBody = pm.response.json();",
+                                            "    pm.response.to.have.status(200);",
+                                            "    pm.expect(JSONPath.JSONPath({",
+                                            "        path: \"$.lastName\",",
+                                            "        json: jsonBody",
+                                            "    })).to.include(\"Name\");",
+                                            "});"
+                                        ],
+                                        "type": "text/javascript"
+                                    }
+                                },
+                                {
+                                    "listen": "prerequest",
+                                    "script": {
+                                        "id": "5e182664-1ca4-426b-9ae6-85dbb16f5e9d",
+                                        "exec": [
+                                            "// Some of the environment variables might be set in the parent folders.",
+                                            "pm.variables.set(\"id\", \"57a98d98e4b00679b4a830b2\");"
+                                        ],
+                                        "type": "text/javascript"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "event": [
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "id": "62f52a45-71ea-483a-b019-5b8ce4d31ea9",
+                                "exec": [],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "protocolProfileBehavior": {}
+                },
+                {
+                    "id": "7a33b430-2050-44c8-9442-f29e1b57af2a",
+                    "name": "test_02_get_customers_id_addresses",
+                    "item": [
+                        {
+                            "id": "eabe043b-29fb-459a-8106-ef8dbe37e565",
+                            "name": "user/customers/{{id}}/addresses",
+                            "request": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{user}}/customers/{{id}}/addresses",
+                                    "protocol": "",
+                                    "host": "{{user}}",
+                                    "path": [
+                                        "customers",
+                                        "{{id}}",
+                                        "addresses"
+                                    ]
+                                }
+                            },
+                            "response": [],
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "id": "ae656f68-71e3-4225-8f19-24c92c8a717c",
+                                        "exec": [
+                                            "// Some of the environment variables might be set in the parent folders.",
+                                            "pm.test(\"GET http://user/customers/{id}/addresses (endp 2)\", function() {",
+                                            "    eval(globals.up9lib);",
+                                            "    const jsonBody = pm.response.json();",
+                                            "    pm.response.to.have.status(200);",
+                                            "    pm.expect(JSONPath.JSONPath({",
+                                            "        path: \"$._embedded.address.[*].city\",",
+                                            "        json: jsonBody",
+                                            "    })).to.include(\"Glasgow\");",
+                                            "});"
+                                        ],
+                                        "type": "text/javascript"
+                                    }
+                                },
+                                {
+                                    "listen": "prerequest",
+                                    "script": {
+                                        "id": "6bb3b434-1a56-491e-ac26-cbd849445cb2",
+                                        "exec": [
+                                            "// Some of the environment variables might be set in the parent folders.",
+                                            "pm.variables.set(\"id\", \"57a98d98e4b00679b4a830b2\");"
+                                        ],
+                                        "type": "text/javascript"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "event": [
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "id": "0700c1a1-76f1-447d-96f0-898ac69c7fb2",
+                                "exec": [],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "protocolProfileBehavior": {}
+                },
+                {
+                    "id": "a4d8a444-05ce-4f2f-9b1d-893c9842e694",
+                    "name": "test_03_get_customers_id_cards",
+                    "item": [
+                        {
+                            "id": "5d4c88c5-04e9-41c0-aec6-80e95aec170f",
+                            "name": "user/customers/{{id}}/cards",
+                            "request": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{user}}/customers/{{id}}/cards",
+                                    "protocol": "",
+                                    "host": "{{user}}",
+                                    "path": [
+                                        "customers",
+                                        "{{id}}",
+                                        "cards"
+                                    ]
+                                }
+                            },
+                            "response": [],
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "id": "154b8d0f-35f5-41f6-b269-daa92781a848",
+                                        "exec": [
+                                            "// Some of the environment variables might be set in the parent folders.",
+                                            "pm.test(\"GET http://user/customers/{id}/cards (endp 3)\", function() {",
+                                            "    pm.response.to.have.status(200);",
+                                            "});"
+                                        ],
+                                        "type": "text/javascript"
+                                    }
+                                },
+                                {
+                                    "listen": "prerequest",
+                                    "script": {
+                                        "id": "1e26fec7-a5e1-4f90-b513-68f71e45eedd",
+                                        "exec": [
+                                            "// Some of the environment variables might be set in the parent folders.",
+                                            "pm.variables.set(\"id\", \"57a98d98e4b00679b4a830b2\");"
+                                        ],
+                                        "type": "text/javascript"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "event": [
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "id": "72ddb4e2-d140-4037-8396-19d98212cbd9",
+                                "exec": [],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "protocolProfileBehavior": {}
+                }
+            ],
+            "event": [
+                {
+                    "listen": "prerequest",
+                    "script": {
+                        "id": "b1d4e6e3-e929-42db-81cb-cdb414dba949",
+                        "exec": [],
+                        "type": "text/javascript"
+                    }
+                }
+            ],
+            "protocolProfileBehavior": {}
+        }
+    ],
+    "event": [
+        {
+            "listen": "prerequest",
+            "script": {
+                "id": "aa483d0d-b28d-4cb7-8e3f-bb40dd2324f2",
+                "exec": [
+                    "const up9lib = \"const url = require('url');\\nconst cheerio = require('cheerio');\\n\\nfunction uuidv4() {\\n    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {\\n        var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);\\n        return v.toString(16);\\n    });\\n}\\n\\nfunction randomInteger(min, max) {\\n    return Math.floor(Math.random() * (max - min + 1)) + min;\\n}\\n\\nfunction randomFloat(min, max) {\\n    return Math.random() * (max - min) + min;\\n}\\n\\nfunction urlPart(ospec, paramURL) {\\n    const flag = ospec[0];\\n    const spec = ospec.slice(1, ospec.length);\\n\\n    const urlParsed = url.parse(paramURL, true);\\n    if (flag == '/') {\\n        const ind = parseInt(spec);\\n        const pathParts = urlParsed.pathname.split('/')\\n        return pathParts[ind]\\n    } else {\\n        return urlParsed.searchParams.get(spec)\\n    }\\n}\\n\\nfunction CSSselect(query, html) {\\n    const $ = cheerio.load(html);\\n    const result = $(query).map(function(i, el) {\\n        return $(this).text().trim();\\n    }).get().join('');\\n    return result;\\n}\\n// https://cdn.jsdelivr.net/npm/jsonpath-plus@4.0.0/dist/index-umd.min.js\\n!function(t,r){\\\"object\\\"==typeof exports&&\\\"undefined\\\"!=typeof module?r(exports):\\\"function\\\"==typeof define&&define.amd?define([\\\"exports\\\"],r):r((t=t||self).JSONPath={})}(this,(function(t){\\\"use strict\\\";function r(t){return(r=\\\"function\\\"==typeof Symbol&&\\\"symbol\\\"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&\\\"function\\\"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?\\\"symbol\\\":typeof t})(t)}function e(t){return(e=Object.setPrototypeOf?Object.getPrototypeOf:function(t){return t.__proto__||Object.getPrototypeOf(t)})(t)}function n(t,r){return(n=Object.setPrototypeOf||function(t,r){return t.__proto__=r,t})(t,r)}function a(){if(\\\"undefined\\\"==typeof Reflect||!Reflect.construct)return!1;if(Reflect.construct.sham)return!1;if(\\\"function\\\"==typeof Proxy)return!0;try{return Date.prototype.toString.call(Reflect.construct(Date,[],(function(){}))),!0}catch(t){return!1}}function u(t,r,e){return(u=a()?Reflect.construct:function(t,r,e){var a=[null];a.push.apply(a,r);var u=new(Function.bind.apply(t,a));return e&&n(u,e.prototype),u}).apply(null,arguments)}function o(t){var r=\\\"function\\\"==typeof Map?new Map:void 0;return(o=function(t){if(null===t||(a=t,-1===Function.toString.call(a).indexOf(\\\"[native code]\\\")))return t;var a;if(\\\"function\\\"!=typeof t)throw new TypeError(\\\"Super expression must either be null or a function\\\");if(void 0!==r){if(r.has(t))return r.get(t);r.set(t,o)}function o(){return u(t,arguments,e(this).constructor)}return o.prototype=Object.create(t.prototype,{constructor:{value:o,enumerable:!1,writable:!0,configurable:!0}}),n(o,t)})(t)}function i(t,r){return!r||\\\"object\\\"!=typeof r&&\\\"function\\\"!=typeof r?function(t){if(void 0===t)throw new ReferenceError(\\\"this hasn't been initialised - super() hasn't been called\\\");return t}(t):r}function c(t){return function(t){if(Array.isArray(t))return s(t)}(t)||function(t){if(\\\"undefined\\\"!=typeof Symbol&&Symbol.iterator in Object(t))return Array.from(t)}(t)||l(t)||function(){throw new TypeError(\\\"Invalid attempt to spread non-iterable instance.\\\\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.\\\")}()}function l(t,r){if(t){if(\\\"string\\\"==typeof t)return s(t,r);var e=Object.prototype.toString.call(t).slice(8,-1);return\\\"Object\\\"===e&&t.constructor&&(e=t.constructor.name),\\\"Map\\\"===e||\\\"Set\\\"===e?Array.from(e):\\\"Arguments\\\"===e||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(e)?s(t,r):void 0}}function s(t,r){(null==r||r>t.length)&&(r=t.length);for(var e=0,n=new Array(r);e<r;e++)n[e]=t[e];return n}var p=Object.prototype.hasOwnProperty;b.nodeVMSupported=function(){try{return\\\"[object process]\\\"===Object.prototype.toString.call(global.process)}catch(t){return!1}}();var h=b.nodeVMSupported?require(\\\"vm\\\"):{runInNewContext:function(t,r){var e=Object.keys(r),n=[];!function(t,r,e){for(var n=t.length,a=0;a<n;a++){e(t[a])&&r.push(t.splice(a--,1)[0])}}(e,n,(function(t){return\\\"function\\\"==typeof r[t]}));var a=e.map((function(t,e){return r[t]}));(t=n.reduce((function(t,e){var n=r[e].toString();return/function/.test(n)||(n=\\\"function \\\"+n),\\\"var \\\"+e+\\\"=\\\"+n+\\\";\\\"+t}),\\\"\\\")+t).match(/([\\\"'])use strict\\\\1/)||e.includes(\\\"arguments\\\")||(t=\\\"var arguments = undefined;\\\"+t);var o=(t=t.replace(/;[\\\\t-\\\\r \\\\xA0\\\\u1680\\\\u2000-\\\\u200A\\\\u2028\\\\u2029\\\\u202F\\\\u205F\\\\u3000\\\\uFEFF]*$/,\\\"\\\")).lastIndexOf(\\\";\\\"),i=o>-1?t.slice(0,o+1)+\\\" return \\\"+t.slice(o+1):\\\" return \\\"+t;return u(Function,c(e).concat([i])).apply(void 0,c(a))}};function f(t,r){return(t=t.slice()).push(r),t}function y(t,r){return(r=r.slice()).unshift(t),r}var F=function(t){!function(t,r){if(\\\"function\\\"!=typeof r&&null!==r)throw new TypeError(\\\"Super expression must either be null or a function\\\");t.prototype=Object.create(r&&r.prototype,{constructor:{value:t,writable:!0,configurable:!0}}),r&&n(t,r)}(o,t);var r,u=(r=o,function(){var t,n=e(r);if(a()){var u=e(this).constructor;t=Reflect.construct(n,arguments,u)}else t=n.apply(this,arguments);return i(this,t)});function o(t){var r;return function(t,r){if(!(t instanceof r))throw new TypeError(\\\"Cannot call a class as a function\\\")}(this,o),(r=u.call(this,'JSONPath should not be called with \\\"new\\\" (it prevents return of (unwrapped) scalar values)')).avoidNew=!0,r.value=t,r.name=\\\"NewError\\\",r}return o}(o(Error));function b(t,e,n,a,u){if(!(this instanceof b))try{return new b(t,e,n,a,u)}catch(t){if(!t.avoidNew)throw t;return t.value}\\\"string\\\"==typeof t&&(u=a,a=n,n=e,e=t,t=null);var o=t&&\\\"object\\\"===r(t);if(t=t||{},this.json=t.json||n,this.path=t.path||e,this.resultType=t.resultType||\\\"value\\\",this.flatten=t.flatten||!1,this.wrap=!p.call(t,\\\"wrap\\\")||t.wrap,this.sandbox=t.sandbox||{},this.preventEval=t.preventEval||!1,this.parent=t.parent||null,this.parentProperty=t.parentProperty||null,this.callback=t.callback||a||null,this.otherTypeCallback=t.otherTypeCallback||u||function(){throw new TypeError(\\\"You must supply an otherTypeCallback callback option with the @other() operator.\\\")},!1!==t.autostart){var i={path:o?t.path:e};o?\\\"json\\\"in t&&(i.json=t.json):i.json=n;var c=this.evaluate(i);if(!c||\\\"object\\\"!==r(c))throw new F(c);return c}}b.prototype.evaluate=function(t,e,n,a){var u=this,o=this.parent,i=this.parentProperty,c=this.flatten,l=this.wrap;if(this.currResultType=this.resultType,this.currPreventEval=this.preventEval,this.currSandbox=this.sandbox,n=n||this.callback,this.currOtherTypeCallback=a||this.otherTypeCallback,e=e||this.json,(t=t||this.path)&&\\\"object\\\"===r(t)&&!Array.isArray(t)){if(!t.path&&\\\"\\\"!==t.path)throw new TypeError('You must supply a \\\"path\\\" property when providing an object argument to JSONPath.evaluate().');if(!p.call(t,\\\"json\\\"))throw new TypeError('You must supply a \\\"json\\\" property when providing an object argument to JSONPath.evaluate().');e=t.json,c=p.call(t,\\\"flatten\\\")?t.flatten:c,this.currResultType=p.call(t,\\\"resultType\\\")?t.resultType:this.currResultType,this.currSandbox=p.call(t,\\\"sandbox\\\")?t.sandbox:this.currSandbox,l=p.call(t,\\\"wrap\\\")?t.wrap:l,this.currPreventEval=p.call(t,\\\"preventEval\\\")?t.preventEval:this.currPreventEval,n=p.call(t,\\\"callback\\\")?t.callback:n,this.currOtherTypeCallback=p.call(t,\\\"otherTypeCallback\\\")?t.otherTypeCallback:this.currOtherTypeCallback,o=p.call(t,\\\"parent\\\")?t.parent:o,i=p.call(t,\\\"parentProperty\\\")?t.parentProperty:i,t=t.path}if(o=o||null,i=i||null,Array.isArray(t)&&(t=b.toPathString(t)),(t||\\\"\\\"===t)&&e){this._obj=e;var s=b.toPathArray(t);\\\"$\\\"===s[0]&&s.length>1&&s.shift(),this._hasParentSelector=null;var h=this._trace(s,e,[\\\"$\\\"],o,i,n).filter((function(t){return t&&!t.isParentSelector}));return h.length?l||1!==h.length||h[0].hasArrExpr?h.reduce((function(t,r){var e=u._getPreferredOutput(r);return c&&Array.isArray(e)?t=t.concat(e):t.push(e),t}),[]):this._getPreferredOutput(h[0]):l?[]:void 0}},b.prototype._getPreferredOutput=function(t){var r=this.currResultType;switch(r){default:throw new TypeError(\\\"Unknown result type\\\");case\\\"all\\\":var e=Array.isArray(t.path)?t.path:b.toPathArray(t.path);return t.pointer=b.toPointer(e),t.path=\\\"string\\\"==typeof t.path?t.path:b.toPathString(t.path),t;case\\\"value\\\":case\\\"parent\\\":case\\\"parentProperty\\\":return t[r];case\\\"path\\\":return b.toPathString(t[r]);case\\\"pointer\\\":return b.toPointer(t.path)}},b.prototype._handleCallback=function(t,r,e){if(r){var n=this._getPreferredOutput(t);t.path=\\\"string\\\"==typeof t.path?t.path:b.toPathString(t.path),r(n,e,t)}},b.prototype._trace=function(t,e,n,a,u,o,i,c){var s,h=this;if(!t.length)return s={path:n,value:e,parent:a,parentProperty:u,hasArrExpr:i},this._handleCallback(s,o,\\\"value\\\"),s;var F=t[0],b=t.slice(1),v=[];function d(t){Array.isArray(t)?t.forEach((function(t){v.push(t)})):v.push(t)}if((\\\"string\\\"!=typeof F||c)&&e&&p.call(e,F))d(this._trace(b,e[F],f(n,F),e,F,o,i));else if(\\\"*\\\"===F)this._walk(F,b,e,n,a,u,o,(function(t,r,e,n,a,u,o,i){d(h._trace(y(t,e),n,a,u,o,i,!0,!0))}));else if(\\\"..\\\"===F)d(this._trace(b,e,n,a,u,o,i)),this._walk(F,b,e,n,a,u,o,(function(t,e,n,a,u,o,i,c){\\\"object\\\"===r(a[t])&&d(h._trace(y(e,n),a[t],f(u,t),a,t,c,!0))}));else{if(\\\"^\\\"===F)return this._hasParentSelector=!0,{path:n.slice(0,-1),expr:b,isParentSelector:!0};if(\\\"~\\\"===F)return s={path:f(n,F),value:u,parent:a,parentProperty:null},this._handleCallback(s,o,\\\"property\\\"),s;if(\\\"$\\\"===F)d(this._trace(b,e,n,null,null,o,i));else if(/^(\\\\x2D?[0-9]*):(\\\\x2D?[0-9]*):?([0-9]*)$/.test(F))d(this._slice(F,b,e,n,a,u,o));else if(0===F.indexOf(\\\"?(\\\")){if(this.currPreventEval)throw new Error(\\\"Eval [?(expr)] prevented in JSONPath expression.\\\");this._walk(F,b,e,n,a,u,o,(function(t,r,e,n,a,u,o,i){h._eval(r.replace(/^\\\\?\\\\(((?:[\\\\0-\\\\t\\\\x0B\\\\f\\\\x0E-\\\\u2027\\\\u202A-\\\\uD7FF\\\\uE000-\\\\uFFFF]|[\\\\uD800-\\\\uDBFF][\\\\uDC00-\\\\uDFFF]|[\\\\uD800-\\\\uDBFF](?![\\\\uDC00-\\\\uDFFF])|(?:[^\\\\uD800-\\\\uDBFF]|^)[\\\\uDC00-\\\\uDFFF])*?)\\\\)$/,\\\"$1\\\"),n[t],t,a,u,o)&&d(h._trace(y(t,e),n,a,u,o,i,!0))}))}else if(\\\"(\\\"===F[0]){if(this.currPreventEval)throw new Error(\\\"Eval [(expr)] prevented in JSONPath expression.\\\");d(this._trace(y(this._eval(F,e,n[n.length-1],n.slice(0,-1),a,u),b),e,n,a,u,o,i))}else if(\\\"@\\\"===F[0]){var D=!1,g=F.slice(1,-2);switch(g){default:throw new TypeError(\\\"Unknown value type \\\"+g);case\\\"scalar\\\":e&&[\\\"object\\\",\\\"function\\\"].includes(r(e))||(D=!0);break;case\\\"boolean\\\":case\\\"string\\\":case\\\"undefined\\\":case\\\"function\\\":r(e)===g&&(D=!0);break;case\\\"integer\\\":!Number.isFinite(e)||e%1||(D=!0);break;case\\\"number\\\":Number.isFinite(e)&&(D=!0);break;case\\\"nonFinite\\\":\\\"number\\\"!=typeof e||Number.isFinite(e)||(D=!0);break;case\\\"object\\\":e&&r(e)===g&&(D=!0);break;case\\\"array\\\":Array.isArray(e)&&(D=!0);break;case\\\"other\\\":D=this.currOtherTypeCallback(e,n,a,u);break;case\\\"null\\\":null===e&&(D=!0)}if(D)return s={path:n,value:e,parent:a,parentProperty:u},this._handleCallback(s,o,\\\"value\\\"),s}else if(\\\"`\\\"===F[0]&&e&&p.call(e,F.slice(1))){var _=F.slice(1);d(this._trace(b,e[_],f(n,_),e,_,o,i,!0))}else if(F.includes(\\\",\\\")){var w,m=function(t){if(\\\"undefined\\\"==typeof Symbol||null==t[Symbol.iterator]){if(Array.isArray(t)||(t=l(t))){var r=0,e=function(){};return{s:e,n:function(){return r>=t.length?{done:!0}:{done:!1,value:t[r++]}},e:function(t){throw t},f:e}}throw new TypeError(\\\"Invalid attempt to iterate non-iterable instance.\\\\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.\\\")}var n,a,u=!0,o=!1;return{s:function(){n=t[Symbol.iterator]()},n:function(){var t=n.next();return u=t.done,t},e:function(t){o=!0,a=t},f:function(){try{u||null==n.return||n.return()}finally{if(o)throw a}}}}(F.split(\\\",\\\"));try{for(m.s();!(w=m.n()).done;){var P=w.value;d(this._trace(y(P,b),e,n,a,u,o,!0))}}catch(t){m.e(t)}finally{m.f()}}else!c&&e&&p.call(e,F)&&d(this._trace(b,e[F],f(n,F),e,F,o,i,!0))}if(this._hasParentSelector)for(var S=0;S<v.length;S++){var x=v[S];if(x&&x.isParentSelector){var E=h._trace(x.expr,e,x.path,a,u,o,i);if(Array.isArray(E)){v[S]=E[0];for(var j=E.length,A=1;A<j;A++)S++,v.splice(S,0,E[A])}else v[S]=E}}return v},b.prototype._walk=function(t,e,n,a,u,o,i,c){if(Array.isArray(n))for(var l=n.length,s=0;s<l;s++)c(s,t,e,n,a,u,o,i);else n&&\\\"object\\\"===r(n)&&Object.keys(n).forEach((function(r){c(r,t,e,n,a,u,o,i)}))},b.prototype._slice=function(t,r,e,n,a,u,o){if(Array.isArray(e)){var i=e.length,c=t.split(\\\":\\\"),l=c[2]&&Number.parseInt(c[2])||1,s=c[0]&&Number.parseInt(c[0])||0,p=c[1]&&Number.parseInt(c[1])||i;s=s<0?Math.max(0,s+i):Math.min(i,s),p=p<0?Math.max(0,p+i):Math.min(i,p);for(var h=[],f=s;f<p;f+=l){this._trace(y(f,r),e,n,a,u,o,!0).forEach((function(t){h.push(t)}))}return h}},b.prototype._eval=function(t,r,e,n,a,u){if(!this._obj||!r)return!1;t.includes(\\\"@parentProperty\\\")&&(this.currSandbox._$_parentProperty=u,t=t.replace(/@parentProperty/g,\\\"_$_parentProperty\\\")),t.includes(\\\"@parent\\\")&&(this.currSandbox._$_parent=a,t=t.replace(/@parent/g,\\\"_$_parent\\\")),t.includes(\\\"@property\\\")&&(this.currSandbox._$_property=e,t=t.replace(/@property/g,\\\"_$_property\\\")),t.includes(\\\"@path\\\")&&(this.currSandbox._$_path=b.toPathString(n.concat([e])),t=t.replace(/@path/g,\\\"_$_path\\\")),t.includes(\\\"@root\\\")&&(this.currSandbox._$_root=this.json,t=t.replace(/@root/g,\\\"_$_root\\\")),t.match(/@([\\\\t-\\\\r \\\\)\\\\.\\\\[\\\\xA0\\\\u1680\\\\u2000-\\\\u200A\\\\u2028\\\\u2029\\\\u202F\\\\u205F\\\\u3000\\\\uFEFF])/)&&(this.currSandbox._$_v=r,t=t.replace(/@([\\\\t-\\\\r \\\\)\\\\.\\\\[\\\\xA0\\\\u1680\\\\u2000-\\\\u200A\\\\u2028\\\\u2029\\\\u202F\\\\u205F\\\\u3000\\\\uFEFF])/g,\\\"_$_v$1\\\"));try{return h.runInNewContext(t,this.currSandbox)}catch(r){throw console.log(r),new Error(\\\"jsonPath: \\\"+r.message+\\\": \\\"+t)}},b.cache={},b.toPathString=function(t){for(var r=t,e=r.length,n=\\\"$\\\",a=1;a<e;a++)/^(~|\\\\^|@(?:[\\\\0-\\\\t\\\\x0B\\\\f\\\\x0E-\\\\u2027\\\\u202A-\\\\uD7FF\\\\uE000-\\\\uFFFF]|[\\\\uD800-\\\\uDBFF][\\\\uDC00-\\\\uDFFF]|[\\\\uD800-\\\\uDBFF](?![\\\\uDC00-\\\\uDFFF])|(?:[^\\\\uD800-\\\\uDBFF]|^)[\\\\uDC00-\\\\uDFFF])*?\\\\(\\\\))$/.test(r[a])||(n+=/^[\\\\*0-9]+$/.test(r[a])?\\\"[\\\"+r[a]+\\\"]\\\":\\\"['\\\"+r[a]+\\\"']\\\");return n},b.toPointer=function(t){for(var r=t,e=r.length,n=\\\"\\\",a=1;a<e;a++)/^(~|\\\\^|@(?:[\\\\0-\\\\t\\\\x0B\\\\f\\\\x0E-\\\\u2027\\\\u202A-\\\\uD7FF\\\\uE000-\\\\uFFFF]|[\\\\uD800-\\\\uDBFF][\\\\uDC00-\\\\uDFFF]|[\\\\uD800-\\\\uDBFF](?![\\\\uDC00-\\\\uDFFF])|(?:[^\\\\uD800-\\\\uDBFF]|^)[\\\\uDC00-\\\\uDFFF])*?\\\\(\\\\))$/.test(r[a])||(n+=\\\"/\\\"+r[a].toString().replace(/~/g,\\\"~0\\\").replace(/\\\\//g,\\\"~1\\\"));return n},b.toPathArray=function(t){var r=b.cache;if(r[t])return r[t].concat();var e=[],n=t.replace(/@(?:null|boolean|number|string|integer|undefined|nonFinite|scalar|array|object|function|other)\\\\(\\\\)/g,\\\";$&;\\\").replace(/['\\\\[](\\\\??\\\\((?:[\\\\0-\\\\t\\\\x0B\\\\f\\\\x0E-\\\\u2027\\\\u202A-\\\\uD7FF\\\\uE000-\\\\uFFFF]|[\\\\uD800-\\\\uDBFF][\\\\uDC00-\\\\uDFFF]|[\\\\uD800-\\\\uDBFF](?![\\\\uDC00-\\\\uDFFF])|(?:[^\\\\uD800-\\\\uDBFF]|^)[\\\\uDC00-\\\\uDFFF])*?\\\\))['\\\\]]/g,(function(t,r){return\\\"[#\\\"+(e.push(r)-1)+\\\"]\\\"})).replace(/\\\\['((?:[\\\\0-&\\\\(-\\\\\\\\\\\\^-\\\\uD7FF\\\\uE000-\\\\uFFFF]|[\\\\uD800-\\\\uDBFF][\\\\uDC00-\\\\uDFFF]|[\\\\uD800-\\\\uDBFF](?![\\\\uDC00-\\\\uDFFF])|(?:[^\\\\uD800-\\\\uDBFF]|^)[\\\\uDC00-\\\\uDFFF])*)'\\\\]/g,(function(t,r){return\\\"['\\\"+r.replace(/\\\\./g,\\\"%@%\\\").replace(/~/g,\\\"%%@@%%\\\")+\\\"']\\\"})).replace(/~/g,\\\";~;\\\").replace(/'?\\\\.'?(?!(?:[\\\\0-Z\\\\\\\\-\\\\uD7FF\\\\uE000-\\\\uFFFF]|[\\\\uD800-\\\\uDBFF][\\\\uDC00-\\\\uDFFF]|[\\\\uD800-\\\\uDBFF](?![\\\\uDC00-\\\\uDFFF])|(?:[^\\\\uD800-\\\\uDBFF]|^)[\\\\uDC00-\\\\uDFFF])*\\\\])|\\\\['?/g,\\\";\\\").replace(/%@%/g,\\\".\\\").replace(/%%@@%%/g,\\\"~\\\").replace(/(?:;)?(\\\\^+)(?:;)?/g,(function(t,r){return\\\";\\\"+r.split(\\\"\\\").join(\\\";\\\")+\\\";\\\"})).replace(/;;;|;;/g,\\\";..;\\\").replace(/;$|'?\\\\]|'$/g,\\\"\\\").split(\\\";\\\").map((function(t){var r=t.match(/#([0-9]+)/);return r&&r[1]?e[r[1]]:t}));return r[t]=n,r[t]},t.JSONPath=b,Object.defineProperty(t,\\\"__esModule\\\",{value:!0})}));\\n//# sourceMappingURL=index-umd.min.js.map\\n\"",
+                    "",
+                    "pm.globals.set(\"up9lib\", up9lib);"
+                ],
+                "type": "text/javascript",
+                "ast": null,
+                "endpoint": null,
+                "listen": "prerequest",
+                "_type": "collection"
+            }
+        }
+    ],
+    "variable": [
+        {
+            "id": "434e0eb1-309f-4524-ac03-f4f85ef69045",
+            "key": "carts",
+            "value": "http://carts"
+        },
+        {
+            "id": "52b5101b-3569-4746-9f93-0b5187cc1e7f",
+            "key": "catalogue",
+            "value": "http://catalogue"
+        },
+        {
+            "id": "89ee09fa-25f5-4c2f-924a-a7b49f0b09e9",
+            "key": "edge_router",
+            "value": "http://edge-router"
+        },
+        {
+            "id": "752d2777-d39c-4761-8586-c851eefe8bf3",
+            "key": "front_end",
+            "value": "http://front-end"
+        },
+        {
+            "id": "32a93846-2895-484d-ac07-a8c07841ebd1",
+            "key": "user",
+            "value": "http://user"
+        }
+    ],
+    "protocolProfileBehavior": {}
+}
