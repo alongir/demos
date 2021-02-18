@@ -7,7 +7,7 @@
  "paths": {
   "/catalogue": {
    "get": {
-    "operationId": "88a979a8-b400-4d77-9ec7-03bc8de97d34",
+    "operationId": "f3836a1c-95bb-436b-840a-36f8dc2b65a5",
     "parameters": [
      {
       "in": "query",
@@ -15,7 +15,30 @@
       "required": true,
       "schema": {
        "enum": [
-        "5"
+        "5",
+        "3"
+       ],
+       "type": "string"
+      }
+     },
+     {
+      "in": "query",
+      "name": "sort",
+      "required": false,
+      "schema": {
+       "enum": [
+        "id"
+       ],
+       "type": "string"
+      }
+     },
+     {
+      "in": "query",
+      "name": "tags",
+      "required": false,
+      "schema": {
+       "enum": [
+        "blue"
        ],
        "type": "string"
       }
@@ -216,7 +239,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 37 requests",
+    "summary": "Seen 48 requests",
     "tags": [
      "catalogue"
     ]
@@ -225,25 +248,24 @@
   },
   "/catalogue/{id}": {
    "get": {
-    "operationId": "ead12937-6530-431a-a12c-964b8e57a2b7",
+    "operationId": "9ca7795d-92eb-4422-88cc-3e82a1d5bb24",
     "parameters": [],
     "responses": {
      "200": {
       "content": {
        "application/json": {
         "example": {
-         "count": 808,
-         "description": "enim officia aliqua excepteur esse deserunt quis aliquip nostrud anim",
-         "id": "819e1fbf-8b7e-4f6d-811f-693534916a8b",
+         "count": 438,
+         "description": "proident occaecat irure et excepteur labore minim nisi amet irure",
+         "id": "3395a43e-2d88-40de-b95f-e00e1502085b",
          "imageUrl": [
-          "/catalogue/images/WAT.jpg",
-          "/catalogue/images/WAT2.jpg"
+          "/catalogue/images/colourful_socks.jpg",
+          "/catalogue/images/colourful_socks.jpg"
          ],
-         "name": "Figueroa",
-         "price": 14,
+         "name": "Colourful",
+         "price": 18,
          "tag": [
-          "formal",
-          "green",
+          "brown",
           "blue"
          ]
         },
@@ -293,7 +315,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 20 requests",
+    "summary": "Seen 22 requests",
     "tags": [
      "catalogue"
     ]

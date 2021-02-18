@@ -14,7 +14,7 @@ class Tests_catalogue(unittest.TestCase):
 
         # GET http://catalogue/catalogue (endp 5)
         catalogue = get_http_target('TARGET_CATALOGUE', authenticate)
-        qstr = '?' + urlencode([('size', size)])
+        qstr = '?' + urlencode([('size', size), ('sort', 'id'), ('tags', 'blue')])
         resp = catalogue.get('/catalogue' + qstr)
         resp.assert_ok()
         # resp.assert_status_code(200)
@@ -52,11 +52,15 @@ class Tests_edge_router(unittest.TestCase):
         # resp.assert_status_code(200)
         # resp.assert_cssselect('div#basket div.box form h1', expected_value='Shopping cart')
 
+    @json_dataset('data/dataset_9.json')
     @clear_session({'spanId': 9})
-    def test_09_get_catalogue(self):
+    def test_09_get_catalogue(self, data_row):
+        size, = data_row
+
         # GET http://edge-router/catalogue (endp 9)
         edge_router = get_http_target('TARGET_EDGE_ROUTER', authenticate)
-        resp = edge_router.get('/catalogue')
+        qstr = '?' + urlencode([('size', size)])
+        resp = edge_router.get('/catalogue' + qstr, headers=dict([('x-requested-with', 'XMLHttpRequest')]))
         resp.assert_ok()
         # resp.assert_status_code(200)
 
@@ -114,11 +118,15 @@ class Tests_front_end(unittest.TestCase):
         # resp.assert_status_code(200)
         # resp.assert_cssselect('div#basket div.box form h1', expected_value='Shopping cart')
 
+    @json_dataset('data/dataset_15.json')
     @clear_session({'spanId': 15})
-    def test_15_get_catalogue(self):
+    def test_15_get_catalogue(self, data_row):
+        size, = data_row
+
         # GET http://front-end/catalogue (endp 15)
         front_end = get_http_target('TARGET_FRONT_END', authenticate)
-        resp = front_end.get('/catalogue')
+        qstr = '?' + urlencode([('size', size)])
+        resp = front_end.get('/catalogue' + qstr, headers=dict([('x-requested-with', 'XMLHttpRequest')]))
         resp.assert_ok()
         # resp.assert_status_code(200)
 

@@ -7,7 +7,7 @@
  "paths": {
   "/": {
    "get": {
-    "operationId": "a86c9d02-30e4-4283-bd22-161429fee610",
+    "operationId": "8e415b18-c544-4f91-8fbd-e69b673ec156",
     "parameters": [],
     "responses": {
      "200": {
@@ -19,13 +19,13 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 12 requests"
+    "summary": "Seen 19 requests"
    },
    "parameters": []
   },
   "/basket.html": {
    "get": {
-    "operationId": "fa258727-b75f-4382-ad48-fc00803414a5",
+    "operationId": "facb71d0-3e8d-48f1-b75d-4886102569a3",
     "parameters": [],
     "responses": {
      "200": {
@@ -37,14 +37,37 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 6 requests"
+    "summary": "Seen 11 requests"
    },
    "parameters": []
   },
   "/catalogue": {
    "get": {
-    "operationId": "8edfd264-e12c-49ed-9955-5aed5c8eb381",
-    "parameters": [],
+    "operationId": "df28bc3c-91ac-4697-af61-f9396e94c6ee",
+    "parameters": [
+     {
+      "in": "query",
+      "name": "size",
+      "required": false,
+      "schema": {
+       "enum": [
+        "5"
+       ],
+       "type": "string"
+      }
+     },
+     {
+      "in": "header",
+      "name": "x-requested-with",
+      "required": false,
+      "schema": {
+       "enum": [
+        "XMLHttpRequest"
+       ],
+       "type": "string"
+      }
+     }
+    ],
     "responses": {
      "200": {
       "content": {
@@ -240,13 +263,13 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 12 requests"
+    "summary": "Seen 20 requests"
    },
    "parameters": []
   },
   "/category.html": {
    "get": {
-    "operationId": "62e6f8a2-0474-4c6e-a4a3-c222ac9e1564",
+    "operationId": "3b25b986-1088-450a-b076-b2a05be07541",
     "parameters": [],
     "responses": {
      "200": {
@@ -258,13 +281,13 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 9 requests"
+    "summary": "Seen 15 requests"
    },
    "parameters": []
   },
   "/detail.html": {
    "get": {
-    "operationId": "456ca53c-45d7-454f-bc09-7febcb5237ee",
+    "operationId": "eb6d49db-b441-41b1-8e6e-a25dd64c9afc",
     "parameters": [
      {
       "in": "query",
@@ -292,13 +315,13 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 9 requests"
+    "summary": "Seen 15 requests"
    },
    "parameters": []
   },
   "/login": {
    "get": {
-    "operationId": "b216a1fb-4948-4c97-8c42-95882a791aff",
+    "operationId": "be92cf25-0970-4d34-90ab-df798dddd93d",
     "parameters": [],
     "responses": {
      "200": {
@@ -310,7 +333,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 10 requests"
+    "summary": "Seen 16 requests"
    },
    "parameters": []
   }
