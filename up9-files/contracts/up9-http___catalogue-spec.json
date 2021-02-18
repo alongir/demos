@@ -7,7 +7,7 @@
  "paths": {
   "/catalogue": {
    "get": {
-    "operationId": "f3836a1c-95bb-436b-840a-36f8dc2b65a5",
+    "operationId": "945c67cc-be27-4e1e-b2bd-2d91d01deb38",
     "parameters": [
      {
       "in": "query",
@@ -38,6 +38,7 @@
       "required": false,
       "schema": {
        "enum": [
+        "brown",
         "blue"
        ],
        "type": "string"
@@ -239,7 +240,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 48 requests",
+    "summary": "Seen 49 requests",
     "tags": [
      "catalogue"
     ]
@@ -248,7 +249,7 @@
   },
   "/catalogue/{id}": {
    "get": {
-    "operationId": "9ca7795d-92eb-4422-88cc-3e82a1d5bb24",
+    "operationId": "8221e64a-be3f-40d1-b843-0fe12d3eff5b",
     "parameters": [],
     "responses": {
      "200": {
@@ -322,6 +323,7 @@
    },
    "parameters": [
     {
+     "description": "Origin: GET http://catalogue/catalogue &rarr; json: $.[*].id",
      "in": "path",
      "name": "id",
      "required": true,

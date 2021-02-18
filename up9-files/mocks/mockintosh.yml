@@ -11,8 +11,33 @@
 management:
   port: 8000
 services:
-- name: http://catalogue
+- name: http://carts
   port: 8001
+  ssl: false
+  managementRoot: __admin
+  oas: '@mock-data/up9-http___carts-spec.json'
+  endpoints:
+  - path: /carts/{{cartId}}/items
+    response:
+      headers:
+        Content-Type: application/json
+      body: '[]'
+      useTemplating: false
+  - path: /carts/{{cartId}}/items
+    response:
+      status: 201
+      headers:
+        Content-Type: application/json
+      body: |-
+        {
+         "id": "602dd0a57401b100072c2945",
+         "itemId": "{{request.body}}",
+         "quantity": 1,
+         "unitPrice": 18.0
+        }
+    method: post
+- name: http://catalogue
+  port: 8002
   ssl: false
   managementRoot: __admin
   oas: '@mock-data/up9-http___catalogue-spec.json'
@@ -21,17 +46,58 @@ services:
     response:
       headers:
         Content-Type: application/json
-      body: '@mock-data/resp_5.json'
+      body: '@mock-data/resp_17.json'
   - path: /catalogue/{{id}}
     response:
       headers:
         Content-Type: application/json
-      body: '@mock-data/resp_6.json'
+      body: '@mock-data/resp_18.json'
 - name: http://edge-router
-  port: 8002
+  port: 8003
   ssl: false
   managementRoot: __admin
   oas: '@mock-data/up9-http___edge-router-spec.json'
+  endpoints:
+  - path: /
+    response:
+      headers:
+        Content-Type: text/html
+      body: '@mock-data/resp_1.html'
+      useTemplating: false
+  - path: /basket.html
+    response:
+      headers:
+        Content-Type: text/html
+      body: '@mock-data/resp_2.html'
+      useTemplating: false
+  - path: /catalogue
+    response:
+      headers:
+        Content-Type: application/json
+      body: '@mock-data/resp_3.json'
+  - path: /category.html
+    response:
+      headers:
+        Content-Type: text/html
+      body: '@mock-data/resp_4.html'
+      useTemplating: false
+  - path: /detail.html
+    response:
+      headers:
+        Content-Type: text/html
+      body: '@mock-data/resp_5.html'
+      useTemplating: false
+  - path: /login
+    response:
+      headers:
+        Content-Type: text/html
+      body: Cookie is set
+      useTemplating: false
+- name: http://front-end
+  port: 8004
+  ssl: false
+  managementRoot: __admin
+  oas: '@mock-data/up9-http___front-end-spec.json'
   endpoints:
   - path: /
     response:
@@ -68,49 +134,8 @@ services:
         Content-Type: text/html
       body: Cookie is set
       useTemplating: false
-- name: http://front-end
-  port: 8003
-  ssl: false
-  managementRoot: __admin
-  oas: '@mock-data/up9-http___front-end-spec.json'
-  endpoints:
-  - path: /
-    response:
-      headers:
-        Content-Type: text/html
-      body: '@mock-data/resp_13.html'
-      useTemplating: false
-  - path: /basket.html
-    response:
-      headers:
-        Content-Type: text/html
-      body: '@mock-data/resp_14.html'
-      useTemplating: false
-  - path: /catalogue
-    response:
-      headers:
-        Content-Type: application/json
-      body: '@mock-data/resp_15.json'
-  - path: /category.html
-    response:
-      headers:
-        Content-Type: text/html
-      body: '@mock-data/resp_16.html'
-      useTemplating: false
-  - path: /detail.html
-    response:
-      headers:
-        Content-Type: text/html
-      body: '@mock-data/resp_17.html'
-      useTemplating: false
-  - path: /login
-    response:
-      headers:
-        Content-Type: text/html
-      body: Cookie is set
-      useTemplating: false
 - name: http://user
-  port: 8004
+  port: 8005
   ssl: false
   managementRoot: __admin
   oas: '@mock-data/up9-http___user-spec.json'
@@ -119,12 +144,12 @@ services:
     response:
       headers:
         Content-Type: application/json
-      body: '@mock-data/resp_1.json'
+      body: '@mock-data/resp_13.json'
   - path: /customers/{{id}}/addresses
     response:
       headers:
         Content-Type: application/json
-      body: '@mock-data/resp_2.json'
+      body: '@mock-data/resp_14.json'
       useTemplating: false
   - path: /customers/{{id}}/cards
     response:
@@ -136,5 +161,5 @@ services:
     response:
       headers:
         Content-Type: application/json
-      body: '@mock-data/resp_4.json'
+      body: '@mock-data/resp_16.json'
       useTemplating: false

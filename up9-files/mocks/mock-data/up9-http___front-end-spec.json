@@ -7,7 +7,7 @@
  "paths": {
   "/": {
    "get": {
-    "operationId": "8e415b18-c544-4f91-8fbd-e69b673ec156",
+    "operationId": "472bea8a-435e-42d9-ab63-60c03e98d9ac",
     "parameters": [],
     "responses": {
      "200": {
@@ -25,7 +25,7 @@
   },
   "/basket.html": {
    "get": {
-    "operationId": "facb71d0-3e8d-48f1-b75d-4886102569a3",
+    "operationId": "d2303983-076f-49cd-82f9-0384c464693c",
     "parameters": [],
     "responses": {
      "200": {
@@ -43,7 +43,7 @@
   },
   "/catalogue": {
    "get": {
-    "operationId": "df28bc3c-91ac-4697-af61-f9396e94c6ee",
+    "operationId": "9e7da1cc-5ddb-4288-b70d-b9141f00a9e7",
     "parameters": [
      {
       "in": "query",
@@ -263,13 +263,13 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 20 requests"
+    "summary": "Seen 21 requests"
    },
    "parameters": []
   },
   "/category.html": {
    "get": {
-    "operationId": "3b25b986-1088-450a-b076-b2a05be07541",
+    "operationId": "5afb4052-939b-454e-b517-a82866c1ac9f",
     "parameters": [],
     "responses": {
      "200": {
@@ -287,9 +287,10 @@
   },
   "/detail.html": {
    "get": {
-    "operationId": "eb6d49db-b441-41b1-8e6e-a25dd64c9afc",
+    "operationId": "98eec767-15a8-40b5-b149-0ec71cf51aed",
     "parameters": [
      {
+      "description": "Origin: GET http://front-end/catalogue &rarr; json: $.[*].id",
       "in": "query",
       "name": "id",
       "required": true,
@@ -321,7 +322,7 @@
   },
   "/login": {
    "get": {
-    "operationId": "be92cf25-0970-4d34-90ab-df798dddd93d",
+    "operationId": "f9b6560d-521b-424f-9e09-9d1ef8823695",
     "parameters": [],
     "responses": {
      "200": {

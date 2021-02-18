@@ -7,7 +7,7 @@
  "paths": {
   "/": {
    "get": {
-    "operationId": "c29aa4ba-f132-4145-b883-863d7b44bf6f",
+    "operationId": "a239944f-bf4d-4ff9-b2f4-a1629fd86708",
     "parameters": [],
     "responses": {
      "200": {
@@ -25,7 +25,7 @@
   },
   "/basket.html": {
    "get": {
-    "operationId": "72490dfb-7177-4e2e-a384-369ea5215538",
+    "operationId": "147a5a94-97fe-4516-af44-af7157d817f8",
     "parameters": [],
     "responses": {
      "200": {
@@ -43,7 +43,7 @@
   },
   "/catalogue": {
    "get": {
-    "operationId": "4856b347-247c-48ae-bc47-057cd20b397a",
+    "operationId": "5b0ac417-0871-438b-bdc2-a75e6ad89ddc",
     "parameters": [
      {
       "in": "query",
@@ -263,13 +263,13 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 24 requests"
+    "summary": "Seen 25 requests"
    },
    "parameters": []
   },
   "/category.html": {
    "get": {
-    "operationId": "5107f8a0-f108-46bf-a78f-8d8c9928bbd6",
+    "operationId": "061cb3f0-d2b2-4a7e-9c18-a05024b513bf",
     "parameters": [],
     "responses": {
      "200": {
@@ -287,9 +287,10 @@
   },
   "/detail.html": {
    "get": {
-    "operationId": "437bf865-f692-491d-9d03-d87fcacbcfd5",
+    "operationId": "9714b473-c02a-4d7e-ae84-da8b5fecf592",
     "parameters": [
      {
+      "description": "Origin: GET http://edge-router/catalogue &rarr; json: $.[*].id",
       "in": "query",
       "name": "id",
       "required": true,
@@ -321,7 +322,7 @@
   },
   "/login": {
    "get": {
-    "operationId": "3f0e3003-ba12-4015-aa03-424f48db9a10",
+    "operationId": "653b834d-488b-455e-8e7d-d29485bc9219",
     "parameters": [],
     "responses": {
      "200": {

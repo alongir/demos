@@ -48,111 +48,126 @@
 <div id="all">
 
     <div id="content">
-
         <div class="container">
+
             <div class="col-md-12">
-                <div id="main-slider">
-                    <div class="item">
-                        <a href="detail.html?id=3395a43e-2d88-40de-b95f-e00e1502085b">
-                            <img class="img-responsive" src="img/colourful_socks_banner.jpg" alt="">
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a href="detail.html?id=zzz4f044-b040-410d-8ead-4de0446aec7e">
-                            <img class="img-responsive" src="img/rugby_socks_banner.jpg" alt="">
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a href="detail.html?id=03fef6ac-1896-4ce8-bd69-b798f85c6e0b">
-                            <img class="img-responsive" src="img/holy_socks_banner.jpg" alt="">
-                        </a>
-                    </div>
-                </div>
-                <!-- /#main-slider -->
+                <ul class="breadcrumb">
+                    <li><a href="/">Home</a>
+                    </li>
+                    <li><a href="category.html">Catalogue</a>
+                    </li>
+                    <li id="breadcrumb"></li>
+                </ul>
+
             </div>
-        </div>
 
-        <!-- *** ADVANTAGES HOMEPAGE ***
-_________________________________________________________ -->
-        <div id="advantages">
+            <div class="col-md-12">
 
-            <div class="container">
-                <div class="same-height-row">
-                    <div class="col-sm-4">
-                        <div class="box same-height clickable">
-                            <div class="icon"><i class="fa fa-heart"></i>
-                            </div>
+                <div class="row" id="productMain">
+                    <div class="col-sm-6">
+                        <div id="mainImage">
+                            <img id="imageMain" alt=""
+                                 class="img-responsive">
+                        </div>
 
-                            <h3><a href="#">We love socks!</a></h3>
-                            <p>Fun fact: Socks were invented by woolly mammoths
-                                to keep warm. They died out because stupid
-                                humans had to cut their legs off to get their
-                                socks.</p>
+                        <div class="ribbon sale">
+                            <div class="theribbon">SALE</div>
+                            <div class="ribbon-background"></div>
+                        </div>
+                        <!-- /.ribbon -->
+
+                        <div class="ribbon new">
+                            <div class="theribbon">NEW</div>
+                            <div class="ribbon-background"></div>
+                        </div>
+                        <!-- /.ribbon -->
+
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="box">
+                            <h1 id="title" class="text-center"></h1>
+                            <p class="goToDescription"><a href="#productDetails"
+                                                          class="scroll-to">Scroll
+                                to product details, material & care and
+                                sizing</a>
+                            </p>
+                            <p id="price" class="price"></p>
+
+                            <p class="text-center buttons">
+                                <a id="buttonCart" class="btn btn-primary"><i
+                                        class="fa fa-shopping-cart"></i> Add to
+                                    cart</a>
+                                <a href="basket.html" class="btn btn-default"><i
+                                        class="fa fa-heart"></i> Add to wishlist</a>
+                            </p>
+
+
+                        </div>
+
+                        <div class="row" id="thumbs">
                         </div>
                     </div>
 
-                    <div class="col-sm-4">
-                        <div class="box same-height clickable">
-                            <div class="icon"><i class="fa fa-tags"></i>
-                            </div>
+                </div>
 
-                            <h3><a href="#">Best prices</a></h3>
-                            <p>We price check our socks with trained monkeys
-                                back at the office.</p>
+
+                <div class="box" id="productDetails">
+                    <p>
+                    <h4>Product details</h4>
+                    <p id="description">White lace top, woven, has a round neck, short sleeves,
+                        has knitted lining attached</p>
+                    <h4>Material & care</h4>
+                    <ul>
+                        <li>Polyester</li>
+                        <li>Machine wash</li>
+                    </ul>
+                    <h4>Size & Fit</h4>
+                    <ul>
+                        <li>Regular fit</li>
+                    </ul>
+
+                    <blockquote>
+                        <p><em>Add more socks, you need more socks!</em>
+                        </p>
+                    </blockquote>
+
+                    <hr>
+                    <div class="social">
+                        <h4>Show it to your friends</h4>
+                        <p>
+                            <a href="#" class="external facebook"
+                               data-animate-hover="pulse"><i
+                                    class="fa fa-facebook"></i></a>
+                            <a href="#" class="external gplus"
+                               data-animate-hover="pulse"><i
+                                    class="fa fa-google-plus"></i></a>
+                            <a href="#" class="external twitter"
+                               data-animate-hover="pulse"><i
+                                    class="fa fa-twitter"></i></a>
+                            <a href="#" class="email"
+                               data-animate-hover="pulse"><i
+                                    class="fa fa-envelope"></i></a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row same-height-row">
+                    <div class="col-md-3 col-sm-6">
+                        <div class="box same-height">
+                            <h3>You may also like these products</h3>
                         </div>
                     </div>
-
-                    <div class="col-sm-4">
-                        <div class="box same-height clickable">
-                            <div class="icon"><i class="fa fa-thumbs-up"></i>
-                            </div>
-
-                            <h3><a href="#">100% satisfaction guaranteed</a>
-                            </h3>
-                            <p>Free returns on most items. Hamsters are
-                                non-returnable once spoken to.</p>
-                        </div>
-                    </div>
+                    <div id="products"></div>
                 </div>
-                <!-- /.row -->
 
             </div>
-            <!-- /.container -->
-
+            <!-- /.col-md-9 -->
         </div>
-        <!-- /#advantages -->
-
-        <!-- *** ADVANTAGES END *** -->
-
-        <!-- *** HOT PRODUCT SLIDESHOW ***
-_________________________________________________________ -->
-        <div id="hot">
-
-            <div class="box">
-                <div class="container">
-                    <div class="col-md-12">
-                        <h2>Hot this week</h2>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container">
-                <div class="product-slider" id="hot-slider">
-                </div>
-                <!-- /.product-slider -->
-            </div>
-            <!-- /.container -->
-
-        </div>
-        <!-- /#hot -->
-
-        <!-- *** HOT END *** -->
-
+        <!-- /.container -->
     </div>
     <!-- /#content -->
 
     <div id="footer"></div>
-
 </div>
 <!-- /#all -->
 
@@ -161,8 +176,6 @@ _________________________________________________________ -->
 _________________________________________________________ -->
 <script src="js/jquery-1.11.0.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<script src="js/js.cookie.js"></script>
-<script src="js/client.js"></script>
 <script src="js/jquery.cookie.js"></script>
 <script src="js/waypoints.min.js"></script>
 <script src="js/modernizr.js"></script>
@@ -178,65 +191,79 @@ _________________________________________________________ -->
             contentType: "application/json; charset=utf-8"
         });
 
-        console.log("Loading components for index.html");
+        console.log("Loading components for category.html");
         $("#topbar").load("topbar.html");
         $("#navbar").load("navbar.html");
         $("#footer").load("footer.html");
 
-        $.getJSON('/catalogue', {size: 5}, function (data) {
-            if (data != null) {
-                $.each(data, function (index, element) {
-                    $('#hot-slider').append(
-                            '<div class="item">\
-                            <div class="product">\
-                                <div class="flip-container">\
-                                    <div class="flipper">\
-                                        <div class="front">\
-                                            <a href="detail.html?id=' + element.id + '">\
-                                            <img src="' + element.imageUrl[0] + '" alt="" class="img-responsive">\
-                                        </a>\
+        var id = $.query.get('id') ? $.query.get('id') : "";
+        if (id == null || id == "") {
+            document.location.href = "/";
+        }
+        $.getJSON('/catalogue/' + id, function (data) {
+            $("#title").text(data.name);
+            $("#breadcrumb").text(data.name);
+            $("#price").text("$" + data.price.toFixed(2));
+            $("#imageMain").attr("src", data.imageUrl[0]);
+            $("#buttonCart").attr("onClick", "addToCart(\'" + data.id + "\')");
+            var thumbHtml = "";
+            for (var i = 0; i < data.imageUrl.length; i++) {
+                thumbHtml = thumbHtml +
+                        '<div class="col-xs-4">\
+                            <a href="' + data.imageUrl[i] + '" class="thumb">\
+                    <img src="' + data.imageUrl[i] + '" alt="" class="img-responsive">\
+                    </a>\
+                </div>'
+            }
+            $("#thumbs").append(thumbHtml);
+            $("#description").text(data.description);
+
+            $.getJSON('/catalogue', {sort: "id", size: 3, tags: data.tag[0]}, function (data) {
+                if (data != null) {
+                    $.each(data, function (index, element) {
+                        $('#products').append('<div class="col-md-3 col-sm-4">\
+                            <div class="product same-height">\
+                                    <div class="flip-container">\
+                                        <div class="flipper">\
+                                            <div class="front">\
+                                                <a href="detail.html?id=' + element.id + '">\
+                                                    <img src="' + element.imageUrl[0] + '" alt="" class="img-responsive">\
+                                                </a>\
+                                            </div>\
+                                            <div class="back">\
+                                                <a href="detail.html?id=' + element.id + '">\
+                                                    <img src="' + element.imageUrl[1] + '" alt="" class="img-responsive">\
+                                                </a>\
+                                            </div>\
+                                        </div>\
                                     </div>\
-                                    <div class="back">\
-                                        <a href="detail.html?id=' + element.id + '">\
-                                            <img src="' + element.imageUrl[1] + '" alt="" class="img-responsive">\
-                                        </a>\
+                                    <a href="detail.html?id=' + element.id + '" class="invisible">\
+                                        <img src="img/product1.jpg" alt="" class="img-responsive">\
+                                    </a>\
+                                    <div class="text">\
+                                        <h3><a href="detail.html?id=' + element.id + '">' + element.name + '</a></h3>\
+                                        <p class="price">$' + element.price + '</p>\
+                                        <p class="buttons">\
+                                            <a href="detail.html?id=' + element.id + '" class="btn btn-default">View detail</a>\
+                                            <a href="#" onclick="addToCart(\'' + element.id + '\')" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Add to cart</a>\
+                                        </p>\
                                     </div>\
                                 </div>\
-                            </div>\
-                            <a href="detail.html?id=' + element.id + '" class="invisible">\
-                                <img src="' + element.imageUrl[0] + '" alt="" class="img-responsive">\
-                            </a>\
-                            <div class="text">\
-                                <h3><a href="detail.html?id=' + element.id + '">' + element.name + '</a></h3>\
-                                <p class="price">$' + element.price + '</p>\
-                            </div>\
-                        </div>\
-                    </div>'
-                    );
-                });
-                $('.product-slider').owlCarousel({
-                    navigation: true, // Show next and prev buttons
-                    slideSpeed: 300,
-                    paginationSpeed: 400,
-                    afterInit: function () {
-                        $('.product-slider .item').css('visibility', 'visible');
-                    }
-                });
-
-                $('#main-slider').owlCarousel({
-                    navigation: true, // Show next and prev buttons
-                    slideSpeed: 300,
-                    paginationSpeed: 400,
-                    autoPlay: true,
-                    stopOnHover: true,
-                    singleItem: true,
-                    afterInit: ''
-                });
-
-            }
+                            </div>');
+                    });
+                }
+            });
         });
-    })
+
+
+
+
+
+
+    });
+
 </script>
+
 </body>
 
 </html>
