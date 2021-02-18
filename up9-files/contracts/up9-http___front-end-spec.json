@@ -7,7 +7,7 @@
  "paths": {
   "/": {
    "get": {
-    "operationId": "6dc4a831-a33f-423c-baaa-cfc724bab1c0",
+    "operationId": "d23d7bd3-c90e-446e-9aae-f3725dae76f2",
     "parameters": [],
     "responses": {
      "200": {
@@ -19,13 +19,13 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 9 requests"
+    "summary": "Seen 5 requests"
    },
    "parameters": []
   },
   "/basket.html": {
    "get": {
-    "operationId": "b0e649c4-79b4-4f64-9822-06a70d087320",
+    "operationId": "0f189625-c9c9-49aa-84b1-d373b9fbca48",
     "parameters": [],
     "responses": {
      "200": {
@@ -37,13 +37,13 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 3 requests"
+    "summary": "Seen 2 requests"
    },
    "parameters": []
   },
   "/catalogue": {
    "get": {
-    "operationId": "4cf0c90b-b938-41d4-a72c-412b0e30bd2b",
+    "operationId": "0400949f-5585-40b8-bf75-65272e93ce33",
     "parameters": [],
     "responses": {
      "200": {
@@ -240,13 +240,13 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 8 requests"
+    "summary": "Seen 4 requests"
    },
    "parameters": []
   },
   "/category.html": {
    "get": {
-    "operationId": "ba50b341-5aaa-4141-b880-5963d7067073",
+    "operationId": "6c2bb771-6562-4c7b-91bd-58cc18430603",
     "parameters": [],
     "responses": {
      "200": {
@@ -258,13 +258,13 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 5 requests"
+    "summary": "Seen 2 requests"
    },
    "parameters": []
   },
   "/detail.html": {
    "get": {
-    "operationId": "8ddb509b-6323-4307-962f-e819df53f5d3",
+    "operationId": "bd04ec4e-bf76-456e-aa68-44592d97b6c2",
     "parameters": [
      {
       "in": "query",
@@ -272,8 +272,8 @@
       "required": true,
       "schema": {
        "enum": [
-        "819e1fbf-8b7e-4f6d-811f-693534916a8b",
-        "837ab141-399e-4c1f-9abc-bace40296bac"
+        "510a0d7e-8e83-4193-b483-e27e09ddc34d",
+        "03fef6ac-1896-4ce8-bd69-b798f85c6e0b"
        ],
        "type": "string"
       }
@@ -289,13 +289,13 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 4 requests"
+    "summary": "Seen 2 requests"
    },
    "parameters": []
   },
   "/login": {
    "get": {
-    "operationId": "6171b12c-aeac-4148-8c4c-da0e67ec015d",
+    "operationId": "4e898bdf-463a-482f-8a6e-c2d11b9e8a5c",
     "parameters": [],
     "responses": {
      "200": {
@@ -307,7 +307,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 5 requests"
+    "summary": "Seen 3 requests"
    },
    "parameters": []
   }
