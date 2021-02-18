@@ -106,12 +106,12 @@ services:
     response:
       headers:
         Content-Type: application/json
-      body: '@mock-data/resp_24.json'
+      body: '@mock-data/resp_22.json'
   - path: /index.html
     response:
       headers:
         Content-Type: text/html
-      body: '@mock-data/resp_26.html'
+      body: '@mock-data/resp_24.html'
       useTemplating: false
 - name: http://front-end
   port: 8004
@@ -164,7 +164,13 @@ services:
     response:
       headers:
         Content-Type: application/json
-      body: '@mock-data/resp_22.json'
+      body: '@mock-data/resp_26.json'
+  - path: /index.html
+    response:
+      headers:
+        Content-Type: text/html
+      body: '@mock-data/resp_28.html'
+      useTemplating: false
 - name: http://user
   port: 8005
   ssl: false

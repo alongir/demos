@@ -148,7 +148,7 @@
   },
   "/carts/{id}/merge": {
    "get": {
-    "operationId": "3bc3af27-9ad8-47ae-ba63-46b9a93ad602",
+    "operationId": "e7b360d0-ac4c-46c9-bdb3-b9fb9f1b0bed",
     "parameters": [
      {
       "in": "query",

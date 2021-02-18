@@ -43,7 +43,7 @@
   },
   "/cart": {
    "get": {
-    "operationId": "330f7068-e2ce-4a3a-8369-9a1c960f73d8",
+    "operationId": "0f4fe40e-67b8-4986-a2df-3b858e12846b",
     "parameters": [
      {
       "in": "header",
@@ -358,7 +358,7 @@
   },
   "/catalogue/{id}": {
    "get": {
-    "operationId": "46a24a61-38c2-42d7-bc19-9116cf39399e",
+    "operationId": "7790c3a5-43cf-469b-b18c-77af508c1899",
     "parameters": [
      {
       "in": "header",
@@ -513,7 +513,7 @@
   },
   "/index.html": {
    "get": {
-    "operationId": "2308657e-d2ef-457c-9053-8d6e586315cb",
+    "operationId": "b79f5c83-1bb6-4b85-b95c-d6b44b322359",
     "parameters": [],
     "responses": {
      "200": {

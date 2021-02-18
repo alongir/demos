@@ -33,9 +33,9 @@ class Tests_carts(unittest.TestCase):
         resp = carts.post(f'/carts/{id_}/items', json=json_payload, headers=dict([('accept', 'application/json')]))
         resp.assert_status_code(201)
 
-    @clear_session({'spanId': 27})
-    def test_27_get_carts_id_merge(self):
-        # GET http://carts/carts/{id}/merge (endp 27)
+    @clear_session({'spanId': 29})
+    def test_29_get_carts_id_merge(self):
+        # GET http://carts/carts/{id}/merge (endp 29)
         carts = get_http_target('TARGET_CARTS', authenticate)
         qstr = '?' + urlencode([('sessionId', sessionId)])
         resp = carts.get(f'/carts/{id_}/merge' + qstr)
@@ -110,15 +110,15 @@ class Tests_edge_router(unittest.TestCase):
         resp.assert_status_code(200)
         resp.assert_cssselect('p', expected_value='Cookie is set')
 
-    @clear_session({'spanId': 23})
-    def test_23_get_cart(self):
-        # GET http://edge-router/cart (endp 23)
+    @clear_session({'spanId': 21})
+    def test_21_get_cart(self):
+        # GET http://edge-router/cart (endp 21)
         edge_router = get_http_target('TARGET_EDGE_ROUTER', authenticate)
         resp = edge_router.get('/cart', headers=dict([('x-requested-with', 'XMLHttpRequest')]))
         resp.assert_status_code(200)
 
-    @clear_session({'spanId': 24})
-    def test_24_get_catalogue_id(self):
+    @clear_session({'spanId': 22})
+    def test_22_get_catalogue_id(self):
         # GET http://edge-router/catalogue (endp 17)
         edge_router = get_http_target('TARGET_EDGE_ROUTER', authenticate)
         qstr = '?' + urlencode([('size', size), ('sort', 'id'), ('tags', 'brown')])
@@ -126,14 +126,14 @@ class Tests_edge_router(unittest.TestCase):
         resp.assert_status_code(200)
         id_ = jsonpath('$.[*].id', resp)
 
-        # GET http://edge-router/catalogue/{id} (endp 24)
+        # GET http://edge-router/catalogue/{id} (endp 22)
         resp = edge_router.get(f'/catalogue/{id_}', headers=dict([('x-requested-with', 'XMLHttpRequest')]))
         resp.assert_status_code(200)
         resp.assert_jsonpath('$.imageUrl.[*]', expected_value='/catalogue/images/colourful_socks.jpg')
 
-    @clear_session({'spanId': 26})
-    def test_26_get_index_html(self):
-        # GET http://edge-router/index.html (endp 26)
+    @clear_session({'spanId': 24})
+    def test_24_get_index_html(self):
+        # GET http://edge-router/index.html (endp 24)
         edge_router = get_http_target('TARGET_EDGE_ROUTER', authenticate)
         resp = edge_router.get('/index.html')
         resp.assert_status_code(200)
@@ -191,15 +191,15 @@ class Tests_front_end(unittest.TestCase):
         resp.assert_status_code(200)
         resp.assert_cssselect('p', expected_value='Cookie is set')
 
-    @clear_session({'spanId': 21})
-    def test_21_get_cart(self):
-        # GET http://front-end/cart (endp 21)
+    @clear_session({'spanId': 25})
+    def test_25_get_cart(self):
+        # GET http://front-end/cart (endp 25)
         front_end = get_http_target('TARGET_FRONT_END', authenticate)
         resp = front_end.get('/cart', headers=dict([('x-requested-with', 'XMLHttpRequest')]))
         resp.assert_status_code(200)
 
-    @clear_session({'spanId': 22})
-    def test_22_get_catalogue_id(self):
+    @clear_session({'spanId': 26})
+    def test_26_get_catalogue_id(self):
         # GET http://front-end/catalogue (endp 11)
         front_end = get_http_target('TARGET_FRONT_END', authenticate)
         qstr = '?' + urlencode([('size', size), ('sort', 'id'), ('tags', 'brown')])
@@ -207,10 +207,18 @@ class Tests_front_end(unittest.TestCase):
         resp.assert_status_code(200)
         id_ = jsonpath('$.[*].id', resp)
 
-        # GET http://front-end/catalogue/{id} (endp 22)
+        # GET http://front-end/catalogue/{id} (endp 26)
         resp = front_end.get(f'/catalogue/{id_}', headers=dict([('x-requested-with', 'XMLHttpRequest')]))
         resp.assert_status_code(200)
         resp.assert_jsonpath('$.imageUrl.[*]', expected_value='/catalogue/images/colourful_socks.jpg')
+
+    @clear_session({'spanId': 28})
+    def test_28_get_index_html(self):
+        # GET http://front-end/index.html (endp 28)
+        front_end = get_http_target('TARGET_FRONT_END', authenticate)
+        resp = front_end.get('/index.html')
+        resp.assert_status_code(200)
+        resp.assert_cssselect('div#hot div.box div.container div h2', expected_value='Hot this week')
 
 
 @data_driven_tests
