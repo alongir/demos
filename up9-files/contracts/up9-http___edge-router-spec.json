@@ -43,7 +43,7 @@
   },
   "/cart": {
    "get": {
-    "operationId": "0f4fe40e-67b8-4986-a2df-3b858e12846b",
+    "operationId": "41ce1821-a1ef-401b-86bf-aa80d4d13198",
     "parameters": [
      {
       "in": "header",
@@ -100,7 +100,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 3 requests"
+    "summary": "Seen 4 requests"
    },
    "parameters": []
   },
@@ -349,7 +349,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 27 requests",
+    "summary": "Seen 28 requests",
     "tags": [
      "catalogue"
     ]
@@ -358,7 +358,7 @@
   },
   "/catalogue/{id}": {
    "get": {
-    "operationId": "7790c3a5-43cf-469b-b18c-77af508c1899",
+    "operationId": "1dccd976-a195-484f-867b-f2f818979762",
     "parameters": [
      {
       "in": "header",
@@ -513,7 +513,7 @@
   },
   "/index.html": {
    "get": {
-    "operationId": "b79f5c83-1bb6-4b85-b95c-d6b44b322359",
+    "operationId": "9aecedc4-a03e-4203-a59d-2f8b8aa33e95",
     "parameters": [],
     "responses": {
      "200": {

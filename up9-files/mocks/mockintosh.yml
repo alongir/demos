@@ -165,11 +165,17 @@ services:
       headers:
         Content-Type: application/json
       body: '@mock-data/resp_26.json'
+  - path: /customers/{{customerId}}
+    response:
+      headers:
+        Content-Type: application/json
+      body: '@mock-data/resp_28.json'
+      useTemplating: false
   - path: /index.html
     response:
       headers:
         Content-Type: text/html
-      body: '@mock-data/resp_28.html'
+      body: '@mock-data/resp_29.html'
       useTemplating: false
 - name: http://user
   port: 8005

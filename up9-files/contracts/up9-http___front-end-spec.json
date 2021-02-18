@@ -43,7 +43,7 @@
   },
   "/cart": {
    "get": {
-    "operationId": "0c074c02-7e67-4c0b-87a3-c11218bae93f",
+    "operationId": "d82c7382-ca90-4f6c-9e35-a6a09b186f05",
     "parameters": [
      {
       "in": "header",
@@ -100,7 +100,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 3 requests"
+    "summary": "Seen 5 requests"
    },
    "parameters": []
   },
@@ -349,7 +349,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 23 requests",
+    "summary": "Seen 25 requests",
     "tags": [
      "catalogue"
     ]
@@ -358,7 +358,7 @@
   },
   "/catalogue/{id}": {
    "get": {
-    "operationId": "05090bd2-1fbe-4d88-b302-31792fc885d0",
+    "operationId": "24bf8a8a-9ad2-47fa-95b7-4f1c59054aab",
     "parameters": [
      {
       "in": "header",
@@ -476,6 +476,147 @@
    },
    "parameters": []
   },
+  "/customers/{customerId}": {
+   "get": {
+    "operationId": "6fad08aa-d47c-4b06-920c-d72ce085c461",
+    "parameters": [
+     {
+      "in": "header",
+      "name": "x-requested-with",
+      "required": false,
+      "schema": {
+       "enum": [
+        "XMLHttpRequest"
+       ],
+       "type": "string"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "content": {
+       "application/json": {
+        "example": {
+         "_links": {
+          "addresses": {
+           "href": "http://user/customers/57a98d98e4b00679b4a830b2/addresses"
+          },
+          "cards": {
+           "href": "http://user/customers/57a98d98e4b00679b4a830b2/cards"
+          },
+          "customer": {
+           "href": "http://user/customers/57a98d98e4b00679b4a830b2"
+          },
+          "self": {
+           "href": "http://user/customers/57a98d98e4b00679b4a830b2"
+          }
+         },
+         "firstName": "User",
+         "id": "57a98d98e4b00679b4a830b2",
+         "lastName": "Name",
+         "username": "user"
+        },
+        "schema": {
+         "properties": {
+          "_links": {
+           "properties": {
+            "addresses": {
+             "properties": {
+              "href": {
+               "type": "string"
+              }
+             },
+             "required": [
+              "href"
+             ],
+             "type": "object"
+            },
+            "cards": {
+             "properties": {
+              "href": {
+               "type": "string"
+              }
+             },
+             "required": [
+              "href"
+             ],
+             "type": "object"
+            },
+            "customer": {
+             "properties": {
+              "href": {
+               "type": "string"
+              }
+             },
+             "required": [
+              "href"
+             ],
+             "type": "object"
+            },
+            "self": {
+             "properties": {
+              "href": {
+               "type": "string"
+              }
+             },
+             "required": [
+              "href"
+             ],
+             "type": "object"
+            }
+           },
+           "required": [
+            "addresses",
+            "cards",
+            "customer",
+            "self"
+           ],
+           "type": "object"
+          },
+          "firstName": {
+           "type": "string"
+          },
+          "id": {
+           "type": "string"
+          },
+          "lastName": {
+           "type": "string"
+          },
+          "username": {
+           "type": "string"
+          }
+         },
+         "required": [
+          "_links",
+          "firstName",
+          "id",
+          "lastName",
+          "username"
+         ],
+         "type": "object"
+        }
+       }
+      },
+      "description": "OK"
+     }
+    },
+    "summary": "Seen 1 requests"
+   },
+   "parameters": [
+    {
+     "in": "path",
+     "name": "customerId",
+     "required": true,
+     "schema": {
+      "enum": [
+       "m2ocBH96TVeKzn9aWgu1llMQAVUvsVhx"
+      ],
+      "type": "string"
+     },
+     "style": "simple"
+    }
+   ]
+  },
   "/detail.html": {
    "get": {
     "operationId": "fcd5ca68-a8b4-43c1-b8ef-f34c17d66d64",
@@ -513,7 +654,7 @@
   },
   "/index.html": {
    "get": {
-    "operationId": "d887c99b-ae35-4799-8bd6-695eef98b580",
+    "operationId": "e483c21b-9773-4083-bcf6-f83cdfe8d75d",
     "parameters": [],
     "responses": {
      "200": {

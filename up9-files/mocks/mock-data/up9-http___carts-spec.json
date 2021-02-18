@@ -45,20 +45,24 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 18 requests",
+    "summary": "Seen 28 requests",
     "tags": [
      "carts"
     ]
    },
    "parameters": [
     {
+     "description": "Origin: GET http://user/login &rarr; json: $.user.id",
      "in": "path",
      "name": "id",
      "required": true,
      "schema": {
       "enum": [
        "m2ocBH96TVeKzn9aWgu1llMQAVUvsVhx",
-       "57a98d98e4b00679b4a830b2"
+       "57a98d98e4b00679b4a830b2",
+       "-ZbC80X-12ir9NR2RB2f5HZb6eoj6XVw",
+       "CqLS9tHH3IQIm5PTNYIHIrvOWCb9KeA7",
+       "ijfC482Kkac0I7ElLYf8EauWM7fLNACQ"
       ],
       "type": "string"
      },
@@ -148,7 +152,7 @@
   },
   "/carts/{id}/merge": {
    "get": {
-    "operationId": "e7b360d0-ac4c-46c9-bdb3-b9fb9f1b0bed",
+    "operationId": "51eacae6-1e67-4ae8-8c8b-1c308a9f1de4",
     "parameters": [
      {
       "in": "query",
@@ -156,7 +160,11 @@
       "required": true,
       "schema": {
        "enum": [
-        "m2ocBH96TVeKzn9aWgu1llMQAVUvsVhx"
+        "m2ocBH96TVeKzn9aWgu1llMQAVUvsVhx",
+        "yb3RGPkxzphPRYzMveUdkUX2T0kqZxHM",
+        "P2owSURyPvazasn6CNfIFkjCc92LiWWB",
+        "lCgfwNvdKx8dnAxwE7FFkf2RG8enAJE1",
+        "evRPot7y7YB16DXNrtKMQwHj3PcvOHTm"
        ],
        "type": "string"
       }
@@ -167,20 +175,24 @@
       "description": "Accepted"
      }
     },
-    "summary": "Seen 2 requests",
+    "summary": "Seen 9 requests",
     "tags": [
      "carts"
     ]
    },
    "parameters": [
     {
+     "description": "Origin: GET http://user/login &rarr; json: $.user.id",
      "in": "path",
      "name": "id",
      "required": true,
      "schema": {
       "enum": [
        "m2ocBH96TVeKzn9aWgu1llMQAVUvsVhx",
-       "57a98d98e4b00679b4a830b2"
+       "57a98d98e4b00679b4a830b2",
+       "-ZbC80X-12ir9NR2RB2f5HZb6eoj6XVw",
+       "CqLS9tHH3IQIm5PTNYIHIrvOWCb9KeA7",
+       "ijfC482Kkac0I7ElLYf8EauWM7fLNACQ"
       ],
       "type": "string"
      },

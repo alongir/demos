@@ -9,6 +9,13 @@ class Tests_carts(unittest.TestCase):
 
     @clear_session({'spanId': 7})
     def test_07_get_carts_id_items(self):
+        # GET http://user/login (endp 4)
+        user = get_http_target('TARGET_USER', authenticate)
+        resp = user.get('/login')
+        resp.assert_status_code(200)
+        resp.assert_jsonpath('$.user.lastName', expected_value='Name')
+        id_ = jsonpath('$.user.id', resp)
+
         # GET http://carts/carts/{id}/items (endp 7)
         carts = get_http_target('TARGET_CARTS', authenticate)
         resp = carts.get(f'/carts/{id_}/items')
@@ -16,6 +23,13 @@ class Tests_carts(unittest.TestCase):
 
     @clear_session({'spanId': 8})
     def test_08_post_carts_id_items(self):
+        # GET http://user/login (endp 4)
+        user = get_http_target('TARGET_USER', authenticate)
+        resp = user.get('/login')
+        resp.assert_status_code(200)
+        resp.assert_jsonpath('$.user.lastName', expected_value='Name')
+        id_ = jsonpath('$.user.id', resp)
+
         # GET http://catalogue/catalogue (endp 5)
         catalogue = get_http_target('TARGET_CATALOGUE', authenticate)
         qstr = '?' + urlencode([('size', size), ('sort', 'id'), ('tags', tags)])
@@ -33,9 +47,16 @@ class Tests_carts(unittest.TestCase):
         resp = carts.post(f'/carts/{id_}/items', json=json_payload, headers=dict([('accept', 'application/json')]))
         resp.assert_status_code(201)
 
-    @clear_session({'spanId': 29})
-    def test_29_get_carts_id_merge(self):
-        # GET http://carts/carts/{id}/merge (endp 29)
+    @clear_session({'spanId': 30})
+    def test_30_get_carts_id_merge(self):
+        # GET http://user/login (endp 4)
+        user = get_http_target('TARGET_USER', authenticate)
+        resp = user.get('/login')
+        resp.assert_status_code(200)
+        resp.assert_jsonpath('$.user.lastName', expected_value='Name')
+        id_ = jsonpath('$.user.id', resp)
+
+        # GET http://carts/carts/{id}/merge (endp 30)
         carts = get_http_target('TARGET_CARTS', authenticate)
         qstr = '?' + urlencode([('sessionId', sessionId)])
         resp = carts.get(f'/carts/{id_}/merge' + qstr)
@@ -211,8 +232,16 @@ class Tests_front_end(unittest.TestCase):
         resp.assert_jsonpath('$.imageUrl.[*]', expected_value='/catalogue/images/colourful_socks.jpg')
 
     @clear_session({'spanId': 28})
-    def test_28_get_index_html(self):
-        # GET http://front-end/index.html (endp 28)
+    def test_28_get_customers_customerId(self):
+        # GET http://front-end/customers/{customerId} (endp 28)
+        front_end = get_http_target('TARGET_FRONT_END', authenticate)
+        resp = front_end.get(f'/customers/{customerId}', headers=dict([('x-requested-with', 'XMLHttpRequest')]))
+        resp.assert_status_code(200)
+        resp.assert_jsonpath('$.lastName', expected_value='Name')
+
+    @clear_session({'spanId': 29})
+    def test_29_get_index_html(self):
+        # GET http://front-end/index.html (endp 29)
         front_end = get_http_target('TARGET_FRONT_END', authenticate)
         resp = front_end.get('/index.html')
         resp.assert_status_code(200)
