@@ -1,0 +1,154 @@
+{
+ "info": {
+  "title": "http://carts",
+  "version": "0.0"
+ },
+ "openapi": "3.0.2",
+ "paths": {
+  "/carts/{cartId}/items": {
+   "get": {
+    "operationId": "d3a803f3-cf30-40d1-bd4a-5f04bf26661d",
+    "parameters": [],
+    "responses": {
+     "200": {
+      "content": {
+       "application/json": {
+        "example": [],
+        "schema": {
+         "items": {
+          "properties": {
+           "id": {
+            "type": "string"
+           },
+           "itemId": {
+            "type": "string"
+           },
+           "quantity": {
+            "type": "integer"
+           },
+           "unitPrice": {
+            "type": "number"
+           }
+          },
+          "required": [
+           "id",
+           "itemId",
+           "quantity",
+           "unitPrice"
+          ],
+          "type": "object"
+         },
+         "type": "array"
+        }
+       }
+      },
+      "description": "OK"
+     }
+    },
+    "summary": "Seen 13 requests",
+    "tags": [
+     "carts.items"
+    ]
+   },
+   "parameters": [
+    {
+     "in": "path",
+     "name": "cartId",
+     "required": true,
+     "schema": {
+      "enum": [
+       "m2ocBH96TVeKzn9aWgu1llMQAVUvsVhx"
+      ],
+      "type": "string"
+     },
+     "style": "simple"
+    }
+   ],
+   "post": {
+    "operationId": "c0db2c0c-cb4e-4b64-b2d5-bcc5070142a8",
+    "parameters": [
+     {
+      "in": "header",
+      "name": "accept",
+      "required": false,
+      "schema": {
+       "enum": [
+        "application/json"
+       ],
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "properties": {
+         "itemId": {
+          "type": "string"
+         },
+         "unitPrice": {
+          "type": "integer"
+         }
+        },
+        "required": [
+         "itemId",
+         "unitPrice"
+        ],
+        "type": "object"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "201": {
+      "content": {
+       "application/json": {
+        "example": {
+         "id": "602dd0a57401b100072c2945",
+         "itemId": "3395a43e-2d88-40de-b95f-e00e1502085b",
+         "quantity": 1,
+         "unitPrice": 18.0
+        },
+        "schema": {
+         "properties": {
+          "id": {
+           "type": "string"
+          },
+          "itemId": {
+           "type": "string"
+          },
+          "quantity": {
+           "type": "integer"
+          },
+          "unitPrice": {
+           "type": "number"
+          }
+         },
+         "required": [
+          "id",
+          "itemId",
+          "quantity",
+          "unitPrice"
+         ],
+         "type": "object"
+        }
+       }
+      },
+      "description": "Created"
+     }
+    },
+    "summary": "Seen 1 requests",
+    "tags": [
+     "carts.items"
+    ]
+   }
+  }
+ },
+ "tags": [
+  {
+   "name": "carts.items"
+  }
+ ]
+}
