@@ -7,8 +7,20 @@
  "paths": {
   "/catalogue": {
    "get": {
-    "operationId": "15f216a9-4fff-46c0-9e54-0bf786a897a5",
-    "parameters": [],
+    "operationId": "88a979a8-b400-4d77-9ec7-03bc8de97d34",
+    "parameters": [
+     {
+      "in": "query",
+      "name": "size",
+      "required": true,
+      "schema": {
+       "enum": [
+        "5"
+       ],
+       "type": "string"
+      }
+     }
+    ],
     "responses": {
      "200": {
       "content": {
@@ -204,7 +216,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 33 requests",
+    "summary": "Seen 37 requests",
     "tags": [
      "catalogue"
     ]
@@ -213,7 +225,7 @@
   },
   "/catalogue/{id}": {
    "get": {
-    "operationId": "c003ca5e-ae93-4a9a-99a1-d715f486c83b",
+    "operationId": "ead12937-6530-431a-a12c-964b8e57a2b7",
     "parameters": [],
     "responses": {
      "200": {

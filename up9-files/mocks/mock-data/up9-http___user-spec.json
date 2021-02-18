@@ -7,7 +7,7 @@
  "paths": {
   "/customers/{id}": {
    "get": {
-    "operationId": "9e6912b4-e8f4-4e55-b1e1-5f95a6299292",
+    "operationId": "0825d518-79d6-44ff-ad6d-68124dd3246a",
     "parameters": [],
     "responses": {
      "200": {
@@ -117,7 +117,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 13 requests",
+    "summary": "Seen 18 requests",
     "tags": [
      "customers"
     ]
@@ -139,7 +139,7 @@
   },
   "/customers/{id}/addresses": {
    "get": {
-    "operationId": "3cae4f70-6a2b-4d07-ae40-a8ae22fc42d4",
+    "operationId": "a139b0da-ff14-442f-9fe2-41a546db808a",
     "parameters": [],
     "responses": {
      "200": {
@@ -254,7 +254,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 12 requests",
+    "summary": "Seen 18 requests",
     "tags": [
      "customers"
     ]
@@ -276,7 +276,7 @@
   },
   "/customers/{id}/cards": {
    "get": {
-    "operationId": "469d502b-b77c-4c1a-b82a-73f89a766ce1",
+    "operationId": "13a96b91-805b-4452-9027-771bc4255140",
     "parameters": [],
     "responses": {
      "200": {
@@ -381,7 +381,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 12 requests",
+    "summary": "Seen 18 requests",
     "tags": [
      "customers"
     ]
@@ -403,7 +403,7 @@
   },
   "/login": {
    "get": {
-    "operationId": "1067a82f-88df-42f9-a033-93419932ef38",
+    "operationId": "6c3b7dae-5531-4c83-a660-b3576a7583af",
     "parameters": [],
     "responses": {
      "200": {
@@ -523,7 +523,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 20 requests"
+    "summary": "Seen 28 requests"
    },
    "parameters": []
   }

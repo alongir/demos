@@ -37,47 +37,6 @@ services:
     response:
       headers:
         Content-Type: text/html
-      body: '@mock-data/resp_13.html'
-      useTemplating: false
-  - path: /basket.html
-    response:
-      headers:
-        Content-Type: text/html
-      body: '@mock-data/resp_14.html'
-      useTemplating: false
-  - path: /catalogue
-    response:
-      headers:
-        Content-Type: application/json
-      body: '@mock-data/resp_15.json'
-  - path: /category.html
-    response:
-      headers:
-        Content-Type: text/html
-      body: '@mock-data/resp_16.html'
-      useTemplating: false
-  - path: /detail.html
-    response:
-      headers:
-        Content-Type: text/html
-      body: '@mock-data/resp_17.html'
-      useTemplating: false
-  - path: /login
-    response:
-      headers:
-        Content-Type: text/html
-      body: Cookie is set
-      useTemplating: false
-- name: http://front-end
-  port: 8003
-  ssl: false
-  managementRoot: __admin
-  oas: '@mock-data/up9-http___front-end-spec.json'
-  endpoints:
-  - path: /
-    response:
-      headers:
-        Content-Type: text/html
       body: '@mock-data/resp_7.html'
       useTemplating: false
   - path: /basket.html
@@ -102,6 +61,47 @@ services:
       headers:
         Content-Type: text/html
       body: '@mock-data/resp_11.html'
+      useTemplating: false
+  - path: /login
+    response:
+      headers:
+        Content-Type: text/html
+      body: Cookie is set
+      useTemplating: false
+- name: http://front-end
+  port: 8003
+  ssl: false
+  managementRoot: __admin
+  oas: '@mock-data/up9-http___front-end-spec.json'
+  endpoints:
+  - path: /
+    response:
+      headers:
+        Content-Type: text/html
+      body: '@mock-data/resp_13.html'
+      useTemplating: false
+  - path: /basket.html
+    response:
+      headers:
+        Content-Type: text/html
+      body: '@mock-data/resp_14.html'
+      useTemplating: false
+  - path: /catalogue
+    response:
+      headers:
+        Content-Type: application/json
+      body: '@mock-data/resp_15.json'
+  - path: /category.html
+    response:
+      headers:
+        Content-Type: text/html
+      body: '@mock-data/resp_16.html'
+      useTemplating: false
+  - path: /detail.html
+    response:
+      headers:
+        Content-Type: text/html
+      body: '@mock-data/resp_17.html'
       useTemplating: false
   - path: /login
     response:
