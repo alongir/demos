@@ -1,7 +1,0 @@
-{
- "TARGET_API": "http://api",
- "TARGET_CACHE": "http://cache",
- "TARGET_CURRENCY": "http://currency",
- "TARGET_PAYMENTS": "http://payments",
- "TARGET_WEB": "http://web"
-}
