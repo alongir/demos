@@ -117,7 +117,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 18 requests",
+    "summary": "Seen 19 requests",
     "tags": [
      "customers"
     ]
@@ -523,7 +523,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 28 requests"
+    "summary": "Seen 30 requests"
    },
    "parameters": []
   }

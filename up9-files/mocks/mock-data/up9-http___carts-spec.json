@@ -5,7 +5,7 @@
  },
  "openapi": "3.0.2",
  "paths": {
-  "/carts/{cartId}/items": {
+  "/carts/{id}/items": {
    "get": {
     "operationId": "99cc9b71-ebb5-4796-8cb5-a66710b91922",
     "parameters": [],
@@ -45,19 +45,20 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 13 requests",
+    "summary": "Seen 18 requests",
     "tags": [
-     "carts.items"
+     "carts"
     ]
    },
    "parameters": [
     {
      "in": "path",
-     "name": "cartId",
+     "name": "id",
      "required": true,
      "schema": {
       "enum": [
-       "m2ocBH96TVeKzn9aWgu1llMQAVUvsVhx"
+       "m2ocBH96TVeKzn9aWgu1llMQAVUvsVhx",
+       "57a98d98e4b00679b4a830b2"
       ],
       "type": "string"
      },
@@ -141,14 +142,56 @@
     },
     "summary": "Seen 1 requests",
     "tags": [
-     "carts.items"
+     "carts"
     ]
    }
+  },
+  "/carts/{id}/merge": {
+   "get": {
+    "operationId": "3bc3af27-9ad8-47ae-ba63-46b9a93ad602",
+    "parameters": [
+     {
+      "in": "query",
+      "name": "sessionId",
+      "required": true,
+      "schema": {
+       "enum": [
+        "m2ocBH96TVeKzn9aWgu1llMQAVUvsVhx"
+       ],
+       "type": "string"
+      }
+     }
+    ],
+    "responses": {
+     "202": {
+      "description": "Accepted"
+     }
+    },
+    "summary": "Seen 2 requests",
+    "tags": [
+     "carts"
+    ]
+   },
+   "parameters": [
+    {
+     "in": "path",
+     "name": "id",
+     "required": true,
+     "schema": {
+      "enum": [
+       "m2ocBH96TVeKzn9aWgu1llMQAVUvsVhx",
+       "57a98d98e4b00679b4a830b2"
+      ],
+      "type": "string"
+     },
+     "style": "simple"
+    }
+   ]
   }
  },
  "tags": [
   {
-   "name": "carts.items"
+   "name": "carts"
   }
  ]
 }

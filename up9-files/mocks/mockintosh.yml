@@ -17,13 +17,13 @@ services:
   managementRoot: __admin
   oas: '@mock-data/up9-http___carts-spec.json'
   endpoints:
-  - path: /carts/{{cartId}}/items
+  - path: /carts/{{id}}/items
     response:
       headers:
         Content-Type: application/json
       body: '[]'
       useTemplating: false
-  - path: /carts/{{cartId}}/items
+  - path: /carts/{{id}}/items
     response:
       status: 201
       headers:
@@ -36,6 +36,9 @@ services:
          "unitPrice": 18.0
         }
     method: post
+  - path: /carts/{{id}}/merge
+    response:
+      status: 202
 - name: http://catalogue
   port: 8002
   ssl: false
@@ -99,11 +102,17 @@ services:
         Content-Type: application/json
       body: '[{"id":"602dd0a57401b100072c2945","itemId":"3395a43e-2d88-40de-b95f-e00e1502085b","quantity":1,"unitPrice":18.0}]'
       useTemplating: false
-  - path: /catalogue/{{param}}
+  - path: /catalogue/{{id}}
     response:
       headers:
         Content-Type: application/json
-      body: '@mock-data/resp_22.json'
+      body: '@mock-data/resp_24.json'
+  - path: /index.html
+    response:
+      headers:
+        Content-Type: text/html
+      body: '@mock-data/resp_26.html'
+      useTemplating: false
 - name: http://front-end
   port: 8004
   ssl: false
@@ -145,6 +154,17 @@ services:
         Content-Type: text/html
       body: Cookie is set
       useTemplating: false
+  - path: /cart
+    response:
+      headers:
+        Content-Type: application/json
+      body: '[{"id":"602dd0a57401b100072c2945","itemId":"3395a43e-2d88-40de-b95f-e00e1502085b","quantity":1,"unitPrice":18.0}]'
+      useTemplating: false
+  - path: /catalogue/{{id}}
+    response:
+      headers:
+        Content-Type: application/json
+      body: '@mock-data/resp_22.json'
 - name: http://user
   port: 8005
   ssl: false
