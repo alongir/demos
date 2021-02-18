@@ -11,114 +11,15 @@
 management:
   port: 8000
 services:
-- name: http://edge-router
-  port: 8001
-  ssl: false
-  managementRoot: __admin
-  oas: '@mock-data/up9-http___edge-router-spec.json'
-  endpoints:
-  - path: /
-    response:
-      headers:
-        Content-Type: text/html
-      body: '@mock-data/resp_5.html'
-      useTemplating: false
-  - path: /basket.html
-    response:
-      headers:
-        Content-Type: text/html
-      body: '@mock-data/resp_6.html'
-      useTemplating: false
-  - path: /catalogue
-    response:
-      headers:
-        Content-Type: application/json
-      body: '@mock-data/resp_7.json'
-  - path: /category.html
-    response:
-      headers:
-        Content-Type: text/html
-      body: '@mock-data/resp_8.html'
-      useTemplating: false
-  - path: /detail.html
-    response:
-      headers:
-        Content-Type: text/html
-      body: '@mock-data/resp_9.html'
-      useTemplating: false
-  - path: /login
-    response:
-      headers:
-        Content-Type: text/html
-      body: Cookie is set
-      useTemplating: false
-- name: http://front-end
-  port: 8002
-  ssl: false
-  managementRoot: __admin
-  oas: '@mock-data/up9-http___front-end-spec.json'
-  endpoints:
-  - path: /
-    response:
-      headers:
-        Content-Type: text/html
-      body: '@mock-data/resp_11.html'
-      useTemplating: false
-  - path: /basket.html
-    response:
-      headers:
-        Content-Type: text/html
-      body: '@mock-data/resp_12.html'
-      useTemplating: false
-  - path: /catalogue
-    response:
-      headers:
-        Content-Type: application/json
-      body: '@mock-data/resp_13.json'
-  - path: /category.html
-    response:
-      headers:
-        Content-Type: text/html
-      body: '@mock-data/resp_14.html'
-      useTemplating: false
-  - path: /detail.html
-    response:
-      headers:
-        Content-Type: text/html
-      body: '@mock-data/resp_15.html'
-      useTemplating: false
-  - path: /login
-    response:
-      headers:
-        Content-Type: text/html
-      body: Cookie is set
-      useTemplating: false
 - name: http://user
-  port: 8003
+  port: 8001
   ssl: false
   managementRoot: __admin
   oas: '@mock-data/up9-http___user-spec.json'
   endpoints:
-  - path: /customers/{{id}}
-    response:
-      headers:
-        Content-Type: application/json
-      body: '@mock-data/resp_1.json'
-  - path: /customers/{{id}}/addresses
-    response:
-      headers:
-        Content-Type: application/json
-      body: '@mock-data/resp_2.json'
-      useTemplating: false
-  - path: /customers/{{id}}/cards
-    response:
-      headers:
-        Content-Type: application/json
-      body: '{"_embedded":{"card":[{"longNum":"5544154011345918","expires":"08/19","ccv":"958","id":"57a98d98e4b00679b4a830b1","_links":{"card":{"href":"http://user/cards/57a98d98e4b00679b4a830b1"},"self":{"href":"http://user/cards/57a98d98e4b00679b4a830b1"}}}]}}'
-      useTemplating: false
   - path: /login
     response:
       headers:
         Content-Type: application/json
-      body: '@mock-data/resp_4.json'
+      body: '@mock-data/resp_1.json'
       useTemplating: false

@@ -21,13 +21,13 @@ See [results](#junit-results) for more information about analyzing test results.
 
 ### Using Docker
 Build docker:
-`docker build -t up9-ag.weave.021702 .`
+`docker build -t up9-ag.weave.021703 .`
 
 Run tests:
-`docker run -it up9-ag.weave.021702:latest`
+`docker run -it up9-ag.weave.021703:latest`
 
 Run tests with service override:
-`docker run -it -e TARGET_CARTS=localhost:55000 up9-ag.weave.021702:latest`
+`docker run -it -e TARGET_CARTS=localhost:55000 up9-ag.weave.021703:latest`
 
 ### Running locally
 Just install several dependencies from PyPi:
@@ -41,7 +41,7 @@ Locate the test you want to run, then specify its class name and test case name 
 
 ## Sample
 ```
->> docker run -it up9-ag.weave.021702:latest
+>> docker run -it up9-ag.weave.021703:latest
 ============================= test session starts ==============================
 platform linux -- Python 3.8.7, pytest-6.2.2, py-1.10.0, pluggy-0.13.1
 rootdir: /up9
