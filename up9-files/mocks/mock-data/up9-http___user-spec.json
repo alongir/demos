@@ -124,6 +124,7 @@
    },
    "parameters": [
     {
+     "description": "Origin: GET http://user/login &rarr; json: $.user.id",
      "in": "path",
      "name": "id",
      "required": true,
@@ -261,6 +262,7 @@
    },
    "parameters": [
     {
+     "description": "Origin: GET http://user/login &rarr; json: $.user.id",
      "in": "path",
      "name": "id",
      "required": true,
@@ -388,6 +390,7 @@
    },
    "parameters": [
     {
+     "description": "Origin: GET http://user/login &rarr; json: $.user.id",
      "in": "path",
      "name": "id",
      "required": true,

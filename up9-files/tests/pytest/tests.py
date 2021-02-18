@@ -101,11 +101,10 @@ class Tests_edge_router(unittest.TestCase):
         resp.assert_status_code(200)
         resp.assert_cssselect('div#content div.container div div.row.same-height-row div div.box.same-height h3', expected_value='You may also like these products')
 
-    # authentication-related test
     @clear_session({'spanId': 20})
     def test_20_get_login(self):
         # GET http://edge-router/login (endp 20)
-        edge_router = get_http_target('TARGET_EDGE_ROUTER', dummy_auth)
+        edge_router = get_http_target('TARGET_EDGE_ROUTER', authenticate)
         resp = edge_router.get('/login')
         resp.assert_status_code(200)
         resp.assert_cssselect('p', expected_value='Cookie is set')
@@ -182,11 +181,10 @@ class Tests_front_end(unittest.TestCase):
         resp.assert_status_code(200)
         resp.assert_cssselect('div#content div.container div div.row.same-height-row div div.box.same-height h3', expected_value='You may also like these products')
 
-    # authentication-related test
     @clear_session({'spanId': 14})
     def test_14_get_login(self):
         # GET http://front-end/login (endp 14)
-        front_end = get_http_target('TARGET_FRONT_END', dummy_auth)
+        front_end = get_http_target('TARGET_FRONT_END', authenticate)
         resp = front_end.get('/login')
         resp.assert_status_code(200)
         resp.assert_cssselect('p', expected_value='Cookie is set')
@@ -226,32 +224,41 @@ class Tests_user(unittest.TestCase):
 
     @clear_session({'spanId': 1})
     def test_01_get_customers_id(self):
-        # GET http://user/customers/{id} (endp 1)
+        # GET http://user/login (endp 4)
         user = get_http_target('TARGET_USER', authenticate)
+        resp = user.get('/login')
+        resp.assert_status_code(200)
+        resp.assert_jsonpath('$.user.lastName', expected_value='Name')
+        id_ = jsonpath('$.user.id', resp)
+
+        # GET http://user/customers/{id} (endp 1)
         resp = user.get(f'/customers/{id_}')
         resp.assert_status_code(200)
         resp.assert_jsonpath('$.lastName', expected_value='Name')
 
     @clear_session({'spanId': 2})
     def test_02_get_customers_id_addresses(self):
-        # GET http://user/customers/{id}/addresses (endp 2)
+        # GET http://user/login (endp 4)
         user = get_http_target('TARGET_USER', authenticate)
+        resp = user.get('/login')
+        resp.assert_status_code(200)
+        resp.assert_jsonpath('$.user.lastName', expected_value='Name')
+        id_ = jsonpath('$.user.id', resp)
+
+        # GET http://user/customers/{id}/addresses (endp 2)
         resp = user.get(f'/customers/{id_}/addresses')
         resp.assert_status_code(200)
         resp.assert_jsonpath('$._embedded.address.[*].city', expected_value='Glasgow')
 
     @clear_session({'spanId': 3})
     def test_03_get_customers_id_cards(self):
-        # GET http://user/customers/{id}/cards (endp 3)
-        user = get_http_target('TARGET_USER', authenticate)
-        resp = user.get(f'/customers/{id_}/cards')
-        resp.assert_status_code(200)
-
-    # authentication-related test
-    @clear_session({'spanId': 4})
-    def test_04_get_login(self):
         # GET http://user/login (endp 4)
-        user = get_http_target('TARGET_USER', dummy_auth)
+        user = get_http_target('TARGET_USER', authenticate)
         resp = user.get('/login')
         resp.assert_status_code(200)
         resp.assert_jsonpath('$.user.lastName', expected_value='Name')
+        id_ = jsonpath('$.user.id', resp)
+
+        # GET http://user/customers/{id}/cards (endp 3)
+        resp = user.get(f'/customers/{id_}/cards')
+        resp.assert_status_code(200)
