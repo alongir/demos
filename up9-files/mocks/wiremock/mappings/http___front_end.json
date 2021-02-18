@@ -1,0 +1,174 @@
+{
+ "mappings": [
+  {
+   "id": "505c21af-fa2e-44ef-a7fa-84590fdfaf44",
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/"
+   },
+   "response": {
+    "bodyFileName": "resp_9.html",
+    "headers": {
+     "Content-Type": "text/html"
+    },
+    "status": 200,
+    "transformers": [
+     "response-template"
+    ]
+   }
+  },
+  {
+   "id": "3dcb8d6f-5323-4a03-84c7-89a05e11925c",
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/basket\\.html"
+   },
+   "response": {
+    "bodyFileName": "resp_10.html",
+    "headers": {
+     "Content-Type": "text/html"
+    },
+    "status": 200,
+    "transformers": [
+     "response-template"
+    ]
+   }
+  },
+  {
+   "id": "d71a6094-3485-4790-bda5-a3fceced08bb",
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/catalogue"
+   },
+   "response": {
+    "bodyFileName": "resp_11.json",
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "status": 200,
+    "transformers": [
+     "response-template"
+    ]
+   }
+  },
+  {
+   "id": "ccd6fcc7-5a41-469f-9ea8-ba1c2cbaa9c9",
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/category\\.html"
+   },
+   "response": {
+    "bodyFileName": "resp_12.html",
+    "headers": {
+     "Content-Type": "text/html"
+    },
+    "status": 200,
+    "transformers": [
+     "response-template"
+    ]
+   }
+  },
+  {
+   "id": "fcd5ca68-a8b4-43c1-b8ef-f34c17d66d64",
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/detail\\.html"
+   },
+   "response": {
+    "bodyFileName": "resp_13.html",
+    "headers": {
+     "Content-Type": "text/html"
+    },
+    "status": 200,
+    "transformers": [
+     "response-template"
+    ]
+   }
+  },
+  {
+   "id": "ea86b96d-7ef6-4aaf-8076-9c7375744982",
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/login"
+   },
+   "response": {
+    "body": "Cookie is set",
+    "headers": {
+     "Content-Type": "text/html"
+    },
+    "status": 200,
+    "transformers": [
+     "response-template"
+    ]
+   }
+  },
+  {
+   "id": "6835cf78-d239-4d92-8392-731126b62e91",
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/cart"
+   },
+   "response": {
+    "body": "[{\"id\":\"602dd0a57401b100072c2945\",\"itemId\":\"3395a43e-2d88-40de-b95f-e00e1502085b\",\"quantity\":1,\"unitPrice\":18.0}]",
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "status": 200,
+    "transformers": [
+     "response-template"
+    ]
+   }
+  },
+  {
+   "id": "05ecc68f-9ee2-4fb4-8178-a918856395e6",
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/catalogue/[^/]+"
+   },
+   "response": {
+    "bodyFileName": "resp_23.json",
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "status": 200,
+    "transformers": [
+     "response-template"
+    ]
+   }
+  },
+  {
+   "id": "274aa116-b422-40be-9830-a87a66d2c649",
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/customers/[^/]+"
+   },
+   "response": {
+    "bodyFileName": "resp_25.json",
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "status": 200,
+    "transformers": [
+     "response-template"
+    ]
+   }
+  },
+  {
+   "id": "e51212c4-39e6-4da3-8f3d-471c0947cf7b",
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/index\\.html"
+   },
+   "response": {
+    "bodyFileName": "resp_26.html",
+    "headers": {
+     "Content-Type": "text/html"
+    },
+    "status": 200,
+    "transformers": [
+     "response-template"
+    ]
+   }
+  }
+ ]
+}
