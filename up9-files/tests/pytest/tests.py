@@ -9,13 +9,6 @@ class Tests_carts(unittest.TestCase):
 
     @clear_session({'spanId': 7})
     def test_07_get_carts_id_items(self):
-        # GET http://user/login (endp 4)
-        user = get_http_target('TARGET_USER', authenticate)
-        resp = user.get('/login')
-        resp.assert_status_code(200)
-        resp.assert_jsonpath('$.user.lastName', expected_value='Name')
-        id_ = jsonpath('$.user.id', resp)
-
         # GET http://carts/carts/{id}/items (endp 7)
         carts = get_http_target('TARGET_CARTS', authenticate)
         resp = carts.get(f'/carts/{id_}/items')
@@ -23,13 +16,6 @@ class Tests_carts(unittest.TestCase):
 
     @clear_session({'spanId': 8})
     def test_08_post_carts_id_items(self):
-        # GET http://user/login (endp 4)
-        user = get_http_target('TARGET_USER', authenticate)
-        resp = user.get('/login')
-        resp.assert_status_code(200)
-        resp.assert_jsonpath('$.user.lastName', expected_value='Name')
-        id_ = jsonpath('$.user.id', resp)
-
         # GET http://catalogue/catalogue (endp 5)
         catalogue = get_http_target('TARGET_CATALOGUE', authenticate)
         qstr = '?' + urlencode([('size', size), ('sort', 'id'), ('tags', tags)])
@@ -47,16 +33,9 @@ class Tests_carts(unittest.TestCase):
         resp = carts.post(f'/carts/{id_}/items', json=json_payload, headers=dict([('accept', 'application/json')]))
         resp.assert_status_code(201)
 
-    @clear_session({'spanId': 30})
-    def test_30_get_carts_id_merge(self):
-        # GET http://user/login (endp 4)
-        user = get_http_target('TARGET_USER', authenticate)
-        resp = user.get('/login')
-        resp.assert_status_code(200)
-        resp.assert_jsonpath('$.user.lastName', expected_value='Name')
-        id_ = jsonpath('$.user.id', resp)
-
-        # GET http://carts/carts/{id}/merge (endp 30)
+    @clear_session({'spanId': 21})
+    def test_21_get_carts_id_merge(self):
+        # GET http://carts/carts/{id}/merge (endp 21)
         carts = get_http_target('TARGET_CARTS', authenticate)
         qstr = '?' + urlencode([('sessionId', sessionId)])
         resp = carts.get(f'/carts/{id_}/merge' + qstr)
@@ -122,23 +101,15 @@ class Tests_edge_router(unittest.TestCase):
         resp.assert_status_code(200)
         resp.assert_cssselect('div#content div.container div div.row.same-height-row div div.box.same-height h3', expected_value='You may also like these products')
 
-    @clear_session({'spanId': 20})
-    def test_20_get_login(self):
-        # GET http://edge-router/login (endp 20)
-        edge_router = get_http_target('TARGET_EDGE_ROUTER', authenticate)
-        resp = edge_router.get('/login')
-        resp.assert_status_code(200)
-        resp.assert_cssselect('p', expected_value='Cookie is set')
-
-    @clear_session({'spanId': 21})
-    def test_21_get_cart(self):
-        # GET http://edge-router/cart (endp 21)
+    @clear_session({'spanId': 27})
+    def test_27_get_cart(self):
+        # GET http://edge-router/cart (endp 27)
         edge_router = get_http_target('TARGET_EDGE_ROUTER', authenticate)
         resp = edge_router.get('/cart', headers=dict([('x-requested-with', 'XMLHttpRequest')]))
         resp.assert_status_code(200)
 
-    @clear_session({'spanId': 22})
-    def test_22_get_catalogue_id(self):
+    @clear_session({'spanId': 28})
+    def test_28_get_catalogue_id(self):
         # GET http://edge-router/catalogue (endp 17)
         edge_router = get_http_target('TARGET_EDGE_ROUTER', authenticate)
         qstr = '?' + urlencode([('size', size), ('sort', 'id'), ('tags', 'brown')])
@@ -146,14 +117,22 @@ class Tests_edge_router(unittest.TestCase):
         resp.assert_status_code(200)
         id_ = jsonpath('$.[*].id', resp)
 
-        # GET http://edge-router/catalogue/{id} (endp 22)
+        # GET http://edge-router/catalogue/{id} (endp 28)
         resp = edge_router.get(f'/catalogue/{id_}', headers=dict([('x-requested-with', 'XMLHttpRequest')]))
         resp.assert_status_code(200)
         resp.assert_jsonpath('$.imageUrl.[*]', expected_value='/catalogue/images/colourful_socks.jpg')
 
-    @clear_session({'spanId': 24})
-    def test_24_get_index_html(self):
-        # GET http://edge-router/index.html (endp 24)
+    @clear_session({'spanId': 30})
+    def test_30_get_customers_customerId(self):
+        # GET http://edge-router/customers/{customerId} (endp 30)
+        edge_router = get_http_target('TARGET_EDGE_ROUTER', authenticate)
+        resp = edge_router.get(f'/customers/{customerId}', headers=dict([('x-requested-with', 'XMLHttpRequest')]))
+        resp.assert_status_code(200)
+        resp.assert_jsonpath('$.lastName', expected_value='Name')
+
+    @clear_session({'spanId': 31})
+    def test_31_get_index_html(self):
+        # GET http://edge-router/index.html (endp 31)
         edge_router = get_http_target('TARGET_EDGE_ROUTER', authenticate)
         resp = edge_router.get('/index.html')
         resp.assert_status_code(200)
@@ -202,23 +181,15 @@ class Tests_front_end(unittest.TestCase):
         resp.assert_status_code(200)
         resp.assert_cssselect('div#content div.container div div.row.same-height-row div div.box.same-height h3', expected_value='You may also like these products')
 
-    @clear_session({'spanId': 14})
-    def test_14_get_login(self):
-        # GET http://front-end/login (endp 14)
-        front_end = get_http_target('TARGET_FRONT_END', authenticate)
-        resp = front_end.get('/login')
-        resp.assert_status_code(200)
-        resp.assert_cssselect('p', expected_value='Cookie is set')
-
-    @clear_session({'spanId': 25})
-    def test_25_get_cart(self):
-        # GET http://front-end/cart (endp 25)
+    @clear_session({'spanId': 22})
+    def test_22_get_cart(self):
+        # GET http://front-end/cart (endp 22)
         front_end = get_http_target('TARGET_FRONT_END', authenticate)
         resp = front_end.get('/cart', headers=dict([('x-requested-with', 'XMLHttpRequest')]))
         resp.assert_status_code(200)
 
-    @clear_session({'spanId': 26})
-    def test_26_get_catalogue_id(self):
+    @clear_session({'spanId': 23})
+    def test_23_get_catalogue_id(self):
         # GET http://front-end/catalogue (endp 11)
         front_end = get_http_target('TARGET_FRONT_END', authenticate)
         qstr = '?' + urlencode([('size', size), ('sort', 'id'), ('tags', 'brown')])
@@ -226,22 +197,22 @@ class Tests_front_end(unittest.TestCase):
         resp.assert_status_code(200)
         id_ = jsonpath('$.[*].id', resp)
 
-        # GET http://front-end/catalogue/{id} (endp 26)
+        # GET http://front-end/catalogue/{id} (endp 23)
         resp = front_end.get(f'/catalogue/{id_}', headers=dict([('x-requested-with', 'XMLHttpRequest')]))
         resp.assert_status_code(200)
         resp.assert_jsonpath('$.imageUrl.[*]', expected_value='/catalogue/images/colourful_socks.jpg')
 
-    @clear_session({'spanId': 28})
-    def test_28_get_customers_customerId(self):
-        # GET http://front-end/customers/{customerId} (endp 28)
+    @clear_session({'spanId': 25})
+    def test_25_get_customers_customerId(self):
+        # GET http://front-end/customers/{customerId} (endp 25)
         front_end = get_http_target('TARGET_FRONT_END', authenticate)
         resp = front_end.get(f'/customers/{customerId}', headers=dict([('x-requested-with', 'XMLHttpRequest')]))
         resp.assert_status_code(200)
         resp.assert_jsonpath('$.lastName', expected_value='Name')
 
-    @clear_session({'spanId': 29})
-    def test_29_get_index_html(self):
-        # GET http://front-end/index.html (endp 29)
+    @clear_session({'spanId': 26})
+    def test_26_get_index_html(self):
+        # GET http://front-end/index.html (endp 26)
         front_end = get_http_target('TARGET_FRONT_END', authenticate)
         resp = front_end.get('/index.html')
         resp.assert_status_code(200)
@@ -253,41 +224,23 @@ class Tests_user(unittest.TestCase):
 
     @clear_session({'spanId': 1})
     def test_01_get_customers_id(self):
-        # GET http://user/login (endp 4)
-        user = get_http_target('TARGET_USER', authenticate)
-        resp = user.get('/login')
-        resp.assert_status_code(200)
-        resp.assert_jsonpath('$.user.lastName', expected_value='Name')
-        id_ = jsonpath('$.user.id', resp)
-
         # GET http://user/customers/{id} (endp 1)
+        user = get_http_target('TARGET_USER', authenticate)
         resp = user.get(f'/customers/{id_}')
         resp.assert_status_code(200)
         resp.assert_jsonpath('$.lastName', expected_value='Name')
 
     @clear_session({'spanId': 2})
     def test_02_get_customers_id_addresses(self):
-        # GET http://user/login (endp 4)
-        user = get_http_target('TARGET_USER', authenticate)
-        resp = user.get('/login')
-        resp.assert_status_code(200)
-        resp.assert_jsonpath('$.user.lastName', expected_value='Name')
-        id_ = jsonpath('$.user.id', resp)
-
         # GET http://user/customers/{id}/addresses (endp 2)
+        user = get_http_target('TARGET_USER', authenticate)
         resp = user.get(f'/customers/{id_}/addresses')
         resp.assert_status_code(200)
         resp.assert_jsonpath('$._embedded.address.[*].city', expected_value='Glasgow')
 
     @clear_session({'spanId': 3})
     def test_03_get_customers_id_cards(self):
-        # GET http://user/login (endp 4)
-        user = get_http_target('TARGET_USER', authenticate)
-        resp = user.get('/login')
-        resp.assert_status_code(200)
-        resp.assert_jsonpath('$.user.lastName', expected_value='Name')
-        id_ = jsonpath('$.user.id', resp)
-
         # GET http://user/customers/{id}/cards (endp 3)
+        user = get_http_target('TARGET_USER', authenticate)
         resp = user.get(f'/customers/{id_}/cards')
         resp.assert_status_code(200)

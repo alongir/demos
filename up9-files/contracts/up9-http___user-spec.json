@@ -117,14 +117,13 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 19 requests",
+    "summary": "Seen 20 requests",
     "tags": [
      "customers"
     ]
    },
    "parameters": [
     {
-     "description": "Origin: GET http://user/login &rarr; json: $.user.id",
      "in": "path",
      "name": "id",
      "required": true,
@@ -262,7 +261,6 @@
    },
    "parameters": [
     {
-     "description": "Origin: GET http://user/login &rarr; json: $.user.id",
      "in": "path",
      "name": "id",
      "required": true,
@@ -390,7 +388,6 @@
    },
    "parameters": [
     {
-     "description": "Origin: GET http://user/login &rarr; json: $.user.id",
      "in": "path",
      "name": "id",
      "required": true,
@@ -526,7 +523,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 36 requests"
+    "summary": "Seen 37 requests"
    },
    "parameters": []
   }

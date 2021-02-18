@@ -43,7 +43,7 @@
   },
   "/cart": {
    "get": {
-    "operationId": "d82c7382-ca90-4f6c-9e35-a6a09b186f05",
+    "operationId": "6835cf78-d239-4d92-8392-731126b62e91",
     "parameters": [
      {
       "in": "header",
@@ -358,7 +358,7 @@
   },
   "/catalogue/{id}": {
    "get": {
-    "operationId": "24bf8a8a-9ad2-47fa-95b7-4f1c59054aab",
+    "operationId": "05ecc68f-9ee2-4fb4-8178-a918856395e6",
     "parameters": [
      {
       "in": "header",
@@ -437,7 +437,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 5 requests",
+    "summary": "Seen 6 requests",
     "tags": [
      "catalogue"
     ]
@@ -478,7 +478,7 @@
   },
   "/customers/{customerId}": {
    "get": {
-    "operationId": "6fad08aa-d47c-4b06-920c-d72ce085c461",
+    "operationId": "274aa116-b422-40be-9830-a87a66d2c649",
     "parameters": [
      {
       "in": "header",
@@ -654,7 +654,7 @@
   },
   "/index.html": {
    "get": {
-    "operationId": "e483c21b-9773-4083-bcf6-f83cdfe8d75d",
+    "operationId": "e51212c4-39e6-4da3-8f3d-471c0947cf7b",
     "parameters": [],
     "responses": {
      "200": {

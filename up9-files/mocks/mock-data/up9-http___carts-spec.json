@@ -45,14 +45,13 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 28 requests",
+    "summary": "Seen 33 requests",
     "tags": [
      "carts"
     ]
    },
    "parameters": [
     {
-     "description": "Origin: GET http://user/login &rarr; json: $.user.id",
      "in": "path",
      "name": "id",
      "required": true,
@@ -152,7 +151,7 @@
   },
   "/carts/{id}/merge": {
    "get": {
-    "operationId": "51eacae6-1e67-4ae8-8c8b-1c308a9f1de4",
+    "operationId": "9663fc6b-8629-478e-8009-087cd85b798c",
     "parameters": [
      {
       "in": "query",
@@ -182,7 +181,6 @@
    },
    "parameters": [
     {
-     "description": "Origin: GET http://user/login &rarr; json: $.user.id",
      "in": "path",
      "name": "id",
      "required": true,
