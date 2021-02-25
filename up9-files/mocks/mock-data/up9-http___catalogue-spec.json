@@ -7,7 +7,7 @@
  "paths": {
   "/catalogue": {
    "get": {
-    "operationId": "6200bb1d-893a-47e4-955f-46ac19e03517",
+    "operationId": "9d1543be-136f-461c-ac23-878c786a5b3a",
     "parameters": [
      {
       "in": "query",
@@ -216,7 +216,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 28 requests",
+    "summary": "Seen 29 requests",
     "tags": [
      "catalogue"
     ]
@@ -225,7 +225,7 @@
   },
   "/catalogue/{id}": {
    "get": {
-    "operationId": "55322b19-53a1-4118-a204-dc8d27d74c7f",
+    "operationId": "bec5c4ce-217b-4e25-8d2a-2dd616449741",
     "parameters": [],
     "responses": {
      "200": {
@@ -294,7 +294,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 22 requests",
+    "summary": "Seen 24 requests",
     "tags": [
      "catalogue"
     ]

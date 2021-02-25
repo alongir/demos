@@ -7,7 +7,7 @@
  "paths": {
   "/customers/{id}": {
    "get": {
-    "operationId": "9f6c88d3-2767-4812-a4e1-69cd03c9b565",
+    "operationId": "5aa6d1fc-9959-45f8-929b-322591a6c933",
     "parameters": [],
     "responses": {
      "200": {
@@ -117,7 +117,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 18 requests"
+    "summary": "Seen 23 requests"
    },
    "parameters": [
     {
@@ -136,7 +136,7 @@
   },
   "/login": {
    "get": {
-    "operationId": "19ef232d-4710-426c-9f5d-a22d2c90e7dc",
+    "operationId": "798fd633-3391-4a81-90f8-b3e61d9e947e",
     "parameters": [],
     "responses": {
      "200": {
@@ -256,7 +256,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 19 requests"
+    "summary": "Seen 24 requests"
    },
    "parameters": []
   }

@@ -21,6 +21,8 @@ def authenticate(target_key: str, target: TargetService):
         pass
     elif target_key == 'TARGET_FRONT_END':
         pass
+    elif target_key == 'TARGET_ORDERS':
+        pass
     elif target_key == 'TARGET_PAYMENT':
         pass
     elif target_key == 'TARGET_SHIPPING':

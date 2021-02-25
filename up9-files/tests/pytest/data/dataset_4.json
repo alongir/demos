@@ -2,22 +2,12 @@
  "parameters": [
   {
    "name": "id",
-   "uuid": "c0c65a24-1889-41bd-9115-a86e31b7f7b9"
-  },
-  {
-   "name": "itemId",
-   "uuid": "ce21d830-d359-432f-a5cf-e925be1e0aa8"
-  },
-  {
-   "name": "unitPrice",
-   "uuid": "c7f090d5-63d6-4469-b5b4-6257527a5e60"
+   "uuid": "205f6ccc-52a3-4040-ab2c-377a1a4b59f9"
   }
  ],
  "rows": [
   {
-   "id": "UpRV2N1SUodb5jtLmwpnKwP0tj_TElaB",
-   "itemId": "808a2de1-1aaa-4c25-a9b9-6612e8f29a38",
-   "unitPrice": 17.32
+   "id": "d3588630-ad8e-49df-bbd7-3167f7efb246"
   }
  ]
 }

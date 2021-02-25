@@ -41,133 +41,254 @@
 </head>
 
 <body>
-
 <div id="topbar"></div>
 <div id="navbar"></div>
+
 
 <div id="all">
 
     <div id="content">
         <div class="container">
 
+            <div id="user-message"> </div>
+
             <div class="col-md-12">
                 <ul class="breadcrumb">
-                    <li><a href="/">Home</a>
+                    <li><a href="index.html">Home</a>
                     </li>
-                    <li><a href="category.html">Catalogue</a>
-                    </li>
-                    <li id="breadcrumb"></li>
+                    <li>Shopping cart</li>
                 </ul>
-
             </div>
 
-            <div class="col-md-12">
+            <div class="col-md-9" id="basket">
 
-                <div class="row" id="productMain">
-                    <div class="col-sm-6">
-                        <div id="mainImage">
-                            <img id="imageMain" alt=""
-                                 class="img-responsive">
-                        </div>
+                <div class="box">
 
-                        <div class="ribbon sale">
-                            <div class="theribbon">SALE</div>
-                            <div class="ribbon-background"></div>
-                        </div>
-                        <!-- /.ribbon -->
-
-                        <div class="ribbon new">
-                            <div class="theribbon">NEW</div>
-                            <div class="ribbon-background"></div>
-                        </div>
-                        <!-- /.ribbon -->
-
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="box">
-                            <h1 id="title" class="text-center"></h1>
-                            <p class="goToDescription"><a href="#productDetails"
-                                                          class="scroll-to">Scroll
-                                to product details, material & care and
-                                sizing</a>
-                            </p>
-                            <p id="price" class="price"></p>
-
-                            <p class="text-center buttons">
-                                <a id="buttonCart" class="btn btn-primary"><i
-                                        class="fa fa-shopping-cart"></i> Add to
-                                    cart</a>
-                                <a href="basket.html" class="btn btn-default"><i
-                                        class="fa fa-heart"></i> Add to wishlist</a>
-                            </p>
-
+                    <form action="customer-orders.html">
+                        <h1>Shopping cart</h1>
+                        <p class="text-muted" id="numItemsInCart"></p>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th colspan="2">Product</th>
+                                    <th>Quantity</th>
+                                    <th>Unit price</th>
+                                    <th>Discount</th>
+                                    <th colspan="2">Total</th>
+                                </tr>
+                                </thead>
+                                <tbody id="cart-list">
+                                </tbody>
+                                <tfoot>
+                                <tr>
+                                    <th colspan="5">Total</th>
+                                    <th colspan="2" id="cartTotal"></th>
+                                </tr>
+                                </tfoot>
+                            </table>
 
                         </div>
+                        <!-- /.table-responsive -->
 
-                        <div class="row" id="thumbs">
+
+                        <div class="box-footer">
+                            <div class="pull-left">
+                                <a href="category.html" class="btn btn-default"><i
+                                        class="fa fa-chevron-left"></i> Continue
+                                    shopping</a>
+                            </div>
+                            <div class="pull-right">
+                                <a class="btn btn-default" onclick="updateCart()"><i
+                                        class="fa fa-refresh"></i> Update basket
+                                </a>
+                                <button id="orderButton" type="submit" class="btn btn-primary" disabled>
+                                    Proceed to checkout <i class="fa fa-chevron-right"></i>
+                                </button>
+                            </div>
                         </div>
-                    </div>
+
+                    </form>
 
                 </div>
-
-
-                <div class="box" id="productDetails">
-                    <p>
-                    <h4>Product details</h4>
-                    <p id="description">White lace top, woven, has a round neck, short sleeves,
-                        has knitted lining attached</p>
-                    <h4>Material & care</h4>
-                    <ul>
-                        <li>Polyester</li>
-                        <li>Machine wash</li>
-                    </ul>
-                    <h4>Size & Fit</h4>
-                    <ul>
-                        <li>Regular fit</li>
-                    </ul>
-
-                    <blockquote>
-                        <p><em>Add more socks, you need more socks!</em>
-                        </p>
-                    </blockquote>
-
-                    <hr>
-                    <div class="social">
-                        <h4>Show it to your friends</h4>
-                        <p>
-                            <a href="#" class="external facebook"
-                               data-animate-hover="pulse"><i
-                                    class="fa fa-facebook"></i></a>
-                            <a href="#" class="external gplus"
-                               data-animate-hover="pulse"><i
-                                    class="fa fa-google-plus"></i></a>
-                            <a href="#" class="external twitter"
-                               data-animate-hover="pulse"><i
-                                    class="fa fa-twitter"></i></a>
-                            <a href="#" class="email"
-                               data-animate-hover="pulse"><i
-                                    class="fa fa-envelope"></i></a>
-                        </p>
-                    </div>
-                </div>
+                <!-- /.box -->
 
                 <div class="row same-height-row">
+
+                    <div class="col-md-6">
+                        <div class="box">
+                            <div class="box-header">
+                                <h4 style="display: inline;">Shipping Address</h4>
+                                <p id="add_shipping" style="display: inline; float: right;">
+                                    <a data-toggle="modal" data-target="#address-modal" href="#add">Add</a>
+                                </p>
+                            </div>
+                            <p id="address"></p>
+                            <div class="modal fade" id="address-modal" tabindex="-1" role="dialog" aria-labelledby="address" aria-hidden="true">
+                                <div class="modal-dialog modal-sm">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal"
+                                                    aria-hidden="true">&times;</button>
+                                            <h4 class="modal-title" id="Login">Address</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form action="" id="form-address">
+                                                <div class="form-group">
+                                                    <label for="house-number">House Number</label>
+                                                    <input type="text" class="form-control" name="house-number" id="form-number" placeholder="Number">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="street">Street Name</label>
+                                                    <input type="text" class="form-control" name="street" id="form-street" placeholder="Street">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="city">City</label>
+                                                    <input type="text" class="form-control" name="city" id="form-city" placeholder="City">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="post-code">Post Code</label>
+                                                    <input type="text" class="form-control" name="post-code" id="form-post-code" placeholder="Post Code">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="country">Country</label>
+                                                    <input type="text" class="form-control" name="country" id="form-country" placeholder="Country">
+                                                </div>
+                                                    <p class="text-center">
+                                                        <button class="btn btn-primary" href="#" onclick="return address()"><i
+                                                                class="fa fa-refresh"></i> Update
+                                                        </button>
+                                                    </p>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="box">
+                            <div class="box-header">
+                                <h4 style="display: inline;">Payment</h4>
+                                <p id="add_payment" style="display: inline; float: right;">
+                                    <a data-toggle="modal" data-target="#card-modal" href="#add">Add</a>
+                                </p>
+                            </div>
+                            <p id="number"></p>
+                            <div class="modal fade" id="card-modal" tabindex="-1" role="dialog" aria-labelledby="card" aria-hidden="true">
+                                <div class="modal-dialog modal-sm">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal"
+                                                    aria-hidden="true">&times;</button>
+                                            <h4 class="modal-title" id="credit-card">Credit Card</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form action="" id="form-card">
+                                                <div class="form-group">
+                                                    <label for="card-number">Card Number</label>
+                                                    <input type="text" class="form-control" name="card-number" id="form-card-number" placeholder="Card Number">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="expires">Expires</label>
+                                                    <input type="text" class="form-control" name="expires" id="form-expires" placeholder="MM/YY">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="ccv">CCV</label>
+                                                    <input type="text" class="form-control" name="ccv" id="form-ccv" placeholder="CCV">
+                                                </div>
+                                            </form>
+                                            <p class="text-right">
+                                                <button class="btn btn-primary" href="#" onclick="return card()"><i
+                                                        class="fa fa-refresh"></i> Update
+                                                </button>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row same-height-row" id="youMayAlsoLike">
                     <div class="col-md-3 col-sm-6">
                         <div class="box same-height">
                             <h3>You may also like these products</h3>
                         </div>
                     </div>
-                    <div id="products"></div>
+
                 </div>
+
 
             </div>
             <!-- /.col-md-9 -->
+
+            <div class="col-md-3">
+                <div class="box" id="order-summary">
+                    <div class="box-header">
+                        <h3>Order summary</h3>
+                    </div>
+                    <p class="text-muted">Shipping and additional costs are
+                        calculated based on the values you have entered.</p>
+
+                    <div class="table-responsive">
+                        <table class="table">
+                            <tbody>
+                            <tr>
+                                <td>Order subtotal</td>
+                                <th id="orderSubtotal">$0.00</th>
+                            </tr>
+                            <tr>
+                                <td>Shipping and handling</td>
+                                <th id="orderShipping">$0.00</th>
+                            </tr>
+                            <tr>
+                                <td>Tax</td>
+                                <th id="orderTax">$0.00</th>
+                            </tr>
+                            <tr class="total">
+                                <td>Total</td>
+                                <th id="orderGrandTotal">$0.00</th>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+
+                <div class="box">
+                    <div class="box-header">
+                        <h4>Coupon code</h4>
+                    </div>
+                    <p class="text-muted">If you have a coupon code, please
+                        enter it in the box below.</p>
+                    <form>
+                        <div class="input-group">
+
+                            <input type="text" class="form-control">
+
+                                <span class="input-group-btn">
+
+					<button class="btn btn-primary" type="button"><i
+                            class="fa fa-gift"></i></button>
+
+				    </span>
+                        </div>
+                        <!-- /input-group -->
+                    </form>
+                </div>
+
+            </div>
+            <!-- /.col-md-3 -->
+
         </div>
         <!-- /.container -->
     </div>
     <!-- /#content -->
-
     <div id="footer"></div>
+
 </div>
 <!-- /#all -->
 
@@ -191,38 +312,152 @@ _________________________________________________________ -->
             contentType: "application/json; charset=utf-8"
         });
 
-        console.log("Loading components for category.html");
+        console.log("Loading components for basket.html");
         $("#topbar").load("topbar.html");
         $("#navbar").load("navbar.html");
         $("#footer").load("footer.html");
-
-        var id = $.query.get('id') ? $.query.get('id') : "";
-        if (id == null || id == "") {
-            document.location.href = "/";
-        }
-        $.getJSON('/catalogue/' + id, function (data) {
-            $("#title").text(data.name);
-            $("#breadcrumb").text(data.name);
-            $("#price").text("$" + data.price.toFixed(2));
-            $("#imageMain").attr("src", data.imageUrl[0]);
-            $("#buttonCart").attr("onClick", "addToCart(\'" + data.id + "\')");
-            var thumbHtml = "";
-            for (var i = 0; i < data.imageUrl.length; i++) {
-                thumbHtml = thumbHtml +
-                        '<div class="col-xs-4">\
-                            <a href="' + data.imageUrl[i] + '" class="thumb">\
-                    <img src="' + data.imageUrl[i] + '" alt="" class="img-responsive">\
-                    </a>\
-                </div>'
+    })
+</script>
+<script>
+    function deleteFromCart(id) {
+        console.log("Sending request to delete: " + id);
+        $.ajax({
+            url: "cart/" + id,
+            type: "DELETE",
+            success: function (data, textStatus, jqXHR) {
+                console.log('Item deleted: ' + id + ', ' + textStatus);
+                location.reload();
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error('Could not delete item: ' + id + ', due to: ' + textStatus + ' | ' + errorThrown);
             }
-            $("#thumbs").append(thumbHtml);
-            $("#description").text(data.description);
+        });
+    }
 
-            $.getJSON('/catalogue', {sort: "id", size: 3, tags: data.tag[0]}, function (data) {
-                if (data != null) {
-                    $.each(data, function (index, element) {
-                        $('#products').append('<div class="col-md-3 col-sm-4">\
-                            <div class="product same-height">\
+    // function updateCart()
+	// for each item row in cart table call updateToCart (client.js - updateToCart(itemId, quantity, callback))
+	function updateCart() {
+		console.log("Updating Cart");
+		var cartsize = document.getElementById("cart-list").rows.length;
+		console.log("cart-list size: " + cartsize);
+
+		var idx = 0;
+		next = function(){
+			if (idx< cartsize) {
+				var id = document.getElementById("cart-list").rows[idx].cells[2].id;
+				var quantity = document.getElementById("cart-list").rows[idx].cells[2].getElementsByTagName('input')[0].value;
+				idx++;
+				updateToCart(id, quantity, next);
+			}
+			else {
+				location.reload();
+			}
+		}
+		next();
+	}
+
+    $(document).ready(function () {
+        $.ajaxSetup({
+            contentType: "application/json; charset=utf-8"
+        });
+
+        $.getJSON('/cart', {}, function (data) {
+            if (data != null) {
+                var cartTotal = 0;
+                var numItemsInCart = 0;
+                var shipping = 4.99;
+                var orderPlaced = false;
+                $.each(data, function (index, element) {
+                    if (element != null && element.itemId != null && element.itemId != "null") {
+                        $.getJSON('/catalogue/' + element.itemId, function (data) {
+                            console.log(JSON.stringify(data));
+                            $('#cart-list').append(' <tr class="item">\
+                                                <input class="id" type="hidden" value="' + data.id + '">\
+                                                <td>\
+                                                    <a href="#">\
+                                                        <img src="' + data.imageUrl[0] + '" alt="' + data.namex + '">\
+                                                    </a>\
+                                                </td>\
+                                                <td>\
+                                                    <a href="#">' + data.name + '</a>\
+                                                </td>\
+                                                <td id="' + element.itemId + '">\
+                                                    <input type="number" min="1" value="' + element.quantity + '" class="form-control">\
+                                                </td>\
+                                                <td>$' + data.price.toFixed(2) + '</td>\
+                                                <td>$0.00</td>\
+                                                <td>$' + (element.quantity * data.price).toFixed(2) + '</td>\
+                                                <td>\
+                                                    <a href="#" onclick="deleteFromCart(\'' + data.id + '\')"><i class="fa fa-trash-o"></i></a>\
+                                                </td>\
+                                            </tr>');
+                            cartTotal = cartTotal + element.quantity * data.price;
+                            console.log("Cur total: " + cartTotal);
+                            numItemsInCart = numItemsInCart + element.quantity;
+                        }).always(function () {
+                            console.log("Final counts: $" + cartTotal + ", with " + numItemsInCart + " items.");
+                            $('#orderButton').prop('disabled', false);
+                            if ($('p#address').text() === 'No address saved for user.' || $('p#number').text() === 'No credit card saved for user.') {
+                                $('#orderButton').click(function(event) {
+                                    event.stopPropagation();
+                                    event.preventDefault();
+                                    $("#user-message").html('<div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button> Could not place order. Missing shipping or payment information.</div>');
+                                    return false;
+                                });
+                            } else {
+                                $('#orderButton').click(function(event) {
+                                    if (orderPlaced == false) {
+                                      orderPlaced = true;
+                                      return order();
+				    }
+                                });
+                            }
+                            $('#numItemsInCart').text('You currently have ' + numItemsInCart + ' item(s) in your cart.');
+                            $('#cartTotal').text('$' + cartTotal.toFixed(2));
+                            $('#orderSubtotal').text('$' + cartTotal.toFixed(2));
+                            $('#orderShipping').text('$' + shipping.toFixed(2));
+                            $('#orderGrandTotal').text('$' + (cartTotal + shipping).toFixed(2));
+                        });
+                    }
+                });
+
+            }
+        });
+
+        $.getJSON('/card', function(data) {
+            if (data.status_code !== 500) {
+                $("p#number").text("Card ending in " + data.number).css("color", "black");
+                $("#add_payment").hide();
+            } else {
+                $("p#number").text("No credit card saved for user.").css("color", "red");
+                $("#add_payment").show();
+            }
+        });
+
+        $.getJSON('/address', function(data) {
+            if (data.status_code !== 500) {
+                var text = data.number + " ";
+                text += data.street
+                text += "</br>";
+                text += data.city;
+                text += "</br>";
+                text += data.postcode;
+                text += "</br>";
+                text += data.country;
+                $("p#address").html(text).css("color", "black");
+                $("#add_shipping").hide();
+            } else {
+                $("p#address").text("No address saved for user.").css("color", "red");
+                $("#add_shipping").show();
+            }
+        });
+
+        $.getJSON('/catalogue', {size: 3}, function (data) {
+            if (data != null) {
+                $.each(data, function (index, element) {
+                    $('#youMayAlsoLike').append(
+                            '<div class="col-md-3 col-sm-6">\
+                                <div class="product same-height">\
                                     <div class="flip-container">\
                                         <div class="flipper">\
                                             <div class="front">\
@@ -237,29 +472,21 @@ _________________________________________________________ -->
                                             </div>\
                                         </div>\
                                     </div>\
-                                    <a href="detail.html?id=' + element.id + '" class="invisible">\
-                                        <img src="img/product1.jpg" alt="" class="img-responsive">\
+                                    <a href="detail.html" class="invisible">\
+                                        <img src="' + element.imageUrl[0] + '" alt="" class="img-responsive">\
                                     </a>\
                                     <div class="text">\
                                         <h3><a href="detail.html?id=' + element.id + '">' + element.name + '</a></h3>\
                                         <p class="price">$' + element.price + '</p>\
-                                        <p class="buttons">\
-                                            <a href="detail.html?id=' + element.id + '" class="btn btn-default">View detail</a>\
-                                            <a href="#" onclick="addToCart(\'' + element.id + '\')" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Add to cart</a>\
-                                        </p>\
                                     </div>\
                                 </div>\
-                            </div>');
-                    });
-                }
-            });
-        });
-
-
-
-
-
-
+                            </div>'
+                    );
+                });
+            }
+        }).always(
+                $(window).trigger('resize')
+        );
     });
 
 </script>
