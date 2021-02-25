@@ -1,5 +1,5 @@
-# UP9 Artifacts for `ag.weave.021703`
-This folder contains contract documentation, tests and mocks for `ag.weave.021703`.
+# UP9 Artifacts for `ag.consul.022501`
+This folder contains contract documentation, tests and mocks for `ag.consul.022501`.
 
 
 

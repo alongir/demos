@@ -19,11 +19,7 @@ def authenticate(target_key: str, target: TargetService):
         pass
     elif target_key == 'TARGET_CATALOGUE':
         pass
-    elif target_key == 'TARGET_EDGE_ROUTER':
-        pass
     elif target_key == 'TARGET_FRONT_END':
-        pass
-    elif target_key == 'TARGET_USER':
         pass
     else:
         pass

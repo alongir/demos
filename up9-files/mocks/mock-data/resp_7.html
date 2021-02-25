@@ -48,111 +48,104 @@
 <div id="all">
 
     <div id="content">
-
         <div class="container">
+
             <div class="col-md-12">
-                <div id="main-slider">
-                    <div class="item">
-                        <a href="detail.html?id=3395a43e-2d88-40de-b95f-e00e1502085b">
-                            <img class="img-responsive" src="img/colourful_socks_banner.jpg" alt="">
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a href="detail.html?id=zzz4f044-b040-410d-8ead-4de0446aec7e">
-                            <img class="img-responsive" src="img/rugby_socks_banner.jpg" alt="">
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a href="detail.html?id=03fef6ac-1896-4ce8-bd69-b798f85c6e0b">
-                            <img class="img-responsive" src="img/holy_socks_banner.jpg" alt="">
-                        </a>
-                    </div>
-                </div>
-                <!-- /#main-slider -->
+                <ul class="breadcrumb">
+                    <li><a href="index.html">Home</a>
+                    </li>
+                    <li>Catalogue</li>
+                </ul>
             </div>
-        </div>
 
-        <!-- *** ADVANTAGES HOMEPAGE ***
+            <div class="col-md-3">
+                <!-- *** MENUS AND FILTERS ***
 _________________________________________________________ -->
-        <div id="advantages">
+                <div class="panel panel-default sidebar-menu">
 
-            <div class="container">
-                <div class="same-height-row">
-                    <div class="col-sm-4">
-                        <div class="box same-height clickable">
-                            <div class="icon"><i class="fa fa-heart"></i>
-                            </div>
-
-                            <h3><a href="#">We love socks!</a></h3>
-                            <p>Fun fact: Socks were invented by woolly mammoths
-                                to keep warm. They died out because stupid
-                                humans had to cut their legs off to get their
-                                socks.</p>
-                        </div>
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Filters <a
+                                class="btn btn-xs btn-danger pull-right"
+                                href="#" onclick='resetTags()'><i class="fa fa-times-circle"></i>
+                            Clear</a></h3>
                     </div>
 
-                    <div class="col-sm-4">
-                        <div class="box same-height clickable">
-                            <div class="icon"><i class="fa fa-tags"></i>
+                    <div class="panel-body">
+
+                        <form id="filters-form">
+                            <div id="filters" class="form-group">
                             </div>
 
-                            <h3><a href="#">Best prices</a></h3>
-                            <p>We price check our socks with trained monkeys
-                                back at the office.</p>
-                        </div>
+                            <a class="btn btn-default btn-sm btn-primary" href="#"
+                               onclick='setNewTags($("input:checkbox:checked").map(function () {return this.value;}).get().join(","));'>
+                                <i class="fa fa-pencil"></i> Apply
+                            </a>
+
+                        </form>
+
                     </div>
+                </div>
 
-                    <div class="col-sm-4">
-                        <div class="box same-height clickable">
-                            <div class="icon"><i class="fa fa-thumbs-up"></i>
+                <!-- *** MENUS AND FILTERS END *** -->
+            </div>
+
+            <div class="col-md-9">
+                <div class="box info-bar">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-4 products-showing">
+                            <div id="totalProducts"></div>
+                        </div>
+
+                        <div class="col-sm-12 col-md-8  products-number-sort">
+                            <div class="row">
+                                <form class="form-inline">
+                                    <div class="col-md-6 col-sm-6">
+                                        <div id="products-number" class="products-number">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6">
+                                        <div class="products-sort-by">
+                                            <strong>Sort by</strong>
+                                            <select name="sort-by"
+                                                    class="form-control">
+                                                <option>Price</option>
+                                                <option>Name</option>
+                                                <option>Sales first</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
-
-                            <h3><a href="#">100% satisfaction guaranteed</a>
-                            </h3>
-                            <p>Free returns on most items. Hamsters are
-                                non-returnable once spoken to.</p>
                         </div>
                     </div>
                 </div>
-                <!-- /.row -->
+
+                <!-- *** PRODUCTS *** -->
+
+                <div id="row products">
+                    <div id="products"></div>
+                </div>
+                <!-- /.products -->
+
+                <div class="pages">
+
+                    <!--<p class="loadMore">-->
+                    <!--<a href="#" class="btn btn-primary btn-lg"><i-->
+                    <!--class="fa fa-chevron-down"></i> Load more</a>-->
+                    <!--</p>-->
+
+                    <ul id="pagination" class="pagination">
+                    </ul>
+                </div>
+
 
             </div>
-            <!-- /.container -->
-
+            <!-- /.col-md-9 -->
         </div>
-        <!-- /#advantages -->
-
-        <!-- *** ADVANTAGES END *** -->
-
-        <!-- *** HOT PRODUCT SLIDESHOW ***
-_________________________________________________________ -->
-        <div id="hot">
-
-            <div class="box">
-                <div class="container">
-                    <div class="col-md-12">
-                        <h2>Hot this week</h2>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container">
-                <div class="product-slider" id="hot-slider">
-                </div>
-                <!-- /.product-slider -->
-            </div>
-            <!-- /.container -->
-
-        </div>
-        <!-- /#hot -->
-
-        <!-- *** HOT END *** -->
-
+        <!-- /.container -->
     </div>
     <!-- /#content -->
-
     <div id="footer"></div>
-
 </div>
 <!-- /#all -->
 
@@ -161,8 +154,6 @@ _________________________________________________________ -->
 _________________________________________________________ -->
 <script src="js/jquery-1.11.0.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<script src="js/js.cookie.js"></script>
-<script src="js/client.js"></script>
 <script src="js/jquery.cookie.js"></script>
 <script src="js/waypoints.min.js"></script>
 <script src="js/modernizr.js"></script>
@@ -178,65 +169,108 @@ _________________________________________________________ -->
             contentType: "application/json; charset=utf-8"
         });
 
-        console.log("Loading components for index.html");
+        console.log("Loading components for category.html");
         $("#topbar").load("topbar.html");
         $("#navbar").load("navbar.html");
         $("#footer").load("footer.html");
-
-        $.getJSON('/catalogue', {size: 5}, function (data) {
-            if (data != null) {
-                $.each(data, function (index, element) {
-                    $('#hot-slider').append(
-                            '<div class="item">\
-                            <div class="product">\
-                                <div class="flip-container">\
-                                    <div class="flipper">\
-                                        <div class="front">\
-                                            <a href="detail.html?id=' + element.id + '">\
-                                            <img src="' + element.imageUrl[0] + '" alt="" class="img-responsive">\
-                                        </a>\
-                                    </div>\
-                                    <div class="back">\
-                                        <a href="detail.html?id=' + element.id + '">\
-                                            <img src="' + element.imageUrl[1] + '" alt="" class="img-responsive">\
-                                        </a>\
-                                    </div>\
-                                </div>\
-                            </div>\
-                            <a href="detail.html?id=' + element.id + '" class="invisible">\
-                                <img src="' + element.imageUrl[0] + '" alt="" class="img-responsive">\
-                            </a>\
-                            <div class="text">\
-                                <h3><a href="detail.html?id=' + element.id + '">' + element.name + '</a></h3>\
-                                <p class="price">$' + element.price + '</p>\
-                            </div>\
-                        </div>\
-                    </div>'
-                    );
-                });
-                $('.product-slider').owlCarousel({
-                    navigation: true, // Show next and prev buttons
-                    slideSpeed: 300,
-                    paginationSpeed: 400,
-                    afterInit: function () {
-                        $('.product-slider .item').css('visibility', 'visible');
-                    }
-                });
-
-                $('#main-slider').owlCarousel({
-                    navigation: true, // Show next and prev buttons
-                    slideSpeed: 300,
-                    paginationSpeed: 400,
-                    autoPlay: true,
-                    stopOnHover: true,
-                    singleItem: true,
-                    afterInit: ''
-                });
-
-            }
-        });
     })
 </script>
+<script>
+            $(document).ready(function() {
+
+                $.ajaxSetup({
+                    contentType: "application/json; charset=utf-8"
+                });
+		var baseSize = 3;
+                var size = $.query.get('size') ? $.query.get('size') : 6;
+                var page = $.query.get('page') ? $.query.get('page') : 1;
+                var tags = $.query.get('tags') ? $.query.get('tags') : "";
+
+                $.getJSON('/catalogue/size', {tags: tags}, function (data) {
+		    if (data.size <= size) {
+			size = data.size;
+			}
+                    $('#totalProducts').append('Showing <strong>' + size + '</strong> of <strong>' + data.size + '</strong> products');
+                    var totalNumPages = Math.ceil(data.size / size);
+                    console.log("Total pages: " + totalNumPages);
+                    var pagination = "";
+                    for (var i = 1; i <= totalNumPages; i++) {
+                        if (page == i) {
+                            pagination = pagination + '<li class="active"><a href="#" onclick=setNewPage(' + i + ')>' + i + '</a></li>';
+                        } else {
+                            pagination = pagination + '<li><a href="#" onclick=setNewPage(' + i + ')>' + i + '</a></li>';
+                        }
+                    }
+                    console.log("Pagination: " + pagination);
+                    $('#pagination').append(pagination);
+		    var pageSize = [];
+                    for (var i = baseSize; i < data.size; i=i+3) {
+                        pageSize.push(i);
+                    }	
+                    pageSize.push(data.size);
+                    var pageSizeHtml = "<strong>Show</strong>"
+                    pageSize.forEach(function (p) {
+                        if (size == p) {
+                            pageSizeHtml = pageSizeHtml + '<a href="#" onclick=setNewPageSize(' + p + ') class="btn btn-primary btn-sm">' + p + '</a>';
+                        } else {
+                            pageSizeHtml = pageSizeHtml + '<a href="#" onclick=setNewPageSize(' + p + ') class="btn btn-default btn-sm">' + p + '</a>';
+                        }
+                    })
+                    $('#products-number').append(pageSizeHtml);
+                });
+
+                $.getJSON('/tags', function (data) {
+                    $.each(data.tags, function (index, element) {
+                        console.log("Current tags: " + tags);
+                        if (tags != null && tags != "" && tags != true && tags.indexOf(element) > -1) {
+                            $('#filters').append('<div class="checkbox"><label><input type="checkbox" checked="true" value="' + element + '">' + element + '</label></div>');
+                        } else {
+                            $('#filters').append('<div class="checkbox"><label><input type="checkbox" value="' + element + '">' + element + '</label></div>');
+                        }
+                    })
+                });
+
+
+                $.getJSON('/catalogue', {page: page, size: size, tags: tags}, function (data) {
+                    if (data != null) {
+                        $.each(data, function (index, element) {
+                            $('#products').append('<div class="col-md-4 col-sm-6">\
+                            <div class="product">\
+                                    <div class="flip-container">\
+                                        <div class="flipper">\
+                                            <div class="front">\
+                                                <a href="detail.html?id=' + element.id + '">\
+                                                    <img src="' + element.imageUrl[0] + '" alt="" class="img-responsive">\
+                                                </a>\
+                                            </div>\
+                                            <div class="back">\
+                                                <a href="detail.html?id=' + element.id + '">\
+                                                    <img src="' + element.imageUrl[1] + '" alt="" class="img-responsive">\
+                                                </a>\
+                                            </div>\
+                                        </div>\
+                                    </div>\
+                                    <a href="detail.html?id=' + element.id + '" class="invisible">\
+                                        <img src="img/product1.jpg" alt="" class="img-responsive">\
+                                    </a>\
+                                    <div class="text">\
+                                        <h3><a href="detail.html?id=' + element.id + '">' + element.name + '</a></h3>\
+                                        <p class="price">$' + element.price + '</p>\
+                                        <p class="buttons">\
+                                            <a href="detail.html?id=' + element.id + '" class="btn btn-default">View detail</a>\
+                                            <a href="#" onclick="addToCart(\'' + element.id + '\')" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Add to cart</a>\
+                                        </p>\
+                                    </div>\
+                                </div>\
+                            </div>');
+                        });
+                    }
+                });
+            } );
+
+</script>
+
+
 </body>
 
 </html>

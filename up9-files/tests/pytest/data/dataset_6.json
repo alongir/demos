@@ -1,18 +1,13 @@
 {
  "parameters": [
   {
-   "name": "size",
-   "uuid": "67eee752-29fc-4383-a6fb-6a6cab0fe583"
-  },
-  {
-   "name": "tags",
-   "uuid": "b36c963a-6428-4c40-a47e-cea2cb2f7107"
+   "name": "id",
+   "uuid": "d49f5d6d-fec7-4e5b-811c-5554074996ca"
   }
  ],
  "rows": [
   {
-   "size": "5",
-   "tags": "brown"
+   "id": "zzz4f044-b040-410d-8ead-4de0446aec7e"
   }
  ]
 }
