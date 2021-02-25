@@ -7,7 +7,7 @@
  "paths": {
   "/catalogue": {
    "get": {
-    "operationId": "cbebcc7d-8107-44f3-a991-070829a6b60e",
+    "operationId": "6200bb1d-893a-47e4-955f-46ac19e03517",
     "parameters": [
      {
       "in": "query",
@@ -104,6 +104,67 @@
            "formal",
            "blue"
           ]
+         },
+         {
+          "count": 175,
+          "description": "consequat amet cupidatat minim laborum tempor elit ex consequat in",
+          "id": "837ab141-399e-4c1f-9abc-bace40296bac",
+          "imageUrl": [
+           "/catalogue/images/catsocks.jpg",
+           "/catalogue/images/catsocks2.jpg"
+          ],
+          "name": "Cat socks",
+          "price": 15,
+          "tag": [
+           "brown",
+           "formal",
+           "green"
+          ]
+         },
+         {
+          "count": 115,
+          "description": "For all those leg lovers out there. A perfect example of a swivel chair trained calf. Meticulously trained on a diet of sitting and Pina Coladas. Phwarr...",
+          "id": "a0a4f044-b040-410d-8ead-4de0446aec7e",
+          "imageUrl": [
+           "/catalogue/images/bit_of_leg_1.jpeg",
+           "/catalogue/images/bit_of_leg_2.jpeg"
+          ],
+          "name": "Nerd leg",
+          "price": 7.99,
+          "tag": [
+           "blue",
+           "skin"
+          ]
+         },
+         {
+          "count": 801,
+          "description": "We were not paid to sell this sock. It's just a bit geeky.",
+          "id": "d3588630-ad8e-49df-bbd7-3167f7efb246",
+          "imageUrl": [
+           "/catalogue/images/youtube_1.jpeg",
+           "/catalogue/images/youtube_2.jpeg"
+          ],
+          "name": "YouTube.sock",
+          "price": 10.99,
+          "tag": [
+           "formal",
+           "geek"
+          ]
+         },
+         {
+          "count": 127,
+          "description": "Keep it simple.",
+          "id": "zzz4f044-b040-410d-8ead-4de0446aec7e",
+          "imageUrl": [
+           "/catalogue/images/classic.jpg",
+           "/catalogue/images/classic2.jpg"
+          ],
+          "name": "Classic",
+          "price": 12,
+          "tag": [
+           "brown",
+           "green"
+          ]
          }
         ],
         "schema": {
@@ -155,10 +216,112 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 2 requests"
+    "summary": "Seen 28 requests",
+    "tags": [
+     "catalogue"
+    ]
    },
    "parameters": []
+  },
+  "/catalogue/{id}": {
+   "get": {
+    "operationId": "55322b19-53a1-4118-a204-dc8d27d74c7f",
+    "parameters": [],
+    "responses": {
+     "200": {
+      "content": {
+       "application/json": {
+        "example": {
+         "count": 738,
+         "description": "A mature sock, crossed, with an air of nonchalance.",
+         "id": "808a2de1-1aaa-4c25-a9b9-6612e8f29a38",
+         "imageUrl": [
+          "/catalogue/images/cross_1.jpeg",
+          "/catalogue/images/cross_2.jpeg"
+         ],
+         "name": "Crossed",
+         "price": 17.32,
+         "tag": [
+          "blue",
+          "red",
+          "action",
+          "formal"
+         ]
+        },
+        "schema": {
+         "properties": {
+          "count": {
+           "type": "integer"
+          },
+          "description": {
+           "type": "string"
+          },
+          "id": {
+           "type": "string"
+          },
+          "imageUrl": {
+           "items": {
+            "type": "string"
+           },
+           "type": "array"
+          },
+          "name": {
+           "type": "string"
+          },
+          "price": {
+           "type": "number"
+          },
+          "tag": {
+           "items": {
+            "type": "string"
+           },
+           "type": "array"
+          }
+         },
+         "required": [
+          "count",
+          "description",
+          "id",
+          "imageUrl",
+          "name",
+          "price",
+          "tag"
+         ],
+         "type": "object"
+        }
+       }
+      },
+      "description": "OK"
+     }
+    },
+    "summary": "Seen 22 requests",
+    "tags": [
+     "catalogue"
+    ]
+   },
+   "parameters": [
+    {
+     "in": "path",
+     "name": "id",
+     "required": true,
+     "schema": {
+      "enum": [
+       "d3588630-ad8e-49df-bbd7-3167f7efb246",
+       "a0a4f044-b040-410d-8ead-4de0446aec7e",
+       "808a2de1-1aaa-4c25-a9b9-6612e8f29a38",
+       "510a0d7e-8e83-4193-b483-e27e09ddc34d",
+       "819e1fbf-8b7e-4f6d-811f-693534916a8b"
+      ],
+      "type": "string"
+     },
+     "style": "simple"
+    }
+   ]
   }
  },
- "tags": []
+ "tags": [
+  {
+   "name": "catalogue"
+  }
+ ]
 }

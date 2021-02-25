@@ -7,7 +7,7 @@
  "paths": {
   "/": {
    "get": {
-    "operationId": "7f9fdbce-7851-4abe-b5e7-b6aa2766f073",
+    "operationId": "4ae2a5a4-2acb-49c2-83ad-8a31ef44e1cd",
     "parameters": [],
     "responses": {
      "200": {
@@ -25,7 +25,7 @@
   },
   "/basket.html": {
    "get": {
-    "operationId": "69025e0b-e7cb-4fec-96f2-74d11a38a2c5",
+    "operationId": "8644c24d-46f5-47fe-8c56-10e75a50131d",
     "parameters": [],
     "responses": {
      "200": {
@@ -43,7 +43,7 @@
   },
   "/cart": {
    "delete": {
-    "operationId": "79dcc98e-e4fa-4674-8ac5-5dee8ab99347",
+    "operationId": "62084f60-0842-43a9-baa7-017d51e45978",
     "parameters": [],
     "responses": {
      "202": {
@@ -56,7 +56,7 @@
     ]
    },
    "get": {
-    "operationId": "c0d3fa68-abbd-46bb-9948-baec4372cc15",
+    "operationId": "a9ad831b-e7c7-4bf0-a6fa-b48b9a08e3b2",
     "parameters": [
      {
       "in": "header",
@@ -91,7 +91,7 @@
    },
    "parameters": [],
    "post": {
-    "operationId": "62b82198-34aa-4b88-af6f-89809dbc3209",
+    "operationId": "55037187-d9c6-48a3-a7e0-5c5fa52aedf5",
     "parameters": [],
     "requestBody": {
      "content": {
@@ -128,7 +128,7 @@
   },
   "/catalogue": {
    "get": {
-    "operationId": "f3edaa4b-9689-4bd8-9051-033bc05da3dc",
+    "operationId": "7d72e088-3214-4112-adb4-ce14a24c62f4",
     "parameters": [
      {
       "in": "query",
@@ -354,7 +354,7 @@
   },
   "/category.html": {
    "get": {
-    "operationId": "4a9bb360-07f0-4e1c-9669-e08d6dadf989",
+    "operationId": "fc4a79fe-de86-4e9a-8ac3-69b105198dca",
     "parameters": [],
     "responses": {
      "200": {
@@ -372,7 +372,7 @@
   },
   "/detail.html": {
    "get": {
-    "operationId": "645a15e0-5a02-46c1-810b-4d09fc5940e8",
+    "operationId": "c939d04a-5535-4d83-8cb4-0c2997c9a7c9",
     "parameters": [
      {
       "in": "query",
@@ -406,7 +406,7 @@
   },
   "/login": {
    "get": {
-    "operationId": "0b8aa70d-d281-4e22-b415-7550798a9446",
+    "operationId": "c0dad943-bf27-4b90-843f-985725b3e5da",
     "parameters": [],
     "responses": {
      "200": {
@@ -425,7 +425,7 @@
   "/orders": {
    "parameters": [],
    "post": {
-    "operationId": "1597e662-35b6-4bcf-a3a2-c34c1c66bb0e",
+    "operationId": "3e94dc94-891b-45e8-8b65-a824315c635e",
     "parameters": [],
     "responses": {
      "201": {
