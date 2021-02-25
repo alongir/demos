@@ -1,13 +1,18 @@
 {
  "parameters": [
   {
-   "name": "id",
-   "uuid": "0ef8bb89-3fe4-44b5-82aa-4bc2a50c43cc"
+   "name": "cartId",
+   "uuid": "3e9ec42f-9b08-4a8b-8576-a9d72e2b80d4"
+  },
+  {
+   "name": "sessionId",
+   "uuid": "88fec022-8b5f-41bb-b36d-a27b687b7db2"
   }
  ],
  "rows": [
   {
-   "id": "zzz4f044-b040-410d-8ead-4de0446aec7e"
+   "cartId": "57a98d98e4b00679b4a830b2",
+   "sessionId": "9JKkPRMrP7ywsRnVxsCOkyVJprtENUMK"
   }
  ]
 }
