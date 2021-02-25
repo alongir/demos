@@ -7,7 +7,7 @@
  "paths": {
   "/customers/{id}": {
    "get": {
-    "operationId": "5aa6d1fc-9959-45f8-929b-322591a6c933",
+    "operationId": "4dd5e6ea-60c8-4615-bd01-80baefd2ab41",
     "parameters": [],
     "responses": {
      "200": {
@@ -136,7 +136,7 @@
   },
   "/login": {
    "get": {
-    "operationId": "798fd633-3391-4a81-90f8-b3e61d9e947e",
+    "operationId": "5f7bb1c9-747c-4332-bd41-214a2593b5de",
     "parameters": [],
     "responses": {
      "200": {

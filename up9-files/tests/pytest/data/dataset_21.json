@@ -1,18 +1,13 @@
 {
  "parameters": [
   {
-   "name": "id",
-   "uuid": "29cb6b3c-9c01-4640-9909-602c07666fbd"
-  },
-  {
-   "name": "sessionId",
-   "uuid": "145713bb-f72c-46dc-9160-f709f23cb137"
+   "name": "name",
+   "uuid": "e1eff6ab-d590-4691-a094-4534509296f5"
   }
  ],
  "rows": [
   {
-   "id": "m2ocBH96TVeKzn9aWgu1llMQAVUvsVhx",
-   "sessionId": "m2ocBH96TVeKzn9aWgu1llMQAVUvsVhx"
+   "name": "57a98d98e4b00679b4a830b2"
   }
  ]
 }

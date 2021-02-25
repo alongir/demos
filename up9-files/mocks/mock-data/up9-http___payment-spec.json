@@ -8,7 +8,7 @@
   "/paymentAuth": {
    "parameters": [],
    "post": {
-    "operationId": "941d9d0c-3786-4ca8-a8c6-bf9dde9c1a43",
+    "operationId": "4ba42d61-56f8-4832-b0d5-5ba6938ea49a",
     "parameters": [
      {
       "in": "header",

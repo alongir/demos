@@ -1,58 +1,28 @@
 {
  "parameters": [
   {
-   "name": "ccv",
-   "uuid": "ef912f38-de4b-4c3b-9847-2058366cc180"
+   "name": "address",
+   "uuid": "b9dbe77a-163d-4091-a424-282599be812c"
   },
   {
-   "name": "country",
-   "uuid": "fef06e45-0a06-4b58-84d4-0ada275e28c7"
+   "name": "card",
+   "uuid": "9aadc57a-38f6-412a-acfe-a6259dca0a12"
   },
   {
-   "name": "expires",
-   "uuid": "ea3fd79f-78aa-4c91-b70d-3e6be2fd201e"
+   "name": "customer",
+   "uuid": "c4486386-1d87-404d-afc4-e25a165f836e"
   },
   {
-   "name": "id",
-   "uuid": "5fbb7238-c707-40e6-8198-5f78f423ecd9"
-  },
-  {
-   "name": "id1",
-   "uuid": "6bcf56a9-5493-45d2-b7dc-18e16c07cf3d"
-  },
-  {
-   "name": "id2",
-   "uuid": "06012711-f7e7-48f9-8d79-30e8f38de48e"
-  },
-  {
-   "name": "longNum",
-   "uuid": "d5e2b481-fe5d-4071-8325-7c6497239528"
-  },
-  {
-   "name": "number",
-   "uuid": "3fa9b235-5f13-46bd-b8ca-5ea856ca85cd"
-  },
-  {
-   "name": "postcode",
-   "uuid": "fb8a494e-0591-47d3-96db-c85c54337c6d"
-  },
-  {
-   "name": "street",
-   "uuid": "5c1029f5-708f-46e2-9c91-8ca3ccfe7330"
+   "name": "items",
+   "uuid": "9bfe25e0-9c40-4398-a17e-55345112c6a3"
   }
  ],
  "rows": [
   {
-   "ccv": "958",
-   "country": "United Kingdom",
-   "expires": "08/19",
-   "id": null,
-   "id1": null,
-   "id2": null,
-   "longNum": "5544154011345918",
-   "number": "246",
-   "postcode": "G67 3DL",
-   "street": "Whitelees Road"
+   "address": "http://user/addresses/57a98d98e4b00679b4a830b0",
+   "card": "http://user/cards/57a98d98e4b00679b4a830b1",
+   "customer": "http://user/customers/57a98d98e4b00679b4a830b2",
+   "items": "http://127.0.0.1:15300/carts/57a98d98e4b00679b4a830b2/items"
   }
  ]
 }

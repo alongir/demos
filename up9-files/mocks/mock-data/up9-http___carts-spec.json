@@ -7,7 +7,7 @@
  "paths": {
   "/carts/{cartId}": {
    "delete": {
-    "operationId": "84c24f03-042b-4efc-8d93-723a3c4e2fca",
+    "operationId": "8200d66b-fac4-4100-831a-74ac4a84d536",
     "parameters": [],
     "responses": {
      "202": {
@@ -26,11 +26,11 @@
      "required": true,
      "schema": {
       "enum": [
-       "57a98d98e4b00679b4a830b2",
        "UpRV2N1SUodb5jtLmwpnKwP0tj_TElaB",
        "j_Kji_2IZS19PksSCffu2G62eTiDJbHJ",
        "1mHs5YYbVv2DgiUcGSEY6qb755mVE53K",
-       "DQvPpgzt6iFF11UOEMTjs6yR7VcMK7wu"
+       "DQvPpgzt6iFF11UOEMTjs6yR7VcMK7wu",
+       "sbl4dBSwnyHQmGFSd6FKSzUJIo06HI6P"
       ],
       "type": "string"
      },
@@ -40,7 +40,7 @@
   },
   "/carts/{cartId}/items": {
    "get": {
-    "operationId": "3208d6a0-965b-4268-b450-be2509c4080b",
+    "operationId": "a5516723-9c0b-4bae-8ef0-15df22b475aa",
     "parameters": [
      {
       "in": "header",
@@ -102,11 +102,11 @@
      "required": true,
      "schema": {
       "enum": [
-       "57a98d98e4b00679b4a830b2",
        "UpRV2N1SUodb5jtLmwpnKwP0tj_TElaB",
        "j_Kji_2IZS19PksSCffu2G62eTiDJbHJ",
        "1mHs5YYbVv2DgiUcGSEY6qb755mVE53K",
-       "DQvPpgzt6iFF11UOEMTjs6yR7VcMK7wu"
+       "DQvPpgzt6iFF11UOEMTjs6yR7VcMK7wu",
+       "sbl4dBSwnyHQmGFSd6FKSzUJIo06HI6P"
       ],
       "type": "string"
      },
@@ -114,7 +114,7 @@
     }
    ],
    "post": {
-    "operationId": "d692405b-c2f3-47f1-a13b-18f3747727bb",
+    "operationId": "5bd2706b-6618-47b7-8c1c-c62efe1f7d9c",
     "parameters": [
      {
       "in": "header",
@@ -196,7 +196,7 @@
   },
   "/carts/{cartId}/merge": {
    "get": {
-    "operationId": "cc0632b7-6c52-4b33-8937-edcb48407e9a",
+    "operationId": "fefca3d6-c56a-43d2-9d72-de84c87608ff",
     "parameters": [
      {
       "in": "query",
@@ -228,11 +228,11 @@
      "required": true,
      "schema": {
       "enum": [
-       "57a98d98e4b00679b4a830b2",
        "UpRV2N1SUodb5jtLmwpnKwP0tj_TElaB",
        "j_Kji_2IZS19PksSCffu2G62eTiDJbHJ",
        "1mHs5YYbVv2DgiUcGSEY6qb755mVE53K",
-       "DQvPpgzt6iFF11UOEMTjs6yR7VcMK7wu"
+       "DQvPpgzt6iFF11UOEMTjs6yR7VcMK7wu",
+       "sbl4dBSwnyHQmGFSd6FKSzUJIo06HI6P"
       ],
       "type": "string"
      },

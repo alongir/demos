@@ -1,23 +1,13 @@
 {
  "parameters": [
   {
-   "name": "cartId",
-   "uuid": "b0ca6cae-3ce0-419b-aca1-1a97101a483d"
-  },
-  {
-   "name": "itemId",
-   "uuid": "e3531852-e482-408b-a244-84c08d076ca5"
-  },
-  {
-   "name": "unitPrice",
-   "uuid": "4d08a12f-a9d0-47a9-9267-a5af3748d2e4"
+   "name": "id",
+   "uuid": "7feec9cd-f350-4c2d-9357-ee5cf24c0906"
   }
  ],
  "rows": [
   {
-   "cartId": "57a98d98e4b00679b4a830b2",
-   "itemId": "d3588630-ad8e-49df-bbd7-3167f7efb246",
-   "unitPrice": 17.32
+   "id": "zzz4f044-b040-410d-8ead-4de0446aec7e"
   }
  ]
 }

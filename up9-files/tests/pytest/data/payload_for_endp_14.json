@@ -1,4 +1,4 @@
 {
- "id": "{{id}}",
- "quantity": 1
+ "itemId": "{{itemId}}",
+ "unitPrice": "{{unitPrice}}"
 }
