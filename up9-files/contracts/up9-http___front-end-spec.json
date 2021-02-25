@@ -84,7 +84,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 2 requests",
+    "summary": "Seen 3 requests",
     "tags": [
      "cart"
     ]
@@ -348,7 +348,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 28 requests"
+    "summary": "Seen 29 requests"
    },
    "parameters": []
   },

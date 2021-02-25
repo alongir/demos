@@ -7,36 +7,25 @@ from authentication import authenticate
 @data_driven_tests
 class Tests_carts(unittest.TestCase):
 
-    @json_dataset('data/dataset_11.json')
-    @clear_session({'spanId': 11})
-    def test_11_get_carts_cartId_items(self, data_row):
+    @json_dataset('data/dataset_13.json')
+    @clear_session({'spanId': 13})
+    def test_13_delete_carts_cartId(self, data_row):
         cartId, = data_row
 
-        # GET http://carts/carts/{cartId}/items (endp 11)
-        carts = get_http_target('TARGET_CARTS', authenticate)
-        resp = carts.get(f'/carts/{cartId}/items', headers=dict([('accept', 'application/json')]))
-        resp.assert_ok()
-        # resp.assert_status_code(200)
-
-    @json_dataset('data/dataset_16.json')
-    @clear_session({'spanId': 16})
-    def test_16_delete_carts_cartId(self, data_row):
-        cartId, = data_row
-
-        # DELETE http://carts/carts/{cartId} (endp 16)
+        # DELETE http://carts/carts/{cartId} (endp 13)
         carts = get_http_target('TARGET_CARTS', authenticate)
         resp = carts.delete(f'/carts/{cartId}')
         resp.assert_ok()
         # resp.assert_status_code(202)
 
-    @json_dataset('data/dataset_17.json')
-    @clear_session({'spanId': 17})
-    def test_17_post_carts_cartId_items(self, data_row):
+    @json_dataset('data/dataset_14.json')
+    @clear_session({'spanId': 14})
+    def test_14_post_carts_cartId_items(self, data_row):
         cartId, itemId, unitPrice = data_row
 
-        # POST http://carts/carts/{cartId}/items (endp 17)
+        # POST http://carts/carts/{cartId}/items (endp 14)
         carts = get_http_target('TARGET_CARTS', authenticate)
-        with open('data/payload_for_endp_17.json', 'r') as json_payload_file:
+        with open('data/payload_for_endp_14.json', 'r') as json_payload_file:
             json_payload = json.load(json_payload_file)
         apply_into_json(json_payload, '$.itemId', itemId)
         apply_into_json(json_payload, '$.unitPrice', unitPrice)
@@ -44,39 +33,50 @@ class Tests_carts(unittest.TestCase):
         resp.assert_ok()
         # resp.assert_status_code(201)
 
-    @json_dataset('data/dataset_18.json')
-    @clear_session({'spanId': 18})
-    def test_18_get_carts_cartId_merge(self, data_row):
+    @json_dataset('data/dataset_15.json')
+    @clear_session({'spanId': 15})
+    def test_15_get_carts_cartId_merge(self, data_row):
         cartId, sessionId = data_row
 
-        # GET http://carts/carts/{cartId}/merge (endp 18)
+        # GET http://carts/carts/{cartId}/merge (endp 15)
         carts = get_http_target('TARGET_CARTS', authenticate)
         qstr = '?' + urlencode([('sessionId', sessionId)])
         resp = carts.get(f'/carts/{cartId}/merge' + qstr)
         resp.assert_ok()
         # resp.assert_status_code(202)
 
+    @json_dataset('data/dataset_16.json')
+    @clear_session({'spanId': 16})
+    def test_16_get_carts_cartId_items(self, data_row):
+        cartId, = data_row
+
+        # GET http://carts/carts/{cartId}/items (endp 16)
+        carts = get_http_target('TARGET_CARTS', authenticate)
+        resp = carts.get(f'/carts/{cartId}/items', headers=dict([('accept', 'application/json')]))
+        resp.assert_ok()
+        # resp.assert_status_code(200)
+
 
 @data_driven_tests
 class Tests_catalogue(unittest.TestCase):
 
-    @json_dataset('data/dataset_14.json')
-    @clear_session({'spanId': 14})
-    def test_14_get_catalogue_id(self, data_row):
+    @json_dataset('data/dataset_11.json')
+    @clear_session({'spanId': 11})
+    def test_11_get_catalogue_id(self, data_row):
         id_, = data_row
 
-        # GET http://catalogue/catalogue/{id} (endp 14)
+        # GET http://catalogue/catalogue/{id} (endp 11)
         catalogue = get_http_target('TARGET_CATALOGUE', authenticate)
         resp = catalogue.get(f'/catalogue/{id_}')
         resp.assert_ok()
         # resp.assert_status_code(200)
 
-    @json_dataset('data/dataset_15.json')
-    @clear_session({'spanId': 15})
-    def test_15_get_catalogue(self, data_row):
+    @json_dataset('data/dataset_12.json')
+    @clear_session({'spanId': 12})
+    def test_12_get_catalogue(self, data_row):
         size, = data_row
 
-        # GET http://catalogue/catalogue (endp 15)
+        # GET http://catalogue/catalogue (endp 12)
         catalogue = get_http_target('TARGET_CATALOGUE', authenticate)
         qstr = '?' + urlencode([('size', size)])
         resp = catalogue.get('/catalogue' + qstr)
@@ -192,14 +192,14 @@ class Tests_front_end(unittest.TestCase):
 @data_driven_tests
 class Tests_orders(unittest.TestCase):
 
-    @json_dataset('data/dataset_21.json')
-    @clear_session({'spanId': 21})
-    def test_21_post_orders(self, data_row):
+    @json_dataset('data/dataset_19.json')
+    @clear_session({'spanId': 19})
+    def test_19_post_orders(self, data_row):
         address, card, customer, items = data_row
 
-        # POST http://orders/orders (endp 21)
+        # POST http://orders/orders (endp 19)
         orders = get_http_target('TARGET_ORDERS', authenticate)
-        with open('data/payload_for_endp_21.json', 'r') as json_payload_file:
+        with open('data/payload_for_endp_19.json', 'r') as json_payload_file:
             json_payload = json.load(json_payload_file)
         apply_into_json(json_payload, '$.address', address)
         apply_into_json(json_payload, '$.card', card)
@@ -214,14 +214,14 @@ class Tests_orders(unittest.TestCase):
 @data_driven_tests
 class Tests_payment(unittest.TestCase):
 
-    @json_dataset('data/dataset_12.json')
-    @clear_session({'spanId': 12})
-    def test_12_post_paymentAuth(self, data_row):
+    @json_dataset('data/dataset_20.json')
+    @clear_session({'spanId': 20})
+    def test_20_post_paymentAuth(self, data_row):
         ccv, country, expires, id_, id1, id2, longNum, number, postcode, street = data_row
 
-        # POST http://payment/paymentAuth (endp 12)
+        # POST http://payment/paymentAuth (endp 20)
         payment = get_http_target('TARGET_PAYMENT', authenticate)
-        with open('data/payload_for_endp_12.json', 'r') as json_payload_file:
+        with open('data/payload_for_endp_20.json', 'r') as json_payload_file:
             json_payload = json.load(json_payload_file)
         apply_into_json(json_payload, '$.address.country', country)
         apply_into_json(json_payload, '$.address.id', id_)
@@ -242,14 +242,14 @@ class Tests_payment(unittest.TestCase):
 @data_driven_tests
 class Tests_shipping(unittest.TestCase):
 
-    @json_dataset('data/dataset_13.json')
-    @clear_session({'spanId': 13})
-    def test_13_post_shipping(self, data_row):
+    @json_dataset('data/dataset_21.json')
+    @clear_session({'spanId': 21})
+    def test_21_post_shipping(self, data_row):
         name, = data_row
 
-        # POST http://shipping/shipping (endp 13)
+        # POST http://shipping/shipping (endp 21)
         shipping = get_http_target('TARGET_SHIPPING', authenticate)
-        with open('data/payload_for_endp_13.json', 'r') as json_payload_file:
+        with open('data/payload_for_endp_21.json', 'r') as json_payload_file:
             json_payload = json.load(json_payload_file)
         apply_into_json(json_payload, '$.id', str(uuid.uuid4()))
         apply_into_json(json_payload, '$.name', name)
@@ -261,12 +261,12 @@ class Tests_shipping(unittest.TestCase):
 @data_driven_tests
 class Tests_user(unittest.TestCase):
 
-    @json_dataset('data/dataset_19.json')
-    @clear_session({'spanId': 19})
-    def test_19_get_customers_id(self, data_row):
+    @json_dataset('data/dataset_17.json')
+    @clear_session({'spanId': 17})
+    def test_17_get_customers_id(self, data_row):
         id_, = data_row
 
-        # GET http://user/customers/{id} (endp 19)
+        # GET http://user/customers/{id} (endp 17)
         user = get_http_target('TARGET_USER', authenticate)
         resp = user.get(f'/customers/{id_}')
         resp.assert_ok()
@@ -274,9 +274,9 @@ class Tests_user(unittest.TestCase):
         # resp.assert_jsonpath('$.lastName', expected_value='Name')
 
     # authentication-related test
-    @clear_session({'spanId': 20})
-    def test_20_get_login(self):
-        # GET http://user/login (endp 20)
+    @clear_session({'spanId': 18})
+    def test_18_get_login(self):
+        # GET http://user/login (endp 18)
         user = get_http_target('TARGET_USER', dummy_auth)
         resp = user.get('/login')
         resp.assert_ok()

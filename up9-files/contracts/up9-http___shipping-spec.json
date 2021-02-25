@@ -8,7 +8,7 @@
   "/shipping": {
    "parameters": [],
    "post": {
-    "operationId": "62421b8d-729e-4eed-a387-7ba679d400d7",
+    "operationId": "2fa86b8f-df82-4b2b-af79-98acaa41b108",
     "parameters": [
      {
       "in": "header",

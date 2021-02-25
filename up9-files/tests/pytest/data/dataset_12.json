@@ -1,58 +1,13 @@
 {
  "parameters": [
   {
-   "name": "ccv",
-   "uuid": "bd1d0b52-1f5a-4bd1-a1b8-55b9e0d81416"
-  },
-  {
-   "name": "country",
-   "uuid": "86bf08cc-8717-4012-80fd-5af17b53c572"
-  },
-  {
-   "name": "expires",
-   "uuid": "bd251174-9cc3-4cfd-bc80-3fcfc71bc011"
-  },
-  {
-   "name": "id",
-   "uuid": "612ef40d-c2cc-4bd2-84bb-7da2c73a2e2d"
-  },
-  {
-   "name": "id1",
-   "uuid": "de407143-8359-42ac-ad21-9c6c7ce30596"
-  },
-  {
-   "name": "id2",
-   "uuid": "9b78dc8e-06c0-4bc0-a8ec-16fc7259d7ee"
-  },
-  {
-   "name": "longNum",
-   "uuid": "616c339c-7460-4825-9c12-6e6a69a8522e"
-  },
-  {
-   "name": "number",
-   "uuid": "ce851908-0a59-4e3c-a834-1a6fa3573c39"
-  },
-  {
-   "name": "postcode",
-   "uuid": "d5fd8c20-97f0-4331-8ba3-affb3539f0f0"
-  },
-  {
-   "name": "street",
-   "uuid": "93592d94-b651-4ede-b52f-becf1bb99582"
+   "name": "size",
+   "uuid": "0ce47637-a174-45d1-ac19-b8eede05fd0c"
   }
  ],
  "rows": [
   {
-   "ccv": "958",
-   "country": "United Kingdom",
-   "expires": "08/19",
-   "id": null,
-   "id1": null,
-   "id2": null,
-   "longNum": "5544154011345918",
-   "number": "246",
-   "postcode": "G67 3DL",
-   "street": "Whitelees Road"
+   "size": "5"
   }
  ]
 }

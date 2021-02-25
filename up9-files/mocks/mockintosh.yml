@@ -17,11 +17,6 @@ services:
   managementRoot: __admin
   oas: '@mock-data/up9-http___carts-spec.json'
   endpoints:
-  - path: /carts/{{cartId}}/items
-    response:
-      headers:
-        Content-Type: application/json
-      body: '[]'
   - path: /carts/{{cartId}}
     response:
       status: 202
@@ -42,6 +37,11 @@ services:
   - path: /carts/{{cartId}}/merge
     response:
       status: 202
+  - path: /carts/{{cartId}}/items
+    response:
+      headers:
+        Content-Type: application/json
+      body: '[]'
 - name: http://catalogue
   port: 8002
   ssl: false
@@ -52,12 +52,12 @@ services:
     response:
       headers:
         Content-Type: application/json
-      body: '@mock-data/resp_14.json'
+      body: '@mock-data/resp_11.json'
   - path: /catalogue
     response:
       headers:
         Content-Type: application/json
-      body: '@mock-data/resp_15.json'
+      body: '@mock-data/resp_12.json'
 - name: http://front-end
   port: 8003
   ssl: false
@@ -131,7 +131,7 @@ services:
       status: 201
       headers:
         Content-Type: application/json
-      body: '@mock-data/resp_21.json'
+      body: '@mock-data/resp_19.json'
     method: post
 - name: http://payment
   port: 8005
@@ -173,10 +173,10 @@ services:
     response:
       headers:
         Content-Type: application/json
-      body: '@mock-data/resp_19.json'
+      body: '@mock-data/resp_17.json'
   - path: /login
     response:
       headers:
         Content-Type: application/json
-      body: '@mock-data/resp_20.json'
+      body: '@mock-data/resp_18.json'
       useTemplating: false

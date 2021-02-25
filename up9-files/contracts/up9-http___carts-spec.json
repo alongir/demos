@@ -7,7 +7,7 @@
  "paths": {
   "/carts/{cartId}": {
    "delete": {
-    "operationId": "798dcf91-c4c3-46fe-a39a-e09c7f6590b5",
+    "operationId": "42cc84c6-e899-4aa8-959c-c9193a000aaf",
     "parameters": [],
     "responses": {
      "202": {
@@ -26,11 +26,11 @@
      "required": true,
      "schema": {
       "enum": [
-       "57a98d98e4b00679b4a830b2",
        "UpRV2N1SUodb5jtLmwpnKwP0tj_TElaB",
        "j_Kji_2IZS19PksSCffu2G62eTiDJbHJ",
        "1mHs5YYbVv2DgiUcGSEY6qb755mVE53K",
-       "DQvPpgzt6iFF11UOEMTjs6yR7VcMK7wu"
+       "DQvPpgzt6iFF11UOEMTjs6yR7VcMK7wu",
+       "sbl4dBSwnyHQmGFSd6FKSzUJIo06HI6P"
       ],
       "type": "string"
      },
@@ -40,7 +40,7 @@
   },
   "/carts/{cartId}/items": {
    "get": {
-    "operationId": "fbfae3f4-650f-4761-95be-338b7c0c12d2",
+    "operationId": "993dee4a-4a19-42d4-b989-a76859ed1bf6",
     "parameters": [
      {
       "in": "header",
@@ -90,7 +90,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 28 requests",
+    "summary": "Seen 29 requests",
     "tags": [
      "carts"
     ]
@@ -102,11 +102,11 @@
      "required": true,
      "schema": {
       "enum": [
-       "57a98d98e4b00679b4a830b2",
        "UpRV2N1SUodb5jtLmwpnKwP0tj_TElaB",
        "j_Kji_2IZS19PksSCffu2G62eTiDJbHJ",
        "1mHs5YYbVv2DgiUcGSEY6qb755mVE53K",
-       "DQvPpgzt6iFF11UOEMTjs6yR7VcMK7wu"
+       "DQvPpgzt6iFF11UOEMTjs6yR7VcMK7wu",
+       "sbl4dBSwnyHQmGFSd6FKSzUJIo06HI6P"
       ],
       "type": "string"
      },
@@ -114,7 +114,7 @@
     }
    ],
    "post": {
-    "operationId": "36b7a49c-4858-49d1-b369-c7a3c45607b6",
+    "operationId": "a32bdf80-a93a-4c19-b823-5880c6a3a5aa",
     "parameters": [
      {
       "in": "header",
@@ -196,7 +196,7 @@
   },
   "/carts/{cartId}/merge": {
    "get": {
-    "operationId": "f8d3637f-536d-4a9f-8bcc-bf5b09624e62",
+    "operationId": "5f5658d2-e9dc-4d0e-b016-be2480d5bbb0",
     "parameters": [
      {
       "in": "query",
@@ -228,11 +228,11 @@
      "required": true,
      "schema": {
       "enum": [
-       "57a98d98e4b00679b4a830b2",
        "UpRV2N1SUodb5jtLmwpnKwP0tj_TElaB",
        "j_Kji_2IZS19PksSCffu2G62eTiDJbHJ",
        "1mHs5YYbVv2DgiUcGSEY6qb755mVE53K",
-       "DQvPpgzt6iFF11UOEMTjs6yR7VcMK7wu"
+       "DQvPpgzt6iFF11UOEMTjs6yR7VcMK7wu",
+       "sbl4dBSwnyHQmGFSd6FKSzUJIo06HI6P"
       ],
       "type": "string"
      },
