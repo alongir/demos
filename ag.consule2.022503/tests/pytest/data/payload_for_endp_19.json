@@ -1,0 +1,25 @@
+{
+ "address": {
+  "city": "Glasgow",
+  "country": "{{country}}",
+  "id": null,
+  "number": "{{number}}",
+  "postcode": "{{postcode}}",
+  "street": "{{street}}"
+ },
+ "amount": 19.99,
+ "card": {
+  "ccv": "{{ccv}}",
+  "expires": "{{expires}}",
+  "id": null,
+  "longNum": "{{longNum}}"
+ },
+ "customer": {
+  "addresses": [],
+  "cards": [],
+  "firstName": "User",
+  "id": null,
+  "lastName": "Name",
+  "username": "user"
+ }
+}
