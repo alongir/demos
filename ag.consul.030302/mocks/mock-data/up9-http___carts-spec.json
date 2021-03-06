@@ -1,0 +1,104 @@
+{
+ "info": {
+  "title": "http://carts",
+  "version": "0.0"
+ },
+ "openapi": "3.0.2",
+ "paths": {
+  "/carts/{id}/items": {
+   "get": {
+    "operationId": "421cfa44-ac03-44f5-ad0a-082e475dce58",
+    "parameters": [],
+    "responses": {
+     "200": {
+      "content": {
+       "application/json": {
+        "example": [],
+        "schema": {
+         "items": {},
+         "type": "array"
+        }
+       }
+      },
+      "description": "OK"
+     }
+    },
+    "summary": "Seen 35 requests",
+    "tags": [
+     "carts"
+    ]
+   },
+   "parameters": [
+    {
+     "in": "path",
+     "name": "id",
+     "required": true,
+     "schema": {
+      "enum": [
+       "HMAPu3M-9ulbWj0vnWS_xcm347xaehHE",
+       "57a98d98e4b00679b4a830b2",
+       "7w4TGI0pnIxn5TEFoHX6O2spPdXa3dut",
+       "undefined",
+       "rk1gtwTdnRiovVkJoeOD723SPlnOSem3"
+      ],
+      "type": "string"
+     },
+     "style": "simple"
+    }
+   ]
+  },
+  "/carts/{id}/merge": {
+   "get": {
+    "operationId": "1e4488b0-4947-4552-9819-f6c221ece5df",
+    "parameters": [
+     {
+      "in": "query",
+      "name": "sessionId",
+      "required": true,
+      "schema": {
+       "enum": [
+        "7w4TGI0pnIxn5TEFoHX6O2spPdXa3dut",
+        "SZyuF1X2bVarlsKXS7xcI86OluhYrdoz",
+        "4QJEZM9OrGi0DE7QUqwC1q12rL-Mxrjc",
+        "4nsBKJasnSljpIbctOyQQ3i4Y7ptp7xj"
+       ],
+       "type": "string"
+      }
+     }
+    ],
+    "responses": {
+     "202": {
+      "description": "Accepted"
+     }
+    },
+    "summary": "Seen 9 requests",
+    "tags": [
+     "carts"
+    ]
+   },
+   "parameters": [
+    {
+     "in": "path",
+     "name": "id",
+     "required": true,
+     "schema": {
+      "enum": [
+       "HMAPu3M-9ulbWj0vnWS_xcm347xaehHE",
+       "57a98d98e4b00679b4a830b2",
+       "7w4TGI0pnIxn5TEFoHX6O2spPdXa3dut",
+       "undefined",
+       "rk1gtwTdnRiovVkJoeOD723SPlnOSem3"
+      ],
+      "type": "string"
+     },
+     "style": "simple"
+    }
+   ]
+  }
+ },
+ "tags": [
+  {
+   "name": "carts"
+  }
+ ]
+}

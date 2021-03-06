@@ -1,0 +1,92 @@
+services:
+  carts:
+    cap_add:
+    - NET_BIND_SERVICE
+    cap_drop:
+    - all
+    command: /config/mockintosh.yml 'http://carts'
+    environment:
+    - MOCKINTOSH_FORCE_PORT=80
+    hostname: carts
+    image: testrio/mockintosh:latest
+    ports:
+    - 80
+    read_only: true
+    volumes:
+    - .:/config
+  catalogue:
+    cap_add:
+    - NET_BIND_SERVICE
+    cap_drop:
+    - all
+    command: /config/mockintosh.yml 'http://catalogue'
+    environment:
+    - MOCKINTOSH_FORCE_PORT=80
+    hostname: catalogue
+    image: testrio/mockintosh:latest
+    ports:
+    - 80
+    read_only: true
+    volumes:
+    - .:/config
+  front-end:
+    cap_add:
+    - NET_BIND_SERVICE
+    cap_drop:
+    - all
+    command: /config/mockintosh.yml 'http://front-end'
+    environment:
+    - MOCKINTOSH_FORCE_PORT=80
+    hostname: front-end
+    image: testrio/mockintosh:latest
+    ports:
+    - 80
+    read_only: true
+    volumes:
+    - .:/config
+  mockintosh:
+    cap_add:
+    - NET_BIND_SERVICE
+    cap_drop:
+    - all
+    command: /config/mockintosh.yml 'http://mockintosh'
+    environment:
+    - MOCKINTOSH_FORCE_PORT=80
+    hostname: mockintosh
+    image: testrio/mockintosh:latest
+    ports:
+    - 80
+    read_only: true
+    volumes:
+    - .:/config
+  orders:
+    cap_add:
+    - NET_BIND_SERVICE
+    cap_drop:
+    - all
+    command: /config/mockintosh.yml 'http://orders'
+    environment:
+    - MOCKINTOSH_FORCE_PORT=80
+    hostname: orders
+    image: testrio/mockintosh:latest
+    ports:
+    - 80
+    read_only: true
+    volumes:
+    - .:/config
+  user:
+    cap_add:
+    - NET_BIND_SERVICE
+    cap_drop:
+    - all
+    command: /config/mockintosh.yml 'http://user'
+    environment:
+    - MOCKINTOSH_FORCE_PORT=80
+    hostname: user
+    image: testrio/mockintosh:latest
+    ports:
+    - 80
+    read_only: true
+    volumes:
+    - .:/config
+version: '3.3'

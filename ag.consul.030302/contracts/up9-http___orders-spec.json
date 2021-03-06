@@ -1,0 +1,100 @@
+{
+ "info": {
+  "title": "http://orders",
+  "version": "0.0"
+ },
+ "openapi": "3.0.2",
+ "paths": {
+  "/orders/search/customerId": {
+   "get": {
+    "operationId": "9506333a-7014-4235-8632-5b1e9584a198",
+    "parameters": [
+     {
+      "in": "query",
+      "name": "custId",
+      "required": true,
+      "schema": {
+       "enum": [
+        "undefined"
+       ],
+       "type": "string"
+      }
+     },
+     {
+      "in": "query",
+      "name": "sort",
+      "required": true,
+      "schema": {
+       "enum": [
+        "date"
+       ],
+       "type": "string"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "content": {
+       "application/json": {
+        "example": {
+         "_embedded": {
+          "customerOrders": []
+         },
+         "_links": {
+          "self": {
+           "href": "http://127.0.0.1:15200/orders/search/customerId?sort=date&custId=undefined"
+          }
+         }
+        },
+        "schema": {
+         "properties": {
+          "_embedded": {
+           "properties": {
+            "customerOrders": {
+             "items": {},
+             "type": "array"
+            }
+           },
+           "required": [
+            "customerOrders"
+           ],
+           "type": "object"
+          },
+          "_links": {
+           "properties": {
+            "self": {
+             "properties": {
+              "href": {
+               "type": "string"
+              }
+             },
+             "required": [
+              "href"
+             ],
+             "type": "object"
+            }
+           },
+           "required": [
+            "self"
+           ],
+           "type": "object"
+          }
+         },
+         "required": [
+          "_embedded",
+          "_links"
+         ],
+         "type": "object"
+        }
+       }
+      },
+      "description": "OK"
+     }
+    },
+    "summary": "Seen 2 requests"
+   },
+   "parameters": []
+  }
+ },
+ "tags": []
+}

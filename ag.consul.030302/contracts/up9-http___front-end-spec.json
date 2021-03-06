@@ -1,0 +1,708 @@
+{
+ "info": {
+  "title": "http://front-end",
+  "version": "0.0"
+ },
+ "openapi": "3.0.2",
+ "paths": {
+  "/": {
+   "get": {
+    "operationId": "99e0a6bd-2fe5-458f-a01d-c0274891b244",
+    "parameters": [],
+    "responses": {
+     "200": {
+      "content": {
+       "text/html": {
+        "example": "<!DOCTYPE html>\n<html lang=\"en\">\n\n<head>\n\n    <meta charset=\"utf-8\">\n    <meta name=\"robots\" content=\"all,follow\">\n    <meta name=\"googlebot\" content=\"index,follow,snippet,archive\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <meta name=\"description\" content=\"WeaveSocks Demo App\">\n    <meta name=\"author\" content=\"Ondrej Svestka | ondrejsvestka.cz\">\n    <meta name=\"keywords\" content=\"\">\n\n    <title>\n        WeaveSocks\n    </title>\n\n    <meta name=\"keywords\" content=\"\">\n\n    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100'\n          rel='stylesheet' type='text/css'>\n\n    <!-- styles -->\n    <link href=\"css/font-awesome.css\" rel=\"stylesheet\">\n    <link href=\"css/bootstrap.min.css\" rel=\"stylesheet\">\n    <link href=\"css/animate.min.css\" rel=\"stylesheet\">\n    <link href=\"css/owl.carousel.css\" rel=\"stylesheet\">\n    <link href=\"css/owl.theme.css\" rel=\"stylesheet\">\n\n    <!-- theme stylesheet -->\n    <link href=\"css/style.blue.css\" rel=\"stylesheet\" id=\"theme-stylesheet\">\n\n    <!-- your stylesheet with modifications -->\n    <link href=\"css/custom.css\" rel=\"stylesheet\">\n\n    <script src=\"js/respond.min.js\"></script>\n\n    <link rel=\"shortcut icon\" href=\"favicon.png\">\n\n\n</head>\n\n<body>\n\n<div id=\"topbar\"></div>\n<div id=\"navbar\"></div>\n\n<div id=\"all\">\n\n    <div id=\"content\">\n\n        <div class=\"container\">\n            <div class=\"col-md-12\">\n                <div id=\"main-slider\">\n                    <div class=\"item\">\n                        <a href=\"detail.html?id=6d62d909-f957-430e-8689-b5129c0bb75e\">\n                            <img class=\"img-responsive\" src=\"img/weave1.jpg\" alt=\"\">\n                        </a>\n                    </div>\n                    <div class=\"item\">\n                        <a href=\"detail.html?id=6d62d909-f957-430e-8689-b5129c0bb75e\">\n                            <img class=\"img-responsive\" src=\"img/weave2.jpg\" alt=\"\">\n                        </a>\n                    </div>\n                    <div class=\"item\">\n                        <a href=\"detail.html?id=6d62d909-f957-430e-8689-b5129c0bb75e\">\n                            <img class=\"img-responsive\" src=\"img/weave3.jpg\" alt=\"\">\n                        </a>\n                    </div>\n                </div>\n                <!-- /#main-slider -->\n            </div>\n        </div>\n\n        <!-- *** ADVANTAGES HOMEPAGE ***\n_________________________________________________________ -->\n        <div id=\"advantages\">\n\n            <div class=\"container\">\n                <div class=\"same-height-row\">\n                    <div class=\"col-sm-4\">\n                        <div class=\"box same-height clickable\">\n                            <div class=\"icon\"><i class=\"fa fa-heart\"></i>\n                            </div>\n\n                            <h3><a href=\"#\">We love socks!</a></h3>\n                            <p>Fun fact: Socks were invented by woolly mammoths\n                                to keep warm. They died out because stupid\n                                humans had to cut their legs off to get their\n                                socks.</p>\n                        </div>\n                    </div>\n\n                    <div class=\"col-sm-4\">\n                        <div class=\"box same-height clickable\">\n                            <div class=\"icon\"><i class=\"fa fa-tags\"></i>\n                            </div>\n\n                            <h3><a href=\"#\">Best prices</a></h3>\n                            <p>We price check our socks with trained monkeys\n                                back at the office.</p>\n                        </div>\n                    </div>\n\n                    <div class=\"col-sm-4\">\n                        <div class=\"box same-height clickable\">\n                            <div class=\"icon\"><i class=\"fa fa-thumbs-up\"></i>\n                            </div>\n\n                            <h3><a href=\"#\">100% satisfaction guaranteed</a>\n                            </h3>\n                            <p>Free returns on most items. Hamsters are\n                                non-returnable once spoken to.</p>\n                        </div>\n                    </div>\n                </div>\n                <!-- /.row -->\n\n            </div>\n            <!-- /.container -->\n\n        </div>\n        <!-- /#advantages -->\n\n        <!-- *** ADVANTAGES END *** -->\n\n        <!-- *** HOT PRODUCT SLIDESHOW ***\n_________________________________________________________ -->\n        <div id=\"hot\">\n\n            <div class=\"box\">\n                <div class=\"container\">\n                    <div class=\"col-md-12\">\n                        <h2>Hot this week</h2>\n                    </div>\n                </div>\n            </div>\n\n            <div class=\"container\">\n                <div class=\"product-slider\" id=\"hot-slider\">\n                </div>\n                <!-- /.product-slider -->\n            </div>\n            <!-- /.container -->\n\n        </div>\n        <!-- /#hot -->\n\n        <!-- *** HOT END *** -->\n\n    </div>\n    <!-- /#content -->\n\n    <div id=\"footer\"></div>\n\n</div>\n<!-- /#all -->\n\n\n<!-- *** SCRIPTS TO INCLUDE ***\n_________________________________________________________ -->\n<script src=\"js/jquery-1.11.0.min.js\"></script>\n<script src=\"js/bootstrap.min.js\"></script>\n<script src=\"js/js.cookie.js\"></script>\n<script src=\"js/client.js\"></script>\n<script src=\"js/jquery.cookie.js\"></script>\n<script src=\"js/waypoints.min.js\"></script>\n<script src=\"js/modernizr.js\"></script>\n<script src=\"js/bootstrap-hover-dropdown.js\"></script>\n<script src=\"js/owl.carousel.min.js\"></script>\n<script src=\"js/front.js\"></script>\n<script src=\"js/jquery.query-object.js\"></script>\n<script src=\"js/client.js\"></script>\n<script>\n\n    $(document).ready(function () {\n        $.ajaxSetup({\n            contentType: \"application/json; charset=utf-8\"\n        });\n\n        console.log(\"Loading components for index.html\");\n        $(\"#topbar\").load(\"topbar.html\");\n        $(\"#navbar\").load(\"navbar.html\");\n        $(\"#footer\").load(\"footer.html\");\n\n        $.getJSON('/catalogue', {size: 5}, function (data) {\n            if (data != null) {\n                $.each(data, function (index, element) {\n                    $('#hot-slider').append(\n                            '<div class=\"item\">\\\n                            <div class=\"product\">\\\n                                <div class=\"flip-container\">\\\n                                    <div class=\"flipper\">\\\n                                        <div class=\"front\">\\\n                                            <a href=\"detail.html?id=' + element.id + '\">\\\n                                            <img src=\"' + element.imageUrl[0] + '\" alt=\"\" class=\"img-responsive\">\\\n                                        </a>\\\n                                    </div>\\\n                                    <div class=\"back\">\\\n                                        <a href=\"detail.html?id=' + element.id + '\">\\\n                                            <img src=\"' + element.imageUrl[1] + '\" alt=\"\" class=\"img-responsive\">\\\n                                        </a>\\\n                                    </div>\\\n                                </div>\\\n                            </div>\\\n                            <a href=\"detail.html?id=' + element.id + '\" class=\"invisible\">\\\n                                <img src=\"' + element.imageUrl[0] + '\" alt=\"\" class=\"img-responsive\">\\\n                            </a>\\\n                            <div class=\"text\">\\\n                                <h3><a href=\"detail.html?id=' + element.id + '\">' + element.name + '</a></h3>\\\n                                <p class=\"price\">$' + element.price + '</p>\\\n                            </div>\\\n                        </div>\\\n                    </div>'\n                    );\n                });\n                $('.product-slider').owlCarousel({\n                    navigation: true, // Show next and prev buttons\n                    slideSpeed: 300,\n                    paginationSpeed: 400,\n                    afterInit: function () {\n                        $('.product-slider .item').css('visibility', 'visible');\n                    }\n                });\n\n                $('#main-slider').owlCarousel({\n                    navigation: true, // Show next and prev buttons\n                    slideSpeed: 300,\n                    paginationSpeed: 400,\n                    autoPlay: true,\n                    stopOnHover: true,\n                    singleItem: true,\n                    afterInit: ''\n                });\n\n            }\n        });\n    })\n</script>\n</body>\n\n</html>\n"
+       }
+      },
+      "description": "OK"
+     }
+    },
+    "summary": "Seen 1 requests"
+   },
+   "parameters": []
+  },
+  "/cart": {
+   "get": {
+    "operationId": "b7cea4be-2e74-47cf-b99c-4428f34ff826",
+    "parameters": [
+     {
+      "in": "header",
+      "name": "x-requested-with",
+      "required": false,
+      "schema": {
+       "enum": [
+        "XMLHttpRequest"
+       ],
+       "type": "string"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "content": {
+       "application/json": {
+        "example": [],
+        "schema": {
+         "items": {},
+         "type": "array"
+        }
+       }
+      },
+      "description": "OK"
+     }
+    },
+    "summary": "Seen 35 requests"
+   },
+   "parameters": []
+  },
+  "/catalogue": {
+   "get": {
+    "operationId": "39ee8d30-c627-4b40-bd3c-3c8380145eef",
+    "parameters": [
+     {
+      "in": "query",
+      "name": "page",
+      "required": false,
+      "schema": {
+       "enum": [
+        "1"
+       ],
+       "type": "string"
+      }
+     },
+     {
+      "in": "query",
+      "name": "size",
+      "required": true,
+      "schema": {
+       "enum": [
+        "5",
+        "6"
+       ],
+       "type": "string"
+      }
+     },
+     {
+      "in": "query",
+      "name": "tags",
+      "required": false,
+      "schema": {
+       "enum": [
+        ""
+       ],
+       "type": "string"
+      }
+     },
+     {
+      "in": "header",
+      "name": "x-requested-with",
+      "required": false,
+      "schema": {
+       "enum": [
+        "XMLHttpRequest"
+       ],
+       "type": "string"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "content": {
+       "application/json": {
+        "example": [
+         {
+          "count": 1,
+          "description": "Socks fit for a Messiah. You too can experience walking in water with these special edition beauties. Each hole is lovingly proggled to leave smooth edges. The only sock approved by a higher power.",
+          "id": "03fef6ac-1896-4ce8-bd69-b798f85c6e0b",
+          "imageUrl": [
+           "/catalogue/images/holy_1.jpeg",
+           "/catalogue/images/holy_2.jpeg"
+          ],
+          "name": "Holy",
+          "price": 99.99,
+          "tag": [
+           "action",
+           "magic"
+          ]
+         },
+         {
+          "count": 438,
+          "description": "proident occaecat irure et excepteur labore minim nisi amet irure",
+          "id": "3395a43e-2d88-40de-b95f-e00e1502085b",
+          "imageUrl": [
+           "/catalogue/images/colourful_socks.jpg",
+           "/catalogue/images/colourful_socks.jpg"
+          ],
+          "name": "Colourful",
+          "price": 18,
+          "tag": [
+           "brown",
+           "blue"
+          ]
+         },
+         {
+          "count": 820,
+          "description": "Ready for action. Engineers: be ready to smash that next bug! Be ready, with these super-action-sport-masterpieces. This particular engineer was chased away from the office with a stick.",
+          "id": "510a0d7e-8e83-4193-b483-e27e09ddc34d",
+          "imageUrl": [
+           "/catalogue/images/puma_1.jpeg",
+           "/catalogue/images/puma_2.jpeg"
+          ],
+          "name": "SuperSport XL",
+          "price": 15,
+          "tag": [
+           "sport",
+           "formal",
+           "black"
+          ]
+         },
+         {
+          "count": 738,
+          "description": "A mature sock, crossed, with an air of nonchalance.",
+          "id": "808a2de1-1aaa-4c25-a9b9-6612e8f29a38",
+          "imageUrl": [
+           "/catalogue/images/cross_1.jpeg",
+           "/catalogue/images/cross_2.jpeg"
+          ],
+          "name": "Crossed",
+          "price": 17.32,
+          "tag": [
+           "blue",
+           "action",
+           "red",
+           "formal"
+          ]
+         },
+         {
+          "count": 808,
+          "description": "enim officia aliqua excepteur esse deserunt quis aliquip nostrud anim",
+          "id": "819e1fbf-8b7e-4f6d-811f-693534916a8b",
+          "imageUrl": [
+           "/catalogue/images/WAT.jpg",
+           "/catalogue/images/WAT2.jpg"
+          ],
+          "name": "Figueroa",
+          "price": 14,
+          "tag": [
+           "green",
+           "formal",
+           "blue"
+          ]
+         }
+        ],
+        "schema": {
+         "items": {
+          "properties": {
+           "count": {
+            "type": "integer"
+           },
+           "description": {
+            "type": "string"
+           },
+           "id": {
+            "type": "string"
+           },
+           "imageUrl": {
+            "items": {
+             "type": "string"
+            },
+            "type": "array"
+           },
+           "name": {
+            "type": "string"
+           },
+           "price": {
+            "type": "number"
+           },
+           "tag": {
+            "items": {
+             "type": "string"
+            },
+            "type": "array"
+           }
+          },
+          "required": [
+           "count",
+           "description",
+           "id",
+           "imageUrl",
+           "name",
+           "price",
+           "tag"
+          ],
+          "type": "object"
+         },
+         "type": "array"
+        }
+       }
+      },
+      "description": "OK"
+     }
+    },
+    "summary": "Seen 34 requests",
+    "tags": [
+     "catalogue"
+    ]
+   },
+   "parameters": []
+  },
+  "/catalogue/size": {
+   "get": {
+    "operationId": "d7009241-c082-45ff-bac4-41b00ffb943c",
+    "parameters": [
+     {
+      "in": "query",
+      "name": "tags",
+      "required": true,
+      "schema": {
+       "enum": [
+        ""
+       ],
+       "type": "string"
+      }
+     },
+     {
+      "in": "header",
+      "name": "x-requested-with",
+      "required": false,
+      "schema": {
+       "enum": [
+        "XMLHttpRequest"
+       ],
+       "type": "string"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "content": {
+       "application/json": {
+        "example": {
+         "err": null,
+         "size": 9
+        },
+        "schema": {
+         "properties": {
+          "err": {},
+          "size": {
+           "type": "integer"
+          }
+         },
+         "required": [
+          "err",
+          "size"
+         ],
+         "type": "object"
+        }
+       }
+      },
+      "description": "OK"
+     }
+    },
+    "summary": "Seen 1 requests",
+    "tags": [
+     "catalogue"
+    ]
+   },
+   "parameters": []
+  },
+  "/customers/{customerId}": {
+   "get": {
+    "operationId": "b3559f2f-7820-4754-aee1-0063862faef6",
+    "parameters": [
+     {
+      "in": "header",
+      "name": "x-requested-with",
+      "required": false,
+      "schema": {
+       "enum": [
+        "XMLHttpRequest"
+       ],
+       "type": "string"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "content": {
+       "application/json": {
+        "example": {
+         "_links": {
+          "addresses": {
+           "href": "http://user/customers/57a98d98e4b00679b4a830b2/addresses"
+          },
+          "cards": {
+           "href": "http://user/customers/57a98d98e4b00679b4a830b2/cards"
+          },
+          "customer": {
+           "href": "http://user/customers/57a98d98e4b00679b4a830b2"
+          },
+          "self": {
+           "href": "http://user/customers/57a98d98e4b00679b4a830b2"
+          }
+         },
+         "firstName": "User",
+         "id": "57a98d98e4b00679b4a830b2",
+         "lastName": "Name",
+         "username": "user"
+        },
+        "schema": {
+         "properties": {
+          "_links": {
+           "properties": {
+            "addresses": {
+             "properties": {
+              "href": {
+               "type": "string"
+              }
+             },
+             "required": [
+              "href"
+             ],
+             "type": "object"
+            },
+            "cards": {
+             "properties": {
+              "href": {
+               "type": "string"
+              }
+             },
+             "required": [
+              "href"
+             ],
+             "type": "object"
+            },
+            "customer": {
+             "properties": {
+              "href": {
+               "type": "string"
+              }
+             },
+             "required": [
+              "href"
+             ],
+             "type": "object"
+            },
+            "self": {
+             "properties": {
+              "href": {
+               "type": "string"
+              }
+             },
+             "required": [
+              "href"
+             ],
+             "type": "object"
+            }
+           },
+           "required": [
+            "addresses",
+            "cards",
+            "customer",
+            "self"
+           ],
+           "type": "object"
+          },
+          "firstName": {
+           "type": "string"
+          },
+          "id": {
+           "type": "string"
+          },
+          "lastName": {
+           "type": "string"
+          },
+          "username": {
+           "type": "string"
+          }
+         },
+         "required": [
+          "_links",
+          "firstName",
+          "id",
+          "lastName",
+          "username"
+         ],
+         "type": "object"
+        }
+       }
+      },
+      "description": "OK"
+     }
+    },
+    "summary": "Seen 24 requests"
+   },
+   "parameters": [
+    {
+     "in": "path",
+     "name": "customerId",
+     "required": true,
+     "schema": {
+      "enum": [
+       "_hSG_jdZrjO-R3IXmX-D0e5eh8GmD_y9",
+       "7w4TGI0pnIxn5TEFoHX6O2spPdXa3dut",
+       "SZyuF1X2bVarlsKXS7xcI86OluhYrdoz",
+       "4QJEZM9OrGi0DE7QUqwC1q12rL-Mxrjc",
+       "4nsBKJasnSljpIbctOyQQ3i4Y7ptp7xj"
+      ],
+      "type": "string"
+     },
+     "style": "simple"
+    }
+   ]
+  },
+  "/footer.html": {
+   "get": {
+    "operationId": "37b2bff1-87be-4e26-b66c-a67e79f89e0a",
+    "parameters": [
+     {
+      "in": "header",
+      "name": "x-requested-with",
+      "required": false,
+      "schema": {
+       "enum": [
+        "XMLHttpRequest"
+       ],
+       "type": "string"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "content": {
+       "text/html": {
+        "example": "<!-- *** FOOTER ***\n_________________________________________________________ -->\n<div id=\"footer\" data-animate=\"fadeInUp\">\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-md-3 col-sm-6\">\n                <h4>Pages</h4>\n\n                <ul>\n                    <li><a href=\"index.html\">Home</a>\n                    </li>\n                    <li><a href=\"category.html\">Catalogue</a>\n                    </li>\n                </ul>\n\n                <hr>\n\n                <h4>User section</h4>\n\n                <ul>\n                    <li><a href=\"#\" data-toggle=\"modal\"\n                           data-target=\"#login-modal\">Login</a>\n                    </li>\n                    <li><a href=\"basket.html\">Cart</a>\n                    </li>\n                    <li><a href=\"customer-orders.html\">Orders</a>\n                    </li>\n                </ul>\n\n                <hr class=\"hidden-md hidden-lg hidden-sm\">\n\n            </div>\n            <!-- /.col-md-3 -->\n\n            <div class=\"col-md-3 col-sm-6\">\n\n                <h4>Top categories</h4>\n\n                <ul>\n                    <li><a href=\"category.html?tags=magic\">Magic</a>\n                    </li>\n                    <li><a href=\"category.html?tags=sport\">Sport</a>\n                    </li>\n                    <li><a href=\"category.html?tags=action\">Action</a>\n                    </li>\n                </ul>\n\n                <hr class=\"hidden-md hidden-lg\">\n\n            </div>\n            <!-- /.col-md-3 -->\n\n            <div class=\"col-md-3 col-sm-6\">\n\n                <h4>Where to find us</h4>\n\n                <p><strong>Weaveworks Ltd.</strong>\n                    <br>32 \u2013 38 Scrutton Street\n                    <br>London\n                    <br>EC2A 4RQ\n                    <br>UK\n                </p>\n\n                <hr class=\"hidden-md hidden-lg\">\n\n            </div>\n            <!-- /.col-md-3 -->\n\n\n            <div class=\"col-md-3 col-sm-6\">\n\n                <h4>Stay in touch</h4>\n\n                <p class=\"social\">\n                    <a href=\"https://twitter.com/weaveworks\" class=\"twitter external\"\n                       data-animate-hover=\"shake\"><i\n                            class=\"fa fa-twitter\"></i></a>\n                    <a href=\"mailto:help@weave.works\" class=\"email external\"\n                       data-animate-hover=\"shake\"><i\n                            class=\"fa fa-envelope\"></i></a>\n                </p>\n\n\n            </div>\n            <!-- /.col-md-3 -->\n\n        </div>\n        <!-- /.row -->\n\n    </div>\n    <!-- /.container -->\n</div>\n<!-- /#footer -->\n\n<!-- *** FOOTER END *** -->\n\n\n<!-- *** COPYRIGHT ***\n_________________________________________________________ -->\n<div id=\"copyright\">\n    <div class=\"container\">\n        <div class=\"col-md-6\">\n            <p class=\"pull-left\">\u00a9 2016-2017 <a href=\"http://weave.works\">Weaveworks</a></p>\n\n        </div>\n        <div class=\"col-md-6\">\n            <p class=\"pull-right\">Template courtesy of <a\n                    href=\"http://bootstrapious.com/e-commerce-templates\">Bootstrapious</a>\n            </p>\n        </div>\n    </div>\n</div>\n<!-- *** COPYRIGHT END *** -->\n"
+       }
+      },
+      "description": "OK"
+     }
+    },
+    "summary": "Seen 1 requests"
+   },
+   "parameters": []
+  },
+  "/index.html": {
+   "get": {
+    "operationId": "adfef857-3133-4173-bc0d-fbe2c1551946",
+    "parameters": [],
+    "responses": {
+     "200": {
+      "content": {
+       "text/html": {
+        "example": "<!DOCTYPE html>\n<html lang=\"en\">\n\n<head>\n\n    <meta charset=\"utf-8\">\n    <meta name=\"robots\" content=\"all,follow\">\n    <meta name=\"googlebot\" content=\"index,follow,snippet,archive\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <meta name=\"description\" content=\"WeaveSocks Demo App\">\n    <meta name=\"author\" content=\"Ondrej Svestka | ondrejsvestka.cz\">\n    <meta name=\"keywords\" content=\"\">\n\n    <title>\n        WeaveSocks\n    </title>\n\n    <meta name=\"keywords\" content=\"\">\n\n    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100'\n          rel='stylesheet' type='text/css'>\n\n    <!-- styles -->\n    <link href=\"css/font-awesome.css\" rel=\"stylesheet\">\n    <link href=\"css/bootstrap.min.css\" rel=\"stylesheet\">\n    <link href=\"css/animate.min.css\" rel=\"stylesheet\">\n    <link href=\"css/owl.carousel.css\" rel=\"stylesheet\">\n    <link href=\"css/owl.theme.css\" rel=\"stylesheet\">\n\n    <!-- theme stylesheet -->\n    <link href=\"css/style.blue.css\" rel=\"stylesheet\" id=\"theme-stylesheet\">\n\n    <!-- your stylesheet with modifications -->\n    <link href=\"css/custom.css\" rel=\"stylesheet\">\n\n    <script src=\"js/respond.min.js\"></script>\n\n    <link rel=\"shortcut icon\" href=\"favicon.png\">\n\n\n</head>\n\n<body>\n\n<div id=\"topbar\"></div>\n<div id=\"navbar\"></div>\n\n<div id=\"all\">\n\n    <div id=\"content\">\n\n        <div class=\"container\">\n            <div class=\"col-md-12\">\n                <div id=\"main-slider\">\n                    <div class=\"item\">\n                        <a href=\"detail.html?id=6d62d909-f957-430e-8689-b5129c0bb75e\">\n                            <img class=\"img-responsive\" src=\"img/weave1.jpg\" alt=\"\">\n                        </a>\n                    </div>\n                    <div class=\"item\">\n                        <a href=\"detail.html?id=6d62d909-f957-430e-8689-b5129c0bb75e\">\n                            <img class=\"img-responsive\" src=\"img/weave2.jpg\" alt=\"\">\n                        </a>\n                    </div>\n                    <div class=\"item\">\n                        <a href=\"detail.html?id=6d62d909-f957-430e-8689-b5129c0bb75e\">\n                            <img class=\"img-responsive\" src=\"img/weave3.jpg\" alt=\"\">\n                        </a>\n                    </div>\n                </div>\n                <!-- /#main-slider -->\n            </div>\n        </div>\n\n        <!-- *** ADVANTAGES HOMEPAGE ***\n_________________________________________________________ -->\n        <div id=\"advantages\">\n\n            <div class=\"container\">\n                <div class=\"same-height-row\">\n                    <div class=\"col-sm-4\">\n                        <div class=\"box same-height clickable\">\n                            <div class=\"icon\"><i class=\"fa fa-heart\"></i>\n                            </div>\n\n                            <h3><a href=\"#\">We love socks!</a></h3>\n                            <p>Fun fact: Socks were invented by woolly mammoths\n                                to keep warm. They died out because stupid\n                                humans had to cut their legs off to get their\n                                socks.</p>\n                        </div>\n                    </div>\n\n                    <div class=\"col-sm-4\">\n                        <div class=\"box same-height clickable\">\n                            <div class=\"icon\"><i class=\"fa fa-tags\"></i>\n                            </div>\n\n                            <h3><a href=\"#\">Best prices</a></h3>\n                            <p>We price check our socks with trained monkeys\n                                back at the office.</p>\n                        </div>\n                    </div>\n\n                    <div class=\"col-sm-4\">\n                        <div class=\"box same-height clickable\">\n                            <div class=\"icon\"><i class=\"fa fa-thumbs-up\"></i>\n                            </div>\n\n                            <h3><a href=\"#\">100% satisfaction guaranteed</a>\n                            </h3>\n                            <p>Free returns on most items. Hamsters are\n                                non-returnable once spoken to.</p>\n                        </div>\n                    </div>\n                </div>\n                <!-- /.row -->\n\n            </div>\n            <!-- /.container -->\n\n        </div>\n        <!-- /#advantages -->\n\n        <!-- *** ADVANTAGES END *** -->\n\n        <!-- *** HOT PRODUCT SLIDESHOW ***\n_________________________________________________________ -->\n        <div id=\"hot\">\n\n            <div class=\"box\">\n                <div class=\"container\">\n                    <div class=\"col-md-12\">\n                        <h2>Hot this week</h2>\n                    </div>\n                </div>\n            </div>\n\n            <div class=\"container\">\n                <div class=\"product-slider\" id=\"hot-slider\">\n                </div>\n                <!-- /.product-slider -->\n            </div>\n            <!-- /.container -->\n\n        </div>\n        <!-- /#hot -->\n\n        <!-- *** HOT END *** -->\n\n    </div>\n    <!-- /#content -->\n\n    <div id=\"footer\"></div>\n\n</div>\n<!-- /#all -->\n\n\n<!-- *** SCRIPTS TO INCLUDE ***\n_________________________________________________________ -->\n<script src=\"js/jquery-1.11.0.min.js\"></script>\n<script src=\"js/bootstrap.min.js\"></script>\n<script src=\"js/js.cookie.js\"></script>\n<script src=\"js/client.js\"></script>\n<script src=\"js/jquery.cookie.js\"></script>\n<script src=\"js/waypoints.min.js\"></script>\n<script src=\"js/modernizr.js\"></script>\n<script src=\"js/bootstrap-hover-dropdown.js\"></script>\n<script src=\"js/owl.carousel.min.js\"></script>\n<script src=\"js/front.js\"></script>\n<script src=\"js/jquery.query-object.js\"></script>\n<script src=\"js/client.js\"></script>\n<script>\n\n    $(document).ready(function () {\n        $.ajaxSetup({\n            contentType: \"application/json; charset=utf-8\"\n        });\n\n        console.log(\"Loading components for index.html\");\n        $(\"#topbar\").load(\"topbar.html\");\n        $(\"#navbar\").load(\"navbar.html\");\n        $(\"#footer\").load(\"footer.html\");\n\n        $.getJSON('/catalogue', {size: 5}, function (data) {\n            if (data != null) {\n                $.each(data, function (index, element) {\n                    $('#hot-slider').append(\n                            '<div class=\"item\">\\\n                            <div class=\"product\">\\\n                                <div class=\"flip-container\">\\\n                                    <div class=\"flipper\">\\\n                                        <div class=\"front\">\\\n                                            <a href=\"detail.html?id=' + element.id + '\">\\\n                                            <img src=\"' + element.imageUrl[0] + '\" alt=\"\" class=\"img-responsive\">\\\n                                        </a>\\\n                                    </div>\\\n                                    <div class=\"back\">\\\n                                        <a href=\"detail.html?id=' + element.id + '\">\\\n                                            <img src=\"' + element.imageUrl[1] + '\" alt=\"\" class=\"img-responsive\">\\\n                                        </a>\\\n                                    </div>\\\n                                </div>\\\n                            </div>\\\n                            <a href=\"detail.html?id=' + element.id + '\" class=\"invisible\">\\\n                                <img src=\"' + element.imageUrl[0] + '\" alt=\"\" class=\"img-responsive\">\\\n                            </a>\\\n                            <div class=\"text\">\\\n                                <h3><a href=\"detail.html?id=' + element.id + '\">' + element.name + '</a></h3>\\\n                                <p class=\"price\">$' + element.price + '</p>\\\n                            </div>\\\n                        </div>\\\n                    </div>'\n                    );\n                });\n                $('.product-slider').owlCarousel({\n                    navigation: true, // Show next and prev buttons\n                    slideSpeed: 300,\n                    paginationSpeed: 400,\n                    afterInit: function () {\n                        $('.product-slider .item').css('visibility', 'visible');\n                    }\n                });\n\n                $('#main-slider').owlCarousel({\n                    navigation: true, // Show next and prev buttons\n                    slideSpeed: 300,\n                    paginationSpeed: 400,\n                    autoPlay: true,\n                    stopOnHover: true,\n                    singleItem: true,\n                    afterInit: ''\n                });\n\n            }\n        });\n    })\n</script>\n</body>\n\n</html>\n"
+       }
+      },
+      "description": "OK"
+     }
+    },
+    "summary": "Seen 2 requests"
+   },
+   "parameters": []
+  },
+  "/login": {
+   "get": {
+    "operationId": "4e16095e-47fe-4fbf-b1ab-fc58dfa6fd82",
+    "parameters": [
+     {
+      "in": "header",
+      "name": "x-requested-with",
+      "required": false,
+      "schema": {
+       "enum": [
+        "XMLHttpRequest"
+       ],
+       "type": "string"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "content": {
+       "text/html": {
+        "example": "Cookie is set"
+       }
+      },
+      "description": "OK"
+     }
+    },
+    "summary": "Seen 1 requests"
+   },
+   "parameters": []
+  },
+  "/orders": {
+   "get": {
+    "operationId": "befcddf9-b644-496c-93ea-c8b831e12ab3",
+    "parameters": [
+     {
+      "in": "header",
+      "name": "x-requested-with",
+      "required": false,
+      "schema": {
+       "enum": [
+        "XMLHttpRequest"
+       ],
+       "type": "string"
+      }
+     }
+    ],
+    "responses": {
+     "201": {
+      "content": {
+       "application/json": {
+        "example": [],
+        "schema": {
+         "items": {},
+         "type": "array"
+        }
+       }
+      },
+      "description": "Created"
+     }
+    },
+    "summary": "Seen 2 requests"
+   },
+   "parameters": []
+  },
+  "/tags": {
+   "get": {
+    "operationId": "b3500593-a587-4a7c-8185-06e9266863b9",
+    "parameters": [
+     {
+      "in": "header",
+      "name": "x-requested-with",
+      "required": false,
+      "schema": {
+       "enum": [
+        "XMLHttpRequest"
+       ],
+       "type": "string"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "content": {
+       "application/json": {
+        "example": {
+         "err": null,
+         "tags": [
+          "brown",
+          "geek",
+          "formal",
+          "blue",
+          "skin",
+          "red",
+          "action",
+          "sport",
+          "black",
+          "magic",
+          "green"
+         ]
+        },
+        "schema": {
+         "properties": {
+          "err": {},
+          "tags": {
+           "items": {
+            "type": "string"
+           },
+           "type": "array"
+          }
+         },
+         "required": [
+          "err",
+          "tags"
+         ],
+         "type": "object"
+        }
+       }
+      },
+      "description": "OK"
+     }
+    },
+    "summary": "Seen 1 requests"
+   },
+   "parameters": []
+  },
+  "/topbar.html": {
+   "get": {
+    "operationId": "47a43d02-60ea-484e-8f1d-54f79a58499c",
+    "parameters": [
+     {
+      "in": "header",
+      "name": "x-requested-with",
+      "required": false,
+      "schema": {
+       "enum": [
+        "XMLHttpRequest"
+       ],
+       "type": "string"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "content": {
+       "text/html": {
+        "example": "<!-- *** TOPBAR ***\n_________________________________________________________ -->\n<div id=\"top\">\n    <div class=\"container\">\n        <div class=\"col-md-6 offer\" data-animate=\"fadeInDown\">\n            <a href=\"#\" class=\"btn btn-success btn-sm\"\n               data-animate-hover=\"shake\">Offer of the day</a> <a href=\"#\">Buy\n            1000 socks, get a shoe for free!</a>\n        </div>\n        <div class=\"col-md-6\" data-animate=\"fadeInDown\">\n            <ul class=\"menu\">\n                <li id=\"login\"><a href=\"#\" data-toggle=\"modal\" data-target=\"#login-modal\">Login</a></li>\n                <li id=\"howdy\"></li>\n                <li id=\"logout\"><a href=\"index.html\" onclick=\"logout()\">Logout</a></li>\n                <li id=\"register\"><a href=\"#\" data-toggle=\"modal\" data-target=\"#register-modal\">Register</a></li>\n                <!--<li><a href=\"contact.html\">Contact</a></li>-->\n                <!--<li><a href=\"#\">Recently viewed</a></li>-->\n            </ul>\n        </div>\n    </div>\n    <div class=\"modal fade\" id=\"login-modal\" tabindex=\"-1\" role=\"dialog\"\n         aria-labelledby=\"Login\" aria-hidden=\"true\">\n        <div class=\"modal-dialog modal-sm\">\n\n            <div class=\"modal-content\">\n                <div class=\"modal-header\">\n                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\"\n                            aria-hidden=\"true\">&times;</button>\n                    <h4 class=\"modal-title\" id=\"Login\">Customer login</h4>\n                </div>\n                <div class=\"modal-body\">\n\n                    <div id=\"login-message\"> </div>\n\n                    <form action=\"index.html\" method=\"get\">\n                        <div class=\"form-group\">\n                            <input type=\"text\" class=\"form-control\"\n                                   name=\"username\"\n                                   id=\"username-modal\" placeholder=\"username\">\n                        </div>\n                        <div class=\"form-group\">\n                            <input type=\"password\" class=\"form-control\"\n                                   name=\"password\"\n                                   id=\"password-modal\" placeholder=\"password\">\n                        </div>\n\n                        <p class=\"text-center\">\n                            <button class=\"btn btn-primary\" href=\"#\" onclick=\"return login()\"><i\n                                    class=\"fa fa-sign-in\"></i> Log in\n                            </button>\n                        </p>\n\n                    </form>\n\n                    <!--<p class=\"text-center text-muted\">Not registered yet?</p>-->\n                    <!--<p class=\"text-center text-muted\"><a href=\"register.html\"><strong>Register now</strong></a>! It is easy and done in 1&nbsp;minute and gives you access to special discounts and much more!</p>-->\n\n                </div>\n            </div>\n        </div>\n    </div>\n    <div class=\"modal fade\" id=\"register-modal\" tabindex=\"-1\" role=\"dialog\"\n         aria-labelledby=\"Register\" aria-hidden=\"true\">\n        <div class=\"modal-dialog modal-sm\">\n\n            <div class=\"modal-content\">\n                <div class=\"modal-header\">\n                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\"\n                            aria-hidden=\"true\">&times;</button>\n                    <h4 class=\"modal-title\" id=\"Login\">Register</h4>\n                </div>\n                <div class=\"modal-body\">\n\n                    <div id=\"registration-message\"> </div>\n\n                    <form action=\"index.html\" method=\"get\">\n\n                        <div class=\"form-group\">\n                            <label for=\"name\">Username</label>\n                            <input type=\"text\" class=\"form-control\" name=\"username\"\n\t\t\t    \tid=\"register-username-modal\" placeholder=\"username\"required>\n                        </div>\n                        <div class=\"form-group\">\n                            <label for=\"first-name\">First name</label>\n                            <input type=\"text\" class=\"form-control\" name=\"first-name\"\n\t\t\t    \tid=\"register-first-modal\" placeholder=\"first name\" required>\n                        </div>\n                        <div class=\"form-group\">\n                            <label for=\"last-name\">Last name</label>\n                            <input type=\"text\" class=\"form-control\" name=\"last-name\"\n\t\t\t    \tid=\"register-last-modal\" placeholder=\"last name\"required>\n                        </div>\n                        <div class=\"form-group\">\n                            <label for=\"email\">Email</label>\n                            <input type=\"text\" class=\"form-control\" name=\"email\"\n\t\t\t    \tid=\"register-email-modal\" placeholder=\"email\" required>\n                        </div>\n                        <div class=\"form-group\">\n                            <label for=\"password\">Password</label>\n                            <input type=\"password\" class=\"form-control\" name=\"password\"\n\t\t\t    \tid=\"register-password-modal\"required>\n                        </div>\n                        <p class=\"text-center\">\n                            <button class=\"btn btn-primary\" href=\"#\" onclick=\"return register()\"><i\n                                    class=\"fa fa-sign-in\"></i> Register\n                            </button>\n                        </p>\n\n                    </form>\n\n                    <!--<p class=\"text-center text-muted\">Not registered yet?</p>-->\n                    <!--<p class=\"text-center text-muted\"><a href=\"register.html\"><strong>Register now</strong></a>! It is easy and done in 1&nbsp;minute and gives you access to special discounts and much more!</p>-->\n\n                </div>\n            </div>\n        </div>\n    </div>\n\n</div>\n\n<!-- *** TOP BAR END *** -->\n\n<script>\n\n    $(document).ready(function () {\n        $.ajaxSetup({\n            contentType: \"application/json; charset=utf-8\"\n        });\n\n        if ($.cookie('logged_in') != null && $.cookie('logged_in') != \"\") {\n\n            username($.cookie('logged_in'), function (username) {\n                if (typeof username !== 'undefined') {\n                    $(\"#login\").remove();\n                    $(\"#register\").remove();\n                    $(\"#howdy\").append('<a href=\"#\">Logged in as ' + username + '<\\/a>').hide().fadeIn(200);\n                    $(\"#logout\").hide().fadeIn(200);\n                } else {\n                    $(\"#howdy\").remove()\n                    $(\"#logout\").remove()\n                }\n            });\n        } else {\n            $(\"#howdy\").remove()\n            $(\"#logout\").remove()\n        }\n\n    })\n</script>\n"
+       }
+      },
+      "description": "OK"
+     }
+    },
+    "summary": "Seen 1 requests"
+   },
+   "parameters": []
+  },
+  "/{param}": {
+   "get": {
+    "operationId": "99f63de0-182b-433c-8dec-ef867e0a3c70",
+    "parameters": [
+     {
+      "in": "header",
+      "name": "x-requested-with",
+      "required": false,
+      "schema": {
+       "enum": [
+        "XMLHttpRequest"
+       ],
+       "type": "string"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "content": {
+       "text/html": {
+        "example": "<!-- *** NAVBAR ***\n_________________________________________________________ -->\n\n<div class=\"navbar navbar-default yamm\" role=\"navigation\" id=\"navbar\">\n    <div class=\"container\">\n        <div class=\"navbar-header\">\n\n            <a class=\"navbar-brand home\" href=\"index.html\"\n               data-animate-hover=\"bounce\">\n                <img src=\"img/logo.png\" alt=\"WeaveSocks logo\" class=\"hidden-xs\">\n                <img src=\"img/logo-small.png\" alt=\"WeaveSocks logo\"\n                     class=\"visible-xs\"><span class=\"sr-only\">WeaveSocks - go to homepage</span>\n            </a>\n        </div>\n        <!--/.navbar-header -->\n\n        <div class=\"navbar-collapse collapse\" id=\"navigation\">\n\n            <ul class=\"nav navbar-nav navbar-left\">\n                <li id=\"tabIndex\"><a href=\"index.html\">Home</a>\n                </li>\n                <li id=\"tabCatalogue\" class=\"dropdown yamm-fw\">\n                    <a href=\"category.html\" class=\"dropdown-toggle\">Catalogue <b\n                            class=\"caret\"></b></a>\n                    <ul class=\"dropdown-menu\">\n                        <li>\n                            <div class=\"yamm-content\">\n                                <div class=\"row\">\n                                    <div class=\"col-sm-3\">\n                                        <h5>Colours</h5>\n                                        <ul>\n                                            <li>\n                                                <a href=\"category.html?tags=blue\">Blue</a>\n                                            </li>\n                                            <li>\n                                                <a href=\"category.html?tags=brown\">Brown</a>\n                                            </li>\n                                            <li>\n                                                <a href=\"category.html?tags=green\">Green</a>\n                                            </li>\n                                        </ul>\n                                    </div>\n                                    <div class=\"col-sm-3\">\n                                        <h5>Size</h5>\n                                        <ul>\n                                            <li>\n                                                <a href=\"category.html?tags=large\">Large</a>\n                                            </li>\n                                            <li>\n                                                <a href=\"category.html?tags=short\">Short</a>\n                                            </li>\n                                        </ul>\n                                        <h5>Function</h5>\n                                        <ul>\n                                            <li>\n                                                <a href=\"category.html?tags=toes\">Toes</a>\n                                            </li>\n                                            <li>\n                                                <a href=\"category.html?tags=magic\">Magic</a>\n                                            </li>\n                                        </ul>\n                                    </div>\n                                    <div class=\"col-sm-3\">\n                                        <h5>Featured</h5>\n                                        <ul>\n                                            <li><a href=\"category.html?tags=formal\">Formal</a>\n                                            </li>\n                                            <li><a href=\"category.html?tags=smelly\">Smelly</a>\n                                            </li>\n                                        </ul>\n                                    </div>\n                                </div>\n                            </div>\n                            <!-- /.yamm-content -->\n                        </li>\n                    </ul>\n                </li>\n                <li id=\"tabAccount\"><a href=\"customer-orders.html\">Account</a>\n                </li>\n                <!--<li class=\"dropdown yamm-fw\">-->\n                <!--<a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" data-hover=\"dropdown\" data-delay=\"200\">Template <b class=\"caret\"></b></a>-->\n                <!--<ul class=\"dropdown-menu\">-->\n                <!--<li>-->\n                <!--<div class=\"yamm-content\">-->\n                <!--<div class=\"row\">-->\n                <!--<div class=\"col-sm-3\">-->\n                <!--<h5>Shop</h5>-->\n                <!--<ul>-->\n                <!--<li><a href=\"index.html\">Homepage</a>-->\n                <!--</li>-->\n                <!--<li><a href=\"category.html\">Category - sidebar left</a>-->\n                <!--</li>-->\n                <!--<li><a href=\"category-right.html\">Category - sidebar right</a>-->\n                <!--</li>-->\n                <!--<li><a href=\"category-full.html\">Category - full width</a>-->\n                <!--</li>-->\n                <!--<li><a href=\"detail.html\">Product detail</a>-->\n                <!--</li>-->\n                <!--</ul>-->\n                <!--</div>-->\n                <!--<div class=\"col-sm-3\">-->\n                <!--<h5>User</h5>-->\n                <!--<ul>-->\n                <!--<li><a href=\"register.html\">Register / login</a>-->\n                <!--</li>-->\n                <!--<li><a href=\"customer-orders.html\">Orders history</a>-->\n                <!--</li>-->\n                <!--<li><a href=\"customer-order.html\">Order history detail</a>-->\n                <!--</li>-->\n                <!--<li><a href=\"customer-wishlist.html\">Wishlist</a>-->\n                <!--</li>-->\n                <!--<li><a href=\"customer-account.html\">Customer account / change password</a>-->\n                <!--</li>-->\n                <!--</ul>-->\n                <!--</div>-->\n                <!--<div class=\"col-sm-3\">-->\n                <!--<h5>Order process</h5>-->\n                <!--<ul>-->\n                <!--<li><a href=\"basket.html\">Shopping cart</a>-->\n                <!--</li>-->\n                <!--<li><a href=\"checkout1.html\">Checkout - step 1</a>-->\n                <!--</li>-->\n                <!--<li><a href=\"checkout2.html\">Checkout - step 2</a>-->\n                <!--</li>-->\n                <!--<li><a href=\"checkout3.html\">Checkout - step 3</a>-->\n                <!--</li>-->\n                <!--<li><a href=\"checkout4.html\">Checkout - step 4</a>-->\n                <!--</li>-->\n                <!--</ul>-->\n                <!--</div>-->\n                <!--<div class=\"col-sm-3\">-->\n                <!--<h5>Pages and blog</h5>-->\n                <!--<ul>-->\n                <!--<li><a href=\"blog.html\">Blog listing</a>-->\n                <!--</li>-->\n                <!--<li><a href=\"post.html\">Blog Post</a>-->\n                <!--</li>-->\n                <!--<li><a href=\"faq.html\">FAQ</a>-->\n                <!--</li>-->\n                <!--<li><a href=\"text.html\">Text page</a>-->\n                <!--</li>-->\n                <!--<li><a href=\"text-right.html\">Text page - right sidebar</a>-->\n                <!--</li>-->\n                <!--<li><a href=\"404.html\">404 page</a>-->\n                <!--</li>-->\n                <!--<li><a href=\"contact.html\">Contact</a>-->\n                <!--</li>-->\n                <!--</ul>-->\n                <!--</div>-->\n                <!--</div>-->\n                <!--</div>-->\n                <!--&lt;!&ndash; /.yamm-content &ndash;&gt;-->\n                <!--</li>-->\n                <!--</ul>-->\n                <!--</li>-->\n            </ul>\n\n        </div>\n        <!--/.nav-collapse -->\n\n        <div class=\"navbar-buttons\">\n\n            <div class=\"navbar-collapse collapse right\" id=\"basket-overview\">\n                <a href=\"basket.html\" class=\"btn btn-primary navbar-btn\"><i\n                        class=\"fa fa-shopping-cart\"></i><span class=\"hidden-sm\"\n                                                              id=\"numItemsInCart\">0 items in cart</span></a>\n            </div>\n            <!--/.nav-collapse -->\n\n            <!--<div class=\"navbar-collapse collapse right\" id=\"search-not-mobile\">-->\n            <!--<button type=\"button\" class=\"btn navbar-btn btn-primary\" data-toggle=\"collapse\" data-target=\"#search\">-->\n            <!--<span class=\"sr-only\">Toggle search</span>-->\n            <!--<i class=\"fa fa-search\"></i>-->\n            <!--</button>-->\n            <!--</div>-->\n\n        </div>\n\n        <!--<div class=\"collapse clearfix\" id=\"search\">-->\n\n        <!--<form class=\"navbar-form\" role=\"search\">-->\n        <!--<div class=\"input-group\">-->\n        <!--<input type=\"text\" class=\"form-control\" placeholder=\"Search\">-->\n        <!--<span class=\"input-group-btn\">-->\n\n        <!--<button type=\"submit\" class=\"btn btn-primary\"><i class=\"fa fa-search\"></i></button>-->\n\n        <!--</span>-->\n        <!--</div>-->\n        <!--</form>-->\n\n        <!--</div>-->\n\n        <!--/.nav-collapse -->\n\n    </div>\n    <!-- /.container -->\n</div>\n<!-- /#navbar -->\n\n<!-- *** NAVBAR END *** -->\n\n<script>\n    $(document).ready(function () {\n        $.ajaxSetup({\n            contentType: \"application/json; charset=utf-8\"\n        });\n\n        if ($.cookie('logged_in') == null || $.cookie('logged_in') == \"\") {\n            $(\"#tabAccount\").remove()\n        }\n\n        $.getJSON('/cart', {}, function (data) {\n            if (data != null) {\n                var numItemsInCart = 0;\n                $.each(data, function (index, element) {\n                    if (element != null && element.itemId != null && element.itemId != \"null\") {\n                        $.getJSON('/catalogue/' + element.itemId, function (data) {\n                            numItemsInCart = numItemsInCart + element.quantity;\n                        }).always(function () {\n                            $('#numItemsInCart').text(numItemsInCart + ' item(s) in cart');\n                        });\n                    }\n                });\n            }\n        }).error(function () {\n            $('#basket-overview').remove();\n        });\n\n        //Add Hover effect to menus\n        jQuery('ul.nav li.dropdown').hover(function () {\n            jQuery(this).find('.dropdown-menu').stop(true, true).delay(100).fadeIn();\n        }, function () {\n            jQuery(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut();\n        });\n\n        // Set active tabs\n        if (window.location.toString().indexOf(\"category.html\") > -1) {\n            $('#tabCatalogue').addClass(\"active\");\n        } else if (window.location.toString().indexOf(\"customer-\") > -1) {\n            $('#tabAccount').addClass(\"active\");\n        } else {\n            $('#tabIndex').addClass(\"active\");\n        }\n    });\n</script>\n"
+       }
+      },
+      "description": "OK"
+     }
+    },
+    "summary": "Seen 1 requests"
+   },
+   "parameters": [
+    {
+     "in": "path",
+     "name": "param",
+     "required": true,
+     "schema": {
+      "enum": [
+       "navbar.html"
+      ],
+      "type": "string"
+     },
+     "style": "simple"
+    }
+   ]
+  }
+ },
+ "tags": [
+  {
+   "name": "catalogue"
+  }
+ ]
+}
