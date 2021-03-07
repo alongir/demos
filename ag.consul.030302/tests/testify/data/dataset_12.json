@@ -1,0 +1,46 @@
+{
+ "parameters": [
+  {
+   "name": "id",
+   "uuid": "f18ea78b-2378-49e1-89b2-7a4ef2f15101"
+  },
+  {
+   "name": "sessionId",
+   "uuid": "729f2d10-1368-4b22-9325-27d7fc1b5332"
+  }
+ ],
+ "rows": [
+  {
+   "id": "57a98d98e4b00679b4a830b2",
+   "sessionId": "7w4TGI0pnIxn5TEFoHX6O2spPdXa3dut"
+  },
+  {
+   "id": "4QJEZM9OrGi0DE7QUqwC1q12rL-Mxrjc",
+   "sessionId": "7w4TGI0pnIxn5TEFoHX6O2spPdXa3dut"
+  },
+  {
+   "id": "7w4TGI0pnIxn5TEFoHX6O2spPdXa3dut",
+   "sessionId": "7w4TGI0pnIxn5TEFoHX6O2spPdXa3dut"
+  },
+  {
+   "id": "undefined",
+   "sessionId": "7w4TGI0pnIxn5TEFoHX6O2spPdXa3dut"
+  },
+  {
+   "id": "rk1gtwTdnRiovVkJoeOD723SPlnOSem3",
+   "sessionId": "4QJEZM9OrGi0DE7QUqwC1q12rL-Mxrjc"
+  },
+  {
+   "id": "HMAPu3M-9ulbWj0vnWS_xcm347xaehHE",
+   "sessionId": "7w4TGI0pnIxn5TEFoHX6O2spPdXa3dut"
+  },
+  {
+   "id": "UtKvIxa1XbjO1HnbVtgt68k1AmtMk5Va",
+   "sessionId": "4nsBKJasnSljpIbctOyQQ3i4Y7ptp7xj"
+  },
+  {
+   "id": "4nsBKJasnSljpIbctOyQQ3i4Y7ptp7xj",
+   "sessionId": "SZyuF1X2bVarlsKXS7xcI86OluhYrdoz"
+  }
+ ]
+}

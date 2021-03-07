@@ -7,22 +7,19 @@ from authentication import authenticate
 @data_driven_tests
 class Tests_carts(unittest.TestCase):
 
-    @json_dataset('data/dataset_13.json')
     @clear_session({'spanId': 13})
-    def test_13_get_carts_id_items(self, data_row):
-        id_, = data_row
-
+    def test_13_get_carts_id_items(self):
         # GET http://carts/carts/{id}/items (endp 13)
+        id_ = '57a98d98e4b00679b4a830b2'
         carts = get_http_target('TARGET_CARTS', authenticate)
         resp = carts.get(f'/carts/{id_}/items')
         resp.assert_status_code(200)
 
-    @json_dataset('data/dataset_12.json')
     @clear_session({'spanId': 12})
-    def test_12_get_carts_id_merge(self, data_row):
-        id_, sessionId = data_row
-
+    def test_12_get_carts_id_merge(self):
         # GET http://carts/carts/{id}/merge (endp 12)
+        id_ = '57a98d98e4b00679b4a830b2'
+        sessionId = '7w4TGI0pnIxn5TEFoHX6O2spPdXa3dut'
         carts = get_http_target('TARGET_CARTS', authenticate)
         qstr = '?' + urlencode([('sessionId', sessionId)])
         resp = carts.get(f'/carts/{id_}/merge' + qstr)
@@ -32,12 +29,10 @@ class Tests_carts(unittest.TestCase):
 @data_driven_tests
 class Tests_catalogue(unittest.TestCase):
 
-    @json_dataset('data/dataset_10.json')
     @clear_session({'spanId': 10})
-    def test_10_get_catalogue(self, data_row):
-        size, = data_row
-
+    def test_10_get_catalogue(self):
         # GET http://catalogue/catalogue (endp 10)
+        size = '5'
         catalogue = get_http_target('TARGET_CATALOGUE', authenticate)
         qstr = '?' + urlencode([('page', '1'), ('size', size), ('tags', '')])
         resp = catalogue.get('/catalogue' + qstr)
@@ -70,12 +65,10 @@ class Tests_front_end(unittest.TestCase):
         resp.assert_status_code(200)
         resp.assert_cssselect('div#hot div.box div.container div h2', expected_value='Hot this week')
 
-    @json_dataset('data/dataset_26.json')
     @clear_session({'spanId': 26})
-    def test_26_get_param(self, data_row):
-        param, = data_row
-
+    def test_26_get_param(self):
         # GET http://front-end/{param} (endp 26)
+        param = 'navbar.html'
         front_end = get_http_target('TARGET_FRONT_END', authenticate)
         resp = front_end.get(f'/{param}', headers=dict([('x-requested-with', 'XMLHttpRequest')]))
         resp.assert_status_code(200)
@@ -87,12 +80,10 @@ class Tests_front_end(unittest.TestCase):
         resp = front_end.get('/cart', headers=dict([('x-requested-with', 'XMLHttpRequest')]))
         resp.assert_status_code(200)
 
-    @json_dataset('data/dataset_4.json')
     @clear_session({'spanId': 4})
-    def test_04_get_catalogue(self, data_row):
-        size, = data_row
-
+    def test_04_get_catalogue(self):
         # GET http://front-end/catalogue (endp 4)
+        size = '5'
         front_end = get_http_target('TARGET_FRONT_END', authenticate)
         qstr = '?' + urlencode([('page', '1'), ('size', size), ('tags', '')])
         resp = front_end.get('/catalogue' + qstr, headers=dict([('x-requested-with', 'XMLHttpRequest')]))
@@ -106,23 +97,19 @@ class Tests_front_end(unittest.TestCase):
         resp = front_end.get('/catalogue/size' + qstr, headers=dict([('x-requested-with', 'XMLHttpRequest')]))
         resp.assert_status_code(200)
 
-    @json_dataset('data/dataset_5.json')
     @clear_session({'spanId': 5})
-    def test_05_get_customers_customerId(self, data_row):
-        customerId, = data_row
-
+    def test_05_get_customers_customerId(self):
         # GET http://front-end/customers/{customerId} (endp 5)
+        customerId = '7w4TGI0pnIxn5TEFoHX6O2spPdXa3dut'
         front_end = get_http_target('TARGET_FRONT_END', authenticate)
         resp = front_end.get(f'/customers/{customerId}', headers=dict([('x-requested-with', 'XMLHttpRequest')]))
         resp.assert_status_code(200)
         resp.assert_jsonpath('$.lastName', expected_value='Name')
 
-    @json_dataset('data/dataset_30.json')
     @clear_session({'spanId': 30})
-    def test_30_get_customers_customerId(self, data_row):
-        customerId, = data_row
-
+    def test_30_get_customers_customerId(self):
         # GET http://front-end/customers/{customerId} (endp 30)
+        customerId = '7w4TGI0pnIxn5TEFoHX6O2spPdXa3dut'
         front_end = get_http_target('TARGET_FRONT_END', authenticate)
         resp = front_end.get(f'/customers/{customerId}', headers=dict([('x-requested-with', 'XMLHttpRequest')]))
         resp.assert_status_code(200)
@@ -217,12 +204,10 @@ class Tests_orders(unittest.TestCase):
 @data_driven_tests
 class Tests_user(unittest.TestCase):
 
-    @json_dataset('data/dataset_15.json')
     @clear_session({'spanId': 15})
-    def test_15_get_customers_id(self, data_row):
-        id_, = data_row
-
+    def test_15_get_customers_id(self):
         # GET http://user/customers/{id} (endp 15)
+        id_ = '57a98d98e4b00679b4a830b2'
         user = get_http_target('TARGET_USER', authenticate)
         resp = user.get(f'/customers/{id_}')
         resp.assert_status_code(200)

@@ -1,26 +1,25 @@
 const authenticate = require("./authentication");
-const {JSONPath, clearSession, dataset, getHttpTarget} = require("./up9lib");
+const {JSONPath, clearSession, getHttpTarget} = require("./up9lib");
 
-describe.each(dataset("data/dataset_15.json"))("test_15_get_customers_id", (id) => {
-    it("test_15_get_customers_id", () => {
-        clearSession();
+it("test_15_get_customers_id", () => {
+    clearSession();
 
-        // GET http://user/customers/{id} (endp 15)
-        const user = getHttpTarget("TARGET_USER", authenticate);
-        return user.fetch("/customers/" + id)
-        .then((response) => {
-            expect(response.status).toEqual(200);
-            return response.text();
-        })
-        .then((text) => {
-            return JSON.parse(text);
-        })
-        .then((data) => {
-            expect(JSONPath({
-                path: "$.lastName",
-                json: data
-            })).toContain("Name");
-        });
+    // GET http://user/customers/{id} (endp 15)
+    const id = "57a98d98e4b00679b4a830b2";
+    const user = getHttpTarget("TARGET_USER", authenticate);
+    return user.fetch("/customers/" + id)
+    .then((response) => {
+        expect(response.status).toEqual(200);
+        return response.text();
+    })
+    .then((text) => {
+        return JSON.parse(text);
+    })
+    .then((data) => {
+        expect(JSONPath({
+            path: "$.lastName",
+            json: data
+        })).toContain("Name");
     });
 });
 

@@ -1,0 +1,36 @@
+{
+ "mappings": [
+  {
+   "id": "1e4488b0-4947-4552-9819-f6c221ece5df",
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/carts/[^/]+/merge"
+   },
+   "response": {
+    "body": "",
+    "headers": {},
+    "status": 202,
+    "transformers": [
+     "response-template"
+    ]
+   }
+  },
+  {
+   "id": "421cfa44-ac03-44f5-ad0a-082e475dce58",
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/carts/[^/]+/items"
+   },
+   "response": {
+    "body": "[]",
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "status": 200,
+    "transformers": [
+     "response-template"
+    ]
+   }
+  }
+ ]
+}

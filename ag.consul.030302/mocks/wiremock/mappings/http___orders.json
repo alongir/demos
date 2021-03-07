@@ -1,0 +1,21 @@
+{
+ "mappings": [
+  {
+   "id": "9506333a-7014-4235-8632-5b1e9584a198",
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/orders/search/customerId"
+   },
+   "response": {
+    "body": "{\n  \"_embedded\" : {\n    \"customerOrders\" : [ ]\n  },\n  \"_links\" : {\n    \"self\" : {\n      \"href\" : \"http://127.0.0.1:15200/orders/search/customerId?sort=date&custId=undefined\"\n    }\n  }\n}",
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "status": 200,
+    "transformers": [
+     "response-template"
+    ]
+   }
+  }
+ ]
+}

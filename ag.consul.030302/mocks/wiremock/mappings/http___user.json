@@ -1,0 +1,38 @@
+{
+ "mappings": [
+  {
+   "id": "d4520eb3-df4a-48fa-a5a9-c6eaab6d0af4",
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/customers/[^/]+"
+   },
+   "response": {
+    "bodyFileName": "resp_15.json",
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "status": 200,
+    "transformers": [
+     "response-template"
+    ]
+   }
+  },
+  {
+   "id": "a9b768b7-1a7e-4f1c-af15-1628b341e4cc",
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/login"
+   },
+   "response": {
+    "bodyFileName": "resp_16.json",
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "status": 200,
+    "transformers": [
+     "response-template"
+    ]
+   }
+  }
+ ]
+}

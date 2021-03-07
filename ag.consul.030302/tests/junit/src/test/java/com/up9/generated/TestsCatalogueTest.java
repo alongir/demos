@@ -5,25 +5,20 @@ import com.up9.up9lib.HttpRequest;
 import com.up9.up9lib.HttpTarget;
 import java.io.IOException;
 import java.util.Hashtable;
-import javax.json.JsonObject;
-import net.joshka.junit.json.params.JsonFileSource;
 import okhttp3.Response;
 import org.junit.jupiter.api.MethodOrderer.Alphanumeric;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
-import org.junit.jupiter.params.ParameterizedTest;
 import static com.up9.up9lib.Common.*;
 
 @TestMethodOrder(Alphanumeric.class)
 public class TestsCatalogueTest
 {
-    @ParameterizedTest
-    @JsonFileSource(resources = "/dataset_10.json")
-    public void testGetCatalogue10(final JsonObject json) throws IOException
+    @Test
+    public void testGetCatalogue10() throws IOException
     {
-        final String size = json.getString("size");
-
         // GET http://catalogue/catalogue (endp 10)
+        final String size = "5";
         final HttpTarget catalogue = getHttpTarget("TARGET_CATALOGUE", new Authentication());
         final HttpRequest request = new HttpRequest();
         request.setQueryString(new Hashtable<String, Object>() {{

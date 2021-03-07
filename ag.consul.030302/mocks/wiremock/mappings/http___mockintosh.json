@@ -1,0 +1,55 @@
+{
+ "mappings": [
+  {
+   "id": "bb80aa71-3386-4f35-96c6-bb4d6be5f8f4",
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/customers/[^/]+"
+   },
+   "response": {
+    "bodyFileName": "resp_17.json",
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "status": 200,
+    "transformers": [
+     "response-template"
+    ]
+   }
+  },
+  {
+   "id": "31c2f0f4-c6cf-4706-8f83-3b8fa9df4caa",
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/customers/undefined"
+   },
+   "response": {
+    "bodyFileName": "resp_18.json",
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "status": 200,
+    "transformers": [
+     "response-template"
+    ]
+   }
+  },
+  {
+   "id": "be1b06ba-ecb9-4357-a7f4-c45140272321",
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/login"
+   },
+   "response": {
+    "bodyFileName": "resp_19.json",
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "status": 200,
+    "transformers": [
+     "response-template"
+    ]
+   }
+  }
+ ]
+}

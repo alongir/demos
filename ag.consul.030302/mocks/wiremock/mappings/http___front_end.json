@@ -1,0 +1,223 @@
+{
+ "mappings": [
+  {
+   "id": "99e0a6bd-2fe5-458f-a01d-c0274891b244",
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/"
+   },
+   "response": {
+    "bodyFileName": "resp_1.html",
+    "headers": {
+     "Content-Type": "text/html"
+    },
+    "status": 200,
+    "transformers": [
+     "response-template"
+    ]
+   }
+  },
+  {
+   "id": "b7cea4be-2e74-47cf-b99c-4428f34ff826",
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/cart"
+   },
+   "response": {
+    "body": "[]",
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "status": 200,
+    "transformers": [
+     "response-template"
+    ]
+   }
+  },
+  {
+   "id": "d7009241-c082-45ff-bac4-41b00ffb943c",
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/catalogue/size"
+   },
+   "response": {
+    "body": "{\"size\":9,\"err\":null}\n",
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "status": 200,
+    "transformers": [
+     "response-template"
+    ]
+   }
+  },
+  {
+   "id": "39ee8d30-c627-4b40-bd3c-3c8380145eef",
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/catalogue"
+   },
+   "response": {
+    "bodyFileName": "resp_4.json",
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "status": 200,
+    "transformers": [
+     "response-template"
+    ]
+   }
+  },
+  {
+   "id": "b3559f2f-7820-4754-aee1-0063862faef6",
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/customers/[^/]+"
+   },
+   "response": {
+    "bodyFileName": "resp_5.json",
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "status": 200,
+    "transformers": [
+     "response-template"
+    ]
+   }
+  },
+  {
+   "id": "adfef857-3133-4173-bc0d-fbe2c1551946",
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/index\\.html"
+   },
+   "response": {
+    "bodyFileName": "resp_6.html",
+    "headers": {
+     "Content-Type": "text/html"
+    },
+    "status": 200,
+    "transformers": [
+     "response-template"
+    ]
+   }
+  },
+  {
+   "id": "befcddf9-b644-496c-93ea-c8b831e12ab3",
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/orders"
+   },
+   "response": {
+    "body": "[]",
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "status": 201,
+    "transformers": [
+     "response-template"
+    ]
+   }
+  },
+  {
+   "id": "b3500593-a587-4a7c-8185-06e9266863b9",
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/tags"
+   },
+   "response": {
+    "body": "{\"tags\":[\"brown\",\"geek\",\"formal\",\"blue\",\"skin\",\"red\",\"action\",\"sport\",\"black\",\"magic\",\"green\"],\"err\":null}\n",
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "status": 200,
+    "transformers": [
+     "response-template"
+    ]
+   }
+  },
+  {
+   "id": "37b2bff1-87be-4e26-b66c-a67e79f89e0a",
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/footer\\.html"
+   },
+   "response": {
+    "bodyFileName": "resp_23.html",
+    "headers": {
+     "Content-Type": "text/html"
+    },
+    "status": 200,
+    "transformers": [
+     "response-template"
+    ]
+   }
+  },
+  {
+   "id": "4e16095e-47fe-4fbf-b1ab-fc58dfa6fd82",
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/login"
+   },
+   "response": {
+    "body": "Cookie is set",
+    "headers": {
+     "Content-Type": "text/html"
+    },
+    "status": 200,
+    "transformers": [
+     "response-template"
+    ]
+   }
+  },
+  {
+   "id": "99f63de0-182b-433c-8dec-ef867e0a3c70",
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/[^/]+"
+   },
+   "response": {
+    "bodyFileName": "resp_26.html",
+    "headers": {
+     "Content-Type": "text/html"
+    },
+    "status": 200,
+    "transformers": [
+     "response-template"
+    ]
+   }
+  },
+  {
+   "id": "47a43d02-60ea-484e-8f1d-54f79a58499c",
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/topbar\\.html"
+   },
+   "response": {
+    "bodyFileName": "resp_27.html",
+    "headers": {
+     "Content-Type": "text/html"
+    },
+    "status": 200,
+    "transformers": [
+     "response-template"
+    ]
+   }
+  },
+  {
+   "id": "3507917f-da67-49f3-997a-7ae8f4118e00",
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/customers/[^/]+"
+   },
+   "response": {
+    "body": "no healthy upstream",
+    "headers": {},
+    "status": 200,
+    "transformers": [
+     "response-template"
+    ]
+   }
+  }
+ ]
+}

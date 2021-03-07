@@ -1,0 +1,55 @@
+{
+ "mappings": [
+  {
+   "id": "f26e9905-34ff-450e-82a3-e1368498c510",
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/catalogue/size"
+   },
+   "response": {
+    "body": "{\"size\":9,\"err\":null}\n",
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "status": 200,
+    "transformers": [
+     "response-template"
+    ]
+   }
+  },
+  {
+   "id": "2823288a-00b7-4226-b09e-e8b6960d9c3c",
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/catalogue"
+   },
+   "response": {
+    "bodyFileName": "resp_10.json",
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "status": 200,
+    "transformers": [
+     "response-template"
+    ]
+   }
+  },
+  {
+   "id": "2ec865b0-d2cd-49b1-ad19-ca07612acf63",
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/tags"
+   },
+   "response": {
+    "body": "{\"tags\":[\"brown\",\"geek\",\"formal\",\"blue\",\"skin\",\"red\",\"action\",\"sport\",\"black\",\"magic\",\"green\"],\"err\":null}\n",
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "status": 200,
+    "transformers": [
+     "response-template"
+    ]
+   }
+  }
+ ]
+}

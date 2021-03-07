@@ -1,0 +1,8 @@
+{
+ "TARGET_CARTS": "http://carts",
+ "TARGET_CATALOGUE": "http://catalogue",
+ "TARGET_FRONT_END": "http://front-end",
+ "TARGET_MOCKINTOSH": "http://mockintosh",
+ "TARGET_ORDERS": "http://orders",
+ "TARGET_USER": "http://user"
+}

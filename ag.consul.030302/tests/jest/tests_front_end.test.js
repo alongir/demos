@@ -1,5 +1,5 @@
 const authenticate = require("./authentication");
-const {CSSselect, JSONPath, clearSession, dataset, getHttpTarget, urlencode} = require("./up9lib");
+const {CSSselect, JSONPath, clearSession, getHttpTarget, urlencode} = require("./up9lib");
 
 it("test_01_get_", () => {
     clearSession();
@@ -18,25 +18,24 @@ it("test_01_get_", () => {
     });
 });
 
-describe.each(dataset("data/dataset_26.json"))("test_26_get_param", (param) => {
-    it("test_26_get_param", () => {
-        clearSession();
+it("test_26_get_param", () => {
+    clearSession();
 
-        // GET http://front-end/{param} (endp 26)
-        const front_end = getHttpTarget("TARGET_FRONT_END", authenticate);
-        return front_end.fetch("/" + param, {
-            headers: {
-                "x-requested-with": "XMLHttpRequest"
-            }
-        })
-        .then((response) => {
-            expect(response.status).toEqual(200);
-            return response.text();
-        })
-        .then((text) => {
-        })
-        .then((data) => {
-        });
+    // GET http://front-end/{param} (endp 26)
+    const param = "navbar.html";
+    const front_end = getHttpTarget("TARGET_FRONT_END", authenticate);
+    return front_end.fetch("/" + param, {
+        headers: {
+            "x-requested-with": "XMLHttpRequest"
+        }
+    })
+    .then((response) => {
+        expect(response.status).toEqual(200);
+        return response.text();
+    })
+    .then((text) => {
+    })
+    .then((data) => {
     });
 });
 
@@ -60,25 +59,24 @@ it("test_02_get_cart", () => {
     });
 });
 
-describe.each(dataset("data/dataset_4.json"))("test_04_get_catalogue", (size) => {
-    it("test_04_get_catalogue", () => {
-        clearSession();
+it("test_04_get_catalogue", () => {
+    clearSession();
 
-        // GET http://front-end/catalogue (endp 4)
-        const front_end = getHttpTarget("TARGET_FRONT_END", authenticate);
-        return front_end.fetch("/catalogue" + urlencode([["page", "1"], ["size", size], ["tags", ""]]), {
-            headers: {
-                "x-requested-with": "XMLHttpRequest"
-            }
-        })
-        .then((response) => {
-            expect(response.status).toEqual(200);
-            return response.text();
-        })
-        .then((text) => {
-        })
-        .then((data) => {
-        });
+    // GET http://front-end/catalogue (endp 4)
+    const size = "5";
+    const front_end = getHttpTarget("TARGET_FRONT_END", authenticate);
+    return front_end.fetch("/catalogue" + urlencode([["page", "1"], ["size", size], ["tags", ""]]), {
+        headers: {
+            "x-requested-with": "XMLHttpRequest"
+        }
+    })
+    .then((response) => {
+        expect(response.status).toEqual(200);
+        return response.text();
+    })
+    .then((text) => {
+    })
+    .then((data) => {
     });
 });
 
@@ -102,52 +100,50 @@ it("test_03_get_catalogue_size", () => {
     });
 });
 
-describe.each(dataset("data/dataset_5.json"))("test_05_get_customers_customerId", (customerId) => {
-    it("test_05_get_customers_customerId", () => {
-        clearSession();
+it("test_05_get_customers_customerId", () => {
+    clearSession();
 
-        // GET http://front-end/customers/{customerId} (endp 5)
-        const front_end = getHttpTarget("TARGET_FRONT_END", authenticate);
-        return front_end.fetch("/customers/" + customerId, {
-            headers: {
-                "x-requested-with": "XMLHttpRequest"
-            }
-        })
-        .then((response) => {
-            expect(response.status).toEqual(200);
-            return response.text();
-        })
-        .then((text) => {
-            return JSON.parse(text);
-        })
-        .then((data) => {
-            expect(JSONPath({
-                path: "$.lastName",
-                json: data
-            })).toContain("Name");
-        });
+    // GET http://front-end/customers/{customerId} (endp 5)
+    const customerId = "7w4TGI0pnIxn5TEFoHX6O2spPdXa3dut";
+    const front_end = getHttpTarget("TARGET_FRONT_END", authenticate);
+    return front_end.fetch("/customers/" + customerId, {
+        headers: {
+            "x-requested-with": "XMLHttpRequest"
+        }
+    })
+    .then((response) => {
+        expect(response.status).toEqual(200);
+        return response.text();
+    })
+    .then((text) => {
+        return JSON.parse(text);
+    })
+    .then((data) => {
+        expect(JSONPath({
+            path: "$.lastName",
+            json: data
+        })).toContain("Name");
     });
 });
 
-describe.each(dataset("data/dataset_30.json"))("test_30_get_customers_customerId", (customerId) => {
-    it("test_30_get_customers_customerId", () => {
-        clearSession();
+it("test_30_get_customers_customerId", () => {
+    clearSession();
 
-        // GET http://front-end/customers/{customerId} (endp 30)
-        const front_end = getHttpTarget("TARGET_FRONT_END", authenticate);
-        return front_end.fetch("/customers/" + customerId, {
-            headers: {
-                "x-requested-with": "XMLHttpRequest"
-            }
-        })
-        .then((response) => {
-            expect(response.status).toEqual(200);
-            return response.text();
-        })
-        .then((text) => {
-        })
-        .then((data) => {
-        });
+    // GET http://front-end/customers/{customerId} (endp 30)
+    const customerId = "7w4TGI0pnIxn5TEFoHX6O2spPdXa3dut";
+    const front_end = getHttpTarget("TARGET_FRONT_END", authenticate);
+    return front_end.fetch("/customers/" + customerId, {
+        headers: {
+            "x-requested-with": "XMLHttpRequest"
+        }
+    })
+    .then((response) => {
+        expect(response.status).toEqual(200);
+        return response.text();
+    })
+    .then((text) => {
+    })
+    .then((data) => {
     });
 });
 
