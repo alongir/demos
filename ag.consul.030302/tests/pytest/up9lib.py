@@ -300,12 +300,16 @@ def get_http_target(key, auth_callback=dummy_auth):
 
 
 def _address_for_key(target_key):
-    if re.match("^https?://", target_key):
+    if "://" in target_key:
         address = target_key
     else:
         address = os.getenv(target_key, None)
         if address is None:
-            with open(os.path.join("data", "target_services.json")) as fp:
+            fname = "target_services.json"
+            if not os.path.exists(fname):
+                fname = os.path.join("data", fname)
+
+            with open(fname) as fp:
                 services = json.load(fp)
                 if target_key not in services:
                     logging.warning("Service %r is not found in target URL mapping" % target_key)

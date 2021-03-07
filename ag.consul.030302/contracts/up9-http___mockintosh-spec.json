@@ -243,6 +243,7 @@
    },
    "parameters": [
     {
+     "description": "Origin: GET http://mockintosh/customers/undefined &rarr; json: $.id",
      "in": "path",
      "name": "id",
      "required": true,
