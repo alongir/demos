@@ -100,6 +100,23 @@ it("test_03_get_catalogue_size", () => {
     });
 });
 
+it("test_34_get_category_html", () => {
+    clearSession();
+
+    // GET http://front-end/category.html (endp 34)
+    const front_end = getHttpTarget("TARGET_FRONT_END", authenticate);
+    return front_end.fetch("/category.html")
+    .then((response) => {
+        expect(response.status).toEqual(200);
+        return response.text();
+    })
+    .then((text) => {
+        expect(CSSselect("div#content div.container div div.panel.panel-default.sidebar-menu div.panel-heading h3.panel-title", text)).toContain("Filters ");
+    })
+    .then((data) => {
+    });
+});
+
 it("test_05_get_customers_customerId", () => {
     clearSession();
 

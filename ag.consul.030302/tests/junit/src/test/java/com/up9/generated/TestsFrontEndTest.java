@@ -89,6 +89,17 @@ public class TestsFrontEndTest
     }
 
     @Test
+    public void testGetCategoryHtml34() throws IOException
+    {
+        // GET http://front-end/category.html (endp 34)
+        final HttpTarget frontEnd = getHttpTarget("TARGET_FRONT_END", new Authentication());
+        final HttpRequest request = new HttpRequest();
+        final Response response = frontEnd.get(request, "/category.html");
+        assertStatusCode(response.code(), 200);
+        assertCSSselect("div#content div.container div div.panel.panel-default.sidebar-menu div.panel-heading h3.panel-title", "Filters ", response.body().string());
+    }
+
+    @Test
     public void testGetCustomersCustomerid05() throws IOException
     {
         // GET http://front-end/customers/{customerId} (endp 5)

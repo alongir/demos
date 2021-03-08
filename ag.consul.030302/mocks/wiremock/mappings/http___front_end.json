@@ -205,7 +205,7 @@
    }
   },
   {
-   "id": "3507917f-da67-49f3-997a-7ae8f4118e00",
+   "id": "6633460d-152b-4760-aed2-aade041b20d1",
    "request": {
     "method": "GET",
     "urlPathPattern": "/customers/[^/]+"
@@ -213,6 +213,23 @@
    "response": {
     "body": "no healthy upstream",
     "headers": {},
+    "status": 200,
+    "transformers": [
+     "response-template"
+    ]
+   }
+  },
+  {
+   "id": "4f85f5db-b82e-4392-a0c9-f6962840b802",
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/category\\.html"
+   },
+   "response": {
+    "bodyFileName": "resp_34.html",
+    "headers": {
+     "Content-Type": "text/html"
+    },
     "status": 200,
     "transformers": [
      "response-template"

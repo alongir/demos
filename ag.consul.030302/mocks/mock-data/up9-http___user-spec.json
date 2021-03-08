@@ -117,7 +117,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 3 requests"
+    "summary": "Seen 7 requests"
    },
    "parameters": [
     {
@@ -256,7 +256,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 3 requests"
+    "summary": "Seen 4 requests"
    },
    "parameters": []
   }

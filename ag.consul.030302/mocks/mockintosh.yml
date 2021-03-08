@@ -131,6 +131,12 @@ services:
     response:
       body: no healthy upstream
       useTemplating: false
+  - path: /category.html
+    response:
+      headers:
+        Content-Type: text/html
+      body: '@mock-data/resp_34.html'
+      useTemplating: false
 - name: http://mockintosh
   port: 8004
   ssl: false

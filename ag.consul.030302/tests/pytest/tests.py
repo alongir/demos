@@ -97,6 +97,14 @@ class Tests_front_end(unittest.TestCase):
         resp = front_end.get('/catalogue/size' + qstr, headers=dict([('x-requested-with', 'XMLHttpRequest')]))
         resp.assert_status_code(200)
 
+    @clear_session({'spanId': 34})
+    def test_34_get_category_html(self):
+        # GET http://front-end/category.html (endp 34)
+        front_end = get_http_target('TARGET_FRONT_END', authenticate)
+        resp = front_end.get('/category.html')
+        resp.assert_status_code(200)
+        resp.assert_cssselect('div#content div.container div div.panel.panel-default.sidebar-menu div.panel-heading h3.panel-title', expected_value='Filters ')
+
     @clear_session({'spanId': 5})
     def test_05_get_customers_customerId(self):
         # GET http://front-end/customers/{customerId} (endp 5)

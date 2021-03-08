@@ -74,6 +74,15 @@ func TestGetCatalogueSize03(t *testing.T) {
     assert.Equal(t, 200, resp.StatusCode())
 }
 
+func TestGetCategoryHtml34(t *testing.T) {
+    // GET http://front-end/category.html (endp 34)
+    frontEnd := GetHttpTarget(t, "TARGET_FRONT_END", new(Authentication))
+    req := new(HttpRequest)
+    resp := frontEnd.Get(req, "/category.html")
+    assert.Equal(t, 200, resp.StatusCode())
+    assert.Contains(t, CssSelect(t, "div#content div.container div div.panel.panel-default.sidebar-menu div.panel-heading h3.panel-title", resp), "Filters ")
+}
+
 func TestGetCustomersCustomerid05(t *testing.T) {
     customerId := "7w4TGI0pnIxn5TEFoHX6O2spPdXa3dut"
 
