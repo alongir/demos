@@ -26,6 +26,16 @@ public class TestsMockintoshTest
     }
 
     @Test
+    public void testGetCatalogue40() throws IOException
+    {
+        // GET http://mockintosh/catalogue (endp 40)
+        final HttpTarget mockintosh = getHttpTarget("TARGET_MOCKINTOSH", new Authentication());
+        final HttpRequest request = new HttpRequest();
+        final Response response = mockintosh.get(request, "/catalogue");
+        assertStatusCode(response.code(), 200);
+    }
+
+    @Test
     public void testGetCustomersId17() throws IOException
     {
         // GET http://mockintosh/customers/undefined (endp 18)

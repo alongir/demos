@@ -18,6 +18,22 @@ it("test_39_get_", () => {
     });
 });
 
+it("test_40_get_catalogue", () => {
+    clearSession();
+
+    // GET http://mockintosh/catalogue (endp 40)
+    const mockintosh = getHttpTarget("TARGET_MOCKINTOSH", authenticate);
+    return mockintosh.fetch("/catalogue")
+    .then((response) => {
+        expect(response.status).toEqual(200);
+        return response.text();
+    })
+    .then((text) => {
+    })
+    .then((data) => {
+    });
+});
+
 it("test_17_get_customers_id", () => {
     clearSession();
 

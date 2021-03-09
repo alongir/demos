@@ -172,6 +172,11 @@ services:
         Content-Type: text/html
       body: '@mock-data/resp_39.html'
       useTemplating: false
+  - path: /catalogue
+    response:
+      headers:
+        Content-Type: application/json
+      body: '@mock-data/resp_40.json'
 - name: http://orders
   port: 8005
   ssl: false

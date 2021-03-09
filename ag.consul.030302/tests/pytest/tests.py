@@ -205,6 +205,13 @@ class Tests_mockintosh(unittest.TestCase):
         resp.assert_status_code(200)
         resp.assert_cssselect('div#hot div.box div.container div h2', expected_value='Hot this week')
 
+    @clear_session({'spanId': 40})
+    def test_40_get_catalogue(self):
+        # GET http://mockintosh/catalogue (endp 40)
+        mockintosh = get_http_target('TARGET_MOCKINTOSH', authenticate)
+        resp = mockintosh.get('/catalogue')
+        resp.assert_status_code(200)
+
     @clear_session({'spanId': 17})
     def test_17_get_customers_id(self):
         # GET http://mockintosh/customers/undefined (endp 18)
