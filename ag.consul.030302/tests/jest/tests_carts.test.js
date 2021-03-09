@@ -1,6 +1,25 @@
 const authenticate = require("./authentication");
 const {clearSession, getHttpTarget, urlencode} = require("./up9lib");
 
+it("test_46_delete_carts_id", () => {
+    clearSession();
+
+    // DELETE http://carts/carts/{id} (endp 46)
+    const id = "57a98d98e4b00679b4a830b2";
+    const carts = getHttpTarget("TARGET_CARTS", authenticate);
+    return carts.fetch("/carts/" + id, {
+        method: "DELETE"
+    })
+    .then((response) => {
+        expect(response.status).toEqual(202);
+        return response.text();
+    })
+    .then((text) => {
+    })
+    .then((data) => {
+    });
+});
+
 it("test_13_get_carts_id_items", () => {
     clearSession();
 

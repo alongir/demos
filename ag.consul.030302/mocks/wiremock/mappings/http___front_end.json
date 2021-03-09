@@ -280,6 +280,38 @@
      "response-template"
     ]
    }
+  },
+  {
+   "id": "33d0ebef-04b8-4e95-a05b-34abb4f5c531",
+   "request": {
+    "method": "DELETE",
+    "urlPathPattern": "/cart"
+   },
+   "response": {
+    "body": "",
+    "headers": {},
+    "status": 202,
+    "transformers": [
+     "response-template"
+    ]
+   }
+  },
+  {
+   "id": "081f9d27-bcaf-498d-909d-a5c3891ce7fe",
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/detail\\.html"
+   },
+   "response": {
+    "bodyFileName": "resp_45.html",
+    "headers": {
+     "Content-Type": "text/html"
+    },
+    "status": 200,
+    "transformers": [
+     "response-template"
+    ]
+   }
   }
  ]
 }

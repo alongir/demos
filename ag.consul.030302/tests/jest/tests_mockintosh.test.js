@@ -18,10 +18,10 @@ it("test_39_get_", () => {
     });
 });
 
-it("test_40_get_catalogue", () => {
+it("test_47_get_catalogue", () => {
     clearSession();
 
-    // GET http://mockintosh/catalogue (endp 40)
+    // GET http://mockintosh/catalogue (endp 47)
     const mockintosh = getHttpTarget("TARGET_MOCKINTOSH", authenticate);
     return mockintosh.fetch("/catalogue")
     .then((response) => {

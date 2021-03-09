@@ -26,6 +26,10 @@ services:
         Content-Type: application/json
       body: '[]'
       useTemplating: false
+  - path: /carts/{{id}}
+    response:
+      status: 202
+    method: delete
 - name: http://catalogue
   port: 8002
   ssl: false
@@ -143,6 +147,16 @@ services:
     response: {}
   - path: /tags
     response: {}
+  - path: /cart
+    response:
+      status: 202
+    method: delete
+  - path: /detail.html
+    response:
+      headers:
+        Content-Type: text/html
+      body: '@mock-data/resp_45.html'
+      useTemplating: false
 - name: http://mockintosh
   port: 8004
   ssl: false
@@ -176,7 +190,7 @@ services:
     response:
       headers:
         Content-Type: application/json
-      body: '@mock-data/resp_40.json'
+      body: '@mock-data/resp_47.json'
 - name: http://orders
   port: 8005
   ssl: false

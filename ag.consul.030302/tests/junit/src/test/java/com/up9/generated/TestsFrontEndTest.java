@@ -54,22 +54,13 @@ public class TestsFrontEndTest
     }
 
     @Test
-    public void testGetCatalogue04() throws IOException
+    public void testDeleteCart43() throws IOException
     {
-        // GET http://front-end/catalogue (endp 4)
-        final String size = "5";
+        // DELETE http://front-end/cart (endp 43)
         final HttpTarget frontEnd = getHttpTarget("TARGET_FRONT_END", new Authentication());
         final HttpRequest request = new HttpRequest();
-        request.setQueryString(new Hashtable<String, Object>() {{
-            put("page", "1");
-            put("size", size);
-            put("tags", "");
-        }});
-        request.setHeaders(new Hashtable<String, Object>() {{
-            put("x-requested-with", "XMLHttpRequest");
-        }});
-        final Response response = frontEnd.get(request, "/catalogue");
-        assertStatusCode(response.code(), 200);
+        final Response response = frontEnd.delete(request, "/cart");
+        assertStatusCode(response.code(), 202);
     }
 
     @Test
@@ -161,6 +152,35 @@ public class TestsFrontEndTest
         }});
         final Response response = frontEnd.get(request, "/customers/" + customerId);
         assertStatusCode(response.code(), 200);
+    }
+
+    @Test
+    public void testGetDetailHtml45() throws IOException
+    {
+        // GET http://front-end/catalogue (endp 4)
+        final String size = "5";
+        final HttpTarget frontEnd = getHttpTarget("TARGET_FRONT_END", new Authentication());
+        final HttpRequest request = new HttpRequest();
+        request.setQueryString(new Hashtable<String, Object>() {{
+            put("page", "1");
+            put("size", size);
+            put("tags", "");
+        }});
+        request.setHeaders(new Hashtable<String, Object>() {{
+            put("x-requested-with", "XMLHttpRequest");
+        }});
+        final Response response = frontEnd.get(request, "/catalogue");
+        assertStatusCode(response.code(), 200);
+        final String id = JSONPath("$[*].id", response.body().string());
+
+        // GET http://front-end/detail.html (endp 45)
+        final HttpRequest request2 = new HttpRequest();
+        request2.setQueryString(new Hashtable<String, Object>() {{
+            put("id", id);
+        }});
+        final Response response2 = frontEnd.get(request2, "/detail.html");
+        assertStatusCode(response2.code(), 200);
+        assertCSSselect("div#content div.container div div.row.same-height-row div div.box.same-height h3", "You may also like these products", response2.body().string());
     }
 
     @Test

@@ -15,6 +15,17 @@ import static com.up9.up9lib.Common.*;
 public class TestsCartsTest
 {
     @Test
+    public void testDeleteCartsId46() throws IOException
+    {
+        // DELETE http://carts/carts/{id} (endp 46)
+        final String id = "57a98d98e4b00679b4a830b2";
+        final HttpTarget carts = getHttpTarget("TARGET_CARTS", new Authentication());
+        final HttpRequest request = new HttpRequest();
+        final Response response = carts.delete(request, "/carts/" + id);
+        assertStatusCode(response.code(), 202);
+    }
+
+    @Test
     public void testGetCartsIdItems13() throws IOException
     {
         // GET http://carts/carts/{id}/items (endp 13)

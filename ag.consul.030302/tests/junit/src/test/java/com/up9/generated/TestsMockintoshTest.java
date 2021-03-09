@@ -26,9 +26,9 @@ public class TestsMockintoshTest
     }
 
     @Test
-    public void testGetCatalogue40() throws IOException
+    public void testGetCatalogue47() throws IOException
     {
-        // GET http://mockintosh/catalogue (endp 40)
+        // GET http://mockintosh/catalogue (endp 47)
         final HttpTarget mockintosh = getHttpTarget("TARGET_MOCKINTOSH", new Authentication());
         final HttpRequest request = new HttpRequest();
         final Response response = mockintosh.get(request, "/catalogue");

@@ -7,6 +7,17 @@ import (
     testing "testing"
 )
 
+func TestDeleteCartsId46(t *testing.T) {
+    id := "57a98d98e4b00679b4a830b2"
+
+    // DELETE http://carts/carts/{id} (endp 46)
+    id := "57a98d98e4b00679b4a830b2"
+    carts := GetHttpTarget(t, "TARGET_CARTS", new(Authentication))
+    req := new(HttpRequest)
+    resp := carts.Delete(req, "/carts/" + id.(string))
+    assert.Equal(t, 202, resp.StatusCode())
+}
+
 func TestGetCartsIdItems13(t *testing.T) {
     id := "57a98d98e4b00679b4a830b2"
 

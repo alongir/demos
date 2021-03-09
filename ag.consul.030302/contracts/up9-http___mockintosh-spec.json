@@ -25,7 +25,7 @@
   },
   "/catalogue": {
    "get": {
-    "operationId": "c43fbcf0-5366-4107-8ef9-6797868548f8",
+    "operationId": "cbc133b7-8353-4ac4-9638-488d0bb2b4de",
     "parameters": [],
     "responses": {
      "200": {

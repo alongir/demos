@@ -59,19 +59,16 @@ it("test_02_get_cart", () => {
     });
 });
 
-it("test_04_get_catalogue", () => {
+it("test_43_delete_cart", () => {
     clearSession();
 
-    // GET http://front-end/catalogue (endp 4)
-    const size = "5";
+    // DELETE http://front-end/cart (endp 43)
     const front_end = getHttpTarget("TARGET_FRONT_END", authenticate);
-    return front_end.fetch("/catalogue" + urlencode([["page", "1"], ["size", size], ["tags", ""]]), {
-        headers: {
-            "x-requested-with": "XMLHttpRequest"
-        }
+    return front_end.fetch("/cart", {
+        method: "DELETE"
     })
     .then((response) => {
-        expect(response.status).toEqual(200);
+        expect(response.status).toEqual(202);
         return response.text();
     })
     .then((text) => {
@@ -202,6 +199,44 @@ it("test_30_get_customers_customerId", () => {
     .then((text) => {
     })
     .then((data) => {
+    });
+});
+
+it("test_45_get_detail_html", () => {
+    clearSession();
+
+    // GET http://front-end/catalogue (endp 4)
+    const size = "5";
+    const front_end = getHttpTarget("TARGET_FRONT_END", authenticate);
+    return front_end.fetch("/catalogue" + urlencode([["page", "1"], ["size", size], ["tags", ""]]), {
+        headers: {
+            "x-requested-with": "XMLHttpRequest"
+        }
+    })
+    .then((response) => {
+        expect(response.status).toEqual(200);
+        return response.text();
+    })
+    .then((text) => {
+        return JSON.parse(text);
+    })
+    .then((data) => {
+        const id = JSONPath({
+            path: "$[*].id",
+            json: data
+        })[0];
+
+        // GET http://front-end/detail.html (endp 45)
+        return front_end.fetch("/detail.html" + urlencode([["id", id]]))
+        .then((response) => {
+            expect(response.status).toEqual(200);
+            return response.text();
+        })
+        .then((text) => {
+            expect(CSSselect("div#content div.container div div.row.same-height-row div div.box.same-height h3", text)).toContain("You may also like these products");
+        })
+        .then((data) => {
+        });
     });
 });
 

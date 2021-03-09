@@ -41,23 +41,12 @@ func TestGetCart02(t *testing.T) {
     assert.Equal(t, 200, resp.StatusCode())
 }
 
-func TestGetCatalogue04(t *testing.T) {
-    size := "5"
-
-    // GET http://front-end/catalogue (endp 4)
-    size := "5"
+func TestDeleteCart43(t *testing.T) {
+    // DELETE http://front-end/cart (endp 43)
     frontEnd := GetHttpTarget(t, "TARGET_FRONT_END", new(Authentication))
     req := new(HttpRequest)
-    req.SetQueryString(map[string]interface{}{
-        "page": "1",
-        "size": size,
-        "tags": "",
-    })
-    req.SetHeaders(map[string]interface{}{
-        "x-requested-with": "XMLHttpRequest",
-    })
-    resp := frontEnd.Get(req, "/catalogue")
-    assert.Equal(t, 200, resp.StatusCode())
+    resp := frontEnd.Delete(req, "/cart")
+    assert.Equal(t, 202, resp.StatusCode())
 }
 
 func TestGetCatalogue37(t *testing.T) {
@@ -143,6 +132,35 @@ func TestGetCustomersCustomerid30(t *testing.T) {
     })
     resp := frontEnd.Get(req, "/customers/" + customerId.(string))
     assert.Equal(t, 200, resp.StatusCode())
+}
+
+func TestGetDetailHtml45(t *testing.T) {
+    size := "5"
+
+    // GET http://front-end/catalogue (endp 4)
+    size := "5"
+    frontEnd := GetHttpTarget(t, "TARGET_FRONT_END", new(Authentication))
+    req := new(HttpRequest)
+    req.SetQueryString(map[string]interface{}{
+        "page": "1",
+        "size": size,
+        "tags": "",
+    })
+    req.SetHeaders(map[string]interface{}{
+        "x-requested-with": "XMLHttpRequest",
+    })
+    resp := frontEnd.Get(req, "/catalogue")
+    assert.Equal(t, 200, resp.StatusCode())
+    id := JsonPath(t, "$[*].id", resp.String())
+
+    // GET http://front-end/detail.html (endp 45)
+    req2 := new(HttpRequest)
+    req2.SetQueryString(map[string]interface{}{
+        "id": id,
+    })
+    resp2 := frontEnd.Get(req2, "/detail.html")
+    assert.Equal(t, 200, resp2.StatusCode())
+    assert.Contains(t, CssSelect(t, "div#content div.container div div.row.same-height-row div div.box.same-height h3", resp2), "You may also like these products")
 }
 
 func TestGetFooterHtml23(t *testing.T) {

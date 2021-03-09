@@ -7,6 +7,14 @@ from authentication import authenticate
 @data_driven_tests
 class Tests_carts(unittest.TestCase):
 
+    @clear_session({'spanId': 46})
+    def test_46_delete_carts_id(self):
+        # DELETE http://carts/carts/{id} (endp 46)
+        id_ = '57a98d98e4b00679b4a830b2'
+        carts = get_http_target('TARGET_CARTS', authenticate)
+        resp = carts.delete(f'/carts/{id_}')
+        resp.assert_status_code(202)
+
     @clear_session({'spanId': 13})
     def test_13_get_carts_id_items(self):
         # GET http://carts/carts/{id}/items (endp 13)
@@ -80,14 +88,12 @@ class Tests_front_end(unittest.TestCase):
         resp = front_end.get('/cart', headers=dict([('x-requested-with', 'XMLHttpRequest')]))
         resp.assert_status_code(200)
 
-    @clear_session({'spanId': 4})
-    def test_04_get_catalogue(self):
-        # GET http://front-end/catalogue (endp 4)
-        size = '5'
+    @clear_session({'spanId': 43})
+    def test_43_delete_cart(self):
+        # DELETE http://front-end/cart (endp 43)
         front_end = get_http_target('TARGET_FRONT_END', authenticate)
-        qstr = '?' + urlencode([('page', '1'), ('size', size), ('tags', '')])
-        resp = front_end.get('/catalogue' + qstr, headers=dict([('x-requested-with', 'XMLHttpRequest')]))
-        resp.assert_status_code(200)
+        resp = front_end.delete('/cart')
+        resp.assert_status_code(202)
 
     @clear_session({'spanId': 37})
     def test_37_get_catalogue(self):
@@ -138,6 +144,22 @@ class Tests_front_end(unittest.TestCase):
         front_end = get_http_target('TARGET_FRONT_END', authenticate)
         resp = front_end.get(f'/customers/{customerId}', headers=dict([('x-requested-with', 'XMLHttpRequest')]))
         resp.assert_status_code(200)
+
+    @clear_session({'spanId': 45})
+    def test_45_get_detail_html(self):
+        # GET http://front-end/catalogue (endp 4)
+        size = '5'
+        front_end = get_http_target('TARGET_FRONT_END', authenticate)
+        qstr = '?' + urlencode([('page', '1'), ('size', size), ('tags', '')])
+        resp = front_end.get('/catalogue' + qstr, headers=dict([('x-requested-with', 'XMLHttpRequest')]))
+        resp.assert_status_code(200)
+        id_ = jsonpath('$[*].id', resp)
+
+        # GET http://front-end/detail.html (endp 45)
+        qstr = '?' + urlencode([('id', id_)])
+        resp = front_end.get('/detail.html' + qstr)
+        resp.assert_status_code(200)
+        resp.assert_cssselect('div#content div.container div div.row.same-height-row div div.box.same-height h3', expected_value='You may also like these products')
 
     @clear_session({'spanId': 23})
     def test_23_get_footer_html(self):
@@ -205,9 +227,9 @@ class Tests_mockintosh(unittest.TestCase):
         resp.assert_status_code(200)
         resp.assert_cssselect('div#hot div.box div.container div h2', expected_value='Hot this week')
 
-    @clear_session({'spanId': 40})
-    def test_40_get_catalogue(self):
-        # GET http://mockintosh/catalogue (endp 40)
+    @clear_session({'spanId': 47})
+    def test_47_get_catalogue(self):
+        # GET http://mockintosh/catalogue (endp 47)
         mockintosh = get_http_target('TARGET_MOCKINTOSH', authenticate)
         resp = mockintosh.get('/catalogue')
         resp.assert_status_code(200)

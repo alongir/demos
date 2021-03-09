@@ -16,8 +16,8 @@ func TestGet39(t *testing.T) {
     assert.Contains(t, CssSelect(t, "div#hot div.box div.container div h2", resp), "Hot this week")
 }
 
-func TestGetCatalogue40(t *testing.T) {
-    // GET http://mockintosh/catalogue (endp 40)
+func TestGetCatalogue47(t *testing.T) {
+    // GET http://mockintosh/catalogue (endp 47)
     mockintosh := GetHttpTarget(t, "TARGET_MOCKINTOSH", new(Authentication))
     req := new(HttpRequest)
     resp := mockintosh.Get(req, "/catalogue")
