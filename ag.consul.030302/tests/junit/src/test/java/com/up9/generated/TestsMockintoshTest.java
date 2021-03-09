@@ -15,6 +15,17 @@ import static com.up9.up9lib.Common.*;
 public class TestsMockintoshTest
 {
     @Test
+    public void testGet39() throws IOException
+    {
+        // GET http://mockintosh/ (endp 39)
+        final HttpTarget mockintosh = getHttpTarget("TARGET_MOCKINTOSH", new Authentication());
+        final HttpRequest request = new HttpRequest();
+        final Response response = mockintosh.get(request, "/");
+        assertStatusCode(response.code(), 200);
+        assertCSSselect("div#hot div.box div.container div h2", "Hot this week", response.body().string());
+    }
+
+    @Test
     public void testGetCustomersId17() throws IOException
     {
         // GET http://mockintosh/customers/undefined (endp 18)

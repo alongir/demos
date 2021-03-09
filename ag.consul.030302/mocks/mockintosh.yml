@@ -137,6 +137,12 @@ services:
         Content-Type: text/html
       body: '@mock-data/resp_34.html'
       useTemplating: false
+  - path: /catalogue/size
+    response: {}
+  - path: /catalogue
+    response: {}
+  - path: /tags
+    response: {}
 - name: http://mockintosh
   port: 8004
   ssl: false
@@ -159,6 +165,12 @@ services:
       headers:
         Content-Type: application/json
       body: '@mock-data/resp_19.json'
+      useTemplating: false
+  - path: /
+    response:
+      headers:
+        Content-Type: text/html
+      body: '@mock-data/resp_39.html'
       useTemplating: false
 - name: http://orders
   port: 8005

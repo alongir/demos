@@ -53,7 +53,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 47 requests"
+    "summary": "Seen 62 requests"
    },
    "parameters": []
   },
@@ -241,7 +241,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 46 requests",
+    "summary": "Seen 62 requests",
     "tags": [
      "catalogue"
     ]
@@ -301,7 +301,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 4 requests",
+    "summary": "Seen 10 requests",
     "tags": [
      "catalogue"
     ]
@@ -310,7 +310,7 @@
   },
   "/category.html": {
    "get": {
-    "operationId": "4f85f5db-b82e-4392-a0c9-f6962840b802",
+    "operationId": "e9109bed-d0a2-479d-8e45-9c74b61ef175",
     "parameters": [],
     "responses": {
      "200": {
@@ -640,7 +640,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 4 requests"
+    "summary": "Seen 10 requests"
    },
    "parameters": []
   },

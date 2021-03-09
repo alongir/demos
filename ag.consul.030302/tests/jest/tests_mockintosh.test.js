@@ -1,5 +1,22 @@
 const authenticate = require("./authentication");
-const {JSONPath, clearSession, getHttpTarget} = require("./up9lib");
+const {CSSselect, JSONPath, clearSession, getHttpTarget} = require("./up9lib");
+
+it("test_39_get_", () => {
+    clearSession();
+
+    // GET http://mockintosh/ (endp 39)
+    const mockintosh = getHttpTarget("TARGET_MOCKINTOSH", authenticate);
+    return mockintosh.fetch("/")
+    .then((response) => {
+        expect(response.status).toEqual(200);
+        return response.text();
+    })
+    .then((text) => {
+        expect(CSSselect("div#hot div.box div.container div h2", text)).toContain("Hot this week");
+    })
+    .then((data) => {
+    });
+});
 
 it("test_17_get_customers_id", () => {
     clearSession();

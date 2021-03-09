@@ -89,9 +89,26 @@ class Tests_front_end(unittest.TestCase):
         resp = front_end.get('/catalogue' + qstr, headers=dict([('x-requested-with', 'XMLHttpRequest')]))
         resp.assert_status_code(200)
 
+    @clear_session({'spanId': 37})
+    def test_37_get_catalogue(self):
+        # GET http://front-end/catalogue (endp 37)
+        size = '6'
+        front_end = get_http_target('TARGET_FRONT_END', authenticate)
+        qstr = '?' + urlencode([('page', '1'), ('size', size), ('tags', '')])
+        resp = front_end.get('/catalogue' + qstr, headers=dict([('x-requested-with', 'XMLHttpRequest')]))
+        resp.assert_status_code(200)
+
     @clear_session({'spanId': 3})
     def test_03_get_catalogue_size(self):
         # GET http://front-end/catalogue/size (endp 3)
+        front_end = get_http_target('TARGET_FRONT_END', authenticate)
+        qstr = '?' + urlencode([('tags', '')])
+        resp = front_end.get('/catalogue/size' + qstr, headers=dict([('x-requested-with', 'XMLHttpRequest')]))
+        resp.assert_status_code(200)
+
+    @clear_session({'spanId': 36})
+    def test_36_get_catalogue_size(self):
+        # GET http://front-end/catalogue/size (endp 36)
         front_end = get_http_target('TARGET_FRONT_END', authenticate)
         qstr = '?' + urlencode([('tags', '')])
         resp = front_end.get('/catalogue/size' + qstr, headers=dict([('x-requested-with', 'XMLHttpRequest')]))
@@ -161,6 +178,13 @@ class Tests_front_end(unittest.TestCase):
         resp = front_end.get('/tags', headers=dict([('x-requested-with', 'XMLHttpRequest')]))
         resp.assert_status_code(200)
 
+    @clear_session({'spanId': 38})
+    def test_38_get_tags(self):
+        # GET http://front-end/tags (endp 38)
+        front_end = get_http_target('TARGET_FRONT_END', authenticate)
+        resp = front_end.get('/tags', headers=dict([('x-requested-with', 'XMLHttpRequest')]))
+        resp.assert_status_code(200)
+
     @clear_session({'spanId': 27})
     def test_27_get_topbar_html(self):
         # GET http://front-end/topbar.html (endp 27)
@@ -172,6 +196,14 @@ class Tests_front_end(unittest.TestCase):
 
 @data_driven_tests
 class Tests_mockintosh(unittest.TestCase):
+
+    @clear_session({'spanId': 39})
+    def test_39_get_(self):
+        # GET http://mockintosh/ (endp 39)
+        mockintosh = get_http_target('TARGET_MOCKINTOSH', authenticate)
+        resp = mockintosh.get('/')
+        resp.assert_status_code(200)
+        resp.assert_cssselect('div#hot div.box div.container div h2', expected_value='Hot this week')
 
     @clear_session({'spanId': 17})
     def test_17_get_customers_id(self):

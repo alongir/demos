@@ -220,7 +220,7 @@
    }
   },
   {
-   "id": "4f85f5db-b82e-4392-a0c9-f6962840b802",
+   "id": "e9109bed-d0a2-479d-8e45-9c74b61ef175",
    "request": {
     "method": "GET",
     "urlPathPattern": "/category\\.html"
@@ -230,6 +230,51 @@
     "headers": {
      "Content-Type": "text/html"
     },
+    "status": 200,
+    "transformers": [
+     "response-template"
+    ]
+   }
+  },
+  {
+   "id": "2c664e5d-5ac4-40bf-9685-1190f547e1db",
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/catalogue/size"
+   },
+   "response": {
+    "body": "",
+    "headers": {},
+    "status": 200,
+    "transformers": [
+     "response-template"
+    ]
+   }
+  },
+  {
+   "id": "b18d7e3d-448e-44f6-9681-a3e5b744b902",
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/catalogue"
+   },
+   "response": {
+    "body": "",
+    "headers": {},
+    "status": 200,
+    "transformers": [
+     "response-template"
+    ]
+   }
+  },
+  {
+   "id": "07d3adef-a4dc-4976-9deb-8c29086bc57f",
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/tags"
+   },
+   "response": {
+    "body": "",
+    "headers": {},
     "status": 200,
     "transformers": [
      "response-template"

@@ -73,9 +73,44 @@ public class TestsFrontEndTest
     }
 
     @Test
+    public void testGetCatalogue37() throws IOException
+    {
+        // GET http://front-end/catalogue (endp 37)
+        final String size = "6";
+        final HttpTarget frontEnd = getHttpTarget("TARGET_FRONT_END", new Authentication());
+        final HttpRequest request = new HttpRequest();
+        request.setQueryString(new Hashtable<String, Object>() {{
+            put("page", "1");
+            put("size", size);
+            put("tags", "");
+        }});
+        request.setHeaders(new Hashtable<String, Object>() {{
+            put("x-requested-with", "XMLHttpRequest");
+        }});
+        final Response response = frontEnd.get(request, "/catalogue");
+        assertStatusCode(response.code(), 200);
+    }
+
+    @Test
     public void testGetCatalogueSize03() throws IOException
     {
         // GET http://front-end/catalogue/size (endp 3)
+        final HttpTarget frontEnd = getHttpTarget("TARGET_FRONT_END", new Authentication());
+        final HttpRequest request = new HttpRequest();
+        request.setQueryString(new Hashtable<String, Object>() {{
+            put("tags", "");
+        }});
+        request.setHeaders(new Hashtable<String, Object>() {{
+            put("x-requested-with", "XMLHttpRequest");
+        }});
+        final Response response = frontEnd.get(request, "/catalogue/size");
+        assertStatusCode(response.code(), 200);
+    }
+
+    @Test
+    public void testGetCatalogueSize36() throws IOException
+    {
+        // GET http://front-end/catalogue/size (endp 36)
         final HttpTarget frontEnd = getHttpTarget("TARGET_FRONT_END", new Authentication());
         final HttpRequest request = new HttpRequest();
         request.setQueryString(new Hashtable<String, Object>() {{
@@ -187,6 +222,19 @@ public class TestsFrontEndTest
     public void testGetTags08() throws IOException
     {
         // GET http://front-end/tags (endp 8)
+        final HttpTarget frontEnd = getHttpTarget("TARGET_FRONT_END", new Authentication());
+        final HttpRequest request = new HttpRequest();
+        request.setHeaders(new Hashtable<String, Object>() {{
+            put("x-requested-with", "XMLHttpRequest");
+        }});
+        final Response response = frontEnd.get(request, "/tags");
+        assertStatusCode(response.code(), 200);
+    }
+
+    @Test
+    public void testGetTags38() throws IOException
+    {
+        // GET http://front-end/tags (endp 38)
         final HttpTarget frontEnd = getHttpTarget("TARGET_FRONT_END", new Authentication());
         final HttpRequest request = new HttpRequest();
         request.setHeaders(new Hashtable<String, Object>() {{

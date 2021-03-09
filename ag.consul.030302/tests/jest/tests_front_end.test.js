@@ -80,10 +80,51 @@ it("test_04_get_catalogue", () => {
     });
 });
 
+it("test_37_get_catalogue", () => {
+    clearSession();
+
+    // GET http://front-end/catalogue (endp 37)
+    const size = "6";
+    const front_end = getHttpTarget("TARGET_FRONT_END", authenticate);
+    return front_end.fetch("/catalogue" + urlencode([["page", "1"], ["size", size], ["tags", ""]]), {
+        headers: {
+            "x-requested-with": "XMLHttpRequest"
+        }
+    })
+    .then((response) => {
+        expect(response.status).toEqual(200);
+        return response.text();
+    })
+    .then((text) => {
+    })
+    .then((data) => {
+    });
+});
+
 it("test_03_get_catalogue_size", () => {
     clearSession();
 
     // GET http://front-end/catalogue/size (endp 3)
+    const front_end = getHttpTarget("TARGET_FRONT_END", authenticate);
+    return front_end.fetch("/catalogue/size" + urlencode([["tags", ""]]), {
+        headers: {
+            "x-requested-with": "XMLHttpRequest"
+        }
+    })
+    .then((response) => {
+        expect(response.status).toEqual(200);
+        return response.text();
+    })
+    .then((text) => {
+    })
+    .then((data) => {
+    });
+});
+
+it("test_36_get_catalogue_size", () => {
+    clearSession();
+
+    // GET http://front-end/catalogue/size (endp 36)
     const front_end = getHttpTarget("TARGET_FRONT_END", authenticate);
     return front_end.fetch("/catalogue/size" + urlencode([["tags", ""]]), {
         headers: {
@@ -248,6 +289,26 @@ it("test_08_get_tags", () => {
     clearSession();
 
     // GET http://front-end/tags (endp 8)
+    const front_end = getHttpTarget("TARGET_FRONT_END", authenticate);
+    return front_end.fetch("/tags", {
+        headers: {
+            "x-requested-with": "XMLHttpRequest"
+        }
+    })
+    .then((response) => {
+        expect(response.status).toEqual(200);
+        return response.text();
+    })
+    .then((text) => {
+    })
+    .then((data) => {
+    });
+});
+
+it("test_38_get_tags", () => {
+    clearSession();
+
+    // GET http://front-end/tags (endp 38)
     const front_end = getHttpTarget("TARGET_FRONT_END", authenticate);
     return front_end.fetch("/tags", {
         headers: {

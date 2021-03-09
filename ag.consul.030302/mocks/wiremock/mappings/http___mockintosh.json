@@ -50,6 +50,23 @@
      "response-template"
     ]
    }
+  },
+  {
+   "id": "4367caaa-d72e-4045-9de6-c25634e7ad29",
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/"
+   },
+   "response": {
+    "bodyFileName": "resp_39.html",
+    "headers": {
+     "Content-Type": "text/html"
+    },
+    "status": 200,
+    "transformers": [
+     "response-template"
+    ]
+   }
   }
  ]
 }
