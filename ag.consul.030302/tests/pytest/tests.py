@@ -44,7 +44,7 @@ class Tests_catalogue(unittest.TestCase):
         catalogue = get_http_target('TARGET_CATALOGUE', authenticate)
         qstr = '?' + urlencode([('page', '1'), ('size', size), ('tags', '')])
         resp = catalogue.get('/catalogue' + qstr)
-        resp.assert_status_code(200)
+        resp.assert_regex_in_body(r'.*holy1.*')
 
     @clear_session({'spanId': 9})
     def test_09_get_catalogue_size(self):
@@ -70,7 +70,6 @@ class Tests_front_end(unittest.TestCase):
         # GET http://front-end/ (endp 1)
         front_end = get_http_target('TARGET_FRONT_END', authenticate)
         resp = front_end.get('/')
-        resp.assert_status_code(200)
         resp.assert_cssselect('div#hot div.box div.container div h2', expected_value='Hot this week')
 
     @clear_session({'spanId': 26})
@@ -125,7 +124,6 @@ class Tests_front_end(unittest.TestCase):
         # GET http://front-end/category.html (endp 34)
         front_end = get_http_target('TARGET_FRONT_END', authenticate)
         resp = front_end.get('/category.html')
-        resp.assert_status_code(200)
         resp.assert_cssselect('div#content div.container div div.panel.panel-default.sidebar-menu div.panel-heading h3.panel-title', expected_value='Filters ')
 
     @clear_session({'spanId': 5})
@@ -134,7 +132,6 @@ class Tests_front_end(unittest.TestCase):
         customerId = '7w4TGI0pnIxn5TEFoHX6O2spPdXa3dut'
         front_end = get_http_target('TARGET_FRONT_END', authenticate)
         resp = front_end.get(f'/customers/{customerId}', headers=dict([('x-requested-with', 'XMLHttpRequest')]))
-        resp.assert_status_code(200)
         resp.assert_jsonpath('$.lastName', expected_value='Name')
 
     @clear_session({'spanId': 30})
@@ -158,7 +155,6 @@ class Tests_front_end(unittest.TestCase):
         # GET http://front-end/detail.html (endp 45)
         qstr = '?' + urlencode([('id', id_)])
         resp = front_end.get('/detail.html' + qstr)
-        resp.assert_status_code(200)
         resp.assert_cssselect('div#content div.container div div.row.same-height-row div div.box.same-height h3', expected_value='You may also like these products')
 
     @clear_session({'spanId': 23})
@@ -166,7 +162,6 @@ class Tests_front_end(unittest.TestCase):
         # GET http://front-end/footer.html (endp 23)
         front_end = get_http_target('TARGET_FRONT_END', authenticate)
         resp = front_end.get('/footer.html', headers=dict([('x-requested-with', 'XMLHttpRequest')]))
-        resp.assert_status_code(200)
         resp.assert_cssselect('div#copyright div.container div p.pull-left a', expected_value='Weaveworks')
 
     @clear_session({'spanId': 6})
@@ -174,7 +169,6 @@ class Tests_front_end(unittest.TestCase):
         # GET http://front-end/index.html (endp 6)
         front_end = get_http_target('TARGET_FRONT_END', authenticate)
         resp = front_end.get('/index.html')
-        resp.assert_status_code(200)
         resp.assert_cssselect('div#hot div.box div.container div h2', expected_value='Hot this week')
 
     # authentication-related test
@@ -183,7 +177,6 @@ class Tests_front_end(unittest.TestCase):
         # GET http://front-end/login (endp 25)
         front_end = get_http_target('TARGET_FRONT_END', dummy_auth)
         resp = front_end.get('/login', headers=dict([('x-requested-with', 'XMLHttpRequest')]))
-        resp.assert_status_code(200)
         resp.assert_cssselect('p', expected_value='Cookie is set')
 
     @clear_session({'spanId': 7})
@@ -212,7 +205,6 @@ class Tests_front_end(unittest.TestCase):
         # GET http://front-end/topbar.html (endp 27)
         front_end = get_http_target('TARGET_FRONT_END', authenticate)
         resp = front_end.get('/topbar.html', headers=dict([('x-requested-with', 'XMLHttpRequest')]))
-        resp.assert_status_code(200)
         resp.assert_cssselect('div#top div.container div.offer a.btn.btn-success.btn-sm', expected_value='Offer of the day')
 
 
@@ -224,7 +216,6 @@ class Tests_mockintosh(unittest.TestCase):
         # GET http://mockintosh/ (endp 39)
         mockintosh = get_http_target('TARGET_MOCKINTOSH', authenticate)
         resp = mockintosh.get('/')
-        resp.assert_status_code(200)
         resp.assert_cssselect('div#hot div.box div.container div h2', expected_value='Hot this week')
 
     @clear_session({'spanId': 47})
@@ -239,13 +230,11 @@ class Tests_mockintosh(unittest.TestCase):
         # GET http://mockintosh/customers/undefined (endp 18)
         mockintosh = get_http_target('TARGET_MOCKINTOSH', authenticate)
         resp = mockintosh.get('/customers/undefined')
-        resp.assert_status_code(200)
         resp.assert_jsonpath('$.lastName', expected_value='Name')
         id_ = jsonpath('$.id', resp)
 
         # GET http://mockintosh/customers/{id} (endp 17)
         resp = mockintosh.get(f'/customers/{id_}')
-        resp.assert_status_code(200)
         resp.assert_jsonpath('$.lastName', expected_value='Name')
 
     # authentication-related test
@@ -254,7 +243,6 @@ class Tests_mockintosh(unittest.TestCase):
         # GET http://mockintosh/login (endp 19)
         mockintosh = get_http_target('TARGET_MOCKINTOSH', dummy_auth)
         resp = mockintosh.get('/login')
-        resp.assert_status_code(200)
         resp.assert_jsonpath('$.user.lastName', expected_value='Name')
 
 
@@ -279,7 +267,6 @@ class Tests_user(unittest.TestCase):
         id_ = '57a98d98e4b00679b4a830b2'
         user = get_http_target('TARGET_USER', authenticate)
         resp = user.get(f'/customers/{id_}')
-        resp.assert_status_code(200)
         resp.assert_jsonpath('$.lastName', expected_value='Name')
 
     # authentication-related test
@@ -288,5 +275,4 @@ class Tests_user(unittest.TestCase):
         # GET http://user/login (endp 16)
         user = get_http_target('TARGET_USER', dummy_auth)
         resp = user.get('/login')
-        resp.assert_status_code(200)
         resp.assert_jsonpath('$.user.lastName', expected_value='Name')

@@ -27,7 +27,7 @@ public class TestsCatalogueTest
             put("tags", "");
         }});
         final Response response = catalogue.get(request, "/catalogue");
-        assertStatusCode(response.code(), 200);
+        assertRegexInBody(".*holy1.*", response.body().string());
     }
 
     @Test

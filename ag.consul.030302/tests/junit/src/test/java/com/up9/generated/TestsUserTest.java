@@ -22,7 +22,6 @@ public class TestsUserTest
         final HttpTarget user = getHttpTarget("TARGET_USER", new Authentication());
         final HttpRequest request = new HttpRequest();
         final Response response = user.get(request, "/customers/" + id);
-        assertStatusCode(response.code(), 200);
         assertJSONPath("$.lastName", "Name", response.body().string());
     }
 
@@ -36,7 +35,6 @@ public class TestsUserTest
         final HttpTarget user = getHttpTarget("TARGET_USER", new DummyAuth());
         final HttpRequest request = new HttpRequest();
         final Response response = user.get(request, "/login");
-        assertStatusCode(response.code(), 200);
         assertJSONPath("$.user.lastName", "Name", response.body().string());
     }
 }

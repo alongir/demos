@@ -9,7 +9,6 @@ it("test_15_get_customers_id", () => {
     const user = getHttpTarget("TARGET_USER", authenticate);
     return user.fetch("/customers/" + id)
     .then((response) => {
-        expect(response.status).toEqual(200);
         return response.text();
     })
     .then((text) => {
@@ -31,7 +30,6 @@ it("test_16_get_login", () => {
     const user = getHttpTarget("TARGET_USER");
     return user.fetch("/login")
     .then((response) => {
-        expect(response.status).toEqual(200);
         return response.text();
     })
     .then((text) => {

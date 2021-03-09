@@ -4,6 +4,7 @@ import (
     . "authentication"
     . "up9lib"
     assert "github.com/stretchr/testify/assert"
+    regexp "regexp"
     testing "testing"
 )
 
@@ -20,7 +21,7 @@ func TestGetCatalogue10(t *testing.T) {
         "tags": "",
     })
     resp := catalogue.Get(req, "/catalogue")
-    assert.Equal(t, 200, resp.StatusCode())
+    assert.Regexp(t, regexp.MustCompile(".*holy1.*"), resp.String())
 }
 
 func TestGetCatalogueSize09(t *testing.T) {

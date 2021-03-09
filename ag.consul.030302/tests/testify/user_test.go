@@ -15,7 +15,6 @@ func TestGetCustomersId15(t *testing.T) {
     user := GetHttpTarget(t, "TARGET_USER", new(Authentication))
     req := new(HttpRequest)
     resp := user.Get(req, "/customers/" + id.(string))
-    assert.Equal(t, 200, resp.StatusCode())
     assert.Equal(t, "Name", JsonPath(t, "$.lastName", resp.String()))
 }
 
@@ -25,6 +24,5 @@ func TestGetLogin16(t *testing.T) {
     user := GetHttpTarget(t, "TARGET_USER", new(DummyAuth))
     req := new(HttpRequest)
     resp := user.Get(req, "/login")
-    assert.Equal(t, 200, resp.StatusCode())
     assert.Equal(t, "Name", JsonPath(t, "$.user.lastName", resp.String()))
 }

@@ -12,7 +12,6 @@ func TestGet01(t *testing.T) {
     frontEnd := GetHttpTarget(t, "TARGET_FRONT_END", new(Authentication))
     req := new(HttpRequest)
     resp := frontEnd.Get(req, "/")
-    assert.Equal(t, 200, resp.StatusCode())
     assert.Contains(t, CssSelect(t, "div#hot div.box div.container div h2", resp), "Hot this week")
 }
 
@@ -101,7 +100,6 @@ func TestGetCategoryHtml34(t *testing.T) {
     frontEnd := GetHttpTarget(t, "TARGET_FRONT_END", new(Authentication))
     req := new(HttpRequest)
     resp := frontEnd.Get(req, "/category.html")
-    assert.Equal(t, 200, resp.StatusCode())
     assert.Contains(t, CssSelect(t, "div#content div.container div div.panel.panel-default.sidebar-menu div.panel-heading h3.panel-title", resp), "Filters ")
 }
 
@@ -116,7 +114,6 @@ func TestGetCustomersCustomerid05(t *testing.T) {
         "x-requested-with": "XMLHttpRequest",
     })
     resp := frontEnd.Get(req, "/customers/" + customerId.(string))
-    assert.Equal(t, 200, resp.StatusCode())
     assert.Equal(t, "Name", JsonPath(t, "$.lastName", resp.String()))
 }
 
@@ -159,7 +156,6 @@ func TestGetDetailHtml45(t *testing.T) {
         "id": id,
     })
     resp2 := frontEnd.Get(req2, "/detail.html")
-    assert.Equal(t, 200, resp2.StatusCode())
     assert.Contains(t, CssSelect(t, "div#content div.container div div.row.same-height-row div div.box.same-height h3", resp2), "You may also like these products")
 }
 
@@ -171,7 +167,6 @@ func TestGetFooterHtml23(t *testing.T) {
         "x-requested-with": "XMLHttpRequest",
     })
     resp := frontEnd.Get(req, "/footer.html")
-    assert.Equal(t, 200, resp.StatusCode())
     assert.Contains(t, CssSelect(t, "div#copyright div.container div p.pull-left a", resp), "Weaveworks")
 }
 
@@ -180,7 +175,6 @@ func TestGetIndexHtml06(t *testing.T) {
     frontEnd := GetHttpTarget(t, "TARGET_FRONT_END", new(Authentication))
     req := new(HttpRequest)
     resp := frontEnd.Get(req, "/index.html")
-    assert.Equal(t, 200, resp.StatusCode())
     assert.Contains(t, CssSelect(t, "div#hot div.box div.container div h2", resp), "Hot this week")
 }
 
@@ -193,7 +187,6 @@ func TestGetLogin25(t *testing.T) {
         "x-requested-with": "XMLHttpRequest",
     })
     resp := frontEnd.Get(req, "/login")
-    assert.Equal(t, 200, resp.StatusCode())
     assert.Contains(t, CssSelect(t, "p", resp), "Cookie is set")
 }
 
@@ -238,6 +231,5 @@ func TestGetTopbarHtml27(t *testing.T) {
         "x-requested-with": "XMLHttpRequest",
     })
     resp := frontEnd.Get(req, "/topbar.html")
-    assert.Equal(t, 200, resp.StatusCode())
     assert.Contains(t, CssSelect(t, "div#top div.container div.offer a.btn.btn-success.btn-sm", resp), "Offer of the day")
 }

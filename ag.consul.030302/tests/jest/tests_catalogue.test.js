@@ -9,10 +9,10 @@ it("test_10_get_catalogue", () => {
     const catalogue = getHttpTarget("TARGET_CATALOGUE", authenticate);
     return catalogue.fetch("/catalogue" + urlencode([["page", "1"], ["size", size], ["tags", ""]]))
     .then((response) => {
-        expect(response.status).toEqual(200);
         return response.text();
     })
     .then((text) => {
+        expect(/.*holy1.*/.test(response)).toEqual(true);
     })
     .then((data) => {
     });

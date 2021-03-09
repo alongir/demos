@@ -8,7 +8,6 @@ it("test_01_get_", () => {
     const front_end = getHttpTarget("TARGET_FRONT_END", authenticate);
     return front_end.fetch("/")
     .then((response) => {
-        expect(response.status).toEqual(200);
         return response.text();
     })
     .then((text) => {
@@ -145,7 +144,6 @@ it("test_34_get_category_html", () => {
     const front_end = getHttpTarget("TARGET_FRONT_END", authenticate);
     return front_end.fetch("/category.html")
     .then((response) => {
-        expect(response.status).toEqual(200);
         return response.text();
     })
     .then((text) => {
@@ -167,7 +165,6 @@ it("test_05_get_customers_customerId", () => {
         }
     })
     .then((response) => {
-        expect(response.status).toEqual(200);
         return response.text();
     })
     .then((text) => {
@@ -229,7 +226,6 @@ it("test_45_get_detail_html", () => {
         // GET http://front-end/detail.html (endp 45)
         return front_end.fetch("/detail.html" + urlencode([["id", id]]))
         .then((response) => {
-            expect(response.status).toEqual(200);
             return response.text();
         })
         .then((text) => {
@@ -251,7 +247,6 @@ it("test_23_get_footer_html", () => {
         }
     })
     .then((response) => {
-        expect(response.status).toEqual(200);
         return response.text();
     })
     .then((text) => {
@@ -268,7 +263,6 @@ it("test_06_get_index_html", () => {
     const front_end = getHttpTarget("TARGET_FRONT_END", authenticate);
     return front_end.fetch("/index.html")
     .then((response) => {
-        expect(response.status).toEqual(200);
         return response.text();
     })
     .then((text) => {
@@ -290,7 +284,6 @@ it("test_25_get_login", () => {
         }
     })
     .then((response) => {
-        expect(response.status).toEqual(200);
         return response.text();
     })
     .then((text) => {
@@ -371,7 +364,6 @@ it("test_27_get_topbar_html", () => {
         }
     })
     .then((response) => {
-        expect(response.status).toEqual(200);
         return response.text();
     })
     .then((text) => {

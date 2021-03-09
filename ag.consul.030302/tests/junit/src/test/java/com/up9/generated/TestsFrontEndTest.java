@@ -22,7 +22,6 @@ public class TestsFrontEndTest
         final HttpTarget frontEnd = getHttpTarget("TARGET_FRONT_END", new Authentication());
         final HttpRequest request = new HttpRequest();
         final Response response = frontEnd.get(request, "/");
-        assertStatusCode(response.code(), 200);
         assertCSSselect("div#hot div.box div.container div h2", "Hot this week", response.body().string());
     }
 
@@ -121,7 +120,6 @@ public class TestsFrontEndTest
         final HttpTarget frontEnd = getHttpTarget("TARGET_FRONT_END", new Authentication());
         final HttpRequest request = new HttpRequest();
         final Response response = frontEnd.get(request, "/category.html");
-        assertStatusCode(response.code(), 200);
         assertCSSselect("div#content div.container div div.panel.panel-default.sidebar-menu div.panel-heading h3.panel-title", "Filters ", response.body().string());
     }
 
@@ -136,7 +134,6 @@ public class TestsFrontEndTest
             put("x-requested-with", "XMLHttpRequest");
         }});
         final Response response = frontEnd.get(request, "/customers/" + customerId);
-        assertStatusCode(response.code(), 200);
         assertJSONPath("$.lastName", "Name", response.body().string());
     }
 
@@ -179,7 +176,6 @@ public class TestsFrontEndTest
             put("id", id);
         }});
         final Response response2 = frontEnd.get(request2, "/detail.html");
-        assertStatusCode(response2.code(), 200);
         assertCSSselect("div#content div.container div div.row.same-height-row div div.box.same-height h3", "You may also like these products", response2.body().string());
     }
 
@@ -193,7 +189,6 @@ public class TestsFrontEndTest
             put("x-requested-with", "XMLHttpRequest");
         }});
         final Response response = frontEnd.get(request, "/footer.html");
-        assertStatusCode(response.code(), 200);
         assertCSSselect("div#copyright div.container div p.pull-left a", "Weaveworks", response.body().string());
     }
 
@@ -204,7 +199,6 @@ public class TestsFrontEndTest
         final HttpTarget frontEnd = getHttpTarget("TARGET_FRONT_END", new Authentication());
         final HttpRequest request = new HttpRequest();
         final Response response = frontEnd.get(request, "/index.html");
-        assertStatusCode(response.code(), 200);
         assertCSSselect("div#hot div.box div.container div h2", "Hot this week", response.body().string());
     }
 
@@ -221,7 +215,6 @@ public class TestsFrontEndTest
             put("x-requested-with", "XMLHttpRequest");
         }});
         final Response response = frontEnd.get(request, "/login");
-        assertStatusCode(response.code(), 200);
         assertCSSselect("p", "Cookie is set", response.body().string());
     }
 
@@ -274,7 +267,6 @@ public class TestsFrontEndTest
             put("x-requested-with", "XMLHttpRequest");
         }});
         final Response response = frontEnd.get(request, "/topbar.html");
-        assertStatusCode(response.code(), 200);
         assertCSSselect("div#top div.container div.offer a.btn.btn-success.btn-sm", "Offer of the day", response.body().string());
     }
 }
