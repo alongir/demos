@@ -12,7 +12,7 @@ it("test_10_get_catalogue", () => {
         return response.text();
     })
     .then((text) => {
-        expect(/.*holy1.*/.test(response)).toEqual(true);
+        expect(/.*Holy.*/.test(response)).toEqual(true);
     })
     .then((data) => {
     });

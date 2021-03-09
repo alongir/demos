@@ -44,7 +44,7 @@ class Tests_catalogue(unittest.TestCase):
         catalogue = get_http_target('TARGET_CATALOGUE', authenticate)
         qstr = '?' + urlencode([('page', '1'), ('size', size), ('tags', '')])
         resp = catalogue.get('/catalogue' + qstr)
-        resp.assert_regex_in_body(r'.*holy1.*')
+        resp.assert_regex_in_body(r'.*Holy.*')
 
     @clear_session({'spanId': 9})
     def test_09_get_catalogue_size(self):

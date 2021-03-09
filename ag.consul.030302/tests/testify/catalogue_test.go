@@ -21,7 +21,7 @@ func TestGetCatalogue10(t *testing.T) {
         "tags": "",
     })
     resp := catalogue.Get(req, "/catalogue")
-    assert.Regexp(t, regexp.MustCompile(".*holy1.*"), resp.String())
+    assert.Regexp(t, regexp.MustCompile(".*Holy.*"), resp.String())
 }
 
 func TestGetCatalogueSize09(t *testing.T) {
