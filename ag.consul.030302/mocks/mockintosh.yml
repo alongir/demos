@@ -191,6 +191,18 @@ services:
       headers:
         Content-Type: application/json
       body: '@mock-data/resp_47.json'
+  - path: /catalogue/size
+    response:
+      headers:
+        Content-Type: application/json
+      body: '{"size":9,"err":null}'
+      useTemplating: false
+  - path: /tags
+    response:
+      headers:
+        Content-Type: application/json
+      body: '{"tags":["brown","geek","formal","blue","skin","red","action","sport","black","magic","green"],"err":null}'
+      useTemplating: false
 - name: http://orders
   port: 8005
   ssl: false

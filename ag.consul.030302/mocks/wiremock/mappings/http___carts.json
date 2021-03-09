@@ -33,7 +33,7 @@
    }
   },
   {
-   "id": "592a09a2-a238-4a9b-8436-2fb7b78e5b44",
+   "id": "a2780716-9558-4f16-9ffb-0d38a4399a06",
    "request": {
     "method": "DELETE",
     "urlPathPattern": "/carts/[^/]+"

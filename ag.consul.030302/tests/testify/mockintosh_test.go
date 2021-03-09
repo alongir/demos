@@ -16,10 +16,29 @@ func TestGet39(t *testing.T) {
 }
 
 func TestGetCatalogue47(t *testing.T) {
+    size := "6"
+
     // GET http://mockintosh/catalogue (endp 47)
+    size := "6"
     mockintosh := GetHttpTarget(t, "TARGET_MOCKINTOSH", new(Authentication))
     req := new(HttpRequest)
+    req.SetQueryString(map[string]interface{}{
+        "page": "1",
+        "size": size,
+        "tags": "",
+    })
     resp := mockintosh.Get(req, "/catalogue")
+    assert.Equal(t, 200, resp.StatusCode())
+}
+
+func TestGetCatalogueSize48(t *testing.T) {
+    // GET http://mockintosh/catalogue/size (endp 48)
+    mockintosh := GetHttpTarget(t, "TARGET_MOCKINTOSH", new(Authentication))
+    req := new(HttpRequest)
+    req.SetQueryString(map[string]interface{}{
+        "tags": "",
+    })
+    resp := mockintosh.Get(req, "/catalogue/size")
     assert.Equal(t, 200, resp.StatusCode())
 }
 
@@ -44,4 +63,12 @@ func TestGetLogin19(t *testing.T) {
     req := new(HttpRequest)
     resp := mockintosh.Get(req, "/login")
     assert.Equal(t, "Name", JsonPath(t, "$.user.lastName", resp.String()))
+}
+
+func TestGetTags50(t *testing.T) {
+    // GET http://mockintosh/tags (endp 50)
+    mockintosh := GetHttpTarget(t, "TARGET_MOCKINTOSH", new(Authentication))
+    req := new(HttpRequest)
+    resp := mockintosh.Get(req, "/tags")
+    assert.Equal(t, 200, resp.StatusCode())
 }

@@ -1,5 +1,5 @@
 const authenticate = require("./authentication");
-const {CSSselect, JSONPath, clearSession, getHttpTarget} = require("./up9lib");
+const {CSSselect, JSONPath, clearSession, getHttpTarget, urlencode} = require("./up9lib");
 
 it("test_39_get_", () => {
     clearSession();
@@ -21,8 +21,25 @@ it("test_47_get_catalogue", () => {
     clearSession();
 
     // GET http://mockintosh/catalogue (endp 47)
+    const size = "6";
     const mockintosh = getHttpTarget("TARGET_MOCKINTOSH", authenticate);
-    return mockintosh.fetch("/catalogue")
+    return mockintosh.fetch("/catalogue" + urlencode([["page", "1"], ["size", size], ["tags", ""]]))
+    .then((response) => {
+        expect(response.status).toEqual(200);
+        return response.text();
+    })
+    .then((text) => {
+    })
+    .then((data) => {
+    });
+});
+
+it("test_48_get_catalogue_size", () => {
+    clearSession();
+
+    // GET http://mockintosh/catalogue/size (endp 48)
+    const mockintosh = getHttpTarget("TARGET_MOCKINTOSH", authenticate);
+    return mockintosh.fetch("/catalogue/size" + urlencode([["tags", ""]]))
     .then((response) => {
         expect(response.status).toEqual(200);
         return response.text();
@@ -90,5 +107,21 @@ it("test_19_get_login", () => {
             path: "$.user.lastName",
             json: data
         })).toContain("Name");
+    });
+});
+
+it("test_50_get_tags", () => {
+    clearSession();
+
+    // GET http://mockintosh/tags (endp 50)
+    const mockintosh = getHttpTarget("TARGET_MOCKINTOSH", authenticate);
+    return mockintosh.fetch("/tags")
+    .then((response) => {
+        expect(response.status).toEqual(200);
+        return response.text();
+    })
+    .then((text) => {
+    })
+    .then((data) => {
     });
 });

@@ -69,13 +69,47 @@
    }
   },
   {
-   "id": "cbc133b7-8353-4ac4-9638-488d0bb2b4de",
+   "id": "0ca06d04-be0a-47fe-9939-31f2a6cc43e0",
    "request": {
     "method": "GET",
     "urlPathPattern": "/catalogue"
    },
    "response": {
     "bodyFileName": "resp_47.json",
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "status": 200,
+    "transformers": [
+     "response-template"
+    ]
+   }
+  },
+  {
+   "id": "7f408757-2591-4cf2-b25b-a007f4ed98a1",
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/catalogue/size"
+   },
+   "response": {
+    "body": "{\"size\":9,\"err\":null}",
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "status": 200,
+    "transformers": [
+     "response-template"
+    ]
+   }
+  },
+  {
+   "id": "0c030f4d-e9af-42b7-8cd6-6d718fb17bdf",
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/tags"
+   },
+   "response": {
+    "body": "{\"tags\":[\"brown\",\"geek\",\"formal\",\"blue\",\"skin\",\"red\",\"action\",\"sport\",\"black\",\"magic\",\"green\"],\"err\":null}",
     "headers": {
      "Content-Type": "application/json"
     },

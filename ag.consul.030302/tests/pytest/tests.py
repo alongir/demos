@@ -221,8 +221,18 @@ class Tests_mockintosh(unittest.TestCase):
     @clear_session({'spanId': 47})
     def test_47_get_catalogue(self):
         # GET http://mockintosh/catalogue (endp 47)
+        size = '6'
         mockintosh = get_http_target('TARGET_MOCKINTOSH', authenticate)
-        resp = mockintosh.get('/catalogue')
+        qstr = '?' + urlencode([('page', '1'), ('size', size), ('tags', '')])
+        resp = mockintosh.get('/catalogue' + qstr)
+        resp.assert_status_code(200)
+
+    @clear_session({'spanId': 48})
+    def test_48_get_catalogue_size(self):
+        # GET http://mockintosh/catalogue/size (endp 48)
+        mockintosh = get_http_target('TARGET_MOCKINTOSH', authenticate)
+        qstr = '?' + urlencode([('tags', '')])
+        resp = mockintosh.get('/catalogue/size' + qstr)
         resp.assert_status_code(200)
 
     @clear_session({'spanId': 17})
@@ -244,6 +254,13 @@ class Tests_mockintosh(unittest.TestCase):
         mockintosh = get_http_target('TARGET_MOCKINTOSH', dummy_auth)
         resp = mockintosh.get('/login')
         resp.assert_jsonpath('$.user.lastName', expected_value='Name')
+
+    @clear_session({'spanId': 50})
+    def test_50_get_tags(self):
+        # GET http://mockintosh/tags (endp 50)
+        mockintosh = get_http_target('TARGET_MOCKINTOSH', authenticate)
+        resp = mockintosh.get('/tags')
+        resp.assert_status_code(200)
 
 
 @data_driven_tests

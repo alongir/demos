@@ -5,6 +5,7 @@ import com.up9.up9lib.DummyAuth;
 import com.up9.up9lib.HttpRequest;
 import com.up9.up9lib.HttpTarget;
 import java.io.IOException;
+import java.util.Hashtable;
 import okhttp3.Response;
 import org.junit.jupiter.api.MethodOrderer.Alphanumeric;
 import org.junit.jupiter.api.Test;
@@ -28,9 +29,28 @@ public class TestsMockintoshTest
     public void testGetCatalogue47() throws IOException
     {
         // GET http://mockintosh/catalogue (endp 47)
+        final String size = "6";
         final HttpTarget mockintosh = getHttpTarget("TARGET_MOCKINTOSH", new Authentication());
         final HttpRequest request = new HttpRequest();
+        request.setQueryString(new Hashtable<String, Object>() {{
+            put("page", "1");
+            put("size", size);
+            put("tags", "");
+        }});
         final Response response = mockintosh.get(request, "/catalogue");
+        assertStatusCode(response.code(), 200);
+    }
+
+    @Test
+    public void testGetCatalogueSize48() throws IOException
+    {
+        // GET http://mockintosh/catalogue/size (endp 48)
+        final HttpTarget mockintosh = getHttpTarget("TARGET_MOCKINTOSH", new Authentication());
+        final HttpRequest request = new HttpRequest();
+        request.setQueryString(new Hashtable<String, Object>() {{
+            put("tags", "");
+        }});
+        final Response response = mockintosh.get(request, "/catalogue/size");
         assertStatusCode(response.code(), 200);
     }
 
@@ -61,6 +81,16 @@ public class TestsMockintoshTest
         final HttpRequest request = new HttpRequest();
         final Response response = mockintosh.get(request, "/login");
         assertJSONPath("$.user.lastName", "Name", response.body().string());
+    }
+
+    @Test
+    public void testGetTags50() throws IOException
+    {
+        // GET http://mockintosh/tags (endp 50)
+        final HttpTarget mockintosh = getHttpTarget("TARGET_MOCKINTOSH", new Authentication());
+        final HttpRequest request = new HttpRequest();
+        final Response response = mockintosh.get(request, "/tags");
+        assertStatusCode(response.code(), 200);
     }
 }
 
