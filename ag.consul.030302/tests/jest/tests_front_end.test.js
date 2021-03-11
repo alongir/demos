@@ -109,10 +109,10 @@ it("test_52_get_catalogue_id", () => {
         }
     })
     .then((response) => {
-        expect(response.status).toEqual(200);
         return response.text();
     })
     .then((text) => {
+        expect(/.*Holy.*/.test(response)).toEqual(true);
         return JSON.parse(text);
     })
     .then((data) => {
@@ -252,10 +252,10 @@ it("test_45_get_detail_html", () => {
         }
     })
     .then((response) => {
-        expect(response.status).toEqual(200);
         return response.text();
     })
     .then((text) => {
+        expect(/.*Holy.*/.test(response)).toEqual(true);
         return JSON.parse(text);
     })
     .then((data) => {

@@ -110,7 +110,7 @@ class Tests_front_end(unittest.TestCase):
         front_end = get_http_target('TARGET_FRONT_END', authenticate)
         qstr = '?' + urlencode([('page', '1'), ('size', size), ('tags', '')])
         resp = front_end.get('/catalogue' + qstr, headers=dict([('x-requested-with', 'XMLHttpRequest')]))
-        resp.assert_status_code(200)
+        resp.assert_regex_in_body(r'.*Holy.*')
         id_ = jsonpath('$[*].id', resp)
 
         # GET http://front-end/catalogue/{id} (endp 52)
@@ -163,7 +163,7 @@ class Tests_front_end(unittest.TestCase):
         front_end = get_http_target('TARGET_FRONT_END', authenticate)
         qstr = '?' + urlencode([('page', '1'), ('size', size), ('tags', '')])
         resp = front_end.get('/catalogue' + qstr, headers=dict([('x-requested-with', 'XMLHttpRequest')]))
-        resp.assert_status_code(200)
+        resp.assert_regex_in_body(r'.*Holy.*')
         id_ = jsonpath('$[*].id', resp)
 
         # GET http://front-end/detail.html (endp 45)

@@ -97,7 +97,7 @@ public class TestsFrontEndTest
             put("x-requested-with", "XMLHttpRequest");
         }});
         final Response response = frontEnd.get(request, "/catalogue");
-        assertStatusCode(response.code(), 200);
+        assertRegexInBody(".*Holy.*", response.body().string());
         final String id = JSONPath("$[*].id", response.body().string());
 
         // GET http://front-end/catalogue/{id} (endp 52)
@@ -195,7 +195,7 @@ public class TestsFrontEndTest
             put("x-requested-with", "XMLHttpRequest");
         }});
         final Response response = frontEnd.get(request, "/catalogue");
-        assertStatusCode(response.code(), 200);
+        assertRegexInBody(".*Holy.*", response.body().string());
         final String id = JSONPath("$[*].id", response.body().string());
 
         // GET http://front-end/detail.html (endp 45)

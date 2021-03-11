@@ -4,6 +4,7 @@ import (
     . "authentication"
     . "up9lib"
     assert "github.com/stretchr/testify/assert"
+    regexp "regexp"
     testing "testing"
 )
 
@@ -83,7 +84,7 @@ func TestGetCatalogueId52(t *testing.T) {
         "x-requested-with": "XMLHttpRequest",
     })
     resp := frontEnd.Get(req, "/catalogue")
-    assert.Equal(t, 200, resp.StatusCode())
+    assert.Regexp(t, regexp.MustCompile(".*Holy.*"), resp.String())
     id := JsonPath(t, "$[*].id", resp.String())
 
     // GET http://front-end/catalogue/{id} (endp 52)
@@ -175,7 +176,7 @@ func TestGetDetailHtml45(t *testing.T) {
         "x-requested-with": "XMLHttpRequest",
     })
     resp := frontEnd.Get(req, "/catalogue")
-    assert.Equal(t, 200, resp.StatusCode())
+    assert.Regexp(t, regexp.MustCompile(".*Holy.*"), resp.String())
     id := JsonPath(t, "$[*].id", resp.String())
 
     // GET http://front-end/detail.html (endp 45)
