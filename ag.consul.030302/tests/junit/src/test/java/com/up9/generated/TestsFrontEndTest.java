@@ -82,6 +82,34 @@ public class TestsFrontEndTest
     }
 
     @Test
+    public void testGetCatalogueId52() throws IOException
+    {
+        // GET http://front-end/catalogue (endp 4)
+        final String size = "5";
+        final HttpTarget frontEnd = getHttpTarget("TARGET_FRONT_END", new Authentication());
+        final HttpRequest request = new HttpRequest();
+        request.setQueryString(new Hashtable<String, Object>() {{
+            put("page", "1");
+            put("size", size);
+            put("tags", "");
+        }});
+        request.setHeaders(new Hashtable<String, Object>() {{
+            put("x-requested-with", "XMLHttpRequest");
+        }});
+        final Response response = frontEnd.get(request, "/catalogue");
+        assertStatusCode(response.code(), 200);
+        final String id = JSONPath("$[*].id", response.body().string());
+
+        // GET http://front-end/catalogue/{id} (endp 52)
+        final HttpRequest request2 = new HttpRequest();
+        request2.setHeaders(new Hashtable<String, Object>() {{
+            put("x-requested-with", "XMLHttpRequest");
+        }});
+        final Response response2 = frontEnd.get(request2, "/catalogue/" + id);
+        assertStatusCode(response2.code(), 200);
+    }
+
+    @Test
     public void testGetCatalogueSize03() throws IOException
     {
         // GET http://front-end/catalogue/size (endp 3)

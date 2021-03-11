@@ -66,7 +66,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 68 requests",
+    "summary": "Seen 85 requests",
     "tags": [
      "cart"
     ]
@@ -257,7 +257,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 76 requests",
+    "summary": "Seen 92 requests",
     "tags": [
      "catalogue"
     ]
@@ -317,12 +317,54 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 13 requests",
+    "summary": "Seen 27 requests",
     "tags": [
      "catalogue"
     ]
    },
    "parameters": []
+  },
+  "/catalogue/{id}": {
+   "get": {
+    "operationId": "b0ffd1ed-3a58-4424-959a-227015810de2",
+    "parameters": [
+     {
+      "in": "header",
+      "name": "x-requested-with",
+      "required": false,
+      "schema": {
+       "enum": [
+        "XMLHttpRequest"
+       ],
+       "type": "string"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "OK"
+     }
+    },
+    "summary": "Seen 1 requests",
+    "tags": [
+     "catalogue"
+    ]
+   },
+   "parameters": [
+    {
+     "description": "Origin: GET http://front-end/catalogue &rarr; json: $[*].id",
+     "in": "path",
+     "name": "id",
+     "required": true,
+     "schema": {
+      "enum": [
+       "3395a43e-2d88-40de-b95f-e00e1502085b"
+      ],
+      "type": "string"
+     },
+     "style": "simple"
+    }
+   ]
   },
   "/category.html": {
    "get": {
@@ -498,7 +540,8 @@
       "required": true,
       "schema": {
        "enum": [
-        "510a0d7e-8e83-4193-b483-e27e09ddc34d"
+        "510a0d7e-8e83-4193-b483-e27e09ddc34d",
+        "3395a43e-2d88-40de-b95f-e00e1502085b"
        ],
        "type": "string"
       }
@@ -514,7 +557,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 1 requests"
+    "summary": "Seen 2 requests"
    },
    "parameters": []
   },
@@ -687,7 +730,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 13 requests"
+    "summary": "Seen 27 requests"
    },
    "parameters": []
   },
@@ -767,10 +810,10 @@
  },
  "tags": [
   {
-   "name": "cart"
+   "name": "catalogue"
   },
   {
-   "name": "catalogue"
+   "name": "cart"
   }
  ]
 }

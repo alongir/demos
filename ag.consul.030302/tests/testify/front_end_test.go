@@ -67,6 +67,34 @@ func TestGetCatalogue37(t *testing.T) {
     assert.Equal(t, 200, resp.StatusCode())
 }
 
+func TestGetCatalogueId52(t *testing.T) {
+    size := "5"
+
+    // GET http://front-end/catalogue (endp 4)
+    size := "5"
+    frontEnd := GetHttpTarget(t, "TARGET_FRONT_END", new(Authentication))
+    req := new(HttpRequest)
+    req.SetQueryString(map[string]interface{}{
+        "page": "1",
+        "size": size,
+        "tags": "",
+    })
+    req.SetHeaders(map[string]interface{}{
+        "x-requested-with": "XMLHttpRequest",
+    })
+    resp := frontEnd.Get(req, "/catalogue")
+    assert.Equal(t, 200, resp.StatusCode())
+    id := JsonPath(t, "$[*].id", resp.String())
+
+    // GET http://front-end/catalogue/{id} (endp 52)
+    req2 := new(HttpRequest)
+    req2.SetHeaders(map[string]interface{}{
+        "x-requested-with": "XMLHttpRequest",
+    })
+    resp2 := frontEnd.Get(req2, "/catalogue/" + id)
+    assert.Equal(t, 200, resp2.StatusCode())
+}
+
 func TestGetCatalogueSize03(t *testing.T) {
     // GET http://front-end/catalogue/size (endp 3)
     frontEnd := GetHttpTarget(t, "TARGET_FRONT_END", new(Authentication))

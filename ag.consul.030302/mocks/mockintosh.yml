@@ -40,7 +40,11 @@ services:
     response:
       headers:
         Content-Type: application/json
-      body: '{"size":9,"err":null}'
+      body: |-
+        {
+         "size": 9,
+         "err": null
+        }
       useTemplating: false
   - path: /catalogue
     response:
@@ -51,7 +55,23 @@ services:
     response:
       headers:
         Content-Type: application/json
-      body: '{"tags":["brown","geek","formal","blue","skin","red","action","sport","black","magic","green"],"err":null}'
+      body: |-
+        {
+         "tags": [
+          "brown",
+          "geek",
+          "formal",
+          "blue",
+          "skin",
+          "red",
+          "action",
+          "sport",
+          "black",
+          "magic",
+          "green"
+         ],
+         "err": null
+        }
       useTemplating: false
 - name: http://front-end
   port: 8003
@@ -75,7 +95,11 @@ services:
     response:
       headers:
         Content-Type: application/json
-      body: '{"size":9,"err":null}'
+      body: |-
+        {
+         "size": 9,
+         "err": null
+        }
       useTemplating: false
   - path: /catalogue
     response:
@@ -105,7 +129,23 @@ services:
     response:
       headers:
         Content-Type: application/json
-      body: '{"tags":["brown","geek","formal","blue","skin","red","action","sport","black","magic","green"],"err":null}'
+      body: |-
+        {
+         "tags": [
+          "brown",
+          "geek",
+          "formal",
+          "blue",
+          "skin",
+          "red",
+          "action",
+          "sport",
+          "black",
+          "magic",
+          "green"
+         ],
+         "err": null
+        }
       useTemplating: false
   - path: /footer.html
     response:
@@ -157,6 +197,8 @@ services:
         Content-Type: text/html
       body: '@mock-data/resp_45.html'
       useTemplating: false
+  - path: /catalogue/{{id}}
+    response: {}
 - name: http://mockintosh
   port: 8004
   ssl: false
@@ -195,13 +237,33 @@ services:
     response:
       headers:
         Content-Type: application/json
-      body: '{"size":9,"err":null}'
+      body: |-
+        {
+         "size": 9,
+         "err": null
+        }
       useTemplating: false
   - path: /tags
     response:
       headers:
         Content-Type: application/json
-      body: '{"tags":["brown","geek","formal","blue","skin","red","action","sport","black","magic","green"],"err":null}'
+      body: |-
+        {
+         "tags": [
+          "brown",
+          "geek",
+          "formal",
+          "blue",
+          "skin",
+          "red",
+          "action",
+          "sport",
+          "black",
+          "magic",
+          "green"
+         ],
+         "err": null
+        }
       useTemplating: false
 - name: http://orders
   port: 8005
@@ -215,14 +277,14 @@ services:
         Content-Type: application/json
       body: |-
         {
-          "_embedded" : {
-            "customerOrders" : [ ]
-          },
-          "_links" : {
-            "self" : {
-              "href" : "http://127.0.0.1:15200/orders/search/customerId?sort=date&custId=undefined"
-            }
+         "_embedded": {
+          "customerOrders": []
+         },
+         "_links": {
+          "self": {
+           "href": "http://127.0.0.1:15200/orders/search/customerId?sort=date&custId=undefined"
           }
+         }
         }
       useTemplating: false
 - name: http://user

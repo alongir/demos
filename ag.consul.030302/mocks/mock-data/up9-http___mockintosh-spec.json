@@ -45,7 +45,8 @@
       "schema": {
        "enum": [
         "5",
-        "6"
+        "6",
+        ""
        ],
        "type": "string"
       }
@@ -196,7 +197,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 12 requests",
+    "summary": "Seen 31 requests",
     "tags": [
      "catalogue"
     ]
@@ -245,7 +246,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 3 requests",
+    "summary": "Seen 12 requests",
     "tags": [
      "catalogue"
     ]
@@ -675,17 +676,17 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 3 requests"
+    "summary": "Seen 12 requests"
    },
    "parameters": []
   }
  },
  "tags": [
   {
-   "name": "customers"
+   "name": "catalogue"
   },
   {
-   "name": "catalogue"
+   "name": "customers"
   }
  ]
 }

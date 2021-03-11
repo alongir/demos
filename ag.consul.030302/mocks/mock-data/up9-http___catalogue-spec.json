@@ -178,7 +178,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 61 requests",
+    "summary": "Seen 70 requests",
     "tags": [
      "catalogue"
     ]
@@ -227,7 +227,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 7 requests",
+    "summary": "Seen 12 requests",
     "tags": [
      "catalogue"
     ]
@@ -279,7 +279,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 7 requests"
+    "summary": "Seen 12 requests"
    },
    "parameters": []
   }

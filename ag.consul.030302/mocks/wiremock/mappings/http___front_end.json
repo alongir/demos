@@ -41,7 +41,7 @@
     "urlPathPattern": "/catalogue/size"
    },
    "response": {
-    "body": "{\"size\":9,\"err\":null}\n",
+    "body": "{\"size\":9,\"err\":null}",
     "headers": {
      "Content-Type": "application/json"
     },
@@ -126,7 +126,7 @@
     "urlPathPattern": "/tags"
    },
    "response": {
-    "body": "{\"tags\":[\"brown\",\"geek\",\"formal\",\"blue\",\"skin\",\"red\",\"action\",\"sport\",\"black\",\"magic\",\"green\"],\"err\":null}\n",
+    "body": "{\"tags\":[\"brown\",\"geek\",\"formal\",\"blue\",\"skin\",\"red\",\"action\",\"sport\",\"black\",\"magic\",\"green\"],\"err\":null}",
     "headers": {
      "Content-Type": "application/json"
     },
@@ -307,6 +307,21 @@
     "headers": {
      "Content-Type": "text/html"
     },
+    "status": 200,
+    "transformers": [
+     "response-template"
+    ]
+   }
+  },
+  {
+   "id": "b0ffd1ed-3a58-4424-959a-227015810de2",
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/catalogue/[^/]+"
+   },
+   "response": {
+    "body": "",
+    "headers": {},
     "status": 200,
     "transformers": [
      "response-template"

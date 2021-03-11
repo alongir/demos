@@ -97,6 +97,47 @@ it("test_37_get_catalogue", () => {
     });
 });
 
+it("test_52_get_catalogue_id", () => {
+    clearSession();
+
+    // GET http://front-end/catalogue (endp 4)
+    const size = "5";
+    const front_end = getHttpTarget("TARGET_FRONT_END", authenticate);
+    return front_end.fetch("/catalogue" + urlencode([["page", "1"], ["size", size], ["tags", ""]]), {
+        headers: {
+            "x-requested-with": "XMLHttpRequest"
+        }
+    })
+    .then((response) => {
+        expect(response.status).toEqual(200);
+        return response.text();
+    })
+    .then((text) => {
+        return JSON.parse(text);
+    })
+    .then((data) => {
+        const id = JSONPath({
+            path: "$[*].id",
+            json: data
+        })[0];
+
+        // GET http://front-end/catalogue/{id} (endp 52)
+        return front_end.fetch("/catalogue/" + id, {
+            headers: {
+                "x-requested-with": "XMLHttpRequest"
+            }
+        })
+        .then((response) => {
+            expect(response.status).toEqual(200);
+            return response.text();
+        })
+        .then((text) => {
+        })
+        .then((data) => {
+        });
+    });
+});
+
 it("test_03_get_catalogue_size", () => {
     clearSession();
 

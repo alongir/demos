@@ -140,10 +140,11 @@ def extractor_decorator(a_method):
 
 
 @extractor_decorator
-def get_data_from_header(spec, resp):
+def get_data_from_header(spec, resp=None):
     header_dict = CaseInsensitiveDict()
     header_dict.update(_context.global_headers)
-    header_dict.update(resp.headers)
+    if resp:
+        header_dict.update(resp.headers)
     return header_dict.get(spec, "")
 
 

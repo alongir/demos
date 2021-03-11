@@ -25,10 +25,9 @@ type HttpTargeter interface {
 	Post() *resty.Response
 	Put() *resty.Response
 	Delete() *resty.Response
-	Connect() *resty.Response
 	Options() *resty.Response
-	Trace() *resty.Response
 	Patch() *resty.Response
+	GetHeader() string
 }
 
 type HttpTarget struct {
@@ -36,6 +35,7 @@ type HttpTarget struct {
 	client *resty.Client
 	TargetKey string
 	BaseUrl string
+	Headers map[string]interface{}
 }
 
 func GetHttpTarget(t *testing.T, targetKey string, auth interface{Authenticator}) *HttpTarget {
@@ -66,7 +66,7 @@ func GetHttpTarget(t *testing.T, targetKey string, auth interface{Authenticator}
 	t.Logf("Created a new context: %s", targetKey)
 
 	t.Logf("Triggering authentication callback for context: %s", targetKey)
-	// Return an authenticate token from the function below
+	// Return an authentication token from the function below
 	// e.g. `httpTarget.AuthToken = auth.Authenticate(httpTarget.TargetKey)`
 	// then use it in `FillRequest` function to set it as a request parameter
 	// e.g. `restyReq = restyReq.SetHeader("Authorization", h.AuthToken)`
@@ -181,6 +181,10 @@ func (h HttpTarget) Patch(req *HttpRequest, path string) *resty.Response {
 	resp, err := restyReq.Patch(h.BaseUrl + path)
 	assert.Nil(h.t, err)
 	return resp
+}
+
+func (h HttpTarget) GetHeader(key string) string {
+	return h.Headers[key].(string)
 }
 
 type HttpRequester interface {

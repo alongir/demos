@@ -242,4 +242,8 @@ public class HttpTarget {
         }
         return mergedMap;
     }
+
+    public String getHeader(String key) {
+        return String.valueOf(this.headers.get(key));
+    }
 }

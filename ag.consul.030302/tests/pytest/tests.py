@@ -103,6 +103,20 @@ class Tests_front_end(unittest.TestCase):
         resp = front_end.get('/catalogue' + qstr, headers=dict([('x-requested-with', 'XMLHttpRequest')]))
         resp.assert_status_code(200)
 
+    @clear_session({'spanId': 52})
+    def test_52_get_catalogue_id(self):
+        # GET http://front-end/catalogue (endp 4)
+        size = '5'
+        front_end = get_http_target('TARGET_FRONT_END', authenticate)
+        qstr = '?' + urlencode([('page', '1'), ('size', size), ('tags', '')])
+        resp = front_end.get('/catalogue' + qstr, headers=dict([('x-requested-with', 'XMLHttpRequest')]))
+        resp.assert_status_code(200)
+        id_ = jsonpath('$[*].id', resp)
+
+        # GET http://front-end/catalogue/{id} (endp 52)
+        resp = front_end.get(f'/catalogue/{id_}', headers=dict([('x-requested-with', 'XMLHttpRequest')]))
+        resp.assert_status_code(200)
+
     @clear_session({'spanId': 3})
     def test_03_get_catalogue_size(self):
         # GET http://front-end/catalogue/size (endp 3)
