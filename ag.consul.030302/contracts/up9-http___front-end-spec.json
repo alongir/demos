@@ -810,10 +810,10 @@
  },
  "tags": [
   {
-   "name": "catalogue"
+   "name": "cart"
   },
   {
-   "name": "cart"
+   "name": "catalogue"
   }
  ]
 }
