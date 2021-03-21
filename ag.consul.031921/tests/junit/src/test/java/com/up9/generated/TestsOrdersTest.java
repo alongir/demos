@@ -6,26 +6,18 @@ import com.up9.up9lib.HttpTarget;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.util.Hashtable;
-import javax.json.JsonObject;
-import net.joshka.junit.json.params.JsonFileSource;
 import okhttp3.Response;
 import org.junit.jupiter.api.MethodOrderer.Alphanumeric;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
-import org.junit.jupiter.params.ParameterizedTest;
 import static com.up9.up9lib.Common.*;
 
 @TestMethodOrder(Alphanumeric.class)
 public class TestsOrdersTest
 {
-    @ParameterizedTest
-    @JsonFileSource(resources = "/dataset_36.json")
-    public void testGetOrdersHref36(final JsonObject json) throws IOException, MalformedURLException
+    @Test
+    public void testGetOrdersHref36() throws IOException, MalformedURLException
     {
-        final String address = json.getString("address");
-        final String card = json.getString("card");
-        final String items = json.getString("items");
-
         // GET http://user/login (endp 32)
         final HttpTarget user = getHttpTarget("TARGET_USER", new Authentication());
         final HttpRequest request = new HttpRequest();
@@ -35,6 +27,9 @@ public class TestsOrdersTest
         final String customer = JSONPath("$.user._links.customer.href", response.body().string());
 
         // POST http://orders/orders (endp 35)
+        final String address = "http://user/addresses/57a98d98e4b00679b4a830b0";
+        final String card = "http://user/cards/57a98d98e4b00679b4a830b1";
+        final String items = "http://127.0.0.1:15300/carts/57a98d98e4b00679b4a830b2/items";
         final HttpTarget orders = getHttpTarget("TARGET_ORDERS", new Authentication());
         final HttpRequest request2 = new HttpRequest();
         request2.setHeaders(new Hashtable<String, Object>() {{

@@ -5,34 +5,29 @@ import com.up9.up9lib.HttpRequest;
 import com.up9.up9lib.HttpTarget;
 import java.io.IOException;
 import java.util.Hashtable;
-import javax.json.JsonObject;
-import net.joshka.junit.json.params.JsonFileSource;
 import okhttp3.Response;
 import org.junit.jupiter.api.MethodOrderer.Alphanumeric;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
-import org.junit.jupiter.params.ParameterizedTest;
 import static com.up9.up9lib.Common.*;
 
 @TestMethodOrder(Alphanumeric.class)
 public class TestsPaymentTest
 {
-    @ParameterizedTest
-    @JsonFileSource(resources = "/dataset_38.json")
-    public void testPostPaymentauth38(final JsonObject json) throws IOException
+    @Test
+    public void testPostPaymentauth38() throws IOException
     {
-        final String ccv = json.getString("ccv");
-        final String country = json.getString("country");
-        final String expires = json.getString("expires");
-        final String id = json.getString("id");
-        final String id1 = json.getString("id1");
-        final String id2 = json.getString("id2");
-        final String longNum = json.getString("longNum");
-        final String number = json.getString("number");
-        final String postcode = json.getString("postcode");
-        final String street = json.getString("street");
-
         // POST http://payment/paymentAuth (endp 38)
+        final String ccv = "958";
+        final String country = "United Kingdom";
+        final String expires = "08/19";
+        final String id = None;
+        final String id1 = None;
+        final String id2 = None;
+        final String longNum = "5544154011345918";
+        final String number = "246";
+        final String postcode = "G67 3DL";
+        final String street = "Whitelees Road";
         final HttpTarget payment = getHttpTarget("TARGET_PAYMENT", new Authentication());
         final HttpRequest request = new HttpRequest();
         request.setHeaders(new Hashtable<String, Object>() {{

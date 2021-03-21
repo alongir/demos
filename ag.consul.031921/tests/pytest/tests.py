@@ -7,11 +7,8 @@ from authentication import authenticate
 @data_driven_tests
 class Tests_carts(unittest.TestCase):
 
-    @json_dataset('data/dataset_22.json')
     @clear_session({'spanId': 22})
-    def test_22_delete_carts_customerId(self, data_row):
-        address, card, items = data_row
-
+    def test_22_delete_carts_customerId(self):
         # GET http://user/login (endp 32)
         user = get_http_target('TARGET_USER', authenticate)
         resp = user.get('/login')
@@ -20,6 +17,9 @@ class Tests_carts(unittest.TestCase):
         customer = jsonpath('$.user._links.customer.href', resp)
 
         # POST http://orders/orders (endp 35)
+        address = 'http://user/addresses/57a98d98e4b00679b4a830b0'
+        card = 'http://user/cards/57a98d98e4b00679b4a830b1'
+        items = 'http://127.0.0.1:15300/carts/57a98d98e4b00679b4a830b2/items'
         orders = get_http_target('TARGET_ORDERS', authenticate)
         with open('data/payload_for_endp_35.json', 'r') as json_payload_file:
             json_payload = json.load(json_payload_file)
@@ -37,11 +37,8 @@ class Tests_carts(unittest.TestCase):
         resp = carts.delete(f'/carts/{customerId}')
         resp.assert_status_code(202)
 
-    @json_dataset('data/dataset_23.json')
     @clear_session({'spanId': 23})
-    def test_23_post_carts_customerId_items(self, data_row):
-        address, card, items = data_row
-
+    def test_23_post_carts_customerId_items(self):
         # GET http://user/login (endp 32)
         user = get_http_target('TARGET_USER', authenticate)
         resp = user.get('/login')
@@ -50,6 +47,9 @@ class Tests_carts(unittest.TestCase):
         customer = jsonpath('$.user._links.customer.href', resp)
 
         # POST http://orders/orders (endp 35)
+        address = 'http://user/addresses/57a98d98e4b00679b4a830b0'
+        card = 'http://user/cards/57a98d98e4b00679b4a830b1'
+        items = 'http://127.0.0.1:15300/carts/57a98d98e4b00679b4a830b2/items'
         orders = get_http_target('TARGET_ORDERS', authenticate)
         with open('data/payload_for_endp_35.json', 'r') as json_payload_file:
             json_payload = json.load(json_payload_file)
@@ -73,11 +73,8 @@ class Tests_carts(unittest.TestCase):
         resp = carts.post(f'/carts/{customerId}/items', json=json_payload, headers=dict([('accept', 'application/json')]))
         resp.assert_status_code(201)
 
-    @json_dataset('data/dataset_25.json')
     @clear_session({'spanId': 25})
-    def test_25_patch_carts_customerId_items(self, data_row):
-        address, card, items = data_row
-
+    def test_25_patch_carts_customerId_items(self):
         # GET http://user/login (endp 32)
         user = get_http_target('TARGET_USER', authenticate)
         resp = user.get('/login')
@@ -86,6 +83,9 @@ class Tests_carts(unittest.TestCase):
         customer = jsonpath('$.user._links.customer.href', resp)
 
         # POST http://orders/orders (endp 35)
+        address = 'http://user/addresses/57a98d98e4b00679b4a830b0'
+        card = 'http://user/cards/57a98d98e4b00679b4a830b1'
+        items = 'http://127.0.0.1:15300/carts/57a98d98e4b00679b4a830b2/items'
         orders = get_http_target('TARGET_ORDERS', authenticate)
         with open('data/payload_for_endp_35.json', 'r') as json_payload_file:
             json_payload = json.load(json_payload_file)
@@ -115,11 +115,8 @@ class Tests_carts(unittest.TestCase):
         resp = carts.patch(f'/carts/{customerId}/items', json=json_payload, headers=dict([('accept', 'application/json')]))
         resp.assert_status_code(202)
 
-    @json_dataset('data/dataset_24.json')
     @clear_session({'spanId': 24})
-    def test_24_get_carts_customerId_merge(self, data_row):
-        address, card, items, sessionId = data_row
-
+    def test_24_get_carts_customerId_merge(self):
         # GET http://user/login (endp 32)
         user = get_http_target('TARGET_USER', authenticate)
         resp = user.get('/login')
@@ -128,6 +125,9 @@ class Tests_carts(unittest.TestCase):
         customer = jsonpath('$.user._links.customer.href', resp)
 
         # POST http://orders/orders (endp 35)
+        address = 'http://user/addresses/57a98d98e4b00679b4a830b0'
+        card = 'http://user/cards/57a98d98e4b00679b4a830b1'
+        items = 'http://127.0.0.1:15300/carts/57a98d98e4b00679b4a830b2/items'
         orders = get_http_target('TARGET_ORDERS', authenticate)
         with open('data/payload_for_endp_35.json', 'r') as json_payload_file:
             json_payload = json.load(json_payload_file)
@@ -141,6 +141,7 @@ class Tests_carts(unittest.TestCase):
         customerId = jsonpath('$.customerId', resp)
 
         # GET http://carts/carts/{customerId}/merge (endp 24)
+        sessionId = '1J9WwRDQsVd4ymiharhdwevNEWEUP2x2'
         carts = get_http_target('TARGET_CARTS', authenticate)
         qstr = '?' + urlencode([('sessionId', sessionId)])
         resp = carts.get(f'/carts/{customerId}/merge' + qstr)
@@ -150,11 +151,8 @@ class Tests_carts(unittest.TestCase):
 @data_driven_tests
 class Tests_catalogue(unittest.TestCase):
 
-    @json_dataset('data/dataset_27.json')
     @clear_session({'spanId': 27})
-    def test_27_get_catalogue_id(self, data_row):
-        size, = data_row
-
+    def test_27_get_catalogue_id(self):
         # GET http://catalogue/tags (endp 30)
         catalogue = get_http_target('TARGET_CATALOGUE', authenticate)
         resp = catalogue.get('/tags')
@@ -162,6 +160,7 @@ class Tests_catalogue(unittest.TestCase):
         tags = jsonpath('$.tags[*]', resp)
 
         # GET http://catalogue/catalogue (endp 29)
+        size = '6'
         qstr = '?' + urlencode([('page', '1'), ('size', size), ('sort', 'id'), ('tags', tags)])
         resp = catalogue.get('/catalogue' + qstr)
         resp.assert_status_code(200)
@@ -171,12 +170,10 @@ class Tests_catalogue(unittest.TestCase):
         resp = catalogue.get(f'/catalogue/{id_}')
         resp.assert_status_code(200)
 
-    @json_dataset('data/dataset_28.json')
     @clear_session({'spanId': 28})
-    def test_28_get_catalogue_size(self, data_row):
-        tags, = data_row
-
+    def test_28_get_catalogue_size(self):
         # GET http://catalogue/catalogue/size (endp 28)
+        tags = ''
         catalogue = get_http_target('TARGET_CATALOGUE', authenticate)
         qstr = '?' + urlencode([('tags', tags)])
         resp = catalogue.get('/catalogue/size' + qstr)
@@ -212,11 +209,8 @@ class Tests_front_end(unittest.TestCase):
         resp = front_end.get('/cart', headers=dict([('x-requested-with', 'XMLHttpRequest')]))
         resp.assert_status_code(200)
 
-    @json_dataset('data/dataset_15.json')
     @clear_session({'spanId': 15})
-    def test_15_get_catalogue(self, data_row):
-        size, = data_row
-
+    def test_15_get_catalogue(self):
         # GET http://front-end/tags (endp 21)
         front_end = get_http_target('TARGET_FRONT_END', authenticate)
         resp = front_end.get('/tags', headers=dict([('x-requested-with', 'XMLHttpRequest')]))
@@ -224,28 +218,26 @@ class Tests_front_end(unittest.TestCase):
         tags = jsonpath('$.tags[*]', resp)
 
         # GET http://front-end/catalogue (endp 15)
+        size = '6'
         qstr = '?' + urlencode([('page', '1'), ('size', size), ('tags', tags)])
         resp = front_end.get('/catalogue' + qstr, headers=dict([('x-requested-with', 'XMLHttpRequest')]))
         resp.assert_status_code(200)
 
-    @json_dataset('data/dataset_6.json')
     @clear_session({'spanId': 6})
-    def test_06_get_category_html(self, data_row):
-        size, tags = data_row
-
+    def test_06_get_category_html(self):
         # GET http://front-end/category.html (endp 6)
+        size = '5'
+        tags = 'geek,blue'
         front_end = get_http_target('TARGET_FRONT_END', authenticate)
         qstr = '?' + urlencode([('page', '1'), ('size', size), ('tags', tags)])
         resp = front_end.get('/category.html' + qstr)
         resp.assert_status_code(200)
         resp.assert_cssselect('div#content div.container div div.panel.panel-default.sidebar-menu div.panel-heading h3.panel-title', expected_value='Filters ')
 
-    @json_dataset('data/dataset_16.json')
     @clear_session({'spanId': 16})
-    def test_16_get_customer_order_html(self, data_row):
-        order, = data_row
-
+    def test_16_get_customer_order_html(self):
         # GET http://front-end/customer-order.html (endp 16)
+        order = '/orders/6053f8feeae7630007e44bcf'
         front_end = get_http_target('TARGET_FRONT_END', authenticate)
         qstr = '?' + urlencode([('order', order)])
         resp = front_end.get('/customer-order.html' + qstr)
@@ -279,12 +271,11 @@ class Tests_front_end(unittest.TestCase):
         resp = front_end.get(f'/customers/{customerId}', headers=dict([('x-requested-with', 'XMLHttpRequest')]))
         resp.assert_status_code(200)
 
-    @json_dataset('data/dataset_7.json')
     @clear_session({'spanId': 7})
-    def test_07_get_detail_html(self, data_row):
-        size, tags = data_row
-
+    def test_07_get_detail_html(self):
         # GET http://front-end/catalogue (endp 5)
+        size = '5'
+        tags = ''
         front_end = get_http_target('TARGET_FRONT_END', authenticate)
         qstr = '?' + urlencode([('page', '1'), ('size', size), ('sort', 'id'), ('tags', tags)])
         resp = front_end.get('/catalogue' + qstr, headers=dict([('x-requested-with', 'XMLHttpRequest')]))
@@ -319,12 +310,11 @@ class Tests_front_end(unittest.TestCase):
         resp.assert_status_code(200)
         resp.assert_cssselect('div#content div.container div div.row.same-height-row div div.box.same-height h3', expected_value='You may also like these products')
 
-    @json_dataset('data/dataset_20.json')
     @clear_session({'spanId': 20})
-    def test_20_get_orders_href(self, data_row):
-        size, tags = data_row
-
+    def test_20_get_orders_href(self):
         # GET http://front-end/catalogue (endp 5)
+        size = '5'
+        tags = ''
         front_end = get_http_target('TARGET_FRONT_END', authenticate)
         qstr = '?' + urlencode([('page', '1'), ('size', size), ('sort', 'id'), ('tags', tags)])
         resp = front_end.get('/catalogue' + qstr, headers=dict([('x-requested-with', 'XMLHttpRequest')]))
@@ -364,11 +354,8 @@ class Tests_front_end(unittest.TestCase):
 @data_driven_tests
 class Tests_orders(unittest.TestCase):
 
-    @json_dataset('data/dataset_36.json')
     @clear_session({'spanId': 36})
-    def test_36_get_orders_href(self, data_row):
-        address, card, items = data_row
-
+    def test_36_get_orders_href(self):
         # GET http://user/login (endp 32)
         user = get_http_target('TARGET_USER', authenticate)
         resp = user.get('/login')
@@ -377,6 +364,9 @@ class Tests_orders(unittest.TestCase):
         customer = jsonpath('$.user._links.customer.href', resp)
 
         # POST http://orders/orders (endp 35)
+        address = 'http://user/addresses/57a98d98e4b00679b4a830b0'
+        card = 'http://user/cards/57a98d98e4b00679b4a830b1'
+        items = 'http://127.0.0.1:15300/carts/57a98d98e4b00679b4a830b2/items'
         orders = get_http_target('TARGET_ORDERS', authenticate)
         with open('data/payload_for_endp_35.json', 'r') as json_payload_file:
             json_payload = json.load(json_payload_file)
@@ -405,12 +395,19 @@ class Tests_orders(unittest.TestCase):
 @data_driven_tests
 class Tests_payment(unittest.TestCase):
 
-    @json_dataset('data/dataset_38.json')
     @clear_session({'spanId': 38})
-    def test_38_post_paymentAuth(self, data_row):
-        ccv, country, expires, id_, id1, id2, longNum, number, postcode, street = data_row
-
+    def test_38_post_paymentAuth(self):
         # POST http://payment/paymentAuth (endp 38)
+        ccv = '958'
+        country = 'United Kingdom'
+        expires = '08/19'
+        id_ = None
+        id1 = None
+        id2 = None
+        longNum = '5544154011345918'
+        number = '246'
+        postcode = 'G67 3DL'
+        street = 'Whitelees Road'
         payment = get_http_target('TARGET_PAYMENT', authenticate)
         with open('data/payload_for_endp_38.json', 'r') as json_payload_file:
             json_payload = json.load(json_payload_file)
@@ -432,12 +429,10 @@ class Tests_payment(unittest.TestCase):
 @data_driven_tests
 class Tests_shipping(unittest.TestCase):
 
-    @json_dataset('data/dataset_39.json')
     @clear_session({'spanId': 39})
-    def test_39_post_shipping(self, data_row):
-        name, = data_row
-
+    def test_39_post_shipping(self):
         # POST http://shipping/shipping (endp 39)
+        name = '57a98d98e4b00679b4a830b2'
         shipping = get_http_target('TARGET_SHIPPING', authenticate)
         with open('data/payload_for_endp_39.json', 'r') as json_payload_file:
             json_payload = json.load(json_payload_file)
@@ -450,11 +445,8 @@ class Tests_shipping(unittest.TestCase):
 @data_driven_tests
 class Tests_user(unittest.TestCase):
 
-    @json_dataset('data/dataset_31.json')
     @clear_session({'spanId': 31})
-    def test_31_get_customers_customerId(self, data_row):
-        address, card, items = data_row
-
+    def test_31_get_customers_customerId(self):
         # GET http://user/login (endp 32)
         user = get_http_target('TARGET_USER', authenticate)
         resp = user.get('/login')
@@ -463,6 +455,9 @@ class Tests_user(unittest.TestCase):
         customer = jsonpath('$.user._links.customer.href', resp)
 
         # POST http://orders/orders (endp 35)
+        address = 'http://user/addresses/57a98d98e4b00679b4a830b0'
+        card = 'http://user/cards/57a98d98e4b00679b4a830b1'
+        items = 'http://127.0.0.1:15300/carts/57a98d98e4b00679b4a830b2/items'
         orders = get_http_target('TARGET_ORDERS', authenticate)
         with open('data/payload_for_endp_35.json', 'r') as json_payload_file:
             json_payload = json.load(json_payload_file)
@@ -480,11 +475,8 @@ class Tests_user(unittest.TestCase):
         resp.assert_status_code(200)
         resp.assert_jsonpath('$.lastName', expected_value='Name')
 
-    @json_dataset('data/dataset_33.json')
     @clear_session({'spanId': 33})
-    def test_33_get_customers_customerId_addresses(self, data_row):
-        address, card, items = data_row
-
+    def test_33_get_customers_customerId_addresses(self):
         # GET http://user/login (endp 32)
         user = get_http_target('TARGET_USER', authenticate)
         resp = user.get('/login')
@@ -493,6 +485,9 @@ class Tests_user(unittest.TestCase):
         customer = jsonpath('$.user._links.customer.href', resp)
 
         # POST http://orders/orders (endp 35)
+        address = 'http://user/addresses/57a98d98e4b00679b4a830b0'
+        card = 'http://user/cards/57a98d98e4b00679b4a830b1'
+        items = 'http://127.0.0.1:15300/carts/57a98d98e4b00679b4a830b2/items'
         orders = get_http_target('TARGET_ORDERS', authenticate)
         with open('data/payload_for_endp_35.json', 'r') as json_payload_file:
             json_payload = json.load(json_payload_file)
@@ -510,11 +505,8 @@ class Tests_user(unittest.TestCase):
         resp.assert_status_code(200)
         resp.assert_jsonpath('$._embedded.address[*].city', expected_value='Glasgow')
 
-    @json_dataset('data/dataset_34.json')
     @clear_session({'spanId': 34})
-    def test_34_get_customers_customerId_cards(self, data_row):
-        address, card, items = data_row
-
+    def test_34_get_customers_customerId_cards(self):
         # GET http://user/login (endp 32)
         user = get_http_target('TARGET_USER', authenticate)
         resp = user.get('/login')
@@ -523,6 +515,9 @@ class Tests_user(unittest.TestCase):
         customer = jsonpath('$.user._links.customer.href', resp)
 
         # POST http://orders/orders (endp 35)
+        address = 'http://user/addresses/57a98d98e4b00679b4a830b0'
+        card = 'http://user/cards/57a98d98e4b00679b4a830b1'
+        items = 'http://127.0.0.1:15300/carts/57a98d98e4b00679b4a830b2/items'
         orders = get_http_target('TARGET_ORDERS', authenticate)
         with open('data/payload_for_endp_35.json', 'r') as json_payload_file:
             json_payload = json.load(json_payload_file)

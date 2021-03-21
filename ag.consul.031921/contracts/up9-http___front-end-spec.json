@@ -4532,10 +4532,10 @@
    "name": "catalogue"
   },
   {
-   "name": "cart"
+   "name": "orders"
   },
   {
-   "name": "orders"
+   "name": "cart"
   }
  ]
 }

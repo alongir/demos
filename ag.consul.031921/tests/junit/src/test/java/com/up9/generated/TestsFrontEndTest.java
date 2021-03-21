@@ -6,13 +6,10 @@ import com.up9.up9lib.HttpTarget;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.util.Hashtable;
-import javax.json.JsonObject;
-import net.joshka.junit.json.params.JsonFileSource;
 import okhttp3.Response;
 import org.junit.jupiter.api.MethodOrderer.Alphanumeric;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
-import org.junit.jupiter.params.ParameterizedTest;
 import static com.up9.up9lib.Common.*;
 
 @TestMethodOrder(Alphanumeric.class)
@@ -63,12 +60,9 @@ public class TestsFrontEndTest
         assertStatusCode(response3.code(), 200);
     }
 
-    @ParameterizedTest
-    @JsonFileSource(resources = "/dataset_15.json")
-    public void testGetCatalogue15(final JsonObject json) throws IOException
+    @Test
+    public void testGetCatalogue15() throws IOException
     {
-        final String size = json.getString("size");
-
         // GET http://front-end/tags (endp 21)
         final HttpTarget frontEnd = getHttpTarget("TARGET_FRONT_END", new Authentication());
         final HttpRequest request = new HttpRequest();
@@ -80,6 +74,7 @@ public class TestsFrontEndTest
         final String tags = JSONPath("$.tags[*]", response.body().string());
 
         // GET http://front-end/catalogue (endp 15)
+        final String size = "6";
         final HttpRequest request2 = new HttpRequest();
         request2.setQueryString(new Hashtable<String, Object>() {{
             put("page", "1");
@@ -93,14 +88,12 @@ public class TestsFrontEndTest
         assertStatusCode(response2.code(), 200);
     }
 
-    @ParameterizedTest
-    @JsonFileSource(resources = "/dataset_6.json")
-    public void testGetCategoryHtml06(final JsonObject json) throws IOException
+    @Test
+    public void testGetCategoryHtml06() throws IOException
     {
-        final String size = json.getString("size");
-        final String tags = json.getString("tags");
-
         // GET http://front-end/category.html (endp 6)
+        final String size = "5";
+        final String tags = "geek,blue";
         final HttpTarget frontEnd = getHttpTarget("TARGET_FRONT_END", new Authentication());
         final HttpRequest request = new HttpRequest();
         request.setQueryString(new Hashtable<String, Object>() {{
@@ -113,13 +106,11 @@ public class TestsFrontEndTest
         assertCSSselect("div#content div.container div div.panel.panel-default.sidebar-menu div.panel-heading h3.panel-title", "Filters ", response.body().string());
     }
 
-    @ParameterizedTest
-    @JsonFileSource(resources = "/dataset_16.json")
-    public void testGetCustomerOrderHtml16(final JsonObject json) throws IOException
+    @Test
+    public void testGetCustomerOrderHtml16() throws IOException
     {
-        final String order = json.getString("order");
-
         // GET http://front-end/customer-order.html (endp 16)
+        final String order = "/orders/6053f8feeae7630007e44bcf";
         final HttpTarget frontEnd = getHttpTarget("TARGET_FRONT_END", new Authentication());
         final HttpRequest request = new HttpRequest();
         request.setQueryString(new Hashtable<String, Object>() {{
@@ -177,14 +168,12 @@ public class TestsFrontEndTest
         assertStatusCode(response2.code(), 200);
     }
 
-    @ParameterizedTest
-    @JsonFileSource(resources = "/dataset_7.json")
-    public void testGetDetailHtml07(final JsonObject json) throws IOException
+    @Test
+    public void testGetDetailHtml07() throws IOException
     {
-        final String size = json.getString("size");
-        final String tags = json.getString("tags");
-
         // GET http://front-end/catalogue (endp 5)
+        final String size = "5";
+        final String tags = "";
         final HttpTarget frontEnd = getHttpTarget("TARGET_FRONT_END", new Authentication());
         final HttpRequest request = new HttpRequest();
         request.setQueryString(new Hashtable<String, Object>() {{
@@ -242,14 +231,12 @@ public class TestsFrontEndTest
         assertCSSselect("div#content div.container div div.row.same-height-row div div.box.same-height h3", "You may also like these products", response6.body().string());
     }
 
-    @ParameterizedTest
-    @JsonFileSource(resources = "/dataset_20.json")
-    public void testGetOrdersHref20(final JsonObject json) throws IOException, MalformedURLException
+    @Test
+    public void testGetOrdersHref20() throws IOException, MalformedURLException
     {
-        final String size = json.getString("size");
-        final String tags = json.getString("tags");
-
         // GET http://front-end/catalogue (endp 5)
+        final String size = "5";
+        final String tags = "";
         final HttpTarget frontEnd = getHttpTarget("TARGET_FRONT_END", new Authentication());
         final HttpRequest request = new HttpRequest();
         request.setQueryString(new Hashtable<String, Object>() {{
