@@ -5,18 +5,26 @@ import com.up9.up9lib.HttpRequest;
 import com.up9.up9lib.HttpTarget;
 import java.io.IOException;
 import java.util.Hashtable;
+import javax.json.JsonObject;
+import net.joshka.junit.json.params.JsonFileSource;
 import okhttp3.Response;
 import org.junit.jupiter.api.MethodOrderer.Alphanumeric;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
+import org.junit.jupiter.params.ParameterizedTest;
 import static com.up9.up9lib.Common.*;
 
 @TestMethodOrder(Alphanumeric.class)
 public class TestsUserTest
 {
-    @Test
-    public void testGetCustomersCustomerid31() throws IOException
+    @ParameterizedTest
+    @JsonFileSource(resources = "/dataset_31.json")
+    public void testGetCustomersCustomerid31(final JsonObject json) throws IOException
     {
+        final String address = json.getString("address");
+        final String card = json.getString("card");
+        final String items = json.getString("items");
+
         // GET http://user/login (endp 32)
         final HttpTarget user = getHttpTarget("TARGET_USER", new Authentication());
         final HttpRequest request = new HttpRequest();
@@ -26,9 +34,6 @@ public class TestsUserTest
         final String customer = JSONPath("$.user._links.customer.href", response.body().string());
 
         // POST http://orders/orders (endp 35)
-        final String address = "http://user/addresses/57a98d98e4b00679b4a830b0";
-        final String card = "http://user/cards/57a98d98e4b00679b4a830b1";
-        final String items = "http://127.0.0.1:15300/carts/57a98d98e4b00679b4a830b2/items";
         final HttpTarget orders = getHttpTarget("TARGET_ORDERS", new Authentication());
         final HttpRequest request2 = new HttpRequest();
         request2.setHeaders(new Hashtable<String, Object>() {{
@@ -53,9 +58,14 @@ public class TestsUserTest
         assertJSONPath("$.lastName", "Name", response3.body().string());
     }
 
-    @Test
-    public void testGetCustomersCustomeridAddresses33() throws IOException
+    @ParameterizedTest
+    @JsonFileSource(resources = "/dataset_33.json")
+    public void testGetCustomersCustomeridAddresses33(final JsonObject json) throws IOException
     {
+        final String address = json.getString("address");
+        final String card = json.getString("card");
+        final String items = json.getString("items");
+
         // GET http://user/login (endp 32)
         final HttpTarget user = getHttpTarget("TARGET_USER", new Authentication());
         final HttpRequest request = new HttpRequest();
@@ -65,9 +75,6 @@ public class TestsUserTest
         final String customer = JSONPath("$.user._links.customer.href", response.body().string());
 
         // POST http://orders/orders (endp 35)
-        final String address = "http://user/addresses/57a98d98e4b00679b4a830b0";
-        final String card = "http://user/cards/57a98d98e4b00679b4a830b1";
-        final String items = "http://127.0.0.1:15300/carts/57a98d98e4b00679b4a830b2/items";
         final HttpTarget orders = getHttpTarget("TARGET_ORDERS", new Authentication());
         final HttpRequest request2 = new HttpRequest();
         request2.setHeaders(new Hashtable<String, Object>() {{
@@ -92,9 +99,14 @@ public class TestsUserTest
         assertJSONPath("$._embedded.address[*].city", "Glasgow", response3.body().string());
     }
 
-    @Test
-    public void testGetCustomersCustomeridCards34() throws IOException
+    @ParameterizedTest
+    @JsonFileSource(resources = "/dataset_34.json")
+    public void testGetCustomersCustomeridCards34(final JsonObject json) throws IOException
     {
+        final String address = json.getString("address");
+        final String card = json.getString("card");
+        final String items = json.getString("items");
+
         // GET http://user/login (endp 32)
         final HttpTarget user = getHttpTarget("TARGET_USER", new Authentication());
         final HttpRequest request = new HttpRequest();
@@ -104,9 +116,6 @@ public class TestsUserTest
         final String customer = JSONPath("$.user._links.customer.href", response.body().string());
 
         // POST http://orders/orders (endp 35)
-        final String address = "http://user/addresses/57a98d98e4b00679b4a830b0";
-        final String card = "http://user/cards/57a98d98e4b00679b4a830b1";
-        final String items = "http://127.0.0.1:15300/carts/57a98d98e4b00679b4a830b2/items";
         final HttpTarget orders = getHttpTarget("TARGET_ORDERS", new Authentication());
         final HttpRequest request2 = new HttpRequest();
         request2.setHeaders(new Hashtable<String, Object>() {{

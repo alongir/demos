@@ -5,20 +5,25 @@ import com.up9.up9lib.HttpRequest;
 import com.up9.up9lib.HttpTarget;
 import java.io.IOException;
 import java.util.Hashtable;
+import javax.json.JsonObject;
+import net.joshka.junit.json.params.JsonFileSource;
 import okhttp3.Response;
 import org.junit.jupiter.api.MethodOrderer.Alphanumeric;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
+import org.junit.jupiter.params.ParameterizedTest;
 import static com.up9.up9lib.Common.*;
 
 @TestMethodOrder(Alphanumeric.class)
 public class TestsShippingTest
 {
-    @Test
-    public void testPostShipping39() throws IOException
+    @ParameterizedTest
+    @JsonFileSource(resources = "/dataset_39.json")
+    public void testPostShipping39(final JsonObject json) throws IOException
     {
+        final String name = json.getString("name");
+
         // POST http://shipping/shipping (endp 39)
-        final String name = "57a98d98e4b00679b4a830b2";
         final HttpTarget shipping = getHttpTarget("TARGET_SHIPPING", new Authentication());
         final HttpRequest request = new HttpRequest();
         request.setHeaders(new Hashtable<String, Object>() {{
