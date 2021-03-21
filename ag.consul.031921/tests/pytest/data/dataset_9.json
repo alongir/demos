@@ -1,0 +1,26 @@
+{
+ "parameters": [
+  {
+   "name": "size",
+   "uuid": "54a7bcbf-130e-48f2-980a-1df62ce45541"
+  },
+  {
+   "name": "tags",
+   "uuid": "ccf778a0-b8ab-48ab-8796-9b2802504c38"
+  }
+ ],
+ "rows": [
+  {
+   "size": "5",
+   "tags": ""
+  },
+  {
+   "size": "6",
+   "tags": "geek,blue"
+  },
+  {
+   "size": "3",
+   "tags": "brown"
+  }
+ ]
+}

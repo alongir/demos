@@ -1,0 +1,58 @@
+{
+ "parameters": [
+  {
+   "name": "address",
+   "uuid": "20515b73-70b8-4804-a559-3f668a9aee35"
+  },
+  {
+   "name": "card",
+   "uuid": "5108dce0-830b-424a-a981-77862bca101b"
+  },
+  {
+   "name": "items",
+   "uuid": "6158081c-1cf9-4778-a1a9-20e935863664"
+  },
+  {
+   "name": "sessionId",
+   "uuid": "0b03db4a-e2a5-4e8c-98bb-cbad64611fd2"
+  }
+ ],
+ "rows": [
+  {
+   "address": "http://user/addresses/57a98d98e4b00679b4a830b0",
+   "card": "http://user/cards/57a98d98e4b00679b4a830b1",
+   "items": "http://127.0.0.1:15300/carts/57a98d98e4b00679b4a830b2/items",
+   "sessionId": "1J9WwRDQsVd4ymiharhdwevNEWEUP2x2"
+  },
+  {
+   "address": "http://user/addresses/57a98d98e4b00679b4a830b0",
+   "card": "http://user/cards/57a98d98e4b00679b4a830b1",
+   "items": "http://127.0.0.1:15300/carts/57a98d98e4b00679b4a830b2/items",
+   "sessionId": "oVqiJeQDr4hDRx1GupM1RzmoNjoSJQsR"
+  },
+  {
+   "address": "http://user/addresses/57a98d98e4b00679b4a830b0",
+   "card": "http://user/cards/57a98d98e4b00679b4a830b1",
+   "items": "http://127.0.0.1:15300/carts/57a98d98e4b00679b4a830b2/items",
+   "sessionId": "scbBu_nSnBhVPoJqXvpjCg29M_y4erqa"
+  },
+  {
+   "address": "http://user/addresses/57a98d98e4b00679b4a830b0",
+   "card": "http://user/cards/57a98d98e4b00679b4a830b1",
+   "items": "http://127.0.0.1:15300/carts/57a98d98e4b00679b4a830b2/items",
+   "sessionId": "7YRMScUydjd86TXT2_jHRkFUuUK0DD4L"
+  },
+  {
+   "address": "http://user/addresses/57a98d98e4b00679b4a830b0",
+   "card": "http://user/cards/57a98d98e4b00679b4a830b1",
+   "items": "http://127.0.0.1:15300/carts/57a98d98e4b00679b4a830b2/items",
+   "sessionId": "xHSpc6as1AvFaa5XpQ6BTuvaOZIbhxPT"
+  },
+  {
+   "address": "http://user/addresses/57a98d98e4b00679b4a830b0",
+   "card": "http://user/cards/57a98d98e4b00679b4a830b1",
+   "items": "http://127.0.0.1:15300/carts/57a98d98e4b00679b4a830b2/items",
+   "sessionId": "QaRmm1M9n6mvXs1G4nvxrxmr3t6zcA39"
+  }
+ ]
+}
