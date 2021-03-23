@@ -314,7 +314,7 @@
    }
   },
   {
-   "id": "b0ffd1ed-3a58-4424-959a-227015810de2",
+   "id": "c0fc45cd-b48a-4b74-b79f-4c5efcb30b28",
    "request": {
     "method": "GET",
     "urlPathPattern": "/catalogue/[^/]+"
@@ -323,6 +323,55 @@
     "body": "",
     "headers": {},
     "status": 200,
+    "transformers": [
+     "response-template"
+    ]
+   }
+  },
+  {
+   "id": "c423f28a-d90a-4090-83d8-625c5e69e5fd",
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/basket\\.html"
+   },
+   "response": {
+    "bodyFileName": "resp_59.html",
+    "headers": {
+     "Content-Type": "text/html"
+    },
+    "status": 200,
+    "transformers": [
+     "response-template"
+    ]
+   }
+  },
+  {
+   "id": "713838c0-94d6-4178-a220-eb5342488cd4",
+   "request": {
+    "method": "POST",
+    "urlPathPattern": "/cart"
+   },
+   "response": {
+    "body": "",
+    "headers": {},
+    "status": 201,
+    "transformers": [
+     "response-template"
+    ]
+   }
+  },
+  {
+   "id": "5dafa90b-5710-4b4a-99f6-5e142a1732f5",
+   "request": {
+    "method": "POST",
+    "urlPathPattern": "/orders"
+   },
+   "response": {
+    "bodyFileName": "resp_66.json",
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "status": 201,
     "transformers": [
      "response-template"
     ]

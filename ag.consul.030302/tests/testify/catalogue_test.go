@@ -8,9 +8,7 @@ import (
     testing "testing"
 )
 
-func TestGetCatalogue10(t *testing.T) {
-    size := "5"
-
+func TestGetCatalogueId54(t *testing.T) {
     // GET http://catalogue/catalogue (endp 10)
     size := "5"
     catalogue := GetHttpTarget(t, "TARGET_CATALOGUE", new(Authentication))
@@ -22,6 +20,12 @@ func TestGetCatalogue10(t *testing.T) {
     })
     resp := catalogue.Get(req, "/catalogue")
     assert.Regexp(t, regexp.MustCompile(".*Holy.*"), resp.String())
+    id := JsonPath(t, "$[*].id", resp.String())
+
+    // GET http://catalogue/catalogue/{id} (endp 54)
+    req2 := new(HttpRequest)
+    resp2 := catalogue.Get(req2, "/catalogue/" + id)
+    assert.Equal(t, 200, resp2.StatusCode())
 }
 
 func TestGetCatalogueSize09(t *testing.T) {

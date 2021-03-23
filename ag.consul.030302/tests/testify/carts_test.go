@@ -4,43 +4,155 @@ import (
     . "authentication"
     . "up9lib"
     assert "github.com/stretchr/testify/assert"
+    regexp "regexp"
     testing "testing"
 )
 
-func TestDeleteCartsId46(t *testing.T) {
-    id := "57a98d98e4b00679b4a830b2"
-
-    // DELETE http://carts/carts/{id} (endp 46)
-    id := "57a98d98e4b00679b4a830b2"
-    carts := GetHttpTarget(t, "TARGET_CARTS", new(Authentication))
+func TestDeleteCartsCustomerid46(t *testing.T) {
+    // POST http://orders/orders (endp 57)
+    address := "http://user/addresses/57a98d98e4b00679b4a830b0"
+    card := "http://user/cards/57a98d98e4b00679b4a830b1"
+    customer := "http://user/customers/57a98d98e4b00679b4a830b2"
+    items := "http://127.0.0.1:15300/carts/57a98d98e4b00679b4a830b2/items"
+    orders := GetHttpTarget(t, "TARGET_ORDERS", new(Authentication))
     req := new(HttpRequest)
-    resp := carts.Delete(req, "/carts/" + id.(string))
-    assert.Equal(t, 202, resp.StatusCode())
+    req.SetHeaders(map[string]interface{}{
+        "accept": "application/json",
+        "content-type": "application/json",
+    })
+    req.SetJsonBody("data/payload_for_endp_57.json", map[string]interface{}{
+        "$.address": address,
+        "$.card": card,
+        "$.customer": customer,
+        "$.items": items,
+    })
+    resp := orders.Post(req, "/orders")
+    assert.Equal(t, 201, resp.StatusCode())
+    assert.Equal(t, "Glasgow", JsonPath(t, "$.address.city", resp.String()))
+    customerId := JsonPath(t, "$.customerId", resp.String())
+
+    // DELETE http://carts/carts/{customerId} (endp 46)
+    carts := GetHttpTarget(t, "TARGET_CARTS", new(Authentication))
+    req2 := new(HttpRequest)
+    resp2 := carts.Delete(req2, "/carts/" + customerId)
+    assert.Equal(t, 202, resp2.StatusCode())
 }
 
-func TestGetCartsIdItems13(t *testing.T) {
-    id := "57a98d98e4b00679b4a830b2"
-
-    // GET http://carts/carts/{id}/items (endp 13)
-    id := "57a98d98e4b00679b4a830b2"
-    carts := GetHttpTarget(t, "TARGET_CARTS", new(Authentication))
+func TestGetCartsCustomeridItems13(t *testing.T) {
+    // POST http://orders/orders (endp 57)
+    address := "http://user/addresses/57a98d98e4b00679b4a830b0"
+    card := "http://user/cards/57a98d98e4b00679b4a830b1"
+    customer := "http://user/customers/57a98d98e4b00679b4a830b2"
+    items := "http://127.0.0.1:15300/carts/57a98d98e4b00679b4a830b2/items"
+    orders := GetHttpTarget(t, "TARGET_ORDERS", new(Authentication))
     req := new(HttpRequest)
-    resp := carts.Get(req, "/carts/" + id.(string) + "/items")
-    assert.Equal(t, 200, resp.StatusCode())
+    req.SetHeaders(map[string]interface{}{
+        "accept": "application/json",
+        "content-type": "application/json",
+    })
+    req.SetJsonBody("data/payload_for_endp_57.json", map[string]interface{}{
+        "$.address": address,
+        "$.card": card,
+        "$.customer": customer,
+        "$.items": items,
+    })
+    resp := orders.Post(req, "/orders")
+    assert.Equal(t, 201, resp.StatusCode())
+    assert.Equal(t, "Glasgow", JsonPath(t, "$.address.city", resp.String()))
+    customerId := JsonPath(t, "$.customerId", resp.String())
+
+    // GET http://carts/carts/{customerId}/items (endp 13)
+    carts := GetHttpTarget(t, "TARGET_CARTS", new(Authentication))
+    req2 := new(HttpRequest)
+    req2.SetHeaders(map[string]interface{}{
+        "accept": "application/json",
+    })
+    resp2 := carts.Get(req2, "/carts/" + customerId + "/items")
+    assert.Equal(t, 200, resp2.StatusCode())
 }
 
-func TestGetCartsIdMerge12(t *testing.T) {
-    id := "57a98d98e4b00679b4a830b2"
-    sessionId := "7w4TGI0pnIxn5TEFoHX6O2spPdXa3dut"
-
-    // GET http://carts/carts/{id}/merge (endp 12)
-    id := "57a98d98e4b00679b4a830b2"
-    sessionId := "7w4TGI0pnIxn5TEFoHX6O2spPdXa3dut"
-    carts := GetHttpTarget(t, "TARGET_CARTS", new(Authentication))
+func TestPostCartsCustomeridItems56(t *testing.T) {
+    // GET http://catalogue/catalogue (endp 10)
+    size := "5"
+    catalogue := GetHttpTarget(t, "TARGET_CATALOGUE", new(Authentication))
     req := new(HttpRequest)
     req.SetQueryString(map[string]interface{}{
+        "page": "1",
+        "size": size,
+        "tags": "",
+    })
+    resp := catalogue.Get(req, "/catalogue")
+    assert.Regexp(t, regexp.MustCompile(".*Holy.*"), resp.String())
+    itemId := JsonPath(t, "$[*].id", resp.String())
+    unitPrice := JsonPath(t, "$[*].price", resp.String())
+
+    // POST http://orders/orders (endp 57)
+    address := "http://user/addresses/57a98d98e4b00679b4a830b0"
+    card := "http://user/cards/57a98d98e4b00679b4a830b1"
+    customer := "http://user/customers/57a98d98e4b00679b4a830b2"
+    items := "http://127.0.0.1:15300/carts/57a98d98e4b00679b4a830b2/items"
+    orders := GetHttpTarget(t, "TARGET_ORDERS", new(Authentication))
+    req2 := new(HttpRequest)
+    req2.SetHeaders(map[string]interface{}{
+        "accept": "application/json",
+        "content-type": "application/json",
+    })
+    req2.SetJsonBody("data/payload_for_endp_57.json", map[string]interface{}{
+        "$.address": address,
+        "$.card": card,
+        "$.customer": customer,
+        "$.items": items,
+    })
+    resp2 := orders.Post(req2, "/orders")
+    assert.Equal(t, 201, resp2.StatusCode())
+    assert.Equal(t, "Glasgow", JsonPath(t, "$.address.city", resp2.String()))
+    customerId := JsonPath(t, "$.customerId", resp2.String())
+
+    // POST http://carts/carts/{customerId}/items (endp 56)
+    carts := GetHttpTarget(t, "TARGET_CARTS", new(Authentication))
+    req3 := new(HttpRequest)
+    req3.SetHeaders(map[string]interface{}{
+        "accept": "application/json",
+        "content-type": "application/json",
+    })
+    req3.SetJsonBody("data/payload_for_endp_56.json", map[string]interface{}{
+        "$.itemId": itemId,
+        "$.unitPrice": unitPrice,
+    })
+    resp3 := carts.Post(req3, "/carts/" + customerId + "/items")
+    assert.Equal(t, 201, resp3.StatusCode())
+}
+
+func TestGetCartsCustomeridMerge12(t *testing.T) {
+    // POST http://orders/orders (endp 57)
+    address := "http://user/addresses/57a98d98e4b00679b4a830b0"
+    card := "http://user/cards/57a98d98e4b00679b4a830b1"
+    customer := "http://user/customers/57a98d98e4b00679b4a830b2"
+    items := "http://127.0.0.1:15300/carts/57a98d98e4b00679b4a830b2/items"
+    orders := GetHttpTarget(t, "TARGET_ORDERS", new(Authentication))
+    req := new(HttpRequest)
+    req.SetHeaders(map[string]interface{}{
+        "accept": "application/json",
+        "content-type": "application/json",
+    })
+    req.SetJsonBody("data/payload_for_endp_57.json", map[string]interface{}{
+        "$.address": address,
+        "$.card": card,
+        "$.customer": customer,
+        "$.items": items,
+    })
+    resp := orders.Post(req, "/orders")
+    assert.Equal(t, 201, resp.StatusCode())
+    assert.Equal(t, "Glasgow", JsonPath(t, "$.address.city", resp.String()))
+    customerId := JsonPath(t, "$.customerId", resp.String())
+
+    // GET http://carts/carts/{customerId}/merge (endp 12)
+    sessionId := "XQmVKODtqAcXS6ZfF4HlZubZBEgShjds"
+    carts := GetHttpTarget(t, "TARGET_CARTS", new(Authentication))
+    req2 := new(HttpRequest)
+    req2.SetQueryString(map[string]interface{}{
         "sessionId": sessionId,
     })
-    resp := carts.Get(req, "/carts/" + id.(string) + "/merge")
-    assert.Equal(t, 202, resp.StatusCode())
+    resp2 := carts.Get(req2, "/carts/" + customerId + "/merge")
+    assert.Equal(t, 202, resp2.StatusCode())
 }

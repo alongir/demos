@@ -19,3 +19,7 @@ Running the tests:
 Running a single test:
 
 `go test module_name_test.go -v -run TestFunctionName`
+
+to have JUnit.xml output:
+
+`gotestsum --junitfile unit-tests.xml -- carts_test.go -run TestGetCartsIdItems13`

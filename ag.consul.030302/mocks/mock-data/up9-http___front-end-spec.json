@@ -19,7 +19,25 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 13 requests"
+    "summary": "Seen 44 requests"
+   },
+   "parameters": []
+  },
+  "/basket.html": {
+   "get": {
+    "operationId": "c423f28a-d90a-4090-83d8-625c5e69e5fd",
+    "parameters": [],
+    "responses": {
+     "200": {
+      "content": {
+       "text/html": {
+        "example": "<!DOCTYPE html>\n<html lang=\"en\">\n\n<head>\n\n    <meta charset=\"utf-8\">\n    <meta name=\"robots\" content=\"all,follow\">\n    <meta name=\"googlebot\" content=\"index,follow,snippet,archive\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <meta name=\"description\" content=\"WeaveSocks Demo App\">\n    <meta name=\"author\" content=\"Ondrej Svestka | ondrejsvestka.cz\">\n    <meta name=\"keywords\" content=\"\">\n\n    <title>\n        WeaveSocks\n    </title>\n\n    <meta name=\"keywords\" content=\"\">\n\n    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100'\n          rel='stylesheet' type='text/css'>\n\n    <!-- styles -->\n    <link href=\"css/font-awesome.css\" rel=\"stylesheet\">\n    <link href=\"css/bootstrap.min.css\" rel=\"stylesheet\">\n    <link href=\"css/animate.min.css\" rel=\"stylesheet\">\n    <link href=\"css/owl.carousel.css\" rel=\"stylesheet\">\n    <link href=\"css/owl.theme.css\" rel=\"stylesheet\">\n\n    <!-- theme stylesheet -->\n    <link href=\"css/style.blue.css\" rel=\"stylesheet\" id=\"theme-stylesheet\">\n\n    <!-- your stylesheet with modifications -->\n    <link href=\"css/custom.css\" rel=\"stylesheet\">\n\n    <script src=\"js/respond.min.js\"></script>\n\n    <link rel=\"shortcut icon\" href=\"favicon.png\">\n\n\n</head>\n\n<body>\n<div id=\"topbar\"></div>\n<div id=\"navbar\"></div>\n\n\n<div id=\"all\">\n\n    <div id=\"content\">\n        <div class=\"container\">\n\n            <div id=\"user-message\"> </div>\n\n            <div class=\"col-md-12\">\n                <ul class=\"breadcrumb\">\n                    <li><a href=\"index.html\">Home</a>\n                    </li>\n                    <li>Shopping cart</li>\n                </ul>\n            </div>\n\n            <div class=\"col-md-9\" id=\"basket\">\n\n                <div class=\"box\">\n\n                    <form action=\"customer-orders.html\">\n                        <h1>Shopping cart</h1>\n                        <p class=\"text-muted\" id=\"numItemsInCart\"></p>\n                        <div class=\"table-responsive\">\n                            <table class=\"table\">\n                                <thead>\n                                <tr>\n                                    <th colspan=\"2\">Product</th>\n                                    <th>Quantity</th>\n                                    <th>Unit price</th>\n                                    <th>Discount</th>\n                                    <th colspan=\"2\">Total</th>\n                                </tr>\n                                </thead>\n                                <tbody id=\"cart-list\">\n                                </tbody>\n                                <tfoot>\n                                <tr>\n                                    <th colspan=\"5\">Total</th>\n                                    <th colspan=\"2\" id=\"cartTotal\"></th>\n                                </tr>\n                                </tfoot>\n                            </table>\n\n                        </div>\n                        <!-- /.table-responsive -->\n\n\n                        <div class=\"box-footer\">\n                            <div class=\"pull-left\">\n                                <a href=\"category.html\" class=\"btn btn-default\"><i\n                                        class=\"fa fa-chevron-left\"></i> Continue\n                                    shopping</a>\n                            </div>\n                            <div class=\"pull-right\">\n                                <a class=\"btn btn-default\" onclick=\"updateCart()\"><i\n                                        class=\"fa fa-refresh\"></i> Update basket\n                                </a>\n                                <button id=\"orderButton\" type=\"submit\" class=\"btn btn-primary\" disabled>\n                                    Proceed to checkout <i class=\"fa fa-chevron-right\"></i>\n                                </button>\n                            </div>\n                        </div>\n\n                    </form>\n\n                </div>\n                <!-- /.box -->\n\n                <div class=\"row same-height-row\">\n\n                    <div class=\"col-md-6\">\n                        <div class=\"box\">\n                            <div class=\"box-header\">\n                                <h4 style=\"display: inline;\">Shipping Address</h4>\n                                <p id=\"add_shipping\" style=\"display: inline; float: right;\">\n                                    <a data-toggle=\"modal\" data-target=\"#address-modal\" href=\"#add\">Add</a>\n                                </p>\n                            </div>\n                            <p id=\"address\"></p>\n                            <div class=\"modal fade\" id=\"address-modal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"address\" aria-hidden=\"true\">\n                                <div class=\"modal-dialog modal-sm\">\n                                    <div class=\"modal-content\">\n                                        <div class=\"modal-header\">\n                                            <button type=\"button\" class=\"close\" data-dismiss=\"modal\"\n                                                    aria-hidden=\"true\">&times;</button>\n                                            <h4 class=\"modal-title\" id=\"Login\">Address</h4>\n                                        </div>\n                                        <div class=\"modal-body\">\n                                            <form action=\"\" id=\"form-address\">\n                                                <div class=\"form-group\">\n                                                    <label for=\"house-number\">House Number</label>\n                                                    <input type=\"text\" class=\"form-control\" name=\"house-number\" id=\"form-number\" placeholder=\"Number\">\n                                                </div>\n                                                <div class=\"form-group\">\n                                                    <label for=\"street\">Street Name</label>\n                                                    <input type=\"text\" class=\"form-control\" name=\"street\" id=\"form-street\" placeholder=\"Street\">\n                                                </div>\n                                                <div class=\"form-group\">\n                                                    <label for=\"city\">City</label>\n                                                    <input type=\"text\" class=\"form-control\" name=\"city\" id=\"form-city\" placeholder=\"City\">\n                                                </div>\n                                                <div class=\"form-group\">\n                                                    <label for=\"post-code\">Post Code</label>\n                                                    <input type=\"text\" class=\"form-control\" name=\"post-code\" id=\"form-post-code\" placeholder=\"Post Code\">\n                                                </div>\n                                                <div class=\"form-group\">\n                                                    <label for=\"country\">Country</label>\n                                                    <input type=\"text\" class=\"form-control\" name=\"country\" id=\"form-country\" placeholder=\"Country\">\n                                                </div>\n                                                    <p class=\"text-center\">\n                                                        <button class=\"btn btn-primary\" href=\"#\" onclick=\"return address()\"><i\n                                                                class=\"fa fa-refresh\"></i> Update\n                                                        </button>\n                                                    </p>\n                                            </form>\n                                        </div>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"col-md-6\">\n                        <div class=\"box\">\n                            <div class=\"box-header\">\n                                <h4 style=\"display: inline;\">Payment</h4>\n                                <p id=\"add_payment\" style=\"display: inline; float: right;\">\n                                    <a data-toggle=\"modal\" data-target=\"#card-modal\" href=\"#add\">Add</a>\n                                </p>\n                            </div>\n                            <p id=\"number\"></p>\n                            <div class=\"modal fade\" id=\"card-modal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"card\" aria-hidden=\"true\">\n                                <div class=\"modal-dialog modal-sm\">\n                                    <div class=\"modal-content\">\n                                        <div class=\"modal-header\">\n                                            <button type=\"button\" class=\"close\" data-dismiss=\"modal\"\n                                                    aria-hidden=\"true\">&times;</button>\n                                            <h4 class=\"modal-title\" id=\"credit-card\">Credit Card</h4>\n                                        </div>\n                                        <div class=\"modal-body\">\n                                            <form action=\"\" id=\"form-card\">\n                                                <div class=\"form-group\">\n                                                    <label for=\"card-number\">Card Number</label>\n                                                    <input type=\"text\" class=\"form-control\" name=\"card-number\" id=\"form-card-number\" placeholder=\"Card Number\">\n                                                </div>\n                                                <div class=\"form-group\">\n                                                    <label for=\"expires\">Expires</label>\n                                                    <input type=\"text\" class=\"form-control\" name=\"expires\" id=\"form-expires\" placeholder=\"MM/YY\">\n                                                </div>\n                                                <div class=\"form-group\">\n                                                    <label for=\"ccv\">CCV</label>\n                                                    <input type=\"text\" class=\"form-control\" name=\"ccv\" id=\"form-ccv\" placeholder=\"CCV\">\n                                                </div>\n                                            </form>\n                                            <p class=\"text-right\">\n                                                <button class=\"btn btn-primary\" href=\"#\" onclick=\"return card()\"><i\n                                                        class=\"fa fa-refresh\"></i> Update\n                                                </button>\n                                            </p>\n                                        </div>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n\n                <div class=\"row same-height-row\" id=\"youMayAlsoLike\">\n                    <div class=\"col-md-3 col-sm-6\">\n                        <div class=\"box same-height\">\n                            <h3>You may also like these products</h3>\n                        </div>\n                    </div>\n\n                </div>\n\n\n            </div>\n            <!-- /.col-md-9 -->\n\n            <div class=\"col-md-3\">\n                <div class=\"box\" id=\"order-summary\">\n                    <div class=\"box-header\">\n                        <h3>Order summary</h3>\n                    </div>\n                    <p class=\"text-muted\">Shipping and additional costs are\n                        calculated based on the values you have entered.</p>\n\n                    <div class=\"table-responsive\">\n                        <table class=\"table\">\n                            <tbody>\n                            <tr>\n                                <td>Order subtotal</td>\n                                <th id=\"orderSubtotal\">$0.00</th>\n                            </tr>\n                            <tr>\n                                <td>Shipping and handling</td>\n                                <th id=\"orderShipping\">$0.00</th>\n                            </tr>\n                            <tr>\n                                <td>Tax</td>\n                                <th id=\"orderTax\">$0.00</th>\n                            </tr>\n                            <tr class=\"total\">\n                                <td>Total</td>\n                                <th id=\"orderGrandTotal\">$0.00</th>\n                            </tr>\n                            </tbody>\n                        </table>\n                    </div>\n\n                </div>\n\n\n                <div class=\"box\">\n                    <div class=\"box-header\">\n                        <h4>Coupon code</h4>\n                    </div>\n                    <p class=\"text-muted\">If you have a coupon code, please\n                        enter it in the box below.</p>\n                    <form>\n                        <div class=\"input-group\">\n\n                            <input type=\"text\" class=\"form-control\">\n\n                                <span class=\"input-group-btn\">\n\n\t\t\t\t\t<button class=\"btn btn-primary\" type=\"button\"><i\n                            class=\"fa fa-gift\"></i></button>\n\n\t\t\t\t    </span>\n                        </div>\n                        <!-- /input-group -->\n                    </form>\n                </div>\n\n            </div>\n            <!-- /.col-md-3 -->\n\n        </div>\n        <!-- /.container -->\n    </div>\n    <!-- /#content -->\n    <div id=\"footer\"></div>\n\n</div>\n<!-- /#all -->\n\n\n<!-- *** SCRIPTS TO INCLUDE ***\n_________________________________________________________ -->\n<script src=\"js/jquery-1.11.0.min.js\"></script>\n<script src=\"js/bootstrap.min.js\"></script>\n<script src=\"js/jquery.cookie.js\"></script>\n<script src=\"js/waypoints.min.js\"></script>\n<script src=\"js/modernizr.js\"></script>\n<script src=\"js/bootstrap-hover-dropdown.js\"></script>\n<script src=\"js/owl.carousel.min.js\"></script>\n<script src=\"js/front.js\"></script>\n<script src=\"js/jquery.query-object.js\"></script>\n<script src=\"js/client.js\"></script>\n<script>\n\n    $(document).ready(function () {\n        $.ajaxSetup({\n            contentType: \"application/json; charset=utf-8\"\n        });\n\n        console.log(\"Loading components for basket.html\");\n        $(\"#topbar\").load(\"topbar.html\");\n        $(\"#navbar\").load(\"navbar.html\");\n        $(\"#footer\").load(\"footer.html\");\n    })\n</script>\n<script>\n    function deleteFromCart(id) {\n        console.log(\"Sending request to delete: \" + id);\n        $.ajax({\n            url: \"cart/\" + id,\n            type: \"DELETE\",\n            success: function (data, textStatus, jqXHR) {\n                console.log('Item deleted: ' + id + ', ' + textStatus);\n                location.reload();\n            },\n            error: function (jqXHR, textStatus, errorThrown) {\n                console.error('Could not delete item: ' + id + ', due to: ' + textStatus + ' | ' + errorThrown);\n            }\n        });\n    }\n\n    // function updateCart()\n\t// for each item row in cart table call updateToCart (client.js - updateToCart(itemId, quantity, callback))\n\tfunction updateCart() {\n\t\tconsole.log(\"Updating Cart\");\n\t\tvar cartsize = document.getElementById(\"cart-list\").rows.length;\n\t\tconsole.log(\"cart-list size: \" + cartsize);\n\n\t\tvar idx = 0;\n\t\tnext = function(){\n\t\t\tif (idx< cartsize) {\n\t\t\t\tvar id = document.getElementById(\"cart-list\").rows[idx].cells[2].id;\n\t\t\t\tvar quantity = document.getElementById(\"cart-list\").rows[idx].cells[2].getElementsByTagName('input')[0].value;\n\t\t\t\tidx++;\n\t\t\t\tupdateToCart(id, quantity, next);\n\t\t\t}\n\t\t\telse {\n\t\t\t\tlocation.reload();\n\t\t\t}\n\t\t}\n\t\tnext();\n\t}\n\n    $(document).ready(function () {\n        $.ajaxSetup({\n            contentType: \"application/json; charset=utf-8\"\n        });\n\n        $.getJSON('/cart', {}, function (data) {\n            if (data != null) {\n                var cartTotal = 0;\n                var numItemsInCart = 0;\n                var shipping = 4.99;\n                var orderPlaced = false;\n                $.each(data, function (index, element) {\n                    if (element != null && element.itemId != null && element.itemId != \"null\") {\n                        $.getJSON('/catalogue/' + element.itemId, function (data) {\n                            console.log(JSON.stringify(data));\n                            $('#cart-list').append(' <tr class=\"item\">\\\n                                                <input class=\"id\" type=\"hidden\" value=\"' + data.id + '\">\\\n                                                <td>\\\n                                                    <a href=\"#\">\\\n                                                        <img src=\"' + data.imageUrl[0] + '\" alt=\"' + data.namex + '\">\\\n                                                    </a>\\\n                                                </td>\\\n                                                <td>\\\n                                                    <a href=\"#\">' + data.name + '</a>\\\n                                                </td>\\\n                                                <td id=\"' + element.itemId + '\">\\\n                                                    <input type=\"number\" min=\"1\" value=\"' + element.quantity + '\" class=\"form-control\">\\\n                                                </td>\\\n                                                <td>$' + data.price.toFixed(2) + '</td>\\\n                                                <td>$0.00</td>\\\n                                                <td>$' + (element.quantity * data.price).toFixed(2) + '</td>\\\n                                                <td>\\\n                                                    <a href=\"#\" onclick=\"deleteFromCart(\\'' + data.id + '\\')\"><i class=\"fa fa-trash-o\"></i></a>\\\n                                                </td>\\\n                                            </tr>');\n                            cartTotal = cartTotal + element.quantity * data.price;\n                            console.log(\"Cur total: \" + cartTotal);\n                            numItemsInCart = numItemsInCart + element.quantity;\n                        }).always(function () {\n                            console.log(\"Final counts: $\" + cartTotal + \", with \" + numItemsInCart + \" items.\");\n                            $('#orderButton').prop('disabled', false);\n                            if ($('p#address').text() === 'No address saved for user.' || $('p#number').text() === 'No credit card saved for user.') {\n                                $('#orderButton').click(function(event) {\n                                    event.stopPropagation();\n                                    event.preventDefault();\n                                    $(\"#user-message\").html('<div class=\"alert alert-danger alert-dismissible\" role=\"alert\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button> Could not place order. Missing shipping or payment information.</div>');\n                                    return false;\n                                });\n                            } else {\n                                $('#orderButton').click(function(event) {\n                                    if (orderPlaced == false) {\n                                      orderPlaced = true;\n                                      return order();\n\t\t\t\t    }\n                                });\n                            }\n                            $('#numItemsInCart').text('You currently have ' + numItemsInCart + ' item(s) in your cart.');\n                            $('#cartTotal').text('$' + cartTotal.toFixed(2));\n                            $('#orderSubtotal').text('$' + cartTotal.toFixed(2));\n                            $('#orderShipping').text('$' + shipping.toFixed(2));\n                            $('#orderGrandTotal').text('$' + (cartTotal + shipping).toFixed(2));\n                        });\n                    }\n                });\n\n            }\n        });\n\n        $.getJSON('/card', function(data) {\n            if (data.status_code !== 500) {\n                $(\"p#number\").text(\"Card ending in \" + data.number).css(\"color\", \"black\");\n                $(\"#add_payment\").hide();\n            } else {\n                $(\"p#number\").text(\"No credit card saved for user.\").css(\"color\", \"red\");\n                $(\"#add_payment\").show();\n            }\n        });\n\n        $.getJSON('/address', function(data) {\n            if (data.status_code !== 500) {\n                var text = data.number + \" \";\n                text += data.street\n                text += \"</br>\";\n                text += data.city;\n                text += \"</br>\";\n                text += data.postcode;\n                text += \"</br>\";\n                text += data.country;\n                $(\"p#address\").html(text).css(\"color\", \"black\");\n                $(\"#add_shipping\").hide();\n            } else {\n                $(\"p#address\").text(\"No address saved for user.\").css(\"color\", \"red\");\n                $(\"#add_shipping\").show();\n            }\n        });\n\n        $.getJSON('/catalogue', {size: 3}, function (data) {\n            if (data != null) {\n                $.each(data, function (index, element) {\n                    $('#youMayAlsoLike').append(\n                            '<div class=\"col-md-3 col-sm-6\">\\\n                                <div class=\"product same-height\">\\\n                                    <div class=\"flip-container\">\\\n                                        <div class=\"flipper\">\\\n                                            <div class=\"front\">\\\n                                                <a href=\"detail.html?id=' + element.id + '\">\\\n                                                    <img src=\"' + element.imageUrl[0] + '\" alt=\"\" class=\"img-responsive\">\\\n                                                </a>\\\n                                            </div>\\\n                                            <div class=\"back\">\\\n                                                <a href=\"detail.html?id=' + element.id + '\">\\\n                                                    <img src=\"' + element.imageUrl[1] + '\" alt=\"\" class=\"img-responsive\">\\\n                                                </a>\\\n                                            </div>\\\n                                        </div>\\\n                                    </div>\\\n                                    <a href=\"detail.html\" class=\"invisible\">\\\n                                        <img src=\"' + element.imageUrl[0] + '\" alt=\"\" class=\"img-responsive\">\\\n                                    </a>\\\n                                    <div class=\"text\">\\\n                                        <h3><a href=\"detail.html?id=' + element.id + '\">' + element.name + '</a></h3>\\\n                                        <p class=\"price\">$' + element.price + '</p>\\\n                                    </div>\\\n                                </div>\\\n                            </div>'\n                    );\n                });\n            }\n        }).always(\n                $(window).trigger('resize')\n        );\n    });\n\n</script>\n\n</body>\n\n</html>\n"
+       }
+      },
+      "description": "OK"
+     }
+    },
+    "summary": "Seen 22 requests"
    },
    "parameters": []
   },
@@ -32,7 +50,7 @@
       "description": "Accepted"
      }
     },
-    "summary": "Seen 1 requests",
+    "summary": "Seen 24 requests",
     "tags": [
      "cart"
     ]
@@ -66,12 +84,47 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 85 requests",
+    "summary": "Seen 99 requests",
     "tags": [
      "cart"
     ]
    },
-   "parameters": []
+   "parameters": [],
+   "post": {
+    "operationId": "713838c0-94d6-4178-a220-eb5342488cd4",
+    "parameters": [],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "properties": {
+         "id": {
+          "type": "string"
+         },
+         "quantity": {
+          "type": "integer"
+         }
+        },
+        "required": [
+         "id",
+         "quantity"
+        ],
+        "type": "object"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "201": {
+      "description": "Created"
+     }
+    },
+    "summary": "Seen 22 requests",
+    "tags": [
+     "cart"
+    ]
+   }
   },
   "/catalogue": {
    "get": {
@@ -257,7 +310,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 92 requests",
+    "summary": "Seen 155 requests",
     "tags": [
      "catalogue"
     ]
@@ -317,7 +370,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 27 requests",
+    "summary": "Seen 38 requests",
     "tags": [
      "catalogue"
     ]
@@ -326,7 +379,7 @@
   },
   "/catalogue/{id}": {
    "get": {
-    "operationId": "b0ffd1ed-3a58-4424-959a-227015810de2",
+    "operationId": "c0fc45cd-b48a-4b74-b79f-4c5efcb30b28",
     "parameters": [
      {
       "in": "header",
@@ -380,7 +433,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 4 requests"
+    "summary": "Seen 31 requests"
    },
    "parameters": []
   },
@@ -534,14 +587,17 @@
     "operationId": "081f9d27-bcaf-498d-909d-a5c3891ce7fe",
     "parameters": [
      {
-      "description": "Origin: GET http://front-end/catalogue &rarr; json: $[*].id",
+      "description": "Origin: POST http://front-end/orders &rarr; json: $.items[*].itemId",
       "in": "query",
       "name": "id",
       "required": true,
       "schema": {
        "enum": [
         "510a0d7e-8e83-4193-b483-e27e09ddc34d",
-        "3395a43e-2d88-40de-b95f-e00e1502085b"
+        "3395a43e-2d88-40de-b95f-e00e1502085b",
+        "808a2de1-1aaa-4c25-a9b9-6612e8f29a38",
+        "837ab141-399e-4c1f-9abc-bace40296bac",
+        "a0a4f044-b040-410d-8ead-4de0446aec7e"
        ],
        "type": "string"
       }
@@ -557,7 +613,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 2 requests"
+    "summary": "Seen 26 requests"
    },
    "parameters": []
   },
@@ -587,7 +643,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 2 requests"
+    "summary": "Seen 3 requests"
    },
    "parameters": []
   },
@@ -635,7 +691,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 5 requests"
+    "summary": "Seen 32 requests"
    },
    "parameters": []
   },
@@ -669,9 +725,219 @@
       "description": "Created"
      }
     },
-    "summary": "Seen 2 requests"
+    "summary": "Seen 2 requests",
+    "tags": [
+     "orders"
+    ]
    },
-   "parameters": []
+   "parameters": [],
+   "post": {
+    "operationId": "5dafa90b-5710-4b4a-99f6-5e142a1732f5",
+    "parameters": [],
+    "responses": {
+     "201": {
+      "content": {
+       "application/json": {
+        "example": {
+         "address": {
+          "city": "Glasgow",
+          "country": "United Kingdom",
+          "id": null,
+          "number": "246",
+          "postcode": "G67 3DL",
+          "street": "Whitelees Road"
+         },
+         "card": {
+          "ccv": "958",
+          "expires": "08/19",
+          "id": null,
+          "longNum": "5544154011345918"
+         },
+         "customer": {
+          "addresses": [],
+          "cards": [],
+          "firstName": "User",
+          "id": null,
+          "lastName": "Name",
+          "username": "user"
+         },
+         "customerId": "57a98d98e4b00679b4a830b2",
+         "date": "2021-03-19T01:06:06.541+0000",
+         "id": "6053f8feeae7630007e44bc9",
+         "items": [
+          {
+           "id": "6053f8fc67e0e200086c1d9c",
+           "itemId": "zzz4f044-b040-410d-8ead-4de0446aec7e",
+           "quantity": 1,
+           "unitPrice": 12
+          }
+         ],
+         "shipment": {
+          "id": "7d34b663-bcab-4641-97d5-9e92b0f1af01",
+          "name": "57a98d98e4b00679b4a830b2"
+         },
+         "total": 16.99
+        },
+        "schema": {
+         "properties": {
+          "address": {
+           "properties": {
+            "city": {
+             "type": "string"
+            },
+            "country": {
+             "type": "string"
+            },
+            "id": {},
+            "number": {
+             "type": "string"
+            },
+            "postcode": {
+             "type": "string"
+            },
+            "street": {
+             "type": "string"
+            }
+           },
+           "required": [
+            "city",
+            "country",
+            "id",
+            "number",
+            "postcode",
+            "street"
+           ],
+           "type": "object"
+          },
+          "card": {
+           "properties": {
+            "ccv": {
+             "type": "string"
+            },
+            "expires": {
+             "type": "string"
+            },
+            "id": {},
+            "longNum": {
+             "type": "string"
+            }
+           },
+           "required": [
+            "ccv",
+            "expires",
+            "id",
+            "longNum"
+           ],
+           "type": "object"
+          },
+          "customer": {
+           "properties": {
+            "addresses": {
+             "items": {},
+             "type": "array"
+            },
+            "cards": {
+             "items": {},
+             "type": "array"
+            },
+            "firstName": {
+             "type": "string"
+            },
+            "id": {},
+            "lastName": {
+             "type": "string"
+            },
+            "username": {
+             "type": "string"
+            }
+           },
+           "required": [
+            "addresses",
+            "cards",
+            "firstName",
+            "id",
+            "lastName",
+            "username"
+           ],
+           "type": "object"
+          },
+          "customerId": {
+           "type": "string"
+          },
+          "date": {
+           "type": "string"
+          },
+          "id": {
+           "type": "string"
+          },
+          "items": {
+           "items": {
+            "properties": {
+             "id": {
+              "type": "string"
+             },
+             "itemId": {
+              "type": "string"
+             },
+             "quantity": {
+              "type": "integer"
+             },
+             "unitPrice": {
+              "type": "number"
+             }
+            },
+            "required": [
+             "id",
+             "itemId",
+             "quantity",
+             "unitPrice"
+            ],
+            "type": "object"
+           },
+           "type": "array"
+          },
+          "shipment": {
+           "properties": {
+            "id": {
+             "type": "string"
+            },
+            "name": {
+             "type": "string"
+            }
+           },
+           "required": [
+            "id",
+            "name"
+           ],
+           "type": "object"
+          },
+          "total": {
+           "type": "number"
+          }
+         },
+         "required": [
+          "address",
+          "card",
+          "customer",
+          "customerId",
+          "date",
+          "id",
+          "items",
+          "shipment",
+          "total"
+         ],
+         "type": "object"
+        }
+       }
+      },
+      "description": "Created"
+     }
+    },
+    "summary": "Seen 20 requests",
+    "tags": [
+     "orders"
+    ]
+   }
   },
   "/tags": {
    "get": {
@@ -730,7 +996,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 27 requests"
+    "summary": "Seen 38 requests"
    },
    "parameters": []
   },
@@ -760,7 +1026,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 2 requests"
+    "summary": "Seen 4 requests"
    },
    "parameters": []
   },
@@ -790,7 +1056,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 2 requests"
+    "summary": "Seen 4 requests"
    },
    "parameters": [
     {
@@ -810,10 +1076,13 @@
  },
  "tags": [
   {
-   "name": "cart"
+   "name": "orders"
   },
   {
    "name": "catalogue"
+  },
+  {
+   "name": "cart"
   }
  ]
 }

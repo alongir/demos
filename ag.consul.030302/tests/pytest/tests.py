@@ -8,43 +8,133 @@ from authentication import authenticate
 class Tests_carts(unittest.TestCase):
 
     @clear_session({'spanId': 46})
-    def test_46_delete_carts_id(self):
-        # DELETE http://carts/carts/{id} (endp 46)
-        id_ = '57a98d98e4b00679b4a830b2'
+    def test_46_delete_carts_customerId(self):
+        # POST http://orders/orders (endp 57)
+        address = 'http://user/addresses/57a98d98e4b00679b4a830b0'
+        card = 'http://user/cards/57a98d98e4b00679b4a830b1'
+        customer = 'http://user/customers/57a98d98e4b00679b4a830b2'
+        items = 'http://127.0.0.1:15300/carts/57a98d98e4b00679b4a830b2/items'
+        orders = get_http_target('TARGET_ORDERS', authenticate)
+        with open('data/payload_for_endp_57.json', 'r') as json_payload_file:
+            json_payload = json.load(json_payload_file)
+        apply_into_json(json_payload, '$.address', address)
+        apply_into_json(json_payload, '$.card', card)
+        apply_into_json(json_payload, '$.customer', customer)
+        apply_into_json(json_payload, '$.items', items)
+        resp = orders.post('/orders', json=json_payload, headers=dict([('accept', 'application/json')]))
+        resp.assert_status_code(201)
+        resp.assert_jsonpath('$.address.city', expected_value='Glasgow')
+        customerId = jsonpath('$.customerId', resp)
+
+        # DELETE http://carts/carts/{customerId} (endp 46)
         carts = get_http_target('TARGET_CARTS', authenticate)
-        resp = carts.delete(f'/carts/{id_}')
+        resp = carts.delete(f'/carts/{customerId}')
         resp.assert_status_code(202)
 
     @clear_session({'spanId': 13})
-    def test_13_get_carts_id_items(self):
-        # GET http://carts/carts/{id}/items (endp 13)
-        id_ = '57a98d98e4b00679b4a830b2'
+    def test_13_get_carts_customerId_items(self):
+        # POST http://orders/orders (endp 57)
+        address = 'http://user/addresses/57a98d98e4b00679b4a830b0'
+        card = 'http://user/cards/57a98d98e4b00679b4a830b1'
+        customer = 'http://user/customers/57a98d98e4b00679b4a830b2'
+        items = 'http://127.0.0.1:15300/carts/57a98d98e4b00679b4a830b2/items'
+        orders = get_http_target('TARGET_ORDERS', authenticate)
+        with open('data/payload_for_endp_57.json', 'r') as json_payload_file:
+            json_payload = json.load(json_payload_file)
+        apply_into_json(json_payload, '$.address', address)
+        apply_into_json(json_payload, '$.card', card)
+        apply_into_json(json_payload, '$.customer', customer)
+        apply_into_json(json_payload, '$.items', items)
+        resp = orders.post('/orders', json=json_payload, headers=dict([('accept', 'application/json')]))
+        resp.assert_status_code(201)
+        resp.assert_jsonpath('$.address.city', expected_value='Glasgow')
+        customerId = jsonpath('$.customerId', resp)
+
+        # GET http://carts/carts/{customerId}/items (endp 13)
         carts = get_http_target('TARGET_CARTS', authenticate)
-        resp = carts.get(f'/carts/{id_}/items')
+        resp = carts.get(f'/carts/{customerId}/items', headers=dict([('accept', 'application/json')]))
         resp.assert_status_code(200)
 
-    @clear_session({'spanId': 12})
-    def test_12_get_carts_id_merge(self):
-        # GET http://carts/carts/{id}/merge (endp 12)
-        id_ = '57a98d98e4b00679b4a830b2'
-        sessionId = '7w4TGI0pnIxn5TEFoHX6O2spPdXa3dut'
-        carts = get_http_target('TARGET_CARTS', authenticate)
-        qstr = '?' + urlencode([('sessionId', sessionId)])
-        resp = carts.get(f'/carts/{id_}/merge' + qstr)
-        resp.assert_status_code(202)
-
-
-@data_driven_tests
-class Tests_catalogue(unittest.TestCase):
-
-    @clear_session({'spanId': 10})
-    def test_10_get_catalogue(self):
+    @clear_session({'spanId': 56})
+    def test_56_post_carts_customerId_items(self):
         # GET http://catalogue/catalogue (endp 10)
         size = '5'
         catalogue = get_http_target('TARGET_CATALOGUE', authenticate)
         qstr = '?' + urlencode([('page', '1'), ('size', size), ('tags', '')])
         resp = catalogue.get('/catalogue' + qstr)
         resp.assert_regex_in_body(r'.*Holy.*')
+        itemId = jsonpath('$[*].id', resp)
+        unitPrice = jsonpath('$[*].price', resp)
+
+        # POST http://orders/orders (endp 57)
+        address = 'http://user/addresses/57a98d98e4b00679b4a830b0'
+        card = 'http://user/cards/57a98d98e4b00679b4a830b1'
+        customer = 'http://user/customers/57a98d98e4b00679b4a830b2'
+        items = 'http://127.0.0.1:15300/carts/57a98d98e4b00679b4a830b2/items'
+        orders = get_http_target('TARGET_ORDERS', authenticate)
+        with open('data/payload_for_endp_57.json', 'r') as json_payload_file:
+            json_payload = json.load(json_payload_file)
+        apply_into_json(json_payload, '$.address', address)
+        apply_into_json(json_payload, '$.card', card)
+        apply_into_json(json_payload, '$.customer', customer)
+        apply_into_json(json_payload, '$.items', items)
+        resp = orders.post('/orders', json=json_payload, headers=dict([('accept', 'application/json')]))
+        resp.assert_status_code(201)
+        resp.assert_jsonpath('$.address.city', expected_value='Glasgow')
+        customerId = jsonpath('$.customerId', resp)
+
+        # POST http://carts/carts/{customerId}/items (endp 56)
+        carts = get_http_target('TARGET_CARTS', authenticate)
+        with open('data/payload_for_endp_56.json', 'r') as json_payload_file:
+            json_payload = json.load(json_payload_file)
+        apply_into_json(json_payload, '$.itemId', itemId)
+        apply_into_json(json_payload, '$.unitPrice', unitPrice)
+        resp = carts.post(f'/carts/{customerId}/items', json=json_payload, headers=dict([('accept', 'application/json')]))
+        resp.assert_status_code(201)
+
+    @clear_session({'spanId': 12})
+    def test_12_get_carts_customerId_merge(self):
+        # POST http://orders/orders (endp 57)
+        address = 'http://user/addresses/57a98d98e4b00679b4a830b0'
+        card = 'http://user/cards/57a98d98e4b00679b4a830b1'
+        customer = 'http://user/customers/57a98d98e4b00679b4a830b2'
+        items = 'http://127.0.0.1:15300/carts/57a98d98e4b00679b4a830b2/items'
+        orders = get_http_target('TARGET_ORDERS', authenticate)
+        with open('data/payload_for_endp_57.json', 'r') as json_payload_file:
+            json_payload = json.load(json_payload_file)
+        apply_into_json(json_payload, '$.address', address)
+        apply_into_json(json_payload, '$.card', card)
+        apply_into_json(json_payload, '$.customer', customer)
+        apply_into_json(json_payload, '$.items', items)
+        resp = orders.post('/orders', json=json_payload, headers=dict([('accept', 'application/json')]))
+        resp.assert_status_code(201)
+        resp.assert_jsonpath('$.address.city', expected_value='Glasgow')
+        customerId = jsonpath('$.customerId', resp)
+
+        # GET http://carts/carts/{customerId}/merge (endp 12)
+        sessionId = 'XQmVKODtqAcXS6ZfF4HlZubZBEgShjds'
+        carts = get_http_target('TARGET_CARTS', authenticate)
+        qstr = '?' + urlencode([('sessionId', sessionId)])
+        resp = carts.get(f'/carts/{customerId}/merge' + qstr)
+        resp.assert_status_code(202)
+
+
+@data_driven_tests
+class Tests_catalogue(unittest.TestCase):
+
+    @clear_session({'spanId': 54})
+    def test_54_get_catalogue_id(self):
+        # GET http://catalogue/catalogue (endp 10)
+        size = '5'
+        catalogue = get_http_target('TARGET_CATALOGUE', authenticate)
+        qstr = '?' + urlencode([('page', '1'), ('size', size), ('tags', '')])
+        resp = catalogue.get('/catalogue' + qstr)
+        resp.assert_regex_in_body(r'.*Holy.*')
+        id_ = jsonpath('$[*].id', resp)
+
+        # GET http://catalogue/catalogue/{id} (endp 54)
+        resp = catalogue.get(f'/catalogue/{id_}')
+        resp.assert_status_code(200)
 
     @clear_session({'spanId': 9})
     def test_09_get_catalogue_size(self):
@@ -80,6 +170,14 @@ class Tests_front_end(unittest.TestCase):
         resp = front_end.get(f'/{param}', headers=dict([('x-requested-with', 'XMLHttpRequest')]))
         resp.assert_status_code(200)
 
+    @clear_session({'spanId': 59})
+    def test_59_get_basket_html(self):
+        # GET http://front-end/basket.html (endp 59)
+        front_end = get_http_target('TARGET_FRONT_END', authenticate)
+        resp = front_end.get('/basket.html')
+        resp.assert_status_code(200)
+        resp.assert_cssselect('div#basket div.box form h1', expected_value='Shopping cart')
+
     @clear_session({'spanId': 2})
     def test_02_get_cart(self):
         # GET http://front-end/cart (endp 2)
@@ -93,6 +191,22 @@ class Tests_front_end(unittest.TestCase):
         front_end = get_http_target('TARGET_FRONT_END', authenticate)
         resp = front_end.delete('/cart')
         resp.assert_status_code(202)
+
+    @clear_session({'spanId': 61})
+    def test_61_post_cart(self):
+        # POST http://front-end/orders (endp 66)
+        front_end = get_http_target('TARGET_FRONT_END', authenticate)
+        resp = front_end.post('/orders')
+        resp.assert_status_code(201)
+        resp.assert_jsonpath('$.address.city', expected_value='Glasgow')
+        id_ = jsonpath('$.items[*].itemId', resp)
+
+        # POST http://front-end/cart (endp 61)
+        with open('data/payload_for_endp_61.json', 'r') as json_payload_file:
+            json_payload = json.load(json_payload_file)
+        apply_into_json(json_payload, '$.id', id_)
+        resp = front_end.post('/cart', json=json_payload)
+        resp.assert_status_code(201)
 
     @clear_session({'spanId': 37})
     def test_37_get_catalogue(self):
@@ -158,13 +272,12 @@ class Tests_front_end(unittest.TestCase):
 
     @clear_session({'spanId': 45})
     def test_45_get_detail_html(self):
-        # GET http://front-end/catalogue (endp 4)
-        size = '5'
+        # POST http://front-end/orders (endp 66)
         front_end = get_http_target('TARGET_FRONT_END', authenticate)
-        qstr = '?' + urlencode([('page', '1'), ('size', size), ('tags', '')])
-        resp = front_end.get('/catalogue' + qstr, headers=dict([('x-requested-with', 'XMLHttpRequest')]))
-        resp.assert_regex_in_body(r'.*Holy.*')
-        id_ = jsonpath('$[*].id', resp)
+        resp = front_end.post('/orders')
+        resp.assert_status_code(201)
+        resp.assert_jsonpath('$.address.city', expected_value='Glasgow')
+        id_ = jsonpath('$.items[*].itemId', resp)
 
         # GET http://front-end/detail.html (endp 45)
         qstr = '?' + urlencode([('id', id_)])
@@ -290,14 +403,74 @@ class Tests_orders(unittest.TestCase):
 
 
 @data_driven_tests
+class Tests_payment(unittest.TestCase):
+
+    @clear_session({'spanId': 67})
+    def test_67_post_paymentAuth(self):
+        # POST http://payment/paymentAuth (endp 67)
+        ccv = '958'
+        country = 'United Kingdom'
+        expires = '08/19'
+        longNum = '5544154011345918'
+        number = '246'
+        postcode = 'G67 3DL'
+        street = 'Whitelees Road'
+        payment = get_http_target('TARGET_PAYMENT', authenticate)
+        with open('data/payload_for_endp_67.json', 'r') as json_payload_file:
+            json_payload = json.load(json_payload_file)
+        apply_into_json(json_payload, '$.address.country', country)
+        apply_into_json(json_payload, '$.address.number', number)
+        apply_into_json(json_payload, '$.address.postcode', postcode)
+        apply_into_json(json_payload, '$.address.street', street)
+        apply_into_json(json_payload, '$.amount', float(random.uniform(4.99, 104.979996)))
+        apply_into_json(json_payload, '$.card.ccv', ccv)
+        apply_into_json(json_payload, '$.card.expires', expires)
+        apply_into_json(json_payload, '$.card.longNum', longNum)
+        resp = payment.post('/paymentAuth', json=json_payload, headers=dict([('accept', 'application/json')]))
+        resp.assert_status_code(200)
+
+
+@data_driven_tests
+class Tests_shipping(unittest.TestCase):
+
+    @clear_session({'spanId': 68})
+    def test_68_post_shipping(self):
+        # POST http://shipping/shipping (endp 68)
+        name = '57a98d98e4b00679b4a830b2'
+        shipping = get_http_target('TARGET_SHIPPING', authenticate)
+        with open('data/payload_for_endp_68.json', 'r') as json_payload_file:
+            json_payload = json.load(json_payload_file)
+        apply_into_json(json_payload, '$.id', str(uuid.uuid4()))
+        apply_into_json(json_payload, '$.name', name)
+        resp = shipping.post('/shipping', json=json_payload, headers=dict([('accept', 'application/json')]))
+        resp.assert_status_code(201)
+
+
+@data_driven_tests
 class Tests_user(unittest.TestCase):
 
     @clear_session({'spanId': 15})
-    def test_15_get_customers_id(self):
-        # GET http://user/customers/{id} (endp 15)
-        id_ = '57a98d98e4b00679b4a830b2'
+    def test_15_get_customers_customerId(self):
+        # POST http://orders/orders (endp 57)
+        address = 'http://user/addresses/57a98d98e4b00679b4a830b0'
+        card = 'http://user/cards/57a98d98e4b00679b4a830b1'
+        customer = 'http://user/customers/57a98d98e4b00679b4a830b2'
+        items = 'http://127.0.0.1:15300/carts/57a98d98e4b00679b4a830b2/items'
+        orders = get_http_target('TARGET_ORDERS', authenticate)
+        with open('data/payload_for_endp_57.json', 'r') as json_payload_file:
+            json_payload = json.load(json_payload_file)
+        apply_into_json(json_payload, '$.address', address)
+        apply_into_json(json_payload, '$.card', card)
+        apply_into_json(json_payload, '$.customer', customer)
+        apply_into_json(json_payload, '$.items', items)
+        resp = orders.post('/orders', json=json_payload, headers=dict([('accept', 'application/json')]))
+        resp.assert_status_code(201)
+        resp.assert_jsonpath('$.address.city', expected_value='Glasgow')
+        customerId = jsonpath('$.customerId', resp)
+
+        # GET http://user/customers/{customerId} (endp 15)
         user = get_http_target('TARGET_USER', authenticate)
-        resp = user.get(f'/customers/{id_}')
+        resp = user.get(f'/customers/{customerId}')
         resp.assert_jsonpath('$.lastName', expected_value='Name')
 
     # authentication-related test

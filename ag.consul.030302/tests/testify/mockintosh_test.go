@@ -16,8 +16,6 @@ func TestGet39(t *testing.T) {
 }
 
 func TestGetCatalogue47(t *testing.T) {
-    size := "6"
-
     // GET http://mockintosh/catalogue (endp 47)
     size := "6"
     mockintosh := GetHttpTarget(t, "TARGET_MOCKINTOSH", new(Authentication))

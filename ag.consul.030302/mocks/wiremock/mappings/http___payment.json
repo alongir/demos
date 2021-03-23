@@ -1,0 +1,21 @@
+{
+ "mappings": [
+  {
+   "id": "131bcc28-9ad1-4de9-8e6d-c925a2b5c6aa",
+   "request": {
+    "method": "POST",
+    "urlPathPattern": "/paymentAuth"
+   },
+   "response": {
+    "body": "{\"authorised\":true,\"message\":\"Payment authorised\"}\n",
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "status": 200,
+    "transformers": [
+     "response-template"
+    ]
+   }
+  }
+ ]
+}

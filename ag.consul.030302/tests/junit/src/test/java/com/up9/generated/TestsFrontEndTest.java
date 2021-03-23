@@ -40,6 +40,17 @@ public class TestsFrontEndTest
     }
 
     @Test
+    public void testGetBasketHtml59() throws IOException
+    {
+        // GET http://front-end/basket.html (endp 59)
+        final HttpTarget frontEnd = getHttpTarget("TARGET_FRONT_END", new Authentication());
+        final HttpRequest request = new HttpRequest();
+        final Response response = frontEnd.get(request, "/basket.html");
+        assertStatusCode(response.code(), 200);
+        assertCSSselect("div#basket div.box form h1", "Shopping cart", response.body().string());
+    }
+
+    @Test
     public void testGetCart02() throws IOException
     {
         // GET http://front-end/cart (endp 2)
@@ -60,6 +71,29 @@ public class TestsFrontEndTest
         final HttpRequest request = new HttpRequest();
         final Response response = frontEnd.delete(request, "/cart");
         assertStatusCode(response.code(), 202);
+    }
+
+    @Test
+    public void testPostCart61() throws IOException
+    {
+        // POST http://front-end/orders (endp 66)
+        final HttpTarget frontEnd = getHttpTarget("TARGET_FRONT_END", new Authentication());
+        final HttpRequest request = new HttpRequest();
+        final Response response = frontEnd.post(request, "/orders");
+        assertStatusCode(response.code(), 201);
+        assertJSONPath("$.address.city", "Glasgow", response.body().string());
+        final String id = JSONPath("$.items[*].itemId", response.body().string());
+
+        // POST http://front-end/cart (endp 61)
+        final HttpRequest request2 = new HttpRequest();
+        request2.setHeaders(new Hashtable<String, Object>() {{
+            put("content-type", "application/json");
+        }});
+        request2.setJsonBody("payload_for_endp_61.json", new Hashtable<String, Object>() {{
+            put("$.id", id);
+        }});
+        final Response response2 = frontEnd.post(request2, "/cart");
+        assertStatusCode(response2.code(), 201);
     }
 
     @Test
@@ -182,21 +216,13 @@ public class TestsFrontEndTest
     @Test
     public void testGetDetailHtml45() throws IOException
     {
-        // GET http://front-end/catalogue (endp 4)
-        final String size = "5";
+        // POST http://front-end/orders (endp 66)
         final HttpTarget frontEnd = getHttpTarget("TARGET_FRONT_END", new Authentication());
         final HttpRequest request = new HttpRequest();
-        request.setQueryString(new Hashtable<String, Object>() {{
-            put("page", "1");
-            put("size", size);
-            put("tags", "");
-        }});
-        request.setHeaders(new Hashtable<String, Object>() {{
-            put("x-requested-with", "XMLHttpRequest");
-        }});
-        final Response response = frontEnd.get(request, "/catalogue");
-        assertRegexInBody(".*Holy.*", response.body().string());
-        final String id = JSONPath("$[*].id", response.body().string());
+        final Response response = frontEnd.post(request, "/orders");
+        assertStatusCode(response.code(), 201);
+        assertJSONPath("$.address.city", "Glasgow", response.body().string());
+        final String id = JSONPath("$.items[*].itemId", response.body().string());
 
         // GET http://front-end/detail.html (endp 45)
         final HttpRequest request2 = new HttpRequest();

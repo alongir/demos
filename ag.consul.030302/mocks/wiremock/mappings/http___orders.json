@@ -16,6 +16,23 @@
      "response-template"
     ]
    }
+  },
+  {
+   "id": "4f1208a6-8b60-4454-badc-9a948431fa1f",
+   "request": {
+    "method": "POST",
+    "urlPathPattern": "/orders"
+   },
+   "response": {
+    "bodyFileName": "resp_57.json",
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "status": 201,
+    "transformers": [
+     "response-template"
+    ]
+   }
   }
  ]
 }

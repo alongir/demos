@@ -17,19 +17,31 @@ services:
   managementRoot: __admin
   oas: '@mock-data/up9-http___carts-spec.json'
   endpoints:
-  - path: /carts/{{id}}/merge
+  - path: /carts/{{customerId}}/merge
     response:
       status: 202
-  - path: /carts/{{id}}/items
+  - path: /carts/{{customerId}}/items
     response:
       headers:
         Content-Type: application/json
       body: '[]'
-      useTemplating: false
-  - path: /carts/{{id}}
+  - path: /carts/{{customerId}}
     response:
       status: 202
     method: delete
+  - path: /carts/{{customerId}}/items
+    response:
+      status: 201
+      headers:
+        Content-Type: application/json
+      body: |-
+        {
+         "id": "6053f8fb67e0e200086c1d8e",
+         "itemId": "{{request.body}}",
+         "quantity": 1,
+         "unitPrice": {{random.float 7.99 99.99 2}}
+        }
+    method: post
 - name: http://catalogue
   port: 8002
   ssl: false
@@ -73,6 +85,11 @@ services:
          "err": null
         }
       useTemplating: false
+  - path: /catalogue/{{id}}
+    response:
+      headers:
+        Content-Type: application/json
+      body: '@mock-data/resp_54.json'
 - name: http://front-end
   port: 8003
   ssl: false
@@ -199,6 +216,23 @@ services:
       useTemplating: false
   - path: /catalogue/{{id}}
     response: {}
+  - path: /basket.html
+    response:
+      headers:
+        Content-Type: text/html
+      body: '@mock-data/resp_59.html'
+      useTemplating: false
+  - path: /cart
+    response:
+      status: 201
+    method: post
+  - path: /orders
+    response:
+      status: 201
+      headers:
+        Content-Type: application/json
+      body: '@mock-data/resp_66.json'
+    method: post
 - name: http://mockintosh
   port: 8004
   ssl: false
@@ -287,13 +321,54 @@ services:
          }
         }
       useTemplating: false
-- name: http://user
+  - path: /orders
+    response:
+      status: 201
+      headers:
+        Content-Type: application/json
+      body: '@mock-data/resp_57.json'
+    method: post
+- name: http://payment
   port: 8006
+  ssl: false
+  managementRoot: __admin
+  oas: '@mock-data/up9-http___payment-spec.json'
+  endpoints:
+  - path: /paymentAuth
+    response:
+      headers:
+        Content-Type: application/json
+      body: |-
+        {
+         "authorised": true,
+         "message": "Payment authorised"
+        }
+      useTemplating: false
+    method: post
+- name: http://shipping
+  port: 8007
+  ssl: false
+  managementRoot: __admin
+  oas: '@mock-data/up9-http___shipping-spec.json'
+  endpoints:
+  - path: /shipping
+    response:
+      status: 201
+      headers:
+        Content-Type: application/json
+      body: |-
+        {
+         "id": "{{request.body}}",
+         "name": "{{request.body}}"
+        }
+    method: post
+- name: http://user
+  port: 8008
   ssl: false
   managementRoot: __admin
   oas: '@mock-data/up9-http___user-spec.json'
   endpoints:
-  - path: /customers/{{id}}
+  - path: /customers/{{customerId}}
     response:
       headers:
         Content-Type: application/json

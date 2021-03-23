@@ -4,5 +4,7 @@
  "TARGET_FRONT_END": "http://localhost:8003",
  "TARGET_MOCKINTOSH": "http://localhost:8004",
  "TARGET_ORDERS": "http://localhost:8005",
- "TARGET_USER": "http://localhost:8006"
+ "TARGET_PAYMENT": "http://localhost:8006",
+ "TARGET_SHIPPING": "http://localhost:8007",
+ "TARGET_USER": "http://localhost:8008"
 }

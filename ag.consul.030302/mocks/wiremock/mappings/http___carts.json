@@ -46,6 +46,23 @@
      "response-template"
     ]
    }
+  },
+  {
+   "id": "7dd93f12-1928-4271-8a03-1616f5ce9867",
+   "request": {
+    "method": "POST",
+    "urlPathPattern": "/carts/[^/]+/items"
+   },
+   "response": {
+    "body": "{\n \"id\": \"6053f8fb67e0e200086c1d8e\",\n \"itemId\": \"{{request.body}}\",\n \"quantity\": 1,\n \"unitPrice\": {{random.float 7.99 99.99 2}}\n}",
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "status": 201,
+    "transformers": [
+     "response-template"
+    ]
+   }
   }
  ]
 }

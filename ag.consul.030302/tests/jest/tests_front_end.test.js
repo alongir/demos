@@ -1,5 +1,5 @@
 const authenticate = require("./authentication");
-const {CSSselect, JSONPath, clearSession, getHttpTarget, urlencode} = require("./up9lib");
+const {CSSselect, JSONBuild, JSONPath, clearSession, getHttpTarget, urlencode} = require("./up9lib");
 
 it("test_01_get_", () => {
     clearSession();
@@ -33,6 +33,23 @@ it("test_26_get_param", () => {
         return response.text();
     })
     .then((text) => {
+    })
+    .then((data) => {
+    });
+});
+
+it("test_59_get_basket_html", () => {
+    clearSession();
+
+    // GET http://front-end/basket.html (endp 59)
+    const front_end = getHttpTarget("TARGET_FRONT_END", authenticate);
+    return front_end.fetch("/basket.html")
+    .then((response) => {
+        expect(response.status).toEqual(200);
+        return response.text();
+    })
+    .then((text) => {
+        expect(CSSselect("div#basket div.box form h1", text)).toContain("Shopping cart");
     })
     .then((data) => {
     });
@@ -73,6 +90,52 @@ it("test_43_delete_cart", () => {
     .then((text) => {
     })
     .then((data) => {
+    });
+});
+
+it("test_61_post_cart", () => {
+    clearSession();
+
+    // POST http://front-end/orders (endp 66)
+    const front_end = getHttpTarget("TARGET_FRONT_END", authenticate);
+    return front_end.fetch("/orders", {
+        method: "POST"
+    })
+    .then((response) => {
+        expect(response.status).toEqual(201);
+        return response.text();
+    })
+    .then((text) => {
+        return JSON.parse(text);
+    })
+    .then((data) => {
+        expect(JSONPath({
+            path: "$.address.city",
+            json: data
+        })).toContain("Glasgow");
+        const id = JSONPath({
+            path: "$.items[*].itemId",
+            json: data
+        })[0];
+
+        // POST http://front-end/cart (endp 61)
+        return front_end.fetch("/cart", {
+            method: "POST",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSONBuild("data/payload_for_endp_61.json", {
+                "$.id": id
+            })
+        })
+        .then((response) => {
+            expect(response.status).toEqual(201);
+            return response.text();
+        })
+        .then((text) => {
+        })
+        .then((data) => {
+        });
     });
 });
 
@@ -243,24 +306,25 @@ it("test_30_get_customers_customerId", () => {
 it("test_45_get_detail_html", () => {
     clearSession();
 
-    // GET http://front-end/catalogue (endp 4)
-    const size = "5";
+    // POST http://front-end/orders (endp 66)
     const front_end = getHttpTarget("TARGET_FRONT_END", authenticate);
-    return front_end.fetch("/catalogue" + urlencode([["page", "1"], ["size", size], ["tags", ""]]), {
-        headers: {
-            "x-requested-with": "XMLHttpRequest"
-        }
+    return front_end.fetch("/orders", {
+        method: "POST"
     })
     .then((response) => {
+        expect(response.status).toEqual(201);
         return response.text();
     })
     .then((text) => {
-        expect(/.*Holy.*/.test(response)).toEqual(true);
         return JSON.parse(text);
     })
     .then((data) => {
+        expect(JSONPath({
+            path: "$.address.city",
+            json: data
+        })).toContain("Glasgow");
         const id = JSONPath({
-            path: "$[*].id",
+            path: "$.items[*].itemId",
             json: data
         })[0];
 

@@ -22,6 +22,12 @@ public class Authentication implements AuthenticationInterface
         else if (httpTarget.targetKey == "TARGET_ORDERS")
         {
         }
+        else if (httpTarget.targetKey == "TARGET_PAYMENT")
+        {
+        }
+        else if (httpTarget.targetKey == "TARGET_SHIPPING")
+        {
+        }
         else if (httpTarget.targetKey == "TARGET_USER")
         {
         }

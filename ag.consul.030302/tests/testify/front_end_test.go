@@ -17,8 +17,6 @@ func TestGet01(t *testing.T) {
 }
 
 func TestGetParam26(t *testing.T) {
-    param := "navbar.html"
-
     // GET http://front-end/{param} (endp 26)
     param := "navbar.html"
     frontEnd := GetHttpTarget(t, "TARGET_FRONT_END", new(Authentication))
@@ -26,8 +24,17 @@ func TestGetParam26(t *testing.T) {
     req.SetHeaders(map[string]interface{}{
         "x-requested-with": "XMLHttpRequest",
     })
-    resp := frontEnd.Get(req, "/" + param.(string))
+    resp := frontEnd.Get(req, "/" + param)
     assert.Equal(t, 200, resp.StatusCode())
+}
+
+func TestGetBasketHtml59(t *testing.T) {
+    // GET http://front-end/basket.html (endp 59)
+    frontEnd := GetHttpTarget(t, "TARGET_FRONT_END", new(Authentication))
+    req := new(HttpRequest)
+    resp := frontEnd.Get(req, "/basket.html")
+    assert.Equal(t, 200, resp.StatusCode())
+    assert.Contains(t, CssSelect(t, "div#basket div.box form h1", resp), "Shopping cart")
 }
 
 func TestGetCart02(t *testing.T) {
@@ -49,9 +56,28 @@ func TestDeleteCart43(t *testing.T) {
     assert.Equal(t, 202, resp.StatusCode())
 }
 
-func TestGetCatalogue37(t *testing.T) {
-    size := "6"
+func TestPostCart61(t *testing.T) {
+    // POST http://front-end/orders (endp 66)
+    frontEnd := GetHttpTarget(t, "TARGET_FRONT_END", new(Authentication))
+    req := new(HttpRequest)
+    resp := frontEnd.Post(req, "/orders")
+    assert.Equal(t, 201, resp.StatusCode())
+    assert.Equal(t, "Glasgow", JsonPath(t, "$.address.city", resp.String()))
+    id := JsonPath(t, "$.items[*].itemId", resp.String())
 
+    // POST http://front-end/cart (endp 61)
+    req2 := new(HttpRequest)
+    req2.SetHeaders(map[string]interface{}{
+        "content-type": "application/json",
+    })
+    req2.SetJsonBody("data/payload_for_endp_61.json", map[string]interface{}{
+        "$.id": id,
+    })
+    resp2 := frontEnd.Post(req2, "/cart")
+    assert.Equal(t, 201, resp2.StatusCode())
+}
+
+func TestGetCatalogue37(t *testing.T) {
     // GET http://front-end/catalogue (endp 37)
     size := "6"
     frontEnd := GetHttpTarget(t, "TARGET_FRONT_END", new(Authentication))
@@ -69,8 +95,6 @@ func TestGetCatalogue37(t *testing.T) {
 }
 
 func TestGetCatalogueId52(t *testing.T) {
-    size := "5"
-
     // GET http://front-end/catalogue (endp 4)
     size := "5"
     frontEnd := GetHttpTarget(t, "TARGET_FRONT_END", new(Authentication))
@@ -133,8 +157,6 @@ func TestGetCategoryHtml34(t *testing.T) {
 }
 
 func TestGetCustomersCustomerid05(t *testing.T) {
-    customerId := "7w4TGI0pnIxn5TEFoHX6O2spPdXa3dut"
-
     // GET http://front-end/customers/{customerId} (endp 5)
     customerId := "7w4TGI0pnIxn5TEFoHX6O2spPdXa3dut"
     frontEnd := GetHttpTarget(t, "TARGET_FRONT_END", new(Authentication))
@@ -142,13 +164,11 @@ func TestGetCustomersCustomerid05(t *testing.T) {
     req.SetHeaders(map[string]interface{}{
         "x-requested-with": "XMLHttpRequest",
     })
-    resp := frontEnd.Get(req, "/customers/" + customerId.(string))
+    resp := frontEnd.Get(req, "/customers/" + customerId)
     assert.Equal(t, "Name", JsonPath(t, "$.lastName", resp.String()))
 }
 
 func TestGetCustomersCustomerid30(t *testing.T) {
-    customerId := "7w4TGI0pnIxn5TEFoHX6O2spPdXa3dut"
-
     // GET http://front-end/customers/{customerId} (endp 30)
     customerId := "7w4TGI0pnIxn5TEFoHX6O2spPdXa3dut"
     frontEnd := GetHttpTarget(t, "TARGET_FRONT_END", new(Authentication))
@@ -156,28 +176,18 @@ func TestGetCustomersCustomerid30(t *testing.T) {
     req.SetHeaders(map[string]interface{}{
         "x-requested-with": "XMLHttpRequest",
     })
-    resp := frontEnd.Get(req, "/customers/" + customerId.(string))
+    resp := frontEnd.Get(req, "/customers/" + customerId)
     assert.Equal(t, 200, resp.StatusCode())
 }
 
 func TestGetDetailHtml45(t *testing.T) {
-    size := "5"
-
-    // GET http://front-end/catalogue (endp 4)
-    size := "5"
+    // POST http://front-end/orders (endp 66)
     frontEnd := GetHttpTarget(t, "TARGET_FRONT_END", new(Authentication))
     req := new(HttpRequest)
-    req.SetQueryString(map[string]interface{}{
-        "page": "1",
-        "size": size,
-        "tags": "",
-    })
-    req.SetHeaders(map[string]interface{}{
-        "x-requested-with": "XMLHttpRequest",
-    })
-    resp := frontEnd.Get(req, "/catalogue")
-    assert.Regexp(t, regexp.MustCompile(".*Holy.*"), resp.String())
-    id := JsonPath(t, "$[*].id", resp.String())
+    resp := frontEnd.Post(req, "/orders")
+    assert.Equal(t, 201, resp.StatusCode())
+    assert.Equal(t, "Glasgow", JsonPath(t, "$.address.city", resp.String()))
+    id := JsonPath(t, "$.items[*].itemId", resp.String())
 
     // GET http://front-end/detail.html (endp 45)
     req2 := new(HttpRequest)

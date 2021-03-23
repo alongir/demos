@@ -1,0 +1,21 @@
+{
+ "mappings": [
+  {
+   "id": "9026eb3c-be01-4a36-bafd-bdce65f14083",
+   "request": {
+    "method": "POST",
+    "urlPathPattern": "/shipping"
+   },
+   "response": {
+    "body": "{\n \"id\": \"{{request.body}}\",\n \"name\": \"{{request.body}}\"\n}",
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "status": 201,
+    "transformers": [
+     "response-template"
+    ]
+   }
+  }
+ ]
+}

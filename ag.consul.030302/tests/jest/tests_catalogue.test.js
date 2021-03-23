@@ -1,7 +1,7 @@
 const authenticate = require("./authentication");
-const {clearSession, getHttpTarget, urlencode} = require("./up9lib");
+const {JSONPath, clearSession, getHttpTarget, urlencode} = require("./up9lib");
 
-it("test_10_get_catalogue", () => {
+it("test_54_get_catalogue_id", () => {
     clearSession();
 
     // GET http://catalogue/catalogue (endp 10)
@@ -13,8 +13,24 @@ it("test_10_get_catalogue", () => {
     })
     .then((text) => {
         expect(/.*Holy.*/.test(response)).toEqual(true);
+        return JSON.parse(text);
     })
     .then((data) => {
+        const id = JSONPath({
+            path: "$[*].id",
+            json: data
+        })[0];
+
+        // GET http://catalogue/catalogue/{id} (endp 54)
+        return catalogue.fetch("/catalogue/" + id)
+        .then((response) => {
+            expect(response.status).toEqual(200);
+            return response.text();
+        })
+        .then((text) => {
+        })
+        .then((data) => {
+        });
     });
 });
 

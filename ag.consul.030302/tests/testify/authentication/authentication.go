@@ -19,6 +19,8 @@ func (a Authentication) Authenticate(targetKey string) {
     case "TARGET_FRONT_END":
     case "TARGET_MOCKINTOSH":
     case "TARGET_ORDERS":
+    case "TARGET_PAYMENT":
+    case "TARGET_SHIPPING":
     case "TARGET_USER":
     }
 }

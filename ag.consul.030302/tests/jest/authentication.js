@@ -4,6 +4,8 @@ function authenticate(targetKey, opts) {
     } else if (targetKey === "TARGET_FRONT_END") {
     } else if (targetKey === "TARGET_MOCKINTOSH") {
     } else if (targetKey === "TARGET_ORDERS") {
+    } else if (targetKey === "TARGET_PAYMENT") {
+    } else if (targetKey === "TARGET_SHIPPING") {
     } else if (targetKey === "TARGET_USER") {
     } else {
     }

@@ -15,7 +15,7 @@ import static com.up9.up9lib.Common.*;
 public class TestsCatalogueTest
 {
     @Test
-    public void testGetCatalogue10() throws IOException
+    public void testGetCatalogueId54() throws IOException
     {
         // GET http://catalogue/catalogue (endp 10)
         final String size = "5";
@@ -28,6 +28,12 @@ public class TestsCatalogueTest
         }});
         final Response response = catalogue.get(request, "/catalogue");
         assertRegexInBody(".*Holy.*", response.body().string());
+        final String id = JSONPath("$[*].id", response.body().string());
+
+        // GET http://catalogue/catalogue/{id} (endp 54)
+        final HttpRequest request2 = new HttpRequest();
+        final Response response2 = catalogue.get(request2, "/catalogue/" + id);
+        assertStatusCode(response2.code(), 200);
     }
 
     @Test

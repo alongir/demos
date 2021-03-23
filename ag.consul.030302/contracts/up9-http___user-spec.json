@@ -5,7 +5,7 @@
  },
  "openapi": "3.0.2",
  "paths": {
-  "/customers/{id}": {
+  "/customers/{customerId}": {
    "get": {
     "operationId": "d4520eb3-df4a-48fa-a5a9-c6eaab6d0af4",
     "parameters": [],
@@ -117,12 +117,13 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 7 requests"
+    "summary": "Seen 29 requests"
    },
    "parameters": [
     {
+     "description": "Origin: POST http://orders/orders &rarr; json: $.customerId",
      "in": "path",
-     "name": "id",
+     "name": "customerId",
      "required": true,
      "schema": {
       "enum": [
@@ -256,7 +257,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 12 requests"
+    "summary": "Seen 39 requests"
    },
    "parameters": []
   }

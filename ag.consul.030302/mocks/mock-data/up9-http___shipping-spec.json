@@ -1,0 +1,80 @@
+{
+ "info": {
+  "title": "http://shipping",
+  "version": "0.0"
+ },
+ "openapi": "3.0.2",
+ "paths": {
+  "/shipping": {
+   "parameters": [],
+   "post": {
+    "operationId": "9026eb3c-be01-4a36-bafd-bdce65f14083",
+    "parameters": [
+     {
+      "in": "header",
+      "name": "accept",
+      "required": false,
+      "schema": {
+       "enum": [
+        "application/json"
+       ],
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "properties": {
+         "id": {
+          "type": "string"
+         },
+         "name": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "id",
+         "name"
+        ],
+        "type": "object"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "201": {
+      "content": {
+       "application/json": {
+        "example": {
+         "id": "000dd70b-632f-457b-9ce6-0bc6ecd5f596",
+         "name": "57a98d98e4b00679b4a830b2"
+        },
+        "schema": {
+         "properties": {
+          "id": {
+           "type": "string"
+          },
+          "name": {
+           "type": "string"
+          }
+         },
+         "required": [
+          "id",
+          "name"
+         ],
+         "type": "object"
+        }
+       }
+      },
+      "description": "Created"
+     }
+    },
+    "summary": "Seen 20 requests"
+   }
+  }
+ },
+ "tags": []
+}

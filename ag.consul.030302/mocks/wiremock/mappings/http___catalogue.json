@@ -50,6 +50,23 @@
      "response-template"
     ]
    }
+  },
+  {
+   "id": "4d848183-adb5-4fc7-9222-962e4e4e1af9",
+   "request": {
+    "method": "GET",
+    "urlPathPattern": "/catalogue/[^/]+"
+   },
+   "response": {
+    "bodyFileName": "resp_54.json",
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "status": 200,
+    "transformers": [
+     "response-template"
+    ]
+   }
   }
  ]
 }

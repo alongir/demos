@@ -4,5 +4,7 @@
  "TARGET_FRONT_END": "http://front-end",
  "TARGET_MOCKINTOSH": "http://mockintosh",
  "TARGET_ORDERS": "http://orders",
+ "TARGET_PAYMENT": "http://payment",
+ "TARGET_SHIPPING": "http://shipping",
  "TARGET_USER": "http://user"
 }
