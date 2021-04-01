@@ -124,7 +124,7 @@
    },
    "parameters": [
     {
-     "description": "Origin: POST http://orders/orders &rarr; json: $.customerId",
+     "description": "Origin: GET http://user/login &rarr; json: $.user.id",
      "in": "path",
      "name": "customerId",
      "required": true,
@@ -262,7 +262,7 @@
    },
    "parameters": [
     {
-     "description": "Origin: POST http://orders/orders &rarr; json: $.customerId",
+     "description": "Origin: GET http://user/login &rarr; json: $.user.id",
      "in": "path",
      "name": "customerId",
      "required": true,
@@ -390,7 +390,7 @@
    },
    "parameters": [
     {
-     "description": "Origin: POST http://orders/orders &rarr; json: $.customerId",
+     "description": "Origin: GET http://user/login &rarr; json: $.user.id",
      "in": "path",
      "name": "customerId",
      "required": true,
