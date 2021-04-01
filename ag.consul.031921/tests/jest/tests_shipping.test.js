@@ -1,12 +1,12 @@
 const authenticate = require("./authentication");
-const {JSONBuild, clearSession, dataset, getHttpTarget, uuidv4} = require("./up9lib");
+const {JSONBuild, clearSession, dataset, getHttpClient, uuidv4} = require("./up9lib");
 
 describe.each(dataset("data/dataset_39.json"))("test_39_post_shipping", (name) => {
     it("test_39_post_shipping", () => {
         clearSession();
 
         // POST http://shipping/shipping (endp 39)
-        const shipping = getHttpTarget("TARGET_SHIPPING", authenticate);
+        const shipping = getHttpClient("http://shipping", authenticate);
         return shipping.fetch("/shipping", {
             method: "POST",
             headers: {

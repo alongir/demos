@@ -262,6 +262,7 @@
     "operationId": "06162bc9-cacf-4cae-ba74-7e9051561ba0",
     "parameters": [
      {
+      "description": "Origin: POST http://orders/orders &rarr; json: $.customerId",
       "in": "query",
       "name": "custId",
       "required": true,
@@ -3474,6 +3475,7 @@
    },
    "parameters": [
     {
+     "description": "Origin: GET http://orders/orders/search/customerId &rarr; json: $._embedded.customerOrders[*]._links.order.href; url: /2",
      "in": "path",
      "name": "href",
      "required": true,

@@ -4,6 +4,7 @@ import com.up9.generated.Authentication;
 import com.up9.up9lib.HttpRequest;
 import com.up9.up9lib.HttpTarget;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.util.Hashtable;
 import javax.json.JsonObject;
 import net.joshka.junit.json.params.JsonFileSource;
@@ -19,14 +20,14 @@ public class TestsUserTest
 {
     @ParameterizedTest
     @JsonFileSource(resources = "/dataset_31.json")
-    public void testGetCustomersCustomerid31(final JsonObject json) throws IOException
+    public void testGetCustomersCustomerid31(final JsonObject json) throws MalformedURLException, IOException
     {
         final String address = json.getString("address");
         final String card = json.getString("card");
         final String items = json.getString("items");
 
         // GET http://user/login (endp 32)
-        final HttpTarget user = getHttpTarget("TARGET_USER", new Authentication());
+        final HttpTarget user = getHttpClient("http://user", new Authentication());
         final HttpRequest request = new HttpRequest();
         final Response response = user.get(request, "/login");
         assertStatusCode(response.code(), 200);
@@ -34,7 +35,7 @@ public class TestsUserTest
         final String customer = JSONPath("$.user._links.customer.href", response.body().string());
 
         // POST http://orders/orders (endp 35)
-        final HttpTarget orders = getHttpTarget("TARGET_ORDERS", new Authentication());
+        final HttpTarget orders = getHttpClient("http://orders", new Authentication());
         final HttpRequest request2 = new HttpRequest();
         request2.setHeaders(new Hashtable<String, Object>() {{
             put("accept", "application/json");
@@ -60,14 +61,14 @@ public class TestsUserTest
 
     @ParameterizedTest
     @JsonFileSource(resources = "/dataset_33.json")
-    public void testGetCustomersCustomeridAddresses33(final JsonObject json) throws IOException
+    public void testGetCustomersCustomeridAddresses33(final JsonObject json) throws MalformedURLException, IOException
     {
         final String address = json.getString("address");
         final String card = json.getString("card");
         final String items = json.getString("items");
 
         // GET http://user/login (endp 32)
-        final HttpTarget user = getHttpTarget("TARGET_USER", new Authentication());
+        final HttpTarget user = getHttpClient("http://user", new Authentication());
         final HttpRequest request = new HttpRequest();
         final Response response = user.get(request, "/login");
         assertStatusCode(response.code(), 200);
@@ -75,7 +76,7 @@ public class TestsUserTest
         final String customer = JSONPath("$.user._links.customer.href", response.body().string());
 
         // POST http://orders/orders (endp 35)
-        final HttpTarget orders = getHttpTarget("TARGET_ORDERS", new Authentication());
+        final HttpTarget orders = getHttpClient("http://orders", new Authentication());
         final HttpRequest request2 = new HttpRequest();
         request2.setHeaders(new Hashtable<String, Object>() {{
             put("accept", "application/json");
@@ -101,14 +102,14 @@ public class TestsUserTest
 
     @ParameterizedTest
     @JsonFileSource(resources = "/dataset_34.json")
-    public void testGetCustomersCustomeridCards34(final JsonObject json) throws IOException
+    public void testGetCustomersCustomeridCards34(final JsonObject json) throws MalformedURLException, IOException
     {
         final String address = json.getString("address");
         final String card = json.getString("card");
         final String items = json.getString("items");
 
         // GET http://user/login (endp 32)
-        final HttpTarget user = getHttpTarget("TARGET_USER", new Authentication());
+        final HttpTarget user = getHttpClient("http://user", new Authentication());
         final HttpRequest request = new HttpRequest();
         final Response response = user.get(request, "/login");
         assertStatusCode(response.code(), 200);
@@ -116,7 +117,7 @@ public class TestsUserTest
         final String customer = JSONPath("$.user._links.customer.href", response.body().string());
 
         // POST http://orders/orders (endp 35)
-        final HttpTarget orders = getHttpTarget("TARGET_ORDERS", new Authentication());
+        final HttpTarget orders = getHttpClient("http://orders", new Authentication());
         final HttpRequest request2 = new HttpRequest();
         request2.setHeaders(new Hashtable<String, Object>() {{
             put("accept", "application/json");

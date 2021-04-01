@@ -4,6 +4,7 @@ import com.up9.generated.Authentication;
 import com.up9.up9lib.HttpRequest;
 import com.up9.up9lib.HttpTarget;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.util.Hashtable;
 import javax.json.JsonObject;
 import net.joshka.junit.json.params.JsonFileSource;
@@ -19,12 +20,12 @@ public class TestsCatalogueTest
 {
     @ParameterizedTest
     @JsonFileSource(resources = "/dataset_27.json")
-    public void testGetCatalogueId27(final JsonObject json) throws IOException
+    public void testGetCatalogueId27(final JsonObject json) throws MalformedURLException, IOException
     {
         final String size = json.getString("size");
 
         // GET http://catalogue/tags (endp 30)
-        final HttpTarget catalogue = getHttpTarget("TARGET_CATALOGUE", new Authentication());
+        final HttpTarget catalogue = getHttpClient("http://catalogue", new Authentication());
         final HttpRequest request = new HttpRequest();
         final Response response = catalogue.get(request, "/tags");
         assertStatusCode(response.code(), 200);
@@ -50,12 +51,12 @@ public class TestsCatalogueTest
 
     @ParameterizedTest
     @JsonFileSource(resources = "/dataset_28.json")
-    public void testGetCatalogueSize28(final JsonObject json) throws IOException
+    public void testGetCatalogueSize28(final JsonObject json) throws MalformedURLException, IOException
     {
         final String tags = json.getString("tags");
 
         // GET http://catalogue/catalogue/size (endp 28)
-        final HttpTarget catalogue = getHttpTarget("TARGET_CATALOGUE", new Authentication());
+        final HttpTarget catalogue = getHttpClient("http://catalogue", new Authentication());
         final HttpRequest request = new HttpRequest();
         request.setQueryString(new Hashtable<String, Object>() {{
             put("tags", tags);

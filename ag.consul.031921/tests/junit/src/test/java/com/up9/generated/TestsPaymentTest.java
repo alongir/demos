@@ -4,6 +4,7 @@ import com.up9.generated.Authentication;
 import com.up9.up9lib.HttpRequest;
 import com.up9.up9lib.HttpTarget;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.util.Hashtable;
 import javax.json.JsonObject;
 import net.joshka.junit.json.params.JsonFileSource;
@@ -19,7 +20,7 @@ public class TestsPaymentTest
 {
     @ParameterizedTest
     @JsonFileSource(resources = "/dataset_38.json")
-    public void testPostPaymentauth38(final JsonObject json) throws IOException
+    public void testPostPaymentauth38(final JsonObject json) throws MalformedURLException, IOException
     {
         final String ccv = json.getString("ccv");
         final String country = json.getString("country");
@@ -33,7 +34,7 @@ public class TestsPaymentTest
         final String street = json.getString("street");
 
         // POST http://payment/paymentAuth (endp 38)
-        final HttpTarget payment = getHttpTarget("TARGET_PAYMENT", new Authentication());
+        final HttpTarget payment = getHttpClient("http://payment", new Authentication());
         final HttpRequest request = new HttpRequest();
         request.setHeaders(new Hashtable<String, Object>() {{
             put("accept", "application/json");

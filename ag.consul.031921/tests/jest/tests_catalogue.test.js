@@ -1,12 +1,12 @@
 const authenticate = require("./authentication");
-const {JSONPath, clearSession, dataset, getHttpTarget, urlencode} = require("./up9lib");
+const {JSONPath, clearSession, dataset, getHttpClient, urlencode} = require("./up9lib");
 
 describe.each(dataset("data/dataset_27.json"))("test_27_get_catalogue_id", (size) => {
     it("test_27_get_catalogue_id", () => {
         clearSession();
 
         // GET http://catalogue/tags (endp 30)
-        const catalogue = getHttpTarget("TARGET_CATALOGUE", authenticate);
+        const catalogue = getHttpClient("http://catalogue", authenticate);
         return catalogue.fetch("/tags")
         .then((response) => {
             expect(response.status).toEqual(200);
@@ -56,7 +56,7 @@ describe.each(dataset("data/dataset_28.json"))("test_28_get_catalogue_size", (ta
         clearSession();
 
         // GET http://catalogue/catalogue/size (endp 28)
-        const catalogue = getHttpTarget("TARGET_CATALOGUE", authenticate);
+        const catalogue = getHttpClient("http://catalogue", authenticate);
         return catalogue.fetch("/catalogue/size" + urlencode([["tags", tags]]))
         .then((response) => {
             expect(response.status).toEqual(200);

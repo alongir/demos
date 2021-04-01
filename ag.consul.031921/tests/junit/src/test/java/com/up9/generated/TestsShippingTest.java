@@ -4,6 +4,7 @@ import com.up9.generated.Authentication;
 import com.up9.up9lib.HttpRequest;
 import com.up9.up9lib.HttpTarget;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.util.Hashtable;
 import javax.json.JsonObject;
 import net.joshka.junit.json.params.JsonFileSource;
@@ -19,12 +20,12 @@ public class TestsShippingTest
 {
     @ParameterizedTest
     @JsonFileSource(resources = "/dataset_39.json")
-    public void testPostShipping39(final JsonObject json) throws IOException
+    public void testPostShipping39(final JsonObject json) throws MalformedURLException, IOException
     {
         final String name = json.getString("name");
 
         // POST http://shipping/shipping (endp 39)
-        final HttpTarget shipping = getHttpTarget("TARGET_SHIPPING", new Authentication());
+        final HttpTarget shipping = getHttpClient("http://shipping", new Authentication());
         final HttpRequest request = new HttpRequest();
         request.setHeaders(new Hashtable<String, Object>() {{
             put("accept", "application/json");

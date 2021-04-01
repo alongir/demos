@@ -20,14 +20,14 @@ public class TestsOrdersTest
 {
     @ParameterizedTest
     @JsonFileSource(resources = "/dataset_36.json")
-    public void testGetOrdersHref36(final JsonObject json) throws IOException, MalformedURLException
+    public void testGetOrdersHref36(final JsonObject json) throws MalformedURLException, IOException
     {
         final String address = json.getString("address");
         final String card = json.getString("card");
         final String items = json.getString("items");
 
         // GET http://user/login (endp 32)
-        final HttpTarget user = getHttpTarget("TARGET_USER", new Authentication());
+        final HttpTarget user = getHttpClient("http://user", new Authentication());
         final HttpRequest request = new HttpRequest();
         final Response response = user.get(request, "/login");
         assertStatusCode(response.code(), 200);
@@ -35,7 +35,7 @@ public class TestsOrdersTest
         final String customer = JSONPath("$.user._links.customer.href", response.body().string());
 
         // POST http://orders/orders (endp 35)
-        final HttpTarget orders = getHttpTarget("TARGET_ORDERS", new Authentication());
+        final HttpTarget orders = getHttpClient("http://orders", new Authentication());
         final HttpRequest request2 = new HttpRequest();
         request2.setHeaders(new Hashtable<String, Object>() {{
             put("accept", "application/json");

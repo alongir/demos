@@ -1,19 +1,26 @@
 {
  "parameters": [
   {
-   "name": "id",
-   "uuid": "da6b12ea-f77e-4289-9338-1648a6ffeb3e"
+   "name": "size",
+   "uuid": "54a7bcbf-130e-48f2-980a-1df62ce45541"
+  },
+  {
+   "name": "tags",
+   "uuid": "ccf778a0-b8ab-48ab-8796-9b2802504c38"
   }
  ],
  "rows": [
   {
-   "id": "808a2de1-1aaa-4c25-a9b9-6612e8f29a38"
+   "size": "5",
+   "tags": ""
   },
   {
-   "id": "3395a43e-2d88-40de-b95f-e00e1502085b"
+   "size": "6",
+   "tags": "geek,blue"
   },
   {
-   "id": "zzz4f044-b040-410d-8ead-4de0446aec7e"
+   "size": "3",
+   "tags": "brown"
   }
  ]
 }

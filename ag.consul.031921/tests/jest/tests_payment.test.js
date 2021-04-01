@@ -1,12 +1,12 @@
 const authenticate = require("./authentication");
-const {JSONBuild, clearSession, dataset, getHttpTarget, randomFloat} = require("./up9lib");
+const {JSONBuild, clearSession, dataset, getHttpClient, randomFloat} = require("./up9lib");
 
 describe.each(dataset("data/dataset_38.json"))("test_38_post_paymentAuth", (ccv, country, expires, id, id1, id2, longNum, number, postcode, street) => {
     it("test_38_post_paymentAuth", () => {
         clearSession();
 
         // POST http://payment/paymentAuth (endp 38)
-        const payment = getHttpTarget("TARGET_PAYMENT", authenticate);
+        const payment = getHttpClient("http://payment", authenticate);
         return payment.fetch("/paymentAuth", {
             method: "POST",
             headers: {

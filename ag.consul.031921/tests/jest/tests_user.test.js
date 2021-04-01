@@ -1,12 +1,12 @@
 const authenticate = require("./authentication");
-const {JSONBuild, JSONPath, clearSession, dataset, getHttpTarget} = require("./up9lib");
+const {JSONBuild, JSONPath, clearSession, dataset, getHttpClient} = require("./up9lib");
 
 describe.each(dataset("data/dataset_31.json"))("test_31_get_customers_customerId", (address, card, items) => {
     it("test_31_get_customers_customerId", () => {
         clearSession();
 
         // GET http://user/login (endp 32)
-        const user = getHttpTarget("TARGET_USER", authenticate);
+        const user = getHttpClient("http://user", authenticate);
         return user.fetch("/login")
         .then((response) => {
             expect(response.status).toEqual(200);
@@ -26,7 +26,7 @@ describe.each(dataset("data/dataset_31.json"))("test_31_get_customers_customerId
             })[0];
 
             // POST http://orders/orders (endp 35)
-            const orders = getHttpTarget("TARGET_ORDERS", authenticate);
+            const orders = getHttpClient("http://orders", authenticate);
             return orders.fetch("/orders", {
                 method: "POST",
                 headers: {
@@ -82,7 +82,7 @@ describe.each(dataset("data/dataset_33.json"))("test_33_get_customers_customerId
         clearSession();
 
         // GET http://user/login (endp 32)
-        const user = getHttpTarget("TARGET_USER", authenticate);
+        const user = getHttpClient("http://user", authenticate);
         return user.fetch("/login")
         .then((response) => {
             expect(response.status).toEqual(200);
@@ -102,7 +102,7 @@ describe.each(dataset("data/dataset_33.json"))("test_33_get_customers_customerId
             })[0];
 
             // POST http://orders/orders (endp 35)
-            const orders = getHttpTarget("TARGET_ORDERS", authenticate);
+            const orders = getHttpClient("http://orders", authenticate);
             return orders.fetch("/orders", {
                 method: "POST",
                 headers: {
@@ -158,7 +158,7 @@ describe.each(dataset("data/dataset_34.json"))("test_34_get_customers_customerId
         clearSession();
 
         // GET http://user/login (endp 32)
-        const user = getHttpTarget("TARGET_USER", authenticate);
+        const user = getHttpClient("http://user", authenticate);
         return user.fetch("/login")
         .then((response) => {
             expect(response.status).toEqual(200);
@@ -178,7 +178,7 @@ describe.each(dataset("data/dataset_34.json"))("test_34_get_customers_customerId
             })[0];
 
             // POST http://orders/orders (endp 35)
-            const orders = getHttpTarget("TARGET_ORDERS", authenticate);
+            const orders = getHttpClient("http://orders", authenticate);
             return orders.fetch("/orders", {
                 method: "POST",
                 headers: {
