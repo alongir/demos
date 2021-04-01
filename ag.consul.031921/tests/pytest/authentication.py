@@ -15,19 +15,19 @@ def authenticate(target_key: str, target: TargetService):
     # authenticate_header(target)
     # authenticate_cookie(target)
     # authenticate_oauth(target)
-    if target_key == 'TARGET_CARTS':
+    if target.config_url == 'http://carts':
         pass
-    elif target_key == 'TARGET_CATALOGUE':
+    elif target.config_url == 'http://catalogue':
         pass
-    elif target_key == 'TARGET_FRONT_END':
+    elif target.config_url == 'http://front-end':
         pass
-    elif target_key == 'TARGET_ORDERS':
+    elif target.config_url == 'http://orders':
         pass
-    elif target_key == 'TARGET_PAYMENT':
+    elif target.config_url == 'http://payment':
         pass
-    elif target_key == 'TARGET_SHIPPING':
+    elif target.config_url == 'http://shipping':
         pass
-    elif target_key == 'TARGET_USER':
+    elif target.config_url == 'http://user':
         pass
     else:
         pass

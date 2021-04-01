@@ -21,6 +21,22 @@ function randomFloat(min, max) {
     return Math.random() * (max - min) + min;
 }
 
+function randomEmail(domain=null) {
+    const names = ['John', 'Peter', 'Bob', 'David', 'Harry']
+    const surnames = ['Black', 'Clark', 'Duncan', 'Gibson', 'James']
+    const emailDomains = ['gmail.com', 'yahoo.com', 'hotmail.com']
+
+    username = `${names[randomInteger(0, names.length - 1)]}.${surnames[randomInteger(0, surnames.length - 1)]}`
+        .toLowerCase()
+
+    if (domain == null) {
+        domain = emailDomains[randomInteger(0, emailDomains.length - 1)]
+    }
+
+    const email = `${username}@${domain}`
+    return email;
+}
+
 function urlPart(ospec, paramURL) {
     const flag = ospec[0];
     const spec = ospec.slice(1, ospec.length);
@@ -43,7 +59,7 @@ function CSSselect(query, html) {
     return result;
 }
 
-module.exports = { uuidv4, randomInteger, urlPart, CSSselect }
+module.exports = { uuidv4, randomInteger, randomFloat, randomEmail, urlPart, CSSselect }
 
 let fetch;
 
@@ -105,39 +121,67 @@ function readFileSync(filepath, flag="r") {
 }
 
 class Target {
-    constructor(key, auth_callback) {
+    constructor(key, authCallback) {
         this.key = key;
-        this.hostname = JSON.parse(readFileSync('data/target_services.json'))[this.key];
-        if (auth_callback != null) {
-            this.auth_callback = Object.values(auth_callback)[0];
+        const baseAddrOverride = process.env[targetKey]
+        if (baseAddrOverride != null) {
+            this.baseAddr = baseAddrOverride;
         } else {
-            this.auth_callback = null;
+            this.baseAddr = JSON.parse(readFileSync('data/target_services.json'))[key]
+        }
+
+        if (authCallback != null) {
+            this.authCallback = Object.values(authCallback)[0];
+        } else {
+            this.authCallback = null;
         }
 
         this.opts = fillOptsWithDefaults({});
-        if (this.auth_callback != null) {
-            this.opts = this.auth_callback(this.key, this.opts);
+        if (this.authCallback != null) {
+            this.opts.configUrl = this.baseAddr;
+            this.opts = this.authCallback(this.key, this.opts);
+            if (this.opts != null && this.opts.hasOwnProperty('configUrl')) {
+                delete this.opts.configUrl;
+            }
         }
     }
 
     async fetch(url, opts) {
-        url = this.hostname + url;
+        url = this.baseAddr + url;
         opts = _.merge(this.opts, opts)
         opts.headers = {
             ...opts.headers,
-            "Referer": this.hostname + "/"
+            "Referer": this.baseAddr + "/"
         };
         const res = await fetch(url, opts);
         return res;
     }
 }
 
-function dataset(dataset_path) {
-    return JSON.parse(readFileSync(dataset_path))["rows"].map(Object.values);
+function dataset(datasetPath) {
+    return JSON.parse(readFileSync(datasetPath))["rows"].map(Object.values);
 }
 
-function getHttpTarget(key, auth_callback=null) {
-    return new Target(key, auth_callback);
+function resolveTargetKey(key) {
+    targetKey = null;
+
+    if (key.includes('://')) {
+        regex = /\W|^(?=\d)/gi;
+        const url = new URL(key);
+        targetKey = url.hostname.replace(regex, '_');
+        if (!targetKey || targetKey.length === 0) {
+            targetKey = key.replace(regex, '_');
+        }
+        targetKey = 'TARGET_' + targetKey.toUpperCase();
+    } else {
+        targetKey = key
+    }
+
+    return targetKey;
+}
+
+function getHttpClient(key, authCallback=null) {
+    return new Target(resolveTargetKey(key), authCallback);
 }
 
 function token(key, callback = undefined) {
@@ -175,8 +219,8 @@ function JSONPath(obj) {
     return match;
 }
 
-function JSONBuild(json_path, obj) {
-    let json = JSON.parse(readFileSync(json_path));
+function JSONBuild(jsonPath, obj) {
+    let json = JSON.parse(readFileSync(jsonPath));
     Object.keys(obj).forEach(path => {
         _JSONPath.JSONPath({
             path: path,
@@ -188,4 +232,4 @@ function JSONBuild(json_path, obj) {
     return JSON.stringify(json);
 }
 
-module.exports = { ...module.exports, dataset, getHttpTarget, token, fetch, clearSession, urlencode, JSONPath, JSONBuild, readFileSync }
+module.exports = { ...module.exports, dataset, getHttpClient, token, fetch, clearSession, urlencode, JSONPath, JSONBuild, readFileSync }

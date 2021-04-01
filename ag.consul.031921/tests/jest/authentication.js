@@ -1,11 +1,11 @@
 function authenticate(targetKey, opts) {
-    if (targetKey === "TARGET_CARTS") {
-    } else if (targetKey === "TARGET_CATALOGUE") {
-    } else if (targetKey === "TARGET_FRONT_END") {
-    } else if (targetKey === "TARGET_ORDERS") {
-    } else if (targetKey === "TARGET_PAYMENT") {
-    } else if (targetKey === "TARGET_SHIPPING") {
-    } else if (targetKey === "TARGET_USER") {
+    if (opts.configUrl === "http://carts") {
+    } else if (opts.configUrl === "http://catalogue") {
+    } else if (opts.configUrl === "http://front-end") {
+    } else if (opts.configUrl === "http://orders") {
+    } else if (opts.configUrl === "http://payment") {
+    } else if (opts.configUrl === "http://shipping") {
+    } else if (opts.configUrl === "http://user") {
     } else {
     }
 }

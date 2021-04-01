@@ -249,6 +249,16 @@ def url_part(ospec, url):
     return random.choice(vals) if TAKE_RANDOM else vals[0]
 
 
+def random_email(domain=None):
+    names = ('John', 'Peter', 'Bob', 'David', 'Harry')
+    surnames = ('Black', 'Clark', 'Duncan', 'Gibson', 'James')
+    email_domains = ('gmail.com', 'yahoo.com', 'hotmail.com')
+
+    username = f'{random.choice(names)}.{random.choice(surnames)}'.lower()
+    email = f'{username}@%s' % domain if domain else random.choice(email_domains)
+    return email
+
+
 def clear_session(metadata):
     def decorator(orig_fn):
         def wrapper(*args, **kwargs):
@@ -278,7 +288,7 @@ def dummy_auth(tgt_key, target):
     pass
 
 
-def get_http_target(key, auth_callback=dummy_auth):
+def get_http_client(key, auth_callback=dummy_auth):
     if key in _context.targets:
         return _context.targets[key]
 
@@ -300,31 +310,47 @@ def get_http_target(key, auth_callback=dummy_auth):
     return target
 
 
-def _address_for_key(target_key):
-    if "://" in target_key:
-        address = target_key
+def _address_for_key(base_addr):
+    if "://" in base_addr:
+        tgt_key = target_key(base_addr)
     else:
-        address = os.getenv(target_key, None)
-        if address is None:
-            fname = "target_services.json"
-            if not os.path.exists(fname):
-                fname = os.path.join("data", fname)
+        tgt_key = base_addr
 
-            with open(fname) as fp:
-                services = json.load(fp)
-                if target_key not in services:
-                    logging.warning("Service %r is not found in target URL mapping" % target_key)
-                    address = target_key
-                else:
-                    address = services[target_key]
+    address = os.getenv(tgt_key, None)
+    if address is not None:
+        return address
 
-    return address
+    fname = "target_services.json"
+    if not os.path.exists(fname):
+        fname = os.path.join("data", fname)
+
+    if os.path.exists(fname):
+        with open(fname) as fp:
+            mapping = json.load(fp)
+
+        if base_addr in mapping:
+            return mapping[base_addr]
+
+        if tgt_key in mapping:
+            return mapping[tgt_key]
+
+    logging.debug("Service %r is not found in target URL mapping" % base_addr)
+    return base_addr
+
+
+def target_key(target_label):
+    clean = lambda vstr: re.sub(r'\W|^(?=\d)', '_', vstr)
+
+    parsed_uri = urllib_parse.urlparse(target_label)
+    target_name = clean(parsed_uri.netloc)
+    target_name = clean(target_label) if not target_name else target_name
+    return 'TARGET_' + target_name.upper()
 
 
 class TargetService(HTTPTarget):
     def __init__(self, target_key, base_path=None, use_cookies=True, additional_headers=None, keep_alive=True,
                  auto_assert_ok=False, timeout=60, allow_redirects=False):
-        self.target_key = target_key
+        self.config_url = target_key
         self.access_key = None
 
         address = _address_for_key(target_key)
@@ -334,7 +360,7 @@ class TargetService(HTTPTarget):
                          allow_redirects, _context.session)
 
         self.auth_config = json.loads(os.getenv("UP9_AUTH_HEADERS_CONFIG", "{}"))
-        self.target_key = target_key
+        self.config_url = target_key
         self.access_key = None
         self.address = address
         self.additional_headers({"x-abuse-info": "UP9.com generated tests"})
@@ -379,8 +405,8 @@ class TargetService(HTTPTarget):
         payloads = self.auth_config.get('entityPayloads', {})
         self._headers_update(payloads, result, self.auth_config)  # global level
 
-        if self.target_key in self.auth_config.get('services', {}):  # service level
-            svc = self.auth_config['services'][self.target_key]
+        if self.config_url in self.auth_config.get('services', {}):  # service level
+            svc = self.auth_config['services'][self.config_url]
             self._headers_update(payloads, result, svc)
             for item in svc.get('endpoints', []):  # request level
                 same_method = item['method'].lower() == method.lower()

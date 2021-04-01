@@ -124,7 +124,6 @@
    },
    "parameters": [
     {
-     "description": "Origin: POST http://orders/orders &rarr; json: $.customerId",
      "in": "path",
      "name": "customerId",
      "required": true,
@@ -262,7 +261,6 @@
    },
    "parameters": [
     {
-     "description": "Origin: POST http://orders/orders &rarr; json: $.customerId",
      "in": "path",
      "name": "customerId",
      "required": true,
@@ -390,7 +388,6 @@
    },
    "parameters": [
     {
-     "description": "Origin: POST http://orders/orders &rarr; json: $.customerId",
      "in": "path",
      "name": "customerId",
      "required": true,

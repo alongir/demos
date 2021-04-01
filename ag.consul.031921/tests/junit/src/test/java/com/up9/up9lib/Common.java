@@ -23,18 +23,40 @@ import java.util.stream.Collectors;
 public class Common {
     private final static Logger logger = LoggerFactory.getLogger(HttpTarget.class);
 
-    public static HttpTarget getHttpTarget(String targetName, AuthenticationInterface authenticationInterface) {
-        HttpTarget httpTarget = new HttpTarget(targetName);
-        logger.debug(() -> String.format("Created a new context: %s", targetName));
+    public static HttpTarget getHttpClient(
+        String key,
+        AuthenticationInterface authenticationInterface
+    ) throws MalformedURLException {
+        final String targetKey = Common.resolveTargetKey(key);
+        HttpTarget httpTarget = new HttpTarget(targetKey);
+        logger.debug(() -> String.format("Created a new context: %s", targetKey));
         if (!(authenticationInterface instanceof DummyAuth)) {
-            logger.debug(() -> String.format("Triggering authentication callback for context: %s", targetName));
+            logger.debug(() -> String.format("Triggering authentication callback for context: %s", targetKey));
             httpTarget.usesAuth = true;
         }
         authenticationInterface.authenticate(httpTarget);
         if (httpTarget.usesAuth) {
-            logger.debug(() -> String.format("Returned from the authentication callback of %s", targetName));
+            logger.debug(() -> String.format("Returned from the authentication callback of %s", targetKey));
         }
         return httpTarget;
+    }
+
+    private static String resolveTargetKey(String baseAddr) throws MalformedURLException {
+        String targetKey = null;
+
+        if (baseAddr.contains("://")) {
+            final String regex = "\\W|^(?=\\d)";
+            final URL url = new URL(baseAddr);
+            targetKey = url.getHost().replaceAll(regex, "_");
+            if (targetKey.isEmpty()) {
+                targetKey = baseAddr.replaceAll(regex, "_");
+            }
+            targetKey = "TARGET_" + targetKey.toUpperCase();
+        } else {
+            targetKey = baseAddr;
+        }
+
+        return targetKey;
     }
 
     public static String JSONPath(String path, String text) {
@@ -115,6 +137,39 @@ public class Common {
         }
 
         return (double) (Math.random() * ((max - min) + 1)) + min;
+    }
+
+    private static String randomEmailUsername() {
+        final String[] names = {"John", "Peter", "Bob", "David", "Harry"};
+        final String[] surnames = {"Black", "Clark", "Duncan", "Gibson", "James"};
+
+        final String username = String.format(
+            "%s.%s",
+            names[randomInteger(0, names.length - 1)],
+            surnames[randomInteger(0, surnames.length - 1)]
+        ).toLowerCase();
+
+        return username;
+    }
+
+    public static String randomEmail() {
+        final String[] emailDomains = {"gmail.com", "yahoo.com", "hotmail.com"};
+
+        final String email = String.format(
+            "%s@%s",
+            randomEmailUsername(),
+            emailDomains[randomInteger(0, emailDomains.length)]
+        );
+        return email;
+    }
+
+    public static String randomEmail(String domain) {
+        final String email = String.format(
+            "%s@%s",
+            randomEmailUsername(),
+            domain
+        );
+        return email;
     }
 
     private static Map<String, String> getQueryMap(String query) {

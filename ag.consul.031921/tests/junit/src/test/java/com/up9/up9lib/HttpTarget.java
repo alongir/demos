@@ -51,25 +51,30 @@ public class HttpTarget {
         this.targetKey = targetKey;
         final JSONParser parser = new JSONParser();
 
-        try {
-            final Object obj = parser.parse(new FileReader(
-                Objects.requireNonNull(this.targetServicesFilepath).getPath())
-            );
-            final JSONObject jsonObject = (JSONObject) obj;
-            this.baseURL = (String) jsonObject.get(this.targetKey);
-        } catch (FileNotFoundException e) {
-            logger.warn(() -> String.format("%s file is missing!", this.targetServicesFilepath));
-            this.baseURL = this.targetKey;
-        } catch (IOException e) {
-            logger.warn(() -> String.format("Unable to read %s file!", this.targetServicesFilepath));
-            this.baseURL = this.targetKey;
-        } catch (Exception e) {
-            logger.warn(() -> String.format(
-                    "Service %s is not found in target URL mapping (%s)!",
-                    this.targetKey,
-                    this.targetServicesFilepath
-            ));
-            this.baseURL = this.targetKey;
+        final String baseAddrOverride = System.getenv(targetKey);
+        if (baseAddrOverride != null) {
+            this.baseURL = baseAddrOverride;
+        } else {
+            try {
+                final Object obj = parser.parse(new FileReader(
+                    Objects.requireNonNull(this.targetServicesFilepath).getPath())
+                );
+                final JSONObject jsonObject = (JSONObject) obj;
+                this.baseURL = (String) jsonObject.get(this.targetKey);
+            } catch (FileNotFoundException e) {
+                logger.warn(() -> String.format("%s file is missing!", this.targetServicesFilepath));
+                this.baseURL = this.targetKey;
+            } catch (IOException e) {
+                logger.warn(() -> String.format("Unable to read %s file!", this.targetServicesFilepath));
+                this.baseURL = this.targetKey;
+            } catch (Exception e) {
+                logger.warn(() -> String.format(
+                        "Service %s is not found in target URL mapping (%s)!",
+                        this.targetKey,
+                        this.targetServicesFilepath
+                ));
+                this.baseURL = this.targetKey;
+            }
         }
 
         this.cookieHelper = new OkHttp3CookieHelper();

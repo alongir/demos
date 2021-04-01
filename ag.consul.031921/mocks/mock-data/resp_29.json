@@ -8,7 +8,7 @@
    "/catalogue/images/holy_2.jpeg"
   ],
   "price": 99.99,
-  "count": 1,
+  "count": {{random.int 1 820}},
   "tag": [
    "action",
    "magic"
@@ -23,7 +23,7 @@
    "/catalogue/images/colourful_socks.jpg"
   ],
   "price": 18,
-  "count": 438,
+  "count": {{random.int 1 820}},
   "tag": [
    "brown",
    "blue"
@@ -38,7 +38,7 @@
    "/catalogue/images/puma_2.jpeg"
   ],
   "price": 15,
-  "count": 820,
+  "count": {{random.int 1 820}},
   "tag": [
    "sport",
    "formal",
@@ -54,7 +54,7 @@
    "/catalogue/images/cross_2.jpeg"
   ],
   "price": 17.32,
-  "count": 738,
+  "count": {{random.int 1 820}},
   "tag": [
    "blue",
    "action",
@@ -71,7 +71,7 @@
    "/catalogue/images/WAT2.jpg"
   ],
   "price": 14,
-  "count": 808,
+  "count": {{random.int 1 820}},
   "tag": [
    "green",
    "formal",
@@ -87,7 +87,7 @@
    "/catalogue/images/catsocks2.jpg"
   ],
   "price": 15,
-  "count": 175,
+  "count": {{random.int 1 820}},
   "tag": [
    "brown",
    "formal",
@@ -103,7 +103,7 @@
    "/catalogue/images/bit_of_leg_2.jpeg"
   ],
   "price": 7.99,
-  "count": 115,
+  "count": {{random.int 1 820}},
   "tag": [
    "blue",
    "skin"
@@ -118,7 +118,7 @@
    "/catalogue/images/youtube_2.jpeg"
   ],
   "price": 10.99,
-  "count": 801,
+  "count": {{random.int 1 820}},
   "tag": [
    "formal",
    "geek"
@@ -133,7 +133,7 @@
    "/catalogue/images/classic2.jpg"
   ],
   "price": 12,
-  "count": 127,
+  "count": {{random.int 1 820}},
   "tag": [
    "brown",
    "green"

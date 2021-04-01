@@ -7,25 +7,25 @@ public class Authentication implements AuthenticationInterface
 {
     public void authenticate(HttpTarget httpTarget)
     {
-        if (httpTarget.targetKey == "TARGET_CARTS")
+        if (httpTarget.baseURL == "http://carts")
         {
         }
-        else if (httpTarget.targetKey == "TARGET_CATALOGUE")
+        else if (httpTarget.baseURL == "http://catalogue")
         {
         }
-        else if (httpTarget.targetKey == "TARGET_FRONT_END")
+        else if (httpTarget.baseURL == "http://front-end")
         {
         }
-        else if (httpTarget.targetKey == "TARGET_ORDERS")
+        else if (httpTarget.baseURL == "http://orders")
         {
         }
-        else if (httpTarget.targetKey == "TARGET_PAYMENT")
+        else if (httpTarget.baseURL == "http://payment")
         {
         }
-        else if (httpTarget.targetKey == "TARGET_SHIPPING")
+        else if (httpTarget.baseURL == "http://shipping")
         {
         }
-        else if (httpTarget.targetKey == "TARGET_USER")
+        else if (httpTarget.baseURL == "http://user")
         {
         }
     }

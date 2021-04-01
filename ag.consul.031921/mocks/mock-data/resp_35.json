@@ -26,15 +26,15 @@
  "items": [
   {
    "id": "6056a7c867e0e200074aafe1",
-   "itemId": "837ab141-399e-4c1f-9abc-bace40296bac",
+   "itemId": "{{random.uuid4}}",
    "quantity": 1,
-   "unitPrice": 15.0
+   "unitPrice": {{random.float 7.99 18.0 2}}
   }
  ],
  "shipment": {
-  "id": "8fc99046-0b59-45d5-becf-cde2a49606ca",
+  "id": "{{random.uuid4}}",
   "name": "57a98d98e4b00679b4a830b2"
  },
  "date": "2021-03-21T01:56:26.372+0000",
- "total": 19.99
+ "total": {{random.float 12.98 37.989998 2}}
 }
