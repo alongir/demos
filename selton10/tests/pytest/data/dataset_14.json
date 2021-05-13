@@ -1,13 +1,18 @@
 {
  "parameters": [
   {
-   "name": "cardId",
-   "uuid": "32458220-70ab-4b43-a2b9-10cb9fe06d5e"
+   "name": "customerId",
+   "uuid": "1034371c-7995-4b82-8773-8f6d2a1e5243"
+  },
+  {
+   "name": "sessionId",
+   "uuid": "89f42c53-49ad-4d14-9a4e-04c66d03c74b"
   }
  ],
  "rows": [
   {
-   "cardId": "57a98d98e4b00679b4a830b1"
+   "customerId": "57a98d98e4b00679b4a830b2",
+   "sessionId": "guUSnShS0C0zZmEhTX8IOWJz4411s1iC"
   }
  ]
 }

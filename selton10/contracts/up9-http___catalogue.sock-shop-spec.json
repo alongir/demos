@@ -7,7 +7,7 @@
  "paths": {
   "/catalogue": {
    "get": {
-    "operationId": "d2fd0709-cc39-475f-8c27-c380d7de529d",
+    "operationId": "f45b21e9-f370-4fab-b65e-f8046bc5e39f",
     "parameters": [
      {
       "in": "query",
@@ -15,7 +15,30 @@
       "required": true,
       "schema": {
        "enum": [
-        "5"
+        "5",
+        "6"
+       ],
+       "type": "string"
+      }
+     },
+     {
+      "in": "query",
+      "name": "page",
+      "required": false,
+      "schema": {
+       "enum": [
+        "1"
+       ],
+       "type": "string"
+      }
+     },
+     {
+      "in": "query",
+      "name": "tags",
+      "required": false,
+      "schema": {
+       "enum": [
+        ""
        ],
        "type": "string"
       }
@@ -155,10 +178,115 @@
       "description": "OK"
      }
     },
+    "summary": "Seen 3 requests",
+    "tags": [
+     "catalogue"
+    ]
+   },
+   "parameters": []
+  },
+  "/catalogue/size": {
+   "get": {
+    "operationId": "22c5824b-c2ea-4e9c-b64a-33f001d92c67",
+    "parameters": [
+     {
+      "in": "query",
+      "name": "tags",
+      "required": true,
+      "schema": {
+       "enum": [
+        ""
+       ],
+       "type": "string"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "content": {
+       "application/json": {
+        "example": {
+         "err": null,
+         "size": 9
+        },
+        "schema": {
+         "properties": {
+          "err": {},
+          "size": {
+           "type": "integer"
+          }
+         },
+         "required": [
+          "err",
+          "size"
+         ],
+         "type": "object"
+        }
+       }
+      },
+      "description": "OK"
+     }
+    },
+    "summary": "Seen 1 requests",
+    "tags": [
+     "catalogue"
+    ]
+   },
+   "parameters": []
+  },
+  "/tags": {
+   "get": {
+    "operationId": "12b144cb-20b4-4407-ad54-c52b850d9885",
+    "parameters": [],
+    "responses": {
+     "200": {
+      "content": {
+       "application/json": {
+        "example": {
+         "err": null,
+         "tags": [
+          "brown",
+          "geek",
+          "formal",
+          "blue",
+          "skin",
+          "red",
+          "action",
+          "sport",
+          "black",
+          "magic",
+          "green"
+         ]
+        },
+        "schema": {
+         "properties": {
+          "err": {},
+          "tags": {
+           "items": {
+            "type": "string"
+           },
+           "type": "array"
+          }
+         },
+         "required": [
+          "err",
+          "tags"
+         ],
+         "type": "object"
+        }
+       }
+      },
+      "description": "OK"
+     }
+    },
     "summary": "Seen 1 requests"
    },
    "parameters": []
   }
  },
- "tags": []
+ "tags": [
+  {
+   "name": "catalogue"
+  }
+ ]
 }
