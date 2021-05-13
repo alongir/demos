@@ -17,11 +17,6 @@ services:
   managementRoot: __admin
   oas: '@mock-data/up9-http___carts.sock-shop-spec.json'
   endpoints:
-  - path: /carts/{{customerId}}/items
-    response:
-      headers:
-        Content-Type: application/json
-      body: '[]'
   - path: /carts/{{customerId}}
     response:
       status: 202
@@ -42,6 +37,11 @@ services:
   - path: /carts/{{customerId}}/merge
     response:
       status: 202
+  - path: /carts/{{customerId}}/items
+    response:
+      headers:
+        Content-Type: application/json
+      body: '[]'
 - name: http://catalogue.sock-shop
   port: 8002
   ssl: false
@@ -52,7 +52,7 @@ services:
     response:
       headers:
         Content-Type: application/json
-      body: '@mock-data/resp_catalogue_sock_shop_8.json'
+      body: '@mock-data/resp_catalogue_sock_shop_2.json'
   - path: /catalogue/size
     response:
       headers:
@@ -108,7 +108,7 @@ services:
       status: 201
       headers:
         Content-Type: application/json
-      body: '@mock-data/resp_orders_sock_shop_21.json'
+      body: '@mock-data/resp_orders_sock_shop_15.json'
     method: post
 - name: http://payment.sock-shop
   port: 8005
@@ -150,36 +150,36 @@ services:
   managementRoot: __admin
   oas: '@mock-data/up9-http___user.sock-shop-spec.json'
   endpoints:
-  - path: /addresses/{{addresseId}}
-    response:
-      headers:
-        Content-Type: application/json
-      body: '@mock-data/resp_user_sock_shop_3.json'
-  - path: /cards/{{cardId}}
-    response:
-      headers:
-        Content-Type: application/json
-      body: '@mock-data/resp_user_sock_shop_4.json'
   - path: /customers/{{id}}
     response:
       headers:
         Content-Type: application/json
-      body: '@mock-data/resp_user_sock_shop_5.json'
+      body: '@mock-data/resp_user_sock_shop_11.json'
   - path: /customers/{{id}}/addresses
     response:
       headers:
         Content-Type: application/json
-      body: '@mock-data/resp_user_sock_shop_18.json'
+      body: '@mock-data/resp_user_sock_shop_12.json'
       useTemplating: false
   - path: /customers/{{id}}/cards
     response:
       headers:
         Content-Type: application/json
-      body: '@mock-data/resp_user_sock_shop_19.json'
+      body: '@mock-data/resp_user_sock_shop_13.json'
       useTemplating: false
   - path: /login
     response:
       headers:
         Content-Type: application/json
-      body: '@mock-data/resp_user_sock_shop_20.json'
+      body: '@mock-data/resp_user_sock_shop_14.json'
       useTemplating: false
+  - path: /addresses/{{addresseId}}
+    response:
+      headers:
+        Content-Type: application/json
+      body: '@mock-data/resp_user_sock_shop_17.json'
+  - path: /cards/{{cardId}}
+    response:
+      headers:
+        Content-Type: application/json
+      body: '@mock-data/resp_user_sock_shop_18.json'

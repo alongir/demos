@@ -1,6 +1,4 @@
 {
- "address": "{{address}}",
- "card": "{{card}}",
- "customer": "{{customer}}",
- "items": "{{items}}"
+ "id": "01fd8c4b-407b-411e-9d6f-f8d5960d6d67",
+ "name": "{{name}}"
 }

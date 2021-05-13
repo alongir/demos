@@ -7,7 +7,7 @@
  "paths": {
   "/catalogue": {
    "get": {
-    "operationId": "f45b21e9-f370-4fab-b65e-f8046bc5e39f",
+    "operationId": "ff7705f6-5f0e-4f36-bcea-6fd20a81b8a5",
     "parameters": [
      {
       "in": "query",
@@ -187,7 +187,7 @@
   },
   "/catalogue/size": {
    "get": {
-    "operationId": "22c5824b-c2ea-4e9c-b64a-33f001d92c67",
+    "operationId": "449c2338-a1d1-40e1-8c5a-d3d282fe34ca",
     "parameters": [
      {
       "in": "query",
@@ -236,7 +236,7 @@
   },
   "/tags": {
    "get": {
-    "operationId": "12b144cb-20b4-4407-ad54-c52b850d9885",
+    "operationId": "6d8dbd75-ecaa-446f-9c31-7fbc53c1fae9",
     "parameters": [],
     "responses": {
      "200": {

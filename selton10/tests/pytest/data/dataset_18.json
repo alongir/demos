@@ -1,13 +1,13 @@
 {
  "parameters": [
   {
-   "name": "id",
-   "uuid": "21085cae-24bc-481d-bdf0-709a1de12067"
+   "name": "cardId",
+   "uuid": "85d5e9cd-40e8-468d-837f-ad2e86076979"
   }
  ],
  "rows": [
   {
-   "id": "57a98d98e4b00679b4a830b2"
+   "cardId": "57a98d98e4b00679b4a830b1"
   }
  ]
 }
