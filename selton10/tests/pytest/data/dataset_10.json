@@ -1,0 +1,28 @@
+{
+ "parameters": [
+  {
+   "name": "address",
+   "uuid": "c7dbfae6-d6e5-4f27-bc40-53681f780f05"
+  },
+  {
+   "name": "card",
+   "uuid": "89ac090e-f7f4-4d22-9cd3-60e0b45064df"
+  },
+  {
+   "name": "customer",
+   "uuid": "e2784d54-0f8d-4134-a7fb-214658f9f4c4"
+  },
+  {
+   "name": "items",
+   "uuid": "882ab327-2feb-4fe1-aa3e-87f589c41708"
+  }
+ ],
+ "rows": [
+  {
+   "address": "http://user/addresses/57a98d98e4b00679b4a830b0",
+   "card": "http://user/cards/57a98d98e4b00679b4a830b1",
+   "customer": "http://user/customers/57a98d98e4b00679b4a830b2",
+   "items": "http://carts/carts/57a98d98e4b00679b4a830b2/items"
+  }
+ ]
+}

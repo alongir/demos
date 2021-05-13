@@ -1,0 +1,80 @@
+{
+ "info": {
+  "title": "http://shipping.sock-shop",
+  "version": "0.0"
+ },
+ "openapi": "3.0.2",
+ "paths": {
+  "/shipping": {
+   "parameters": [],
+   "post": {
+    "operationId": "9a24d062-2c34-45cd-bcb1-639cf54a0505",
+    "parameters": [
+     {
+      "in": "header",
+      "name": "accept",
+      "required": false,
+      "schema": {
+       "enum": [
+        "application/json"
+       ],
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "properties": {
+         "id": {
+          "type": "string"
+         },
+         "name": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "id",
+         "name"
+        ],
+        "type": "object"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "201": {
+      "content": {
+       "application/json": {
+        "example": {
+         "id": "01fd8c4b-407b-411e-9d6f-f8d5960d6d67",
+         "name": "57a98d98e4b00679b4a830b2"
+        },
+        "schema": {
+         "properties": {
+          "id": {
+           "type": "string"
+          },
+          "name": {
+           "type": "string"
+          }
+         },
+         "required": [
+          "id",
+          "name"
+         ],
+         "type": "object"
+        }
+       }
+      },
+      "description": "Created"
+     }
+    },
+    "summary": "Seen 115 requests"
+   }
+  }
+ },
+ "tags": []
+}
