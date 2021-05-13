@@ -97,6 +97,17 @@ services:
         Content-Type: text/html
       body: '@mock-data/resp_front_end_sock_shop_1.html'
       useTemplating: false
+  - path: /cart
+    response:
+      headers:
+        Content-Type: application/json
+      body: '[]'
+      useTemplating: false
+  - path: /catalogue
+    response:
+      headers:
+        Content-Type: application/json
+      body: '@mock-data/resp_front_end_sock_shop_23.json'
 - name: http://orders.sock-shop
   port: 8004
   ssl: false

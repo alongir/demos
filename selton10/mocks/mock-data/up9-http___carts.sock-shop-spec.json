@@ -7,7 +7,7 @@
  "paths": {
   "/carts/{customerId}": {
    "delete": {
-    "operationId": "3ef4cb47-9d86-4bcc-8b32-a8e1eafdd418",
+    "operationId": "d36f4e39-9e90-4024-929a-c8173efbf5e7",
     "parameters": [],
     "responses": {
      "202": {
@@ -27,7 +27,8 @@
      "schema": {
       "enum": [
        "kmLaRQQ6vaJaQA3USa-0RvyXWfR0bbQg",
-       "57a98d98e4b00679b4a830b2"
+       "57a98d98e4b00679b4a830b2",
+       "c5MSK_FwK1CMPV07ws8vHJ49bAkyYqdV"
       ],
       "type": "string"
      },
@@ -37,7 +38,7 @@
   },
   "/carts/{customerId}/items": {
    "get": {
-    "operationId": "cf1dd93e-9864-42de-880d-d29ab4abcd65",
+    "operationId": "989c18d0-37c9-4f6d-b8b4-2019cd6d1e87",
     "parameters": [
      {
       "in": "header",
@@ -87,7 +88,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 30 requests",
+    "summary": "Seen 31 requests",
     "tags": [
      "carts"
     ]
@@ -100,7 +101,8 @@
      "schema": {
       "enum": [
        "kmLaRQQ6vaJaQA3USa-0RvyXWfR0bbQg",
-       "57a98d98e4b00679b4a830b2"
+       "57a98d98e4b00679b4a830b2",
+       "c5MSK_FwK1CMPV07ws8vHJ49bAkyYqdV"
       ],
       "type": "string"
      },
@@ -108,7 +110,7 @@
     }
    ],
    "post": {
-    "operationId": "4cf22683-2f9d-47d2-b545-4e36d245737d",
+    "operationId": "3aff632e-0eec-460d-a891-69b6e955ceb1",
     "parameters": [
      {
       "in": "header",
@@ -190,7 +192,7 @@
   },
   "/carts/{customerId}/merge": {
    "get": {
-    "operationId": "66c99d81-6c60-4f64-9f36-2539176b9012",
+    "operationId": "e91a3345-7edf-4cac-952b-17dee3553582",
     "parameters": [
      {
       "in": "query",
@@ -226,7 +228,8 @@
      "schema": {
       "enum": [
        "kmLaRQQ6vaJaQA3USa-0RvyXWfR0bbQg",
-       "57a98d98e4b00679b4a830b2"
+       "57a98d98e4b00679b4a830b2",
+       "c5MSK_FwK1CMPV07ws8vHJ49bAkyYqdV"
       ],
       "type": "string"
      },

@@ -2,15 +2,15 @@
  "parameters": [
   {
    "name": "customerId",
-   "uuid": "beb2d40d-e92b-43d7-b5aa-867213cec621"
+   "uuid": "15a52756-0717-4ee7-8735-0d4a265209f6"
   },
   {
    "name": "itemId",
-   "uuid": "10413dbc-e01b-4fef-8bb2-27faa6e6f02d"
+   "uuid": "692c5fd6-a36f-4bfa-9c56-674295f4077f"
   },
   {
    "name": "unitPrice",
-   "uuid": "349b4471-d063-43d7-8ae5-9eb56d68eb4c"
+   "uuid": "7472e71d-a72e-4e3d-9d98-9398f065716a"
   }
  ],
  "rows": [

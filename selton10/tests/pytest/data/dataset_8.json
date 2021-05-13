@@ -2,11 +2,11 @@
  "parameters": [
   {
    "name": "customerId",
-   "uuid": "beb2d40d-e92b-43d7-b5aa-867213cec621"
+   "uuid": "15a52756-0717-4ee7-8735-0d4a265209f6"
   },
   {
    "name": "sessionId",
-   "uuid": "cd0b462c-35b2-4498-bec1-74f3a54f33c1"
+   "uuid": "87d4a62c-b417-4a57-b352-a5858fc02dd8"
   }
  ],
  "rows": [

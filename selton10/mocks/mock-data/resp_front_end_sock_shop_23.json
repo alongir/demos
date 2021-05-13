@@ -1,0 +1,81 @@
+[
+ {
+  "id": "{{random.uuid4}}",
+  "name": "Holy",
+  "description": "Socks fit for a Messiah. You too can experience walking in water with these special edition beauties. Each hole is lovingly proggled to leave smooth edges. The only sock approved by a higher power.",
+  "imageUrl": [
+   "/catalogue/images/holy_1.jpeg",
+   "/catalogue/images/holy_2.jpeg"
+  ],
+  "price": 99.99,
+  "count": {{random.int 1 820}},
+  "tag": [
+   "action",
+   "magic"
+  ]
+ },
+ {
+  "id": "{{random.uuid4}}",
+  "name": "Colourful",
+  "description": "proident occaecat irure et excepteur labore minim nisi amet irure",
+  "imageUrl": [
+   "/catalogue/images/colourful_socks.jpg",
+   "/catalogue/images/colourful_socks.jpg"
+  ],
+  "price": 18,
+  "count": {{random.int 1 820}},
+  "tag": [
+   "brown",
+   "blue"
+  ]
+ },
+ {
+  "id": "{{random.uuid4}}",
+  "name": "SuperSport XL",
+  "description": "Ready for action. Engineers: be ready to smash that next bug! Be ready, with these super-action-sport-masterpieces. This particular engineer was chased away from the office with a stick.",
+  "imageUrl": [
+   "/catalogue/images/puma_1.jpeg",
+   "/catalogue/images/puma_2.jpeg"
+  ],
+  "price": 15,
+  "count": {{random.int 1 820}},
+  "tag": [
+   "sport",
+   "formal",
+   "black"
+  ]
+ },
+ {
+  "id": "{{random.uuid4}}",
+  "name": "Crossed",
+  "description": "A mature sock, crossed, with an air of nonchalance.",
+  "imageUrl": [
+   "/catalogue/images/cross_1.jpeg",
+   "/catalogue/images/cross_2.jpeg"
+  ],
+  "price": 17.32,
+  "count": {{random.int 1 820}},
+  "tag": [
+   "blue",
+   "action",
+   "red",
+   "formal"
+  ]
+ },
+ {
+  "id": "{{random.uuid4}}",
+  "name": "Figueroa",
+  "description": "enim officia aliqua excepteur esse deserunt quis aliquip nostrud anim",
+  "imageUrl": [
+   "/catalogue/images/WAT.jpg",
+   "/catalogue/images/WAT2.jpg"
+  ],
+  "price": 14,
+  "count": {{random.int 1 820}},
+  "tag": [
+   "green",
+   "formal",
+   "blue"
+  ]
+ }
+]

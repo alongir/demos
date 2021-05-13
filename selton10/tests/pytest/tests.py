@@ -102,6 +102,26 @@ class Tests_front_end_sock_shop(unittest.TestCase):
         # resp.assert_status_code(200)
         # resp.assert_cssselect('div#hot div.box div.container div h2', expected_value='Hot this week')
 
+    @clear_session({'spanId': 22})
+    def test_22_get_cart(self):
+        # GET http://front-end.sock-shop/cart (endp 22)
+        front_end_sock_shop = get_http_client('http://front-end.sock-shop', authenticate)
+        resp = front_end_sock_shop.get('/cart', headers=dict([('x-requested-with', 'XMLHttpRequest')]))
+        resp.assert_ok()
+        # resp.assert_status_code(200)
+
+    @json_dataset('data/dataset_23.json')
+    @clear_session({'spanId': 23})
+    def test_23_get_catalogue(self, data_row):
+        size, = data_row
+
+        # GET http://front-end.sock-shop/catalogue (endp 23)
+        front_end_sock_shop = get_http_client('http://front-end.sock-shop', authenticate)
+        qstr = '?' + urlencode([('size', size)])
+        resp = front_end_sock_shop.get('/catalogue' + qstr, headers=dict([('x-requested-with', 'XMLHttpRequest')]))
+        resp.assert_ok()
+        # resp.assert_status_code(200)
+
 
 @data_driven_tests
 class Tests_orders_sock_shop(unittest.TestCase):

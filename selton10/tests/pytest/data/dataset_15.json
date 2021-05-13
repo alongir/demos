@@ -2,19 +2,19 @@
  "parameters": [
   {
    "name": "address",
-   "uuid": "2b350d37-0872-4db6-aaa4-b4016950f9b9"
+   "uuid": "d38ef2bd-5633-4213-9d7b-66e47da92c9c"
   },
   {
    "name": "card",
-   "uuid": "bef8c9b1-e01b-40d5-8db5-f8cbbc26ad22"
+   "uuid": "f669d61d-bbd9-4000-ba88-4c1430740c38"
   },
   {
    "name": "customer",
-   "uuid": "ca032be9-556e-48d7-ba2e-d9cdfc0bd64b"
+   "uuid": "98d31a0f-ead9-4a44-9f92-a2cffa9008ea"
   },
   {
    "name": "items",
-   "uuid": "673339e7-4137-4217-b60a-617c1c5118d6"
+   "uuid": "6eba55b0-633b-41aa-aad4-76c1a38801f3"
   }
  ],
  "rows": [
