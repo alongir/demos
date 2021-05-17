@@ -1,0 +1,13 @@
+{
+ "parameters": [
+  {
+   "name": "tags",
+   "uuid": "da094b15-08af-46d0-bd06-4fd9e6add486"
+  }
+ ],
+ "rows": [
+  {
+   "tags": "black"
+  }
+ ]
+}

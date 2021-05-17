@@ -63,20 +63,23 @@ class Tests_catalogue_sock_shop(unittest.TestCase):
     @json_dataset('data/dataset_2.json')
     @clear_session({'spanId': 2})
     def test_02_get_catalogue(self, data_row):
-        size, = data_row
+        size, tags = data_row
 
         # GET http://catalogue.sock-shop/catalogue (endp 2)
         catalogue_sock_shop = get_http_client('http://catalogue.sock-shop', authenticate)
-        qstr = '?' + urlencode([('page', '1'), ('size', size), ('tags', '')])
+        qstr = '?' + urlencode([('page', '1'), ('size', size), ('tags', tags)])
         resp = catalogue_sock_shop.get('/catalogue' + qstr)
         resp.assert_ok()
         # resp.assert_status_code(200)
 
+    @json_dataset('data/dataset_3.json')
     @clear_session({'spanId': 3})
-    def test_03_get_catalogue_size(self):
+    def test_03_get_catalogue_size(self, data_row):
+        tags, = data_row
+
         # GET http://catalogue.sock-shop/catalogue/size (endp 3)
         catalogue_sock_shop = get_http_client('http://catalogue.sock-shop', authenticate)
-        qstr = '?' + urlencode([('tags', '')])
+        qstr = '?' + urlencode([('tags', tags)])
         resp = catalogue_sock_shop.get('/catalogue/size' + qstr)
         resp.assert_ok()
         # resp.assert_status_code(200)
@@ -113,12 +116,42 @@ class Tests_front_end_sock_shop(unittest.TestCase):
     @json_dataset('data/dataset_23.json')
     @clear_session({'spanId': 23})
     def test_23_get_catalogue(self, data_row):
-        size, = data_row
+        size, tags = data_row
 
         # GET http://front-end.sock-shop/catalogue (endp 23)
         front_end_sock_shop = get_http_client('http://front-end.sock-shop', authenticate)
-        qstr = '?' + urlencode([('size', size)])
+        qstr = '?' + urlencode([('page', '1'), ('size', size), ('tags', tags)])
         resp = front_end_sock_shop.get('/catalogue' + qstr, headers=dict([('x-requested-with', 'XMLHttpRequest')]))
+        resp.assert_ok()
+        # resp.assert_status_code(200)
+
+    @json_dataset('data/dataset_25.json')
+    @clear_session({'spanId': 25})
+    def test_25_get_catalogue_size(self, data_row):
+        tags, = data_row
+
+        # GET http://front-end.sock-shop/catalogue/size (endp 25)
+        front_end_sock_shop = get_http_client('http://front-end.sock-shop', authenticate)
+        qstr = '?' + urlencode([('tags', tags)])
+        resp = front_end_sock_shop.get('/catalogue/size' + qstr, headers=dict([('x-requested-with', 'XMLHttpRequest')]))
+        resp.assert_ok()
+        # resp.assert_status_code(200)
+
+    @clear_session({'spanId': 27})
+    def test_27_get_category_html(self):
+        # GET http://front-end.sock-shop/category.html (endp 27)
+        front_end_sock_shop = get_http_client('http://front-end.sock-shop', authenticate)
+        qstr = '?' + urlencode([('tags', 'black')])
+        resp = front_end_sock_shop.get('/category.html' + qstr)
+        resp.assert_ok()
+        # resp.assert_status_code(200)
+        # resp.assert_cssselect('div#content div.container div div.panel.panel-default.sidebar-menu div.panel-heading h3.panel-title', expected_value='Filters ')
+
+    @clear_session({'spanId': 28})
+    def test_28_get_tags(self):
+        # GET http://front-end.sock-shop/tags (endp 28)
+        front_end_sock_shop = get_http_client('http://front-end.sock-shop', authenticate)
+        resp = front_end_sock_shop.get('/tags', headers=dict([('x-requested-with', 'XMLHttpRequest')]))
         resp.assert_ok()
         # resp.assert_status_code(200)
 

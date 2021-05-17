@@ -38,6 +38,7 @@
       "required": false,
       "schema": {
        "enum": [
+        "black",
         ""
        ],
        "type": "string"
@@ -60,8 +61,8 @@
           "name": "Holy",
           "price": 99.99,
           "tag": [
-           "action",
-           "magic"
+           "magic",
+           "action"
           ]
          },
          {
@@ -75,8 +76,8 @@
           "name": "Colourful",
           "price": 18,
           "tag": [
-           "brown",
-           "blue"
+           "blue",
+           "brown"
           ]
          },
          {
@@ -90,9 +91,9 @@
           "name": "SuperSport XL",
           "price": 15,
           "tag": [
+           "black",
            "sport",
-           "formal",
-           "black"
+           "formal"
           ]
          },
          {
@@ -106,10 +107,10 @@
           "name": "Crossed",
           "price": 17.32,
           "tag": [
-           "blue",
-           "action",
            "red",
-           "formal"
+           "formal",
+           "blue",
+           "action"
           ]
          },
          {
@@ -123,9 +124,9 @@
           "name": "Figueroa",
           "price": 14,
           "tag": [
-           "green",
            "formal",
-           "blue"
+           "blue",
+           "green"
           ]
          }
         ],
@@ -178,7 +179,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 4 requests",
+    "summary": "Seen 11 requests",
     "tags": [
      "catalogue"
     ]
@@ -195,6 +196,7 @@
       "required": true,
       "schema": {
        "enum": [
+        "black",
         ""
        ],
        "type": "string"
@@ -227,7 +229,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 1 requests",
+    "summary": "Seen 3 requests",
     "tags": [
      "catalogue"
     ]
@@ -279,7 +281,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 1 requests"
+    "summary": "Seen 3 requests"
    },
    "parameters": []
   }

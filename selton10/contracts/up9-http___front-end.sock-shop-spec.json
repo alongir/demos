@@ -25,7 +25,7 @@
   },
   "/cart": {
    "get": {
-    "operationId": "b9f9c800-af3f-427a-8cbe-25df09312bc1",
+    "operationId": "fe4d5292-b520-4aad-a815-ecabcb76f8ac",
     "parameters": [
      {
       "in": "header",
@@ -53,13 +53,13 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 1 requests"
+    "summary": "Seen 8 requests"
    },
    "parameters": []
   },
   "/catalogue": {
    "get": {
-    "operationId": "06492e73-1ffa-43c0-a0e6-3b48600adb05",
+    "operationId": "730f1676-b1b6-4053-8537-c196c276e190",
     "parameters": [
      {
       "in": "query",
@@ -67,7 +67,31 @@
       "required": true,
       "schema": {
        "enum": [
-        "5"
+        "5",
+        "6"
+       ],
+       "type": "string"
+      }
+     },
+     {
+      "in": "query",
+      "name": "page",
+      "required": false,
+      "schema": {
+       "enum": [
+        "1"
+       ],
+       "type": "string"
+      }
+     },
+     {
+      "in": "query",
+      "name": "tags",
+      "required": false,
+      "schema": {
+       "enum": [
+        "black",
+        ""
        ],
        "type": "string"
       }
@@ -100,8 +124,8 @@
           "name": "Holy",
           "price": 99.99,
           "tag": [
-           "action",
-           "magic"
+           "magic",
+           "action"
           ]
          },
          {
@@ -115,8 +139,8 @@
           "name": "Colourful",
           "price": 18,
           "tag": [
-           "brown",
-           "blue"
+           "blue",
+           "brown"
           ]
          },
          {
@@ -130,9 +154,9 @@
           "name": "SuperSport XL",
           "price": 15,
           "tag": [
+           "black",
            "sport",
-           "formal",
-           "black"
+           "formal"
           ]
          },
          {
@@ -146,10 +170,10 @@
           "name": "Crossed",
           "price": 17.32,
           "tag": [
-           "blue",
-           "action",
            "red",
-           "formal"
+           "formal",
+           "blue",
+           "action"
           ]
          },
          {
@@ -163,9 +187,9 @@
           "name": "Figueroa",
           "price": 14,
           "tag": [
-           "green",
            "formal",
-           "blue"
+           "blue",
+           "green"
           ]
          }
         ],
@@ -218,10 +242,169 @@
       "description": "OK"
      }
     },
+    "summary": "Seen 8 requests",
+    "tags": [
+     "catalogue"
+    ]
+   },
+   "parameters": []
+  },
+  "/catalogue/size": {
+   "get": {
+    "operationId": "c14f85d5-ed20-42e9-a854-79316c30070d",
+    "parameters": [
+     {
+      "in": "query",
+      "name": "tags",
+      "required": true,
+      "schema": {
+       "enum": [
+        "black",
+        ""
+       ],
+       "type": "string"
+      }
+     },
+     {
+      "in": "header",
+      "name": "x-requested-with",
+      "required": false,
+      "schema": {
+       "enum": [
+        "XMLHttpRequest"
+       ],
+       "type": "string"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "content": {
+       "application/json": {
+        "example": {
+         "err": null,
+         "size": 1
+        },
+        "schema": {
+         "properties": {
+          "err": {},
+          "size": {
+           "type": "integer"
+          }
+         },
+         "required": [
+          "err",
+          "size"
+         ],
+         "type": "object"
+        }
+       }
+      },
+      "description": "OK"
+     }
+    },
+    "summary": "Seen 2 requests",
+    "tags": [
+     "catalogue"
+    ]
+   },
+   "parameters": []
+  },
+  "/category.html": {
+   "get": {
+    "operationId": "590a23a9-2aac-4f0f-a324-844f5defcc4b",
+    "parameters": [
+     {
+      "in": "query",
+      "name": "tags",
+      "required": true,
+      "schema": {
+       "enum": [
+        "black"
+       ],
+       "type": "string"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "content": {
+       "text/html": {
+        "example": "<!DOCTYPE html>\n<html lang=\"en\">\n\n<head>\n\n    <meta charset=\"utf-8\">\n    <meta name=\"robots\" content=\"all,follow\">\n    <meta name=\"googlebot\" content=\"index,follow,snippet,archive\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <meta name=\"description\" content=\"WeaveSocks Demo App\">\n    <meta name=\"author\" content=\"Ondrej Svestka | ondrejsvestka.cz\">\n    <meta name=\"keywords\" content=\"\">\n\n    <title>\n        WeaveSocks\n    </title>\n\n    <meta name=\"keywords\" content=\"\">\n\n    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100'\n          rel='stylesheet' type='text/css'>\n\n    <!-- styles -->\n    <link href=\"css/font-awesome.css\" rel=\"stylesheet\">\n    <link href=\"css/bootstrap.min.css\" rel=\"stylesheet\">\n    <link href=\"css/animate.min.css\" rel=\"stylesheet\">\n    <link href=\"css/owl.carousel.css\" rel=\"stylesheet\">\n    <link href=\"css/owl.theme.css\" rel=\"stylesheet\">\n\n    <!-- theme stylesheet -->\n    <link href=\"css/style.blue.css\" rel=\"stylesheet\" id=\"theme-stylesheet\">\n\n    <!-- your stylesheet with modifications -->\n    <link href=\"css/custom.css\" rel=\"stylesheet\">\n\n    <script src=\"js/respond.min.js\"></script>\n\n    <link rel=\"shortcut icon\" href=\"favicon.png\">\n\n\n</head>\n\n<body>\n\n<div id=\"topbar\"></div>\n<div id=\"navbar\"></div>\n\n<div id=\"all\">\n\n    <div id=\"content\">\n        <div class=\"container\">\n\n            <div class=\"col-md-12\">\n                <ul class=\"breadcrumb\">\n                    <li><a href=\"index.html\">Home</a>\n                    </li>\n                    <li>Catalogue</li>\n                </ul>\n            </div>\n\n            <div class=\"col-md-3\">\n                <!-- *** MENUS AND FILTERS ***\n_________________________________________________________ -->\n                <div class=\"panel panel-default sidebar-menu\">\n\n                    <div class=\"panel-heading\">\n                        <h3 class=\"panel-title\">Filters <a\n                                class=\"btn btn-xs btn-danger pull-right\"\n                                href=\"#\" onclick='resetTags()'><i class=\"fa fa-times-circle\"></i>\n                            Clear</a></h3>\n                    </div>\n\n                    <div class=\"panel-body\">\n\n                        <form id=\"filters-form\">\n                            <div id=\"filters\" class=\"form-group\">\n                            </div>\n\n                            <a class=\"btn btn-default btn-sm btn-primary\" href=\"#\"\n                               onclick='setNewTags($(\"input:checkbox:checked\").map(function () {return this.value;}).get().join(\",\"));'>\n                                <i class=\"fa fa-pencil\"></i> Apply\n                            </a>\n\n                        </form>\n\n                    </div>\n                </div>\n\n                <!-- *** MENUS AND FILTERS END *** -->\n            </div>\n\n            <div class=\"col-md-9\">\n                <div class=\"box info-bar\">\n                    <div class=\"row\">\n                        <div class=\"col-sm-12 col-md-4 products-showing\">\n                            <div id=\"totalProducts\"></div>\n                        </div>\n\n                        <div class=\"col-sm-12 col-md-8  products-number-sort\">\n                            <div class=\"row\">\n                                <form class=\"form-inline\">\n                                    <div class=\"col-md-6 col-sm-6\">\n                                        <div id=\"products-number\" class=\"products-number\">\n                                        </div>\n                                    </div>\n                                    <div class=\"col-md-6 col-sm-6\">\n                                        <div class=\"products-sort-by\">\n                                            <strong>Sort by</strong>\n                                            <select name=\"sort-by\"\n                                                    class=\"form-control\">\n                                                <option>Price</option>\n                                                <option>Name</option>\n                                                <option>Sales first</option>\n                                            </select>\n                                        </div>\n                                    </div>\n                                </form>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n\n                <!-- *** PRODUCTS *** -->\n\n                <div id=\"row products\">\n                    <div id=\"products\"></div>\n                </div>\n                <!-- /.products -->\n\n                <div class=\"pages\">\n\n                    <!--<p class=\"loadMore\">-->\n                    <!--<a href=\"#\" class=\"btn btn-primary btn-lg\"><i-->\n                    <!--class=\"fa fa-chevron-down\"></i> Load more</a>-->\n                    <!--</p>-->\n\n                    <ul id=\"pagination\" class=\"pagination\">\n                    </ul>\n                </div>\n\n\n            </div>\n            <!-- /.col-md-9 -->\n        </div>\n        <!-- /.container -->\n    </div>\n    <!-- /#content -->\n    <div id=\"footer\"></div>\n</div>\n<!-- /#all -->\n\n\n<!-- *** SCRIPTS TO INCLUDE ***\n_________________________________________________________ -->\n<script src=\"js/jquery-1.11.0.min.js\"></script>\n<script src=\"js/bootstrap.min.js\"></script>\n<script src=\"js/jquery.cookie.js\"></script>\n<script src=\"js/waypoints.min.js\"></script>\n<script src=\"js/modernizr.js\"></script>\n<script src=\"js/bootstrap-hover-dropdown.js\"></script>\n<script src=\"js/owl.carousel.min.js\"></script>\n<script src=\"js/front.js\"></script>\n<script src=\"js/jquery.query-object.js\"></script>\n<script src=\"js/client.js\"></script>\n<script>\n\n    $(document).ready(function () {\n        $.ajaxSetup({\n            contentType: \"application/json; charset=utf-8\"\n        });\n\n        console.log(\"Loading components for category.html\");\n        $(\"#topbar\").load(\"topbar.html\");\n        $(\"#navbar\").load(\"navbar.html\");\n        $(\"#footer\").load(\"footer.html\");\n    })\n</script>\n<script>\n            $(document).ready(function() {\n\n                $.ajaxSetup({\n                    contentType: \"application/json; charset=utf-8\"\n                });\n\t\tvar baseSize = 3;\n                var size = $.query.get('size') ? $.query.get('size') : 6;\n                var page = $.query.get('page') ? $.query.get('page') : 1;\n                var tags = $.query.get('tags') ? $.query.get('tags') : \"\";\n\n                $.getJSON('/catalogue/size', {tags: tags}, function (data) {\n\t\t    if (data.size <= size) {\n\t\t\tsize = data.size;\n\t\t\t}\n                    $('#totalProducts').append('Showing <strong>' + size + '</strong> of <strong>' + data.size + '</strong> products');\n                    var totalNumPages = Math.ceil(data.size / size);\n                    console.log(\"Total pages: \" + totalNumPages);\n                    var pagination = \"\";\n                    for (var i = 1; i <= totalNumPages; i++) {\n                        if (page == i) {\n                            pagination = pagination + '<li class=\"active\"><a href=\"#\" onclick=setNewPage(' + i + ')>' + i + '</a></li>';\n                        } else {\n                            pagination = pagination + '<li><a href=\"#\" onclick=setNewPage(' + i + ')>' + i + '</a></li>';\n                        }\n                    }\n                    console.log(\"Pagination: \" + pagination);\n                    $('#pagination').append(pagination);\n\t\t    var pageSize = [];\n                    for (var i = baseSize; i < data.size; i=i+3) {\n                        pageSize.push(i);\n                    }\t\n                    pageSize.push(data.size);\n                    var pageSizeHtml = \"<strong>Show</strong>\"\n                    pageSize.forEach(function (p) {\n                        if (size == p) {\n                            pageSizeHtml = pageSizeHtml + '<a href=\"#\" onclick=setNewPageSize(' + p + ') class=\"btn btn-primary btn-sm\">' + p + '</a>';\n                        } else {\n                            pageSizeHtml = pageSizeHtml + '<a href=\"#\" onclick=setNewPageSize(' + p + ') class=\"btn btn-default btn-sm\">' + p + '</a>';\n                        }\n                    })\n                    $('#products-number').append(pageSizeHtml);\n                });\n\n                $.getJSON('/tags', function (data) {\n                    $.each(data.tags, function (index, element) {\n                        console.log(\"Current tags: \" + tags);\n                        if (tags != null && tags != \"\" && tags != true && tags.indexOf(element) > -1) {\n                            $('#filters').append('<div class=\"checkbox\"><label><input type=\"checkbox\" checked=\"true\" value=\"' + element + '\">' + element + '</label></div>');\n                        } else {\n                            $('#filters').append('<div class=\"checkbox\"><label><input type=\"checkbox\" value=\"' + element + '\">' + element + '</label></div>');\n                        }\n                    })\n                });\n\n\n                $.getJSON('/catalogue', {page: page, size: size, tags: tags}, function (data) {\n                    if (data != null) {\n                        $.each(data, function (index, element) {\n                            $('#products').append('<div class=\"col-md-4 col-sm-6\">\\\n                            <div class=\"product\">\\\n                                    <div class=\"flip-container\">\\\n                                        <div class=\"flipper\">\\\n                                            <div class=\"front\">\\\n                                                <a href=\"detail.html?id=' + element.id + '\">\\\n                                                    <img src=\"' + element.imageUrl[0] + '\" alt=\"\" class=\"img-responsive\">\\\n                                                </a>\\\n                                            </div>\\\n                                            <div class=\"back\">\\\n                                                <a href=\"detail.html?id=' + element.id + '\">\\\n                                                    <img src=\"' + element.imageUrl[1] + '\" alt=\"\" class=\"img-responsive\">\\\n                                                </a>\\\n                                            </div>\\\n                                        </div>\\\n                                    </div>\\\n                                    <a href=\"detail.html?id=' + element.id + '\" class=\"invisible\">\\\n                                        <img src=\"img/product1.jpg\" alt=\"\" class=\"img-responsive\">\\\n                                    </a>\\\n                                    <div class=\"text\">\\\n                                        <h3><a href=\"detail.html?id=' + element.id + '\">' + element.name + '</a></h3>\\\n                                        <p class=\"price\">$' + element.price + '</p>\\\n                                        <p class=\"buttons\">\\\n                                            <a href=\"detail.html?id=' + element.id + '\" class=\"btn btn-default\">View detail</a>\\\n                                            <a href=\"#\" onclick=\"addToCart(\\'' + element.id + '\\')\" class=\"btn btn-primary\"><i class=\"fa fa-shopping-cart\"></i>Add to cart</a>\\\n                                        </p>\\\n                                    </div>\\\n                                </div>\\\n                            </div>');\n                        });\n                    }\n                });\n            } );\n\n</script>\n\n\n</body>\n\n</html>\n"
+       }
+      },
+      "description": "OK"
+     }
+    },
     "summary": "Seen 1 requests"
+   },
+   "parameters": []
+  },
+  "/tags": {
+   "get": {
+    "operationId": "de2d6395-7b97-4d80-b60c-8a8c2939422b",
+    "parameters": [
+     {
+      "in": "header",
+      "name": "x-requested-with",
+      "required": false,
+      "schema": {
+       "enum": [
+        "XMLHttpRequest"
+       ],
+       "type": "string"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "content": {
+       "application/json": {
+        "example": {
+         "err": null,
+         "tags": [
+          "brown",
+          "geek",
+          "formal",
+          "blue",
+          "skin",
+          "red",
+          "action",
+          "sport",
+          "black",
+          "magic",
+          "green"
+         ]
+        },
+        "schema": {
+         "properties": {
+          "err": {},
+          "tags": {
+           "items": {
+            "type": "string"
+           },
+           "type": "array"
+          }
+         },
+         "required": [
+          "err",
+          "tags"
+         ],
+         "type": "object"
+        }
+       }
+      },
+      "description": "OK"
+     }
+    },
+    "summary": "Seen 2 requests"
    },
    "parameters": []
   }
  },
- "tags": []
+ "tags": [
+  {
+   "name": "catalogue"
+  }
+ ]
 }

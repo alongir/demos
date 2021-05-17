@@ -3,11 +3,16 @@
   {
    "name": "size",
    "uuid": "b4b07a97-9426-499f-b381-23b36c5b6d00"
+  },
+  {
+   "name": "tags",
+   "uuid": "11993afb-cf88-4883-9d67-587340bdfdcb"
   }
  ],
  "rows": [
   {
-   "size": "5"
+   "size": "5",
+   "tags": "black"
   }
  ]
 }
