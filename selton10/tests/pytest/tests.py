@@ -147,6 +147,23 @@ class Tests_front_end_sock_shop(unittest.TestCase):
         # resp.assert_status_code(200)
         # resp.assert_cssselect('div#content div.container div div.panel.panel-default.sidebar-menu div.panel-heading h3.panel-title', expected_value='Filters ')
 
+    @clear_session({'spanId': 31})
+    def test_31_get_footer_html(self):
+        # GET http://front-end.sock-shop/footer.html (endp 31)
+        front_end_sock_shop = get_http_client('http://front-end.sock-shop', authenticate)
+        resp = front_end_sock_shop.get('/footer.html', headers=dict([('x-requested-with', 'XMLHttpRequest')]))
+        resp.assert_ok()
+        # resp.assert_status_code(200)
+        # resp.assert_cssselect('div#copyright div.container div p.pull-left a', expected_value='Weaveworks')
+
+    @clear_session({'spanId': 32})
+    def test_32_get_navbar_html(self):
+        # GET http://front-end.sock-shop/navbar.html (endp 32)
+        front_end_sock_shop = get_http_client('http://front-end.sock-shop', authenticate)
+        resp = front_end_sock_shop.get('/navbar.html', headers=dict([('x-requested-with', 'XMLHttpRequest')]))
+        resp.assert_ok()
+        # resp.assert_status_code(200)
+
     @clear_session({'spanId': 28})
     def test_28_get_tags(self):
         # GET http://front-end.sock-shop/tags (endp 28)
@@ -154,6 +171,15 @@ class Tests_front_end_sock_shop(unittest.TestCase):
         resp = front_end_sock_shop.get('/tags', headers=dict([('x-requested-with', 'XMLHttpRequest')]))
         resp.assert_ok()
         # resp.assert_status_code(200)
+
+    @clear_session({'spanId': 33})
+    def test_33_get_topbar_html(self):
+        # GET http://front-end.sock-shop/topbar.html (endp 33)
+        front_end_sock_shop = get_http_client('http://front-end.sock-shop', authenticate)
+        resp = front_end_sock_shop.get('/topbar.html', headers=dict([('x-requested-with', 'XMLHttpRequest')]))
+        resp.assert_ok()
+        # resp.assert_status_code(200)
+        # resp.assert_cssselect('div#top div.container div.offer a.btn.btn-success', expected_value='Offer of the day')
 
 
 @data_driven_tests

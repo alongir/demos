@@ -143,6 +143,24 @@ services:
          "err": null
         }
       useTemplating: false
+  - path: /footer.html
+    response:
+      headers:
+        Content-Type: text/html
+      body: '@mock-data/resp_front_end_sock_shop_31.html'
+      useTemplating: false
+  - path: /navbar.html
+    response:
+      headers:
+        Content-Type: text/html
+      body: '@mock-data/resp_front_end_sock_shop_32.html'
+      useTemplating: false
+  - path: /topbar.html
+    response:
+      headers:
+        Content-Type: text/html
+      body: '@mock-data/resp_front_end_sock_shop_33.html'
+      useTemplating: false
 - name: http://orders.sock-shop
   port: 8004
   managementRoot: __admin
