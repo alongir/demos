@@ -251,7 +251,7 @@
       "description": "Created"
      }
     },
-    "summary": "Seen 113 requests",
+    "summary": "Seen 115 requests",
     "tags": [
      "orders"
     ]
@@ -267,7 +267,8 @@
       "required": true,
       "schema": {
        "enum": [
-        "57a98d98e4b00679b4a830b2"
+        "57a98d98e4b00679b4a830b2",
+        "undefined"
        ],
        "type": "string"
       }
@@ -549,7 +550,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 5 requests",
+    "summary": "Seen 11 requests",
     "tags": [
      "orders"
     ]

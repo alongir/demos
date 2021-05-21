@@ -180,7 +180,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 38 requests",
+    "summary": "Seen 52 requests",
     "tags": [
      "catalogue"
     ]
@@ -230,7 +230,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 12 requests",
+    "summary": "Seen 20 requests",
     "tags": [
      "catalogue"
     ]
@@ -306,7 +306,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 30 requests",
+    "summary": "Seen 46 requests",
     "tags": [
      "catalogue"
     ]
@@ -319,7 +319,8 @@
      "schema": {
       "enum": [
        "03fef6ac-1896-4ce8-bd69-b798f85c6e0b",
-       "3395a43e-2d88-40de-b95f-e00e1502085b"
+       "3395a43e-2d88-40de-b95f-e00e1502085b",
+       "510a0d7e-8e83-4193-b483-e27e09ddc34d"
       ],
       "type": "string"
      },
@@ -372,7 +373,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 12 requests"
+    "summary": "Seen 20 requests"
    },
    "parameters": []
   }

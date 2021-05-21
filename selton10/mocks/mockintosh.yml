@@ -225,7 +225,7 @@ services:
       status: 201
       headers:
         Content-Type: application/json
-      body: '@mock-data/resp_front_end_sock_shop_90.json'
+      body: '[]'
       useTemplating: false
   - path: /orders
     response:
@@ -239,7 +239,7 @@ services:
     response:
       headers:
         Content-Type: application/json
-      body: '@mock-data/resp_front_end_sock_shop_124.json'
+      body: '@mock-data/resp_front_end_sock_shop_103.json'
       useTemplating: false
 - name: http://orders.sock-shop
   port: 8004
@@ -351,4 +351,4 @@ services:
   actors:
   - produce:
       queue: shipping-task
-      value: '{"id":"5e86cbf1-742b-4b79-ad1e-46f358cf1e9a","name":"57a98d98e4b00679b4a830b2"}'
+      value: '{"id":"1ee64d41-ca9c-4a0f-9349-28bc132e1765","name":"57a98d98e4b00679b4a830b2"}'

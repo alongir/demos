@@ -299,12 +299,12 @@ class Tests_front_end_sock_shop(unittest.TestCase):
         # resp.assert_status_code(201)
         # resp.assert_jsonpath('$.address.city', expected_value='Glasgow')
 
-    @json_dataset('data/dataset_124.json')
-    @clear_session({'spanId': 124})
-    def test_124_get_orders_orderId(self, data_row):
+    @json_dataset('data/dataset_103.json')
+    @clear_session({'spanId': 103})
+    def test_103_get_orders_orderId(self, data_row):
         orderId, = data_row
 
-        # GET http://front-end.sock-shop/orders/{orderId} (endp 124)
+        # GET http://front-end.sock-shop/orders/{orderId} (endp 103)
         front_end_sock_shop = get_http_client('http://front-end.sock-shop', authenticate)
         resp = front_end_sock_shop.get(f'/orders/{orderId}', headers=dict([('x-requested-with', 'XMLHttpRequest')]))
         resp.assert_ok()
@@ -332,14 +332,14 @@ class Tests_front_end_sock_shop(unittest.TestCase):
 @data_driven_tests
 class Tests_kafka(unittest.TestCase):
 
-    @json_dataset('data/dataset_92.json')
-    @clear_session({'spanId': 92})
-    def test_092_put_shipping_task(self, data_row):
+    @json_dataset('data/dataset_104.json')
+    @clear_session({'spanId': 104})
+    def test_104_put_shipping_task(self, data_row):
         id_, name = data_row
 
-        # PUT kafka://kafka/shipping-task (endp 92)
+        # PUT kafka://kafka/shipping-task (endp 104)
         kafka = Kafka('TARGET_KAFKA')
-        with open('data/payload_for_endp_92.json', 'r') as json_payload_file:
+        with open('data/payload_for_endp_104.json', 'r') as json_payload_file:
             json_payload = json.load(json_payload_file)
         apply_into_json(json_payload, '$.id', id_)
         apply_into_json(json_payload, '$.name', name)

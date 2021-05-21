@@ -107,19 +107,13 @@
           "postcode": {
            "type": "string"
           },
+          "status_code": {
+           "type": "integer"
+          },
           "street": {
            "type": "string"
           }
          },
-         "required": [
-          "_links",
-          "city",
-          "country",
-          "id",
-          "number",
-          "postcode",
-          "street"
-         ],
          "type": "object"
         }
        }
@@ -127,7 +121,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 2 requests"
+    "summary": "Seen 5 requests"
    },
    "parameters": []
   },
@@ -158,11 +152,11 @@
          "properties": {
           "number": {
            "type": "string"
+          },
+          "status_code": {
+           "type": "integer"
           }
          },
-         "required": [
-          "number"
-         ],
          "type": "object"
         }
        }
@@ -170,7 +164,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 2 requests"
+    "summary": "Seen 5 requests"
    },
    "parameters": []
   },
@@ -195,7 +189,7 @@
       "description": "Accepted"
      }
     },
-    "summary": "Seen 1 requests",
+    "summary": "Seen 3 requests",
     "tags": [
      "cart"
     ]
@@ -251,7 +245,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 34 requests",
+    "summary": "Seen 52 requests",
     "tags": [
      "cart"
     ]
@@ -295,7 +289,7 @@
       "description": "Created"
      }
     },
-    "summary": "Seen 4 requests",
+    "summary": "Seen 7 requests",
     "tags": [
      "cart"
     ]
@@ -528,7 +522,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 30 requests",
+    "summary": "Seen 40 requests",
     "tags": [
      "catalogue"
     ]
@@ -589,7 +583,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 10 requests",
+    "summary": "Seen 15 requests",
     "tags": [
      "catalogue"
     ]
@@ -677,7 +671,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 8 requests",
+    "summary": "Seen 17 requests",
     "tags": [
      "catalogue"
     ]
@@ -882,7 +876,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 13 requests"
+    "summary": "Seen 21 requests"
    },
    "parameters": [
     {
@@ -997,92 +991,7 @@
      "201": {
       "content": {
        "application/json": {
-        "example": [
-         {
-          "_links": {
-           "order": {
-            "href": "http://orders/orders/60a81e7e65220500070784f5"
-           },
-           "self": {
-            "href": "http://orders/orders/60a81e7e65220500070784f5"
-           }
-          },
-          "address": {
-           "city": "Glasgow",
-           "country": "United Kingdom",
-           "number": "246",
-           "postcode": "G67 3DL",
-           "street": "Whitelees Road"
-          },
-          "card": {
-           "ccv": "958",
-           "expires": "08/19",
-           "longNum": "5544154011345918"
-          },
-          "customer": {
-           "addresses": [],
-           "cards": [],
-           "firstName": "User",
-           "lastName": "Name",
-           "username": "user"
-          },
-          "customerId": "57a98d98e4b00679b4a830b2",
-          "date": "2021-05-21T20:56:30.149+0000",
-          "items": [
-           {
-            "itemId": "3395a43e-2d88-40de-b95f-e00e1502085b",
-            "quantity": 1,
-            "unitPrice": 18
-           }
-          ],
-          "shipment": {
-           "name": "57a98d98e4b00679b4a830b2"
-          },
-          "total": 22.99
-         },
-         {
-          "_links": {
-           "order": {
-            "href": "http://orders/orders/60a81f5065220500070784f6"
-           },
-           "self": {
-            "href": "http://orders/orders/60a81f5065220500070784f6"
-           }
-          },
-          "address": {
-           "city": "Glasgow",
-           "country": "United Kingdom",
-           "number": "246",
-           "postcode": "G67 3DL",
-           "street": "Whitelees Road"
-          },
-          "card": {
-           "ccv": "958",
-           "expires": "08/19",
-           "longNum": "5544154011345918"
-          },
-          "customer": {
-           "addresses": [],
-           "cards": [],
-           "firstName": "User",
-           "lastName": "Name",
-           "username": "user"
-          },
-          "customerId": "57a98d98e4b00679b4a830b2",
-          "date": "2021-05-21T21:00:00.822+0000",
-          "items": [
-           {
-            "itemId": "3395a43e-2d88-40de-b95f-e00e1502085b",
-            "quantity": 1,
-            "unitPrice": 18
-           }
-          ],
-          "shipment": {
-           "name": "57a98d98e4b00679b4a830b2"
-          },
-          "total": 22.99
-         }
-        ],
+        "example": [],
         "schema": {
          "items": {
           "properties": {
@@ -1255,7 +1164,7 @@
       "description": "Created"
      }
     },
-    "summary": "Seen 2 requests",
+    "summary": "Seen 7 requests",
     "tags": [
      "orders"
     ]
@@ -1475,7 +1384,7 @@
       "description": "Created"
      }
     },
-    "summary": "Seen 1 requests",
+    "summary": "Seen 3 requests",
     "tags": [
      "orders"
     ]
@@ -1483,7 +1392,7 @@
   },
   "/orders/{orderId}": {
    "get": {
-    "operationId": "7dc46f5b-1441-4ad5-9b07-57d0338528cd",
+    "operationId": "b9e10c06-87d1-493c-8e62-880198a9cfc0",
     "parameters": [
      {
       "in": "header",
@@ -1789,7 +1698,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 10 requests"
+    "summary": "Seen 15 requests"
    },
    "parameters": []
   },
@@ -1826,13 +1735,13 @@
  },
  "tags": [
   {
-   "name": "catalogue"
-  },
-  {
    "name": "cart"
   },
   {
    "name": "orders"
+  },
+  {
+   "name": "catalogue"
   }
  ]
 }

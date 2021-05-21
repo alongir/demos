@@ -8,7 +8,7 @@
   "/shipping-task": {
    "parameters": [],
    "put": {
-    "operationId": "6dfb020f-b8d3-42e5-bf15-ba94f413942e",
+    "operationId": "f57378b7-15f6-4317-bbaf-e2c9c3da84ec",
     "parameters": [],
     "requestBody": {
      "content": {
@@ -37,7 +37,7 @@
       "description": "Accepted"
      }
     },
-    "summary": "Seen 2 requests"
+    "summary": "Seen 4 requests"
    }
   }
  },
