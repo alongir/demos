@@ -239,7 +239,7 @@
   },
   "/catalogue/{id}": {
    "get": {
-    "operationId": "02cb3e02-f05d-4cc8-b4d0-b40294880a04",
+    "operationId": "45e7ec0d-edf2-4747-8cb5-2e956ea3dc34",
     "parameters": [],
     "responses": {
      "200": {

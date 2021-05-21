@@ -25,7 +25,7 @@
   },
   "/address": {
    "get": {
-    "operationId": "83025ec0-0acb-451c-ab14-7210804495b6",
+    "operationId": "9aea1be7-519d-4264-aa41-3d1e5e2e1369",
     "parameters": [
      {
       "in": "header",
@@ -133,7 +133,7 @@
   },
   "/card": {
    "get": {
-    "operationId": "bb0e0ef9-291d-4bea-a3fc-70145fe191ba",
+    "operationId": "7ec4d177-71f8-4d5c-ada3-bc91036d3491",
     "parameters": [
      {
       "in": "header",
@@ -175,6 +175,31 @@
    "parameters": []
   },
   "/cart": {
+   "delete": {
+    "operationId": "8ab47129-a4c3-4db7-86a9-2643601ab586",
+    "parameters": [
+     {
+      "in": "header",
+      "name": "x-requested-with",
+      "required": false,
+      "schema": {
+       "enum": [
+        "XMLHttpRequest"
+       ],
+       "type": "string"
+      }
+     }
+    ],
+    "responses": {
+     "202": {
+      "description": "Accepted"
+     }
+    },
+    "summary": "Seen 1 requests",
+    "tags": [
+     "cart"
+    ]
+   },
    "get": {
     "operationId": "fe4d5292-b520-4aad-a815-ecabcb76f8ac",
     "parameters": [
@@ -226,14 +251,14 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 28 requests",
+    "summary": "Seen 31 requests",
     "tags": [
      "cart"
     ]
    },
    "parameters": [],
    "post": {
-    "operationId": "d6c316de-464f-4ccb-9a05-0649755c9526",
+    "operationId": "792683b8-4b5d-434c-85e1-6285ab79887e",
     "parameters": [
      {
       "in": "header",
@@ -278,7 +303,7 @@
   },
   "/cart/{id}": {
    "delete": {
-    "operationId": "8ae1bf18-6d17-4f7c-8630-89dabf32f1a7",
+    "operationId": "caab4fa2-de16-4400-a1cc-749e921b6030",
     "parameters": [
      {
       "in": "header",
@@ -573,7 +598,7 @@
   },
   "/catalogue/{id}": {
    "get": {
-    "operationId": "66913dfc-8f75-4a90-93c0-e74977113a12",
+    "operationId": "5d053cf5-bd97-4657-85fd-2598a4b0d703",
     "parameters": [
      {
       "in": "header",
@@ -592,18 +617,18 @@
       "content": {
        "application/json": {
         "example": {
-         "count": 1,
-         "description": "Socks fit for a Messiah. You too can experience walking in water with these special edition beauties. Each hole is lovingly proggled to leave smooth edges. The only sock approved by a higher power.",
-         "id": "03fef6ac-1896-4ce8-bd69-b798f85c6e0b",
+         "count": 438,
+         "description": "proident occaecat irure et excepteur labore minim nisi amet irure",
+         "id": "3395a43e-2d88-40de-b95f-e00e1502085b",
          "imageUrl": [
-          "/catalogue/images/holy_1.jpeg",
-          "/catalogue/images/holy_2.jpeg"
+          "/catalogue/images/colourful_socks.jpg",
+          "/catalogue/images/colourful_socks.jpg"
          ],
-         "name": "Holy",
-         "price": 99.99,
+         "name": "Colourful",
+         "price": 18,
          "tag": [
-          "magic",
-          "action"
+          "brown",
+          "blue"
          ]
         },
         "schema": {
@@ -652,7 +677,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 4 requests",
+    "summary": "Seen 6 requests",
     "tags": [
      "catalogue"
     ]
@@ -703,9 +728,39 @@
    },
    "parameters": []
   },
+  "/customer-order.html": {
+   "get": {
+    "operationId": "bcbaaaee-e050-4a91-b82f-8bfa2f8da7d4",
+    "parameters": [
+     {
+      "in": "query",
+      "name": "order",
+      "required": true,
+      "schema": {
+       "enum": [
+        "/orders/60a81f5065220500070784f6"
+       ],
+       "type": "string"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "content": {
+       "text/html": {
+        "example": "<!DOCTYPE html>\n<html lang=\"en\">\n\n<head>\n\n    <meta charset=\"utf-8\">\n    <meta name=\"robots\" content=\"all,follow\">\n    <meta name=\"googlebot\" content=\"index,follow,snippet,archive\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <meta name=\"description\" content=\"WeaveSocks Demo App\">\n    <meta name=\"author\" content=\"Ondrej Svestka | ondrejsvestka.cz\">\n    <meta name=\"keywords\" content=\"\">\n\n    <title>\n        WeaveSocks\n    </title>\n\n    <meta name=\"keywords\" content=\"\">\n\n    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100'\n          rel='stylesheet' type='text/css'>\n\n    <!-- styles -->\n    <link href=\"css/font-awesome.css\" rel=\"stylesheet\">\n    <link href=\"css/bootstrap.min.css\" rel=\"stylesheet\">\n    <link href=\"css/animate.min.css\" rel=\"stylesheet\">\n    <link href=\"css/owl.carousel.css\" rel=\"stylesheet\">\n    <link href=\"css/owl.theme.css\" rel=\"stylesheet\">\n\n    <!-- theme stylesheet -->\n    <link href=\"css/style.blue.css\" rel=\"stylesheet\" id=\"theme-stylesheet\">\n\n    <!-- your stylesheet with modifications -->\n    <link href=\"css/custom.css\" rel=\"stylesheet\">\n\n    <script src=\"js/respond.min.js\"></script>\n\n    <link rel=\"shortcut icon\" href=\"favicon.png\">\n\n\n</head>\n\n<body>\n<div id=\"topbar\"></div>\n<div id=\"navbar\"></div>\n\n<div id=\"all\">\n\n    <div id=\"content\">\n        <div class=\"container\">\n\n            <div class=\"col-md-12\">\n\n                <ul class=\"breadcrumb\">\n                    <li><a href=\"index.html\">Home</a>\n                    </li>\n                    <li><a href=\"customer-orders.html\">My orders</a>\n                    </li>\n                    <li>Order</li>\n                </ul>\n\n            </div>\n\n            <div class=\"col-md-3\">\n                <!-- *** CUSTOMER MENU ***\n_________________________________________________________ -->\n                <div class=\"panel panel-default sidebar-menu\">\n\n                    <div class=\"panel-heading\">\n                        <h3 class=\"panel-title\">Customer section</h3>\n                    </div>\n\n                    <div class=\"panel-body\">\n\n                        <ul class=\"nav nav-pills nav-stacked\">\n                            <li class=\"active\">\n                                <a href=\"customer-orders.html\"><i\n                                        class=\"fa fa-list\"></i> My orders</a>\n                            </li>\n                            <!--<li>-->\n                            <!--<a href=\"customer-wishlist.html\"><i-->\n                            <!--class=\"fa fa-heart\"></i> My wishlist</a>-->\n                            <!--</li>-->\n                            <!--<li>-->\n                            <!--<a href=\"customer-account.html\"><i-->\n                            <!--class=\"fa fa-user\"></i> My account</a>-->\n                            <!--</li>-->\n                            <!--<li>-->\n                            <!--<a href=\"index.html\"><i-->\n                            <!--class=\"fa fa-sign-out\"></i> Logout</a>-->\n                            <!--</li>-->\n                        </ul>\n                    </div>\n\n                </div>\n                <!-- /.col-md-3 -->\n\n                <!-- *** CUSTOMER MENU END *** -->\n            </div>\n\n            <div class=\"col-md-9\" id=\"customer-order\">\n                <div class=\"box\">\n                    <h2>Order #<span id=\"orderNumber\"></span></h2>\n\n                    <p class=\"lead\">Order was placed on\n                        <strong id=\"orderDate\"></strong> and is currently <strong id=\"orderStatus\"></strong>.</p>\n                    <p class=\"text-muted\">If you have any questions, please feel\n                        free to <a href=\"#\">contact us</a>, our\n                        customer service center is working for you 24/7.</p>\n\n                    <hr>\n\n                    <div class=\"table-responsive\">\n                        <table class=\"table\">\n                            <thead>\n                            <tr>\n                                <th colspan=\"2\">Product</th>\n                                <th>Quantity</th>\n                                <th>Unit price</th>\n                                <th>Discount</th>\n                                <th>Total</th>\n                            </tr>\n                            </thead>\n                            <tbody id=\"tableOrder\">\n                            </tbody>\n                            <tfoot>\n                            <tr>\n                                <th colspan=\"5\" class=\"text-right\">Order\n                                    subtotal\n                                </th>\n                                <th id=\"orderSubtotal\"></th>\n                            </tr>\n                            <tr>\n                                <th colspan=\"5\" class=\"text-right\">Shipping and\n                                    handling\n                                </th>\n                                <th id=\"orderShipping\"></th>\n                            </tr>\n                            <tr>\n                                <th colspan=\"5\" class=\"text-right\">Total</th>\n                                <th id=\"orderTotal\"></th>\n                            </tr>\n                            </tfoot>\n                        </table>\n\n                    </div>\n                    <!-- /.table-responsive -->\n\n                    <div class=\"row addresses\">\n                        <div class=\"col-md-6\">\n                            <h2>Invoice address</h2>\n                            <span id=\"addressInvoice\"></span>\n                        </div>\n                        <div class=\"col-md-6\">\n                            <h2>Shipping address</h2>\n                            <span id=\"addressShipping\"></span>\n                        </div>\n                    </div>\n\n                </div>\n            </div>\n\n        </div>\n        <!-- /.container -->\n    </div>\n    <!-- /#content -->\n\n\n\n\n</div>\n<!-- /#all -->\n\n\n<!-- *** SCRIPTS TO INCLUDE ***\n_________________________________________________________ -->\n<script src=\"js/jquery-1.11.0.min.js\"></script>\n<script src=\"js/bootstrap.min.js\"></script>\n<script src=\"js/jquery.cookie.js\"></script>\n<script src=\"js/waypoints.min.js\"></script>\n<script src=\"js/modernizr.js\"></script>\n<script src=\"js/bootstrap-hover-dropdown.js\"></script>\n<script src=\"js/owl.carousel.min.js\"></script>\n<script src=\"js/front.js\"></script>\n<script src=\"js/jquery.query-object.js\"></script>\n<script src=\"js/client.js\"></script>\n<script>\n\n    $(document).ready(function () {\n        $.ajaxSetup({\n            contentType: \"application/json; charset=utf-8\"\n        });\n\n        console.log(\"Loading components for category.html\");\n        $(\"#topbar\").load(\"topbar.html\");\n        $(\"#navbar\").load(\"navbar.html\");\n        $(\"#footer\").load(\"footer.html\");\n    })\n</script>\n\n<script>\n    $(document).ready(function () {\n        var orderUrl = $.query.get('order') ? $.query.get('order') : \"#\";\n        console.log(\"getting \" + orderUrl);\n        $.getJSON(orderUrl, {}, function (data) {\n            var selfRef = data._links.self.href;\n            var split = selfRef.split(\"/\");\n            var id = split[split.length - 1];\n            var cartTotal = 0;\n            var numItemsInCart = 0;\n            var shipping = 4.99;\n            //$('#orderTotal').text('$' + data.total.toFixed(2));\n            $('#orderNumber').text(id);\n            $('#orderDate').text(data.date.split(\".\")[0].replace(\"T\", \" \"));\n            $('#orderStatus').text(\"shipped\");\n            $.each(data.items, function (index, item) {\n                $.getJSON('/catalogue/' + item.itemId, function (data) {\n                    console.log(JSON.stringify(data));\n                    $('#tableOrder').append(' <tr>\\\n                                                <td>\\\n                                                    <a href=\"#\">\\\n                                                        <img src=\"' + data.imageUrl[0] + '\" alt=\"' + data.namex + '\">\\\n                                                    </a>\\\n                                                </td>\\\n                                                <td>\\\n                                                    <a href=\"#\">' + data.name + '</a>\\\n                                                </td>\\\n                                                <td>' + item.quantity + '</td>\\\n                                                <td>$' + data.price.toFixed(2) + '</td>\\\n                                                <td>$0.00</td>\\\n                                                <td>$' + (item.quantity * data.price).toFixed(2) + '</td>\\\n                                            </tr>');\n                    cartTotal = cartTotal + item.quantity * data.price;\n                    console.log(\"Cur total: \" + cartTotal);\n                    numItemsInCart = numItemsInCart + item.quantity;\n                }).always(function () {\n                    console.log(\"Final counts: $\" + cartTotal + \", with \" + numItemsInCart + \" items.\");\n                    $('#orderSubtotal').text('$' + cartTotal.toFixed(2));\n                    $('#orderShipping').text('$' + shipping.toFixed(2));\n                    $('#orderTotal').text('$' + (cartTotal + shipping).toFixed(2));\n                });\n            })\n            $('#addressInvoice').replaceWith('\\\n                <p>' + data.customer.firstName + ' ' + data.customer.lastName + '\\\n                    <br>' + data.address.number + ' ' + data.address.street + '\\\n                    <br>' + data.address.city + '\\\n                    <br>' + data.address.country + '\\\n                    <br>' + data.address.postcode + '\\\n                </p>');\n            $('#addressShipping').replaceWith('\\\n                <p>' + data.customer.firstName + ' ' + data.customer.lastName + '\\\n                    <br>' + data.address.number + ' ' + data.address.street + '\\\n                    <br>' + data.address.city + '\\\n                    <br>' + data.address.country + '\\\n                    <br>' + data.address.postcode + '\\\n                </p>');\n        });\n    });\n</script>\n\n</body>\n\n</html>\n"
+       }
+      },
+      "description": "OK"
+     }
+    },
+    "summary": "Seen 1 requests"
+   },
+   "parameters": []
+  },
   "/customers/{customerId}": {
    "get": {
-    "operationId": "8d66a03b-7d24-4bd4-9d71-6098c27c11c4",
+    "operationId": "f676bcd7-5d97-4b38-b4a8-0eb0fc14eb2e",
     "parameters": [
      {
       "in": "header",
@@ -827,7 +882,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 8 requests"
+    "summary": "Seen 10 requests"
    },
    "parameters": [
     {
@@ -876,7 +931,7 @@
   },
   "/index.html": {
    "get": {
-    "operationId": "9cc61599-ccbd-4a8a-8278-87625d346d17",
+    "operationId": "bd857e03-7809-45e6-8de5-924819a634b6",
     "parameters": [],
     "responses": {
      "200": {
@@ -924,7 +979,7 @@
   },
   "/orders": {
    "get": {
-    "operationId": "da68c1f2-cf7e-4360-aab1-d209a884ead4",
+    "operationId": "2645e2c7-f071-468c-b09d-44bbad953b73",
     "parameters": [
      {
       "in": "header",
@@ -973,6 +1028,48 @@
           },
           "customerId": "57a98d98e4b00679b4a830b2",
           "date": "2021-05-21T20:56:30.149+0000",
+          "items": [
+           {
+            "itemId": "3395a43e-2d88-40de-b95f-e00e1502085b",
+            "quantity": 1,
+            "unitPrice": 18
+           }
+          ],
+          "shipment": {
+           "name": "57a98d98e4b00679b4a830b2"
+          },
+          "total": 22.99
+         },
+         {
+          "_links": {
+           "order": {
+            "href": "http://orders/orders/60a81f5065220500070784f6"
+           },
+           "self": {
+            "href": "http://orders/orders/60a81f5065220500070784f6"
+           }
+          },
+          "address": {
+           "city": "Glasgow",
+           "country": "United Kingdom",
+           "number": "246",
+           "postcode": "G67 3DL",
+           "street": "Whitelees Road"
+          },
+          "card": {
+           "ccv": "958",
+           "expires": "08/19",
+           "longNum": "5544154011345918"
+          },
+          "customer": {
+           "addresses": [],
+           "cards": [],
+           "firstName": "User",
+           "lastName": "Name",
+           "username": "user"
+          },
+          "customerId": "57a98d98e4b00679b4a830b2",
+          "date": "2021-05-21T21:00:00.822+0000",
           "items": [
            {
             "itemId": "3395a43e-2d88-40de-b95f-e00e1502085b",
@@ -1158,9 +1255,231 @@
       "description": "Created"
      }
     },
-    "summary": "Seen 1 requests"
+    "summary": "Seen 2 requests",
+    "tags": [
+     "orders"
+    ]
    },
-   "parameters": []
+   "parameters": [],
+   "post": {
+    "operationId": "18ede1d5-0cd9-4648-950c-f38726b86aef",
+    "parameters": [
+     {
+      "in": "header",
+      "name": "x-requested-with",
+      "required": false,
+      "schema": {
+       "enum": [
+        "XMLHttpRequest"
+       ],
+       "type": "string"
+      }
+     }
+    ],
+    "responses": {
+     "201": {
+      "content": {
+       "application/json": {
+        "example": {
+         "address": {
+          "city": "Glasgow",
+          "country": "United Kingdom",
+          "id": null,
+          "number": "246",
+          "postcode": "G67 3DL",
+          "street": "Whitelees Road"
+         },
+         "card": {
+          "ccv": "958",
+          "expires": "08/19",
+          "id": null,
+          "longNum": "5544154011345918"
+         },
+         "customer": {
+          "addresses": [],
+          "cards": [],
+          "firstName": "User",
+          "id": null,
+          "lastName": "Name",
+          "username": "user"
+         },
+         "customerId": "57a98d98e4b00679b4a830b2",
+         "date": "2021-05-21T21:00:00.822+0000",
+         "id": "60a81f5065220500070784f6",
+         "items": [
+          {
+           "id": "60a81f4dd601800006a4e228",
+           "itemId": "3395a43e-2d88-40de-b95f-e00e1502085b",
+           "quantity": 1,
+           "unitPrice": 18
+          }
+         ],
+         "shipment": {
+          "id": "651b27f1-8cee-4cd9-a3f2-794010783a03",
+          "name": "57a98d98e4b00679b4a830b2"
+         },
+         "total": 22.99
+        },
+        "schema": {
+         "properties": {
+          "address": {
+           "properties": {
+            "city": {
+             "type": "string"
+            },
+            "country": {
+             "type": "string"
+            },
+            "id": {},
+            "number": {
+             "type": "string"
+            },
+            "postcode": {
+             "type": "string"
+            },
+            "street": {
+             "type": "string"
+            }
+           },
+           "required": [
+            "city",
+            "country",
+            "id",
+            "number",
+            "postcode",
+            "street"
+           ],
+           "type": "object"
+          },
+          "card": {
+           "properties": {
+            "ccv": {
+             "type": "string"
+            },
+            "expires": {
+             "type": "string"
+            },
+            "id": {},
+            "longNum": {
+             "type": "string"
+            }
+           },
+           "required": [
+            "ccv",
+            "expires",
+            "id",
+            "longNum"
+           ],
+           "type": "object"
+          },
+          "customer": {
+           "properties": {
+            "addresses": {
+             "items": {},
+             "type": "array"
+            },
+            "cards": {
+             "items": {},
+             "type": "array"
+            },
+            "firstName": {
+             "type": "string"
+            },
+            "id": {},
+            "lastName": {
+             "type": "string"
+            },
+            "username": {
+             "type": "string"
+            }
+           },
+           "required": [
+            "addresses",
+            "cards",
+            "firstName",
+            "id",
+            "lastName",
+            "username"
+           ],
+           "type": "object"
+          },
+          "customerId": {
+           "type": "string"
+          },
+          "date": {
+           "type": "string"
+          },
+          "id": {
+           "type": "string"
+          },
+          "items": {
+           "items": {
+            "properties": {
+             "id": {
+              "type": "string"
+             },
+             "itemId": {
+              "type": "string"
+             },
+             "quantity": {
+              "type": "integer"
+             },
+             "unitPrice": {
+              "type": "integer"
+             }
+            },
+            "required": [
+             "id",
+             "itemId",
+             "quantity",
+             "unitPrice"
+            ],
+            "type": "object"
+           },
+           "type": "array"
+          },
+          "shipment": {
+           "properties": {
+            "id": {
+             "type": "string"
+            },
+            "name": {
+             "type": "string"
+            }
+           },
+           "required": [
+            "id",
+            "name"
+           ],
+           "type": "object"
+          },
+          "total": {
+           "type": "number"
+          }
+         },
+         "required": [
+          "address",
+          "card",
+          "customer",
+          "customerId",
+          "date",
+          "id",
+          "items",
+          "shipment",
+          "total"
+         ],
+         "type": "object"
+        }
+       }
+      },
+      "description": "Created"
+     }
+    },
+    "summary": "Seen 1 requests",
+    "tags": [
+     "orders"
+    ]
+   }
   },
   "/tags": {
    "get": {
@@ -1256,10 +1575,13 @@
  },
  "tags": [
   {
+   "name": "catalogue"
+  },
+  {
    "name": "cart"
   },
   {
-   "name": "catalogue"
+   "name": "orders"
   }
  ]
 }

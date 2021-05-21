@@ -41,117 +41,132 @@
 </head>
 
 <body>
-
 <div id="topbar"></div>
 <div id="navbar"></div>
 
 <div id="all">
 
     <div id="content">
-
         <div class="container">
+
             <div class="col-md-12">
-                <div id="main-slider">
-                    <div class="item">
-                        <a href="detail.html?id=3395a43e-2d88-40de-b95f-e00e1502085b">
-                            <img class="img-responsive" src="img/colourful_socks_banner.jpg" alt="">
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a href="detail.html?id=zzz4f044-b040-410d-8ead-4de0446aec7e">
-                            <img class="img-responsive" src="img/rugby_socks_banner.jpg" alt="">
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a href="detail.html?id=03fef6ac-1896-4ce8-bd69-b798f85c6e0b">
-                            <img class="img-responsive" src="img/holy_socks_banner.jpg" alt="">
-                        </a>
-                    </div>
-                </div>
-                <!-- /#main-slider -->
-            </div>
-        </div>
 
-        <!-- *** ADVANTAGES HOMEPAGE ***
+                <ul class="breadcrumb">
+                    <li><a href="index.html">Home</a>
+                    </li>
+                    <li><a href="customer-orders.html">My orders</a>
+                    </li>
+                    <li>Order</li>
+                </ul>
+
+            </div>
+
+            <div class="col-md-3">
+                <!-- *** CUSTOMER MENU ***
 _________________________________________________________ -->
-        <div id="advantages">
+                <div class="panel panel-default sidebar-menu">
 
-            <div class="container">
-                <div class="same-height-row">
-                    <div class="col-sm-4">
-                        <div class="box same-height clickable">
-                            <div class="icon"><i class="fa fa-heart"></i>
-                            </div>
-
-                            <h3><a href="#">We love socks!</a></h3>
-                            <p>Fun fact: Socks were invented by woolly mammoths
-                                to keep warm. They died out because stupid
-                                humans had to cut their legs off to get their
-                                socks.</p>
-                        </div>
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Customer section</h3>
                     </div>
 
-                    <div class="col-sm-4">
-                        <div class="box same-height clickable">
-                            <div class="icon"><i class="fa fa-tags"></i>
-                            </div>
+                    <div class="panel-body">
 
-                            <h3><a href="#">Best prices</a></h3>
-                            <p>We price check our socks with trained monkeys
-                                back at the office.</p>
-                        </div>
+                        <ul class="nav nav-pills nav-stacked">
+                            <li class="active">
+                                <a href="customer-orders.html"><i
+                                        class="fa fa-list"></i> My orders</a>
+                            </li>
+                            <!--<li>-->
+                            <!--<a href="customer-wishlist.html"><i-->
+                            <!--class="fa fa-heart"></i> My wishlist</a>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                            <!--<a href="customer-account.html"><i-->
+                            <!--class="fa fa-user"></i> My account</a>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                            <!--<a href="index.html"><i-->
+                            <!--class="fa fa-sign-out"></i> Logout</a>-->
+                            <!--</li>-->
+                        </ul>
                     </div>
 
-                    <div class="col-sm-4">
-                        <div class="box same-height clickable">
-                            <div class="icon"><i class="fa fa-thumbs-up"></i>
-                            </div>
-
-                            <h3><a href="#">100% satisfaction guaranteed</a>
-                            </h3>
-                            <p>Free returns on most items. Hamsters are
-                                non-returnable once spoken to.</p>
-                        </div>
-                    </div>
                 </div>
-                <!-- /.row -->
+                <!-- /.col-md-3 -->
 
+                <!-- *** CUSTOMER MENU END *** -->
             </div>
-            <!-- /.container -->
+
+            <div class="col-md-9" id="customer-order">
+                <div class="box">
+                    <h2>Order #<span id="orderNumber"></span></h2>
+
+                    <p class="lead">Order was placed on
+                        <strong id="orderDate"></strong> and is currently <strong id="orderStatus"></strong>.</p>
+                    <p class="text-muted">If you have any questions, please feel
+                        free to <a href="#">contact us</a>, our
+                        customer service center is working for you 24/7.</p>
+
+                    <hr>
+
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th colspan="2">Product</th>
+                                <th>Quantity</th>
+                                <th>Unit price</th>
+                                <th>Discount</th>
+                                <th>Total</th>
+                            </tr>
+                            </thead>
+                            <tbody id="tableOrder">
+                            </tbody>
+                            <tfoot>
+                            <tr>
+                                <th colspan="5" class="text-right">Order
+                                    subtotal
+                                </th>
+                                <th id="orderSubtotal"></th>
+                            </tr>
+                            <tr>
+                                <th colspan="5" class="text-right">Shipping and
+                                    handling
+                                </th>
+                                <th id="orderShipping"></th>
+                            </tr>
+                            <tr>
+                                <th colspan="5" class="text-right">Total</th>
+                                <th id="orderTotal"></th>
+                            </tr>
+                            </tfoot>
+                        </table>
+
+                    </div>
+                    <!-- /.table-responsive -->
+
+                    <div class="row addresses">
+                        <div class="col-md-6">
+                            <h2>Invoice address</h2>
+                            <span id="addressInvoice"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <h2>Shipping address</h2>
+                            <span id="addressShipping"></span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
 
         </div>
-        <!-- /#advantages -->
-
-        <!-- *** ADVANTAGES END *** -->
-
-        <!-- *** HOT PRODUCT SLIDESHOW ***
-_________________________________________________________ -->
-        <div id="hot">
-
-            <div class="box">
-                <div class="container">
-                    <div class="col-md-12">
-                        <h2>Hot this week</h2>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container">
-                <div class="product-slider" id="hot-slider">
-                </div>
-                <!-- /.product-slider -->
-            </div>
-            <!-- /.container -->
-
-        </div>
-        <!-- /#hot -->
-
-        <!-- *** HOT END *** -->
-
+        <!-- /.container -->
     </div>
     <!-- /#content -->
 
-    <div id="footer"></div>
+
+
 
 </div>
 <!-- /#all -->
@@ -161,8 +176,6 @@ _________________________________________________________ -->
 _________________________________________________________ -->
 <script src="js/jquery-1.11.0.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<script src="js/js.cookie.js"></script>
-<script src="js/client.js"></script>
 <script src="js/jquery.cookie.js"></script>
 <script src="js/waypoints.min.js"></script>
 <script src="js/modernizr.js"></script>
@@ -178,65 +191,73 @@ _________________________________________________________ -->
             contentType: "application/json; charset=utf-8"
         });
 
-        console.log("Loading components for index.html");
+        console.log("Loading components for category.html");
         $("#topbar").load("topbar.html");
         $("#navbar").load("navbar.html");
         $("#footer").load("footer.html");
-
-        $.getJSON('/catalogue', {size: 5}, function (data) {
-            if (data != null) {
-                $.each(data, function (index, element) {
-                    $('#hot-slider').append(
-                            '<div class="item">\
-                            <div class="product">\
-                                <div class="flip-container">\
-                                    <div class="flipper">\
-                                        <div class="front">\
-                                            <a href="detail.html?id=' + element.id + '">\
-                                            <img src="' + element.imageUrl[0] + '" alt="" class="img-responsive">\
-                                        </a>\
-                                    </div>\
-                                    <div class="back">\
-                                        <a href="detail.html?id=' + element.id + '">\
-                                            <img src="' + element.imageUrl[1] + '" alt="" class="img-responsive">\
-                                        </a>\
-                                    </div>\
-                                </div>\
-                            </div>\
-                            <a href="detail.html?id=' + element.id + '" class="invisible">\
-                                <img src="' + element.imageUrl[0] + '" alt="" class="img-responsive">\
-                            </a>\
-                            <div class="text">\
-                                <h3><a href="detail.html?id=' + element.id + '">' + element.name + '</a></h3>\
-                                <p class="price">$' + element.price + '</p>\
-                            </div>\
-                        </div>\
-                    </div>'
-                    );
-                });
-                $('.product-slider').owlCarousel({
-                    navigation: true, // Show next and prev buttons
-                    slideSpeed: 300,
-                    paginationSpeed: 400,
-                    afterInit: function () {
-                        $('.product-slider .item').css('visibility', 'visible');
-                    }
-                });
-
-                $('#main-slider').owlCarousel({
-                    navigation: true, // Show next and prev buttons
-                    slideSpeed: 300,
-                    paginationSpeed: 400,
-                    autoPlay: true,
-                    stopOnHover: true,
-                    singleItem: true,
-                    afterInit: ''
-                });
-
-            }
-        });
     })
 </script>
+
+<script>
+    $(document).ready(function () {
+        var orderUrl = $.query.get('order') ? $.query.get('order') : "#";
+        console.log("getting " + orderUrl);
+        $.getJSON(orderUrl, {}, function (data) {
+            var selfRef = data._links.self.href;
+            var split = selfRef.split("/");
+            var id = split[split.length - 1];
+            var cartTotal = 0;
+            var numItemsInCart = 0;
+            var shipping = 4.99;
+            //$('#orderTotal').text('$' + data.total.toFixed(2));
+            $('#orderNumber').text(id);
+            $('#orderDate').text(data.date.split(".")[0].replace("T", " "));
+            $('#orderStatus').text("shipped");
+            $.each(data.items, function (index, item) {
+                $.getJSON('/catalogue/' + item.itemId, function (data) {
+                    console.log(JSON.stringify(data));
+                    $('#tableOrder').append(' <tr>\
+                                                <td>\
+                                                    <a href="#">\
+                                                        <img src="' + data.imageUrl[0] + '" alt="' + data.namex + '">\
+                                                    </a>\
+                                                </td>\
+                                                <td>\
+                                                    <a href="#">' + data.name + '</a>\
+                                                </td>\
+                                                <td>' + item.quantity + '</td>\
+                                                <td>$' + data.price.toFixed(2) + '</td>\
+                                                <td>$0.00</td>\
+                                                <td>$' + (item.quantity * data.price).toFixed(2) + '</td>\
+                                            </tr>');
+                    cartTotal = cartTotal + item.quantity * data.price;
+                    console.log("Cur total: " + cartTotal);
+                    numItemsInCart = numItemsInCart + item.quantity;
+                }).always(function () {
+                    console.log("Final counts: $" + cartTotal + ", with " + numItemsInCart + " items.");
+                    $('#orderSubtotal').text('$' + cartTotal.toFixed(2));
+                    $('#orderShipping').text('$' + shipping.toFixed(2));
+                    $('#orderTotal').text('$' + (cartTotal + shipping).toFixed(2));
+                });
+            })
+            $('#addressInvoice').replaceWith('\
+                <p>' + data.customer.firstName + ' ' + data.customer.lastName + '\
+                    <br>' + data.address.number + ' ' + data.address.street + '\
+                    <br>' + data.address.city + '\
+                    <br>' + data.address.country + '\
+                    <br>' + data.address.postcode + '\
+                </p>');
+            $('#addressShipping').replaceWith('\
+                <p>' + data.customer.firstName + ' ' + data.customer.lastName + '\
+                    <br>' + data.address.number + ' ' + data.address.street + '\
+                    <br>' + data.address.city + '\
+                    <br>' + data.address.country + '\
+                    <br>' + data.address.postcode + '\
+                </p>');
+        });
+    });
+</script>
+
 </body>
 
 </html>

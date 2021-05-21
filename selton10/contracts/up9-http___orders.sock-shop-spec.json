@@ -259,7 +259,7 @@
   },
   "/orders/search/customerId": {
    "get": {
-    "operationId": "f42f6754-822a-4b23-8760-5b659cbe4d3f",
+    "operationId": "d96754b1-cd1f-4575-9cf5-b81d03c9eaf5",
     "parameters": [
      {
       "in": "query",
@@ -558,7 +558,7 @@
   },
   "/orders/{id}": {
    "get": {
-    "operationId": "6d5eb5fa-ea1a-425b-a845-4eb4c4e2f5d4",
+    "operationId": "ab3813c2-9e94-4b2b-aa66-9a020c7361c0",
     "parameters": [],
     "responses": {
      "200": {

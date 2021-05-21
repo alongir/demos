@@ -196,7 +196,7 @@
   },
   "/carts/{customerId}/items/{itemId}": {
    "delete": {
-    "operationId": "0f0c8791-9e7c-43d9-8e3d-67acbf9bf930",
+    "operationId": "702a8e24-7e58-4632-88b0-d1b2ebb973e9",
     "parameters": [],
     "responses": {
      "202": {

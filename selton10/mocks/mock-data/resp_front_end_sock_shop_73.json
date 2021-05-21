@@ -1,0 +1,40 @@
+{
+ "id": "60a81f5065220500070784f6",
+ "customerId": "57a98d98e4b00679b4a830b2",
+ "customer": {
+  "id": null,
+  "firstName": "User",
+  "lastName": "Name",
+  "username": "user",
+  "addresses": [],
+  "cards": []
+ },
+ "address": {
+  "id": null,
+  "number": "246",
+  "street": "Whitelees Road",
+  "city": "Glasgow",
+  "postcode": "G67 3DL",
+  "country": "United Kingdom"
+ },
+ "card": {
+  "id": null,
+  "longNum": "5544154011345918",
+  "expires": "08/19",
+  "ccv": "958"
+ },
+ "items": [
+  {
+   "id": "60a81f4dd601800006a4e228",
+   "itemId": "3395a43e-2d88-40de-b95f-e00e1502085b",
+   "quantity": 1,
+   "unitPrice": 18
+  }
+ ],
+ "shipment": {
+  "id": "651b27f1-8cee-4cd9-a3f2-794010783a03",
+  "name": "57a98d98e4b00679b4a830b2"
+ },
+ "date": "2021-05-21T21:00:00.822+0000",
+ "total": 22.99
+}
