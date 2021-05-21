@@ -251,7 +251,7 @@
       "description": "Created"
      }
     },
-    "summary": "Seen 111 requests",
+    "summary": "Seen 112 requests",
     "tags": [
      "orders"
     ]
@@ -259,7 +259,7 @@
   },
   "/orders/search/customerId": {
    "get": {
-    "operationId": "746d6fb5-dc08-41fa-8bdd-b0bf6073ccad",
+    "operationId": "f42f6754-822a-4b23-8760-5b659cbe4d3f",
     "parameters": [
      {
       "in": "query",
@@ -549,7 +549,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 2 requests",
+    "summary": "Seen 4 requests",
     "tags": [
      "orders"
     ]
@@ -558,7 +558,7 @@
   },
   "/orders/{id}": {
    "get": {
-    "operationId": "8dc90a12-6151-4bdb-86a7-1b4511d75e4f",
+    "operationId": "6d5eb5fa-ea1a-425b-a845-4eb4c4e2f5d4",
     "parameters": [],
     "responses": {
      "200": {
@@ -775,7 +775,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 1 requests",
+    "summary": "Seen 2 requests",
     "tags": [
      "orders"
     ]
@@ -787,7 +787,8 @@
      "required": true,
      "schema": {
       "enum": [
-       "60a81e7e65220500070784f5"
+       "60a81e7e65220500070784f5",
+       "60a81f5065220500070784f6"
       ],
       "type": "string"
      },

@@ -91,7 +91,7 @@ services:
     response:
       headers:
         Content-Type: application/json
-      body: '@mock-data/resp_catalogue_sock_shop_49.json'
+      body: '@mock-data/resp_catalogue_sock_shop_72.json'
 - name: http://front-end.sock-shop
   port: 8003
   managementRoot: __admin
@@ -174,7 +174,7 @@ services:
     response:
       headers:
         Content-Type: application/json
-      body: '@mock-data/resp_front_end_sock_shop_36.json'
+      body: '@mock-data/resp_front_end_sock_shop_48.json'
       useTemplating: false
   - path: /card
     response:
@@ -197,12 +197,25 @@ services:
     response:
       headers:
         Content-Type: application/json
-      body: '@mock-data/resp_front_end_sock_shop_41.json'
+      body: '@mock-data/resp_front_end_sock_shop_53.json'
   - path: /customers/{{customerId}}
     response:
       headers:
         Content-Type: application/json
-      body: '@mock-data/resp_front_end_sock_shop_45.json'
+      body: '@mock-data/resp_front_end_sock_shop_57.json'
+      useTemplating: false
+  - path: /index.html
+    response:
+      headers:
+        Content-Type: text/html
+      body: '@mock-data/resp_front_end_sock_shop_69.html'
+      useTemplating: false
+  - path: /orders
+    response:
+      status: 201
+      headers:
+        Content-Type: application/json
+      body: '@mock-data/resp_front_end_sock_shop_70.json'
       useTemplating: false
 - name: http://orders.sock-shop
   port: 8004
@@ -220,13 +233,13 @@ services:
     response:
       headers:
         Content-Type: application/json
-      body: '@mock-data/resp_orders_sock_shop_64.json'
+      body: '@mock-data/resp_orders_sock_shop_97.json'
       useTemplating: false
   - path: /orders/search/customerId
     response:
       headers:
         Content-Type: application/json
-      body: '@mock-data/resp_orders_sock_shop_65.json'
+      body: '@mock-data/resp_orders_sock_shop_98.json'
       useTemplating: false
 - name: http://payment.sock-shop
   port: 8005

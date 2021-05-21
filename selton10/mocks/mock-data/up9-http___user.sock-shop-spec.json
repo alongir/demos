@@ -109,7 +109,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 20 requests"
+    "summary": "Seen 21 requests"
    },
    "parameters": [
     {
@@ -129,7 +129,7 @@
   "/cards": {
    "parameters": [],
    "post": {
-    "operationId": "3a2428a8-5258-4ca2-b84a-b1f454acaa57",
+    "operationId": "75f22445-9803-4c06-b53d-fc88155e3343",
     "parameters": [
      {
       "in": "header",
@@ -296,7 +296,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 20 requests",
+    "summary": "Seen 21 requests",
     "tags": [
      "cards"
     ]
@@ -440,7 +440,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 50 requests",
+    "summary": "Seen 59 requests",
     "tags": [
      "customers"
     ]
@@ -577,7 +577,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 25 requests",
+    "summary": "Seen 27 requests",
     "tags": [
      "customers"
     ]
@@ -704,7 +704,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 25 requests",
+    "summary": "Seen 27 requests",
     "tags": [
      "customers"
     ]
@@ -853,10 +853,10 @@
  },
  "tags": [
   {
-   "name": "cards"
+   "name": "customers"
   },
   {
-   "name": "customers"
+   "name": "cards"
   }
  ]
 }

@@ -44,12 +44,12 @@ class Tests_carts_sock_shop(unittest.TestCase):
         resp.assert_ok()
         # resp.assert_status_code(200)
 
-    @json_dataset('data/dataset_54.json')
-    @clear_session({'spanId': 54})
-    def test_54_delete_carts_customerId_items_itemId(self, data_row):
+    @json_dataset('data/dataset_81.json')
+    @clear_session({'spanId': 81})
+    def test_81_delete_carts_customerId_items_itemId(self, data_row):
         customerId, itemId = data_row
 
-        # DELETE http://carts.sock-shop/carts/{customerId}/items/{itemId} (endp 54)
+        # DELETE http://carts.sock-shop/carts/{customerId}/items/{itemId} (endp 81)
         carts_sock_shop = get_http_client('http://carts.sock-shop', authenticate)
         resp = carts_sock_shop.delete(f'/carts/{customerId}/items/{itemId}')
         resp.assert_ok()
@@ -83,12 +83,12 @@ class Tests_catalogue_sock_shop(unittest.TestCase):
         resp.assert_ok()
         # resp.assert_status_code(200)
 
-    @json_dataset('data/dataset_49.json')
-    @clear_session({'spanId': 49})
-    def test_49_get_catalogue_id(self, data_row):
+    @json_dataset('data/dataset_72.json')
+    @clear_session({'spanId': 72})
+    def test_72_get_catalogue_id(self, data_row):
         id_, = data_row
 
-        # GET http://catalogue.sock-shop/catalogue/{id} (endp 49)
+        # GET http://catalogue.sock-shop/catalogue/{id} (endp 72)
         catalogue_sock_shop = get_http_client('http://catalogue.sock-shop', authenticate)
         resp = catalogue_sock_shop.get(f'/catalogue/{id_}')
         resp.assert_ok()
@@ -127,18 +127,18 @@ class Tests_front_end_sock_shop(unittest.TestCase):
         # resp.assert_status_code(200)
         # resp.assert_cssselect('div#hot div.box div.container div h2', expected_value='Hot this week')
 
-    @clear_session({'spanId': 36})
-    def test_36_get_address(self):
-        # GET http://front-end.sock-shop/address (endp 36)
+    @clear_session({'spanId': 48})
+    def test_48_get_address(self):
+        # GET http://front-end.sock-shop/address (endp 48)
         front_end_sock_shop = get_http_client('http://front-end.sock-shop', authenticate)
         resp = front_end_sock_shop.get('/address', headers=dict([('x-requested-with', 'XMLHttpRequest')]))
         resp.assert_ok()
         # resp.assert_status_code(200)
         # resp.assert_jsonpath('$.city', expected_value='Glasgow')
 
-    @clear_session({'spanId': 37})
-    def test_37_get_card(self):
-        # GET http://front-end.sock-shop/card (endp 37)
+    @clear_session({'spanId': 49})
+    def test_49_get_card(self):
+        # GET http://front-end.sock-shop/card (endp 49)
         front_end_sock_shop = get_http_client('http://front-end.sock-shop', authenticate)
         resp = front_end_sock_shop.get('/card', headers=dict([('x-requested-with', 'XMLHttpRequest')]))
         resp.assert_ok()
@@ -152,26 +152,26 @@ class Tests_front_end_sock_shop(unittest.TestCase):
         resp.assert_ok()
         # resp.assert_status_code(200)
 
-    @json_dataset('data/dataset_39.json')
-    @clear_session({'spanId': 39})
-    def test_39_post_cart(self, data_row):
+    @json_dataset('data/dataset_51.json')
+    @clear_session({'spanId': 51})
+    def test_51_post_cart(self, data_row):
         id_, = data_row
 
-        # POST http://front-end.sock-shop/cart (endp 39)
+        # POST http://front-end.sock-shop/cart (endp 51)
         front_end_sock_shop = get_http_client('http://front-end.sock-shop', authenticate)
-        with open('data/payload_for_endp_39.json', 'r') as json_payload_file:
+        with open('data/payload_for_endp_51.json', 'r') as json_payload_file:
             json_payload = json.load(json_payload_file)
         apply_into_json(json_payload, '$.id', id_)
         resp = front_end_sock_shop.post('/cart', json=json_payload, headers=dict([('x-requested-with', 'XMLHttpRequest')]))
         resp.assert_ok()
         # resp.assert_status_code(201)
 
-    @json_dataset('data/dataset_40.json')
-    @clear_session({'spanId': 40})
-    def test_40_delete_cart_id(self, data_row):
+    @json_dataset('data/dataset_52.json')
+    @clear_session({'spanId': 52})
+    def test_52_delete_cart_id(self, data_row):
         id_, = data_row
 
-        # DELETE http://front-end.sock-shop/cart/{id} (endp 40)
+        # DELETE http://front-end.sock-shop/cart/{id} (endp 52)
         front_end_sock_shop = get_http_client('http://front-end.sock-shop', authenticate)
         resp = front_end_sock_shop.delete(f'/cart/{id_}', headers=dict([('x-requested-with', 'XMLHttpRequest')]))
         resp.assert_ok()
@@ -189,12 +189,12 @@ class Tests_front_end_sock_shop(unittest.TestCase):
         resp.assert_ok()
         # resp.assert_status_code(200)
 
-    @json_dataset('data/dataset_41.json')
-    @clear_session({'spanId': 41})
-    def test_41_get_catalogue_id(self, data_row):
+    @json_dataset('data/dataset_53.json')
+    @clear_session({'spanId': 53})
+    def test_53_get_catalogue_id(self, data_row):
         id_, = data_row
 
-        # GET http://front-end.sock-shop/catalogue/{id} (endp 41)
+        # GET http://front-end.sock-shop/catalogue/{id} (endp 53)
         front_end_sock_shop = get_http_client('http://front-end.sock-shop', authenticate)
         resp = front_end_sock_shop.get(f'/catalogue/{id_}', headers=dict([('x-requested-with', 'XMLHttpRequest')]))
         resp.assert_ok()
@@ -222,12 +222,12 @@ class Tests_front_end_sock_shop(unittest.TestCase):
         # resp.assert_status_code(200)
         # resp.assert_cssselect('div#content div.container div div.panel.panel-default.sidebar-menu div.panel-heading h3.panel-title', expected_value='Filters ')
 
-    @json_dataset('data/dataset_45.json')
-    @clear_session({'spanId': 45})
-    def test_45_get_customers_customerId(self, data_row):
+    @json_dataset('data/dataset_57.json')
+    @clear_session({'spanId': 57})
+    def test_57_get_customers_customerId(self, data_row):
         customerId, = data_row
 
-        # GET http://front-end.sock-shop/customers/{customerId} (endp 45)
+        # GET http://front-end.sock-shop/customers/{customerId} (endp 57)
         front_end_sock_shop = get_http_client('http://front-end.sock-shop', authenticate)
         resp = front_end_sock_shop.get(f'/customers/{customerId}', headers=dict([('x-requested-with', 'XMLHttpRequest')]))
         resp.assert_ok()
@@ -243,6 +243,15 @@ class Tests_front_end_sock_shop(unittest.TestCase):
         # resp.assert_status_code(200)
         # resp.assert_cssselect('div#copyright div.container div p.pull-left a', expected_value='Weaveworks')
 
+    @clear_session({'spanId': 69})
+    def test_69_get_index_html(self):
+        # GET http://front-end.sock-shop/index.html (endp 69)
+        front_end_sock_shop = get_http_client('http://front-end.sock-shop', authenticate)
+        resp = front_end_sock_shop.get('/index.html')
+        resp.assert_ok()
+        # resp.assert_status_code(200)
+        # resp.assert_cssselect('div#hot div.box div.container div h2', expected_value='Hot this week')
+
     @clear_session({'spanId': 33})
     def test_33_get_navbar_html(self):
         # GET http://front-end.sock-shop/navbar.html (endp 33)
@@ -250,6 +259,15 @@ class Tests_front_end_sock_shop(unittest.TestCase):
         resp = front_end_sock_shop.get('/navbar.html', headers=dict([('x-requested-with', 'XMLHttpRequest')]))
         resp.assert_ok()
         # resp.assert_status_code(200)
+
+    @clear_session({'spanId': 70})
+    def test_70_get_orders(self):
+        # GET http://front-end.sock-shop/orders (endp 70)
+        front_end_sock_shop = get_http_client('http://front-end.sock-shop', authenticate)
+        resp = front_end_sock_shop.get('/orders', headers=dict([('x-requested-with', 'XMLHttpRequest')]))
+        resp.assert_ok()
+        # resp.assert_status_code(201)
+        # resp.assert_jsonpath('$[*].address.city', expected_value='Glasgow')
 
     @clear_session({'spanId': 28})
     def test_28_get_tags(self):
@@ -290,24 +308,24 @@ class Tests_orders_sock_shop(unittest.TestCase):
         # resp.assert_status_code(201)
         # resp.assert_jsonpath('$.address.city', expected_value='Glasgow')
 
-    @json_dataset('data/dataset_64.json')
-    @clear_session({'spanId': 64})
-    def test_64_get_orders_id(self, data_row):
+    @json_dataset('data/dataset_97.json')
+    @clear_session({'spanId': 97})
+    def test_97_get_orders_id(self, data_row):
         id_, = data_row
 
-        # GET http://orders.sock-shop/orders/{id} (endp 64)
+        # GET http://orders.sock-shop/orders/{id} (endp 97)
         orders_sock_shop = get_http_client('http://orders.sock-shop', authenticate)
         resp = orders_sock_shop.get(f'/orders/{id_}')
         resp.assert_ok()
         # resp.assert_status_code(200)
         # resp.assert_jsonpath('$.address.city', expected_value='Glasgow')
 
-    @json_dataset('data/dataset_65.json')
-    @clear_session({'spanId': 65})
-    def test_65_get_orders_search_customerId(self, data_row):
+    @json_dataset('data/dataset_98.json')
+    @clear_session({'spanId': 98})
+    def test_98_get_orders_search_customerId(self, data_row):
         custId, = data_row
 
-        # GET http://orders.sock-shop/orders/search/customerId (endp 65)
+        # GET http://orders.sock-shop/orders/search/customerId (endp 98)
         orders_sock_shop = get_http_client('http://orders.sock-shop', authenticate)
         qstr = '?' + urlencode([('custId', custId), ('sort', 'date')])
         resp = orders_sock_shop.get('/orders/search/customerId' + qstr)
@@ -375,14 +393,14 @@ class Tests_user_sock_shop(unittest.TestCase):
         # resp.assert_status_code(200)
         # resp.assert_jsonpath('$.city', expected_value='Glasgow')
 
-    @json_dataset('data/dataset_58.json')
-    @clear_session({'spanId': 58})
-    def test_58_post_cards(self, data_row):
+    @json_dataset('data/dataset_88.json')
+    @clear_session({'spanId': 88})
+    def test_88_post_cards(self, data_row):
         ccv, expires, longNum, userID = data_row
 
-        # POST http://user.sock-shop/cards (endp 58)
+        # POST http://user.sock-shop/cards (endp 88)
         user_sock_shop = get_http_client('http://user.sock-shop', authenticate)
-        with open('data/payload_for_endp_58.json', 'r') as json_payload_file:
+        with open('data/payload_for_endp_88.json', 'r') as json_payload_file:
             json_payload = json.load(json_payload_file)
         apply_into_json(json_payload, '$.ccv', ccv)
         apply_into_json(json_payload, '$.expires', expires)

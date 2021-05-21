@@ -25,7 +25,7 @@
   },
   "/address": {
    "get": {
-    "operationId": "e0e5c9c6-4b36-4642-b56e-932a5794bfb2",
+    "operationId": "83025ec0-0acb-451c-ab14-7210804495b6",
     "parameters": [
      {
       "in": "header",
@@ -127,13 +127,13 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 1 requests"
+    "summary": "Seen 2 requests"
    },
    "parameters": []
   },
   "/card": {
    "get": {
-    "operationId": "38790454-c74b-4fb6-819a-11b189b73345",
+    "operationId": "bb0e0ef9-291d-4bea-a3fc-70145fe191ba",
     "parameters": [
      {
       "in": "header",
@@ -170,7 +170,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 1 requests"
+    "summary": "Seen 2 requests"
    },
    "parameters": []
   },
@@ -226,14 +226,14 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 24 requests",
+    "summary": "Seen 28 requests",
     "tags": [
      "cart"
     ]
    },
    "parameters": [],
    "post": {
-    "operationId": "ca9d282e-2029-43db-9e48-bb882b684a18",
+    "operationId": "d6c316de-464f-4ccb-9a05-0649755c9526",
     "parameters": [
      {
       "in": "header",
@@ -270,7 +270,7 @@
       "description": "Created"
      }
     },
-    "summary": "Seen 2 requests",
+    "summary": "Seen 3 requests",
     "tags": [
      "cart"
     ]
@@ -278,7 +278,7 @@
   },
   "/cart/{id}": {
    "delete": {
-    "operationId": "4f59e57a-7d08-48a1-9494-d09171a570db",
+    "operationId": "8ae1bf18-6d17-4f7c-8630-89dabf32f1a7",
     "parameters": [
      {
       "in": "header",
@@ -503,7 +503,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 24 requests",
+    "summary": "Seen 28 requests",
     "tags": [
      "catalogue"
     ]
@@ -564,7 +564,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 6 requests",
+    "summary": "Seen 8 requests",
     "tags": [
      "catalogue"
     ]
@@ -573,7 +573,7 @@
   },
   "/catalogue/{id}": {
    "get": {
-    "operationId": "18db66c1-eb48-435e-a8cf-5e83447699d1",
+    "operationId": "66913dfc-8f75-4a90-93c0-e74977113a12",
     "parameters": [
      {
       "in": "header",
@@ -652,7 +652,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 3 requests",
+    "summary": "Seen 4 requests",
     "tags": [
      "catalogue"
     ]
@@ -705,7 +705,7 @@
   },
   "/customers/{customerId}": {
    "get": {
-    "operationId": "6d0b94a8-825a-41db-892a-953c83a66137",
+    "operationId": "8d66a03b-7d24-4bd4-9d71-6098c27c11c4",
     "parameters": [
      {
       "in": "header",
@@ -827,7 +827,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 4 requests"
+    "summary": "Seen 8 requests"
    },
    "parameters": [
     {
@@ -874,6 +874,24 @@
    },
    "parameters": []
   },
+  "/index.html": {
+   "get": {
+    "operationId": "9cc61599-ccbd-4a8a-8278-87625d346d17",
+    "parameters": [],
+    "responses": {
+     "200": {
+      "content": {
+       "text/html": {
+        "example": "<!DOCTYPE html>\n<html lang=\"en\">\n\n<head>\n\n    <meta charset=\"utf-8\">\n    <meta name=\"robots\" content=\"all,follow\">\n    <meta name=\"googlebot\" content=\"index,follow,snippet,archive\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <meta name=\"description\" content=\"WeaveSocks Demo App\">\n    <meta name=\"author\" content=\"Ondrej Svestka | ondrejsvestka.cz\">\n    <meta name=\"keywords\" content=\"\">\n\n    <title>\n        WeaveSocks\n    </title>\n\n    <meta name=\"keywords\" content=\"\">\n\n    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100'\n          rel='stylesheet' type='text/css'>\n\n    <!-- styles -->\n    <link href=\"css/font-awesome.css\" rel=\"stylesheet\">\n    <link href=\"css/bootstrap.min.css\" rel=\"stylesheet\">\n    <link href=\"css/animate.min.css\" rel=\"stylesheet\">\n    <link href=\"css/owl.carousel.css\" rel=\"stylesheet\">\n    <link href=\"css/owl.theme.css\" rel=\"stylesheet\">\n\n    <!-- theme stylesheet -->\n    <link href=\"css/style.blue.css\" rel=\"stylesheet\" id=\"theme-stylesheet\">\n\n    <!-- your stylesheet with modifications -->\n    <link href=\"css/custom.css\" rel=\"stylesheet\">\n\n    <script src=\"js/respond.min.js\"></script>\n\n    <link rel=\"shortcut icon\" href=\"favicon.png\">\n\n\n</head>\n\n<body>\n\n<div id=\"topbar\"></div>\n<div id=\"navbar\"></div>\n\n<div id=\"all\">\n\n    <div id=\"content\">\n\n        <div class=\"container\">\n            <div class=\"col-md-12\">\n                <div id=\"main-slider\">\n                    <div class=\"item\">\n                        <a href=\"detail.html?id=3395a43e-2d88-40de-b95f-e00e1502085b\">\n                            <img class=\"img-responsive\" src=\"img/colourful_socks_banner.jpg\" alt=\"\">\n                        </a>\n                    </div>\n                    <div class=\"item\">\n                        <a href=\"detail.html?id=zzz4f044-b040-410d-8ead-4de0446aec7e\">\n                            <img class=\"img-responsive\" src=\"img/rugby_socks_banner.jpg\" alt=\"\">\n                        </a>\n                    </div>\n                    <div class=\"item\">\n                        <a href=\"detail.html?id=03fef6ac-1896-4ce8-bd69-b798f85c6e0b\">\n                            <img class=\"img-responsive\" src=\"img/holy_socks_banner.jpg\" alt=\"\">\n                        </a>\n                    </div>\n                </div>\n                <!-- /#main-slider -->\n            </div>\n        </div>\n\n        <!-- *** ADVANTAGES HOMEPAGE ***\n_________________________________________________________ -->\n        <div id=\"advantages\">\n\n            <div class=\"container\">\n                <div class=\"same-height-row\">\n                    <div class=\"col-sm-4\">\n                        <div class=\"box same-height clickable\">\n                            <div class=\"icon\"><i class=\"fa fa-heart\"></i>\n                            </div>\n\n                            <h3><a href=\"#\">We love socks!</a></h3>\n                            <p>Fun fact: Socks were invented by woolly mammoths\n                                to keep warm. They died out because stupid\n                                humans had to cut their legs off to get their\n                                socks.</p>\n                        </div>\n                    </div>\n\n                    <div class=\"col-sm-4\">\n                        <div class=\"box same-height clickable\">\n                            <div class=\"icon\"><i class=\"fa fa-tags\"></i>\n                            </div>\n\n                            <h3><a href=\"#\">Best prices</a></h3>\n                            <p>We price check our socks with trained monkeys\n                                back at the office.</p>\n                        </div>\n                    </div>\n\n                    <div class=\"col-sm-4\">\n                        <div class=\"box same-height clickable\">\n                            <div class=\"icon\"><i class=\"fa fa-thumbs-up\"></i>\n                            </div>\n\n                            <h3><a href=\"#\">100% satisfaction guaranteed</a>\n                            </h3>\n                            <p>Free returns on most items. Hamsters are\n                                non-returnable once spoken to.</p>\n                        </div>\n                    </div>\n                </div>\n                <!-- /.row -->\n\n            </div>\n            <!-- /.container -->\n\n        </div>\n        <!-- /#advantages -->\n\n        <!-- *** ADVANTAGES END *** -->\n\n        <!-- *** HOT PRODUCT SLIDESHOW ***\n_________________________________________________________ -->\n        <div id=\"hot\">\n\n            <div class=\"box\">\n                <div class=\"container\">\n                    <div class=\"col-md-12\">\n                        <h2>Hot this week</h2>\n                    </div>\n                </div>\n            </div>\n\n            <div class=\"container\">\n                <div class=\"product-slider\" id=\"hot-slider\">\n                </div>\n                <!-- /.product-slider -->\n            </div>\n            <!-- /.container -->\n\n        </div>\n        <!-- /#hot -->\n\n        <!-- *** HOT END *** -->\n\n    </div>\n    <!-- /#content -->\n\n    <div id=\"footer\"></div>\n\n</div>\n<!-- /#all -->\n\n\n<!-- *** SCRIPTS TO INCLUDE ***\n_________________________________________________________ -->\n<script src=\"js/jquery-1.11.0.min.js\"></script>\n<script src=\"js/bootstrap.min.js\"></script>\n<script src=\"js/js.cookie.js\"></script>\n<script src=\"js/client.js\"></script>\n<script src=\"js/jquery.cookie.js\"></script>\n<script src=\"js/waypoints.min.js\"></script>\n<script src=\"js/modernizr.js\"></script>\n<script src=\"js/bootstrap-hover-dropdown.js\"></script>\n<script src=\"js/owl.carousel.min.js\"></script>\n<script src=\"js/front.js\"></script>\n<script src=\"js/jquery.query-object.js\"></script>\n<script src=\"js/client.js\"></script>\n<script>\n\n    $(document).ready(function () {\n        $.ajaxSetup({\n            contentType: \"application/json; charset=utf-8\"\n        });\n\n        console.log(\"Loading components for index.html\");\n        $(\"#topbar\").load(\"topbar.html\");\n        $(\"#navbar\").load(\"navbar.html\");\n        $(\"#footer\").load(\"footer.html\");\n\n        $.getJSON('/catalogue', {size: 5}, function (data) {\n            if (data != null) {\n                $.each(data, function (index, element) {\n                    $('#hot-slider').append(\n                            '<div class=\"item\">\\\n                            <div class=\"product\">\\\n                                <div class=\"flip-container\">\\\n                                    <div class=\"flipper\">\\\n                                        <div class=\"front\">\\\n                                            <a href=\"detail.html?id=' + element.id + '\">\\\n                                            <img src=\"' + element.imageUrl[0] + '\" alt=\"\" class=\"img-responsive\">\\\n                                        </a>\\\n                                    </div>\\\n                                    <div class=\"back\">\\\n                                        <a href=\"detail.html?id=' + element.id + '\">\\\n                                            <img src=\"' + element.imageUrl[1] + '\" alt=\"\" class=\"img-responsive\">\\\n                                        </a>\\\n                                    </div>\\\n                                </div>\\\n                            </div>\\\n                            <a href=\"detail.html?id=' + element.id + '\" class=\"invisible\">\\\n                                <img src=\"' + element.imageUrl[0] + '\" alt=\"\" class=\"img-responsive\">\\\n                            </a>\\\n                            <div class=\"text\">\\\n                                <h3><a href=\"detail.html?id=' + element.id + '\">' + element.name + '</a></h3>\\\n                                <p class=\"price\">$' + element.price + '</p>\\\n                            </div>\\\n                        </div>\\\n                    </div>'\n                    );\n                });\n                $('.product-slider').owlCarousel({\n                    navigation: true, // Show next and prev buttons\n                    slideSpeed: 300,\n                    paginationSpeed: 400,\n                    afterInit: function () {\n                        $('.product-slider .item').css('visibility', 'visible');\n                    }\n                });\n\n                $('#main-slider').owlCarousel({\n                    navigation: true, // Show next and prev buttons\n                    slideSpeed: 300,\n                    paginationSpeed: 400,\n                    autoPlay: true,\n                    stopOnHover: true,\n                    singleItem: true,\n                    afterInit: ''\n                });\n\n            }\n        });\n    })\n</script>\n</body>\n\n</html>\n"
+       }
+      },
+      "description": "OK"
+     }
+    },
+    "summary": "Seen 1 requests"
+   },
+   "parameters": []
+  },
   "/navbar.html": {
    "get": {
     "operationId": "9832f690-aea2-4945-9477-c7d23147d82a",
@@ -901,6 +919,246 @@
      }
     },
     "summary": "Seen 2 requests"
+   },
+   "parameters": []
+  },
+  "/orders": {
+   "get": {
+    "operationId": "da68c1f2-cf7e-4360-aab1-d209a884ead4",
+    "parameters": [
+     {
+      "in": "header",
+      "name": "x-requested-with",
+      "required": false,
+      "schema": {
+       "enum": [
+        "XMLHttpRequest"
+       ],
+       "type": "string"
+      }
+     }
+    ],
+    "responses": {
+     "201": {
+      "content": {
+       "application/json": {
+        "example": [
+         {
+          "_links": {
+           "order": {
+            "href": "http://orders/orders/60a81e7e65220500070784f5"
+           },
+           "self": {
+            "href": "http://orders/orders/60a81e7e65220500070784f5"
+           }
+          },
+          "address": {
+           "city": "Glasgow",
+           "country": "United Kingdom",
+           "number": "246",
+           "postcode": "G67 3DL",
+           "street": "Whitelees Road"
+          },
+          "card": {
+           "ccv": "958",
+           "expires": "08/19",
+           "longNum": "5544154011345918"
+          },
+          "customer": {
+           "addresses": [],
+           "cards": [],
+           "firstName": "User",
+           "lastName": "Name",
+           "username": "user"
+          },
+          "customerId": "57a98d98e4b00679b4a830b2",
+          "date": "2021-05-21T20:56:30.149+0000",
+          "items": [
+           {
+            "itemId": "3395a43e-2d88-40de-b95f-e00e1502085b",
+            "quantity": 1,
+            "unitPrice": 18
+           }
+          ],
+          "shipment": {
+           "name": "57a98d98e4b00679b4a830b2"
+          },
+          "total": 22.99
+         }
+        ],
+        "schema": {
+         "items": {
+          "properties": {
+           "_links": {
+            "properties": {
+             "order": {
+              "properties": {
+               "href": {
+                "type": "string"
+               }
+              },
+              "required": [
+               "href"
+              ],
+              "type": "object"
+             },
+             "self": {
+              "properties": {
+               "href": {
+                "type": "string"
+               }
+              },
+              "required": [
+               "href"
+              ],
+              "type": "object"
+             }
+            },
+            "required": [
+             "order",
+             "self"
+            ],
+            "type": "object"
+           },
+           "address": {
+            "properties": {
+             "city": {
+              "type": "string"
+             },
+             "country": {
+              "type": "string"
+             },
+             "number": {
+              "type": "string"
+             },
+             "postcode": {
+              "type": "string"
+             },
+             "street": {
+              "type": "string"
+             }
+            },
+            "required": [
+             "city",
+             "country",
+             "number",
+             "postcode",
+             "street"
+            ],
+            "type": "object"
+           },
+           "card": {
+            "properties": {
+             "ccv": {
+              "type": "string"
+             },
+             "expires": {
+              "type": "string"
+             },
+             "longNum": {
+              "type": "string"
+             }
+            },
+            "required": [
+             "ccv",
+             "expires",
+             "longNum"
+            ],
+            "type": "object"
+           },
+           "customer": {
+            "properties": {
+             "addresses": {
+              "items": {},
+              "type": "array"
+             },
+             "cards": {
+              "items": {},
+              "type": "array"
+             },
+             "firstName": {
+              "type": "string"
+             },
+             "lastName": {
+              "type": "string"
+             },
+             "username": {
+              "type": "string"
+             }
+            },
+            "required": [
+             "addresses",
+             "cards",
+             "firstName",
+             "lastName",
+             "username"
+            ],
+            "type": "object"
+           },
+           "customerId": {
+            "type": "string"
+           },
+           "date": {
+            "type": "string"
+           },
+           "items": {
+            "items": {
+             "properties": {
+              "itemId": {
+               "type": "string"
+              },
+              "quantity": {
+               "type": "integer"
+              },
+              "unitPrice": {
+               "type": "integer"
+              }
+             },
+             "required": [
+              "itemId",
+              "quantity",
+              "unitPrice"
+             ],
+             "type": "object"
+            },
+            "type": "array"
+           },
+           "shipment": {
+            "properties": {
+             "name": {
+              "type": "string"
+             }
+            },
+            "required": [
+             "name"
+            ],
+            "type": "object"
+           },
+           "total": {
+            "type": "number"
+           }
+          },
+          "required": [
+           "_links",
+           "address",
+           "card",
+           "customer",
+           "customerId",
+           "date",
+           "items",
+           "shipment",
+           "total"
+          ],
+          "type": "object"
+         },
+         "type": "array"
+        }
+       }
+      },
+      "description": "Created"
+     }
+    },
+    "summary": "Seen 1 requests"
    },
    "parameters": []
   },
@@ -961,7 +1219,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 6 requests"
+    "summary": "Seen 8 requests"
    },
    "parameters": []
   },
