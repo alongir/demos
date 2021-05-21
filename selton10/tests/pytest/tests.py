@@ -72,6 +72,18 @@ class Tests_catalogue_sock_shop(unittest.TestCase):
         resp.assert_ok()
         # resp.assert_status_code(200)
 
+    @json_dataset('data/dataset_43.json')
+    @clear_session({'spanId': 43})
+    def test_43_get_catalogue_id(self, data_row):
+        id_, = data_row
+
+        # GET http://catalogue.sock-shop/catalogue/{id} (endp 43)
+        catalogue_sock_shop = get_http_client('http://catalogue.sock-shop', authenticate)
+        resp = catalogue_sock_shop.get(f'/catalogue/{id_}')
+        resp.assert_ok()
+        # resp.assert_status_code(200)
+        # resp.assert_jsonpath('$.name', expected_value='Holy')
+
     @json_dataset('data/dataset_3.json')
     @clear_session({'spanId': 3})
     def test_03_get_catalogue_size(self, data_row):
@@ -147,18 +159,18 @@ class Tests_front_end_sock_shop(unittest.TestCase):
         # resp.assert_status_code(200)
         # resp.assert_cssselect('div#content div.container div div.panel.panel-default.sidebar-menu div.panel-heading h3.panel-title', expected_value='Filters ')
 
-    @clear_session({'spanId': 31})
-    def test_31_get_footer_html(self):
-        # GET http://front-end.sock-shop/footer.html (endp 31)
+    @clear_session({'spanId': 32})
+    def test_32_get_footer_html(self):
+        # GET http://front-end.sock-shop/footer.html (endp 32)
         front_end_sock_shop = get_http_client('http://front-end.sock-shop', authenticate)
         resp = front_end_sock_shop.get('/footer.html', headers=dict([('x-requested-with', 'XMLHttpRequest')]))
         resp.assert_ok()
         # resp.assert_status_code(200)
         # resp.assert_cssselect('div#copyright div.container div p.pull-left a', expected_value='Weaveworks')
 
-    @clear_session({'spanId': 32})
-    def test_32_get_navbar_html(self):
-        # GET http://front-end.sock-shop/navbar.html (endp 32)
+    @clear_session({'spanId': 33})
+    def test_33_get_navbar_html(self):
+        # GET http://front-end.sock-shop/navbar.html (endp 33)
         front_end_sock_shop = get_http_client('http://front-end.sock-shop', authenticate)
         resp = front_end_sock_shop.get('/navbar.html', headers=dict([('x-requested-with', 'XMLHttpRequest')]))
         resp.assert_ok()
@@ -172,9 +184,9 @@ class Tests_front_end_sock_shop(unittest.TestCase):
         resp.assert_ok()
         # resp.assert_status_code(200)
 
-    @clear_session({'spanId': 33})
-    def test_33_get_topbar_html(self):
-        # GET http://front-end.sock-shop/topbar.html (endp 33)
+    @clear_session({'spanId': 34})
+    def test_34_get_topbar_html(self):
+        # GET http://front-end.sock-shop/topbar.html (endp 34)
         front_end_sock_shop = get_http_client('http://front-end.sock-shop', authenticate)
         resp = front_end_sock_shop.get('/topbar.html', headers=dict([('x-requested-with', 'XMLHttpRequest')]))
         resp.assert_ok()
@@ -262,6 +274,23 @@ class Tests_user_sock_shop(unittest.TestCase):
         resp.assert_ok()
         # resp.assert_status_code(200)
         # resp.assert_jsonpath('$.city', expected_value='Glasgow')
+
+    @json_dataset('data/dataset_50.json')
+    @clear_session({'spanId': 50})
+    def test_50_post_cards(self, data_row):
+        ccv, expires, longNum, userID = data_row
+
+        # POST http://user.sock-shop/cards (endp 50)
+        user_sock_shop = get_http_client('http://user.sock-shop', authenticate)
+        with open('data/payload_for_endp_50.json', 'r') as json_payload_file:
+            json_payload = json.load(json_payload_file)
+        apply_into_json(json_payload, '$.ccv', ccv)
+        apply_into_json(json_payload, '$.expires', expires)
+        apply_into_json(json_payload, '$.longNum', longNum)
+        apply_into_json(json_payload, '$.userID', userID)
+        resp = user_sock_shop.post('/cards', json=json_payload, headers=dict([('accept', 'application/json')]))
+        resp.assert_ok()
+        # resp.assert_status_code(200)
 
     @json_dataset('data/dataset_18.json')
     @clear_session({'spanId': 18})

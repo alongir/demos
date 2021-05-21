@@ -90,7 +90,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 39 requests",
+    "summary": "Seen 59 requests",
     "tags": [
      "carts"
     ]
@@ -188,7 +188,7 @@
       "description": "Created"
      }
     },
-    "summary": "Seen 30 requests",
+    "summary": "Seen 31 requests",
     "tags": [
      "carts"
     ]
@@ -219,7 +219,7 @@
       "description": "Accepted"
      }
     },
-    "summary": "Seen 36 requests",
+    "summary": "Seen 38 requests",
     "tags": [
      "carts"
     ]

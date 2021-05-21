@@ -83,6 +83,11 @@ services:
          "err": null
         }
       useTemplating: false
+  - path: /catalogue/{{id}}
+    response:
+      headers:
+        Content-Type: application/json
+      body: '@mock-data/resp_catalogue_sock_shop_43.json'
 - name: http://front-end.sock-shop
   port: 8003
   managementRoot: __admin
@@ -111,7 +116,7 @@ services:
         Content-Type: application/json
       body: |-
         {
-         "size": 1,
+         "size": 9,
          "err": null
         }
       useTemplating: false
@@ -147,19 +152,19 @@ services:
     response:
       headers:
         Content-Type: text/html
-      body: '@mock-data/resp_front_end_sock_shop_31.html'
+      body: '@mock-data/resp_front_end_sock_shop_32.html'
       useTemplating: false
   - path: /navbar.html
     response:
       headers:
         Content-Type: text/html
-      body: '@mock-data/resp_front_end_sock_shop_32.html'
+      body: '@mock-data/resp_front_end_sock_shop_33.html'
       useTemplating: false
   - path: /topbar.html
     response:
       headers:
         Content-Type: text/html
-      body: '@mock-data/resp_front_end_sock_shop_33.html'
+      body: '@mock-data/resp_front_end_sock_shop_34.html'
       useTemplating: false
 - name: http://orders.sock-shop
   port: 8004
@@ -243,3 +248,13 @@ services:
       headers:
         Content-Type: application/json
       body: '@mock-data/resp_user_sock_shop_18.json'
+  - path: /cards
+    response:
+      headers:
+        Content-Type: application/json
+      body: |-
+        {
+         "id": "60a81e66cd876a00015e62d2"
+        }
+      useTemplating: false
+    method: post

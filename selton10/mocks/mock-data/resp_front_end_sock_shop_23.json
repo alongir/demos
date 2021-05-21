@@ -10,8 +10,8 @@
   "price": 99.99,
   "count": {{random.int 1 820}},
   "tag": [
-   "magic",
-   "action"
+   "action",
+   "magic"
   ]
  },
  {
@@ -25,8 +25,8 @@
   "price": 18,
   "count": {{random.int 1 820}},
   "tag": [
-   "blue",
-   "brown"
+   "brown",
+   "blue"
   ]
  },
  {
@@ -40,9 +40,9 @@
   "price": 15,
   "count": {{random.int 1 820}},
   "tag": [
-   "black",
    "sport",
-   "formal"
+   "formal",
+   "black"
   ]
  },
  {
@@ -56,10 +56,10 @@
   "price": 17.32,
   "count": {{random.int 1 820}},
   "tag": [
-   "red",
-   "formal",
    "blue",
-   "action"
+   "action",
+   "red",
+   "formal"
   ]
  },
  {
@@ -73,9 +73,9 @@
   "price": 14,
   "count": {{random.int 1 820}},
   "tag": [
+   "green",
    "formal",
-   "blue",
-   "green"
+   "blue"
   ]
  }
 ]

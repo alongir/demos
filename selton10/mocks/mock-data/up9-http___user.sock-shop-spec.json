@@ -109,7 +109,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 16 requests"
+    "summary": "Seen 18 requests"
    },
    "parameters": [
     {
@@ -125,6 +125,82 @@
      "style": "simple"
     }
    ]
+  },
+  "/cards": {
+   "parameters": [],
+   "post": {
+    "operationId": "7b251c94-7542-426d-8a17-04a8ea8f5187",
+    "parameters": [
+     {
+      "in": "header",
+      "name": "accept",
+      "required": false,
+      "schema": {
+       "enum": [
+        "application/json"
+       ],
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "properties": {
+         "ccv": {
+          "type": "string"
+         },
+         "expires": {
+          "type": "string"
+         },
+         "longNum": {
+          "type": "string"
+         },
+         "userID": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "ccv",
+         "expires",
+         "longNum",
+         "userID"
+        ],
+        "type": "object"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "content": {
+       "application/json": {
+        "example": {
+         "id": "60a81e66cd876a00015e62d2"
+        },
+        "schema": {
+         "properties": {
+          "id": {
+           "type": "string"
+          }
+         },
+         "required": [
+          "id"
+         ],
+         "type": "object"
+        }
+       }
+      },
+      "description": "OK"
+     }
+    },
+    "summary": "Seen 1 requests",
+    "tags": [
+     "cards"
+    ]
+   }
   },
   "/cards/{cardId}": {
    "get": {
@@ -220,7 +296,10 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 16 requests"
+    "summary": "Seen 18 requests",
+    "tags": [
+     "cards"
+    ]
    },
    "parameters": [
     {
@@ -361,7 +440,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 31 requests",
+    "summary": "Seen 36 requests",
     "tags": [
      "customers"
     ]
@@ -498,7 +577,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 16 requests",
+    "summary": "Seen 19 requests",
     "tags": [
      "customers"
     ]
@@ -625,7 +704,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 16 requests",
+    "summary": "Seen 19 requests",
     "tags": [
      "customers"
     ]
@@ -767,7 +846,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 33 requests"
+    "summary": "Seen 35 requests"
    },
    "parameters": []
   }
@@ -775,6 +854,9 @@
  "tags": [
   {
    "name": "customers"
+  },
+  {
+   "name": "cards"
   }
  ]
 }

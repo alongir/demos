@@ -19,7 +19,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 198 requests"
+    "summary": "Seen 199 requests"
    },
    "parameters": []
   },
@@ -53,7 +53,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 9 requests"
+    "summary": "Seen 19 requests"
    },
    "parameters": []
   },
@@ -124,8 +124,8 @@
           "name": "Holy",
           "price": 99.99,
           "tag": [
-           "magic",
-           "action"
+           "action",
+           "magic"
           ]
          },
          {
@@ -139,8 +139,8 @@
           "name": "Colourful",
           "price": 18,
           "tag": [
-           "blue",
-           "brown"
+           "brown",
+           "blue"
           ]
          },
          {
@@ -154,9 +154,9 @@
           "name": "SuperSport XL",
           "price": 15,
           "tag": [
-           "black",
            "sport",
-           "formal"
+           "formal",
+           "black"
           ]
          },
          {
@@ -170,10 +170,10 @@
           "name": "Crossed",
           "price": 17.32,
           "tag": [
-           "red",
-           "formal",
            "blue",
-           "action"
+           "action",
+           "red",
+           "formal"
           ]
          },
          {
@@ -187,9 +187,9 @@
           "name": "Figueroa",
           "price": 14,
           "tag": [
+           "green",
            "formal",
-           "blue",
-           "green"
+           "blue"
           ]
          }
         ],
@@ -242,7 +242,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 8 requests",
+    "summary": "Seen 20 requests",
     "tags": [
      "catalogue"
     ]
@@ -283,7 +283,7 @@
        "application/json": {
         "example": {
          "err": null,
-         "size": 1
+         "size": 9
         },
         "schema": {
          "properties": {
@@ -303,7 +303,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 2 requests",
+    "summary": "Seen 3 requests",
     "tags": [
      "catalogue"
     ]
@@ -336,13 +336,13 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 1 requests"
+    "summary": "Seen 2 requests"
    },
    "parameters": []
   },
   "/footer.html": {
    "get": {
-    "operationId": "6ce31ef5-ca44-44fd-826e-6dc523779fb6",
+    "operationId": "b120f22a-2380-4d16-b3a5-cdc3ab2d7bb7",
     "parameters": [
      {
       "in": "header",
@@ -372,7 +372,7 @@
   },
   "/navbar.html": {
    "get": {
-    "operationId": "a412725e-6a00-4d9d-a546-5ad0afb5e2fb",
+    "operationId": "9832f690-aea2-4945-9477-c7d23147d82a",
     "parameters": [
      {
       "in": "header",
@@ -396,7 +396,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 1 requests"
+    "summary": "Seen 2 requests"
    },
    "parameters": []
   },
@@ -457,13 +457,13 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 2 requests"
+    "summary": "Seen 3 requests"
    },
    "parameters": []
   },
   "/topbar.html": {
    "get": {
-    "operationId": "727828d4-0bb4-4139-afd7-71e4dd7bd1db",
+    "operationId": "47547f91-f20b-42a0-8d5c-3304c567b9ce",
     "parameters": [
      {
       "in": "header",
@@ -487,7 +487,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 1 requests"
+    "summary": "Seen 2 requests"
    },
    "parameters": []
   }
