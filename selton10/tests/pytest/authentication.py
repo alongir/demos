@@ -21,6 +21,8 @@ def authenticate(target_key: str, target: TargetService):
         pass
     elif target.config_url == 'http://front-end.sock-shop':
         pass
+    elif target.config_url == 'kafka://kafka':
+        pass
     elif target.config_url == 'http://orders.sock-shop':
         pass
     elif target.config_url == 'http://payment.sock-shop':

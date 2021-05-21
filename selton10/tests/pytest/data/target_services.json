@@ -2,6 +2,7 @@
  "TARGET_CARTS_SOCK_SHOP": "http://carts.sock-shop",
  "TARGET_CATALOGUE_SOCK_SHOP": "http://catalogue.sock-shop",
  "TARGET_FRONT_END_SOCK_SHOP": "http://front-end.sock-shop",
+ "TARGET_KAFKA": "kafka://kafka",
  "TARGET_ORDERS_SOCK_SHOP": "http://orders.sock-shop",
  "TARGET_PAYMENT_SOCK_SHOP": "http://payment.sock-shop",
  "TARGET_SHIPPING_SOCK_SHOP": "http://shipping.sock-shop",

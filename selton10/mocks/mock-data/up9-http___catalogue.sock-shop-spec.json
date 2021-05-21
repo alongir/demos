@@ -180,7 +180,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 35 requests",
+    "summary": "Seen 38 requests",
     "tags": [
      "catalogue"
     ]
@@ -230,7 +230,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 10 requests",
+    "summary": "Seen 12 requests",
     "tags": [
      "catalogue"
     ]
@@ -239,25 +239,25 @@
   },
   "/catalogue/{id}": {
    "get": {
-    "operationId": "45e7ec0d-edf2-4747-8cb5-2e956ea3dc34",
+    "operationId": "bd63b2ca-8345-42fc-ac9b-4b91d38f61a6",
     "parameters": [],
     "responses": {
      "200": {
       "content": {
        "application/json": {
         "example": {
-         "count": 1,
-         "description": "Socks fit for a Messiah. You too can experience walking in water with these special edition beauties. Each hole is lovingly proggled to leave smooth edges. The only sock approved by a higher power.",
-         "id": "03fef6ac-1896-4ce8-bd69-b798f85c6e0b",
+         "count": 438,
+         "description": "proident occaecat irure et excepteur labore minim nisi amet irure",
+         "id": "3395a43e-2d88-40de-b95f-e00e1502085b",
          "imageUrl": [
-          "/catalogue/images/holy_1.jpeg",
-          "/catalogue/images/holy_2.jpeg"
+          "/catalogue/images/colourful_socks.jpg",
+          "/catalogue/images/colourful_socks.jpg"
          ],
-         "name": "Holy",
-         "price": 99.99,
+         "name": "Colourful",
+         "price": 18,
          "tag": [
-          "magic",
-          "action"
+          "brown",
+          "blue"
          ]
         },
         "schema": {
@@ -306,7 +306,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 25 requests",
+    "summary": "Seen 30 requests",
     "tags": [
      "catalogue"
     ]
@@ -372,7 +372,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 10 requests"
+    "summary": "Seen 12 requests"
    },
    "parameters": []
   }

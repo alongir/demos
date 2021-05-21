@@ -14,7 +14,7 @@
       "description": "Accepted"
      }
     },
-    "summary": "Seen 35 requests",
+    "summary": "Seen 36 requests",
     "tags": [
      "carts"
     ]
@@ -90,7 +90,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 84 requests",
+    "summary": "Seen 91 requests",
     "tags": [
      "carts"
     ]
@@ -188,7 +188,7 @@
       "description": "Created"
      }
     },
-    "summary": "Seen 34 requests",
+    "summary": "Seen 35 requests",
     "tags": [
      "carts"
     ]
@@ -196,7 +196,7 @@
   },
   "/carts/{customerId}/items/{itemId}": {
    "delete": {
-    "operationId": "702a8e24-7e58-4632-88b0-d1b2ebb973e9",
+    "operationId": "c5768dab-53fc-4162-9600-6e25e2021806",
     "parameters": [],
     "responses": {
      "202": {
