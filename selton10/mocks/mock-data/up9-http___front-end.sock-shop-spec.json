@@ -23,6 +23,157 @@
    },
    "parameters": []
   },
+  "/address": {
+   "get": {
+    "operationId": "e0e5c9c6-4b36-4642-b56e-932a5794bfb2",
+    "parameters": [
+     {
+      "in": "header",
+      "name": "x-requested-with",
+      "required": false,
+      "schema": {
+       "enum": [
+        "XMLHttpRequest"
+       ],
+       "type": "string"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "content": {
+       "application/json": {
+        "example": {
+         "_links": {
+          "address": {
+           "href": "http://user/addresses/57a98d98e4b00679b4a830b0"
+          },
+          "self": {
+           "href": "http://user/addresses/57a98d98e4b00679b4a830b0"
+          }
+         },
+         "city": "Glasgow",
+         "country": "United Kingdom",
+         "id": "57a98d98e4b00679b4a830b0",
+         "number": "246",
+         "postcode": "G67 3DL",
+         "street": "Whitelees Road"
+        },
+        "schema": {
+         "properties": {
+          "_links": {
+           "properties": {
+            "address": {
+             "properties": {
+              "href": {
+               "type": "string"
+              }
+             },
+             "required": [
+              "href"
+             ],
+             "type": "object"
+            },
+            "self": {
+             "properties": {
+              "href": {
+               "type": "string"
+              }
+             },
+             "required": [
+              "href"
+             ],
+             "type": "object"
+            }
+           },
+           "required": [
+            "address",
+            "self"
+           ],
+           "type": "object"
+          },
+          "city": {
+           "type": "string"
+          },
+          "country": {
+           "type": "string"
+          },
+          "id": {
+           "type": "string"
+          },
+          "number": {
+           "type": "string"
+          },
+          "postcode": {
+           "type": "string"
+          },
+          "street": {
+           "type": "string"
+          }
+         },
+         "required": [
+          "_links",
+          "city",
+          "country",
+          "id",
+          "number",
+          "postcode",
+          "street"
+         ],
+         "type": "object"
+        }
+       }
+      },
+      "description": "OK"
+     }
+    },
+    "summary": "Seen 1 requests"
+   },
+   "parameters": []
+  },
+  "/card": {
+   "get": {
+    "operationId": "38790454-c74b-4fb6-819a-11b189b73345",
+    "parameters": [
+     {
+      "in": "header",
+      "name": "x-requested-with",
+      "required": false,
+      "schema": {
+       "enum": [
+        "XMLHttpRequest"
+       ],
+       "type": "string"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "content": {
+       "application/json": {
+        "example": {
+         "number": "5918"
+        },
+        "schema": {
+         "properties": {
+          "number": {
+           "type": "string"
+          }
+         },
+         "required": [
+          "number"
+         ],
+         "type": "object"
+        }
+       }
+      },
+      "description": "OK"
+     }
+    },
+    "summary": "Seen 1 requests"
+   },
+   "parameters": []
+  },
   "/cart": {
    "get": {
     "operationId": "fe4d5292-b520-4aad-a815-ecabcb76f8ac",
@@ -45,7 +196,29 @@
        "application/json": {
         "example": [],
         "schema": {
-         "items": {},
+         "items": {
+          "properties": {
+           "id": {
+            "type": "string"
+           },
+           "itemId": {
+            "type": "string"
+           },
+           "quantity": {
+            "type": "integer"
+           },
+           "unitPrice": {
+            "type": "number"
+           }
+          },
+          "required": [
+           "id",
+           "itemId",
+           "quantity",
+           "unitPrice"
+          ],
+          "type": "object"
+         },
          "type": "array"
         }
        }
@@ -53,9 +226,96 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 19 requests"
+    "summary": "Seen 24 requests",
+    "tags": [
+     "cart"
+    ]
    },
-   "parameters": []
+   "parameters": [],
+   "post": {
+    "operationId": "ca9d282e-2029-43db-9e48-bb882b684a18",
+    "parameters": [
+     {
+      "in": "header",
+      "name": "x-requested-with",
+      "required": false,
+      "schema": {
+       "enum": [
+        "XMLHttpRequest"
+       ],
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "properties": {
+         "id": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "id"
+        ],
+        "type": "object"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "201": {
+      "description": "Created"
+     }
+    },
+    "summary": "Seen 2 requests",
+    "tags": [
+     "cart"
+    ]
+   }
+  },
+  "/cart/{id}": {
+   "delete": {
+    "operationId": "4f59e57a-7d08-48a1-9494-d09171a570db",
+    "parameters": [
+     {
+      "in": "header",
+      "name": "x-requested-with",
+      "required": false,
+      "schema": {
+       "enum": [
+        "XMLHttpRequest"
+       ],
+       "type": "string"
+      }
+     }
+    ],
+    "responses": {
+     "202": {
+      "description": "Accepted"
+     }
+    },
+    "summary": "Seen 1 requests",
+    "tags": [
+     "cart"
+    ]
+   },
+   "parameters": [
+    {
+     "in": "path",
+     "name": "id",
+     "required": true,
+     "schema": {
+      "enum": [
+       "03fef6ac-1896-4ce8-bd69-b798f85c6e0b"
+      ],
+      "type": "string"
+     },
+     "style": "simple"
+    }
+   ]
   },
   "/catalogue": {
    "get": {
@@ -68,7 +328,8 @@
       "schema": {
        "enum": [
         "5",
-        "6"
+        "6",
+        "3"
        ],
        "type": "string"
       }
@@ -242,7 +503,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 20 requests",
+    "summary": "Seen 24 requests",
     "tags": [
      "catalogue"
     ]
@@ -303,12 +564,114 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 3 requests",
+    "summary": "Seen 6 requests",
     "tags": [
      "catalogue"
     ]
    },
    "parameters": []
+  },
+  "/catalogue/{id}": {
+   "get": {
+    "operationId": "18db66c1-eb48-435e-a8cf-5e83447699d1",
+    "parameters": [
+     {
+      "in": "header",
+      "name": "x-requested-with",
+      "required": false,
+      "schema": {
+       "enum": [
+        "XMLHttpRequest"
+       ],
+       "type": "string"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "content": {
+       "application/json": {
+        "example": {
+         "count": 1,
+         "description": "Socks fit for a Messiah. You too can experience walking in water with these special edition beauties. Each hole is lovingly proggled to leave smooth edges. The only sock approved by a higher power.",
+         "id": "03fef6ac-1896-4ce8-bd69-b798f85c6e0b",
+         "imageUrl": [
+          "/catalogue/images/holy_1.jpeg",
+          "/catalogue/images/holy_2.jpeg"
+         ],
+         "name": "Holy",
+         "price": 99.99,
+         "tag": [
+          "magic",
+          "action"
+         ]
+        },
+        "schema": {
+         "properties": {
+          "count": {
+           "type": "integer"
+          },
+          "description": {
+           "type": "string"
+          },
+          "id": {
+           "type": "string"
+          },
+          "imageUrl": {
+           "items": {
+            "type": "string"
+           },
+           "type": "array"
+          },
+          "name": {
+           "type": "string"
+          },
+          "price": {
+           "type": "number"
+          },
+          "tag": {
+           "items": {
+            "type": "string"
+           },
+           "type": "array"
+          }
+         },
+         "required": [
+          "count",
+          "description",
+          "id",
+          "imageUrl",
+          "name",
+          "price",
+          "tag"
+         ],
+         "type": "object"
+        }
+       }
+      },
+      "description": "OK"
+     }
+    },
+    "summary": "Seen 3 requests",
+    "tags": [
+     "catalogue"
+    ]
+   },
+   "parameters": [
+    {
+     "in": "path",
+     "name": "id",
+     "required": true,
+     "schema": {
+      "enum": [
+       "03fef6ac-1896-4ce8-bd69-b798f85c6e0b",
+       "3395a43e-2d88-40de-b95f-e00e1502085b"
+      ],
+      "type": "string"
+     },
+     "style": "simple"
+    }
+   ]
   },
   "/category.html": {
    "get": {
@@ -339,6 +702,147 @@
     "summary": "Seen 2 requests"
    },
    "parameters": []
+  },
+  "/customers/{customerId}": {
+   "get": {
+    "operationId": "6d0b94a8-825a-41db-892a-953c83a66137",
+    "parameters": [
+     {
+      "in": "header",
+      "name": "x-requested-with",
+      "required": false,
+      "schema": {
+       "enum": [
+        "XMLHttpRequest"
+       ],
+       "type": "string"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "content": {
+       "application/json": {
+        "example": {
+         "_links": {
+          "addresses": {
+           "href": "http://user/customers/57a98d98e4b00679b4a830b2/addresses"
+          },
+          "cards": {
+           "href": "http://user/customers/57a98d98e4b00679b4a830b2/cards"
+          },
+          "customer": {
+           "href": "http://user/customers/57a98d98e4b00679b4a830b2"
+          },
+          "self": {
+           "href": "http://user/customers/57a98d98e4b00679b4a830b2"
+          }
+         },
+         "firstName": "User",
+         "id": "57a98d98e4b00679b4a830b2",
+         "lastName": "Name",
+         "username": "user"
+        },
+        "schema": {
+         "properties": {
+          "_links": {
+           "properties": {
+            "addresses": {
+             "properties": {
+              "href": {
+               "type": "string"
+              }
+             },
+             "required": [
+              "href"
+             ],
+             "type": "object"
+            },
+            "cards": {
+             "properties": {
+              "href": {
+               "type": "string"
+              }
+             },
+             "required": [
+              "href"
+             ],
+             "type": "object"
+            },
+            "customer": {
+             "properties": {
+              "href": {
+               "type": "string"
+              }
+             },
+             "required": [
+              "href"
+             ],
+             "type": "object"
+            },
+            "self": {
+             "properties": {
+              "href": {
+               "type": "string"
+              }
+             },
+             "required": [
+              "href"
+             ],
+             "type": "object"
+            }
+           },
+           "required": [
+            "addresses",
+            "cards",
+            "customer",
+            "self"
+           ],
+           "type": "object"
+          },
+          "firstName": {
+           "type": "string"
+          },
+          "id": {
+           "type": "string"
+          },
+          "lastName": {
+           "type": "string"
+          },
+          "username": {
+           "type": "string"
+          }
+         },
+         "required": [
+          "_links",
+          "firstName",
+          "id",
+          "lastName",
+          "username"
+         ],
+         "type": "object"
+        }
+       }
+      },
+      "description": "OK"
+     }
+    },
+    "summary": "Seen 4 requests"
+   },
+   "parameters": [
+    {
+     "in": "path",
+     "name": "customerId",
+     "required": true,
+     "schema": {
+      "enum": [
+       "le6-bGGU_nzlhoE28ci7MkzQG_m_KGdu"
+      ],
+      "type": "string"
+     },
+     "style": "simple"
+    }
+   ]
   },
   "/footer.html": {
    "get": {
@@ -457,7 +961,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 3 requests"
+    "summary": "Seen 6 requests"
    },
    "parameters": []
   },
@@ -493,6 +997,9 @@
   }
  },
  "tags": [
+  {
+   "name": "cart"
+  },
   {
    "name": "catalogue"
   }

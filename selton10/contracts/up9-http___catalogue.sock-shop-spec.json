@@ -180,7 +180,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 25 requests",
+    "summary": "Seen 31 requests",
     "tags": [
      "catalogue"
     ]
@@ -230,7 +230,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 5 requests",
+    "summary": "Seen 8 requests",
     "tags": [
      "catalogue"
     ]
@@ -239,7 +239,7 @@
   },
   "/catalogue/{id}": {
    "get": {
-    "operationId": "18e87184-304c-4507-9bea-6135301d143a",
+    "operationId": "eb2043b6-4cd9-4271-a739-19c7b81d6c17",
     "parameters": [],
     "responses": {
      "200": {
@@ -306,7 +306,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 7 requests",
+    "summary": "Seen 20 requests",
     "tags": [
      "catalogue"
     ]
@@ -318,7 +318,8 @@
      "required": true,
      "schema": {
       "enum": [
-       "03fef6ac-1896-4ce8-bd69-b798f85c6e0b"
+       "03fef6ac-1896-4ce8-bd69-b798f85c6e0b",
+       "3395a43e-2d88-40de-b95f-e00e1502085b"
       ],
       "type": "string"
      },
@@ -371,7 +372,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 5 requests"
+    "summary": "Seen 8 requests"
    },
    "parameters": []
   }

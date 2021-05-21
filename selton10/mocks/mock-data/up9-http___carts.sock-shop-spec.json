@@ -14,7 +14,7 @@
       "description": "Accepted"
      }
     },
-    "summary": "Seen 33 requests",
+    "summary": "Seen 34 requests",
     "tags": [
      "carts"
     ]
@@ -90,7 +90,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 59 requests",
+    "summary": "Seen 75 requests",
     "tags": [
      "carts"
     ]
@@ -188,11 +188,56 @@
       "description": "Created"
      }
     },
-    "summary": "Seen 31 requests",
+    "summary": "Seen 33 requests",
     "tags": [
      "carts"
     ]
    }
+  },
+  "/carts/{customerId}/items/{itemId}": {
+   "delete": {
+    "operationId": "35dfe6b5-65d8-449e-86d9-9eeb34c0e1c5",
+    "parameters": [],
+    "responses": {
+     "202": {
+      "description": "Accepted"
+     }
+    },
+    "summary": "Seen 2 requests",
+    "tags": [
+     "carts"
+    ]
+   },
+   "parameters": [
+    {
+     "in": "path",
+     "name": "customerId",
+     "required": true,
+     "schema": {
+      "enum": [
+       "kmLaRQQ6vaJaQA3USa-0RvyXWfR0bbQg",
+       "57a98d98e4b00679b4a830b2",
+       "c5MSK_FwK1CMPV07ws8vHJ49bAkyYqdV",
+       "WZXt1ttIWkN1tn-pWzInMB7DnjXPkFbJ",
+       "o0PsXIL3R2sE6r4Gr6bnTF8avzRTV9CR"
+      ],
+      "type": "string"
+     },
+     "style": "simple"
+    },
+    {
+     "in": "path",
+     "name": "itemId",
+     "required": true,
+     "schema": {
+      "enum": [
+       "03fef6ac-1896-4ce8-bd69-b798f85c6e0b"
+      ],
+      "type": "string"
+     },
+     "style": "simple"
+    }
+   ]
   },
   "/carts/{customerId}/merge": {
    "get": {

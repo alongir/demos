@@ -251,9 +251,554 @@
       "description": "Created"
      }
     },
-    "summary": "Seen 110 requests"
+    "summary": "Seen 111 requests",
+    "tags": [
+     "orders"
+    ]
    }
+  },
+  "/orders/search/customerId": {
+   "get": {
+    "operationId": "746d6fb5-dc08-41fa-8bdd-b0bf6073ccad",
+    "parameters": [
+     {
+      "in": "query",
+      "name": "custId",
+      "required": true,
+      "schema": {
+       "enum": [
+        "57a98d98e4b00679b4a830b2"
+       ],
+       "type": "string"
+      }
+     },
+     {
+      "in": "query",
+      "name": "sort",
+      "required": true,
+      "schema": {
+       "enum": [
+        "date"
+       ],
+       "type": "string"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "content": {
+       "application/json": {
+        "example": {
+         "_embedded": {
+          "customerOrders": [
+           {
+            "_links": {
+             "order": {
+              "href": "http://orders/orders/60a81e7e65220500070784f5"
+             },
+             "self": {
+              "href": "http://orders/orders/60a81e7e65220500070784f5"
+             }
+            },
+            "address": {
+             "city": "Glasgow",
+             "country": "United Kingdom",
+             "number": "246",
+             "postcode": "G67 3DL",
+             "street": "Whitelees Road"
+            },
+            "card": {
+             "ccv": "958",
+             "expires": "08/19",
+             "longNum": "5544154011345918"
+            },
+            "customer": {
+             "addresses": [],
+             "cards": [],
+             "firstName": "User",
+             "lastName": "Name",
+             "username": "user"
+            },
+            "customerId": "57a98d98e4b00679b4a830b2",
+            "date": "2021-05-21T20:56:30.149+0000",
+            "items": [
+             {
+              "itemId": "3395a43e-2d88-40de-b95f-e00e1502085b",
+              "quantity": 1,
+              "unitPrice": 18.0
+             }
+            ],
+            "shipment": {
+             "name": "57a98d98e4b00679b4a830b2"
+            },
+            "total": 22.99
+           }
+          ]
+         },
+         "_links": {
+          "self": {
+           "href": "http://orders/orders/search/customerId?sort=date&custId=57a98d98e4b00679b4a830b2"
+          }
+         }
+        },
+        "schema": {
+         "properties": {
+          "_embedded": {
+           "properties": {
+            "customerOrders": {
+             "items": {
+              "properties": {
+               "_links": {
+                "properties": {
+                 "order": {
+                  "properties": {
+                   "href": {
+                    "type": "string"
+                   }
+                  },
+                  "required": [
+                   "href"
+                  ],
+                  "type": "object"
+                 },
+                 "self": {
+                  "properties": {
+                   "href": {
+                    "type": "string"
+                   }
+                  },
+                  "required": [
+                   "href"
+                  ],
+                  "type": "object"
+                 }
+                },
+                "required": [
+                 "order",
+                 "self"
+                ],
+                "type": "object"
+               },
+               "address": {
+                "properties": {
+                 "city": {
+                  "type": "string"
+                 },
+                 "country": {
+                  "type": "string"
+                 },
+                 "number": {
+                  "type": "string"
+                 },
+                 "postcode": {
+                  "type": "string"
+                 },
+                 "street": {
+                  "type": "string"
+                 }
+                },
+                "required": [
+                 "city",
+                 "country",
+                 "number",
+                 "postcode",
+                 "street"
+                ],
+                "type": "object"
+               },
+               "card": {
+                "properties": {
+                 "ccv": {
+                  "type": "string"
+                 },
+                 "expires": {
+                  "type": "string"
+                 },
+                 "longNum": {
+                  "type": "string"
+                 }
+                },
+                "required": [
+                 "ccv",
+                 "expires",
+                 "longNum"
+                ],
+                "type": "object"
+               },
+               "customer": {
+                "properties": {
+                 "addresses": {
+                  "items": {},
+                  "type": "array"
+                 },
+                 "cards": {
+                  "items": {},
+                  "type": "array"
+                 },
+                 "firstName": {
+                  "type": "string"
+                 },
+                 "lastName": {
+                  "type": "string"
+                 },
+                 "username": {
+                  "type": "string"
+                 }
+                },
+                "required": [
+                 "addresses",
+                 "cards",
+                 "firstName",
+                 "lastName",
+                 "username"
+                ],
+                "type": "object"
+               },
+               "customerId": {
+                "type": "string"
+               },
+               "date": {
+                "type": "string"
+               },
+               "items": {
+                "items": {
+                 "properties": {
+                  "itemId": {
+                   "type": "string"
+                  },
+                  "quantity": {
+                   "type": "integer"
+                  },
+                  "unitPrice": {
+                   "type": "number"
+                  }
+                 },
+                 "required": [
+                  "itemId",
+                  "quantity",
+                  "unitPrice"
+                 ],
+                 "type": "object"
+                },
+                "type": "array"
+               },
+               "shipment": {
+                "properties": {
+                 "name": {
+                  "type": "string"
+                 }
+                },
+                "required": [
+                 "name"
+                ],
+                "type": "object"
+               },
+               "total": {
+                "type": "number"
+               }
+              },
+              "required": [
+               "_links",
+               "address",
+               "card",
+               "customer",
+               "customerId",
+               "date",
+               "items",
+               "shipment",
+               "total"
+              ],
+              "type": "object"
+             },
+             "type": "array"
+            }
+           },
+           "required": [
+            "customerOrders"
+           ],
+           "type": "object"
+          },
+          "_links": {
+           "properties": {
+            "self": {
+             "properties": {
+              "href": {
+               "type": "string"
+              }
+             },
+             "required": [
+              "href"
+             ],
+             "type": "object"
+            }
+           },
+           "required": [
+            "self"
+           ],
+           "type": "object"
+          }
+         },
+         "required": [
+          "_embedded",
+          "_links"
+         ],
+         "type": "object"
+        }
+       }
+      },
+      "description": "OK"
+     }
+    },
+    "summary": "Seen 2 requests",
+    "tags": [
+     "orders"
+    ]
+   },
+   "parameters": []
+  },
+  "/orders/{id}": {
+   "get": {
+    "operationId": "8dc90a12-6151-4bdb-86a7-1b4511d75e4f",
+    "parameters": [],
+    "responses": {
+     "200": {
+      "content": {
+       "application/json": {
+        "example": {
+         "_links": {
+          "order": {
+           "href": "http://orders/orders/60a81e7e65220500070784f5"
+          },
+          "self": {
+           "href": "http://orders/orders/60a81e7e65220500070784f5"
+          }
+         },
+         "address": {
+          "city": "Glasgow",
+          "country": "United Kingdom",
+          "number": "246",
+          "postcode": "G67 3DL",
+          "street": "Whitelees Road"
+         },
+         "card": {
+          "ccv": "958",
+          "expires": "08/19",
+          "longNum": "5544154011345918"
+         },
+         "customer": {
+          "addresses": [],
+          "cards": [],
+          "firstName": "User",
+          "lastName": "Name",
+          "username": "user"
+         },
+         "customerId": "57a98d98e4b00679b4a830b2",
+         "date": "2021-05-21T20:56:30.149+0000",
+         "items": [
+          {
+           "itemId": "3395a43e-2d88-40de-b95f-e00e1502085b",
+           "quantity": 1,
+           "unitPrice": 18.0
+          }
+         ],
+         "shipment": {
+          "name": "57a98d98e4b00679b4a830b2"
+         },
+         "total": 22.99
+        },
+        "schema": {
+         "properties": {
+          "_links": {
+           "properties": {
+            "order": {
+             "properties": {
+              "href": {
+               "type": "string"
+              }
+             },
+             "required": [
+              "href"
+             ],
+             "type": "object"
+            },
+            "self": {
+             "properties": {
+              "href": {
+               "type": "string"
+              }
+             },
+             "required": [
+              "href"
+             ],
+             "type": "object"
+            }
+           },
+           "required": [
+            "order",
+            "self"
+           ],
+           "type": "object"
+          },
+          "address": {
+           "properties": {
+            "city": {
+             "type": "string"
+            },
+            "country": {
+             "type": "string"
+            },
+            "number": {
+             "type": "string"
+            },
+            "postcode": {
+             "type": "string"
+            },
+            "street": {
+             "type": "string"
+            }
+           },
+           "required": [
+            "city",
+            "country",
+            "number",
+            "postcode",
+            "street"
+           ],
+           "type": "object"
+          },
+          "card": {
+           "properties": {
+            "ccv": {
+             "type": "string"
+            },
+            "expires": {
+             "type": "string"
+            },
+            "longNum": {
+             "type": "string"
+            }
+           },
+           "required": [
+            "ccv",
+            "expires",
+            "longNum"
+           ],
+           "type": "object"
+          },
+          "customer": {
+           "properties": {
+            "addresses": {
+             "items": {},
+             "type": "array"
+            },
+            "cards": {
+             "items": {},
+             "type": "array"
+            },
+            "firstName": {
+             "type": "string"
+            },
+            "lastName": {
+             "type": "string"
+            },
+            "username": {
+             "type": "string"
+            }
+           },
+           "required": [
+            "addresses",
+            "cards",
+            "firstName",
+            "lastName",
+            "username"
+           ],
+           "type": "object"
+          },
+          "customerId": {
+           "type": "string"
+          },
+          "date": {
+           "type": "string"
+          },
+          "items": {
+           "items": {
+            "properties": {
+             "itemId": {
+              "type": "string"
+             },
+             "quantity": {
+              "type": "integer"
+             },
+             "unitPrice": {
+              "type": "number"
+             }
+            },
+            "required": [
+             "itemId",
+             "quantity",
+             "unitPrice"
+            ],
+            "type": "object"
+           },
+           "type": "array"
+          },
+          "shipment": {
+           "properties": {
+            "name": {
+             "type": "string"
+            }
+           },
+           "required": [
+            "name"
+           ],
+           "type": "object"
+          },
+          "total": {
+           "type": "number"
+          }
+         },
+         "required": [
+          "_links",
+          "address",
+          "card",
+          "customer",
+          "customerId",
+          "date",
+          "items",
+          "shipment",
+          "total"
+         ],
+         "type": "object"
+        }
+       }
+      },
+      "description": "OK"
+     }
+    },
+    "summary": "Seen 1 requests",
+    "tags": [
+     "orders"
+    ]
+   },
+   "parameters": [
+    {
+     "in": "path",
+     "name": "id",
+     "required": true,
+     "schema": {
+      "enum": [
+       "60a81e7e65220500070784f5"
+      ],
+      "type": "string"
+     },
+     "style": "simple"
+    }
+   ]
   }
  },
- "tags": []
+ "tags": [
+  {
+   "name": "orders"
+  }
+ ]
 }

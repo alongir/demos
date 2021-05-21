@@ -109,7 +109,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 18 requests"
+    "summary": "Seen 20 requests"
    },
    "parameters": [
     {
@@ -129,7 +129,7 @@
   "/cards": {
    "parameters": [],
    "post": {
-    "operationId": "7b251c94-7542-426d-8a17-04a8ea8f5187",
+    "operationId": "3a2428a8-5258-4ca2-b84a-b1f454acaa57",
     "parameters": [
      {
       "in": "header",
@@ -296,7 +296,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 18 requests",
+    "summary": "Seen 20 requests",
     "tags": [
      "cards"
     ]
@@ -316,7 +316,7 @@
     }
    ]
   },
-  "/customers/{id}": {
+  "/customers/{customerId}": {
    "get": {
     "operationId": "a1f9fd93-b57a-4a0b-a1e4-54d2ad8f2a11",
     "parameters": [
@@ -440,7 +440,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 36 requests",
+    "summary": "Seen 50 requests",
     "tags": [
      "customers"
     ]
@@ -448,7 +448,7 @@
    "parameters": [
     {
      "in": "path",
-     "name": "id",
+     "name": "customerId",
      "required": true,
      "schema": {
       "enum": [
@@ -460,7 +460,7 @@
     }
    ]
   },
-  "/customers/{id}/addresses": {
+  "/customers/{customerId}/addresses": {
    "get": {
     "operationId": "34f1c8db-d39a-4ab4-8449-95f79f8266ba",
     "parameters": [],
@@ -577,7 +577,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 19 requests",
+    "summary": "Seen 25 requests",
     "tags": [
      "customers"
     ]
@@ -585,7 +585,7 @@
    "parameters": [
     {
      "in": "path",
-     "name": "id",
+     "name": "customerId",
      "required": true,
      "schema": {
       "enum": [
@@ -597,7 +597,7 @@
     }
    ]
   },
-  "/customers/{id}/cards": {
+  "/customers/{customerId}/cards": {
    "get": {
     "operationId": "44909f00-3cae-418e-a10c-c436e575f11f",
     "parameters": [],
@@ -704,7 +704,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 19 requests",
+    "summary": "Seen 25 requests",
     "tags": [
      "customers"
     ]
@@ -712,7 +712,7 @@
    "parameters": [
     {
      "in": "path",
-     "name": "id",
+     "name": "customerId",
      "required": true,
      "schema": {
       "enum": [
@@ -853,10 +853,10 @@
  },
  "tags": [
   {
-   "name": "customers"
+   "name": "cards"
   },
   {
-   "name": "cards"
+   "name": "customers"
   }
  ]
 }

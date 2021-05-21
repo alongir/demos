@@ -6,18 +6,13 @@
   },
   {
    "name": "itemId",
-   "uuid": "692c5fd6-a36f-4bfa-9c56-674295f4077f"
-  },
-  {
-   "name": "unitPrice",
-   "uuid": "7472e71d-a72e-4e3d-9d98-9398f065716a"
+   "uuid": "6a152468-a602-4b92-aec2-4c86785cba44"
   }
  ],
  "rows": [
   {
    "customerId": "kmLaRQQ6vaJaQA3USa-0RvyXWfR0bbQg",
-   "itemId": "3395a43e-2d88-40de-b95f-e00e1502085b",
-   "unitPrice": 18
+   "itemId": "03fef6ac-1896-4ce8-bd69-b798f85c6e0b"
   }
  ]
 }
