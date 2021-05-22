@@ -245,7 +245,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 52 requests",
+    "summary": "Seen 77 requests",
     "tags": [
      "cart"
     ]
@@ -371,7 +371,19 @@
       "schema": {
        "enum": [
         "black",
-        ""
+        "",
+        "brown"
+       ],
+       "type": "string"
+      }
+     },
+     {
+      "in": "query",
+      "name": "sort",
+      "required": false,
+      "schema": {
+       "enum": [
+        "id"
        ],
        "type": "string"
       }
@@ -522,7 +534,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 40 requests",
+    "summary": "Seen 65 requests",
     "tags": [
      "catalogue"
     ]
@@ -583,7 +595,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 15 requests",
+    "summary": "Seen 20 requests",
     "tags": [
      "catalogue"
     ]
@@ -671,7 +683,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 17 requests",
+    "summary": "Seen 18 requests",
     "tags": [
      "catalogue"
     ]
@@ -892,6 +904,36 @@
      "style": "simple"
     }
    ]
+  },
+  "/detail.html": {
+   "get": {
+    "operationId": "9ea7ba5c-8ced-483a-9dbf-2e6ca3c8e6b6",
+    "parameters": [
+     {
+      "in": "query",
+      "name": "id",
+      "required": true,
+      "schema": {
+       "enum": [
+        "3395a43e-2d88-40de-b95f-e00e1502085b"
+       ],
+       "type": "string"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "content": {
+       "text/html": {
+        "example": "<!DOCTYPE html>\n<html lang=\"en\">\n\n<head>\n\n    <meta charset=\"utf-8\">\n    <meta name=\"robots\" content=\"all,follow\">\n    <meta name=\"googlebot\" content=\"index,follow,snippet,archive\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <meta name=\"description\" content=\"WeaveSocks Demo App\">\n    <meta name=\"author\" content=\"Ondrej Svestka | ondrejsvestka.cz\">\n    <meta name=\"keywords\" content=\"\">\n\n    <title>\n        WeaveSocks\n    </title>\n\n    <meta name=\"keywords\" content=\"\">\n\n    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100'\n          rel='stylesheet' type='text/css'>\n\n    <!-- styles -->\n    <link href=\"css/font-awesome.css\" rel=\"stylesheet\">\n    <link href=\"css/bootstrap.min.css\" rel=\"stylesheet\">\n    <link href=\"css/animate.min.css\" rel=\"stylesheet\">\n    <link href=\"css/owl.carousel.css\" rel=\"stylesheet\">\n    <link href=\"css/owl.theme.css\" rel=\"stylesheet\">\n\n    <!-- theme stylesheet -->\n    <link href=\"css/style.blue.css\" rel=\"stylesheet\" id=\"theme-stylesheet\">\n\n    <!-- your stylesheet with modifications -->\n    <link href=\"css/custom.css\" rel=\"stylesheet\">\n\n    <script src=\"js/respond.min.js\"></script>\n\n    <link rel=\"shortcut icon\" href=\"favicon.png\">\n\n\n</head>\n\n<body>\n\n<div id=\"topbar\"></div>\n<div id=\"navbar\"></div>\n\n<div id=\"all\">\n\n    <div id=\"content\">\n        <div class=\"container\">\n\n            <div class=\"col-md-12\">\n                <ul class=\"breadcrumb\">\n                    <li><a href=\"/\">Home</a>\n                    </li>\n                    <li><a href=\"category.html\">Catalogue</a>\n                    </li>\n                    <li id=\"breadcrumb\"></li>\n                </ul>\n\n            </div>\n\n            <div class=\"col-md-12\">\n\n                <div class=\"row\" id=\"productMain\">\n                    <div class=\"col-sm-6\">\n                        <div id=\"mainImage\">\n                            <img id=\"imageMain\" alt=\"\"\n                                 class=\"img-responsive\">\n                        </div>\n\n                        <div class=\"ribbon sale\">\n                            <div class=\"theribbon\">SALE</div>\n                            <div class=\"ribbon-background\"></div>\n                        </div>\n                        <!-- /.ribbon -->\n\n                        <div class=\"ribbon new\">\n                            <div class=\"theribbon\">NEW</div>\n                            <div class=\"ribbon-background\"></div>\n                        </div>\n                        <!-- /.ribbon -->\n\n                    </div>\n                    <div class=\"col-sm-6\">\n                        <div class=\"box\">\n                            <h1 id=\"title\" class=\"text-center\"></h1>\n                            <p class=\"goToDescription\"><a href=\"#productDetails\"\n                                                          class=\"scroll-to\">Scroll\n                                to product details, material & care and\n                                sizing</a>\n                            </p>\n                            <p id=\"price\" class=\"price\"></p>\n\n                            <p class=\"text-center buttons\">\n                                <a id=\"buttonCart\" class=\"btn btn-primary\"><i\n                                        class=\"fa fa-shopping-cart\"></i> Add to\n                                    cart</a>\n                                <a href=\"basket.html\" class=\"btn btn-default\"><i\n                                        class=\"fa fa-heart\"></i> Add to wishlist</a>\n                            </p>\n\n\n                        </div>\n\n                        <div class=\"row\" id=\"thumbs\">\n                        </div>\n                    </div>\n\n                </div>\n\n\n                <div class=\"box\" id=\"productDetails\">\n                    <p>\n                    <h4>Product details</h4>\n                    <p id=\"description\">White lace top, woven, has a round neck, short sleeves,\n                        has knitted lining attached</p>\n                    <h4>Material & care</h4>\n                    <ul>\n                        <li>Polyester</li>\n                        <li>Machine wash</li>\n                    </ul>\n                    <h4>Size & Fit</h4>\n                    <ul>\n                        <li>Regular fit</li>\n                    </ul>\n\n                    <blockquote>\n                        <p><em>Add more socks, you need more socks!</em>\n                        </p>\n                    </blockquote>\n\n                    <hr>\n                    <div class=\"social\">\n                        <h4>Show it to your friends</h4>\n                        <p>\n                            <a href=\"#\" class=\"external facebook\"\n                               data-animate-hover=\"pulse\"><i\n                                    class=\"fa fa-facebook\"></i></a>\n                            <a href=\"#\" class=\"external gplus\"\n                               data-animate-hover=\"pulse\"><i\n                                    class=\"fa fa-google-plus\"></i></a>\n                            <a href=\"#\" class=\"external twitter\"\n                               data-animate-hover=\"pulse\"><i\n                                    class=\"fa fa-twitter\"></i></a>\n                            <a href=\"#\" class=\"email\"\n                               data-animate-hover=\"pulse\"><i\n                                    class=\"fa fa-envelope\"></i></a>\n                        </p>\n                    </div>\n                </div>\n\n                <div class=\"row same-height-row\">\n                    <div class=\"col-md-3 col-sm-6\">\n                        <div class=\"box same-height\">\n                            <h3>You may also like these products</h3>\n                        </div>\n                    </div>\n                    <div id=\"products\"></div>\n                </div>\n\n            </div>\n            <!-- /.col-md-9 -->\n        </div>\n        <!-- /.container -->\n    </div>\n    <!-- /#content -->\n\n    <div id=\"footer\"></div>\n</div>\n<!-- /#all -->\n\n\n<!-- *** SCRIPTS TO INCLUDE ***\n_________________________________________________________ -->\n<script src=\"js/jquery-1.11.0.min.js\"></script>\n<script src=\"js/bootstrap.min.js\"></script>\n<script src=\"js/jquery.cookie.js\"></script>\n<script src=\"js/waypoints.min.js\"></script>\n<script src=\"js/modernizr.js\"></script>\n<script src=\"js/bootstrap-hover-dropdown.js\"></script>\n<script src=\"js/owl.carousel.min.js\"></script>\n<script src=\"js/front.js\"></script>\n<script src=\"js/jquery.query-object.js\"></script>\n<script src=\"js/client.js\"></script>\n<script>\n\n    $(document).ready(function () {\n        $.ajaxSetup({\n            contentType: \"application/json; charset=utf-8\"\n        });\n\n        console.log(\"Loading components for category.html\");\n        $(\"#topbar\").load(\"topbar.html\");\n        $(\"#navbar\").load(\"navbar.html\");\n        $(\"#footer\").load(\"footer.html\");\n\n        var id = $.query.get('id') ? $.query.get('id') : \"\";\n        if (id == null || id == \"\") {\n            document.location.href = \"/\";\n        }\n        $.getJSON('/catalogue/' + id, function (data) {\n            $(\"#title\").text(data.name);\n            $(\"#breadcrumb\").text(data.name);\n            $(\"#price\").text(\"$\" + data.price.toFixed(2));\n            $(\"#imageMain\").attr(\"src\", data.imageUrl[0]);\n            $(\"#buttonCart\").attr(\"onClick\", \"addToCart(\\'\" + data.id + \"\\')\");\n            var thumbHtml = \"\";\n            for (var i = 0; i < data.imageUrl.length; i++) {\n                thumbHtml = thumbHtml +\n                        '<div class=\"col-xs-4\">\\\n                            <a href=\"' + data.imageUrl[i] + '\" class=\"thumb\">\\\n                    <img src=\"' + data.imageUrl[i] + '\" alt=\"\" class=\"img-responsive\">\\\n                    </a>\\\n                </div>'\n            }\n            $(\"#thumbs\").append(thumbHtml);\n            $(\"#description\").text(data.description);\n\n            $.getJSON('/catalogue', {sort: \"id\", size: 3, tags: data.tag[0]}, function (data) {\n                if (data != null) {\n                    $.each(data, function (index, element) {\n                        $('#products').append('<div class=\"col-md-3 col-sm-4\">\\\n                            <div class=\"product same-height\">\\\n                                    <div class=\"flip-container\">\\\n                                        <div class=\"flipper\">\\\n                                            <div class=\"front\">\\\n                                                <a href=\"detail.html?id=' + element.id + '\">\\\n                                                    <img src=\"' + element.imageUrl[0] + '\" alt=\"\" class=\"img-responsive\">\\\n                                                </a>\\\n                                            </div>\\\n                                            <div class=\"back\">\\\n                                                <a href=\"detail.html?id=' + element.id + '\">\\\n                                                    <img src=\"' + element.imageUrl[1] + '\" alt=\"\" class=\"img-responsive\">\\\n                                                </a>\\\n                                            </div>\\\n                                        </div>\\\n                                    </div>\\\n                                    <a href=\"detail.html?id=' + element.id + '\" class=\"invisible\">\\\n                                        <img src=\"img/product1.jpg\" alt=\"\" class=\"img-responsive\">\\\n                                    </a>\\\n                                    <div class=\"text\">\\\n                                        <h3><a href=\"detail.html?id=' + element.id + '\">' + element.name + '</a></h3>\\\n                                        <p class=\"price\">$' + element.price + '</p>\\\n                                        <p class=\"buttons\">\\\n                                            <a href=\"detail.html?id=' + element.id + '\" class=\"btn btn-default\">View detail</a>\\\n                                            <a href=\"#\" onclick=\"addToCart(\\'' + element.id + '\\')\" class=\"btn btn-primary\"><i class=\"fa fa-shopping-cart\"></i>Add to cart</a>\\\n                                        </p>\\\n                                    </div>\\\n                                </div>\\\n                            </div>');\n                    });\n                }\n            });\n        });\n\n\n\n\n\n\n    });\n\n</script>\n\n</body>\n\n</html>\n"
+       }
+      },
+      "description": "OK"
+     }
+    },
+    "summary": "Seen 1 requests"
+   },
+   "parameters": []
   },
   "/footer.html": {
    "get": {
@@ -1698,7 +1740,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 15 requests"
+    "summary": "Seen 20 requests"
    },
    "parameters": []
   },
@@ -1738,10 +1780,10 @@
    "name": "cart"
   },
   {
-   "name": "orders"
+   "name": "catalogue"
   },
   {
-   "name": "catalogue"
+   "name": "orders"
   }
  ]
 }

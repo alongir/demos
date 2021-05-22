@@ -241,6 +241,12 @@ services:
         Content-Type: application/json
       body: '@mock-data/resp_front_end_sock_shop_103.json'
       useTemplating: false
+  - path: /detail.html
+    response:
+      headers:
+        Content-Type: text/html
+      body: '@mock-data/resp_front_end_sock_shop_118.html'
+      useTemplating: false
 - name: http://orders.sock-shop
   port: 8004
   managementRoot: __admin

@@ -78,7 +78,7 @@ class Tests_catalogue_sock_shop(unittest.TestCase):
 
         # GET http://catalogue.sock-shop/catalogue (endp 2)
         catalogue_sock_shop = get_http_client('http://catalogue.sock-shop', authenticate)
-        qstr = '?' + urlencode([('page', '1'), ('size', size), ('tags', tags)])
+        qstr = '?' + urlencode([('page', '1'), ('size', size), ('sort', 'id'), ('tags', tags)])
         resp = catalogue_sock_shop.get('/catalogue' + qstr)
         resp.assert_ok()
         # resp.assert_status_code(200)
@@ -192,7 +192,7 @@ class Tests_front_end_sock_shop(unittest.TestCase):
 
         # GET http://front-end.sock-shop/catalogue (endp 23)
         front_end_sock_shop = get_http_client('http://front-end.sock-shop', authenticate)
-        qstr = '?' + urlencode([('page', '1'), ('size', size), ('tags', tags)])
+        qstr = '?' + urlencode([('page', '1'), ('size', size), ('sort', 'id'), ('tags', tags)])
         resp = front_end_sock_shop.get('/catalogue' + qstr, headers=dict([('x-requested-with', 'XMLHttpRequest')]))
         resp.assert_ok()
         # resp.assert_status_code(200)
@@ -254,6 +254,19 @@ class Tests_front_end_sock_shop(unittest.TestCase):
         resp.assert_ok()
         # resp.assert_status_code(200)
         # resp.assert_jsonpath('$.lastName', expected_value='Name')
+
+    @json_dataset('data/dataset_118.json')
+    @clear_session({'spanId': 118})
+    def test_118_get_detail_html(self, data_row):
+        id_, = data_row
+
+        # GET http://front-end.sock-shop/detail.html (endp 118)
+        front_end_sock_shop = get_http_client('http://front-end.sock-shop', authenticate)
+        qstr = '?' + urlencode([('id', id_)])
+        resp = front_end_sock_shop.get('/detail.html' + qstr)
+        resp.assert_ok()
+        # resp.assert_status_code(200)
+        # resp.assert_cssselect('div#content div.container div div.row.same-height-row div div.box.same-height h3', expected_value='You may also like these products')
 
     @clear_session({'spanId': 32})
     def test_032_get_footer_html(self):

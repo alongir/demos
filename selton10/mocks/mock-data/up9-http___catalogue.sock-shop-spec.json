@@ -40,7 +40,19 @@
       "schema": {
        "enum": [
         "black",
-        ""
+        "",
+        "brown"
+       ],
+       "type": "string"
+      }
+     },
+     {
+      "in": "query",
+      "name": "sort",
+      "required": false,
+      "schema": {
+       "enum": [
+        "id"
        ],
        "type": "string"
       }
@@ -180,7 +192,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 52 requests",
+    "summary": "Seen 85 requests",
     "tags": [
      "catalogue"
     ]
@@ -230,7 +242,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 20 requests",
+    "summary": "Seen 33 requests",
     "tags": [
      "catalogue"
     ]
@@ -306,7 +318,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 46 requests",
+    "summary": "Seen 47 requests",
     "tags": [
      "catalogue"
     ]
@@ -373,7 +385,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 20 requests"
+    "summary": "Seen 33 requests"
    },
    "parameters": []
   }
