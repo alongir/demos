@@ -1,0 +1,17 @@
+{
+ "id": "{{request.path.[2]}}",
+ "name": "Crossed",
+ "description": "A mature sock, crossed, with an air of nonchalance.",
+ "imageUrl": [
+  "/catalogue/images/cross_1.jpeg",
+  "/catalogue/images/cross_2.jpeg"
+ ],
+ "price": 17.32,
+ "count": 738,
+ "tag": [
+  "blue",
+  "red",
+  "action",
+  "formal"
+ ]
+}

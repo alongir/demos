@@ -1,0 +1,28 @@
+{
+ "parameters": [
+  {
+   "name": "sessionId",
+   "uuid": "0b03db4a-e2a5-4e8c-98bb-cbad64611fd2"
+  }
+ ],
+ "rows": [
+  {
+   "sessionId": "1J9WwRDQsVd4ymiharhdwevNEWEUP2x2"
+  },
+  {
+   "sessionId": "oVqiJeQDr4hDRx1GupM1RzmoNjoSJQsR"
+  },
+  {
+   "sessionId": "scbBu_nSnBhVPoJqXvpjCg29M_y4erqa"
+  },
+  {
+   "sessionId": "7YRMScUydjd86TXT2_jHRkFUuUK0DD4L"
+  },
+  {
+   "sessionId": "xHSpc6as1AvFaa5XpQ6BTuvaOZIbhxPT"
+  },
+  {
+   "sessionId": "QaRmm1M9n6mvXs1G4nvxrxmr3t6zcA39"
+  }
+ ]
+}
