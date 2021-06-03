@@ -1777,13 +1777,13 @@
  },
  "tags": [
   {
+   "name": "orders"
+  },
+  {
    "name": "cart"
   },
   {
    "name": "catalogue"
-  },
-  {
-   "name": "orders"
   }
  ]
 }
