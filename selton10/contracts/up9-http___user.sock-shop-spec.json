@@ -853,10 +853,10 @@
  },
  "tags": [
   {
-   "name": "customers"
+   "name": "cards"
   },
   {
-   "name": "cards"
+   "name": "customers"
   }
  ]
 }
