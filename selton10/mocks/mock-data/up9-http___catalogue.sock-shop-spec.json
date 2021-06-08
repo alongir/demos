@@ -325,6 +325,7 @@
    },
    "parameters": [
     {
+     "description": "Origin: GET http://catalogue.sock-shop/catalogue &rarr; json: $[*].id",
      "in": "path",
      "name": "id",
      "required": true,

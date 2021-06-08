@@ -447,6 +447,7 @@
    },
    "parameters": [
     {
+     "description": "Origin: POST http://orders.sock-shop/orders &rarr; json: $.customerId",
      "in": "path",
      "name": "customerId",
      "required": true,
@@ -584,6 +585,7 @@
    },
    "parameters": [
     {
+     "description": "Origin: POST http://orders.sock-shop/orders &rarr; json: $.customerId",
      "in": "path",
      "name": "customerId",
      "required": true,
@@ -711,6 +713,7 @@
    },
    "parameters": [
     {
+     "description": "Origin: POST http://orders.sock-shop/orders &rarr; json: $.customerId",
      "in": "path",
      "name": "customerId",
      "required": true,
@@ -853,10 +856,10 @@
  },
  "tags": [
   {
-   "name": "cards"
+   "name": "customers"
   },
   {
-   "name": "customers"
+   "name": "cards"
   }
  ]
 }

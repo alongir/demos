@@ -262,6 +262,7 @@
     "operationId": "ff581683-4569-4495-bd4e-fbc9f62ac714",
     "parameters": [
      {
+      "description": "Origin: POST http://orders.sock-shop/orders &rarr; json: $.customerId",
       "in": "query",
       "name": "custId",
       "required": true,
@@ -783,6 +784,7 @@
    },
    "parameters": [
     {
+     "description": "Origin: POST http://orders.sock-shop/orders &rarr; json: $.id",
      "in": "path",
      "name": "id",
      "required": true,

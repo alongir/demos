@@ -1,13 +1,26 @@
 {
  "parameters": [
   {
-   "name": "id",
-   "uuid": "84b7f50f-05e9-4780-8dd6-c532ea3fccb2"
+   "name": "size",
+   "uuid": "b4b07a97-9426-499f-b381-23b36c5b6d00"
+  },
+  {
+   "name": "tags",
+   "uuid": "11993afb-cf88-4883-9d67-587340bdfdcb"
   }
  ],
  "rows": [
   {
-   "id": "03fef6ac-1896-4ce8-bd69-b798f85c6e0b"
+   "size": "6",
+   "tags": ""
+  },
+  {
+   "size": "5",
+   "tags": "black"
+  },
+  {
+   "size": "3",
+   "tags": "brown"
   }
  ]
 }

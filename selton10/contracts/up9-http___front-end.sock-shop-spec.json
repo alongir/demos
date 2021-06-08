@@ -323,6 +323,7 @@
    },
    "parameters": [
     {
+     "description": "Origin: GET http://front-end.sock-shop/catalogue &rarr; json: $[*].id",
      "in": "path",
      "name": "id",
      "required": true,
@@ -546,6 +547,7 @@
     "operationId": "b2d732c8-0e8c-4886-b064-5aa7e8c15109",
     "parameters": [
      {
+      "description": "Origin: GET http://front-end.sock-shop/tags &rarr; json: $.tags[*]",
       "in": "query",
       "name": "tags",
       "required": true,
@@ -690,6 +692,7 @@
    },
    "parameters": [
     {
+     "description": "Origin: GET http://front-end.sock-shop/catalogue &rarr; json: $[*].id",
      "in": "path",
      "name": "id",
      "required": true,
@@ -709,6 +712,7 @@
     "operationId": "a567090a-349d-4346-88ce-3d9390094915",
     "parameters": [
      {
+      "description": "Origin: GET http://front-end.sock-shop/tags &rarr; json: $.tags[*]",
       "in": "query",
       "name": "tags",
       "required": true,
@@ -910,6 +914,7 @@
     "operationId": "9ea7ba5c-8ced-483a-9dbf-2e6ca3c8e6b6",
     "parameters": [
      {
+      "description": "Origin: GET http://front-end.sock-shop/catalogue &rarr; json: $[*].id",
       "in": "query",
       "name": "id",
       "required": true,
@@ -1780,10 +1785,10 @@
    "name": "catalogue"
   },
   {
-   "name": "orders"
+   "name": "cart"
   },
   {
-   "name": "cart"
+   "name": "orders"
   }
  ]
 }

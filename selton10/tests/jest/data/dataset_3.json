@@ -2,10 +2,13 @@
  "parameters": [
   {
    "name": "tags",
-   "uuid": "350fd4eb-6d84-4bb1-8030-0920724a40b1"
+   "uuid": "53b5c96a-9187-41be-9529-ed0f914a73f6"
   }
  ],
  "rows": [
+  {
+   "tags": ""
+  },
   {
    "tags": "black"
   }

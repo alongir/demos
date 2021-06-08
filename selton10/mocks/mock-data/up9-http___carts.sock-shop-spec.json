@@ -21,6 +21,7 @@
    },
    "parameters": [
     {
+     "description": "Origin: POST http://orders.sock-shop/orders &rarr; json: $.customerId",
      "in": "path",
      "name": "customerId",
      "required": true,
@@ -97,6 +98,7 @@
    },
    "parameters": [
     {
+     "description": "Origin: POST http://orders.sock-shop/orders &rarr; json: $.customerId",
      "in": "path",
      "name": "customerId",
      "required": true,
@@ -210,6 +212,7 @@
    },
    "parameters": [
     {
+     "description": "Origin: POST http://orders.sock-shop/orders &rarr; json: $.customerId",
      "in": "path",
      "name": "customerId",
      "required": true,
@@ -226,6 +229,7 @@
      "style": "simple"
     },
     {
+     "description": "Origin: GET http://carts.sock-shop/carts/{customerId}/items &rarr; json: $[*].itemId",
      "in": "path",
      "name": "itemId",
      "required": true,
@@ -271,6 +275,7 @@
    },
    "parameters": [
     {
+     "description": "Origin: POST http://orders.sock-shop/orders &rarr; json: $.customerId",
      "in": "path",
      "name": "customerId",
      "required": true,
