@@ -1,0 +1,23 @@
+{
+ "parameters": [
+  {
+   "name": "customerId",
+   "uuid": "2ff9d77b-2759-43ee-85b2-7d95731dd7da"
+  },
+  {
+   "name": "itemId",
+   "uuid": "5cd565ef-7a8d-479a-a217-2120d22e9e7e"
+  },
+  {
+   "name": "unitPrice",
+   "uuid": "8798fa75-03ee-4100-9aa9-0c289ea65782"
+  }
+ ],
+ "rows": [
+  {
+   "customerId": "57a98d98e4b00679b4a830b2",
+   "itemId": "808a2de1-1aaa-4c25-a9b9-6612e8f29a38",
+   "unitPrice": 15
+  }
+ ]
+}

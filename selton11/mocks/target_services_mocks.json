@@ -1,0 +1,9 @@
+{
+ "http://carts.sock-shop": "http://localhost:8001",
+ "http://catalogue.sock-shop": "http://localhost:8002",
+ "http://front-end.sock-shop": "http://localhost:8003",
+ "http://orders.sock-shop": "http://localhost:8004",
+ "http://payment.sock-shop": "http://localhost:8005",
+ "http://shipping.sock-shop": "http://localhost:8006",
+ "http://user.sock-shop": "http://localhost:8007"
+}
