@@ -19,7 +19,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 1048 requests"
+    "summary": "Seen 1049 requests"
    },
    "parameters": []
   },
@@ -127,7 +127,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 2 requests"
+    "summary": "Seen 3 requests"
    },
    "parameters": []
   },
@@ -188,7 +188,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 2 requests"
+    "summary": "Seen 3 requests"
    },
    "parameters": []
   },
@@ -213,7 +213,7 @@
       "description": "Accepted"
      }
     },
-    "summary": "Seen 10 requests",
+    "summary": "Seen 15 requests",
     "tags": [
      "cart"
     ]
@@ -237,20 +237,7 @@
      "200": {
       "content": {
        "application/json": {
-        "example": [
-         {
-          "id": "60c12b187d560d0006e1c9bb",
-          "itemId": "510a0d7e-8e83-4193-b483-e27e09ddc34d",
-          "quantity": 1,
-          "unitPrice": 15.0
-         },
-         {
-          "id": "60c12b187d560d0006e1c9bc",
-          "itemId": "808a2de1-1aaa-4c25-a9b9-6612e8f29a38",
-          "quantity": 1,
-          "unitPrice": 17.32
-         }
-        ],
+        "example": [],
         "schema": {
          "items": {
           "properties": {
@@ -282,7 +269,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 8 requests",
+    "summary": "Seen 19 requests",
     "tags": [
      "cart"
     ]
@@ -329,7 +316,7 @@
       "description": "Created"
      }
     },
-    "summary": "Seen 13 requests",
+    "summary": "Seen 31 requests",
     "tags": [
      "cart"
     ]
@@ -363,6 +350,7 @@
    },
    "parameters": [
     {
+     "description": "Origin: GET http://front-end.sock-shop/cart &rarr; json: $[*].itemId",
      "in": "path",
      "name": "itemId",
      "required": true,
@@ -622,7 +610,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 11 requests",
+    "summary": "Seen 23 requests",
     "tags": [
      "catalogue"
     ]
@@ -682,7 +670,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 2 requests",
+    "summary": "Seen 5 requests",
     "tags": [
      "catalogue"
     ]
@@ -778,6 +766,7 @@
    },
    "parameters": [
     {
+     "description": "Origin: GET http://front-end.sock-shop/catalogue &rarr; json: $[*].id",
      "in": "path",
      "name": "id",
      "required": true,
@@ -935,10 +924,11 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 5 requests"
+    "summary": "Seen 9 requests"
    },
    "parameters": [
     {
+     "description": "Origin: GET http://front-end.sock-shop/login &rarr; cookie: logged_in",
      "in": "path",
      "name": "customerId",
      "required": true,
@@ -957,6 +947,7 @@
     "operationId": "81e8b866-2df0-4750-957b-ea8df547608d",
     "parameters": [
      {
+      "description": "Origin: POST http://front-end.sock-shop/orders &rarr; json: $.items[*].itemId",
       "in": "query",
       "name": "id",
       "required": true,
@@ -982,7 +973,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 7 requests"
+    "summary": "Seen 9 requests"
    },
    "parameters": []
   },
@@ -1012,11 +1003,36 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 7 requests"
+    "summary": "Seen 13 requests"
    },
    "parameters": []
   },
   "/orders": {
+   "get": {
+    "operationId": "7723ac1f-498f-4d50-b19c-90110fa83c93",
+    "parameters": [
+     {
+      "in": "header",
+      "name": "x-requested-with",
+      "required": false,
+      "schema": {
+       "enum": [
+        "XMLHttpRequest"
+       ],
+       "type": "string"
+      }
+     }
+    ],
+    "responses": {
+     "201": {
+      "description": "Created"
+     }
+    },
+    "summary": "Seen 1 requests",
+    "tags": [
+     "orders"
+    ]
+   },
    "parameters": [],
    "post": {
     "operationId": "f03a181f-2545-4d66-85f3-1b0c95dfda75",
@@ -1238,7 +1254,10 @@
       "description": "Created"
      }
     },
-    "summary": "Seen 29 requests"
+    "summary": "Seen 29 requests",
+    "tags": [
+     "orders"
+    ]
    }
   },
   "/tags": {
@@ -1298,17 +1317,20 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 2 requests"
+    "summary": "Seen 5 requests"
    },
    "parameters": []
   }
  },
  "tags": [
   {
-   "name": "cart"
+   "name": "catalogue"
   },
   {
-   "name": "catalogue"
+   "name": "orders"
+  },
+  {
+   "name": "cart"
   }
  ]
 }

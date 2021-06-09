@@ -128,7 +128,7 @@ services:
     response:
       headers:
         Content-Type: application/json
-      body: '@mock-data/resp_front_end_sock_shop_5.json'
+      body: '[]'
       useTemplating: false
   - path: /cart
     response:
@@ -216,6 +216,9 @@ services:
          "err": null
         }
       useTemplating: false
+  - path: /orders
+    response:
+      status: 201
 - name: http://orders.sock-shop
   port: 8004
   managementRoot: __admin

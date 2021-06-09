@@ -109,7 +109,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 39 requests"
+    "summary": "Seen 43 requests"
    },
    "parameters": [
     {
@@ -220,7 +220,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 38 requests"
+    "summary": "Seen 42 requests"
    },
    "parameters": [
     {
@@ -361,13 +361,14 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 92 requests",
+    "summary": "Seen 111 requests",
     "tags": [
      "customers"
     ]
    },
    "parameters": [
     {
+     "description": "Origin: GET http://user.sock-shop/login &rarr; json: $.user.id",
      "in": "path",
      "name": "customerId",
      "required": true,
@@ -498,13 +499,14 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 42 requests",
+    "summary": "Seen 50 requests",
     "tags": [
      "customers"
     ]
    },
    "parameters": [
     {
+     "description": "Origin: GET http://user.sock-shop/login &rarr; json: $.user.id",
      "in": "path",
      "name": "customerId",
      "required": true,
@@ -625,13 +627,14 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 42 requests",
+    "summary": "Seen 50 requests",
     "tags": [
      "customers"
     ]
    },
    "parameters": [
     {
+     "description": "Origin: GET http://user.sock-shop/login &rarr; json: $.user.id",
      "in": "path",
      "name": "customerId",
      "required": true,
@@ -767,7 +770,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 77 requests"
+    "summary": "Seen 79 requests"
    },
    "parameters": []
   }

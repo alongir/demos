@@ -3,11 +3,16 @@
   {
    "name": "addresseId",
    "uuid": "db32dea7-5198-48ba-a714-541e91af5916"
+  },
+  {
+   "name": "cardId",
+   "uuid": "dbb5c673-b35b-4175-9929-13ca82719fb2"
   }
  ],
  "rows": [
   {
-   "addresseId": "57a98d98e4b00679b4a830b0"
+   "addresseId": "57a98d98e4b00679b4a830b0",
+   "cardId": "57a98d98e4b00679b4a830b1"
   }
  ]
 }

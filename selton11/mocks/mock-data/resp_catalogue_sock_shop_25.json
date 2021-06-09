@@ -1,17 +1,15 @@
 {
  "id": "{{request.path.2}}",
- "name": "Crossed",
- "description": "A mature sock, crossed, with an air of nonchalance.",
+ "name": "Colourful",
+ "description": "proident occaecat irure et excepteur labore minim nisi amet irure",
  "imageUrl": [
-  "/catalogue/images/cross_1.jpeg",
-  "/catalogue/images/cross_2.jpeg"
+  "/catalogue/images/colourful_socks.jpg",
+  "/catalogue/images/colourful_socks.jpg"
  ],
- "price": 17.32,
+ "price": 18,
  "count": {{random.int 1 820}},
  "tag": [
-  "blue",
-  "red",
-  "action",
-  "formal"
+  "brown",
+  "blue"
  ]
 }

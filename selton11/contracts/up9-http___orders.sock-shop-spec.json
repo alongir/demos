@@ -251,7 +251,7 @@
       "description": "Created"
      }
     },
-    "summary": "Seen 83 requests",
+    "summary": "Seen 85 requests",
     "tags": [
      "orders"
     ]
@@ -262,6 +262,7 @@
     "operationId": "da2f7924-8255-4d62-bcdd-b1266cbfef60",
     "parameters": [
      {
+      "description": "Origin: GET http://user.sock-shop/login &rarr; json: $.user.id",
       "in": "query",
       "name": "custId",
       "required": true,
@@ -294,7 +295,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 2 requests",
+    "summary": "Seen 4 requests",
     "tags": [
      "orders"
     ]

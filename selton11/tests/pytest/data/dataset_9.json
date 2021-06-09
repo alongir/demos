@@ -1,13 +1,19 @@
 {
  "parameters": [
   {
-   "name": "id",
-   "uuid": "560c020c-9d9a-4b33-a296-74217409006d"
+   "name": "size",
+   "uuid": "672c457e-3805-484c-9074-a0cb46e1065b"
   }
  ],
  "rows": [
   {
-   "id": "510a0d7e-8e83-4193-b483-e27e09ddc34d"
+   "size": "6"
+  },
+  {
+   "size": "5"
+  },
+  {
+   "size": "3"
   }
  ]
 }

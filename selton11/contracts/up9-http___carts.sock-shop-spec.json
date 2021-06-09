@@ -14,13 +14,14 @@
       "description": "Accepted"
      }
     },
-    "summary": "Seen 73 requests",
+    "summary": "Seen 75 requests",
     "tags": [
      "carts"
     ]
    },
    "parameters": [
     {
+     "description": "Origin: GET http://user.sock-shop/login &rarr; json: $.user.id",
      "in": "path",
      "name": "customerId",
      "required": true,
@@ -87,13 +88,14 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 70 requests",
+    "summary": "Seen 97 requests",
     "tags": [
      "carts"
     ]
    },
    "parameters": [
     {
+     "description": "Origin: GET http://user.sock-shop/login &rarr; json: $.user.id",
      "in": "path",
      "name": "customerId",
      "required": true,
@@ -182,7 +184,7 @@
       "description": "Created"
      }
     },
-    "summary": "Seen 61 requests",
+    "summary": "Seen 64 requests",
     "tags": [
      "carts"
     ]
@@ -197,13 +199,14 @@
       "description": "Accepted"
      }
     },
-    "summary": "Seen 1 requests",
+    "summary": "Seen 2 requests",
     "tags": [
      "carts"
     ]
    },
    "parameters": [
     {
+     "description": "Origin: GET http://user.sock-shop/login &rarr; json: $.user.id",
      "in": "path",
      "name": "customerId",
      "required": true,
@@ -217,6 +220,7 @@
      "style": "simple"
     },
     {
+     "description": "Origin: GET http://carts.sock-shop/carts/{customerId}/items &rarr; json: $[*].itemId",
      "in": "path",
      "name": "itemId",
      "required": true,
@@ -255,13 +259,14 @@
       "description": "Accepted"
      }
     },
-    "summary": "Seen 99 requests",
+    "summary": "Seen 101 requests",
     "tags": [
      "carts"
     ]
    },
    "parameters": [
     {
+     "description": "Origin: GET http://user.sock-shop/login &rarr; json: $.user.id",
      "in": "path",
      "name": "customerId",
      "required": true,
