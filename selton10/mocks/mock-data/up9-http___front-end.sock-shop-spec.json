@@ -1782,13 +1782,13 @@
  },
  "tags": [
   {
+   "name": "orders"
+  },
+  {
    "name": "catalogue"
   },
   {
    "name": "cart"
-  },
-  {
-   "name": "orders"
   }
  ]
 }
