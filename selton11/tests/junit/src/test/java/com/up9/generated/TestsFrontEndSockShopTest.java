@@ -244,6 +244,7 @@ public class TestsFrontEndSockShopTest
         }});
         final Response response = frontEndSockShop.get(request, "/catalogue/size");
         assertStatusCode(response.code(), 200);
+        assertJSONPath("$.id", "size", response.body().string());
     }
 
     @Test

@@ -239,6 +239,7 @@ class Tests_front_end_sock_shop(unittest.TestCase):
         qstr = '?' + urlencode([('tags', '')])
         resp = front_end_sock_shop.get('/catalogue/size' + qstr, headers=dict([('x-requested-with', 'XMLHttpRequest')]))
         resp.assert_status_code(200)
+        resp.assert_jsonpath('$.id', expected_value='size')
 
     @clear_session({'spanId': 12})
     def test_12_get_category_html(self):

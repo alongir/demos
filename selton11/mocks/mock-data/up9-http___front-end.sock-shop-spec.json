@@ -19,7 +19,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 1049 requests"
+    "summary": "Seen 1066 requests"
    },
    "parameters": []
   },
@@ -145,7 +145,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 3 requests"
+    "summary": "Seen 16 requests"
    },
    "parameters": []
   },
@@ -213,7 +213,7 @@
       "description": "Accepted"
      }
     },
-    "summary": "Seen 16 requests",
+    "summary": "Seen 31 requests",
     "tags": [
      "cart"
     ]
@@ -269,7 +269,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 26 requests",
+    "summary": "Seen 30 requests",
     "tags": [
      "cart"
     ]
@@ -316,7 +316,7 @@
       "description": "Created"
      }
     },
-    "summary": "Seen 32 requests",
+    "summary": "Seen 46 requests",
     "tags": [
      "cart"
     ]
@@ -623,7 +623,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 29 requests",
+    "summary": "Seen 49 requests",
     "tags": [
      "catalogue"
     ]
@@ -667,15 +667,38 @@
         },
         "schema": {
          "properties": {
+          "count": {
+           "type": "integer"
+          },
+          "description": {
+           "type": "string"
+          },
           "err": {},
+          "id": {
+           "type": "string"
+          },
+          "imageUrl": {
+           "items": {
+            "type": "string"
+           },
+           "type": "array"
+          },
+          "name": {
+           "type": "string"
+          },
+          "price": {
+           "type": "integer"
+          },
           "size": {
            "type": "integer"
+          },
+          "tag": {
+           "items": {
+            "type": "string"
+           },
+           "type": "array"
           }
          },
-         "required": [
-          "err",
-          "size"
-         ],
          "type": "object"
         }
        }
@@ -683,7 +706,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 8 requests",
+    "summary": "Seen 9 requests",
     "tags": [
      "catalogue"
     ]
@@ -810,7 +833,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 11 requests"
+    "summary": "Seen 26 requests"
    },
    "parameters": []
   },
@@ -987,7 +1010,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 10 requests"
+    "summary": "Seen 25 requests"
    },
    "parameters": []
   },
@@ -1017,7 +1040,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 13 requests"
+    "summary": "Seen 28 requests"
    },
    "parameters": []
   },
@@ -1268,7 +1291,7 @@
       "description": "Created"
      }
     },
-    "summary": "Seen 30 requests",
+    "summary": "Seen 43 requests",
     "tags": [
      "orders"
     ]
@@ -1331,7 +1354,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 8 requests"
+    "summary": "Seen 10 requests"
    },
    "parameters": []
   }
@@ -1341,10 +1364,10 @@
    "name": "catalogue"
   },
   {
-   "name": "cart"
+   "name": "orders"
   },
   {
-   "name": "orders"
+   "name": "cart"
   }
  ]
 }

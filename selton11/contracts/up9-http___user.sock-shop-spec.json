@@ -109,7 +109,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 43 requests"
+    "summary": "Seen 53 requests"
    },
    "parameters": [
     {
@@ -220,7 +220,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 42 requests"
+    "summary": "Seen 52 requests"
    },
    "parameters": [
     {
@@ -361,7 +361,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 111 requests",
+    "summary": "Seen 131 requests",
     "tags": [
      "customers"
     ]
@@ -499,7 +499,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 50 requests",
+    "summary": "Seen 60 requests",
     "tags": [
      "customers"
     ]
@@ -627,7 +627,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 50 requests",
+    "summary": "Seen 60 requests",
     "tags": [
      "customers"
     ]
@@ -770,7 +770,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 79 requests"
+    "summary": "Seen 90 requests"
    },
    "parameters": []
   }

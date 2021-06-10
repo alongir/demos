@@ -361,8 +361,13 @@ it("test_10_get_catalogue_size", () => {
         return response.text();
     })
     .then((text) => {
+        return JSON.parse(text);
     })
     .then((data) => {
+        expect(JSONPath({
+            path: "$.id",
+            json: data
+        })).toContain("size");
     });
 });
 
