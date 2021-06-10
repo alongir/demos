@@ -2928,10 +2928,10 @@
  },
  "tags": [
   {
-   "name": "proxies"
+   "name": "applications"
   },
   {
-   "name": "applications"
+   "name": "proxies"
   }
  ]
 }
