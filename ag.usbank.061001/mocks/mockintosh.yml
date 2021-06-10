@@ -143,7 +143,13 @@ services:
     response:
       headers:
         Content-Type: application/json
-      body: '@mock-data/resp_usbank_app_quantummetric_com_22.json'
+      body: |-
+        {
+         "s": 1,
+         "e": 0,
+         "E": [],
+         "Ex": []
+        }
 - name: https://usbank-sync.quantummetric.com
   port: 8008
   managementRoot: __admin

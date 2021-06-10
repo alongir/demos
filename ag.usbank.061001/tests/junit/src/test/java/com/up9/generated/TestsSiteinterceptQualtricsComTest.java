@@ -30,14 +30,13 @@ public class TestsSiteinterceptQualtricsComTest
         final String Q_InterceptID = json.getString("Q_InterceptID");
         final String Q_ORIGIN = json.getString("Q_ORIGIN");
 
-        // GET https://www.usbank.com/bank-accounts/checking-accounts.html (endp 1)
+        // GET https://www.usbank.com/index.html (endp 3)
         final HttpTarget wwwUsbankCom = getHttpClient("https://www.usbank.com", new Authentication());
         final HttpRequest request = new HttpRequest();
-        final Response response = wwwUsbankCom.get(request, "/bank-accounts/checking-accounts.html");
+        final Response response = wwwUsbankCom.get(request, "/index.html");
         assertStatusCode(response.code(), 200);
-        assertCSSselect("dialog.dialog.shield-zipcodes[name=\"#saveXZip\"] div.content div.heading.large h1", "Zip Code", response.body().string());
-        assertCSSselect("html head title", "Checking accounts | Open a Personal Checking Account | U.S. Bank", response.body().string());
-        final String Q_LOC = CSSselect("html head meta[content] @content", response.body().string());
+        assertCSSselect("html head title", "Consumer banking | Personal banking | U.S. Bank", response.body().string());
+        final String Q_LOC = CSSselect("html head link[href] @href", response.body().string());
 
         // GET https://siteintercept.qualtrics.com/WRSiteInterceptEngine/Asset.php (endp 19)
         final HttpTarget siteinterceptQualtricsCom = getHttpClient("https://siteintercept.qualtrics.com", new Authentication());

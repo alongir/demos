@@ -7,7 +7,7 @@
  "paths": {
   "/bank-accounts/checking-accounts.html": {
    "get": {
-    "operationId": "d0dfb2d1-8a45-4da1-8e0f-0d2256eeb785",
+    "operationId": "52026ea3-a23f-46d8-bb32-4d544fe8dfd8",
     "parameters": [],
     "responses": {
      "200": {
@@ -28,7 +28,7 @@
   },
   "/bank-accounts/checking-accounts/gold-checking-account.html": {
    "get": {
-    "operationId": "8c71db82-15e1-45df-bdfe-3ba4366edd79",
+    "operationId": "e4b2eaa5-44ed-4622-b386-86a6f7dae8fb",
     "parameters": [],
     "responses": {
      "200": {
@@ -49,7 +49,7 @@
   },
   "/index.html": {
    "get": {
-    "operationId": "f79f8e6d-e7cd-4f6d-8a98-2206b07d82be",
+    "operationId": "8068fa75-88c0-4e29-9826-e8b3ace1bb74",
     "parameters": [],
     "responses": {
      "200": {
@@ -61,7 +61,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 1 requests"
+    "summary": "Seen 2 requests"
    },
    "parameters": []
   },
@@ -129,7 +129,7 @@
     }
    ],
    "post": {
-    "operationId": "9e5b41bd-d37e-4e06-8b23-4d3caf79822e",
+    "operationId": "1e8f7e07-877b-4190-8919-25df61efa6b6",
     "parameters": [],
     "requestBody": {
      "content": {
@@ -172,13 +172,13 @@
       "description": "Created"
      }
     },
-    "summary": "Seen 3 requests"
+    "summary": "Seen 5 requests"
    }
   },
   "/svt/usbank/shield/fetchDisclosureContent": {
    "parameters": [],
    "post": {
-    "operationId": "9b817159-ca26-48cf-ae52-320ca184f94e",
+    "operationId": "dd24952c-fdcb-48a9-861f-9133b92345b6",
     "parameters": [
      {
       "in": "header",

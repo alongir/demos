@@ -5,17 +5,16 @@ describe.each(dataset("data/dataset_18.json"))("test_18_post_WRSiteInterceptEngi
     it("test_18_post_WRSiteInterceptEngine_", () => {
         clearSession();
 
-        // GET https://www.usbank.com/bank-accounts/checking-accounts.html (endp 1)
+        // GET https://www.usbank.com/index.html (endp 3)
         const www_usbank_com = getHttpClient("https://www.usbank.com", authenticate);
-        return www_usbank_com.fetch("/bank-accounts/checking-accounts.html")
+        return www_usbank_com.fetch("/index.html")
         .then((response) => {
             expect(response.status).toEqual(200);
             return response.text();
         })
         .then((text) => {
-            expect(CSSselect("dialog.dialog.shield-zipcodes[name=\"#saveXZip\"] div.content div.heading.large h1", text)).toContain("Zip Code");
-            expect(CSSselect("html head title", text)).toContain("Checking accounts | Open a Personal Checking Account | U.S. Bank");
-            const Q_LOC = CSSselect("html head meta[content] @content", response).text().trim();
+            expect(CSSselect("html head title", text)).toContain("Consumer banking | Personal banking | U.S. Bank");
+            const Q_LOC = CSSselect("html head link[href] @href", response).text().trim();
         })
         .then((data) => {
             // GET https://siteintercept.qualtrics.com/WRSiteInterceptEngine/Asset.php (endp 19)

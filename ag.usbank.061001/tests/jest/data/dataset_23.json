@@ -2,15 +2,15 @@
  "parameters": [
   {
    "name": "PRODUCT_CODE",
-   "uuid": "abaf4d05-851d-4e71-b828-b41957f4270c"
+   "uuid": "9e48e334-58f6-495a-aab8-94115c062f53"
   },
   {
    "name": "X",
-   "uuid": "b9f444d9-2267-420b-b3c1-531b67c4fd10"
+   "uuid": "3207b5c4-6245-4bd2-bd9d-9258527c8402"
   },
   {
    "name": "s",
-   "uuid": "38d27f84-8760-4319-ada9-8d8e2ec29674"
+   "uuid": "fc519814-f636-48bf-b5ba-f58fd4279551"
   }
  ],
  "rows": [

@@ -19,6 +19,18 @@ import static com.up9.up9lib.Common.*;
 public class TestsWwwUsbankComTest
 {
     @Test
+    public void testGetBankAccountsCheckingAccountsHtml01() throws MalformedURLException, IOException
+    {
+        // GET https://www.usbank.com/bank-accounts/checking-accounts.html (endp 1)
+        final HttpTarget wwwUsbankCom = getHttpClient("https://www.usbank.com", new Authentication());
+        final HttpRequest request = new HttpRequest();
+        final Response response = wwwUsbankCom.get(request, "/bank-accounts/checking-accounts.html");
+        assertStatusCode(response.code(), 200);
+        assertCSSselect("dialog.dialog.shield-zipcodes[name=\"#saveXZip\"] div.content div.heading.large h1", "Zip Code", response.body().string());
+        assertCSSselect("html head title", "Checking accounts | Open a Personal Checking Account | U.S. Bank", response.body().string());
+    }
+
+    @Test
     public void testGetBankAccountsCheckingAccountsGoldCheckingAccountHtml02() throws MalformedURLException, IOException
     {
         // GET https://www.usbank.com/bank-accounts/checking-accounts/gold-checking-account.html (endp 2)
@@ -28,17 +40,6 @@ public class TestsWwwUsbankComTest
         assertStatusCode(response.code(), 200);
         assertCSSselect("section.pubIns.productDetailsPage div div.bodyContent.container-fluid div.row div.bannerResponsiveGrid div div.aem-Grid div.banner.parbase.aem-GridColumn div.USBDesignSystem--Shield.USBHero div div.USBHero__Container.clearfix div.clearfix div.text div div.textContainer h1", "U.S. BANK GOLD CHECKING PACKAGE", response.body().string());
         assertCSSselect("html head title", "Gold Checking account | Personal Checking account | U.S. Bank", response.body().string());
-    }
-
-    @Test
-    public void testGetIndexHtml03() throws MalformedURLException, IOException
-    {
-        // GET https://www.usbank.com/index.html (endp 3)
-        final HttpTarget wwwUsbankCom = getHttpClient("https://www.usbank.com", new Authentication());
-        final HttpRequest request = new HttpRequest();
-        final Response response = wwwUsbankCom.get(request, "/index.html");
-        assertStatusCode(response.code(), 200);
-        assertCSSselect("html head title", "Consumer banking | Personal banking | U.S. Bank", response.body().string());
     }
 
     @ParameterizedTest

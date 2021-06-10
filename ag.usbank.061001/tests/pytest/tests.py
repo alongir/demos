@@ -144,13 +144,12 @@ class Tests_siteintercept_qualtrics_com(unittest.TestCase):
     def test_18_post_WRSiteInterceptEngine_(self, data_row):
         BrandDC, Module, Q_CLIENTVERSION, Q_CLIENTVERSION1, Q_CLIENTVERSION2, Q_InterceptID, Q_ORIGIN = data_row
 
-        # GET https://www.usbank.com/bank-accounts/checking-accounts.html (endp 1)
+        # GET https://www.usbank.com/index.html (endp 3)
         www_usbank_com = get_http_client('https://www.usbank.com', authenticate)
-        resp = www_usbank_com.get('/bank-accounts/checking-accounts.html')
+        resp = www_usbank_com.get('/index.html')
         resp.assert_status_code(200)
-        resp.assert_cssselect('dialog.dialog.shield-zipcodes[name="#saveXZip"] div.content div.heading.large h1', expected_value='Zip Code')
-        resp.assert_cssselect('html head title', expected_value='Checking accounts | Open a Personal Checking Account | U.S. Bank')
-        Q_LOC = cssselect('html head meta[content] @content', resp)
+        resp.assert_cssselect('html head title', expected_value='Consumer banking | Personal banking | U.S. Bank')
+        Q_LOC = cssselect('html head link[href] @href', resp)
 
         # GET https://siteintercept.qualtrics.com/WRSiteInterceptEngine/Asset.php (endp 19)
         siteintercept_qualtrics_com = get_http_client('https://siteintercept.qualtrics.com', authenticate)
@@ -202,7 +201,28 @@ class Tests_usbank_app_quantummetric_com(unittest.TestCase):
     @json_dataset('data/dataset_22.json')
     @clear_session({'spanId': 22})
     def test_22_get_(self, data_row):
-        H, Q, s = data_row
+        H, Module, Q, Q_CLIENTVERSION, Q_CLIENTVERSION1, Q_InterceptID, Q_ORIGIN, s = data_row
+
+        # GET https://www.usbank.com/index.html (endp 3)
+        www_usbank_com = get_http_client('https://www.usbank.com', authenticate)
+        resp = www_usbank_com.get('/index.html')
+        resp.assert_status_code(200)
+        resp.assert_cssselect('html head title', expected_value='Consumer banking | Personal banking | U.S. Bank')
+        Q_LOC = cssselect('html head link[href] @href', resp)
+
+        # GET https://siteintercept.qualtrics.com/WRSiteInterceptEngine/Asset.php (endp 19)
+        siteintercept_qualtrics_com = get_http_client('https://siteintercept.qualtrics.com', authenticate)
+        qstr = '?' + urlencode([('Module', Module), ('Q_CLIENTTYPE', 'web'), ('Q_CLIENTVERSION', Q_CLIENTVERSION), ('Q_InterceptID', Q_InterceptID), ('Q_ORIGIN', Q_ORIGIN), ('Version', str(random.randint(1, 26)))])
+        resp = siteintercept_qualtrics_com.get('/WRSiteInterceptEngine/Asset.php' + qstr)
+        resp.assert_status_code(200)
+        resp.assert_jsonpath('$.CreativeDefinition.Options.Message.Headline.Text', expected_value='Will you take our survey?')
+        Q_ZoneID = jsonpath('$.CreativeDefinition.ZoneID', resp)
+
+        # POST https://siteintercept.qualtrics.com/WRSiteInterceptEngine/Targeting.php (endp 20)
+        qstr = '?' + urlencode([('Q_CLIENTTYPE', 'web'), ('Q_CLIENTVERSION', Q_CLIENTVERSION1), ('Q_ZoneID', Q_ZoneID)])
+        resp = siteintercept_qualtrics_com.post('/WRSiteInterceptEngine/Targeting.php' + qstr, data=[('Q_LOC', Q_LOC)])
+        resp.assert_status_code(200)
+        resp.assert_jsonpath('$.ClientSideIntercepts[*].LogicTree.Left.Left.Type', expected_value='LogicNode')
 
         # GET https://usbank-app.quantummetric.com/ (endp 22)
         usbank_app_quantummetric_com = get_http_client('https://usbank-app.quantummetric.com', authenticate)
@@ -238,6 +258,15 @@ class Tests_usbank_sync_quantummetric_com(unittest.TestCase):
 @data_driven_tests
 class Tests_www_usbank_com(unittest.TestCase):
 
+    @clear_session({'spanId': 1})
+    def test_01_get_bank_accounts_checking_accounts_html(self):
+        # GET https://www.usbank.com/bank-accounts/checking-accounts.html (endp 1)
+        www_usbank_com = get_http_client('https://www.usbank.com', authenticate)
+        resp = www_usbank_com.get('/bank-accounts/checking-accounts.html')
+        resp.assert_status_code(200)
+        resp.assert_cssselect('dialog.dialog.shield-zipcodes[name="#saveXZip"] div.content div.heading.large h1', expected_value='Zip Code')
+        resp.assert_cssselect('html head title', expected_value='Checking accounts | Open a Personal Checking Account | U.S. Bank')
+
     @clear_session({'spanId': 2})
     def test_02_get_bank_accounts_checking_accounts_gold_checking_account_html(self):
         # GET https://www.usbank.com/bank-accounts/checking-accounts/gold-checking-account.html (endp 2)
@@ -246,14 +275,6 @@ class Tests_www_usbank_com(unittest.TestCase):
         resp.assert_status_code(200)
         resp.assert_cssselect('section.pubIns.productDetailsPage div div.bodyContent.container-fluid div.row div.bannerResponsiveGrid div div.aem-Grid div.banner.parbase.aem-GridColumn div.USBDesignSystem--Shield.USBHero div div.USBHero__Container.clearfix div.clearfix div.text div div.textContainer h1', expected_value='U.S. BANK GOLD CHECKING PACKAGE')
         resp.assert_cssselect('html head title', expected_value='Gold Checking account | Personal Checking account | U.S. Bank')
-
-    @clear_session({'spanId': 3})
-    def test_03_get_index_html(self):
-        # GET https://www.usbank.com/index.html (endp 3)
-        www_usbank_com = get_http_client('https://www.usbank.com', authenticate)
-        resp = www_usbank_com.get('/index.html')
-        resp.assert_status_code(200)
-        resp.assert_cssselect('html head title', expected_value='Consumer banking | Personal banking | U.S. Bank')
 
     @json_dataset('data/dataset_4.json')
     @clear_session({'spanId': 4})

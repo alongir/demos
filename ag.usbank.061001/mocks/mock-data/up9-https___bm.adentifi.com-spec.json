@@ -7,7 +7,7 @@
  "paths": {
   "/pixel/conv/{param}": {
    "get": {
-    "operationId": "3a8154e8-0641-4e84-8113-259419049094",
+    "operationId": "ebd90de7-f136-4b84-b9e8-2e6f20b0ade0",
     "parameters": [],
     "responses": {
      "302": {

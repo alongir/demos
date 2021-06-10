@@ -7,7 +7,7 @@
  "paths": {
   "/search.html": {
    "get": {
-    "operationId": "6ba873fc-73d8-47c0-b0b5-806c26725791",
+    "operationId": "8c7994af-b922-43c3-a6a8-79e9376a7496",
     "parameters": [],
     "responses": {
      "200": {
@@ -25,7 +25,7 @@
   },
   "/search/{param}": {
    "get": {
-    "operationId": "122591cc-f7df-4f96-b6d8-4beb58b26903",
+    "operationId": "5d23c982-4c33-4839-bb73-650b613dabae",
     "parameters": [
      {
       "in": "header",
@@ -69,7 +69,7 @@
   },
   "/{param}": {
    "get": {
-    "operationId": "5d19831e-3bfc-4b4e-b149-679a2d7984dc",
+    "operationId": "166059e9-270d-44e2-860e-2fe1142cc266",
     "parameters": [],
     "responses": {
      "200": {

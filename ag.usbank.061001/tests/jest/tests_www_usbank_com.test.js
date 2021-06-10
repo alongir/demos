@@ -1,6 +1,24 @@
 const authenticate = require("./authentication");
 const {CSSselect, JSONBuild, JSONPath, clearSession, dataset, getHttpClient} = require("./up9lib");
 
+it("test_01_get_bank_accounts_checking_accounts_html", () => {
+    clearSession();
+
+    // GET https://www.usbank.com/bank-accounts/checking-accounts.html (endp 1)
+    const www_usbank_com = getHttpClient("https://www.usbank.com", authenticate);
+    return www_usbank_com.fetch("/bank-accounts/checking-accounts.html")
+    .then((response) => {
+        expect(response.status).toEqual(200);
+        return response.text();
+    })
+    .then((text) => {
+        expect(CSSselect("dialog.dialog.shield-zipcodes[name=\"#saveXZip\"] div.content div.heading.large h1", text)).toContain("Zip Code");
+        expect(CSSselect("html head title", text)).toContain("Checking accounts | Open a Personal Checking Account | U.S. Bank");
+    })
+    .then((data) => {
+    });
+});
+
 it("test_02_get_bank_accounts_checking_accounts_gold_checking_account_html", () => {
     clearSession();
 
@@ -14,23 +32,6 @@ it("test_02_get_bank_accounts_checking_accounts_gold_checking_account_html", () 
     .then((text) => {
         expect(CSSselect("section.pubIns.productDetailsPage div div.bodyContent.container-fluid div.row div.bannerResponsiveGrid div div.aem-Grid div.banner.parbase.aem-GridColumn div.USBDesignSystem--Shield.USBHero div div.USBHero__Container.clearfix div.clearfix div.text div div.textContainer h1", text)).toContain("U.S. BANK GOLD CHECKING PACKAGE");
         expect(CSSselect("html head title", text)).toContain("Gold Checking account | Personal Checking account | U.S. Bank");
-    })
-    .then((data) => {
-    });
-});
-
-it("test_03_get_index_html", () => {
-    clearSession();
-
-    // GET https://www.usbank.com/index.html (endp 3)
-    const www_usbank_com = getHttpClient("https://www.usbank.com", authenticate);
-    return www_usbank_com.fetch("/index.html")
-    .then((response) => {
-        expect(response.status).toEqual(200);
-        return response.text();
-    })
-    .then((text) => {
-        expect(CSSselect("html head title", text)).toContain("Consumer banking | Personal banking | U.S. Bank");
     })
     .then((data) => {
     });

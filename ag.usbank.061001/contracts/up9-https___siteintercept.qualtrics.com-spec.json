@@ -8,7 +8,7 @@
   "/WRSiteInterceptEngine/": {
    "parameters": [],
    "post": {
-    "operationId": "5f7efa6e-ac06-4379-b8e9-7b28a9acff4c",
+    "operationId": "c257ae14-8a88-4955-9f65-12ccf4326fd5",
     "parameters": [
      {
       "description": "Origin: POST https://siteintercept.qualtrics.com/WRSiteInterceptEngine/Targeting.php &rarr; json: $.ClientSideIntercepts[*].ActionSets[*].ActionSetID",
@@ -142,7 +142,7 @@
   },
   "/WRSiteInterceptEngine/Asset.php": {
    "get": {
-    "operationId": "acb79408-585b-4500-bb6d-8e63cf49ad48",
+    "operationId": "86bd65c6-3840-49d8-bf66-04e7636f21f0",
     "parameters": [
      {
       "in": "query",
@@ -1094,7 +1094,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 28 requests",
+    "summary": "Seen 32 requests",
     "tags": [
      "WRSiteInterceptEngine"
     ]
@@ -1104,7 +1104,7 @@
   "/WRSiteInterceptEngine/Targeting.php": {
    "parameters": [],
    "post": {
-    "operationId": "e32167e0-bb21-440b-a657-a60165ab17e8",
+    "operationId": "26e2ef93-25b9-4b82-9848-cb397f9a415b",
     "parameters": [
      {
       "in": "query",
@@ -2288,7 +2288,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 5 requests",
+    "summary": "Seen 6 requests",
     "tags": [
      "WRSiteInterceptEngine"
     ]
