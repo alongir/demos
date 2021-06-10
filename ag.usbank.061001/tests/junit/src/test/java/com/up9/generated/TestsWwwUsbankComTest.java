@@ -54,6 +54,17 @@ public class TestsWwwUsbankComTest
     }
 
     @Test
+    public void testGetCorporateAndCommercialBankingSolutionsCreditAndFinancingHtml81() throws MalformedURLException, IOException
+    {
+        // GET https://www.usbank.com/corporate-and-commercial-banking/solutions/credit-and-financing.html (endp 81)
+        final HttpTarget wwwUsbankCom = getHttpClient("https://www.usbank.com", new Authentication());
+        final HttpRequest request = new HttpRequest();
+        final Response response = wwwUsbankCom.get(request, "/corporate-and-commercial-banking/solutions/credit-and-financing.html");
+        assertStatusCode(response.code(), 200);
+        assertCSSselect("a#continue", "Continue", response.body().string());
+    }
+
+    @Test
     public void testGetCreditCardsHref49() throws MalformedURLException, IOException
     {
         // GET https://www.usbank.com/index.html (endp 4)
@@ -167,6 +178,24 @@ public class TestsWwwUsbankComTest
         final Response response = wwwUsbankCom.post(request, "/svt/usbank/shield/fetchDisclosureContent");
         assertStatusCode(response.code(), 200);
         assertJSONPath("$[*].status", "success", response.body().string());
+    }
+
+    @Test
+    public void testGetWealthManagementHref84() throws MalformedURLException, IOException
+    {
+        // GET https://www.usbank.com/index.html (endp 4)
+        final HttpTarget wwwUsbankCom = getHttpClient("https://www.usbank.com", new Authentication());
+        final HttpRequest request = new HttpRequest();
+        final Response response = wwwUsbankCom.get(request, "/index.html");
+        assertStatusCode(response.code(), 200);
+        assertCSSselect("html head title", "Consumer banking | Personal banking | U.S. Bank", response.body().string());
+        final String href = urlPart("/2", CSSselect("div#navigation-menu-dropdown div.menu-scrolls ul.menu-list.menu-primary li.menu-item.menu-primary-item ul.menu-list.menu-secondary li.menu-item.menu-secondary-item ul.menu-list.menu-tertiary li.menu-item.menu-tertiary-item a.menu-link.menu-tertiary-link[href] @href", response.body().string()));
+
+        // GET https://www.usbank.com/wealth-management/{href} (endp 84)
+        final HttpRequest request2 = new HttpRequest();
+        final Response response2 = wwwUsbankCom.get(request2, "/wealth-management/" + href);
+        assertStatusCode(response2.code(), 200);
+        assertCSSselect("section.pubIns div.bodyContent.container-fluid div.row div div.aem-Grid div.containerComp.parbase.aem-GridColumn div.containerComponent.mediumPaddingTopDT.largePaddingRightDT.mediumPaddingBottomDT.largePaddingLeftDT.smallPaddingTopMob.smallPaddingRightMob.smallPaddingBottomMob.smallPaddingLeftMob.gray div div.aem-Grid div.aem-GridColumn div.xf-content-height div.aem-Grid div.containerComp.parbase.aem-GridColumn div.containerComponent div div.aem-Grid div.aem-GridColumn div.xf-content-height div.aem-Grid div.containerComp.parbase.aem-GridColumn div.containerComponent div div.aem-Grid div.containerComp.parbase.aem-GridColumn--default--none.aem-GridColumn div.containerComponent.noneTopDT.mediumPaddingRightDT.noneBottomDT.noneleftDT.noneTopMob.noneRightMob.noneBottomMob.noneleftMob.transparent div div.aem-Grid div.parbase.aem-GridColumn div.usbTextImage div.textimage-text.text.largePaddingBottomSeparator div p", "No minimum investment required", response2.body().string());
     }
 }
 

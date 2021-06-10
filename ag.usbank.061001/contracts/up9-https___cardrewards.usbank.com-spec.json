@@ -7,7 +7,7 @@
  "paths": {
   "/connect/{param}": {
    "get": {
-    "operationId": "e616d06a-e66b-4424-a2a2-3841852235c3",
+    "operationId": "76c6ee7e-6878-400d-9d85-693dd21b4e5a",
     "parameters": [],
     "responses": {
      "200": {

@@ -5,6 +5,21 @@ from authentication import authenticate
 
 
 @data_driven_tests
+class Tests_apply_usbank_com(unittest.TestCase):
+
+    @json_dataset('data/dataset_36.json')
+    @clear_session({'spanId': 36})
+    def test_36_get_apply_apply_html(self, data_row):
+        PRODUCT_CODE, = data_row
+
+        # GET https://apply.usbank.com/apply/apply.html (endp 36)
+        apply_usbank_com = get_http_client('https://apply.usbank.com', authenticate)
+        qstr = '?' + urlencode([('PRODUCT_CODE', PRODUCT_CODE), ('SUB_PRODUCT_CODE', 'PI')])
+        resp = apply_usbank_com.get('/apply/apply.html' + qstr)
+        resp.assert_status_code(302)
+
+
+@data_driven_tests
 class Tests_cardrewards_usbank_com(unittest.TestCase):
 
     @json_dataset('data/dataset_69.json')
@@ -294,14 +309,14 @@ class Tests_usbank_app_quantummetric_com(unittest.TestCase):
     @json_dataset('data/dataset_23.json')
     @clear_session({'spanId': 23})
     def test_23_post_(self, data_row):
-        H, PRODUCT_CODE, U, s = data_row
+        H, U, s = data_row
 
-        # GET https://apply.usbank.com/apply/apply.html (endp 36)
-        apply_usbank_com = get_http_client('https://apply.usbank.com', authenticate)
-        qstr = '?' + urlencode([('PRODUCT_CODE', PRODUCT_CODE), ('SUB_PRODUCT_CODE', 'PI')])
-        resp = apply_usbank_com.get('/apply/apply.html' + qstr)
-        resp.assert_status_code(302)
-        u = get_data_from_header('location', resp)
+        # GET https://www.usbank.com/index.html (endp 4)
+        www_usbank_com = get_http_client('https://www.usbank.com', authenticate)
+        resp = www_usbank_com.get('/index.html')
+        resp.assert_status_code(200)
+        resp.assert_cssselect('html head title', expected_value='Consumer banking | Personal banking | U.S. Bank')
+        u = cssselect('html head link[href] @href', resp)
 
         # POST https://usbank-app.quantummetric.com/ (endp 23)
         usbank_app_quantummetric_com = get_http_client('https://usbank-app.quantummetric.com', authenticate)
@@ -412,6 +427,14 @@ class Tests_www_usbank_com(unittest.TestCase):
         resp.assert_cssselect('section.pubIns.productDetailsPage div div.bodyContent.container-fluid div.row div.bannerResponsiveGrid div div.aem-Grid div.banner.parbase.aem-GridColumn div.USBDesignSystem--Shield.USBHero div div.USBHero__Container.clearfix div.clearfix div.text div div.textContainer h1', expected_value='U.S. BANK GOLD CHECKING PACKAGE')
         resp.assert_cssselect('html head title', expected_value='Gold Checking account | Personal Checking account | U.S. Bank')
 
+    @clear_session({'spanId': 81})
+    def test_81_get_corporate_and_commercial_banking_solutions_credit_and_financing_html(self):
+        # GET https://www.usbank.com/corporate-and-commercial-banking/solutions/credit-and-financing.html (endp 81)
+        www_usbank_com = get_http_client('https://www.usbank.com', authenticate)
+        resp = www_usbank_com.get('/corporate-and-commercial-banking/solutions/credit-and-financing.html')
+        resp.assert_status_code(200)
+        resp.assert_cssselect('a#continue', expected_value='Continue')
+
     @clear_session({'spanId': 49})
     def test_49_get_credit_cards_href(self):
         # GET https://www.usbank.com/index.html (endp 4)
@@ -482,3 +505,17 @@ class Tests_www_usbank_com(unittest.TestCase):
         resp = www_usbank_com.post('/svt/usbank/shield/fetchDisclosureContent', data=[('businessLines', businessLines), ('disclosureTitles', disclosureTitles)], headers=dict([('x-requested-with', 'XMLHttpRequest')]))
         resp.assert_status_code(200)
         resp.assert_jsonpath('$[*].status', expected_value='success')
+
+    @clear_session({'spanId': 84})
+    def test_84_get_wealth_management_href(self):
+        # GET https://www.usbank.com/index.html (endp 4)
+        www_usbank_com = get_http_client('https://www.usbank.com', authenticate)
+        resp = www_usbank_com.get('/index.html')
+        resp.assert_status_code(200)
+        resp.assert_cssselect('html head title', expected_value='Consumer banking | Personal banking | U.S. Bank')
+        href = url_part('/2', cssselect('div#navigation-menu-dropdown div.menu-scrolls ul.menu-list.menu-primary li.menu-item.menu-primary-item ul.menu-list.menu-secondary li.menu-item.menu-secondary-item ul.menu-list.menu-tertiary li.menu-item.menu-tertiary-item a.menu-link.menu-tertiary-link[href] @href', resp))
+
+        # GET https://www.usbank.com/wealth-management/{href} (endp 84)
+        resp = www_usbank_com.get(f'/wealth-management/{href}')
+        resp.assert_status_code(200)
+        resp.assert_cssselect('section.pubIns div.bodyContent.container-fluid div.row div div.aem-Grid div.containerComp.parbase.aem-GridColumn div.containerComponent.mediumPaddingTopDT.largePaddingRightDT.mediumPaddingBottomDT.largePaddingLeftDT.smallPaddingTopMob.smallPaddingRightMob.smallPaddingBottomMob.smallPaddingLeftMob.gray div div.aem-Grid div.aem-GridColumn div.xf-content-height div.aem-Grid div.containerComp.parbase.aem-GridColumn div.containerComponent div div.aem-Grid div.aem-GridColumn div.xf-content-height div.aem-Grid div.containerComp.parbase.aem-GridColumn div.containerComponent div div.aem-Grid div.containerComp.parbase.aem-GridColumn--default--none.aem-GridColumn div.containerComponent.noneTopDT.mediumPaddingRightDT.noneBottomDT.noneleftDT.noneTopMob.noneRightMob.noneBottomMob.noneleftMob.transparent div div.aem-Grid div.parbase.aem-GridColumn div.usbTextImage div.textimage-text.text.largePaddingBottomSeparator div p', expected_value='No minimum investment required')

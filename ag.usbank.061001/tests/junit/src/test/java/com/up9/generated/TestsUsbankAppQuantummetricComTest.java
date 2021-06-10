@@ -24,20 +24,16 @@ public class TestsUsbankAppQuantummetricComTest
     public void testPost23(final JsonObject json) throws MalformedURLException, IOException
     {
         final String H = json.getString("H");
-        final String PRODUCT_CODE = json.getString("PRODUCT_CODE");
         final String U = json.getString("U");
         final String s = json.getString("s");
 
-        // GET https://apply.usbank.com/apply/apply.html (endp 36)
-        final HttpTarget applyUsbankCom = getHttpClient("https://apply.usbank.com", new Authentication());
+        // GET https://www.usbank.com/index.html (endp 4)
+        final HttpTarget wwwUsbankCom = getHttpClient("https://www.usbank.com", new Authentication());
         final HttpRequest request = new HttpRequest();
-        request.setQueryString(new Hashtable<String, Object>() {{
-            put("PRODUCT_CODE", PRODUCT_CODE);
-            put("SUB_PRODUCT_CODE", "PI");
-        }});
-        final Response response = applyUsbankCom.get(request, "/apply/apply.html");
-        assertStatusCode(response.code(), 302);
-        final String u = getHeader(response, "location");
+        final Response response = wwwUsbankCom.get(request, "/index.html");
+        assertStatusCode(response.code(), 200);
+        assertCSSselect("html head title", "Consumer banking | Personal banking | U.S. Bank", response.body().string());
+        final String u = CSSselect("html head link[href] @href", response.body().string());
 
         // POST https://usbank-app.quantummetric.com/ (endp 23)
         final HttpTarget usbankAppQuantummetricCom = getHttpClient("https://usbank-app.quantummetric.com", new Authentication());

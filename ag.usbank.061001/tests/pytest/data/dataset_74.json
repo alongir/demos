@@ -2,15 +2,15 @@
  "parameters": [
   {
    "name": "cardId",
-   "uuid": "17e97ede-435e-4cb4-9a6f-0a6f44a0713b"
+   "uuid": "625739c9-2295-487c-ae31-94fba29391ac"
   },
   {
    "name": "param",
-   "uuid": "659b8b00-120c-4679-8680-a51734e68072"
+   "uuid": "d59090f3-d62f-4063-936f-cfc3df2c5a40"
   },
   {
    "name": "param1",
-   "uuid": "c8e06105-a80d-493b-bda2-6974a66c1c4d"
+   "uuid": "3e8526f9-eb52-4b12-bfde-170c10a38222"
   }
  ],
  "rows": [

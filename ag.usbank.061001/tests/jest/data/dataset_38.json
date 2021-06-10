@@ -6,7 +6,7 @@
   },
   {
    "name": "description",
-   "uuid": "462d1192-a82a-4f15-b713-92cb77fe936e"
+   "uuid": "1418e359-356c-4fc3-8450-70e9f3e44dd3"
   },
   {
    "name": "email",
@@ -26,7 +26,7 @@
   },
   {
    "name": "offerTypeCode",
-   "uuid": "45b62669-e284-4981-9bae-64943af0b05d"
+   "uuid": "f5c358ad-a683-4057-b541-2a4e4f063276"
   },
   {
    "name": "op",
@@ -46,7 +46,7 @@
   },
   {
    "name": "sourceCode",
-   "uuid": "3366e719-a7e3-4363-b17c-9eb34c30aadc"
+   "uuid": "a3622a01-86bf-40f9-81bf-ea72b0016766"
   },
   {
    "name": "subProductCode",
@@ -54,7 +54,7 @@
   },
   {
    "name": "subtype",
-   "uuid": "f42264cb-82fe-4734-91b4-546706677a3c"
+   "uuid": "08506e09-ebe6-40f4-865e-9ba4aea27d2e"
   },
   {
    "name": "x_requested_with",

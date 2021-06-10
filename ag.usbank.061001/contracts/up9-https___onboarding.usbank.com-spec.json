@@ -93,7 +93,7 @@
     }
    ],
    "post": {
-    "operationId": "9eb93c24-5d48-4b64-a30d-6b0362f9c2c0",
+    "operationId": "898d90fd-0146-41fb-a690-b56a029dda89",
     "parameters": [],
     "requestBody": {
      "content": {
@@ -141,7 +141,7 @@
   },
   "/cards/{cardId}/{param1}/{param2}/intro": {
    "get": {
-    "operationId": "6efc2015-dd0a-4c83-afc1-29ca13b5e15e",
+    "operationId": "190db4fd-3f29-4e27-b520-084e596053ca",
     "parameters": [],
     "responses": {
      "200": {
@@ -228,7 +228,7 @@
   "/proxies/v1/oad/terms-and-conditions": {
    "parameters": [],
    "post": {
-    "operationId": "3deb6135-266f-4a14-8c6d-5cbd07c98459",
+    "operationId": "6521149c-c2f0-4463-bb8f-18232cdcbc75",
     "parameters": [
      {
       "in": "header",
@@ -641,7 +641,7 @@
     }
    ],
    "post": {
-    "operationId": "937b49cd-3bb5-45d7-acdb-f6768ba1d361",
+    "operationId": "a4a91a89-51e4-49fb-b924-59542abaf6d3",
     "parameters": [
      {
       "in": "header",
@@ -2149,7 +2149,7 @@
   },
   "/{param}/v1/applications/environment": {
    "get": {
-    "operationId": "acbb6fb7-43cf-40ff-b95c-6a75f777e0ef",
+    "operationId": "fb94202f-e544-4351-a5f2-e18c027d4205",
     "parameters": [
      {
       "in": "header",

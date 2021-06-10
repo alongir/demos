@@ -105,7 +105,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 18 requests"
+    "summary": "Seen 21 requests"
    },
    "parameters": [],
    "post": {
@@ -237,7 +237,7 @@
       }
      },
      {
-      "description": "Origin: GET https://apply.usbank.com/apply/apply.html &rarr; header: location",
+      "description": "Origin: GET https://www.usbank.com/index.html &rarr; html: html head link[href] @href",
       "in": "query",
       "name": "u",
       "required": true,
@@ -290,7 +290,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 134 requests"
+    "summary": "Seen 202 requests"
    }
   }
  },

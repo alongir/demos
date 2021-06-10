@@ -301,3 +301,15 @@ services:
         Content-Type: application/json
       body: '@mock-data/resp_www_usbank_com_54.json'
       useTemplating: false
+  - path: /corporate-and-commercial-banking/solutions/credit-and-financing.html
+    response:
+      headers:
+        Content-Type: text/html
+      body: '@mock-data/resp_www_usbank_com_81.html'
+      useTemplating: false
+  - path: /wealth-management/{{href}}
+    response:
+      headers:
+        Content-Type: text/html
+      body: '@mock-data/resp_www_usbank_com_84.html'
+      useTemplating: false

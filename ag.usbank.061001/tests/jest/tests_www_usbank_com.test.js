@@ -54,6 +54,23 @@ it("test_03_get_bank_accounts_checking_accounts_gold_checking_account_html", () 
     });
 });
 
+it("test_81_get_corporate_and_commercial_banking_solutions_credit_and_financing_html", () => {
+    clearSession();
+
+    // GET https://www.usbank.com/corporate-and-commercial-banking/solutions/credit-and-financing.html (endp 81)
+    const www_usbank_com = getHttpClient("https://www.usbank.com", authenticate);
+    return www_usbank_com.fetch("/corporate-and-commercial-banking/solutions/credit-and-financing.html")
+    .then((response) => {
+        expect(response.status).toEqual(200);
+        return response.text();
+    })
+    .then((text) => {
+        expect(CSSselect("a#continue", text)).toContain("Continue");
+    })
+    .then((data) => {
+    });
+});
+
 it("test_49_get_credit_cards_href", () => {
     clearSession();
 
@@ -203,6 +220,35 @@ describe.each(dataset("data/dataset_6.json"))("test_06_post_svt_usbank_shield_fe
                 path: "$[*].status",
                 json: data
             })).toContain("success");
+        });
+    });
+});
+
+it("test_84_get_wealth_management_href", () => {
+    clearSession();
+
+    // GET https://www.usbank.com/index.html (endp 4)
+    const www_usbank_com = getHttpClient("https://www.usbank.com", authenticate);
+    return www_usbank_com.fetch("/index.html")
+    .then((response) => {
+        expect(response.status).toEqual(200);
+        return response.text();
+    })
+    .then((text) => {
+        expect(CSSselect("html head title", text)).toContain("Consumer banking | Personal banking | U.S. Bank");
+        const href = urlPart("/2", CSSselect("div#navigation-menu-dropdown div.menu-scrolls ul.menu-list.menu-primary li.menu-item.menu-primary-item ul.menu-list.menu-secondary li.menu-item.menu-secondary-item ul.menu-list.menu-tertiary li.menu-item.menu-tertiary-item a.menu-link.menu-tertiary-link[href] @href", response).text().trim());
+    })
+    .then((data) => {
+        // GET https://www.usbank.com/wealth-management/{href} (endp 84)
+        return www_usbank_com.fetch("/wealth-management/" + href)
+        .then((response) => {
+            expect(response.status).toEqual(200);
+            return response.text();
+        })
+        .then((text) => {
+            expect(CSSselect("section.pubIns div.bodyContent.container-fluid div.row div div.aem-Grid div.containerComp.parbase.aem-GridColumn div.containerComponent.mediumPaddingTopDT.largePaddingRightDT.mediumPaddingBottomDT.largePaddingLeftDT.smallPaddingTopMob.smallPaddingRightMob.smallPaddingBottomMob.smallPaddingLeftMob.gray div div.aem-Grid div.aem-GridColumn div.xf-content-height div.aem-Grid div.containerComp.parbase.aem-GridColumn div.containerComponent div div.aem-Grid div.aem-GridColumn div.xf-content-height div.aem-Grid div.containerComp.parbase.aem-GridColumn div.containerComponent div div.aem-Grid div.containerComp.parbase.aem-GridColumn--default--none.aem-GridColumn div.containerComponent.noneTopDT.mediumPaddingRightDT.noneBottomDT.noneleftDT.noneTopMob.noneRightMob.noneBottomMob.noneleftMob.transparent div div.aem-Grid div.parbase.aem-GridColumn div.usbTextImage div.textimage-text.text.largePaddingBottomSeparator div p", text)).toContain("No minimum investment required");
+        })
+        .then((data) => {
         });
     });
 });

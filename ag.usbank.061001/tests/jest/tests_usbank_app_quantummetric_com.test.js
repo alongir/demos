@@ -1,19 +1,20 @@
 const authenticate = require("./authentication");
 const {CSSselect, JSONPath, clearSession, dataset, getHttpClient, randomInteger, readFileSync, urlencode} = require("./up9lib");
 
-describe.each(dataset("data/dataset_23.json"))("test_23_post_", (H, PRODUCT_CODE, U, s) => {
+describe.each(dataset("data/dataset_23.json"))("test_23_post_", (H, U, s) => {
     it("test_23_post_", () => {
         clearSession();
 
-        // GET https://apply.usbank.com/apply/apply.html (endp 36)
-        const apply_usbank_com = getHttpClient("https://apply.usbank.com", authenticate);
-        return apply_usbank_com.fetch("/apply/apply.html" + urlencode([["PRODUCT_CODE", PRODUCT_CODE], ["SUB_PRODUCT_CODE", "PI"]]))
+        // GET https://www.usbank.com/index.html (endp 4)
+        const www_usbank_com = getHttpClient("https://www.usbank.com", authenticate);
+        return www_usbank_com.fetch("/index.html")
         .then((response) => {
-            expect(response.status).toEqual(302);
-            const u = response.headers.get("location");
+            expect(response.status).toEqual(200);
             return response.text();
         })
         .then((text) => {
+            expect(CSSselect("html head title", text)).toContain("Consumer banking | Personal banking | U.S. Bank");
+            const u = CSSselect("html head link[href] @href", response).text().trim();
         })
         .then((data) => {
             // POST https://usbank-app.quantummetric.com/ (endp 23)
