@@ -1,80 +1,6 @@
 const authenticate = require("./authentication");
 const {CSSselect, JSONBuild, JSONPath, clearSession, dataset, getHttpClient} = require("./up9lib");
 
-describe.each(dataset("data/dataset_38.json"))("test_38_post_param_v1_applications_applicationId_patch", (countriesOfCitizenship, description, email, lastName, monthlyHousingPayment, number, offerTypeCode, op, param, path, productCode, sourceCode, subProductCode, subtype, x_requested_with) => {
-    it("test_38_post_param_v1_applications_applicationId_patch", () => {
-        clearSession();
-
-        // POST https://onboarding.usbank.com/{param}/v1/applications (endp 37)
-        const onboarding_usbank_com = getHttpClient("https://onboarding.usbank.com", authenticate);
-        return onboarding_usbank_com.fetch("/" + param + "/v1/applications", {
-            method: "POST",
-            headers: {
-                "content-type": "application/json",
-                "x-requested-with": x_requested_with
-            },
-            body: JSONBuild("data/payload_for_endp_37.json", {
-                "$.products[*].cardInformation.offerTypeCode": offerTypeCode,
-                "$.products[*].cardInformation.sourceCode": sourceCode,
-                "$.products[*].description": description,
-                "$.products[*].productCode": productCode,
-                "$.products[*].subProductCode": subProductCode,
-                "$.products[*].subtype": subtype
-            })
-        })
-        .then((response) => {
-            expect(response.status).toEqual(201);
-            const securitytoken = response.headers.get("securitytoken");
-            return response.text();
-        })
-        .then((text) => {
-            return JSON.parse(text);
-        })
-        .then((data) => {
-            expect(JSONPath({
-                path: "$.applicants[*].addresses.primary.country",
-                json: data
-            })).toContain("US");
-            const applicationId = JSONPath({
-                path: "$.applicationId",
-                json: data
-            })[0];
-
-            // POST https://onboarding.usbank.com/{param}/v1/applications/{applicationId}/patch (endp 38)
-            return onboarding_usbank_com.fetch("/" + param + "/v1/applications/" + applicationId + "/patch", {
-                method: "POST",
-                headers: {
-                    "content-type": "application/json",
-                    "securitytoken": securitytoken,
-                    "x-requested-with": "X-Requested-With"
-                },
-                body: JSONBuild("data/payload_for_endp_38.json", {
-                    "$[*].op": op,
-                    "$[*].path": path,
-                    "$[*].value.countriesOfCitizenship[*]": countriesOfCitizenship,
-                    "$[*].value.lastName": lastName,
-                    "$[*].value.monthlyHousingPayment": monthlyHousingPayment,
-                    "$[*].value.number": number,
-                    "$[*].value.personal.email": email
-                })
-            })
-            .then((response) => {
-                expect(response.status).toEqual(200);
-                return response.text();
-            })
-            .then((text) => {
-                return JSON.parse(text);
-            })
-            .then((data) => {
-                expect(JSONPath({
-                    path: "$.applicants[*].addresses.primary.country",
-                    json: data
-                })).toContain("US");
-            });
-        });
-    });
-});
-
 describe.each(dataset("data/dataset_73.json"))("test_73_get_param_v1_applications_environment", (param) => {
     it("test_73_get_param_v1_applications_environment", () => {
         clearSession();
@@ -229,67 +155,31 @@ describe.each(dataset("data/dataset_76.json"))("test_76_post_proxies_v1_oad_term
     });
 });
 
-describe.each(dataset("data/dataset_40.json"))("test_40_post_proxies_v1_validateAddress", (description, offerTypeCode, param, productCode, sourceCode, subProductCode, subtype, usAddress, x_requested_with, zipCode) => {
+describe.each(dataset("data/dataset_40.json"))("test_40_post_proxies_v1_validateAddress", (securitytoken, usAddress, zipCode) => {
     it("test_40_post_proxies_v1_validateAddress", () => {
         clearSession();
 
-        // POST https://onboarding.usbank.com/{param}/v1/applications (endp 37)
+        // POST https://onboarding.usbank.com/proxies/v1/validateAddress (endp 40)
         const onboarding_usbank_com = getHttpClient("https://onboarding.usbank.com", authenticate);
-        return onboarding_usbank_com.fetch("/" + param + "/v1/applications", {
+        return onboarding_usbank_com.fetch("/proxies/v1/validateAddress", {
             method: "POST",
             headers: {
                 "content-type": "application/json",
-                "x-requested-with": x_requested_with
+                "securitytoken": securitytoken,
+                "x-requested-with": "X-Requested-With"
             },
-            body: JSONBuild("data/payload_for_endp_37.json", {
-                "$.products[*].cardInformation.offerTypeCode": offerTypeCode,
-                "$.products[*].cardInformation.sourceCode": sourceCode,
-                "$.products[*].description": description,
-                "$.products[*].productCode": productCode,
-                "$.products[*].subProductCode": subProductCode,
-                "$.products[*].subtype": subtype
+            body: JSONBuild("data/payload_for_endp_40.json", {
+                "$.customerAddress.usAddress.*": usAddress,
+                "$.customerAddress.usAddress.zipCode": zipCode
             })
         })
         .then((response) => {
-            expect(response.status).toEqual(201);
-            const securitytoken = response.headers.get("securitytoken");
+            expect(response.status).toEqual(200);
             return response.text();
         })
         .then((text) => {
-            return JSON.parse(text);
         })
         .then((data) => {
-            expect(JSONPath({
-                path: "$.applicants[*].addresses.primary.country",
-                json: data
-            })).toContain("US");
-
-            // POST https://onboarding.usbank.com/proxies/v1/validateAddress (endp 40)
-            return onboarding_usbank_com.fetch("/proxies/v1/validateAddress", {
-                method: "POST",
-                headers: {
-                    "content-type": "application/json",
-                    "securitytoken": securitytoken,
-                    "x-requested-with": "X-Requested-With"
-                },
-                body: JSONBuild("data/payload_for_endp_40.json", {
-                    "$.customerAddress.usAddress.*": usAddress,
-                    "$.customerAddress.usAddress.zipCode": zipCode
-                })
-            })
-            .then((response) => {
-                expect(response.status).toEqual(200);
-                return response.text();
-            })
-            .then((text) => {
-                return JSON.parse(text);
-            })
-            .then((data) => {
-                expect(JSONPath({
-                    path: "$.address.city",
-                    json: data
-                })).toContain("NEWARK");
-            });
         });
     });
 });

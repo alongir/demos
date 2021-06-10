@@ -1,16 +1,16 @@
 {
     "info": {
-        "id": "dfb9800b-fac2-43f0-bde5-b3380204eae4",
-        "name": "Simple Unknown - ag.usbank.061001/all rev 15 (by UP9.com)",
+        "id": "5bf8dbf0-3fda-4e41-a650-0a9457d141ca",
+        "name": "Simple Unknown - ag.usbank.061001/all rev 16 (by UP9.com)",
         "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
     },
     "item": [
         {
-            "id": "255ff2e6-585e-4d91-83dd-d84b04c2178c",
+            "id": "f33fcff7-ed1b-4284-8e0e-0c6b563f48cb",
             "name": "apply.usbank.com",
             "item": [
                 {
-                    "id": "a0fa5211-4c11-43f9-8135-4a91367e9857",
+                    "id": "0313ba8a-7146-4cac-8e88-36b55ff0a234",
                     "name": "/apply/apply.html",
                     "request": {
                         "method": "GET",
@@ -40,7 +40,7 @@
                         {
                             "listen": "prerequest",
                             "script": {
-                                "id": "9001a128-2a9f-477a-9ab2-38434a16eb6d",
+                                "id": "342612e7-f8c9-48e6-b839-74fd915008b3",
                                 "exec": [
                                     "// Some of the environment variables might be set in the parent folders.",
                                     "pm.variables.set(\"PRODUCT_CODE\", \"DDA\");"
@@ -55,7 +55,7 @@
                 {
                     "listen": "prerequest",
                     "script": {
-                        "id": "780508ea-3fee-4afb-a92d-21b0b818493b",
+                        "id": "1f68c2e0-3107-4d9c-894a-7ad09566e61a",
                         "exec": [],
                         "type": "text/javascript"
                     }
@@ -64,11 +64,11 @@
             "protocolProfileBehavior": {}
         },
         {
-            "id": "f77188a8-4162-4f7e-adbb-e8e7e86aac08",
+            "id": "351dd353-48b0-4c05-9b6f-5da65800682f",
             "name": "cardrewards.usbank.com",
             "item": [
                 {
-                    "id": "01fd1703-47b3-4490-a58d-8ed9f68f3f87",
+                    "id": "aec16bd9-de9e-425c-8eeb-0ee7d1adfd46",
                     "name": "/connect/{{param}}",
                     "request": {
                         "method": "GET",
@@ -88,7 +88,7 @@
                         {
                             "listen": "prerequest",
                             "script": {
-                                "id": "19656179-33da-40f0-8db7-12a8b90501c6",
+                                "id": "5175441c-a113-4d49-b2a2-1f6433fbcd8f",
                                 "exec": [
                                     "// Some of the environment variables might be set in the parent folders.",
                                     "pm.variables.set(\"param\", \"Connect_5X_A.html\");"
@@ -103,7 +103,7 @@
                 {
                     "listen": "prerequest",
                     "script": {
-                        "id": "8cf52abd-e58e-4857-8e71-9808072cb920",
+                        "id": "31937faa-aae0-45fd-8d9f-33659fa0255d",
                         "exec": [],
                         "type": "text/javascript"
                     }
@@ -112,11 +112,11 @@
             "protocolProfileBehavior": {}
         },
         {
-            "id": "b6f4b3d6-60f7-4bdf-854f-69cf6e167c53",
+            "id": "c3d31d3b-94bd-4163-ba6e-4b45aaf85c31",
             "name": "locations.usbank.com",
             "item": [
                 {
-                    "id": "4ccb5a06-7b69-40b1-9645-961c0730cf65",
+                    "id": "2b1d0100-0881-4149-910c-cc3f435bce44",
                     "name": "/{{param}}",
                     "request": {
                         "method": "GET",
@@ -135,7 +135,7 @@
                         {
                             "listen": "prerequest",
                             "script": {
-                                "id": "ec32e65c-6068-4c6b-afb4-bd4f36311f29",
+                                "id": "86c40d23-269b-49fd-a410-949f0b118179",
                                 "exec": [
                                     "// Some of the environment variables might be set in the parent folders.",
                                     "pm.variables.set(\"param\", \"search.keyword-94303.type-branch-atm.mp-full.html\");"
@@ -146,7 +146,7 @@
                     ]
                 },
                 {
-                    "id": "fba7f41b-271c-45df-87f3-f74691bc4a09",
+                    "id": "5717d44c-2599-4e6f-bd61-500acd5d39aa",
                     "name": "/search/{{param}}",
                     "request": {
                         "method": "GET",
@@ -172,10 +172,10 @@
                         {
                             "listen": "prerequest",
                             "script": {
-                                "id": "f3859819-320a-4c00-98c6-f5e795786c41",
+                                "id": "69afa33b-2c8b-4514-8d0c-3b9edafefb75",
                                 "exec": [
                                     "// Some of the environment variables might be set in the parent folders.",
-                                    "pm.variables.set(\"param\", \"locationList.radius-50.lat-14--9867744.lng--85--0839456.search-user.type-branch-atm.mp-full.html\");"
+                                    "pm.variables.set(\"param\", \"locationList.radius-50.lat-37--4530553.lng--122--1178261.search-user.type-branch-atm.mp-full.html\");"
                                 ],
                                 "type": "text/javascript"
                             }
@@ -183,7 +183,7 @@
                     ]
                 },
                 {
-                    "id": "754c2ea5-9a39-4e7d-b246-57f0176d38ae",
+                    "id": "1b4e68c7-e2b2-43fb-9b33-d602747ff28c",
                     "name": "/search.html",
                     "request": {
                         "method": "GET",
@@ -202,7 +202,7 @@
                         {
                             "listen": "prerequest",
                             "script": {
-                                "id": "03490abb-f505-4b61-97bf-14f12daaba66",
+                                "id": "daf6f838-0b08-4c14-b551-2f453b728dd5",
                                 "exec": [],
                                 "type": "text/javascript"
                             }
@@ -214,7 +214,7 @@
                 {
                     "listen": "prerequest",
                     "script": {
-                        "id": "00a3a1a1-61bf-4158-8be1-7b60d9fed0b5",
+                        "id": "49b031bd-7088-4be7-95ef-ca41453e629c",
                         "exec": [],
                         "type": "text/javascript"
                     }
@@ -223,11 +223,11 @@
             "protocolProfileBehavior": {}
         },
         {
-            "id": "e65e5a23-53bd-41c6-97e8-64ecf0f8efa3",
+            "id": "eb3f6504-cc55-4ff9-9c68-559ff3bbaeab",
             "name": "onboarding.usbank.com",
             "item": [
                 {
-                    "id": "f08ea84b-fd70-4aed-883f-9473652d74d0",
+                    "id": "35461653-17f9-4975-bb44-1d11ef151086",
                     "name": "/KrNCmr/{{param}}/{{param1}}/{{param2}}/{{param3}}/{{param4}}/{{param5}}/{{param6}}",
                     "request": {
                         "method": "POST",
@@ -268,7 +268,7 @@
                         {
                             "listen": "prerequest",
                             "script": {
-                                "id": "a8b2f20a-9f58-4def-811c-5fce910786cd",
+                                "id": "840babe3-54db-4f45-a16a-c8555429ae68",
                                 "exec": [
                                     "// Some of the environment variables might be set in the parent folders.",
                                     "pm.variables.set(\"param\", \"es8Mw\");",
@@ -286,181 +286,46 @@
                     ]
                 },
                 {
-                    "id": "8f240513-2ecb-4eb1-8591-a494cc47c99d",
-                    "name": "applications",
-                    "item": [
-                        {
-                            "id": "2601aec8-24dc-4551-bc9d-1c98714a217b",
-                            "name": "/{{param}}/v1/applications",
-                            "request": {
-                                "method": "POST",
-                                "header": [
-                                    {
-                                        "key": "content-type",
-                                        "value": "application/json",
-                                        "type": "text"
-                                    },
-                                    {
-                                        "key": "x-requested-with",
-                                        "value": "{{x_requested_with}}",
-                                        "type": "text"
-                                    }
-                                ],
-                                "url": {
-                                    "raw": "{{onboarding_usbank_com}}/{{param}}/v1/applications",
-                                    "protocol": "",
-                                    "host": "{{onboarding_usbank_com}}",
-                                    "path": [
-                                        "{{param}}",
-                                        "v1",
-                                        "applications"
-                                    ]
-                                },
-                                "body": {
-                                    "mode": "raw",
-                                    "raw": "{\n    \"applicants\": [\n        {\n            \"addresses\": {\n                \"primary\": {}\n            }\n        }\n    ],\n    \"channel\": \"WEB\",\n    \"products\": [\n        {\n            \"cardInformation\": {\n                \"offerTypeCode\": \"{{offerTypeCode}}\",\n                \"sourceCode\": \"{{sourceCode}}\"\n            },\n            \"description\": \"{{description}}\",\n            \"productCode\": \"{{productCode}}\",\n            \"subProductCode\": \"{{subProductCode}}\",\n            \"subtype\": \"{{subtype}}\"\n        }\n    ],\n    \"tenant\": \"usbank\"\n}",
-                                    "options": {
-                                        "raw": {
-                                            "language": "json"
-                                        }
-                                    }
-                                }
-                            },
-                            "response": [],
-                            "event": [
-                                {
-                                    "listen": "prerequest",
-                                    "script": {
-                                        "id": "f2c170db-a8db-4459-9c8c-fb812213ba74",
-                                        "exec": [
-                                            "// Some of the environment variables might be set in the parent folders.",
-                                            "pm.variables.set(\"description\", \"Altitude\\u00ae Connect Visa Signature\\u00ae Card\");",
-                                            "pm.variables.set(\"offerTypeCode\", \"146\");",
-                                            "pm.variables.set(\"param\", \"applicationintake\");",
-                                            "pm.variables.set(\"productCode\", \"CCD\");",
-                                            "pm.variables.set(\"sourceCode\", \"33727\");",
-                                            "pm.variables.set(\"subProductCode\", \"1R11X29W45\");",
-                                            "pm.variables.set(\"subtype\", \"18569\");",
-                                            "pm.variables.set(\"x_requested_with\", \"XMLHttpRequest\");"
-                                        ],
-                                        "type": "text/javascript"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "id": "c8ab9425-184e-42d5-aa0b-df3b72d10224",
-                            "name": "/{{param}}/v1/applications/environment",
-                            "request": {
-                                "method": "GET",
-                                "header": [
-                                    {
-                                        "key": "x-requested-with",
-                                        "value": "XMLHttpRequest",
-                                        "type": "text"
-                                    }
-                                ],
-                                "url": {
-                                    "raw": "{{onboarding_usbank_com}}/{{param}}/v1/applications/environment",
-                                    "protocol": "",
-                                    "host": "{{onboarding_usbank_com}}",
-                                    "path": [
-                                        "{{param}}",
-                                        "v1",
-                                        "applications",
-                                        "environment"
-                                    ]
-                                }
-                            },
-                            "response": [],
-                            "event": [
-                                {
-                                    "listen": "prerequest",
-                                    "script": {
-                                        "id": "d96bc05d-355a-4c7a-b0de-2104cb484ba4",
-                                        "exec": [
-                                            "// Some of the environment variables might be set in the parent folders.",
-                                            "pm.variables.set(\"param\", \"applicationintake\");"
-                                        ],
-                                        "type": "text/javascript"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "id": "94923552-2e1a-4dc5-bf87-19964bac8c78",
-                            "name": "/{{param}}/v1/applications/{{applicationId}}/patch",
-                            "request": {
-                                "method": "POST",
-                                "header": [
-                                    {
-                                        "key": "content-type",
-                                        "value": "application/json",
-                                        "type": "text"
-                                    },
-                                    {
-                                        "key": "securitytoken",
-                                        "value": "{{securitytoken}}",
-                                        "type": "text"
-                                    },
-                                    {
-                                        "key": "x-requested-with",
-                                        "value": "X-Requested-With",
-                                        "type": "text"
-                                    }
-                                ],
-                                "url": {
-                                    "raw": "{{onboarding_usbank_com}}/{{param}}/v1/applications/{{applicationId}}/patch",
-                                    "protocol": "",
-                                    "host": "{{onboarding_usbank_com}}",
-                                    "path": [
-                                        "{{param}}",
-                                        "v1",
-                                        "applications",
-                                        "{{applicationId}}",
-                                        "patch"
-                                    ]
-                                },
-                                "body": {
-                                    "mode": "raw",
-                                    "raw": "[\n    {\n        \"op\": \"{{op}}\",\n        \"path\": \"{{path}}\",\n        \"value\": {\n            \"countriesOfCitizenship\": [\n                \"{{countriesOfCitizenship}}\"\n            ],\n            \"firstName\": \"John\",\n            \"housingStatus\": \"Own\",\n            \"lastName\": \"{{lastName}}\",\n            \"middleName\": \"\",\n            \"monthlyHousingPayment\": \"{{monthlyHousingPayment}}\",\n            \"number\": \"{{number}}\",\n            \"permanentResidenceCountry\": \"US\",\n            \"personal\": {\n                \"email\": \"{{email}}\",\n                \"preferred\": true\n            },\n            \"typeOfPhone\": \"cell\"\n        }\n    }\n]",
-                                    "options": {
-                                        "raw": {
-                                            "language": "json"
-                                        }
-                                    }
-                                }
-                            },
-                            "response": [],
-                            "event": [
-                                {
-                                    "listen": "prerequest",
-                                    "script": {
-                                        "id": "8d81da98-5999-4851-867f-3651958337ac",
-                                        "exec": [
-                                            "// Some of the environment variables might be set in the parent folders.",
-                                            "pm.variables.set(\"applicationId\", \"86776095\");",
-                                            "pm.variables.set(\"countriesOfCitizenship\", \"AX\");",
-                                            "pm.variables.set(\"email\", \"john.dow.1981@protonmail.com\");",
-                                            "pm.variables.set(\"lastName\", \"Dow\");",
-                                            "pm.variables.set(\"monthlyHousingPayment\", \"10\");",
-                                            "pm.variables.set(\"number\", \"6506667766\");",
-                                            "pm.variables.set(\"op\", \"replace\");",
-                                            "pm.variables.set(\"param\", \"applicationintake\");",
-                                            "pm.variables.set(\"path\", \"/products/0/promocode\");",
-                                            "pm.variables.set(\"securitytoken\", \"tcSSO62HJjSFLOWU+aTKkFKFEj2Ce89uj2ht1vpJB57Mqa0/5cH+XAjY4GSuYg7sZvxVSDOLFEhqMbtJrccJjDzHlhxvfYPo7vRgWXhv+EKR1RwIC2HL5DH5nNXcIx5XFAislig6StNStzwaLOyD7ueK8/NZJijnr1DsYJn1Ut/W5CQKwIeEkTNHLx1+Ivdp\");"
-                                        ],
-                                        "type": "text/javascript"
-                                    }
-                                }
+                    "id": "82f4e0e3-bf59-41ff-9bee-774373071088",
+                    "name": "/{{param}}/v1/applications/environment",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "x-requested-with",
+                                "value": "XMLHttpRequest",
+                                "type": "text"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{onboarding_usbank_com}}/{{param}}/v1/applications/environment",
+                            "protocol": "",
+                            "host": "{{onboarding_usbank_com}}",
+                            "path": [
+                                "{{param}}",
+                                "v1",
+                                "applications",
+                                "environment"
                             ]
                         }
-                    ],
-                    "event": [],
-                    "protocolProfileBehavior": {}
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "id": "1bdb454a-31e4-4a26-a9a7-4f2448f99dc6",
+                                "exec": [
+                                    "// Some of the environment variables might be set in the parent folders.",
+                                    "pm.variables.set(\"param\", \"applicationintake\");"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
                 },
                 {
-                    "id": "a5f7e216-f36d-408a-8a0b-5815386fa8fe",
+                    "id": "8379c20d-4721-4417-8f3e-effcef46448f",
                     "name": "/cards/{{cardId}}/{{param}}/{{param1}}/intro",
                     "request": {
                         "method": "GET",
@@ -483,7 +348,7 @@
                         {
                             "listen": "prerequest",
                             "script": {
-                                "id": "609cdfc1-1e6e-4dd3-b281-e826ae740a45",
+                                "id": "eca4aa5c-76f6-47d5-a8c2-c4785d156342",
                                 "exec": [
                                     "// Some of the environment variables might be set in the parent folders.",
                                     "pm.variables.set(\"cardId\", \"1R11X29W45\");",
@@ -496,7 +361,7 @@
                     ]
                 },
                 {
-                    "id": "2a8c346d-6005-4376-a57c-1725ccd14d79",
+                    "id": "93cae929-a332-433f-9cbf-3f62bba977eb",
                     "name": "/deposits/{{depositId}}/PI/start",
                     "request": {
                         "method": "GET",
@@ -518,7 +383,7 @@
                         {
                             "listen": "prerequest",
                             "script": {
-                                "id": "c47d622f-6414-4909-af64-813fc36c7e39",
+                                "id": "a049b2ce-4fed-415e-a358-beedd3051df9",
                                 "exec": [
                                     "// Some of the environment variables might be set in the parent folders.",
                                     "pm.variables.set(\"depositId\", \"DDA\");"
@@ -529,11 +394,11 @@
                     ]
                 },
                 {
-                    "id": "3cd1dc89-abe0-47e2-a71e-5680b9184bfe",
+                    "id": "88cd6070-5b43-4214-a274-19fda02efa26",
                     "name": "proxies",
                     "item": [
                         {
-                            "id": "e918c746-3e54-4ed6-91e3-38262a8bbfb5",
+                            "id": "cd12b35b-958f-460a-b00a-6ed4702d6817",
                             "name": "/proxies/v1/oad/terms-and-conditions",
                             "request": {
                                 "method": "POST",
@@ -575,7 +440,7 @@
                                 {
                                     "listen": "prerequest",
                                     "script": {
-                                        "id": "b61c5cd2-5b56-45ec-bd16-14ababb4af73",
+                                        "id": "94be3cb3-8d3a-4fbc-a2df-e79d0ef7fd06",
                                         "exec": [
                                             "// Some of the environment variables might be set in the parent folders.",
                                             "pm.variables.set(\"locationCode\", \"18569\");",
@@ -588,7 +453,7 @@
                             ]
                         },
                         {
-                            "id": "f1c1333b-4178-4849-9c0d-883aef88ad32",
+                            "id": "9f9a8ef7-9be8-4e32-ad95-eaea340fcf60",
                             "name": "/proxies/v1/validateAddress",
                             "request": {
                                 "method": "POST",
@@ -634,11 +499,11 @@
                                 {
                                     "listen": "prerequest",
                                     "script": {
-                                        "id": "2623933b-a2d4-438c-9d4e-14a50716ebf8",
+                                        "id": "31753c1d-2f26-43aa-877e-b5439f54a3c5",
                                         "exec": [
                                             "// Some of the environment variables might be set in the parent folders.",
                                             "pm.variables.set(\"securitytoken\", \"tcSSO62HJjSFLOWU+aTKkFKFEj2Ce89uj2ht1vpJB57Mqa0/5cH+XAjY4GSuYg7sZvxVSDOLFEhqMbtJrccJjDzHlhxvfYPo7vRgWXhv+EKR1RwIC2HL5DH5nNXcIx5XFAislig6StNStzwaLOyD7ueK8/NZJijnr1DsYJn1Ut/W5CQKwIeEkTNHLx1+Ivdp\");",
-                                            "pm.variables.set(\"usAddress\", \"6756 Central Ave\");",
+                                            "pm.variables.set(\"usAddress\", \"\");",
                                             "pm.variables.set(\"zipCode\", \"94560\");"
                                         ],
                                         "type": "text/javascript"
@@ -647,7 +512,7 @@
                             ]
                         },
                         {
-                            "id": "2358b9f7-dcfb-4ad9-90d1-7437121022da",
+                            "id": "c80eb4a0-759c-40c4-b4b2-ba58f762e923",
                             "name": "/proxies/v1/{{param}}",
                             "request": {
                                 "method": "POST",
@@ -688,7 +553,7 @@
                                 {
                                     "listen": "prerequest",
                                     "script": {
-                                        "id": "797a6b21-da85-4481-bed9-a805c3578843",
+                                        "id": "71456372-91f4-45d3-b808-db0fd16446d7",
                                         "exec": [
                                             "// Some of the environment variables might be set in the parent folders.",
                                             "pm.variables.set(\"icsLocationCode\", \"18569\");",
@@ -710,7 +575,7 @@
                 {
                     "listen": "prerequest",
                     "script": {
-                        "id": "94caa50b-8f41-4a22-895e-390125d96ed7",
+                        "id": "b1b2f991-bea5-4016-b8bd-da834cf0e5c4",
                         "exec": [],
                         "type": "text/javascript"
                     }
@@ -719,15 +584,15 @@
             "protocolProfileBehavior": {}
         },
         {
-            "id": "f9cb6876-6c7c-4f16-89bd-9b8cc50f50d9",
+            "id": "19b1e832-1511-40b4-869d-36cbf6ab6b31",
             "name": "onlinebanking.usbank.com",
             "item": [
                 {
-                    "id": "63e01f8d-799d-45b8-9011-4e2212921b2f",
+                    "id": "65c1590b-ce7f-44c0-9dab-0ca0c86e0de3",
                     "name": "OLS",
                     "item": [
                         {
-                            "id": "543cca32-7269-4d7f-89ac-f7130f71a99b",
+                            "id": "766a028c-c809-455f-9319-53e4323ceb2b",
                             "name": "/OLS/LoginAssist/RetriveId",
                             "request": {
                                 "method": "GET",
@@ -748,7 +613,7 @@
                                 {
                                     "listen": "prerequest",
                                     "script": {
-                                        "id": "42480b55-0dff-4f8f-ac16-864fab34d641",
+                                        "id": "3a02e9de-3088-4c0d-8090-066dd30f0df1",
                                         "exec": [],
                                         "type": "text/javascript"
                                     }
@@ -756,7 +621,7 @@
                             ]
                         },
                         {
-                            "id": "40e50c21-6b2f-4c84-a3e0-0368bfec5e82",
+                            "id": "7ea07e2b-5bd2-4043-a941-39c0a19ac5ab",
                             "name": "/OLS/Public/Enrollment/Index",
                             "request": {
                                 "method": "GET",
@@ -784,7 +649,7 @@
                                 {
                                     "listen": "prerequest",
                                     "script": {
-                                        "id": "b25c5796-8a21-414f-b466-ff635a345ff1",
+                                        "id": "71136b35-f34b-4fc2-adb9-990d56ea7265",
                                         "exec": [],
                                         "type": "text/javascript"
                                     }
@@ -796,7 +661,7 @@
                     "protocolProfileBehavior": {}
                 },
                 {
-                    "id": "2cd741d2-4ab6-470d-9d71-d590e36ced29",
+                    "id": "d95fd455-ec9c-48b7-82df-094cef10cab9",
                     "name": "/{{param}}/xwNT/{{param1}}/mpdLQ/{{param2}}/{{param3}}/IFsXW/{{param4}}",
                     "request": {
                         "method": "POST",
@@ -837,7 +702,7 @@
                         {
                             "listen": "prerequest",
                             "script": {
-                                "id": "ccc41c81-416d-441b-a620-d79616689520",
+                                "id": "cc4e8492-ff35-43f6-9763-9bdfe34ae2f0",
                                 "exec": [
                                     "// Some of the environment variables might be set in the parent folders.",
                                     "pm.variables.set(\"param\", \"0mCz\");",
@@ -857,7 +722,7 @@
                 {
                     "listen": "prerequest",
                     "script": {
-                        "id": "c178a751-b463-4cdc-9ea4-2fdf53205646",
+                        "id": "15ee3a92-3e1a-4920-ae2d-04d65075c2d3",
                         "exec": [],
                         "type": "text/javascript"
                     }
@@ -866,11 +731,11 @@
             "protocolProfileBehavior": {}
         },
         {
-            "id": "2dae9f30-686d-468a-a326-ee85a8776add",
+            "id": "b1e57d1e-a4c0-48f0-a7e1-0cde7471336d",
             "name": "sales.usbank.com",
             "item": [
                 {
-                    "id": "9b12bc3e-640d-4f22-a58b-ce3e70b6357e",
+                    "id": "a5e7c097-aef2-4040-a010-2226ac53cbba",
                     "name": "/product-configuration/v1/products/usbank/{{param}}/PI",
                     "request": {
                         "method": "GET",
@@ -905,7 +770,7 @@
                         {
                             "listen": "prerequest",
                             "script": {
-                                "id": "07025945-ab5b-4b2f-a4e1-1a6c355d0e88",
+                                "id": "baa8a1d0-31df-4cca-b68a-ed5a1c75e830",
                                 "exec": [
                                     "// Some of the environment variables might be set in the parent folders.",
                                     "pm.variables.set(\"param\", \"DDA\");"
@@ -920,7 +785,7 @@
                 {
                     "listen": "prerequest",
                     "script": {
-                        "id": "8120a222-a356-478c-83f3-e8a01e0eb7b8",
+                        "id": "15dd7201-71f8-42b1-a43e-01c47a6b913a",
                         "exec": [],
                         "type": "text/javascript"
                     }
@@ -929,15 +794,15 @@
             "protocolProfileBehavior": {}
         },
         {
-            "id": "9db02ae3-f21c-4bd0-a70b-be6d38377466",
+            "id": "8b072a83-477b-46ea-896d-245d2a917c44",
             "name": "siteintercept.qualtrics.com",
             "item": [
                 {
-                    "id": "e5f133d2-401a-4e93-8f5c-25f299e0945d",
+                    "id": "3d95b185-2078-4999-9cdf-633d0e35e931",
                     "name": "WRSiteInterceptEngine",
                     "item": [
                         {
-                            "id": "1db172d2-7c6b-43ed-be27-ae744ee4144f",
+                            "id": "0623f7f8-645c-438a-aec1-76bb9b5d8cd3",
                             "name": "/WRSiteInterceptEngine",
                             "request": {
                                 "method": "POST",
@@ -1012,7 +877,7 @@
                                 {
                                     "listen": "prerequest",
                                     "script": {
-                                        "id": "2fc1b9a9-d10b-4829-b179-ee04f6850847",
+                                        "id": "a4826f67-0d54-4a53-b90a-39afb2e61458",
                                         "exec": [
                                             "// Some of the environment variables might be set in the parent folders.",
                                             "pm.variables.set(\"BrandDC\", \"sjc1\");",
@@ -1029,7 +894,7 @@
                             ]
                         },
                         {
-                            "id": "779bb81b-da44-4509-bdb8-e705a352a2e1",
+                            "id": "df3ceaf4-5aa4-4f96-a207-1773526f35e4",
                             "name": "/WRSiteInterceptEngine/Asset.php",
                             "request": {
                                 "method": "GET",
@@ -1075,7 +940,7 @@
                                 {
                                     "listen": "prerequest",
                                     "script": {
-                                        "id": "1d7ee19b-9627-4f8c-873d-507c8f42fa79",
+                                        "id": "444dca7c-ec5d-4077-a5e0-4ee47f80f5bf",
                                         "exec": [
                                             "// Some of the environment variables might be set in the parent folders.",
                                             "pm.variables.set(\"Module\", \"CR_a2AsGQKhBoo8TgV\");",
@@ -1083,69 +948,6 @@
                                             "pm.variables.set(\"Q_InterceptID\", \"SI_e39Wa46ASKtqbcx\");",
                                             "pm.variables.set(\"Q_ORIGIN\", \"https://www.usbank.com\");",
                                             "pm.variables.set(\"Version\", \"1\");"
-                                        ],
-                                        "type": "text/javascript"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "id": "83ef3a82-b74b-4ee7-b899-008ac1bffcac",
-                            "name": "/WRSiteInterceptEngine/Targeting.php",
-                            "request": {
-                                "method": "POST",
-                                "header": [
-                                    {
-                                        "key": "content-type",
-                                        "value": "application/x-www-form-urlencoded",
-                                        "type": "text"
-                                    }
-                                ],
-                                "body": {
-                                    "mode": "urlencoded",
-                                    "urlencoded": [
-                                        {
-                                            "key": "Q_LOC",
-                                            "value": "{{Q_LOC}}",
-                                            "type": "text"
-                                        }
-                                    ]
-                                },
-                                "url": {
-                                    "raw": "{{siteintercept_qualtrics_com}}/WRSiteInterceptEngine/Targeting.php",
-                                    "protocol": "",
-                                    "host": "{{siteintercept_qualtrics_com}}",
-                                    "path": [
-                                        "WRSiteInterceptEngine",
-                                        "Targeting.php"
-                                    ],
-                                    "query": [
-                                        {
-                                            "key": "Q_CLIENTTYPE",
-                                            "value": "web"
-                                        },
-                                        {
-                                            "key": "Q_CLIENTVERSION",
-                                            "value": "{{Q_CLIENTVERSION}}"
-                                        },
-                                        {
-                                            "key": "Q_ZoneID",
-                                            "value": "{{Q_ZoneID}}"
-                                        }
-                                    ]
-                                }
-                            },
-                            "response": [],
-                            "event": [
-                                {
-                                    "listen": "prerequest",
-                                    "script": {
-                                        "id": "a81b3edc-04e1-4a28-a026-450c8d4da9f0",
-                                        "exec": [
-                                            "// Some of the environment variables might be set in the parent folders.",
-                                            "pm.variables.set(\"Q_CLIENTVERSION\", \"1.52.0\");",
-                                            "pm.variables.set(\"Q_LOC\", \"https://www.usbank.com/index.html\");",
-                                            "pm.variables.set(\"Q_ZoneID\", \"ZN_6VxkyqYWaF9f1T7\");"
                                         ],
                                         "type": "text/javascript"
                                     }
@@ -1161,7 +963,7 @@
                 {
                     "listen": "prerequest",
                     "script": {
-                        "id": "35537a08-06ea-430c-90b1-5dfe8082df8f",
+                        "id": "504008e5-e7ee-4da5-9567-df7c44849ee9",
                         "exec": [],
                         "type": "text/javascript"
                     }
@@ -1170,11 +972,11 @@
             "protocolProfileBehavior": {}
         },
         {
-            "id": "2bcb5072-dc5b-411a-92e7-b4d9508461f4",
+            "id": "22a183e8-f8cd-44b5-97ac-09ef59eff6d1",
             "name": "usbank-app.quantummetric.com",
             "item": [
                 {
-                    "id": "59b17c0f-862a-4afa-9479-2cf23d9545a2",
+                    "id": "b15c3e95-012c-44dd-a284-ddb095ea39c8",
                     "name": "/",
                     "request": {
                         "method": "POST",
@@ -1256,7 +1058,7 @@
                         {
                             "listen": "prerequest",
                             "script": {
-                                "id": "9d56ab37-428e-425c-b336-9a8c5a7c537a",
+                                "id": "85c9ce17-914f-4afb-8516-133a908d682e",
                                 "exec": [
                                     "// Some of the environment variables might be set in the parent folders.",
                                     "pm.variables.set(\"H\", \"b51572b98559462c64e66839\");",
@@ -1279,7 +1081,7 @@
                 {
                     "listen": "prerequest",
                     "script": {
-                        "id": "fc066725-ed34-4a92-9414-cb0f74579184",
+                        "id": "f57771af-7ac6-4760-914e-ccef5694707d",
                         "exec": [],
                         "type": "text/javascript"
                     }
@@ -1288,11 +1090,11 @@
             "protocolProfileBehavior": {}
         },
         {
-            "id": "165752aa-d470-41ec-a0c5-9dd20540223e",
+            "id": "f13b04df-5b3f-4688-9fa9-edc781732701",
             "name": "usbank-sync.quantummetric.com",
             "item": [
                 {
-                    "id": "6fc6ee28-333e-438d-a5a5-e233a645621d",
+                    "id": "85e1c349-09ac-4b01-8a8f-b16cf91528a2",
                     "name": "/",
                     "request": {
                         "method": "POST",
@@ -1362,7 +1164,7 @@
                         {
                             "listen": "prerequest",
                             "script": {
-                                "id": "9becaf67-3fc9-4c8f-a311-69d2d78c2225",
+                                "id": "42696860-8925-461a-8704-a88564cd5558",
                                 "exec": [
                                     "// Some of the environment variables might be set in the parent folders.",
                                     "pm.variables.set(\"X\", \"ef566b27141d415eb8fb92cf500e8688\");",
@@ -1381,7 +1183,7 @@
                 {
                     "listen": "prerequest",
                     "script": {
-                        "id": "c346e8ff-809e-4a29-a9d4-f885be5baab3",
+                        "id": "24324c71-18f0-4ab2-90e8-19e6880d21a9",
                         "exec": [],
                         "type": "text/javascript"
                     }
@@ -1390,11 +1192,11 @@
             "protocolProfileBehavior": {}
         },
         {
-            "id": "c12e1d6f-6c91-42f3-a3ab-d02a9f5bfe44",
+            "id": "2cf566c0-8885-4d5f-9167-b2845cf7a830",
             "name": "www.usbank.com",
             "item": [
                 {
-                    "id": "c688fb7a-1bb1-4ee6-bba6-6d8644273d62",
+                    "id": "878e8177-1bb7-47b6-b128-1c8b299cb400",
                     "name": "/about-us-bank/customer-service.html",
                     "request": {
                         "method": "GET",
@@ -1414,7 +1216,7 @@
                         {
                             "listen": "prerequest",
                             "script": {
-                                "id": "e60d52bf-7eb1-42b5-b7ea-1529c88095b4",
+                                "id": "6161dc76-168e-4740-a8d2-a0a41cd4f729",
                                 "exec": [],
                                 "type": "text/javascript"
                             }
@@ -1422,11 +1224,11 @@
                     ]
                 },
                 {
-                    "id": "73f227c3-738a-4a90-a309-e50d1545cbae",
+                    "id": "91c6ddb8-017d-4c1f-a813-1558b7661ef1",
                     "name": "bank-accounts",
                     "item": [
                         {
-                            "id": "b5838ee8-6681-4898-8ab1-b60507e89c7f",
+                            "id": "86abc06a-8e86-4530-a613-5eef4d993989",
                             "name": "/bank-accounts/checking-accounts/gold-checking-account.html",
                             "request": {
                                 "method": "GET",
@@ -1447,7 +1249,7 @@
                                 {
                                     "listen": "prerequest",
                                     "script": {
-                                        "id": "2acd30e3-971e-45d4-ab11-b7b8b3d9c056",
+                                        "id": "d4f05160-b234-4480-9564-7d5eabf73e0f",
                                         "exec": [],
                                         "type": "text/javascript"
                                     }
@@ -1455,7 +1257,7 @@
                             ]
                         },
                         {
-                            "id": "ecbae428-958d-4d90-9761-0b6765bccb8a",
+                            "id": "9116f70d-8311-4940-827e-bab00e96d3f9",
                             "name": "/bank-accounts/checking-accounts.html",
                             "request": {
                                 "method": "GET",
@@ -1475,7 +1277,7 @@
                                 {
                                     "listen": "prerequest",
                                     "script": {
-                                        "id": "33d2e65a-5133-404a-9029-cd633584ad28",
+                                        "id": "30d2c3eb-e1e6-43ed-bfe8-d0c67bb5f934",
                                         "exec": [],
                                         "type": "text/javascript"
                                     }
@@ -1487,7 +1289,7 @@
                     "protocolProfileBehavior": {}
                 },
                 {
-                    "id": "6ced6c15-4dde-4ac2-8263-81a80d5846a6",
+                    "id": "9c2a8eb1-772f-4a6d-8e4b-0445ac67dfe1",
                     "name": "/corporate-and-commercial-banking/solutions/credit-and-financing.html",
                     "request": {
                         "method": "GET",
@@ -1508,7 +1310,7 @@
                         {
                             "listen": "prerequest",
                             "script": {
-                                "id": "afd5219c-29d4-403d-ab14-ddb3c8a25471",
+                                "id": "ab80f7e9-7a25-4a3b-af4d-213bf74460f2",
                                 "exec": [],
                                 "type": "text/javascript"
                             }
@@ -1516,7 +1318,7 @@
                     ]
                 },
                 {
-                    "id": "6e976430-7875-4afb-8481-11e8d83c1c8f",
+                    "id": "21756895-5f7a-45e1-935f-205bb93963eb",
                     "name": "/credit-cards/{{href}}",
                     "request": {
                         "method": "GET",
@@ -1550,7 +1352,7 @@
                         {
                             "listen": "prerequest",
                             "script": {
-                                "id": "14ea8d9e-47d7-42fa-b87b-497289ae2589",
+                                "id": "0ab870b1-1234-414e-999e-4c053b3e2042",
                                 "exec": [
                                     "// Some of the environment variables might be set in the parent folders.",
                                     "pm.variables.set(\"c3ch\", \"DTO\");",
@@ -1564,7 +1366,7 @@
                     ]
                 },
                 {
-                    "id": "c74692ca-6c1f-48ae-8e4b-dd3f7ff94880",
+                    "id": "a741c10f-754b-4f3f-ab84-3609690a6737",
                     "name": "/home-loans/mortgage/first-time-home-buyers.html",
                     "request": {
                         "method": "GET",
@@ -1585,7 +1387,7 @@
                         {
                             "listen": "prerequest",
                             "script": {
-                                "id": "d4868bef-20b9-41a2-9400-67acac7f3ba1",
+                                "id": "74aab111-bd5a-4abf-a25a-5fc9c234b80c",
                                 "exec": [],
                                 "type": "text/javascript"
                             }
@@ -1593,34 +1395,7 @@
                     ]
                 },
                 {
-                    "id": "1566234d-6f42-452a-89a1-83a36bf86358",
-                    "name": "/index.html",
-                    "request": {
-                        "method": "GET",
-                        "header": [],
-                        "url": {
-                            "raw": "{{www_usbank_com}}/index.html",
-                            "protocol": "",
-                            "host": "{{www_usbank_com}}",
-                            "path": [
-                                "index.html"
-                            ]
-                        }
-                    },
-                    "response": [],
-                    "event": [
-                        {
-                            "listen": "prerequest",
-                            "script": {
-                                "id": "edc6186b-085f-4cad-98c8-2d767af8cd8d",
-                                "exec": [],
-                                "type": "text/javascript"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "id": "8ad7cb95-4d0a-4979-81ce-324dbe0a35d2",
+                    "id": "2b89d263-b805-4fbf-ad7e-795b00de1b9b",
                     "name": "/plpXRb/YlO/{{param}}/{{param1}}/{{param2}}/{{param3}}/aEs/{{aeId}}",
                     "request": {
                         "method": "POST",
@@ -1661,7 +1436,7 @@
                         {
                             "listen": "prerequest",
                             "script": {
-                                "id": "d17d7719-69e4-4bf9-937d-40d46f6d819d",
+                                "id": "aef7582c-db2e-41f5-bc01-a7675c253020",
                                 "exec": [
                                     "// Some of the environment variables might be set in the parent folders.",
                                     "pm.variables.set(\"aeId\", \"QQXEXDig\");",
@@ -1677,38 +1452,11 @@
                     ]
                 },
                 {
-                    "id": "fbecdd72-0211-4e24-8ff2-923f99138d85",
-                    "name": "/site-map.html",
-                    "request": {
-                        "method": "GET",
-                        "header": [],
-                        "url": {
-                            "raw": "{{www_usbank_com}}/site-map.html",
-                            "protocol": "",
-                            "host": "{{www_usbank_com}}",
-                            "path": [
-                                "site-map.html"
-                            ]
-                        }
-                    },
-                    "response": [],
-                    "event": [
-                        {
-                            "listen": "prerequest",
-                            "script": {
-                                "id": "e7f21de2-a0f0-4396-bd4c-463d1d80af1a",
-                                "exec": [],
-                                "type": "text/javascript"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "id": "fbcde470-45df-4423-aaa8-f9e74f6c752f",
+                    "id": "34cda59a-f3b8-4def-b7e8-851a9dbfe649",
                     "name": "svt.usbank",
                     "item": [
                         {
-                            "id": "b001fe11-dc8c-4db0-b4e1-79d2d2922cb6",
+                            "id": "37fa6f5e-4922-41dd-9d82-6e6bdfdf186d",
                             "name": "/svt/usbank/rpsfetchDisclosureContent",
                             "request": {
                                 "method": "GET",
@@ -1741,7 +1489,7 @@
                                 {
                                     "listen": "prerequest",
                                     "script": {
-                                        "id": "c75cd65c-32e4-4283-a520-a1e04c197610",
+                                        "id": "f5d1aa48-7031-47fa-bdcc-226c92fa5a84",
                                         "exec": [
                                             "// Some of the environment variables might be set in the parent folders.",
                                             "pm.variables.set(\"disclosureTitles\", \"[{\\\"disclosureTitle\\\":\\\"We my change APRs\\\"},{\\\"disclosureTitle\\\":\\\"Account must be open\\\"},{\\\"disclosureTitle\\\":\\\"Altitude Connect 50k Bonus Points\\\"},{\\\"disclosureTitle\\\":\\\"Altitude Go - cash back is redeemed\\\"},{\\\"disclosureTitle\\\":\\\"Altitude Connect Rewards\\\"},{\\\"disclosureTitle\\\":\\\"Altitude Connect $30 Statement Credit\\\"},{\\\"disclosureTitle\\\":\\\"Altitude Connect TSA Precheck\\\"},{\\\"disclosureTitle\\\":\\\"Altitude Connect Cell Phone Protection\\\"},{\\\"disclosureTitle\\\":\\\"Contactless\\\"},{\\\"disclosureTitle\\\":\\\"Creditor and issuer general\\\"}]\");"
@@ -1752,7 +1500,7 @@
                             ]
                         },
                         {
-                            "id": "3d506544-3c11-4476-ae03-89f3efc79cbf",
+                            "id": "d18d13cd-8ed7-4bed-a182-0cf3436cdff2",
                             "name": "/svt/usbank/shield/fetchDisclosureContent",
                             "request": {
                                 "method": "POST",
@@ -1800,7 +1548,7 @@
                                 {
                                     "listen": "prerequest",
                                     "script": {
-                                        "id": "fc694e07-0077-48e1-83a6-085ab725b0f1",
+                                        "id": "998a1db2-62ab-47e4-8d93-a2ac17b4dfee",
                                         "exec": [
                                             "// Some of the environment variables might be set in the parent folders.",
                                             "pm.variables.set(\"businessLines\", \"[{\\\"businessLine\\\":\\\"/content/usbank/global/disclosures/da-deposit-accounts/\\\"},{\\\"businessLine\\\":\\\"/content/usbank/global/disclosures/da-deposit-accounts/\\\"},{\\\"businessLine\\\":\\\"/content/usbank/global/disclosures/da-deposit-accounts/\\\"},{\\\"businessLine\\\":\\\"/content/usbank/global/disclosures/da-deposit-accounts/\\\"},{\\\"businessLine\\\":\\\"/content/usbank/global/disclosures/da-deposit-accounts/\\\"},{\\\"businessLine\\\":\\\"/content/usbank/global/disclosures/da-deposit-accounts/\\\"},{\\\"businessLine\\\":\\\"/content/usbank/global/disclosures/wi-wealth-management-and-investments/\\\"},{\\\"businessLine\\\":\\\"/content/usbank/global/disclosures/xx-general/\\\"},{\\\"businessLine\\\":\\\"/content/usbank/global/disclosures/wi-wealth-management-and-investments/\\\"},{\\\"businessLine\\\":\\\"/content/usbank/global/disclosures/wi-wealth-management-and-investments/\\\"},{\\\"businessLine\\\":\\\"/content/usbank/global/disclosures/wi-wealth-management-and-investments/\\\"},{\\\"businessLine\\\":\\\"/content/usbank/global/disclosures/wi-wealth-management-and-investments/\\\"},{\\\"businessLine\\\":\\\"/content/usbank/global/disclosures/xx-general/\\\"},{\\\"businessLine\\\":\\\"/content/usbank/global/disclosures/xx-general/\\\"},{\\\"businessLine\\\":\\\"/content/usbank/global/disclosures/xx-general/\\\"}]\");",
@@ -1816,7 +1564,7 @@
                     "protocolProfileBehavior": {}
                 },
                 {
-                    "id": "262b60fe-b241-42a8-8232-63eb5ea0b17f",
+                    "id": "67066cda-83a2-4473-aa36-cdf70c784aaf",
                     "name": "/wealth-management/{{href}}",
                     "request": {
                         "method": "GET",
@@ -1836,7 +1584,7 @@
                         {
                             "listen": "prerequest",
                             "script": {
-                                "id": "0a36d6ea-4dcf-4f23-b01b-5cfc6ebbf585",
+                                "id": "c3f60513-60c0-4c45-aefb-d3e0ded050d7",
                                 "exec": [
                                     "// Some of the environment variables might be set in the parent folders.",
                                     "pm.variables.set(\"href\", \"wealth-management-services.html\");"
@@ -1851,7 +1599,7 @@
                 {
                     "listen": "prerequest",
                     "script": {
-                        "id": "86449a7f-8b1c-4a7a-9e01-366997c8417f",
+                        "id": "34e17c06-cc0d-442e-8f68-0ad7706230e8",
                         "exec": [],
                         "type": "text/javascript"
                     }
@@ -1863,52 +1611,52 @@
     "event": [],
     "variable": [
         {
-            "id": "6ff6bb36-d8cf-44f7-9f99-4d81c7a8c515",
+            "id": "d028b64d-9c94-40bb-ac30-65c997ecb6fd",
             "key": "apply_usbank_com",
             "value": "https://apply.usbank.com"
         },
         {
-            "id": "3d9d97cc-7ad8-4384-a607-e4d076b8e897",
+            "id": "c702fd7c-0112-461d-b280-cb8396290c05",
             "key": "cardrewards_usbank_com",
             "value": "https://cardrewards.usbank.com"
         },
         {
-            "id": "133b6758-146b-4439-9ed7-cea3abd35fc6",
+            "id": "c42c5b2f-3794-464e-b6ad-69e97336ad07",
             "key": "locations_usbank_com",
             "value": "https://locations.usbank.com"
         },
         {
-            "id": "c91d4cda-2f52-4014-a2eb-8906cccab9e4",
+            "id": "896132c1-7272-424a-a56d-f3d3898df9f0",
             "key": "onboarding_usbank_com",
             "value": "https://onboarding.usbank.com"
         },
         {
-            "id": "ef024d15-ae63-4c57-8895-7a73c2392682",
+            "id": "6f085c61-5fbf-4398-aa10-c4fcbd7ee4a1",
             "key": "onlinebanking_usbank_com",
             "value": "https://onlinebanking.usbank.com"
         },
         {
-            "id": "f1ee13c1-9cb9-43bc-a4f7-ed2c046245f2",
+            "id": "ebdf0a9a-987e-490e-a73f-3243bc4c6097",
             "key": "sales_usbank_com",
             "value": "https://sales.usbank.com"
         },
         {
-            "id": "9062a49e-10bf-4bf8-a08d-e4901859bdb0",
+            "id": "4056b8f5-dacf-4bf2-b549-1b8e30dce4d2",
             "key": "siteintercept_qualtrics_com",
             "value": "https://siteintercept.qualtrics.com"
         },
         {
-            "id": "5b57f632-a886-4873-8eab-a9e4dd377a19",
+            "id": "aa15fb7b-6ddf-4a86-9d2f-20a361cbc642",
             "key": "usbank_app_quantummetric_com",
             "value": "https://usbank-app.quantummetric.com"
         },
         {
-            "id": "18fa99bd-0bca-44c0-8f92-0b6f2d442cf4",
+            "id": "6eba9541-3c38-4630-96b8-d42a7d281d50",
             "key": "usbank_sync_quantummetric_com",
             "value": "https://usbank-sync.quantummetric.com"
         },
         {
-            "id": "6f5e4d93-3a68-464f-8d63-17691421dc7b",
+            "id": "713f02cc-7027-47b6-a04b-dd09bd84d8d8",
             "key": "www_usbank_com",
             "value": "https://www.usbank.com"
         }

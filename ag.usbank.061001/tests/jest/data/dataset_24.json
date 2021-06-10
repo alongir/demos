@@ -17,10 +17,6 @@
    "uuid": "9b74e370-830f-4c66-b12d-fb8c64bae965"
   },
   {
-   "name": "Q_CLIENTVERSION1",
-   "uuid": "1a192c4e-928d-49c8-9779-3c99c2d399f0"
-  },
-  {
    "name": "Q_InterceptID",
    "uuid": "60fbdbb0-2a40-4e0b-bad1-839496a56536"
   },
@@ -39,7 +35,6 @@
    "Module": "CR_a2AsGQKhBoo8TgV",
    "Q": "3",
    "Q_CLIENTVERSION": "1.52.0",
-   "Q_CLIENTVERSION1": "1.52.0",
    "Q_InterceptID": "SI_e39Wa46ASKtqbcx",
    "Q_ORIGIN": "https://www.usbank.com",
    "s": "3972f8b3a581dde336714f9005812d7c"
@@ -49,7 +44,6 @@
    "Module": "CR_a2AsGQKhBoo8TgV",
    "Q": "3",
    "Q_CLIENTVERSION": "1.52.0",
-   "Q_CLIENTVERSION1": "1.52.0",
    "Q_InterceptID": "SI_e39Wa46ASKtqbcx",
    "Q_ORIGIN": "https://www.usbank.com",
    "s": "3972f8b3a581dde336714f9005812d7c"
@@ -59,7 +53,6 @@
    "Module": "CR_a2AsGQKhBoo8TgV",
    "Q": "3",
    "Q_CLIENTVERSION": "1.52.0",
-   "Q_CLIENTVERSION1": "1.52.0",
    "Q_InterceptID": "SI_e39Wa46ASKtqbcx",
    "Q_ORIGIN": "https://www.usbank.com",
    "s": "3972f8b3a581dde336714f9005812d7c"
@@ -69,7 +62,6 @@
    "Module": "CR_a2AsGQKhBoo8TgV",
    "Q": "3",
    "Q_CLIENTVERSION": "1.52.0",
-   "Q_CLIENTVERSION1": "1.52.0",
    "Q_InterceptID": "SI_e39Wa46ASKtqbcx",
    "Q_ORIGIN": "https://www.usbank.com",
    "s": "3972f8b3a581dde336714f9005812d7c"
@@ -79,7 +71,6 @@
    "Module": "CR_a2AsGQKhBoo8TgV",
    "Q": "3",
    "Q_CLIENTVERSION": "1.52.0",
-   "Q_CLIENTVERSION1": "1.52.0",
    "Q_InterceptID": "SI_e39Wa46ASKtqbcx",
    "Q_ORIGIN": "https://www.usbank.com",
    "s": "3972f8b3a581dde336714f9005812d7c"
@@ -89,7 +80,6 @@
    "Module": "CR_a2AsGQKhBoo8TgV",
    "Q": "3",
    "Q_CLIENTVERSION": "1.52.0",
-   "Q_CLIENTVERSION1": "1.52.0",
    "Q_InterceptID": "SI_e39Wa46ASKtqbcx",
    "Q_ORIGIN": "https://www.usbank.com",
    "s": "3972f8b3a581dde336714f9005812d7c"
@@ -99,7 +89,6 @@
    "Module": "CR_a2AsGQKhBoo8TgV",
    "Q": "3",
    "Q_CLIENTVERSION": "1.52.0",
-   "Q_CLIENTVERSION1": "1.52.0",
    "Q_InterceptID": "SI_e39Wa46ASKtqbcx",
    "Q_ORIGIN": "https://www.usbank.com",
    "s": "3972f8b3a581dde336714f9005812d7c"
@@ -109,7 +98,6 @@
    "Module": "CR_a2AsGQKhBoo8TgV",
    "Q": "3",
    "Q_CLIENTVERSION": "1.52.0",
-   "Q_CLIENTVERSION1": "1.52.0",
    "Q_InterceptID": "SI_e39Wa46ASKtqbcx",
    "Q_ORIGIN": "https://www.usbank.com",
    "s": "3972f8b3a581dde336714f9005812d7c"
@@ -119,7 +107,6 @@
    "Module": "CR_a2AsGQKhBoo8TgV",
    "Q": "3",
    "Q_CLIENTVERSION": "1.52.0",
-   "Q_CLIENTVERSION1": "1.52.0",
    "Q_InterceptID": "SI_e39Wa46ASKtqbcx",
    "Q_ORIGIN": "https://www.usbank.com",
    "s": "3972f8b3a581dde336714f9005812d7c"
@@ -129,7 +116,6 @@
    "Module": "CR_a2AsGQKhBoo8TgV",
    "Q": "3",
    "Q_CLIENTVERSION": "1.52.0",
-   "Q_CLIENTVERSION1": "1.52.0",
    "Q_InterceptID": "SI_e39Wa46ASKtqbcx",
    "Q_ORIGIN": "https://www.usbank.com",
    "s": "3972f8b3a581dde336714f9005812d7c"

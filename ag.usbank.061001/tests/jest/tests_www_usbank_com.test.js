@@ -1,5 +1,5 @@
 const authenticate = require("./authentication");
-const {CSSselect, JSONBuild, JSONPath, clearSession, dataset, getHttpClient, urlPart, urlencode} = require("./up9lib");
+const {CSSselect, JSONBuild, JSONPath, clearSession, dataset, getHttpClient, urlencode} = require("./up9lib");
 
 it("test_01_get_about_us_bank_customer_service_html", () => {
     clearSession();
@@ -71,25 +71,12 @@ it("test_81_get_corporate_and_commercial_banking_solutions_credit_and_financing_
     });
 });
 
-it("test_49_get_credit_cards_href", () => {
-    clearSession();
+describe.each(dataset("data/dataset_49.json"))("test_49_get_credit_cards_href", (c3ch, c3nid, href, icid) => {
+    it("test_49_get_credit_cards_href", () => {
+        clearSession();
 
-    // GET https://www.usbank.com/index.html (endp 4)
-    const www_usbank_com = getHttpClient("https://www.usbank.com", authenticate);
-    return www_usbank_com.fetch("/index.html")
-    .then((response) => {
-        expect(response.status).toEqual(200);
-        return response.text();
-    })
-    .then((text) => {
-        expect(CSSselect("html head title", text)).toContain("Consumer banking | Personal banking | U.S. Bank");
-        const href = urlPart("/2", CSSselect("div.USBContent main.bodyContent div.aem-Grid div.responsivegrid.aem-GridColumn div.aem-Grid div.banner.parbase.aem-GridColumn div.USBHero div div div div div a[href] @href", response).text().trim());
-        const c3ch = urlPart("?c3ch", CSSselect("div.USBContent main.bodyContent div.aem-Grid div.responsivegrid.aem-GridColumn div.aem-Grid div.banner.parbase.aem-GridColumn div.USBHero div div div div div a[href] @href", response).text().trim());
-        const c3nid = urlPart("?icid", CSSselect("div.USBContent main.bodyContent div.aem-Grid div.responsivegrid.aem-GridColumn div.aem-Grid div.banner.parbase.aem-GridColumn div.USBHero div div div div div a[href] @href", response).text().trim());
-        const icid = urlPart("?icid", CSSselect("div.USBContent main.bodyContent div.aem-Grid div.responsivegrid.aem-GridColumn div.aem-Grid div.banner.parbase.aem-GridColumn div.USBHero div div div div div a[href] @href", response).text().trim());
-    })
-    .then((data) => {
         // GET https://www.usbank.com/credit-cards/{href} (endp 49)
+        const www_usbank_com = getHttpClient("https://www.usbank.com", authenticate);
         return www_usbank_com.fetch("/credit-cards/" + href + urlencode([["c3ch", c3ch], ["c3nid", c3nid], ["icid", icid]]))
         .then((response) => {
             expect(response.status).toEqual(200);
@@ -143,24 +130,6 @@ describe.each(dataset("data/dataset_5.json"))("test_05_post_plpXRb_YlO_param1_pa
         })
         .then((data) => {
         });
-    });
-});
-
-it("test_53_get_site_map_html", () => {
-    clearSession();
-
-    // GET https://www.usbank.com/site-map.html (endp 53)
-    const www_usbank_com = getHttpClient("https://www.usbank.com", authenticate);
-    return www_usbank_com.fetch("/site-map.html")
-    .then((response) => {
-        expect(response.status).toEqual(200);
-        return response.text();
-    })
-    .then((text) => {
-        expect(CSSselect("div#speedBumpModal div.modal-dialog div.modal-content div.modal-body.speedBump-body h3", text)).toContain("Leaving?");
-        expect(CSSselect("html head title", text)).toContain("Site map | U.S. Bank");
-    })
-    .then((data) => {
     });
 });
 
@@ -224,22 +193,12 @@ describe.each(dataset("data/dataset_6.json"))("test_06_post_svt_usbank_shield_fe
     });
 });
 
-it("test_84_get_wealth_management_href", () => {
-    clearSession();
+describe.each(dataset("data/dataset_84.json"))("test_84_get_wealth_management_href", (href) => {
+    it("test_84_get_wealth_management_href", () => {
+        clearSession();
 
-    // GET https://www.usbank.com/index.html (endp 4)
-    const www_usbank_com = getHttpClient("https://www.usbank.com", authenticate);
-    return www_usbank_com.fetch("/index.html")
-    .then((response) => {
-        expect(response.status).toEqual(200);
-        return response.text();
-    })
-    .then((text) => {
-        expect(CSSselect("html head title", text)).toContain("Consumer banking | Personal banking | U.S. Bank");
-        const href = urlPart("/2", CSSselect("div#navigation-menu-dropdown div.menu-scrolls ul.menu-list.menu-primary li.menu-item.menu-primary-item ul.menu-list.menu-secondary li.menu-item.menu-secondary-item ul.menu-list.menu-tertiary li.menu-item.menu-tertiary-item a.menu-link.menu-tertiary-link[href] @href", response).text().trim());
-    })
-    .then((data) => {
         // GET https://www.usbank.com/wealth-management/{href} (endp 84)
+        const www_usbank_com = getHttpClient("https://www.usbank.com", authenticate);
         return www_usbank_com.fetch("/wealth-management/" + href)
         .then((response) => {
             expect(response.status).toEqual(200);

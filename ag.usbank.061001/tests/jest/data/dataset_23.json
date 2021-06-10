@@ -5,6 +5,10 @@
    "uuid": "2955bf6c-7d4b-4df7-87cc-791cd189d9a4"
   },
   {
+   "name": "PRODUCT_CODE",
+   "uuid": "4f662c06-c79d-4281-8b70-c338f55197bc"
+  },
+  {
    "name": "U",
    "uuid": "884ad032-2076-454d-a1d7-e19cdf63650f"
   },
@@ -16,51 +20,61 @@
  "rows": [
   {
    "H": "90eab3bf84bb0f9cb9b8e106",
+   "PRODUCT_CODE": "DDA",
    "U": "5a143a76cdf6aecea1d68d68dd5cfb95",
    "s": "3972f8b3a581dde336714f9005812d7c"
   },
   {
    "H": "951977bb3a53910e9ec94c7f",
+   "PRODUCT_CODE": "DDA",
    "U": "5a143a76cdf6aecea1d68d68dd5cfb95",
    "s": "3972f8b3a581dde336714f9005812d7c"
   },
   {
    "H": "b51572b98559462c64e66839",
+   "PRODUCT_CODE": "DDA",
    "U": "5a143a76cdf6aecea1d68d68dd5cfb95",
    "s": "3972f8b3a581dde336714f9005812d7c"
   },
   {
    "H": "646509bb846ed6ff84c8c20b",
+   "PRODUCT_CODE": "DDA",
    "U": "5a143a76cdf6aecea1d68d68dd5cfb95",
    "s": "3972f8b3a581dde336714f9005812d7c"
   },
   {
    "H": "0061b0c3f240f7ae7f0387f6",
+   "PRODUCT_CODE": "DDA",
    "U": "5a143a76cdf6aecea1d68d68dd5cfb95",
    "s": "3972f8b3a581dde336714f9005812d7c"
   },
   {
    "H": "60dcc6baab495a0e721653cc",
+   "PRODUCT_CODE": "DDA",
    "U": "5a143a76cdf6aecea1d68d68dd5cfb95",
    "s": "3972f8b3a581dde336714f9005812d7c"
   },
   {
    "H": "959269ba9ce2bf0a23512e64",
+   "PRODUCT_CODE": "DDA",
    "U": "5a143a76cdf6aecea1d68d68dd5cfb95",
    "s": "3972f8b3a581dde336714f9005812d7c"
   },
   {
    "H": "91089ec481ec42e6019c6c46",
+   "PRODUCT_CODE": "DDA",
    "U": "5a143a76cdf6aecea1d68d68dd5cfb95",
    "s": "3972f8b3a581dde336714f9005812d7c"
   },
   {
    "H": "29ce0fc537b0b6fe063990a0",
+   "PRODUCT_CODE": "DDA",
    "U": "5a143a76cdf6aecea1d68d68dd5cfb95",
    "s": "3972f8b3a581dde336714f9005812d7c"
   },
   {
    "H": "5bda80c51a7564988c9cc6ff",
+   "PRODUCT_CODE": "DDA",
    "U": "5a143a76cdf6aecea1d68d68dd5cfb95",
    "s": "3972f8b3a581dde336714f9005812d7c"
   }

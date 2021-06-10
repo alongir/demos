@@ -290,7 +290,6 @@
     "operationId": "cff8ab34-739f-4c7a-b268-38bca30c00ff",
     "parameters": [
      {
-      "description": "Origin: POST https://onboarding.usbank.com/{param}/v1/applications &rarr; header: securitytoken",
       "in": "header",
       "name": "securitytoken",
       "required": false,
@@ -2234,7 +2233,6 @@
      "style": "simple"
     },
     {
-     "description": "Origin: POST https://onboarding.usbank.com/{param}/v1/applications &rarr; json: $.applicationId",
      "in": "path",
      "name": "applicationId",
      "required": true,
@@ -2251,7 +2249,6 @@
     "operationId": "bbdee71e-4cae-4324-beb8-4f2d74529647",
     "parameters": [
      {
-      "description": "Origin: POST https://onboarding.usbank.com/{param}/v1/applications &rarr; header: securitytoken",
       "in": "header",
       "name": "securitytoken",
       "required": false,
@@ -2928,10 +2925,10 @@
  },
  "tags": [
   {
-   "name": "applications"
+   "name": "proxies"
   },
   {
-   "name": "proxies"
+   "name": "applications"
   }
  ]
 }

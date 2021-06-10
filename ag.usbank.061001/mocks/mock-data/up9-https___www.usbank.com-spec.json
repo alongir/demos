@@ -88,7 +88,6 @@
     "operationId": "7affe1c7-f757-4755-acaf-84da656ff33e",
     "parameters": [
      {
-      "description": "Origin: GET https://www.usbank.com/index.html &rarr; html: div.USBContent main.bodyContent div.aem-Grid div.responsivegrid.aem-GridColumn div.aem-Grid div.banner.parbase.aem-GridColumn div.USBHero div div div div div a[href] @href; url: ?c3ch",
       "in": "query",
       "name": "c3ch",
       "required": true,
@@ -100,7 +99,6 @@
       }
      },
      {
-      "description": "Origin: GET https://www.usbank.com/index.html &rarr; html: div.USBContent main.bodyContent div.aem-Grid div.responsivegrid.aem-GridColumn div.aem-Grid div.banner.parbase.aem-GridColumn div.USBHero div div div div div a[href] @href; url: ?icid",
       "in": "query",
       "name": "c3nid",
       "required": true,
@@ -112,7 +110,6 @@
       }
      },
      {
-      "description": "Origin: GET https://www.usbank.com/index.html &rarr; html: div.USBContent main.bodyContent div.aem-Grid div.responsivegrid.aem-GridColumn div.aem-Grid div.banner.parbase.aem-GridColumn div.USBHero div div div div div a[href] @href; url: ?icid",
       "in": "query",
       "name": "icid",
       "required": true,
@@ -138,7 +135,6 @@
    },
    "parameters": [
     {
-     "description": "Origin: GET https://www.usbank.com/index.html &rarr; html: div.USBContent main.bodyContent div.aem-Grid div.responsivegrid.aem-GridColumn div.aem-Grid div.banner.parbase.aem-GridColumn div.USBHero div div div div div a[href] @href; url: /2",
      "in": "path",
      "name": "href",
      "required": true,
@@ -689,7 +685,6 @@
    },
    "parameters": [
     {
-     "description": "Origin: GET https://www.usbank.com/index.html &rarr; html: div#navigation-menu-dropdown div.menu-scrolls ul.menu-list.menu-primary li.menu-item.menu-primary-item ul.menu-list.menu-secondary li.menu-item.menu-secondary-item ul.menu-list.menu-tertiary li.menu-item.menu-tertiary-item a.menu-link.menu-tertiary-link[href] @href; url: /2",
      "in": "path",
      "name": "href",
      "required": true,

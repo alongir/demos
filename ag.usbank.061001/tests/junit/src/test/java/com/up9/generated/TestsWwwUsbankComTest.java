@@ -64,30 +64,26 @@ public class TestsWwwUsbankComTest
         assertCSSselect("a#continue", "Continue", response.body().string());
     }
 
-    @Test
-    public void testGetCreditCardsHref49() throws MalformedURLException, IOException
+    @ParameterizedTest
+    @JsonFileSource(resources = "/dataset_49.json")
+    public void testGetCreditCardsHref49(final JsonObject json) throws MalformedURLException, IOException
     {
-        // GET https://www.usbank.com/index.html (endp 4)
-        final HttpTarget wwwUsbankCom = getHttpClient("https://www.usbank.com", new Authentication());
-        final HttpRequest request = new HttpRequest();
-        final Response response = wwwUsbankCom.get(request, "/index.html");
-        assertStatusCode(response.code(), 200);
-        assertCSSselect("html head title", "Consumer banking | Personal banking | U.S. Bank", response.body().string());
-        final String href = urlPart("/2", CSSselect("div.USBContent main.bodyContent div.aem-Grid div.responsivegrid.aem-GridColumn div.aem-Grid div.banner.parbase.aem-GridColumn div.USBHero div div div div div a[href] @href", response.body().string()));
-        final String c3ch = urlPart("?c3ch", CSSselect("div.USBContent main.bodyContent div.aem-Grid div.responsivegrid.aem-GridColumn div.aem-Grid div.banner.parbase.aem-GridColumn div.USBHero div div div div div a[href] @href", response.body().string()));
-        final String c3nid = urlPart("?icid", CSSselect("div.USBContent main.bodyContent div.aem-Grid div.responsivegrid.aem-GridColumn div.aem-Grid div.banner.parbase.aem-GridColumn div.USBHero div div div div div a[href] @href", response.body().string()));
-        final String icid = urlPart("?icid", CSSselect("div.USBContent main.bodyContent div.aem-Grid div.responsivegrid.aem-GridColumn div.aem-Grid div.banner.parbase.aem-GridColumn div.USBHero div div div div div a[href] @href", response.body().string()));
+        final String c3ch = json.getString("c3ch");
+        final String c3nid = json.getString("c3nid");
+        final String href = json.getString("href");
+        final String icid = json.getString("icid");
 
         // GET https://www.usbank.com/credit-cards/{href} (endp 49)
-        final HttpRequest request2 = new HttpRequest();
-        request2.setQueryString(new Hashtable<String, Object>() {{
+        final HttpTarget wwwUsbankCom = getHttpClient("https://www.usbank.com", new Authentication());
+        final HttpRequest request = new HttpRequest();
+        request.setQueryString(new Hashtable<String, Object>() {{
             put("c3ch", c3ch);
             put("c3nid", c3nid);
             put("icid", icid);
         }});
-        final Response response2 = wwwUsbankCom.get(request2, "/credit-cards/" + href);
-        assertStatusCode(response2.code(), 200);
-        assertCSSselect("a#continue", "Continue", response2.body().string());
+        final Response response = wwwUsbankCom.get(request, "/credit-cards/" + href);
+        assertStatusCode(response.code(), 200);
+        assertCSSselect("a#continue", "Continue", response.body().string());
     }
 
     @Test
@@ -123,18 +119,6 @@ public class TestsWwwUsbankComTest
         }});
         final Response response = wwwUsbankCom.post(request, "/plpXRb/YlO/" + param + "/" + param1 + "/" + param2 + "/" + param3 + "/aEs/" + aeId);
         assertStatusCode(response.code(), 201);
-    }
-
-    @Test
-    public void testGetSiteMapHtml53() throws MalformedURLException, IOException
-    {
-        // GET https://www.usbank.com/site-map.html (endp 53)
-        final HttpTarget wwwUsbankCom = getHttpClient("https://www.usbank.com", new Authentication());
-        final HttpRequest request = new HttpRequest();
-        final Response response = wwwUsbankCom.get(request, "/site-map.html");
-        assertStatusCode(response.code(), 200);
-        assertCSSselect("div#speedBumpModal div.modal-dialog div.modal-content div.modal-body.speedBump-body h3", "Leaving?", response.body().string());
-        assertCSSselect("html head title", "Site map | U.S. Bank", response.body().string());
     }
 
     @ParameterizedTest
@@ -180,22 +164,18 @@ public class TestsWwwUsbankComTest
         assertJSONPath("$[*].status", "success", response.body().string());
     }
 
-    @Test
-    public void testGetWealthManagementHref84() throws MalformedURLException, IOException
+    @ParameterizedTest
+    @JsonFileSource(resources = "/dataset_84.json")
+    public void testGetWealthManagementHref84(final JsonObject json) throws MalformedURLException, IOException
     {
-        // GET https://www.usbank.com/index.html (endp 4)
-        final HttpTarget wwwUsbankCom = getHttpClient("https://www.usbank.com", new Authentication());
-        final HttpRequest request = new HttpRequest();
-        final Response response = wwwUsbankCom.get(request, "/index.html");
-        assertStatusCode(response.code(), 200);
-        assertCSSselect("html head title", "Consumer banking | Personal banking | U.S. Bank", response.body().string());
-        final String href = urlPart("/2", CSSselect("div#navigation-menu-dropdown div.menu-scrolls ul.menu-list.menu-primary li.menu-item.menu-primary-item ul.menu-list.menu-secondary li.menu-item.menu-secondary-item ul.menu-list.menu-tertiary li.menu-item.menu-tertiary-item a.menu-link.menu-tertiary-link[href] @href", response.body().string()));
+        final String href = json.getString("href");
 
         // GET https://www.usbank.com/wealth-management/{href} (endp 84)
-        final HttpRequest request2 = new HttpRequest();
-        final Response response2 = wwwUsbankCom.get(request2, "/wealth-management/" + href);
-        assertStatusCode(response2.code(), 200);
-        assertCSSselect("section.pubIns div.bodyContent.container-fluid div.row div div.aem-Grid div.containerComp.parbase.aem-GridColumn div.containerComponent.mediumPaddingTopDT.largePaddingRightDT.mediumPaddingBottomDT.largePaddingLeftDT.smallPaddingTopMob.smallPaddingRightMob.smallPaddingBottomMob.smallPaddingLeftMob.gray div div.aem-Grid div.aem-GridColumn div.xf-content-height div.aem-Grid div.containerComp.parbase.aem-GridColumn div.containerComponent div div.aem-Grid div.aem-GridColumn div.xf-content-height div.aem-Grid div.containerComp.parbase.aem-GridColumn div.containerComponent div div.aem-Grid div.containerComp.parbase.aem-GridColumn--default--none.aem-GridColumn div.containerComponent.noneTopDT.mediumPaddingRightDT.noneBottomDT.noneleftDT.noneTopMob.noneRightMob.noneBottomMob.noneleftMob.transparent div div.aem-Grid div.parbase.aem-GridColumn div.usbTextImage div.textimage-text.text.largePaddingBottomSeparator div p", "No minimum investment required", response2.body().string());
+        final HttpTarget wwwUsbankCom = getHttpClient("https://www.usbank.com", new Authentication());
+        final HttpRequest request = new HttpRequest();
+        final Response response = wwwUsbankCom.get(request, "/wealth-management/" + href);
+        assertStatusCode(response.code(), 200);
+        assertCSSselect("section.pubIns div.bodyContent.container-fluid div.row div div.aem-Grid div.containerComp.parbase.aem-GridColumn div.containerComponent.mediumPaddingTopDT.largePaddingRightDT.mediumPaddingBottomDT.largePaddingLeftDT.smallPaddingTopMob.smallPaddingRightMob.smallPaddingBottomMob.smallPaddingLeftMob.gray div div.aem-Grid div.aem-GridColumn div.xf-content-height div.aem-Grid div.containerComp.parbase.aem-GridColumn div.containerComponent div div.aem-Grid div.aem-GridColumn div.xf-content-height div.aem-Grid div.containerComp.parbase.aem-GridColumn div.containerComponent div div.aem-Grid div.containerComp.parbase.aem-GridColumn--default--none.aem-GridColumn div.containerComponent.noneTopDT.mediumPaddingRightDT.noneBottomDT.noneleftDT.noneTopMob.noneRightMob.noneBottomMob.noneleftMob.transparent div div.aem-Grid div.parbase.aem-GridColumn div.usbTextImage div.textimage-text.text.largePaddingBottomSeparator div p", "No minimum investment required", response.body().string());
     }
 }
 

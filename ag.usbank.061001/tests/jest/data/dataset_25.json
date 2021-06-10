@@ -5,12 +5,12 @@
    "uuid": "85770ff2-0248-4335-ad73-b2536c102abe"
   },
   {
-   "name": "Q_CLIENTVERSION",
-   "uuid": "9b74e370-830f-4c66-b12d-fb8c64bae965"
+   "name": "PRODUCT_CODE",
+   "uuid": "4f662c06-c79d-4281-8b70-c338f55197bc"
   },
   {
-   "name": "Q_CLIENTVERSION1",
-   "uuid": "1a192c4e-928d-49c8-9779-3c99c2d399f0"
+   "name": "Q_CLIENTVERSION",
+   "uuid": "9b74e370-830f-4c66-b12d-fb8c64bae965"
   },
   {
    "name": "Q_InterceptID",
@@ -32,8 +32,8 @@
  "rows": [
   {
    "Module": "CR_a2AsGQKhBoo8TgV",
+   "PRODUCT_CODE": "DDA",
    "Q_CLIENTVERSION": "1.52.0",
-   "Q_CLIENTVERSION1": "1.52.0",
    "Q_InterceptID": "SI_e39Wa46ASKtqbcx",
    "Q_ORIGIN": "https://www.usbank.com",
    "X": "ef566b27141d415eb8fb92cf500e8688",
@@ -41,8 +41,8 @@
   },
   {
    "Module": "CR_a2AsGQKhBoo8TgV",
+   "PRODUCT_CODE": "DDA",
    "Q_CLIENTVERSION": "1.52.0",
-   "Q_CLIENTVERSION1": "1.52.0",
    "Q_InterceptID": "SI_e39Wa46ASKtqbcx",
    "Q_ORIGIN": "https://www.usbank.com",
    "X": "971fd12e8a3e494460588bdd5569d207",
@@ -50,8 +50,8 @@
   },
   {
    "Module": "CR_a2AsGQKhBoo8TgV",
+   "PRODUCT_CODE": "DDA",
    "Q_CLIENTVERSION": "1.52.0",
-   "Q_CLIENTVERSION1": "1.52.0",
    "Q_InterceptID": "SI_e39Wa46ASKtqbcx",
    "Q_ORIGIN": "https://www.usbank.com",
    "X": "9b7a26ea16a54ef8df94f43b97739667",
@@ -59,8 +59,8 @@
   },
   {
    "Module": "CR_a2AsGQKhBoo8TgV",
+   "PRODUCT_CODE": "DDA",
    "Q_CLIENTVERSION": "1.52.0",
-   "Q_CLIENTVERSION1": "1.52.0",
    "Q_InterceptID": "SI_e39Wa46ASKtqbcx",
    "Q_ORIGIN": "https://www.usbank.com",
    "X": "45e18f2891934aa0f3e923b14068016a",
@@ -68,8 +68,8 @@
   },
   {
    "Module": "CR_a2AsGQKhBoo8TgV",
+   "PRODUCT_CODE": "DDA",
    "Q_CLIENTVERSION": "1.52.0",
-   "Q_CLIENTVERSION1": "1.52.0",
    "Q_InterceptID": "SI_e39Wa46ASKtqbcx",
    "Q_ORIGIN": "https://www.usbank.com",
    "X": "e7b54d3392b64a0f16eca6246b116ea9",
@@ -77,8 +77,8 @@
   },
   {
    "Module": "CR_a2AsGQKhBoo8TgV",
+   "PRODUCT_CODE": "DDA",
    "Q_CLIENTVERSION": "1.52.0",
-   "Q_CLIENTVERSION1": "1.52.0",
    "Q_InterceptID": "SI_e39Wa46ASKtqbcx",
    "Q_ORIGIN": "https://www.usbank.com",
    "X": "d41b727b6d94489a63842c3d6c29cfdf",
@@ -86,8 +86,8 @@
   },
   {
    "Module": "CR_a2AsGQKhBoo8TgV",
+   "PRODUCT_CODE": "DDA",
    "Q_CLIENTVERSION": "1.52.0",
-   "Q_CLIENTVERSION1": "1.52.0",
    "Q_InterceptID": "SI_e39Wa46ASKtqbcx",
    "Q_ORIGIN": "https://www.usbank.com",
    "X": "cafd9cb802f7449793b709f5a6c55a15",
@@ -95,8 +95,8 @@
   },
   {
    "Module": "CR_a2AsGQKhBoo8TgV",
+   "PRODUCT_CODE": "DDA",
    "Q_CLIENTVERSION": "1.52.0",
-   "Q_CLIENTVERSION1": "1.52.0",
    "Q_InterceptID": "SI_e39Wa46ASKtqbcx",
    "Q_ORIGIN": "https://www.usbank.com",
    "X": "c2381d6399ec433cfdc0d0309bbabc3e",
@@ -104,8 +104,8 @@
   },
   {
    "Module": "CR_a2AsGQKhBoo8TgV",
+   "PRODUCT_CODE": "DDA",
    "Q_CLIENTVERSION": "1.52.0",
-   "Q_CLIENTVERSION1": "1.52.0",
    "Q_InterceptID": "SI_e39Wa46ASKtqbcx",
    "Q_ORIGIN": "https://www.usbank.com",
    "X": "95c8e4177de74cc8c29c8ab6783f5ea7",
@@ -113,8 +113,8 @@
   },
   {
    "Module": "CR_a2AsGQKhBoo8TgV",
+   "PRODUCT_CODE": "DDA",
    "Q_CLIENTVERSION": "1.52.0",
-   "Q_CLIENTVERSION1": "1.52.0",
    "Q_InterceptID": "SI_e39Wa46ASKtqbcx",
    "Q_ORIGIN": "https://www.usbank.com",
    "X": "940dd291faa646e6f983a2b6aa785ca3",

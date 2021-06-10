@@ -5,21 +5,6 @@ from authentication import authenticate
 
 
 @data_driven_tests
-class Tests_apply_usbank_com(unittest.TestCase):
-
-    @json_dataset('data/dataset_36.json')
-    @clear_session({'spanId': 36})
-    def test_36_get_apply_apply_html(self, data_row):
-        PRODUCT_CODE, = data_row
-
-        # GET https://apply.usbank.com/apply/apply.html (endp 36)
-        apply_usbank_com = get_http_client('https://apply.usbank.com', authenticate)
-        qstr = '?' + urlencode([('PRODUCT_CODE', PRODUCT_CODE), ('SUB_PRODUCT_CODE', 'PI')])
-        resp = apply_usbank_com.get('/apply/apply.html' + qstr)
-        resp.assert_status_code(302)
-
-
-@data_driven_tests
 class Tests_cardrewards_usbank_com(unittest.TestCase):
 
     @json_dataset('data/dataset_69.json')
@@ -70,41 +55,6 @@ class Tests_locations_usbank_com(unittest.TestCase):
 
 @data_driven_tests
 class Tests_onboarding_usbank_com(unittest.TestCase):
-
-    @json_dataset('data/dataset_38.json')
-    @clear_session({'spanId': 38})
-    def test_38_post_param_v1_applications_applicationId_patch(self, data_row):
-        countriesOfCitizenship, description, email_, lastName, monthlyHousingPayment, number, offerTypeCode, op, param, path, productCode, sourceCode, subProductCode, subtype, x_requested_with = data_row
-
-        # POST https://onboarding.usbank.com/{param}/v1/applications (endp 37)
-        onboarding_usbank_com = get_http_client('https://onboarding.usbank.com', authenticate)
-        with open('data/payload_for_endp_37.json', 'r') as json_payload_file:
-            json_payload = json.load(json_payload_file)
-        apply_into_json(json_payload, '$.products[*].cardInformation.offerTypeCode', offerTypeCode)
-        apply_into_json(json_payload, '$.products[*].cardInformation.sourceCode', sourceCode)
-        apply_into_json(json_payload, '$.products[*].description', description)
-        apply_into_json(json_payload, '$.products[*].productCode', productCode)
-        apply_into_json(json_payload, '$.products[*].subProductCode', subProductCode)
-        apply_into_json(json_payload, '$.products[*].subtype', subtype)
-        resp = onboarding_usbank_com.post(f'/{param}/v1/applications', json=json_payload, headers=dict([('x-requested-with', x_requested_with)]))
-        resp.assert_status_code(201)
-        resp.assert_jsonpath('$.applicants[*].addresses.primary.country', expected_value='US')
-        applicationId = jsonpath('$.applicationId', resp)
-        securitytoken = get_data_from_header('securitytoken', resp)
-
-        # POST https://onboarding.usbank.com/{param}/v1/applications/{applicationId}/patch (endp 38)
-        with open('data/payload_for_endp_38.json', 'r') as json_payload_file:
-            json_payload = json.load(json_payload_file)
-        apply_into_json(json_payload, '$[*].op', op)
-        apply_into_json(json_payload, '$[*].path', path)
-        apply_into_json(json_payload, '$[*].value.countriesOfCitizenship[*]', countriesOfCitizenship)
-        apply_into_json(json_payload, '$[*].value.lastName', lastName)
-        apply_into_json(json_payload, '$[*].value.monthlyHousingPayment', monthlyHousingPayment)
-        apply_into_json(json_payload, '$[*].value.number', number)
-        apply_into_json(json_payload, '$[*].value.personal.email', email_)
-        resp = onboarding_usbank_com.post(f'/{param}/v1/applications/{applicationId}/patch', json=json_payload, headers=dict([('securitytoken', securitytoken), ('x-requested-with', 'X-Requested-With')]))
-        resp.assert_status_code(200)
-        resp.assert_jsonpath('$.applicants[*].addresses.primary.country', expected_value='US')
 
     @json_dataset('data/dataset_73.json')
     @clear_session({'spanId': 73})
@@ -186,31 +136,16 @@ class Tests_onboarding_usbank_com(unittest.TestCase):
     @json_dataset('data/dataset_40.json')
     @clear_session({'spanId': 40})
     def test_40_post_proxies_v1_validateAddress(self, data_row):
-        description, offerTypeCode, param, productCode, sourceCode, subProductCode, subtype, usAddress, x_requested_with, zipCode = data_row
-
-        # POST https://onboarding.usbank.com/{param}/v1/applications (endp 37)
-        onboarding_usbank_com = get_http_client('https://onboarding.usbank.com', authenticate)
-        with open('data/payload_for_endp_37.json', 'r') as json_payload_file:
-            json_payload = json.load(json_payload_file)
-        apply_into_json(json_payload, '$.products[*].cardInformation.offerTypeCode', offerTypeCode)
-        apply_into_json(json_payload, '$.products[*].cardInformation.sourceCode', sourceCode)
-        apply_into_json(json_payload, '$.products[*].description', description)
-        apply_into_json(json_payload, '$.products[*].productCode', productCode)
-        apply_into_json(json_payload, '$.products[*].subProductCode', subProductCode)
-        apply_into_json(json_payload, '$.products[*].subtype', subtype)
-        resp = onboarding_usbank_com.post(f'/{param}/v1/applications', json=json_payload, headers=dict([('x-requested-with', x_requested_with)]))
-        resp.assert_status_code(201)
-        resp.assert_jsonpath('$.applicants[*].addresses.primary.country', expected_value='US')
-        securitytoken = get_data_from_header('securitytoken', resp)
+        securitytoken, usAddress, zipCode = data_row
 
         # POST https://onboarding.usbank.com/proxies/v1/validateAddress (endp 40)
+        onboarding_usbank_com = get_http_client('https://onboarding.usbank.com', authenticate)
         with open('data/payload_for_endp_40.json', 'r') as json_payload_file:
             json_payload = json.load(json_payload_file)
         apply_into_json(json_payload, '$.customerAddress.usAddress.*', usAddress)
         apply_into_json(json_payload, '$.customerAddress.usAddress.zipCode', zipCode)
         resp = onboarding_usbank_com.post('/proxies/v1/validateAddress', json=json_payload, headers=dict([('securitytoken', securitytoken), ('x-requested-with', 'X-Requested-With')]))
         resp.assert_status_code(200)
-        resp.assert_jsonpath('$.address.city', expected_value='NEWARK')
 
 
 @data_driven_tests
@@ -270,35 +205,11 @@ class Tests_siteintercept_qualtrics_com(unittest.TestCase):
     @json_dataset('data/dataset_20.json')
     @clear_session({'spanId': 20})
     def test_20_post_WRSiteInterceptEngine_(self, data_row):
-        BrandDC, Module, Q_CLIENTVERSION, Q_CLIENTVERSION1, Q_CLIENTVERSION2, Q_InterceptID, Q_ORIGIN = data_row
-
-        # GET https://www.usbank.com/index.html (endp 4)
-        www_usbank_com = get_http_client('https://www.usbank.com', authenticate)
-        resp = www_usbank_com.get('/index.html')
-        resp.assert_status_code(200)
-        resp.assert_cssselect('html head title', expected_value='Consumer banking | Personal banking | U.S. Bank')
-        Q_LOC = cssselect('html head link[href] @href', resp)
-
-        # GET https://siteintercept.qualtrics.com/WRSiteInterceptEngine/Asset.php (endp 21)
-        siteintercept_qualtrics_com = get_http_client('https://siteintercept.qualtrics.com', authenticate)
-        qstr = '?' + urlencode([('Module', Module), ('Q_CLIENTTYPE', 'web'), ('Q_CLIENTVERSION', Q_CLIENTVERSION), ('Q_InterceptID', Q_InterceptID), ('Q_ORIGIN', Q_ORIGIN), ('Version', str(random.randint(1, 26)))])
-        resp = siteintercept_qualtrics_com.get('/WRSiteInterceptEngine/Asset.php' + qstr)
-        resp.assert_status_code(200)
-        resp.assert_jsonpath('$.CreativeDefinition.Options.Message.Headline.Text', expected_value='Will you take our survey?')
-        Q_ZoneID = jsonpath('$.CreativeDefinition.ZoneID', resp)
-
-        # POST https://siteintercept.qualtrics.com/WRSiteInterceptEngine/Targeting.php (endp 22)
-        qstr = '?' + urlencode([('Q_CLIENTTYPE', 'web'), ('Q_CLIENTVERSION', Q_CLIENTVERSION1), ('Q_ZoneID', Q_ZoneID)])
-        resp = siteintercept_qualtrics_com.post('/WRSiteInterceptEngine/Targeting.php' + qstr, data=[('Q_LOC', Q_LOC)])
-        resp.assert_status_code(200)
-        resp.assert_jsonpath('$.ClientSideIntercepts[*].LogicTree.Left.Left.Type', expected_value='LogicNode')
-        Q_ASID = jsonpath('$.ClientSideIntercepts[*].ActionSets[*].ActionSetID', resp)
-        Q_CID = url_part('?Q_CID', jsonpath('$.ClientSideIntercepts[*].ActionSets[*].Target.*', resp))
-        Q_SIID = url_part('?Q_SIID', jsonpath('$.ClientSideIntercepts[*].ActionSets[*].Target.*', resp))
-        SurveyID = url_part('/3', jsonpath('$.ClientSideIntercepts[*].ActionSets[*].Target.OriginalURL', resp))
+        BrandDC, Q_ASID, Q_CID, Q_CLIENTVERSION, Q_SIID, SurveyID = data_row
 
         # POST https://siteintercept.qualtrics.com/WRSiteInterceptEngine/ (endp 20)
-        qstr = '?' + urlencode([('Q_ASID', Q_ASID), ('Q_CID', Q_CID), ('Q_CLIENTTYPE', 'web'), ('Q_CLIENTVERSION', Q_CLIENTVERSION2), ('Q_Impress', '1'), ('Q_SIID', Q_SIID), ('r', str(int(time.time() * 1000)))])
+        siteintercept_qualtrics_com = get_http_client('https://siteintercept.qualtrics.com', authenticate)
+        qstr = '?' + urlencode([('Q_ASID', Q_ASID), ('Q_CID', Q_CID), ('Q_CLIENTTYPE', 'web'), ('Q_CLIENTVERSION', Q_CLIENTVERSION), ('Q_Impress', '1'), ('Q_SIID', Q_SIID), ('r', str(int(time.time() * 1000)))])
         resp = siteintercept_qualtrics_com.post('/WRSiteInterceptEngine/' + qstr, data=[('BrandDC', BrandDC), ('BrandID', 'usbank'), ('SurveyID', SurveyID)])
         resp.assert_status_code(200)
 
@@ -309,14 +220,14 @@ class Tests_usbank_app_quantummetric_com(unittest.TestCase):
     @json_dataset('data/dataset_23.json')
     @clear_session({'spanId': 23})
     def test_23_post_(self, data_row):
-        H, U, s = data_row
+        H, PRODUCT_CODE, U, s = data_row
 
-        # GET https://www.usbank.com/index.html (endp 4)
-        www_usbank_com = get_http_client('https://www.usbank.com', authenticate)
-        resp = www_usbank_com.get('/index.html')
-        resp.assert_status_code(200)
-        resp.assert_cssselect('html head title', expected_value='Consumer banking | Personal banking | U.S. Bank')
-        u = cssselect('html head link[href] @href', resp)
+        # GET https://apply.usbank.com/apply/apply.html (endp 36)
+        apply_usbank_com = get_http_client('https://apply.usbank.com', authenticate)
+        qstr = '?' + urlencode([('PRODUCT_CODE', PRODUCT_CODE), ('SUB_PRODUCT_CODE', 'PI')])
+        resp = apply_usbank_com.get('/apply/apply.html' + qstr)
+        resp.assert_status_code(302)
+        u = get_data_from_header('location', resp)
 
         # POST https://usbank-app.quantummetric.com/ (endp 23)
         usbank_app_quantummetric_com = get_http_client('https://usbank-app.quantummetric.com', authenticate)
@@ -329,28 +240,13 @@ class Tests_usbank_app_quantummetric_com(unittest.TestCase):
     @json_dataset('data/dataset_24.json')
     @clear_session({'spanId': 24})
     def test_24_get_(self, data_row):
-        H, Module, Q, Q_CLIENTVERSION, Q_CLIENTVERSION1, Q_InterceptID, Q_ORIGIN, s = data_row
-
-        # GET https://www.usbank.com/index.html (endp 4)
-        www_usbank_com = get_http_client('https://www.usbank.com', authenticate)
-        resp = www_usbank_com.get('/index.html')
-        resp.assert_status_code(200)
-        resp.assert_cssselect('html head title', expected_value='Consumer banking | Personal banking | U.S. Bank')
-        Q_LOC = cssselect('html head link[href] @href', resp)
+        H, Module, Q, Q_CLIENTVERSION, Q_InterceptID, Q_ORIGIN, s = data_row
 
         # GET https://siteintercept.qualtrics.com/WRSiteInterceptEngine/Asset.php (endp 21)
         siteintercept_qualtrics_com = get_http_client('https://siteintercept.qualtrics.com', authenticate)
         qstr = '?' + urlencode([('Module', Module), ('Q_CLIENTTYPE', 'web'), ('Q_CLIENTVERSION', Q_CLIENTVERSION), ('Q_InterceptID', Q_InterceptID), ('Q_ORIGIN', Q_ORIGIN), ('Version', str(random.randint(1, 26)))])
         resp = siteintercept_qualtrics_com.get('/WRSiteInterceptEngine/Asset.php' + qstr)
         resp.assert_status_code(200)
-        resp.assert_jsonpath('$.CreativeDefinition.Options.Message.Headline.Text', expected_value='Will you take our survey?')
-        Q_ZoneID = jsonpath('$.CreativeDefinition.ZoneID', resp)
-
-        # POST https://siteintercept.qualtrics.com/WRSiteInterceptEngine/Targeting.php (endp 22)
-        qstr = '?' + urlencode([('Q_CLIENTTYPE', 'web'), ('Q_CLIENTVERSION', Q_CLIENTVERSION1), ('Q_ZoneID', Q_ZoneID)])
-        resp = siteintercept_qualtrics_com.post('/WRSiteInterceptEngine/Targeting.php' + qstr, data=[('Q_LOC', Q_LOC)])
-        resp.assert_status_code(200)
-        resp.assert_jsonpath('$.ClientSideIntercepts[*].LogicTree.Left.Left.Type', expected_value='LogicNode')
 
         # GET https://usbank-app.quantummetric.com/ (endp 24)
         usbank_app_quantummetric_com = get_http_client('https://usbank-app.quantummetric.com', authenticate)
@@ -365,29 +261,20 @@ class Tests_usbank_sync_quantummetric_com(unittest.TestCase):
     @json_dataset('data/dataset_25.json')
     @clear_session({'spanId': 25})
     def test_25_post_(self, data_row):
-        Module, Q_CLIENTVERSION, Q_CLIENTVERSION1, Q_InterceptID, Q_ORIGIN, X, s = data_row
-
-        # GET https://www.usbank.com/index.html (endp 4)
-        www_usbank_com = get_http_client('https://www.usbank.com', authenticate)
-        resp = www_usbank_com.get('/index.html')
-        resp.assert_status_code(200)
-        resp.assert_cssselect('html head title', expected_value='Consumer banking | Personal banking | U.S. Bank')
-        Q_LOC = cssselect('html head link[href] @href', resp)
-        u = cssselect('html head link[href] @href', resp)
+        Module, PRODUCT_CODE, Q_CLIENTVERSION, Q_InterceptID, Q_ORIGIN, X, s = data_row
 
         # GET https://siteintercept.qualtrics.com/WRSiteInterceptEngine/Asset.php (endp 21)
         siteintercept_qualtrics_com = get_http_client('https://siteintercept.qualtrics.com', authenticate)
         qstr = '?' + urlencode([('Module', Module), ('Q_CLIENTTYPE', 'web'), ('Q_CLIENTVERSION', Q_CLIENTVERSION), ('Q_InterceptID', Q_InterceptID), ('Q_ORIGIN', Q_ORIGIN), ('Version', str(random.randint(1, 26)))])
         resp = siteintercept_qualtrics_com.get('/WRSiteInterceptEngine/Asset.php' + qstr)
         resp.assert_status_code(200)
-        resp.assert_jsonpath('$.CreativeDefinition.Options.Message.Headline.Text', expected_value='Will you take our survey?')
-        Q_ZoneID = jsonpath('$.CreativeDefinition.ZoneID', resp)
 
-        # POST https://siteintercept.qualtrics.com/WRSiteInterceptEngine/Targeting.php (endp 22)
-        qstr = '?' + urlencode([('Q_CLIENTTYPE', 'web'), ('Q_CLIENTVERSION', Q_CLIENTVERSION1), ('Q_ZoneID', Q_ZoneID)])
-        resp = siteintercept_qualtrics_com.post('/WRSiteInterceptEngine/Targeting.php' + qstr, data=[('Q_LOC', Q_LOC)])
-        resp.assert_status_code(200)
-        resp.assert_jsonpath('$.ClientSideIntercepts[*].LogicTree.Left.Left.Type', expected_value='LogicNode')
+        # GET https://apply.usbank.com/apply/apply.html (endp 36)
+        apply_usbank_com = get_http_client('https://apply.usbank.com', authenticate)
+        qstr = '?' + urlencode([('PRODUCT_CODE', PRODUCT_CODE), ('SUB_PRODUCT_CODE', 'PI')])
+        resp = apply_usbank_com.get('/apply/apply.html' + qstr)
+        resp.assert_status_code(302)
+        u = get_data_from_header('location', resp)
 
         # POST https://usbank-sync.quantummetric.com/ (endp 25)
         usbank_sync_quantummetric_com = get_http_client('https://usbank-sync.quantummetric.com', authenticate)
@@ -435,19 +322,13 @@ class Tests_www_usbank_com(unittest.TestCase):
         resp.assert_status_code(200)
         resp.assert_cssselect('a#continue', expected_value='Continue')
 
+    @json_dataset('data/dataset_49.json')
     @clear_session({'spanId': 49})
-    def test_49_get_credit_cards_href(self):
-        # GET https://www.usbank.com/index.html (endp 4)
-        www_usbank_com = get_http_client('https://www.usbank.com', authenticate)
-        resp = www_usbank_com.get('/index.html')
-        resp.assert_status_code(200)
-        resp.assert_cssselect('html head title', expected_value='Consumer banking | Personal banking | U.S. Bank')
-        href = url_part('/2', cssselect('div.USBContent main.bodyContent div.aem-Grid div.responsivegrid.aem-GridColumn div.aem-Grid div.banner.parbase.aem-GridColumn div.USBHero div div div div div a[href] @href', resp))
-        c3ch = url_part('?c3ch', cssselect('div.USBContent main.bodyContent div.aem-Grid div.responsivegrid.aem-GridColumn div.aem-Grid div.banner.parbase.aem-GridColumn div.USBHero div div div div div a[href] @href', resp))
-        c3nid = url_part('?icid', cssselect('div.USBContent main.bodyContent div.aem-Grid div.responsivegrid.aem-GridColumn div.aem-Grid div.banner.parbase.aem-GridColumn div.USBHero div div div div div a[href] @href', resp))
-        icid = url_part('?icid', cssselect('div.USBContent main.bodyContent div.aem-Grid div.responsivegrid.aem-GridColumn div.aem-Grid div.banner.parbase.aem-GridColumn div.USBHero div div div div div a[href] @href', resp))
+    def test_49_get_credit_cards_href(self, data_row):
+        c3ch, c3nid, href, icid = data_row
 
         # GET https://www.usbank.com/credit-cards/{href} (endp 49)
+        www_usbank_com = get_http_client('https://www.usbank.com', authenticate)
         qstr = '?' + urlencode([('c3ch', c3ch), ('c3nid', c3nid), ('icid', icid)])
         resp = www_usbank_com.get(f'/credit-cards/{href}' + qstr)
         resp.assert_status_code(200)
@@ -474,15 +355,6 @@ class Tests_www_usbank_com(unittest.TestCase):
         resp = www_usbank_com.post(f'/plpXRb/YlO/{param}/{param1}/{param2}/{param3}/aEs/{aeId}', json=json_payload)
         resp.assert_status_code(201)
 
-    @clear_session({'spanId': 53})
-    def test_53_get_site_map_html(self):
-        # GET https://www.usbank.com/site-map.html (endp 53)
-        www_usbank_com = get_http_client('https://www.usbank.com', authenticate)
-        resp = www_usbank_com.get('/site-map.html')
-        resp.assert_status_code(200)
-        resp.assert_cssselect('div#speedBumpModal div.modal-dialog div.modal-content div.modal-body.speedBump-body h3', expected_value='Leaving?')
-        resp.assert_cssselect('html head title', expected_value='Site map | U.S. Bank')
-
     @json_dataset('data/dataset_54.json')
     @clear_session({'spanId': 54})
     def test_54_get_svt_usbank_rpsfetchDisclosureContent(self, data_row):
@@ -506,16 +378,13 @@ class Tests_www_usbank_com(unittest.TestCase):
         resp.assert_status_code(200)
         resp.assert_jsonpath('$[*].status', expected_value='success')
 
+    @json_dataset('data/dataset_84.json')
     @clear_session({'spanId': 84})
-    def test_84_get_wealth_management_href(self):
-        # GET https://www.usbank.com/index.html (endp 4)
-        www_usbank_com = get_http_client('https://www.usbank.com', authenticate)
-        resp = www_usbank_com.get('/index.html')
-        resp.assert_status_code(200)
-        resp.assert_cssselect('html head title', expected_value='Consumer banking | Personal banking | U.S. Bank')
-        href = url_part('/2', cssselect('div#navigation-menu-dropdown div.menu-scrolls ul.menu-list.menu-primary li.menu-item.menu-primary-item ul.menu-list.menu-secondary li.menu-item.menu-secondary-item ul.menu-list.menu-tertiary li.menu-item.menu-tertiary-item a.menu-link.menu-tertiary-link[href] @href', resp))
+    def test_84_get_wealth_management_href(self, data_row):
+        href, = data_row
 
         # GET https://www.usbank.com/wealth-management/{href} (endp 84)
+        www_usbank_com = get_http_client('https://www.usbank.com', authenticate)
         resp = www_usbank_com.get(f'/wealth-management/{href}')
         resp.assert_status_code(200)
         resp.assert_cssselect('section.pubIns div.bodyContent.container-fluid div.row div div.aem-Grid div.containerComp.parbase.aem-GridColumn div.containerComponent.mediumPaddingTopDT.largePaddingRightDT.mediumPaddingBottomDT.largePaddingLeftDT.smallPaddingTopMob.smallPaddingRightMob.smallPaddingBottomMob.smallPaddingLeftMob.gray div div.aem-Grid div.aem-GridColumn div.xf-content-height div.aem-Grid div.containerComp.parbase.aem-GridColumn div.containerComponent div div.aem-Grid div.aem-GridColumn div.xf-content-height div.aem-Grid div.containerComp.parbase.aem-GridColumn div.containerComponent div div.aem-Grid div.containerComp.parbase.aem-GridColumn--default--none.aem-GridColumn div.containerComponent.noneTopDT.mediumPaddingRightDT.noneBottomDT.noneleftDT.noneTopMob.noneRightMob.noneBottomMob.noneleftMob.transparent div div.aem-Grid div.parbase.aem-GridColumn div.usbTextImage div.textimage-text.text.largePaddingBottomSeparator div p', expected_value='No minimum investment required')

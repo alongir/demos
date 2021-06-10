@@ -1,50 +1,17 @@
 [
   {
-    "description": "Altitude\u00ae Connect Visa Signature\u00ae Card",
-    "offerTypeCode": "146",
-    "param": "applicationintake",
-    "productCode": "CCD",
-    "sourceCode": "33727",
-    "subProductCode": "1R11X29W45",
-    "subtype": "18569",
-    "usAddress": "6756 Central Ave",
-    "x_requested_with": "XMLHttpRequest",
-    "zipCode": "94560"
-  },
-  {
-    "description": "Altitude\u00ae Connect Visa Signature\u00ae Card",
-    "offerTypeCode": "146",
-    "param": "applicationintake",
-    "productCode": "CCD",
-    "sourceCode": "33727",
-    "subProductCode": "1R11X29W45",
-    "subtype": "18569",
+    "securitytoken": "tcSSO62HJjSFLOWU+aTKkFKFEj2Ce89uj2ht1vpJB57Mqa0/5cH+XAjY4GSuYg7sZvxVSDOLFEhqMbtJrccJjDzHlhxvfYPo7vRgWXhv+EKR1RwIC2HL5DH5nNXcIx5XFAislig6StNStzwaLOyD7ueK8/NZJijnr1DsYJn1Ut/W5CQKwIeEkTNHLx1+Ivdp",
     "usAddress": "",
-    "x_requested_with": "XMLHttpRequest",
     "zipCode": "94560"
   },
   {
-    "description": "Altitude\u00ae Connect Visa Signature\u00ae Card",
-    "offerTypeCode": "146",
-    "param": "applicationintake",
-    "productCode": "CCD",
-    "sourceCode": "33727",
-    "subProductCode": "1R11X29W45",
-    "subtype": "18569",
+    "securitytoken": "tcSSO62HJjSFLOWU+aTKkFKFEj2Ce89uj2ht1vpJB57Mqa0/5cH+XAjY4GSuYg7sZvxVSDOLFEhqMbtJrccJjDzHlhxvfYPo7vRgWXhv+EKR1RwIC2HL5DH5nNXcIx5XFAislig6StNStzwaLOyD7ueK8/NZJijnr1DsYJn1Ut/W5CQKwIeEkTNHLx1+Ivdp",
     "usAddress": "1",
-    "x_requested_with": "XMLHttpRequest",
     "zipCode": "94560"
   },
   {
-    "description": "Altitude\u00ae Connect Visa Signature\u00ae Card",
-    "offerTypeCode": "146",
-    "param": "applicationintake",
-    "productCode": "DDA",
-    "sourceCode": "33727",
-    "subProductCode": "PI",
-    "subtype": "18569",
+    "securitytoken": "tcSSO62HJjSFLOWU+aTKkFKFEj2Ce89uj2ht1vpJB57Mqa0/5cH+XAjY4GSuYg7sZvxVSDOLFEhqMbtJrccJjDzHlhxvfYPo7vRgWXhv+EKR1RwIC2HL5DH5nNXcIx5XFAislig6StNStzwaLOyD7ueK8/NZJijnr1DsYJn1Ut/W5CQKwIeEkTNHLx1+Ivdp",
     "usAddress": "11",
-    "x_requested_with": "X-Requested-With",
     "zipCode": "94560"
   }
 ]

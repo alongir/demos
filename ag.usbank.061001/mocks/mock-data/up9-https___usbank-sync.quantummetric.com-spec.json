@@ -87,7 +87,7 @@
       }
      },
      {
-      "description": "Origin: GET https://www.usbank.com/index.html &rarr; html: html head link[href] @href",
+      "description": "Origin: GET https://apply.usbank.com/apply/apply.html &rarr; header: location",
       "in": "query",
       "name": "u",
       "required": true,

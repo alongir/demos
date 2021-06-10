@@ -19,68 +19,6 @@ import static com.up9.up9lib.Common.*;
 public class TestsOnboardingUsbankComTest
 {
     @ParameterizedTest
-    @JsonFileSource(resources = "/dataset_38.json")
-    public void testPostParamV1ApplicationsApplicationidPatch38(final JsonObject json) throws MalformedURLException, IOException
-    {
-        final String countriesOfCitizenship = json.getString("countriesOfCitizenship");
-        final String description = json.getString("description");
-        final String email = json.getString("email");
-        final String lastName = json.getString("lastName");
-        final String monthlyHousingPayment = json.getString("monthlyHousingPayment");
-        final String number = json.getString("number");
-        final String offerTypeCode = json.getString("offerTypeCode");
-        final String op = json.getString("op");
-        final String param = json.getString("param");
-        final String path = json.getString("path");
-        final String productCode = json.getString("productCode");
-        final String sourceCode = json.getString("sourceCode");
-        final String subProductCode = json.getString("subProductCode");
-        final String subtype = json.getString("subtype");
-        final String x_requested_with = json.getString("x_requested_with");
-
-        // POST https://onboarding.usbank.com/{param}/v1/applications (endp 37)
-        final HttpTarget onboardingUsbankCom = getHttpClient("https://onboarding.usbank.com", new Authentication());
-        final HttpRequest request = new HttpRequest();
-        request.setHeaders(new Hashtable<String, Object>() {{
-            put("content-type", "application/json");
-            put("x-requested-with", x_requested_with);
-        }});
-        request.setJsonBody("payload_for_endp_37.json", new Hashtable<String, Object>() {{
-            put("$.products[*].cardInformation.offerTypeCode", offerTypeCode);
-            put("$.products[*].cardInformation.sourceCode", sourceCode);
-            put("$.products[*].description", description);
-            put("$.products[*].productCode", productCode);
-            put("$.products[*].subProductCode", subProductCode);
-            put("$.products[*].subtype", subtype);
-        }});
-        final Response response = onboardingUsbankCom.post(request, "/" + param + "/v1/applications");
-        assertStatusCode(response.code(), 201);
-        assertJSONPath("$.applicants[*].addresses.primary.country", "US", response.body().string());
-        final String applicationId = JSONPath("$.applicationId", response.body().string());
-        final String securitytoken = getHeader(response, "securitytoken");
-
-        // POST https://onboarding.usbank.com/{param}/v1/applications/{applicationId}/patch (endp 38)
-        final HttpRequest request2 = new HttpRequest();
-        request2.setHeaders(new Hashtable<String, Object>() {{
-            put("content-type", "application/json");
-            put("securitytoken", securitytoken);
-            put("x-requested-with", "X-Requested-With");
-        }});
-        request2.setJsonBody("payload_for_endp_38.json", new Hashtable<String, Object>() {{
-            put("$[*].op", op);
-            put("$[*].path", path);
-            put("$[*].value.countriesOfCitizenship[*]", countriesOfCitizenship);
-            put("$[*].value.lastName", lastName);
-            put("$[*].value.monthlyHousingPayment", monthlyHousingPayment);
-            put("$[*].value.number", number);
-            put("$[*].value.personal.email", email);
-        }});
-        final Response response2 = onboardingUsbankCom.post(request2, "/" + param + "/v1/applications/" + applicationId + "/patch");
-        assertStatusCode(response2.code(), 200);
-        assertJSONPath("$.applicants[*].addresses.primary.country", "US", response2.body().string());
-    }
-
-    @ParameterizedTest
     @JsonFileSource(resources = "/dataset_73.json")
     public void testGetParamV1ApplicationsEnvironment73(final JsonObject json) throws MalformedURLException, IOException
     {
@@ -207,51 +145,24 @@ public class TestsOnboardingUsbankComTest
     @JsonFileSource(resources = "/dataset_40.json")
     public void testPostProxiesV1Validateaddress40(final JsonObject json) throws MalformedURLException, IOException
     {
-        final String description = json.getString("description");
-        final String offerTypeCode = json.getString("offerTypeCode");
-        final String param = json.getString("param");
-        final String productCode = json.getString("productCode");
-        final String sourceCode = json.getString("sourceCode");
-        final String subProductCode = json.getString("subProductCode");
-        final String subtype = json.getString("subtype");
+        final String securitytoken = json.getString("securitytoken");
         final String usAddress = json.getString("usAddress");
-        final String x_requested_with = json.getString("x_requested_with");
         final String zipCode = json.getString("zipCode");
 
-        // POST https://onboarding.usbank.com/{param}/v1/applications (endp 37)
+        // POST https://onboarding.usbank.com/proxies/v1/validateAddress (endp 40)
         final HttpTarget onboardingUsbankCom = getHttpClient("https://onboarding.usbank.com", new Authentication());
         final HttpRequest request = new HttpRequest();
         request.setHeaders(new Hashtable<String, Object>() {{
             put("content-type", "application/json");
-            put("x-requested-with", x_requested_with);
-        }});
-        request.setJsonBody("payload_for_endp_37.json", new Hashtable<String, Object>() {{
-            put("$.products[*].cardInformation.offerTypeCode", offerTypeCode);
-            put("$.products[*].cardInformation.sourceCode", sourceCode);
-            put("$.products[*].description", description);
-            put("$.products[*].productCode", productCode);
-            put("$.products[*].subProductCode", subProductCode);
-            put("$.products[*].subtype", subtype);
-        }});
-        final Response response = onboardingUsbankCom.post(request, "/" + param + "/v1/applications");
-        assertStatusCode(response.code(), 201);
-        assertJSONPath("$.applicants[*].addresses.primary.country", "US", response.body().string());
-        final String securitytoken = getHeader(response, "securitytoken");
-
-        // POST https://onboarding.usbank.com/proxies/v1/validateAddress (endp 40)
-        final HttpRequest request2 = new HttpRequest();
-        request2.setHeaders(new Hashtable<String, Object>() {{
-            put("content-type", "application/json");
             put("securitytoken", securitytoken);
             put("x-requested-with", "X-Requested-With");
         }});
-        request2.setJsonBody("payload_for_endp_40.json", new Hashtable<String, Object>() {{
+        request.setJsonBody("payload_for_endp_40.json", new Hashtable<String, Object>() {{
             put("$.customerAddress.usAddress.*", usAddress);
             put("$.customerAddress.usAddress.zipCode", zipCode);
         }});
-        final Response response2 = onboardingUsbankCom.post(request2, "/proxies/v1/validateAddress");
-        assertStatusCode(response2.code(), 200);
-        assertJSONPath("$.address.city", "NEWARK", response2.body().string());
+        final Response response = onboardingUsbankCom.post(request, "/proxies/v1/validateAddress");
+        assertStatusCode(response.code(), 200);
     }
 }
 

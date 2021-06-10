@@ -11,7 +11,6 @@
     "operationId": "aa0e9808-4a2f-44ef-b06c-4d4d09f8eb4e",
     "parameters": [
      {
-      "description": "Origin: POST https://siteintercept.qualtrics.com/WRSiteInterceptEngine/Targeting.php &rarr; json: $.ClientSideIntercepts[*].ActionSets[*].ActionSetID",
       "in": "query",
       "name": "Q_ASID",
       "required": true,
@@ -25,7 +24,6 @@
       }
      },
      {
-      "description": "Origin: POST https://siteintercept.qualtrics.com/WRSiteInterceptEngine/Targeting.php &rarr; json: $.ClientSideIntercepts[*].ActionSets[*].Target.*; url: ?Q_CID",
       "in": "query",
       "name": "Q_CID",
       "required": true,
@@ -72,7 +70,6 @@
       }
      },
      {
-      "description": "Origin: POST https://siteintercept.qualtrics.com/WRSiteInterceptEngine/Targeting.php &rarr; json: $.ClientSideIntercepts[*].ActionSets[*].Target.*; url: ?Q_SIID",
       "in": "query",
       "name": "Q_SIID",
       "required": true,
@@ -1134,7 +1131,6 @@
       }
      },
      {
-      "description": "Origin: GET https://siteintercept.qualtrics.com/WRSiteInterceptEngine/Asset.php &rarr; json: $.CreativeDefinition.ZoneID",
       "in": "query",
       "name": "Q_ZoneID",
       "required": true,
