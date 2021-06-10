@@ -18,7 +18,8 @@
       "schema": {
        "enum": [
         "AS_3Qplqeoc23rfXM1",
-        "AS_31373604"
+        "AS_31373604",
+        "AS_0dLuMiPwh9U6ukR"
        ],
        "type": "string"
       }
@@ -31,7 +32,8 @@
       "schema": {
        "enum": [
         "CR_0JPnt5m2zBFt605",
-        "CR_2tPQefIgumb1Tnf"
+        "CR_2tPQefIgumb1Tnf",
+        "CR_a2AsGQKhBoo8TgV"
        ],
        "type": "string"
       }
@@ -77,7 +79,8 @@
       "schema": {
        "enum": [
         "SI_3ag7VqhEfbMCjml",
-        "SI_errLdpEuK9y5ENf"
+        "SI_errLdpEuK9y5ENf",
+        "SI_e39Wa46ASKtqbcx"
        ],
        "type": "string"
       }
@@ -92,7 +95,8 @@
         "1623341849828",
         "1623341855878",
         "1623342021082",
-        "1623342021289"
+        "1623342021289",
+        "1623342431624"
        ],
        "type": "string"
       }
@@ -134,7 +138,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 4 requests",
+    "summary": "Seen 8 requests",
     "tags": [
      "WRSiteInterceptEngine"
     ]
@@ -1095,7 +1099,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 40 requests",
+    "summary": "Seen 72 requests",
     "tags": [
      "WRSiteInterceptEngine"
     ]
@@ -2289,7 +2293,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 8 requests",
+    "summary": "Seen 14 requests",
     "tags": [
      "WRSiteInterceptEngine"
     ]

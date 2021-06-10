@@ -1,0 +1,980 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://www.usbank.com/etc.clientlibs/usbfoundation/clientlibs/usbank/clientlib-all.min.6a4b1a9649c3761c2f2a209287df1172.css" />
+<title>Rewards Calculator</title>
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries --> 
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// --> 
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+<style>
+@font-face {
+    font-family: HelveticaNeueLTStdBold;
+    src: url(fonts/35CD13_0_0-1cfee620.eot);
+    src: url(fonts/35CD13_0_0-1cfee620.eot?#iefix) format("embedded-opentype"), url(fonts/35CD13_0_0-eb304144.woff) format("woff"), url(fonts/35CD13_0_0-ea258c94.ttf) format("truetype");
+    font-weight: 700;
+    font-display: swap
+}
+@font-face {
+    font-family: HelveticaNeueLTStdLight;
+    src: url(fonts/35CD13_1_0-6995e29c.eot);
+    src: url(fonts/35CD13_1_0-6995e29c.eot?#iefix) format("embedded-opentype"), url(fonts/35CD13_1_0-dbbe4530.woff) format("woff"), url(fonts/35CD13_1_0-b44a936f.ttf) format("truetype");
+    font-weight: 400;
+    font-display: swap
+}
+@font-face {
+    font-family: HelveticaNeueLTStdMedium;
+    src: url(fonts/35CD13_2_0-32e3b762.eot);
+    src: url(fonts/35CD13_2_0-32e3b762.eot?#iefix) format("embedded-opentype"), url(fonts/35CD13_2_0-e3c750eb.woff) format("woff"), url(fonts/35CD13_2_0-b33219c1.ttf) format("truetype");
+    font-weight: 400;
+    font-display: swap
+}
+/** SAFARI ROW FIX *****/
+.row:before, .row:after {
+    display: inline-block;
+}
+.usb-calculator.box {
+    box-shadow: 0 0 11px 0 rgba(0,0,0,0.06);
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    padding: 0;
+}
+.usb-calculator .lt-bkgd {
+    background: #f7f7fA;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+.usb-calculator .usb-calculator *, .usb-calculator *:before, .usb-calculator *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.usb-calculator-header {
+    background-color: #ffffff;
+    padding: 30px 0;
+}
+.usb-calculator hr {
+    border-collapse: collapse;
+    border-bottom: 1px solid #73716d;
+    margin: 30px 0;
+}
+.usb-calculator ul li {
+    color: #5b5854;
+}
+.usb-calculator p a {
+    color: #0071ba;
+    text-decoration: underline;
+}
+.usb-calculator p a:hover, .usb-calculator p a:focus {
+    text-decoration: none;
+}
+.lt-bkgd {
+    background: #f7f7fA;
+}
+/* Calculator Form
+-------------------------------------------- */
+
+
+
+
+.calculator-error {
+    box-shadow: 0 0 5px rgba(255, 0, 0, 1) !important;
+    border: 1px solid red !important;
+    transition: box-shadow linear 1, border 500ms ease-out !important;
+    -webkit-transition: box-shadow linear 1, border 500ms ease-out !important;
+    -moz-transition: box-shadow linear 1, border 500ms ease-out !important;
+    -o-transition: box-shadow linear 1, border 500ms ease-out !important;
+}
+/* Results
+============================================= */
+
+
+
+
+	
+/* Additional Calculator Styles
+===============================================*/
+
+.usb-blue {
+    color: #0c2074;
+}
+.dropdown-input, select.select-input {
+    background: transparent;
+    border: 1px solid #4d4d4d;
+    border-radius: 4px;
+    display: inline-block;
+    height: 40px;
+    padding: 0px 5px;
+    position: relative;
+    vertical-align: middle;
+    font-size: 16px;
+    font-weight: normal;
+    color: #4D4D4D;
+    line-height: 24px;
+    text-align: center;
+    width: 100%;
+}
+.dropdown-input, .dropdown-input-label, select.select-input {
+    font-size: 16px;
+    font-weight: normal;
+    color: #4D4D4D;
+    line-height: 24px;
+    text-align: center;
+}
+.dropdown-input-label {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translate3d(0, -50%, 0);
+}
+select.select-input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    text-align-last: center;
+}
+.minus-btn, .plus-btn {
+    background: transparent;
+    font-weight: normal;
+    color: #0A41C5;
+    cursor: pointer;
+    border: 1px solid #0A41C5;
+    border-radius: 4px;
+    height: 40px;
+    width: 100%;
+    vertical-align: top;
+}
+.dropdown-input {
+    /* hide default stepper buttons ff */
+    -moz-appearance: textfield;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+		/* hide default stepper buttons Chrome, Safari, Edge, Opera */
+		.dropdown-input::-webkit-outer-spin-button, .dropdown-input::-webkit-inner-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+    
+     /* FOCUS */
+.dropdown-input:focus, .minus-btn:focus, .plus-btn:focus {
+    outline: none;
+}
+ 
+    .calc-focus-group{
+        position: relative;
+    }
+    .calc-focus::after, .connect-calc.btn-outline:focus::after {
+        content: '';
+          position: absolute;
+          top: -4px;
+          left: -4px;
+          right: -4px;
+          bottom: -4px;
+        box-shadow: 0 0 0 2px #0A41C5;
+        border-radius: 8px;
+    }
+    #calculateButton:focus{
+        outline: none;
+        -webkit-appearance:none;
+        box-shadow: none;
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none;
+    }
+    
+/* Base Styles */
+		
+#rewards-calculator-heading {
+    font-family: HelveticaNeueLTStdMedium, Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    color: #2C2C2C;
+    font-weight: 400;
+    line-height: 13px;
+    text-transform: uppercase;
+    padding-bottom: 19px;
+    letter-spacing: 0.88px;
+    opacity: 0.78;
+}
+.h1 {
+    font-family: HelveticaNeueLTStdBold, Helvetica, Arial, sans-serif;
+    font-size: 50px;
+    color: #0c2074;
+    line-height: 1.2em;
+    font-weight: 700;
+}
+h2, .h2 {
+    font-family: HelveticaNeueLTStdBold, Helvetica, Arial, sans-serif;
+    font-size: 32px;
+    color: #0c2074;
+    font-weight: 700;
+    line-height: 40px;
+}
+h3, .h3 {
+    font-family: HelveticaNeueLTStdBold, Helvetica, Arial, sans-serif;
+    font-size: 24px;
+    color: #221f1f;
+    font-weight: 700;
+    line-height: 1.2em;
+}
+h4, .h4 {
+    font-family: HelveticaNeueLTStdMedium, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    color: #221f1f;
+    font-weight: 400;
+    line-height: 1.2em;
+    text-transform: uppercase;
+}
+h4.p {
+    text-transform: none;
+}
+.p {
+    color: #333333;
+    font-family: HelveticaNeueLTStdLight, Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+}
+sup {
+    font-size: 0.6em;
+}
+.usb-calculator legend, .legend {
+    display: inline-block;
+    color: #333333;
+    font-family: HelveticaNeueLTStdMedium, Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 21px;
+    margin-top: 8px;
+    margin-bottom: 0;
+    border-bottom: none;
+}
+.usb-calculator label, .small {
+    color: #4D4D4D;
+    font-family: HelveticaNeueLTStdLight, Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+}
+.small {
+    line-height: 17px !important;
+    font-size: 12px;
+}
+.points-style {
+    font-family: HelveticaNeueLTStdBold, Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 29px;
+    line-height: 37px;
+}
+.pointTotal {
+    font-family: HelveticaNeueLTStdLight, Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 27px;
+}
+.points-below {
+    margin-top: -8px;
+}
+.pointsHeading {
+    font-family: HelveticaNeueLTStdMedium, Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #6e6e6e;
+}
+.first-year-points {
+    font-family: HelveticaNeueLTStdLight, Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    color: #0c2074;
+    font-weight: 400;
+    line-height: 1.2em;
+}
+hr.is-divider {
+    border: none;
+    height: 2px;
+    background: #cccccc;
+}
+.btn-primary {
+    background-color: #0A41C5;
+    height: 40px;
+    border-radius: 4px;
+    font-size: 16px !important;
+    line-height: 24px !important;
+    font-weight: 500 !important;
+    padding: 6px 38px 10px 38px !important;
+}
+.btn-primary:hover, .btn.btn-primary.btn-outline:hover, .minus-btn:hover, .plus-btn:hover {
+    background-color: #0c2074;
+}
+.btn.btn-primary.btn-outline:hover, .minus-btn:hover, .plus-btn:hover {
+    border-color: #0c2074;
+    color: #ffffff;
+}
+.btn.btn-primary.btn-outline {
+    background: transparent;
+    font-weight: 500;
+    color: #0A41C5;
+    cursor: pointer;
+    border: 1px solid #0A41C5;
+    border-radius: 4px;
+    height: 40px;
+}
+.mw-1400 {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.calc-desc {
+    margin-bottom: 25px;
+    margin-top:20px;
+}
+.is-divider {
+    background-color: #CDCDD3 !important;
+    height: 1px !important;
+}
+.math-sign {
+    font-family: HelveticaNeueLTStdLight, Helvetica, Arial, sans-serif;
+    font-size: 25px;
+    line-height: 26px;
+    font-weight: 400;
+    margin-left: -28%;
+}
+.math-sign.plus-sign {
+    margin-left: -31%;
+}
+
+@media screen and (min-width:991px) {
+.results-container {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 8rem;
+}
+}
+
+/* Responsive Styles
+===============================================*/
+
+    @media screen and (min-width: 577px){
+.row-form-group > div {
+    margin-bottom: 32px;
+}
+    }
+
+
+@media screen and (max-width:990px) {
+.usb-calculator--form, .usb-calculator--results {
+    padding: 0;
+}
+.usb-calculator .lt-bkgd {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 0;
+}
+.math-sign, .math-sign.plus-sign {
+    margin-left: -30px;
+}
+.usb-calculator legend, .legend {
+    padding-bottom: 10px;
+}
+}
+
+@media screen and (max-width:767px) {
+
+.mw-350 {
+    max-width: 410px;
+}
+    .calc-desc {
+    margin-bottom: 10px;
+    margin-top:15px;
+}
+}
+
+@media screen and (max-width:574px) {
+
+.math-sign, .math-sign.plus-sign {
+    margin-left: auto;
+}
+.usb-calculator legend, .legend {
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+.mw-410 {
+    max-width: 410px;
+}
+}
+</style>
+<script type="text/javascript">
+var utag_data = {};
+(function(a,b,c,d){
+a='//tags.tiqcdn.com/utag/usbank/dotcom/prod/utag.js';
+b=document;c='script';d=b.createElement(c);d.src=a;d.type='text/java'+c;d.async=true;
+a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
+})();
+</script>
+</head>
+<body>
+<div class="container-fluid lt-bkgd">
+  <div class="row usb-calculator box">
+    <div class="col-12"> 
+      
+      <!-- Calculator - Rewards -->
+      
+      <div class="usb-calculator--form">
+        <form class="py-4 py-sm-5 pb-lg-0">
+          <noscript>
+          <p><strong>This tool requires Javascript.</strong></p>
+          </noscript>
+          <div class="row matchHeight row-form-group mw-1400 justify-content-center">
+              <div class="col-sm-6 col-md-3 mw-350">
+              <fieldset>
+                <div class="d-flex flex-column justify-content-between points-col">
+                  <div class="px-0 w-100 matchItem pb-3">
+                      <label for="fivePercentInput" id="fivePercentInputLabel">
+                    <span class="legend pb-2">Hotels and car rentals</span><br>
+                    <span class="p">Earn 5X points.</span></label>
+                  </div>
+                  <div class="w-100">
+                    <div class="row">
+                      
+                      <div class="col-3 pl-0 pt-1 pr-1 pb-1">
+                          <div class="calc-focus-group">
+                        <button type="button" id="FIVE-minus-btn" class="minus-btn d-inline-block" aria-controls="fivePercentInput">-<span class="sr-only">Subtract $50 from monthly spend</span></button>
+                              </div>
+                      </div>
+                      <div class="col-6 p-1">
+                          <div class="calc-focus-group">
+                        <div aria-hidden="true" class="dropdown-input-label">$</div>
+                        <input aria-labelledby="fivePercentInputLabel" value="0" min="0" max="100000" id="fivePercentInput" type="number" class="dropdown-input d-inline-block control--stepper" pattern="\d*" aria-controls="potentialSummary" aria-live="assertive" aria-atomic="true" inputmode="numeric" aria-describedby="fivePercentDesc">
+                              </div>
+                      </div>
+                      <div class="col-3 pr-0 pt-1 pl-1 pb-1">
+                          <div class="calc-focus-group">
+                        <button type="button" id="FIVE-plus-btn" class="plus-btn d-inline-block" aria-controls="fivePercentInput">+<span class="sr-only">Add $50 to monthly spend</span></button>
+                              </div>
+                      </div>
+                        <span class="col-12 small px-0 calc-desc" id="fivePercentDesc">Enter your projected monthly spend on hotels and car rentals booked directly in the Altitude Rewards Center.</span>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <div class="col-sm-6 col-md-3 mw-350">
+              <fieldset>
+                <div class="d-flex flex-column justify-content-between points-col">
+                  <div class="px-0 w-100 matchItem pb-3">
+                      <label for="fourPercentInput" id="fourPercentInputLabel">
+                    <span class="legend pb-2">Travel and gas stations</span><br>
+                    <span class="p">Earn 4X points.</span></label>
+                  </div>
+                  <div class="w-100">
+                    <div class="row">
+                      
+                      <div class="col-3 pl-0 pt-1 pr-1 pb-1">
+                          <div class="calc-focus-group">
+                        <button type="button" id="FOUR-minus-btn" class="minus-btn d-inline-block" aria-controls="fourPercentInput">-<span class="sr-only">Subtract $50 from monthly spend</span></button>
+                              </div>
+                      </div>
+                      <div class="col-6 p-1">
+                          <div class="calc-focus-group">
+                        <div aria-hidden="true" class="dropdown-input-label">$</div>
+                        <input aria-labelledby="fourPercentInputLabel" value="0" min="0" max="100000" id="fourPercentInput" type="number" class="dropdown-input d-inline-block control--stepper" pattern="\d*" aria-controls="potentialSummary" aria-live="assertive" aria-atomic="true" inputmode="numeric" aria-describedby="fourPercentDesc">
+                              </div>
+                      </div>
+                      <div class="col-3 pr-0 pt-1 pl-1 pb-1">
+                          <div class="calc-focus-group">
+                        <button type="button" id="FOUR-plus-btn" class="plus-btn d-inline-block" aria-controls="fourPercentInput">+<span class="sr-only">Add $50 to monthly spend</span></button>
+                              </div>
+                      </div>
+                        <span class="col-12 small px-0 calc-desc" id="fourPercentDesc">Enter what you spend monthly on travel and at gas stations.</span>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <div class="col-sm-6 col-md-3 mw-350">
+              <fieldset>
+                <div class="d-flex flex-column justify-content-between points-col">
+                  <div class="px-0 w-100 matchItem pb-3">
+                      <label for="twoPercentInput" id="twoPercentInputLabel">
+                    <span class="legend pb-2">Grocery stores, grocery delivery, dining and streaming services</span><br>
+                    <span class="p">Earn 2X points.</span></label>
+                  </div>
+                  <div class="w-100">
+                    <div class="row">
+                      
+                      <div class="col-3 pl-0 pt-1 pr-1 pb-1">
+                          <div class="calc-focus-group">
+                        <button type="button" id="TWO-minus-btn" class="minus-btn d-inline-block" aria-controls="twoPercentInput">-<span class="sr-only">Subtract $50 from monthly spend</span></button>
+                              </div>
+                      </div>
+                      <div class="col-6 p-1">
+                          <div class="calc-focus-group">
+                        <div aria-hidden="true" class="dropdown-input-label">$</div>
+                        <input aria-labelledby="twoPercentInputLabel" value="0" min="0" max="100000" id="twoPercentInput" type="number" class="dropdown-input d-inline-block control--stepper" pattern="\d*" aria-controls="potentialSummary" aria-live="assertive" aria-atomic="true" inputmode="numeric" aria-describedby="twoPercentDesc">
+                              </div>
+                      </div>
+                      <div class="col-3 pr-0 pt-1 pl-1 pb-1">
+                          <div class="calc-focus-group">
+                        <button type="button" id="TWO-plus-btn" class="plus-btn d-inline-block" aria-controls="twoPercentInput">+<span class="sr-only">Add $50 to monthly spend</span></button>
+                              </div>
+                      </div>
+                        <span class="col-12 small px-0 calc-desc" id="twoPercentDesc">Enter what you spend monthly on grocery stores, grocery delivery, on dining including takeout and food delivery and on streaming services.</span>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <div class="col-sm-6 col-md-3 mw-350">
+              <fieldset>
+                <div class="d-flex flex-column justify-content-between points-col">
+                  <div class="px-0 w-100 matchItem pb-3">
+                      <label for="onePercentInput" id="onePercentInputLabel">
+                    <span class="legend pb-2">All other purchases</span><br>
+                    <span class="p">Earn 1X point.</span></label>
+                  </div>
+                  <div class="w-100">
+                    <div class="row">
+                      
+                      <div class="col-3 pl-0 pt-1 pr-1 pb-1">
+                          <div class="calc-focus-group">
+                        <button type="button" id="ONE-minus-btn" class="minus-btn d-inline-block"  aria-controls="onePercentInput">-<span class="sr-only">Subtract $50 from monthly spend</span></button>
+                              </div>
+                      </div>
+                      <div class="col-6 p-1">
+                          <div class="calc-focus-group">
+                        <div aria-hidden="true" class="dropdown-input-label">$</div>
+                        <input aria-labelledby="onePercentInputLabel" value="0" min="0" max="100000" id="onePercentInput" type="number" class="dropdown-input d-inline-block control--stepper" pattern="\d*" aria-controls="potentialSummary" aria-live="assertive" aria-atomic="true" aria-describedby="onePercentDesc" inputmode="numeric">
+                              </div>
+                      </div>
+                      <div class="col-3 pr-0 pt-1 pl-1 pb-1">
+                          <div class="calc-focus-group">
+                        <button type="button" id="ONE-plus-btn" class="plus-btn d-inline-block"  aria-controls="onePercentInput">+<span class="sr-only">Add $50 to monthly spend</span></button>
+                              </div>
+                      </div>
+                        <span class="col-12 small px-0 calc-desc" id="onePercentDesc">Enter what you spend monthly on all other expenses.</span>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+          <div class="row justify-content-center d-lg-none">
+            <div class="col-12 col-sm-4 pt-5 pt-sm-3 pt-md-0 mt-0 mw-350 text-center"> <a href="#yourPotentialPoints" class="btn btn-primary btn-outline connect-calc" title="Calculate potential points" id="calculateButton" role="button" aria-controls="potentialSummary">Calculate</a> </div>
+          </div>
+        </form>
+      </div>
+      
+      <!-- END calculator form --> 
+      
+    </div>
+    <hr class="w-100 is-divider my-sm-0" role="presentation">
+    <!-- start Results -->
+    
+    <div class="w-100 usb-calculator--results usb-calculator pb-sm-4">
+      <div class="usb-calculator--results--scenario usb-calculator row justify-content-center">
+        <div class="rewards-calc-results mw-410 col-12 pt-0 pt-sm-3 mt-1" id="yourPotentialPoints">
+          <div class="row justify-content-center result-summary" id="potentialSummary" aria-atomic="true" aria-live="polite" role="status">
+            <div class="col-12">
+              <div class="row mt-0 mt-sm-3 pb-md-4 pb-2 justify-content-center" >
+                <div class="col-12 pb-md-4 pb-0 px-4 mw-1400"> <span class="legend">Your potential points:</span> <span class="sr-only" id="calc-results">Yearly points of 0 points plus first year bonus* of 50,000 points equals a first year point potential of 50,000 points. *Earn 50,000 points if you spend $3,000 in the first 120 days. 1 point = $.01</span></div>
+              </div>
+            </div>
+            <div class="col-md-10 col-lg-12">
+              <div class="results-container" aria-hidden="true" role="presentation">
+                <div class="row">
+                  <div class="col-sm-3 col-md-4">
+                    <div class="w-100 pl-4 pl-sm-0 ml-3 ml-sm-0"> <span class="pointsHeading">Yearly points:</span> </div>
+                    <div class="w-100 pt-sm-3 pt-1 pl-4 pl-sm-0 ml-3 ml-sm-0"> <span class="pointTotal usb-blue"><span id="yearTotal" class="pointsYear points-style ticker__total_NoBonus">0</span></span> </div>
+                    <div class="w-100 points-below pl-4 pl-sm-0 ml-3 ml-sm-0"> <span class="pointTotal usb-blue">points</span> </div>
+                  </div>
+                  <div class="col-sm-4 col-md-4">
+                    <div class="w-100 pl-4 pl-sm-0 ml-3 ml-sm-0"> <span class="sr-only">+</span> <span class="pointsHeading">First year bonus*</span> </div>
+                    <div class="w-100 pt-sm-3 pt-1 px-0"> <span class="math-sign plus-sign float-sm-left d-inline-block usb-blue pr-3 pt-sm-1 pt-lg-2" aria-hidden="true">+</span><span class="pointTotal usb-blue"><span class="points-style">50,000</span></span> </div>
+                    <div class="w-100 points-below pl-4 pl-sm-0 ml-3 ml-sm-0"> <span class="pointTotal usb-blue">points</span> </div>
+                  </div>
+                  <div class="col-sm-5 col-md-4">
+                    <div>
+                      <div class="w-100 pl-4 pl-sm-0 ml-3 ml-sm-0"> <span class="sr-only">=</span> <span class="pointsHeading">First year point potential</span> </div>
+                      <div class="w-100 px-0 pt-1">
+                        <div class="math-sign align-top usb-blue pr-3 d-inline-block float-sm-left pt-4" aria-hidden="true">=</div>
+                        <span class="h1"><span id="firstYearTotal" class="ticker__total">0</span></span></div>
+                      <div class="w-100 points-below pl-4 pl-sm-0 ml-3 ml-sm-0"> <span class="first-year-points usb-blue">points</span> </div>
+                    </div>
+                    <div class="w-100 small pt-4 pb-3 my-3 my-sm-0 pb-sm-0 pl-4 pl-sm-0 ml-3 ml-sm-0"><span>*Earn <strong>50,000 points</strong> if you spend $3,000 in the first 120 days.</span><br><span class="pt-2 d-block">1 point = $.01</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- end Results --> 
+  </div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="js/jquery-3.4.1.min.js" type="text/javascript"></script> 
+
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="js/Bootstrap.js" type="text/javascript"></script> 
+<script src="js/jquery.matchHeight-min.js" type="text/javascript"></script> 
+<script  type="text/javascript">
+
+	//Sliders
+	$(document).ready(function(){
+		var trigger = "pageLoad";
+		refreshReturnVariables(trigger);
+		
+// Match Height
+$('.matchHeight').each(function() {
+  $(this).find('.matchItem').matchHeight();
+});
+    
+//range slider plus and minus buttons
+		
+var FIVE, FOUR, TWO, ONE, ACTIVE;
+
+
+$('#FIVE-plus-btn').click(function (e) {
+
+  //if value < max
+  FIVE = Number($("#fivePercentInput").val());
+  $("#fivePercentInput").val(FIVE + 50);
+  ACTIVE = FIVE + 50;
+    $("#fivePercentInput").trigger("change");
+});
+$('#FIVE-minus-btn').click(function (e) {
+
+				//if value > 50
+				FIVE = Number($("#fivePercentInput").val());
+				if (FIVE >= 50){
+				$("#fivePercentInput").val(FIVE - 50);
+				ACTIVE = FIVE - 50;
+				
+				}
+				if(FIVE > 0 && FIVE <= 50){
+					$("#fivePercentInput").val(0);
+          ACTIVE = 0;
+					
+				}
+    $("#fivePercentInput").trigger("change");
+			});		
+
+
+$('#FOUR-plus-btn').click(function (e) {
+
+  //if value < max
+  FOUR = Number($("#fourPercentInput").val());
+  $("#fourPercentInput").val(FOUR + 50);
+  ACTIVE = FOUR + 50;
+    $("#fourPercentInput").trigger("change");
+});
+$('#FOUR-minus-btn').click(function (e) {
+
+				//if value > 50
+				FOUR = Number($("#fourPercentInput").val());
+				if (FOUR >= 50){
+				$("#fourPercentInput").val(FOUR - 50);
+				ACTIVE = FOUR - 50;
+				
+				}
+				if(FOUR > 0 && FOUR <= 50){
+					$("#fourPercentInput").val(0);
+          ACTIVE = 0;
+					
+				}
+    $("#fourPercentInput").trigger("change");
+			});
+$('#TWO-plus-btn').click(function (e) {
+
+  //if value < max
+  TWO = Number($("#twoPercentInput").val());
+  $("#twoPercentInput").val(TWO + 50);
+  ACTIVE = TWO + 50;
+  $("#twoPercentInput").trigger("change");
+});
+$('#TWO-minus-btn').click(function (e) {
+
+				//if value > 50
+				
+				TWO = Number($("#twoPercentInput").val());
+				if (TWO >= 50){
+				$("#twoPercentInput").val(TWO - 50);
+        ACTIVE = TWO - 50;
+				
+				}
+				if(TWO > 0 && TWO <= 50){
+					$("#twoPercentInput").val(0);
+          ACTIVE = 0;
+					
+				}
+    $("#twoPercentInput").trigger("change");
+			});
+$('#ONE-plus-btn').click(function (e) {
+
+  //if value < max
+  ONE = Number($("#onePercentInput").val());
+  $("#onePercentInput").val(ONE + 50);
+  ACTIVE = ONE + 50;
+ $("#onePercentInput").trigger("change");
+});
+$('#ONE-minus-btn').click(function (e) {
+
+				//if value > 50
+				ONE = Number($("#onePercentInput").val());
+				if (ONE >= 50){
+				$("#onePercentInput").val(ONE - 50);
+        ACTIVE = ONE - 50;
+				
+				}
+				if(ONE > 0 && ONE <= 50){
+					$("#onePercentInput").val(0);
+          ACTIVE = 0;
+					
+				}
+    $("#onePercentInput").trigger("change");
+			});
+
+			// Update all dropdown inputs
+			$(".dropdown-input")
+				
+				//refresh totals when key is pressed
+        .on("input change", function(){
+                var amount = $(this).val();
+                if(amount >= 100000){
+                    $(this).val(100000);
+                    amount = 100000;
+                }
+            ACTIVE = amount;
+          var triggerType = "change";
+            refreshReturnVariables(triggerType);
+                
+            }).on("keyup touchend", function(){
+          var s = $(this).val().replace(/^0+/, '');
+          if( $(this).val().length > 1 ) {
+            $(this).val(s);
+          }
+          ACTIVE = s;
+          
+        }).on("focusin", function(){
+          if( $(this).val() === '0' ) {
+            $(this).val('');
+            ACTIVE = 0;
+          }else{
+            var input = this;
+            setTimeout(function() { input.selectionStart = input.selectionEnd; }, 1);
+          }
+          $(this).parent('div').addClass("calc-focus");
+        }).on("blur", function(){
+            if( $(this).val() === '' ) {
+              $(this).val(0);
+              ACTIVE = 0;
+            }
+                $(this).parent('div').removeClass("calc-focus");
+        });
+        
+        // Focus styling
+        
+        $(".plus-btn, .minus-btn")
+      
+	  
+	  .on("focusin", function(){
+      
+        $(this).addClass("calc-focus");
+    }).on("blur", function(){
+      
+        $(this).removeClass("calc-focus");
+    });
+            
+            
+	//Variables
+    var fivePercentInvestValue = $('#fivePercentInput').val();
+	var fourPercentInvestValue = $('#fourPercentInput').val();
+	var twoPercentInvestValue = $('#twoPercentInput').val();
+	var onePercentInvestValue = $('#onePercentInput').val();
+
+	//refresh variables
+	function refreshReturnVariables(triggerType) {
+        fivePercentInvestValue = $('#fivePercentInput').val();
+		fourPercentInvestValue = $('#fourPercentInput').val();
+		twoPercentInvestValue = $('#twoPercentInput').val();
+		onePercentInvestValue = $('#onePercentInput').val();
+		calculateCashBack(fivePercentInvestValue, fourPercentInvestValue, twoPercentInvestValue, onePercentInvestValue, triggerType);
+	}
+
+	// Calculate Points
+	
+	function calculateCashBack(argFivePercent, argFourPercent, argTwoPercent, argOnePercent, triggerType) {
+        var fivePercentTotal = Math.round(argFivePercent*5);
+		var fourPercentTotal = Math.round(argFourPercent*4);
+		var twoPercentTotal = Math.round(argTwoPercent*2);
+		var onePercentTotal = Math.round(argOnePercent*1);
+		var cashBackTotal = (fivePercentTotal + fourPercentTotal + twoPercentTotal + onePercentTotal)*12;
+		// Animate points without bonus
+		animateA(cashBackTotal);
+		// Animate total points calculation
+		var totalToAnimate = cashBackTotal+50000;
+		animate(totalToAnimate);
+        if(triggerType == "change"){
+            $('#calc-results').text('Yearly points of '+ addCommas(cashBackTotal) +' points plus first year bonus* of 50,000 points equals a first year point potential of ' + addCommas(totalToAnimate) + ' points. *Earn 50,000 points if you spend $3,000 in the first 120 days. 1 point = $.01');
+        }
+	}
+
+	function addCommas(nStr) {
+		nStr += '';
+		x = nStr.split('.');
+		x1 = x[0];
+		x2 = x.length > 1 ? '.' + x[1] : '';
+		var rgx = /(\d+)(\d{3})/;
+		while (rgx.test(x1)) {
+			x1 = x1.replace(rgx, '$1' + ',' + '$2');
+		}
+		return x1 + x2;
+	}
+		
+		// Currency formatter.
+		var currency = new Intl.NumberFormat('en-US', {
+		  style: 'currency',
+		  currency: 'USD',
+			minimumFractionDigits: '0',
+		  maximumFractionDigits: '0'
+		});
+	
+		// Verify input value 
+		
+		function isNumber(n) {
+  			return !isNaN(parseFloat(n)) && isFinite(n);
+		}
+		
+		// Animate number change
+		$('.Count').each(function () {
+			var currentNumber = $(this).val().replace(/[^0-9\.]+/g,"");
+			$(this).prop('Counter',currentNumber).animate({
+				Counter: $(this).text()
+			}, {
+				duration: 1000,
+				easing: 'swing',
+				step: function (now) {
+					$(this).text(Math.ceil(now));
+				}
+			});
+		});
+		
+		// Animate number change
+		
+		  var base = 50000;        // Not sure how the calc works or if there was a base total on page load. 
+		  var from = 0;            // the starting number to animate from. Set initial value to whatever you want onload.
+		  var current = from;
+		  var to = base;           // the target number to animate to. Set initial value is whatever you want onload.
+		  var duration = 200;      // animation in ms. tinker if it's too fast/slow
+		  var start = null;
+	
+
+		  // reference the element showing total
+		  var totalEl = document.querySelector('.ticker__total');
+		  var totalElNoAni = document.querySelector('.ticker__totalnoani');
+
+
+		  /**
+		  * sets animation numerical start/end values
+		  * initiates animation frames
+		  */
+		  function animate(target) {
+			to = target;
+			from = current;
+			start = null;
+			window.requestAnimationFrame(frame);
+		  }
+
+		  /**
+		  * Run on each window animation frame until
+		  * animation complete.
+		  */
+		  function frame(timestamp) {
+			if (!start) start = timestamp;
+
+			// percentage of time remaining in animation
+			var progress = Math.min(1, (timestamp - start) / 1000);
+
+			// total change in value over duration
+			var diff = to - from;
+
+			// determine corresponding value at current duration
+			var step = diff * progress;
+
+			//store current value
+			current = Math.ceil(from + step);
+
+			// update DOM
+			totalEl.innerText = addCommas(current);
+
+			if (progress < 1) {
+			  window.requestAnimationFrame(frame);
+			}
+		  }
+		
+		// Animate yearly points WITHOUT bonus
+
+		
+		  var baseA = 0;        // Not sure how the calc works or if there was a base total on page load. 
+		  var fromA = 0;            // the starting number to animate from. Set initial value to whatever you want onload.
+		  var currentA = fromA;
+		  var toA = baseA;           // the target number to animate to. Set initial value is whatever you want onload.
+		  var durationA = 200;      // animation in ms. tinker if it's too fast/slow
+		  var startA = null;
+	
+
+		  // reference the element showing total
+		  var totalElA = document.querySelector('.ticker__total_NoBonus');
+
+
+		  /**
+		  * sets animation numerical start/end values
+		  * initiates animation frames
+		  */
+		  function animateA(targetA) {
+			toA = targetA;
+			fromA = currentA;
+			startA = null;
+			window.requestAnimationFrame(frameA);
+		  }
+
+		  /**
+		  * Run on each window animation frame until
+		  * animation complete.
+		  */
+		  function frameA(timestampA) {
+			if (!startA) startA = timestampA;
+
+			// percentage of time remaining in animation
+			var progressA = Math.min(1, (timestampA - startA) / 1000);
+
+			// total change in value over duration
+			var diffA = toA - fromA;
+
+			// determine corresponding value at current duration
+			var stepA = diffA * progressA;
+
+			//store current value
+			currentA = Math.ceil(fromA + stepA);
+
+			// update DOM
+			totalElA.innerText = addCommas(currentA);
+
+			if (progressA < 1) {
+			  window.requestAnimationFrame(frameA);
+			}
+		  }
+	
+});
+	</script>
+</body>
+</html>

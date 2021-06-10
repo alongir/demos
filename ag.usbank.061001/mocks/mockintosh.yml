@@ -19,16 +19,17 @@ services:
   - path: /apply/apply.html
     response:
       status: 302
-- name: https://bm.adentifi.com
+- name: https://cardrewards.usbank.com
   port: 8002
   managementRoot: __admin
-  oas: '@mock-data/up9-https___bm.adentifi.com-spec.json'
+  oas: '@mock-data/up9-https___cardrewards.usbank.com-spec.json'
   endpoints:
-  - path: /pixel/conv/{{param}}
+  - path: /connect/{{param}}
     response:
-      status: 302
       headers:
         Content-Type: text/html
+      body: '@mock-data/resp_cardrewards_usbank_com_69.html'
+      useTemplating: false
 - name: https://locations.usbank.com
   port: 8003
   managementRoot: __admin
@@ -81,6 +82,47 @@ services:
       headers:
         Content-Type: application/json
       body: '@mock-data/resp_onboarding_usbank_com_40.json'
+    method: post
+  - path: /KrNCmr/{{param1}}/{{param2}}/{{param3}}/{{param4}}/{{param5}}/{{param6}}/{{param7}}
+    response:
+      status: 201
+      headers:
+        Content-Type: application/json
+      body: |-
+        {
+         "success": true
+        }
+      useTemplating: false
+    method: post
+  - path: /{{param}}/v1/applications/environment
+    response:
+      headers:
+        Content-Type: application/json
+      body: |-
+        {
+         "name": "onboarding-application-intake",
+         "environment": "prod",
+         "buildId": "05092021-02-0",
+         "dependencies": null
+        }
+      useTemplating: false
+  - path: /cards/{{cardId}}/{{param1}}/{{param2}}/intro
+    response:
+      headers:
+        Content-Type: text/html
+      body: '@mock-data/resp_onboarding_usbank_com_74.html'
+      useTemplating: false
+  - path: /proxies/v1/{{param}}
+    response:
+      headers:
+        Content-Type: application/json
+      body: '@mock-data/resp_onboarding_usbank_com_75.json'
+      useTemplating: false
+    method: post
+  - path: /proxies/v1/oad/terms-and-conditions
+    response:
+      headers:
+        Content-Type: application/json
     method: post
 - name: https://onlinebanking.usbank.com
   port: 8005
@@ -235,3 +277,27 @@ services:
       body: '@mock-data/resp_www_usbank_com_6.json'
       useTemplating: false
     method: post
+  - path: /credit-cards/{{href}}
+    response:
+      headers:
+        Content-Type: text/html
+      body: '@mock-data/resp_www_usbank_com_49.html'
+      useTemplating: false
+  - path: /home-loans/mortgage/first-time-home-buyers.html
+    response:
+      headers:
+        Content-Type: text/html
+      body: '@mock-data/resp_www_usbank_com_50.html'
+      useTemplating: false
+  - path: /site-map.html
+    response:
+      headers:
+        Content-Type: text/html
+      body: '@mock-data/resp_www_usbank_com_53.html'
+      useTemplating: false
+  - path: /svt/usbank/rpsfetchDisclosureContent
+    response:
+      headers:
+        Content-Type: application/json
+      body: '@mock-data/resp_www_usbank_com_54.json'
+      useTemplating: false

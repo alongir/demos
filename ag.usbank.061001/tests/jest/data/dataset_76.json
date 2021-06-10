@@ -1,0 +1,23 @@
+{
+ "parameters": [
+  {
+   "name": "locationCode",
+   "uuid": "75b7735a-a06d-4927-9835-19a76faec0d1"
+  },
+  {
+   "name": "offerId",
+   "uuid": "ec9e679e-ebf6-4c47-9025-e94a246db717"
+  },
+  {
+   "name": "sourceCode",
+   "uuid": "12220ce9-e7a3-4015-8c2d-8c828b546bd2"
+  }
+ ],
+ "rows": [
+  {
+   "locationCode": "18569",
+   "offerId": "1R11X29W45",
+   "sourceCode": "33727"
+  }
+ ]
+}

@@ -10,7 +10,7 @@ public class Authentication implements AuthenticationInterface
         if (httpTarget.baseURL == "https://apply.usbank.com")
         {
         }
-        else if (httpTarget.baseURL == "https://bm.adentifi.com")
+        else if (httpTarget.baseURL == "https://cardrewards.usbank.com")
         {
         }
         else if (httpTarget.baseURL == "https://locations.usbank.com")

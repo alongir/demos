@@ -17,7 +17,7 @@ def authenticate(target_key: str, target: TargetService):
     # authenticate_oauth(target)
     if target.config_url == 'https://apply.usbank.com':
         pass
-    elif target.config_url == 'https://bm.adentifi.com':
+    elif target.config_url == 'https://cardrewards.usbank.com':
         pass
     elif target.config_url == 'https://locations.usbank.com':
         pass

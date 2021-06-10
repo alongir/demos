@@ -1,0 +1,72 @@
+[
+ {
+  "title": "We my change APRs",
+  "content": "<p><b>U.S. Bank may change APRs, fees and other account terms in the future based on your experience with U.S. Bank National Association and its affiliates as provided under the Cardmember Agreement and applicable law.</b></p>",
+  "status": "success",
+  "imagePath": "",
+  "borderType": ""
+ },
+ {
+  "title": "Account must be open",
+  "content": "<p>Account must be open and in good standing to earn and redeem rewards and benefits. Upon approval, please refer to your Rewards Program Rules for additional information.</p>",
+  "status": "success",
+  "imagePath": "",
+  "borderType": ""
+ },
+ {
+  "title": "Altitude Connect 50k Bonus Points",
+  "content": "<p>One-time 50,000 bonus Points will be awarded if you are approved for a new U.S. Bank Altitude Connect Visa Signature Card and eligible Net Purchases totaling $3,000 or more are made to your Account within 120 days after Account opening. Points are earned on eligible Net Purchases. Net Purchases are purchases minus credits and returns. Not all transactions are eligible to earn rewards, such as Advances, Balance Transfers, and Convenience Checks; upon approval, see your Cardmember Agreement for details. Please allow 6-8 weeks for your bonus Points to be credited to your Account. The bonus is not available to Cardmembers who currently have, or had, a U.S. Bank Altitude Connect Visa Signature account. Use of the Card is subject to terms and conditions of the U.S. Bank Altitude Connect Visa Signature Cardmember Agreement, which is provided at Account opening and may be amended from time to time. This offer may not be combined with any other bonus offer.</p>",
+  "status": "success",
+  "imagePath": "",
+  "borderType": ""
+ },
+ {
+  "title": "Altitude Go - cash back is redeemed",
+  "content": "<p>Cash back is redeemed in the form of a statement credit or a deposit made to your U.S. Bank savings or checking account (2,500 Points minimum redemption).</p>",
+  "status": "success",
+  "imagePath": "",
+  "borderType": ""
+ },
+ {
+  "title": "Altitude Connect Rewards",
+  "content": "<p>Rewards are earned on eligible Net Purchases. Net Purchases are Purchases minus credits and returns. Not all transactions are eligible for rewards, such as Advances, Balance Transfers and Convenience Checks. Upon approval, please refer to the materials received with your new card and the Program Rules in the online Rewards Center by logging in to usbank.com for additional information. Account must be open and current (that is, no Minimum Payment is past due) on the closing date of the billing cycle in order to earn and redeem Points. Merchants identify their business by selecting a merchant category code established by Visa. A Purchase will not earn additional Points if the merchant\u2019s selected code is in a category that is not eligible for additional Points earning. U.S. Bank does not determine the category codes that merchants choose and reserves the right to determine which Purchases qualify for additional Points. We reserve the right to adjust the number of Points for Purchases or to stop issuing Points for Purchases on the Account, upon notice to you. Use of the Card is subject to terms and conditions of the U.S. Bank Altitude Connect Visa Signature Cardmember Agreement, which may be amended from time to time. U.S. Bank Altitude Connect Visa Signature Cardmembers will earn one (1) Point for every $1 in eligible Net Purchases. In addition, you will earn additional Points for the following Net Purchases: You will earn four (4) additional bonus Points for every $1 in eligible Net Purchases spent on prepaid car and hotel reservations purchased in the online Altitude Rewards Center using your U.S. Bank Altitude Connect Card. Prepaid car and hotel reservations in the Rewards Center are not classified as a travel category merchant transaction and are not eligible to receive the additional points for that category. Please allow 1-2 statement billing cycles for your bonus Points to appear on your credit card statement. Refer to the Rewards Center for full details. You will earn three (3) additional Points for every $1 in eligible Net Purchases during each billing cycle for purchases made directly with merchants that are classified as a travel category transaction (such as purchases made directly with airlines, hotels, car rentals, taxicabs, limousines, passenger trains and cruise line companies) and for purchases made with merchants classified as a gas station. You will earn one (1) additional Point for every $1 in eligible Net Purchases during each billing cycle for any merchant classified as a restaurant, fast-food restaurant, bar, grocery store, supermarket or qualifying streaming subscription service. Refer to Program Rules for official list of qualifying streaming services merchants. Purchases at or delivery from discount/retail stores that sell groceries may not qualify for the grocery store or grocery delivery category.</p>",
+  "status": "success",
+  "imagePath": "",
+  "borderType": ""
+ },
+ {
+  "title": "Altitude Connect $30 Statement Credit",
+  "content": "<p>An automatic statement credit of $30 per 12-month period will be applied to your U.S. Bank Altitude Connect Visa Signature Card Account within 2 statement billing cycles following 11 consecutive calendar months of eligible streaming service purchases, such as Netflix, Hulu, Apple Music, if the Account is in good standing (open and able to use). Refer to Program Rules for official list of qualifying streaming services merchants. We reserve the right to adjust or reverse any portion or all of any streaming services credit for unauthorized purchases or transaction credits.&nbsp;</p>",
+  "status": "success",
+  "imagePath": "",
+  "borderType": ""
+ },
+ {
+  "title": "Altitude Connect TSA Precheck",
+  "content": "<p>Certain terms, conditions and exclusions apply. You must complete either the Global Entry\u00ae and/or TSA PreCheck\u00ae application(s) and pay the application fee(s) with your U.S. Bank Altitude Connect Visa Signature Card. For complete details on the TSA PreCheck\u00ae program, including full terms and conditions, go to https://www.tsa.gov/precheck. The TSA PreCheck\u00ae trademark is used with the permission of the U.S. Department of Homeland Security. Please visit usbank.com/altitudeconnectbenefits or refer to your Guide to Benefits for further details and full terms and conditions.</p>",
+  "status": "success",
+  "imagePath": "",
+  "borderType": ""
+ },
+ {
+  "title": "Altitude Connect Cell Phone Protection",
+  "content": "<p>Certain terms, conditions and exclusions apply. In order for coverage to apply, you must pay your eligible cellular wireless bill with your covered U.S. Bank Altitude Connect Visa Signature Card. Please visit usbank.com/altitudeconnectbenefits or refer to your Guide to Benefits for further details and full terms and conditions.</p>",
+  "status": "success",
+  "imagePath": "",
+  "borderType": ""
+ },
+ {
+  "title": "Contactless",
+  "content": "<p>The Contactless Symbol and Contactless Indicator are trademarks owned by and used with the permission of EMVCo, LLC.</p>",
+  "status": "success",
+  "imagePath": "",
+  "borderType": ""
+ },
+ {
+  "title": "Creditor and issuer general",
+  "content": "<p><b>The creditor and issuer of this card is U.S. Bank National Association, pursuant to a license from Visa U.S.A. Inc., and the card is available to United States residents only.</b></p>",
+  "status": "success",
+  "imagePath": "",
+  "borderType": ""
+ }
+]

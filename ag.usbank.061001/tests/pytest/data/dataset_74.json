@@ -1,0 +1,23 @@
+{
+ "parameters": [
+  {
+   "name": "cardId",
+   "uuid": "17e97ede-435e-4cb4-9a6f-0a6f44a0713b"
+  },
+  {
+   "name": "param",
+   "uuid": "659b8b00-120c-4679-8680-a51734e68072"
+  },
+  {
+   "name": "param1",
+   "uuid": "c8e06105-a80d-493b-bda2-6974a66c1c4d"
+  }
+ ],
+ "rows": [
+  {
+   "cardId": "1R11X29W45",
+   "param": "18569",
+   "param1": "33727"
+  }
+ ]
+}

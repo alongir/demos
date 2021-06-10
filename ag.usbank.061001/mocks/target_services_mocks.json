@@ -1,6 +1,6 @@
 {
  "https://apply.usbank.com": "http://localhost:8001",
- "https://bm.adentifi.com": "http://localhost:8002",
+ "https://cardrewards.usbank.com": "http://localhost:8002",
  "https://locations.usbank.com": "http://localhost:8003",
  "https://onboarding.usbank.com": "http://localhost:8004",
  "https://onlinebanking.usbank.com": "http://localhost:8005",

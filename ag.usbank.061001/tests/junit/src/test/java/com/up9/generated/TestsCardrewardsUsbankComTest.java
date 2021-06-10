@@ -15,19 +15,20 @@ import org.junit.jupiter.params.ParameterizedTest;
 import static com.up9.up9lib.Common.*;
 
 @TestMethodOrder(Alphanumeric.class)
-public class TestsBmAdentifiComTest
+public class TestsCardrewardsUsbankComTest
 {
     @ParameterizedTest
-    @JsonFileSource(resources = "/dataset_33.json")
-    public void testGetPixelConvParam33(final JsonObject json) throws MalformedURLException, IOException
+    @JsonFileSource(resources = "/dataset_69.json")
+    public void testGetConnectParam69(final JsonObject json) throws MalformedURLException, IOException
     {
         final String param = json.getString("param");
 
-        // GET https://bm.adentifi.com/pixel/conv/{param} (endp 33)
-        final HttpTarget bmAdentifiCom = getHttpClient("https://bm.adentifi.com", new Authentication());
+        // GET https://cardrewards.usbank.com/connect/{param} (endp 69)
+        final HttpTarget cardrewardsUsbankCom = getHttpClient("https://cardrewards.usbank.com", new Authentication());
         final HttpRequest request = new HttpRequest();
-        final Response response = bmAdentifiCom.get(request, "/pixel/conv/" + param);
-        assertStatusCode(response.code(), 302);
+        final Response response = cardrewardsUsbankCom.get(request, "/connect/" + param);
+        assertStatusCode(response.code(), 200);
+        assertCSSselect("html head title", "Rewards Calculator", response.body().string());
     }
 }
 

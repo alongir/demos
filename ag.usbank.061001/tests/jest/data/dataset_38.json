@@ -5,6 +5,10 @@
    "uuid": "118fb759-e495-4a3c-a033-b31e116b6930"
   },
   {
+   "name": "description",
+   "uuid": "462d1192-a82a-4f15-b713-92cb77fe936e"
+  },
+  {
    "name": "email",
    "uuid": "d74b0655-eb86-4c5a-b635-41ce062b305e"
   },
@@ -21,6 +25,10 @@
    "uuid": "c8fe4796-4334-4088-82fe-cc905e6db6a2"
   },
   {
+   "name": "offerTypeCode",
+   "uuid": "45b62669-e284-4981-9bae-64943af0b05d"
+  },
+  {
    "name": "op",
    "uuid": "e3af03ca-0bc9-4455-a21c-f9cb25cd13e3"
   },
@@ -35,118 +43,194 @@
   {
    "name": "productCode",
    "uuid": "1466bec3-fe6c-475a-bb8c-ebe445bfd826"
+  },
+  {
+   "name": "sourceCode",
+   "uuid": "3366e719-a7e3-4363-b17c-9eb34c30aadc"
+  },
+  {
+   "name": "subProductCode",
+   "uuid": "636bafdb-9a87-43a0-8ab2-95d650c4d270"
+  },
+  {
+   "name": "subtype",
+   "uuid": "f42264cb-82fe-4734-91b4-546706677a3c"
+  },
+  {
+   "name": "x_requested_with",
+   "uuid": "177d01c0-c72c-4e57-8167-cf6aee871216"
   }
  ],
  "rows": [
   {
    "countriesOfCitizenship": "AX",
+   "description": "Altitude\u00ae Connect Visa Signature\u00ae Card",
    "email": "john.dow.1981@protonmail.com",
    "lastName": "Dow",
    "monthlyHousingPayment": "10",
    "number": "6506667766",
+   "offerTypeCode": "146",
    "op": "replace",
    "param": "applicationintake",
    "path": "/products/0/promocode",
-   "productCode": "DDA"
+   "productCode": "DDA",
+   "sourceCode": "33727",
+   "subProductCode": "1R11X29W45",
+   "subtype": "18569",
+   "x_requested_with": "XMLHttpRequest"
   },
   {
    "countriesOfCitizenship": "AX",
+   "description": "Altitude\u00ae Connect Visa Signature\u00ae Card",
    "email": "john.dow.1981@protonmail.com",
    "lastName": "Dow",
    "monthlyHousingPayment": "10",
    "number": "6506667766",
+   "offerTypeCode": "146",
    "op": "replace",
    "param": "applicationintake",
    "path": "/applicants/0/phones/primary",
-   "productCode": "DDA"
+   "productCode": "DDA",
+   "sourceCode": "33727",
+   "subProductCode": "1R11X29W45",
+   "subtype": "18569",
+   "x_requested_with": "XMLHttpRequest"
   },
   {
    "countriesOfCitizenship": "AX",
+   "description": "Altitude\u00ae Connect Visa Signature\u00ae Card",
    "email": "john.dow.1981@protonmail.com",
    "lastName": "Dow",
    "monthlyHousingPayment": "10",
    "number": "6506667766",
+   "offerTypeCode": "146",
    "op": "replace",
    "param": "applicationintake",
    "path": "/applicants/0/emails",
-   "productCode": "DDA"
+   "productCode": "DDA",
+   "sourceCode": "33727",
+   "subProductCode": "1R11X29W45",
+   "subtype": "18569",
+   "x_requested_with": "XMLHttpRequest"
   },
   {
    "countriesOfCitizenship": "AX",
+   "description": "Altitude\u00ae Connect Visa Signature\u00ae Card",
    "email": "john.dow.1981@protonmail.com",
    "lastName": "Dow",
    "monthlyHousingPayment": "10",
    "number": "6506667766",
+   "offerTypeCode": "146",
    "op": "replace",
    "param": "applicationintake",
    "path": "/applicants/0/name",
-   "productCode": "DDA"
+   "productCode": "DDA",
+   "sourceCode": "33727",
+   "subProductCode": "1R11X29W45",
+   "subtype": "18569",
+   "x_requested_with": "XMLHttpRequest"
   },
   {
    "countriesOfCitizenship": "AX",
+   "description": "Altitude\u00ae Connect Visa Signature\u00ae Card",
    "email": "john.dow.1981@protonmail.com",
    "lastName": "Dow",
    "monthlyHousingPayment": "10",
    "number": "6506667766",
+   "offerTypeCode": "146",
    "op": "replace",
    "param": "applicationintake",
    "path": "/applicants/0/housing",
-   "productCode": "DDA"
+   "productCode": "DDA",
+   "sourceCode": "33727",
+   "subProductCode": "1R11X29W45",
+   "subtype": "18569",
+   "x_requested_with": "XMLHttpRequest"
   },
   {
    "countriesOfCitizenship": "AX",
+   "description": "Altitude\u00ae Connect Visa Signature\u00ae Card",
    "email": "john.dow.1981@protonmail.com",
    "lastName": "Dow",
    "monthlyHousingPayment": "10",
    "number": "6506667766",
+   "offerTypeCode": "146",
    "op": "replace",
    "param": "applicationintake",
    "path": "/applicants/0/citizenshipAndResidence",
-   "productCode": "DDA"
+   "productCode": "DDA",
+   "sourceCode": "33727",
+   "subProductCode": "1R11X29W45",
+   "subtype": "18569",
+   "x_requested_with": "XMLHttpRequest"
   },
   {
    "countriesOfCitizenship": "AX",
+   "description": "Altitude\u00ae Connect Visa Signature\u00ae Card",
    "email": "john.dow.1981@protonmail.com",
    "lastName": "Dow",
    "monthlyHousingPayment": "10",
    "number": "6506667766",
+   "offerTypeCode": "146",
    "op": "replace",
    "param": "applicationintake",
    "path": "/applicants/0/addresses/primary/county",
-   "productCode": "DDA"
+   "productCode": "DDA",
+   "sourceCode": "33727",
+   "subProductCode": "1R11X29W45",
+   "subtype": "18569",
+   "x_requested_with": "XMLHttpRequest"
   },
   {
    "countriesOfCitizenship": "AX",
+   "description": "Altitude\u00ae Connect Visa Signature\u00ae Card",
    "email": "john.dow.1981@protonmail.com",
    "lastName": "Dow",
    "monthlyHousingPayment": "10",
    "number": "6506667766",
+   "offerTypeCode": "146",
    "op": "replace",
    "param": "applicationintake",
    "path": "/applicants/0/addresses/primary/zipCode",
-   "productCode": "DDA"
+   "productCode": "DDA",
+   "sourceCode": "33727",
+   "subProductCode": "1R11X29W45",
+   "subtype": "18569",
+   "x_requested_with": "XMLHttpRequest"
   },
   {
    "countriesOfCitizenship": "AX",
+   "description": "Altitude\u00ae Connect Visa Signature\u00ae Card",
    "email": "john.dow.1981@protonmail.com",
    "lastName": "Dow",
    "monthlyHousingPayment": "10",
    "number": "6506667766",
+   "offerTypeCode": "146",
    "op": "replace",
    "param": "applicationintake",
    "path": "/applicants/0/addresses/primary/state",
-   "productCode": "DDA"
+   "productCode": "DDA",
+   "sourceCode": "33727",
+   "subProductCode": "1R11X29W45",
+   "subtype": "18569",
+   "x_requested_with": "XMLHttpRequest"
   },
   {
    "countriesOfCitizenship": "AX",
+   "description": "Altitude\u00ae Connect Visa Signature\u00ae Card",
    "email": "john.dow.1981@protonmail.com",
    "lastName": "Dow",
    "monthlyHousingPayment": "10",
    "number": "6506667766",
+   "offerTypeCode": "146",
    "op": "replace",
    "param": "applicationintake",
    "path": "/applicants/0/addresses/primary/city",
-   "productCode": "DDA"
+   "productCode": "DDA",
+   "sourceCode": "33727",
+   "subProductCode": "1R11X29W45",
+   "subtype": "18569",
+   "x_requested_with": "XMLHttpRequest"
   }
  ]
 }

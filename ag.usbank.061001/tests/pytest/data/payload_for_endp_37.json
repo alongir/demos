@@ -9,8 +9,14 @@
  "channel": "WEB",
  "products": [
   {
+   "cardInformation": {
+    "offerTypeCode": "{{offerTypeCode}}",
+    "sourceCode": "{{sourceCode}}"
+   },
+   "description": "{{description}}",
    "productCode": "{{productCode}}",
-   "subProductCode": "PI"
+   "subProductCode": "{{subProductCode}}",
+   "subtype": "{{subtype}}"
   }
  ],
  "tenant": "usbank"

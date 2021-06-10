@@ -105,7 +105,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 13 requests"
+    "summary": "Seen 18 requests"
    },
    "parameters": [],
    "post": {
@@ -290,7 +290,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 107 requests"
+    "summary": "Seen 134 requests"
    }
   }
  },

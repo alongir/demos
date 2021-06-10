@@ -1,5 +1,5 @@
 const authenticate = require("./authentication");
-const {CSSselect, JSONBuild, JSONPath, clearSession, dataset, getHttpClient} = require("./up9lib");
+const {CSSselect, JSONBuild, JSONPath, clearSession, dataset, getHttpClient, urlPart, urlencode} = require("./up9lib");
 
 it("test_01_get_about_us_bank_customer_service_html", () => {
     clearSession();
@@ -54,6 +54,55 @@ it("test_03_get_bank_accounts_checking_accounts_gold_checking_account_html", () 
     });
 });
 
+it("test_49_get_credit_cards_href", () => {
+    clearSession();
+
+    // GET https://www.usbank.com/index.html (endp 4)
+    const www_usbank_com = getHttpClient("https://www.usbank.com", authenticate);
+    return www_usbank_com.fetch("/index.html")
+    .then((response) => {
+        expect(response.status).toEqual(200);
+        return response.text();
+    })
+    .then((text) => {
+        expect(CSSselect("html head title", text)).toContain("Consumer banking | Personal banking | U.S. Bank");
+        const href = urlPart("/2", CSSselect("div.USBContent main.bodyContent div.aem-Grid div.responsivegrid.aem-GridColumn div.aem-Grid div.banner.parbase.aem-GridColumn div.USBHero div div div div div a[href] @href", response).text().trim());
+        const c3ch = urlPart("?c3ch", CSSselect("div.USBContent main.bodyContent div.aem-Grid div.responsivegrid.aem-GridColumn div.aem-Grid div.banner.parbase.aem-GridColumn div.USBHero div div div div div a[href] @href", response).text().trim());
+        const c3nid = urlPart("?icid", CSSselect("div.USBContent main.bodyContent div.aem-Grid div.responsivegrid.aem-GridColumn div.aem-Grid div.banner.parbase.aem-GridColumn div.USBHero div div div div div a[href] @href", response).text().trim());
+        const icid = urlPart("?icid", CSSselect("div.USBContent main.bodyContent div.aem-Grid div.responsivegrid.aem-GridColumn div.aem-Grid div.banner.parbase.aem-GridColumn div.USBHero div div div div div a[href] @href", response).text().trim());
+    })
+    .then((data) => {
+        // GET https://www.usbank.com/credit-cards/{href} (endp 49)
+        return www_usbank_com.fetch("/credit-cards/" + href + urlencode([["c3ch", c3ch], ["c3nid", c3nid], ["icid", icid]]))
+        .then((response) => {
+            expect(response.status).toEqual(200);
+            return response.text();
+        })
+        .then((text) => {
+            expect(CSSselect("a#continue", text)).toContain("Continue");
+        })
+        .then((data) => {
+        });
+    });
+});
+
+it("test_50_get_home_loans_mortgage_first_time_home_buyers_html", () => {
+    clearSession();
+
+    // GET https://www.usbank.com/home-loans/mortgage/first-time-home-buyers.html (endp 50)
+    const www_usbank_com = getHttpClient("https://www.usbank.com", authenticate);
+    return www_usbank_com.fetch("/home-loans/mortgage/first-time-home-buyers.html")
+    .then((response) => {
+        expect(response.status).toEqual(200);
+        return response.text();
+    })
+    .then((text) => {
+        expect(CSSselect("section.pubIns div.bodyContent.container-fluid div.row.minHeightSection div div.aem-Grid div.containerComp.parbase.aem-GridColumn div.containerComponent.smallPaddingTopDT.smallPaddingRightDT.smallPaddingBottomDT.smallPaddingLeftDT.smallPaddingTopMob.smallPaddingRightMob.noneBottomMob.smallPaddingLeftMob.gray div div.aem-Grid div.text.parbase.aem-GridColumn h3", text)).toContain("Featured articles");
+    })
+    .then((data) => {
+    });
+});
+
 describe.each(dataset("data/dataset_5.json"))("test_05_post_plpXRb_YlO_param1_param2_param3_param4_aEs_aeId", (aeId, param, param1, param2, param3, sensor_data) => {
     it("test_05_post_plpXRb_YlO_param1_param2_param3_param4_aEs_aeId", () => {
         clearSession();
@@ -76,6 +125,51 @@ describe.each(dataset("data/dataset_5.json"))("test_05_post_plpXRb_YlO_param1_pa
         .then((text) => {
         })
         .then((data) => {
+        });
+    });
+});
+
+it("test_53_get_site_map_html", () => {
+    clearSession();
+
+    // GET https://www.usbank.com/site-map.html (endp 53)
+    const www_usbank_com = getHttpClient("https://www.usbank.com", authenticate);
+    return www_usbank_com.fetch("/site-map.html")
+    .then((response) => {
+        expect(response.status).toEqual(200);
+        return response.text();
+    })
+    .then((text) => {
+        expect(CSSselect("div#speedBumpModal div.modal-dialog div.modal-content div.modal-body.speedBump-body h3", text)).toContain("Leaving?");
+        expect(CSSselect("html head title", text)).toContain("Site map | U.S. Bank");
+    })
+    .then((data) => {
+    });
+});
+
+describe.each(dataset("data/dataset_54.json"))("test_54_get_svt_usbank_rpsfetchDisclosureContent", (disclosureTitles) => {
+    it("test_54_get_svt_usbank_rpsfetchDisclosureContent", () => {
+        clearSession();
+
+        // GET https://www.usbank.com/svt/usbank/rpsfetchDisclosureContent (endp 54)
+        const www_usbank_com = getHttpClient("https://www.usbank.com", authenticate);
+        return www_usbank_com.fetch("/svt/usbank/rpsfetchDisclosureContent" + urlencode([["disclosureTitles", disclosureTitles]]), {
+            headers: {
+                "x-requested-with": "XMLHttpRequest"
+            }
+        })
+        .then((response) => {
+            expect(response.status).toEqual(200);
+            return response.text();
+        })
+        .then((text) => {
+            return JSON.parse(text);
+        })
+        .then((data) => {
+            expect(JSONPath({
+                path: "$[*].status",
+                json: data
+            })).toContain("success");
         });
     });
 });

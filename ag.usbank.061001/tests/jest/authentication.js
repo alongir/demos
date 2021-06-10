@@ -1,6 +1,6 @@
 function authenticate(targetKey, opts) {
     if (opts.configUrl === "https://apply.usbank.com") {
-    } else if (opts.configUrl === "https://bm.adentifi.com") {
+    } else if (opts.configUrl === "https://cardrewards.usbank.com") {
     } else if (opts.configUrl === "https://locations.usbank.com") {
     } else if (opts.configUrl === "https://onboarding.usbank.com") {
     } else if (opts.configUrl === "https://onlinebanking.usbank.com") {

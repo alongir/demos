@@ -5,6 +5,195 @@
  },
  "openapi": "3.0.2",
  "paths": {
+  "/KrNCmr/{param1}/{param2}/{param3}/{param4}/{param5}/{param6}/{param7}": {
+   "parameters": [
+    {
+     "in": "path",
+     "name": "param1",
+     "required": true,
+     "schema": {
+      "enum": [
+       "es8Mw"
+      ],
+      "type": "string"
+     },
+     "style": "simple"
+    },
+    {
+     "in": "path",
+     "name": "param2",
+     "required": true,
+     "schema": {
+      "enum": [
+       "ni1B1"
+      ],
+      "type": "string"
+     },
+     "style": "simple"
+    },
+    {
+     "in": "path",
+     "name": "param3",
+     "required": true,
+     "schema": {
+      "enum": [
+       "EQ"
+      ],
+      "type": "string"
+     },
+     "style": "simple"
+    },
+    {
+     "in": "path",
+     "name": "param4",
+     "required": true,
+     "schema": {
+      "enum": [
+       "tY3EzLkX5G"
+      ],
+      "type": "string"
+     },
+     "style": "simple"
+    },
+    {
+     "in": "path",
+     "name": "param5",
+     "required": true,
+     "schema": {
+      "enum": [
+       "W3JTOn5fDQs"
+      ],
+      "type": "string"
+     },
+     "style": "simple"
+    },
+    {
+     "in": "path",
+     "name": "param6",
+     "required": true,
+     "schema": {
+      "enum": [
+       "dV"
+      ],
+      "type": "string"
+     },
+     "style": "simple"
+    },
+    {
+     "in": "path",
+     "name": "param7",
+     "required": true,
+     "schema": {
+      "enum": [
+       "48djMFYS4"
+      ],
+      "type": "string"
+     },
+     "style": "simple"
+    }
+   ],
+   "post": {
+    "operationId": "9eb93c24-5d48-4b64-a30d-6b0362f9c2c0",
+    "parameters": [],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "properties": {
+         "sensor_data": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "sensor_data"
+        ],
+        "type": "object"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "201": {
+      "content": {
+       "application/json": {
+        "example": {
+         "success": true
+        },
+        "schema": {
+         "properties": {
+          "success": {
+           "type": "boolean"
+          }
+         },
+         "required": [
+          "success"
+         ],
+         "type": "object"
+        }
+       }
+      },
+      "description": "Created"
+     }
+    },
+    "summary": "Seen 2 requests"
+   }
+  },
+  "/cards/{cardId}/{param1}/{param2}/intro": {
+   "get": {
+    "operationId": "6efc2015-dd0a-4c83-afc1-29ca13b5e15e",
+    "parameters": [],
+    "responses": {
+     "200": {
+      "content": {
+       "text/html": {
+        "example": "<!doctype html>\n<html lang=\"en\">\n    <head>\n        <meta charset=\"utf-8\">\n        <title>U.S. Bank Credit Card</title>\n        <base href=\"/cards/\">        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n        <link rel=\"icon\" type=\"image/x-icon\" href=\"favicon.ico\">\n        <meta name=\"robots\" content=\"noindex,nofollow\" />\n    <link rel=\"stylesheet\" href=\"styles.b9f879f458d607dd054a.css\"></head>\n    <body>\n        <app-root></app-root>\n    <script src=\"runtime.689ba4fd6cadb82c1ac2.js\" defer></script><script src=\"polyfills-es5.bdb1fb74ae080a3cc6e1.js\" nomodule defer></script><script src=\"polyfills.a63d5000fcf71af8ab3a.js\" defer></script><script src=\"scripts.286d42581acc1f6c5156.js\" defer></script><script src=\"main.63cb7a333e4b966b7e06.js\" defer></script><script type=\"text/javascript\"  src=\"/KrNCmr/es8Mw/ni1B1/EQ/tY3EzLkX5G/W3JTOn5fDQs/dV/48djMFYS4\"></script></body>\n</html>"
+       }
+      },
+      "description": "OK"
+     }
+    },
+    "summary": "Seen 1 requests"
+   },
+   "parameters": [
+    {
+     "in": "path",
+     "name": "cardId",
+     "required": true,
+     "schema": {
+      "enum": [
+       "1R11X29W45"
+      ],
+      "type": "string"
+     },
+     "style": "simple"
+    },
+    {
+     "in": "path",
+     "name": "param1",
+     "required": true,
+     "schema": {
+      "enum": [
+       "18569"
+      ],
+      "type": "string"
+     },
+     "style": "simple"
+    },
+    {
+     "in": "path",
+     "name": "param2",
+     "required": true,
+     "schema": {
+      "enum": [
+       "33727"
+      ],
+      "type": "string"
+     },
+     "style": "simple"
+    }
+   ]
+  },
   "/deposits/{depositId}/PI/start": {
    "get": {
     "operationId": "d785bfd2-36f2-49de-9300-82664c05a5b3",
@@ -35,6 +224,65 @@
      "style": "simple"
     }
    ]
+  },
+  "/proxies/v1/oad/terms-and-conditions": {
+   "parameters": [],
+   "post": {
+    "operationId": "3deb6135-266f-4a14-8c6d-5cbd07c98459",
+    "parameters": [
+     {
+      "in": "header",
+      "name": "x-requested-with",
+      "required": false,
+      "schema": {
+       "enum": [
+        "XMLHttpRequest"
+       ],
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "properties": {
+         "locationCode": {
+          "type": "string"
+         },
+         "offerId": {
+          "type": "string"
+         },
+         "sourceCode": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "locationCode",
+         "offerId",
+         "sourceCode"
+        ],
+        "type": "object"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "content": {
+       "application/json": {
+        "schema": {}
+       }
+      },
+      "description": "OK"
+     }
+    },
+    "summary": "Seen 1 requests",
+    "tags": [
+     "proxies"
+    ]
+   }
   },
   "/proxies/v1/validateAddress": {
    "parameters": [],
@@ -371,7 +619,891 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 3 requests"
+    "summary": "Seen 3 requests",
+    "tags": [
+     "proxies"
+    ]
+   }
+  },
+  "/proxies/v1/{param}": {
+   "parameters": [
+    {
+     "in": "path",
+     "name": "param",
+     "required": true,
+     "schema": {
+      "enum": [
+       "creditcardfees"
+      ],
+      "type": "string"
+     },
+     "style": "simple"
+    }
+   ],
+   "post": {
+    "operationId": "937b49cd-3bb5-45d7-acdb-f6768ba1d361",
+    "parameters": [
+     {
+      "in": "header",
+      "name": "x-requested-with",
+      "required": false,
+      "schema": {
+       "enum": [
+        "XMLHttpRequest"
+       ],
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "properties": {
+         "icsLocationCode": {
+          "type": "string"
+         },
+         "offerID": {
+          "type": "string"
+         },
+         "sourceCode": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "icsLocationCode",
+         "offerID",
+         "sourceCode"
+        ],
+        "type": "object"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "content": {
+       "application/json": {
+        "example": {
+         "ratesAndFeesResponse": {
+          "errorCode": null,
+          "errorDescription": null,
+          "isSuccess": "true",
+          "locationSpecificData": {
+           "brandingLocationName": "U.S. BANK",
+           "clientType": "BA",
+           "issuerBU": 128453,
+           "locationName": "ALTITUDE WEB"
+          },
+          "productDetailData": {
+           "calculatedMaxAPR": "023.99",
+           "calculatedMinAPR": "015.99",
+           "commonProductDetailData": {
+            "accountMgmtFee": "000.00",
+            "bankEnterPhone": "800-320-2282",
+            "callCenterCityStateZip": "Fargo, ND  58125-6352",
+            "callCenterPOBox": "P.O. Box 6352",
+            "callCenterPhoneNumber": "1-800-285-8585",
+            "creditorName": "U.S. Bank National Association",
+            "custEnterPhone": "800-320-2282",
+            "disclosureOfferAINumber": null,
+            "disclosureOfferFlag": "N",
+            "dmBankEnterPhone": "844-516-4759",
+            "dmCustEnterPhone": "844-516-4759",
+            "employeeIndicator": null,
+            "enrollInitOfferAmount": "0000000.00",
+            "firstUseInitOfferAmount": "0000000.00",
+            "gracePeriodMaxDays": 30,
+            "gracePeriodMinDays": 24,
+            "minimumFinanceCharge": "00002.00",
+            "pacPhoneNumber": "888-777-4444",
+            "productCardType": "V",
+            "productNumber": 5169,
+            "promoCodeData": {
+             "promoCodeCount": 0,
+             "promoCodeTable": null
+            },
+            "rewardEarningRate": "001.00",
+            "rewardInitialOfferAmount": "0000000.00",
+            "rewardRollupCode": "N",
+            "rewardsFlag": "Y",
+            "tddPhoneNumber": "1-888-352-6455"
+           },
+           "offerType": "146",
+           "productVariableData": [
+            {
+             "additionalCardFee": "000.00",
+             "balanceTransferIndicator": "A",
+             "btBaseFee": "005.00",
+             "btFloorMaxAPR": "000.00",
+             "btIndexRate": "003.25",
+             "btIndicatorFee": "O",
+             "btMargin": "012.74",
+             "btMaxAPR": "000.00",
+             "btMaxFee": "000.00",
+             "btMaxRate": "023.99",
+             "btMinAPR": "000.00",
+             "btMinRate": "015.99",
+             "btRateFee": "003.00",
+             "btRateTypeCode": "V",
+             "cashATM2BaseFee": "010.00",
+             "cashATM2IndFee": "O",
+             "cashATM2MaxFee": "000.00",
+             "cashATM2RateFee": "005.00",
+             "cashAdvanceCeilingRate": "000.00",
+             "cashAdvanceIndex": "003.25",
+             "cashAdvanceMinAPR": "000.00",
+             "cashAdvanceRateTypeCode": "V",
+             "cashConvBaseFee": "005.00",
+             "cashConvIndFee": "O",
+             "cashConvMaxFee": "000.00",
+             "cashConvRateFee": "003.00",
+             "cashEquivalantBaseFee": "020.00",
+             "cashEquivalantFeeIndicator": "O",
+             "cashEquivalantFeeRate": "005.00",
+             "cashEquivalantMaxFee": "000.00",
+             "cashODBaseFee": "000.00",
+             "cashODIndFee": "O",
+             "cashODMaxFee": "000.00",
+             "cashODRateFee": "000.00",
+             "cashTellBasefee": "010.00",
+             "cashTellIndFee": "O",
+             "cashTellMaxFee": "000.00",
+             "cashTellRateFee": "005.00",
+             "foreignATMNonUSDFee": "000.00",
+             "foreignATMUSDFee": "000.00",
+             "foreignPurchaseNonUSDFee": "000.00",
+             "foreignPurchaseUSDFee": "000.00",
+             "indexRate": "003.25",
+             "intCashAdvanceFloorMaxAPR": "000.00",
+             "intPurchansePenaltyFloorMaxAPR": "000.00",
+             "interestRateTypeCode": "V",
+             "introBTBaseFee": "005.00",
+             "introBTFeeIndicator": "O",
+             "introBTFeeMax": "000.00",
+             "introBTFeeMonths": 0,
+             "introBTFeeRate": "003.00",
+             "introBTFeesExpDte": null,
+             "introBTFeesExpMtd": null,
+             "introBTFeesRdmDte": null,
+             "introBTFeesRdmDys": 0,
+             "introBTFeesRdmFlag": "AP",
+             "introBTIndexRate": "000.00",
+             "introBTMargin": "000.00",
+             "introBTRTRdmDte": null,
+             "introBTRTRdmDys": 0,
+             "introBTRTRdmFlag": "AP",
+             "introBTRate": "0.0",
+             "introBTRateExpDte": null,
+             "introBTRateExpMtd": null,
+             "introBTRateMax": "000.00",
+             "introBTRateMaxMts": 0,
+             "introBTRateMin": "000.00",
+             "introBTRateMinMts": 0,
+             "introBTRateMonths": 0,
+             "introBTRateTypeCode": "F",
+             "introCARate": 0.0,
+             "introCashAdvanceMargin": "022.74",
+             "introCashAdvanceMaxRate": "025.99",
+             "introCashAdvanceMinRate": "025.99",
+             "introCashAdvancePenaltyCeilingRate": 0.0,
+             "introCashAdvancePenaltyMargin": 0.0,
+             "introCashAdvancePenaltyMinAPR": 0.0,
+             "introCashAdvancePenaltyRate": 0.0,
+             "introCashAdvancePenaltyRateTypeCode": "N",
+             "introPurchaseRate": 0.0,
+             "introRateExpDte": null,
+             "introRateExpMtd": null,
+             "introRateMax": "00.00000",
+             "introRateMaxMts": 0,
+             "introRateMin": "00.00000",
+             "introRateMinMts": 0,
+             "introRateMonths": 0,
+             "introRateTypeCode": null,
+             "latePaymentFee1": "029.00",
+             "latePaymentFee2": "040.00",
+             "latePaymentFee3": "000.00",
+             "latePaymentFee4": "000.00",
+             "latePaymentFee5": "000.00",
+             "latePaymentNumber1": 0,
+             "latePaymentNumber2": 1,
+             "latePaymentNumber3": 0,
+             "latePaymentNumber4": 0,
+             "latePaymentNumber5": 0,
+             "overLimitEligibleFlag": "N",
+             "overLimitFee": "000.00",
+             "portfolioBUIdCode": "PB",
+             "productDescription": "U.S. Bank Altitude\u00c2\u00ae Connect Card",
+             "productLevel": "PR",
+             "productLineCode": "N",
+             "productName": "U.S. Bank Altitude\u00c2\u00ae Connect Visa Signature\u00c2\u00ae Card",
+             "productType": 0,
+             "productTypeShortDescription": null,
+             "purchaseCeilingRate": "000.00",
+             "purchaseFloorMaxAPR": "000.00",
+             "purchaseMargin": "012.74",
+             "purchaseMaxRate": "023.99",
+             "purchaseMinAPR": "000.00",
+             "purchaseMinRate": "015.99",
+             "purchasePenaltyCeilingRate": "000.00",
+             "purchasePenaltyIntIndex": "000.00",
+             "purchasePenaltyMargin": "000.00",
+             "purchasePenaltyMinAPR": "000.00",
+             "purchasePenaltyRate": "000.00",
+             "purchasePenaltyRateTypeCode": "N",
+             "returnPaymentFee": "040.00",
+             "riskTierInformation": [
+              {
+               "annualAEFeeAmount": "095.00",
+               "annualAOFeeAmount": "000.00",
+               "annualFeeAmount": "095.00",
+               "annualFeeBenchmarkCode": "N",
+               "annualFeeFreeMonths": 12,
+               "annualFeePurchaseAmount": "0000000.00"
+              }
+             ],
+             "thresholdFeeAmount1": "000000000.00",
+             "thresholdFeeAmount2": "000000000.00",
+             "thresholdFeeAmount3": "000000000.00",
+             "thresholdFeeAmount4": "000000000.00",
+             "thresholdFeeAmount5": "000000000.00",
+             "travelRewardsFee": "000.00"
+            }
+           ]
+          }
+         }
+        },
+        "schema": {
+         "properties": {
+          "ratesAndFeesResponse": {
+           "properties": {
+            "errorCode": {},
+            "errorDescription": {},
+            "isSuccess": {
+             "type": "string"
+            },
+            "locationSpecificData": {
+             "properties": {
+              "brandingLocationName": {
+               "type": "string"
+              },
+              "clientType": {
+               "type": "string"
+              },
+              "issuerBU": {
+               "type": "integer"
+              },
+              "locationName": {
+               "type": "string"
+              }
+             },
+             "required": [
+              "brandingLocationName",
+              "clientType",
+              "issuerBU",
+              "locationName"
+             ],
+             "type": "object"
+            },
+            "productDetailData": {
+             "properties": {
+              "calculatedMaxAPR": {
+               "type": "string"
+              },
+              "calculatedMinAPR": {
+               "type": "string"
+              },
+              "commonProductDetailData": {
+               "properties": {
+                "accountMgmtFee": {
+                 "type": "string"
+                },
+                "bankEnterPhone": {
+                 "type": "string"
+                },
+                "callCenterCityStateZip": {
+                 "type": "string"
+                },
+                "callCenterPOBox": {
+                 "type": "string"
+                },
+                "callCenterPhoneNumber": {
+                 "type": "string"
+                },
+                "creditorName": {
+                 "type": "string"
+                },
+                "custEnterPhone": {
+                 "type": "string"
+                },
+                "disclosureOfferAINumber": {},
+                "disclosureOfferFlag": {
+                 "type": "string"
+                },
+                "dmBankEnterPhone": {
+                 "type": "string"
+                },
+                "dmCustEnterPhone": {
+                 "type": "string"
+                },
+                "employeeIndicator": {},
+                "enrollInitOfferAmount": {
+                 "type": "string"
+                },
+                "firstUseInitOfferAmount": {
+                 "type": "string"
+                },
+                "gracePeriodMaxDays": {
+                 "type": "integer"
+                },
+                "gracePeriodMinDays": {
+                 "type": "integer"
+                },
+                "minimumFinanceCharge": {
+                 "type": "string"
+                },
+                "pacPhoneNumber": {
+                 "type": "string"
+                },
+                "productCardType": {
+                 "type": "string"
+                },
+                "productNumber": {
+                 "type": "integer"
+                },
+                "promoCodeData": {
+                 "properties": {
+                  "promoCodeCount": {
+                   "type": "integer"
+                  },
+                  "promoCodeTable": {}
+                 },
+                 "required": [
+                  "promoCodeCount",
+                  "promoCodeTable"
+                 ],
+                 "type": "object"
+                },
+                "rewardEarningRate": {
+                 "type": "string"
+                },
+                "rewardInitialOfferAmount": {
+                 "type": "string"
+                },
+                "rewardRollupCode": {
+                 "type": "string"
+                },
+                "rewardsFlag": {
+                 "type": "string"
+                },
+                "tddPhoneNumber": {
+                 "type": "string"
+                }
+               },
+               "required": [
+                "accountMgmtFee",
+                "bankEnterPhone",
+                "callCenterCityStateZip",
+                "callCenterPOBox",
+                "callCenterPhoneNumber",
+                "creditorName",
+                "custEnterPhone",
+                "disclosureOfferAINumber",
+                "disclosureOfferFlag",
+                "dmBankEnterPhone",
+                "dmCustEnterPhone",
+                "employeeIndicator",
+                "enrollInitOfferAmount",
+                "firstUseInitOfferAmount",
+                "gracePeriodMaxDays",
+                "gracePeriodMinDays",
+                "minimumFinanceCharge",
+                "pacPhoneNumber",
+                "productCardType",
+                "productNumber",
+                "promoCodeData",
+                "rewardEarningRate",
+                "rewardInitialOfferAmount",
+                "rewardRollupCode",
+                "rewardsFlag",
+                "tddPhoneNumber"
+               ],
+               "type": "object"
+              },
+              "offerType": {
+               "type": "string"
+              },
+              "productVariableData": {
+               "items": {
+                "additionalProperties": {
+                 "oneOf": [
+                  {
+                   "type": "integer"
+                  },
+                  {
+                   "type": "string"
+                  }
+                 ]
+                },
+                "properties": {
+                 "additionalCardFee": {
+                  "type": "string"
+                 },
+                 "balanceTransferIndicator": {
+                  "type": "string"
+                 },
+                 "btBaseFee": {
+                  "type": "string"
+                 },
+                 "btFloorMaxAPR": {
+                  "type": "string"
+                 },
+                 "btIndexRate": {
+                  "type": "string"
+                 },
+                 "btIndicatorFee": {
+                  "type": "string"
+                 },
+                 "btMargin": {
+                  "type": "string"
+                 },
+                 "btMaxAPR": {
+                  "type": "string"
+                 },
+                 "btMaxFee": {
+                  "type": "string"
+                 },
+                 "btMaxRate": {
+                  "type": "string"
+                 },
+                 "btMinAPR": {
+                  "type": "string"
+                 },
+                 "btMinRate": {
+                  "type": "string"
+                 },
+                 "btRateFee": {
+                  "type": "string"
+                 },
+                 "btRateTypeCode": {
+                  "type": "string"
+                 },
+                 "cashAdvanceCeilingRate": {
+                  "type": "string"
+                 },
+                 "cashAdvanceIndex": {
+                  "type": "string"
+                 },
+                 "cashAdvanceMinAPR": {
+                  "type": "string"
+                 },
+                 "cashAdvanceRateTypeCode": {
+                  "type": "string"
+                 },
+                 "cashConvBaseFee": {
+                  "type": "string"
+                 },
+                 "cashConvIndFee": {
+                  "type": "string"
+                 },
+                 "cashConvMaxFee": {
+                  "type": "string"
+                 },
+                 "cashConvRateFee": {
+                  "type": "string"
+                 },
+                 "cashEquivalantBaseFee": {
+                  "type": "string"
+                 },
+                 "cashEquivalantFeeIndicator": {
+                  "type": "string"
+                 },
+                 "cashEquivalantFeeRate": {
+                  "type": "string"
+                 },
+                 "cashEquivalantMaxFee": {
+                  "type": "string"
+                 },
+                 "cashODBaseFee": {
+                  "type": "string"
+                 },
+                 "cashODIndFee": {
+                  "type": "string"
+                 },
+                 "cashODMaxFee": {
+                  "type": "string"
+                 },
+                 "cashODRateFee": {
+                  "type": "string"
+                 },
+                 "cashTellBasefee": {
+                  "type": "string"
+                 },
+                 "cashTellIndFee": {
+                  "type": "string"
+                 },
+                 "cashTellMaxFee": {
+                  "type": "string"
+                 },
+                 "cashTellRateFee": {
+                  "type": "string"
+                 },
+                 "foreignATMNonUSDFee": {
+                  "type": "string"
+                 },
+                 "foreignATMUSDFee": {
+                  "type": "string"
+                 },
+                 "foreignPurchaseNonUSDFee": {
+                  "type": "string"
+                 },
+                 "foreignPurchaseUSDFee": {
+                  "type": "string"
+                 },
+                 "indexRate": {
+                  "type": "string"
+                 },
+                 "intCashAdvanceFloorMaxAPR": {
+                  "type": "string"
+                 },
+                 "intPurchansePenaltyFloorMaxAPR": {
+                  "type": "string"
+                 },
+                 "interestRateTypeCode": {
+                  "type": "string"
+                 },
+                 "introBTBaseFee": {
+                  "type": "string"
+                 },
+                 "introBTFeeIndicator": {
+                  "type": "string"
+                 },
+                 "introBTFeeMax": {
+                  "type": "string"
+                 },
+                 "introBTFeeMonths": {
+                  "type": "integer"
+                 },
+                 "introBTFeeRate": {
+                  "type": "string"
+                 },
+                 "introBTFeesExpDte": {},
+                 "introBTFeesExpMtd": {},
+                 "introBTFeesRdmDte": {},
+                 "introBTFeesRdmDys": {
+                  "type": "integer"
+                 },
+                 "introBTFeesRdmFlag": {
+                  "type": "string"
+                 },
+                 "introBTIndexRate": {
+                  "type": "string"
+                 },
+                 "introBTMargin": {
+                  "type": "string"
+                 },
+                 "introBTRTRdmDte": {},
+                 "introBTRTRdmDys": {
+                  "type": "integer"
+                 },
+                 "introBTRTRdmFlag": {
+                  "type": "string"
+                 },
+                 "introBTRate": {
+                  "type": "string"
+                 },
+                 "introBTRateExpDte": {},
+                 "introBTRateExpMtd": {},
+                 "introBTRateMax": {
+                  "type": "string"
+                 },
+                 "introBTRateMaxMts": {
+                  "type": "integer"
+                 },
+                 "introBTRateMin": {
+                  "type": "string"
+                 },
+                 "introBTRateMinMts": {
+                  "type": "integer"
+                 },
+                 "introBTRateMonths": {
+                  "type": "integer"
+                 },
+                 "introBTRateTypeCode": {
+                  "type": "string"
+                 },
+                 "introCARate": {
+                  "type": "number"
+                 },
+                 "introCashAdvanceMargin": {
+                  "type": "string"
+                 },
+                 "introCashAdvanceMaxRate": {
+                  "type": "string"
+                 },
+                 "introCashAdvanceMinRate": {
+                  "type": "string"
+                 },
+                 "introCashAdvancePenaltyCeilingRate": {
+                  "type": "number"
+                 },
+                 "introCashAdvancePenaltyMargin": {
+                  "type": "number"
+                 },
+                 "introCashAdvancePenaltyMinAPR": {
+                  "type": "number"
+                 },
+                 "introCashAdvancePenaltyRate": {
+                  "type": "number"
+                 },
+                 "introCashAdvancePenaltyRateTypeCode": {
+                  "type": "string"
+                 },
+                 "introPurchaseRate": {
+                  "type": "number"
+                 },
+                 "introRateExpDte": {},
+                 "introRateExpMtd": {},
+                 "introRateMax": {
+                  "type": "string"
+                 },
+                 "introRateMaxMts": {
+                  "type": "integer"
+                 },
+                 "introRateMin": {
+                  "type": "string"
+                 },
+                 "introRateMinMts": {
+                  "type": "integer"
+                 },
+                 "introRateMonths": {
+                  "type": "integer"
+                 },
+                 "introRateTypeCode": {},
+                 "overLimitEligibleFlag": {
+                  "type": "string"
+                 },
+                 "overLimitFee": {
+                  "type": "string"
+                 },
+                 "portfolioBUIdCode": {
+                  "type": "string"
+                 },
+                 "productDescription": {
+                  "type": "string"
+                 },
+                 "productLevel": {
+                  "type": "string"
+                 },
+                 "productLineCode": {
+                  "type": "string"
+                 },
+                 "productName": {
+                  "type": "string"
+                 },
+                 "productType": {
+                  "type": "integer"
+                 },
+                 "productTypeShortDescription": {},
+                 "purchaseCeilingRate": {
+                  "type": "string"
+                 },
+                 "purchaseFloorMaxAPR": {
+                  "type": "string"
+                 },
+                 "purchaseMargin": {
+                  "type": "string"
+                 },
+                 "purchaseMaxRate": {
+                  "type": "string"
+                 },
+                 "purchaseMinAPR": {
+                  "type": "string"
+                 },
+                 "purchaseMinRate": {
+                  "type": "string"
+                 },
+                 "purchasePenaltyCeilingRate": {
+                  "type": "string"
+                 },
+                 "purchasePenaltyIntIndex": {
+                  "type": "string"
+                 },
+                 "purchasePenaltyMargin": {
+                  "type": "string"
+                 },
+                 "purchasePenaltyMinAPR": {
+                  "type": "string"
+                 },
+                 "purchasePenaltyRate": {
+                  "type": "string"
+                 },
+                 "purchasePenaltyRateTypeCode": {
+                  "type": "string"
+                 },
+                 "returnPaymentFee": {
+                  "type": "string"
+                 },
+                 "riskTierInformation": {
+                  "items": {
+                   "type": "object"
+                  },
+                  "type": "array"
+                 },
+                 "travelRewardsFee": {
+                  "type": "string"
+                 }
+                },
+                "required": [
+                 "additionalCardFee",
+                 "balanceTransferIndicator",
+                 "btBaseFee",
+                 "btFloorMaxAPR",
+                 "btIndexRate",
+                 "btIndicatorFee",
+                 "btMargin",
+                 "btMaxAPR",
+                 "btMaxFee",
+                 "btMaxRate",
+                 "btMinAPR",
+                 "btMinRate",
+                 "btRateFee",
+                 "btRateTypeCode",
+                 "cashAdvanceCeilingRate",
+                 "cashAdvanceIndex",
+                 "cashAdvanceMinAPR",
+                 "cashAdvanceRateTypeCode",
+                 "cashConvBaseFee",
+                 "cashConvIndFee",
+                 "cashConvMaxFee",
+                 "cashConvRateFee",
+                 "cashEquivalantBaseFee",
+                 "cashEquivalantFeeIndicator",
+                 "cashEquivalantFeeRate",
+                 "cashEquivalantMaxFee",
+                 "cashODBaseFee",
+                 "cashODIndFee",
+                 "cashODMaxFee",
+                 "cashODRateFee",
+                 "cashTellBasefee",
+                 "cashTellIndFee",
+                 "cashTellMaxFee",
+                 "cashTellRateFee",
+                 "foreignATMNonUSDFee",
+                 "foreignATMUSDFee",
+                 "foreignPurchaseNonUSDFee",
+                 "foreignPurchaseUSDFee",
+                 "indexRate",
+                 "intCashAdvanceFloorMaxAPR",
+                 "intPurchansePenaltyFloorMaxAPR",
+                 "interestRateTypeCode",
+                 "introBTBaseFee",
+                 "introBTFeeIndicator",
+                 "introBTFeeMax",
+                 "introBTFeeMonths",
+                 "introBTFeeRate",
+                 "introBTFeesExpDte",
+                 "introBTFeesExpMtd",
+                 "introBTFeesRdmDte",
+                 "introBTFeesRdmDys",
+                 "introBTFeesRdmFlag",
+                 "introBTIndexRate",
+                 "introBTMargin",
+                 "introBTRTRdmDte",
+                 "introBTRTRdmDys",
+                 "introBTRTRdmFlag",
+                 "introBTRate",
+                 "introBTRateExpDte",
+                 "introBTRateExpMtd",
+                 "introBTRateMax",
+                 "introBTRateMaxMts",
+                 "introBTRateMin",
+                 "introBTRateMinMts",
+                 "introBTRateMonths",
+                 "introBTRateTypeCode",
+                 "introCARate",
+                 "introCashAdvanceMargin",
+                 "introCashAdvanceMaxRate",
+                 "introCashAdvanceMinRate",
+                 "introCashAdvancePenaltyCeilingRate",
+                 "introCashAdvancePenaltyMargin",
+                 "introCashAdvancePenaltyMinAPR",
+                 "introCashAdvancePenaltyRate",
+                 "introCashAdvancePenaltyRateTypeCode",
+                 "introPurchaseRate",
+                 "introRateExpDte",
+                 "introRateExpMtd",
+                 "introRateMax",
+                 "introRateMaxMts",
+                 "introRateMin",
+                 "introRateMinMts",
+                 "introRateMonths",
+                 "introRateTypeCode",
+                 "overLimitEligibleFlag",
+                 "overLimitFee",
+                 "portfolioBUIdCode",
+                 "productDescription",
+                 "productLevel",
+                 "productLineCode",
+                 "productName",
+                 "productType",
+                 "productTypeShortDescription",
+                 "purchaseCeilingRate",
+                 "purchaseFloorMaxAPR",
+                 "purchaseMargin",
+                 "purchaseMaxRate",
+                 "purchaseMinAPR",
+                 "purchaseMinRate",
+                 "purchasePenaltyCeilingRate",
+                 "purchasePenaltyIntIndex",
+                 "purchasePenaltyMargin",
+                 "purchasePenaltyMinAPR",
+                 "purchasePenaltyRate",
+                 "purchasePenaltyRateTypeCode",
+                 "returnPaymentFee",
+                 "riskTierInformation",
+                 "travelRewardsFee"
+                ],
+                "type": "object"
+               },
+               "type": "array"
+              }
+             },
+             "required": [
+              "calculatedMaxAPR",
+              "calculatedMinAPR",
+              "commonProductDetailData",
+              "offerType",
+              "productVariableData"
+             ],
+             "type": "object"
+            }
+           },
+           "required": [
+            "errorCode",
+            "errorDescription",
+            "isSuccess",
+            "locationSpecificData",
+            "productDetailData"
+           ],
+           "type": "object"
+          }
+         },
+         "required": [
+          "ratesAndFeesResponse"
+         ],
+         "type": "object"
+        }
+       }
+      },
+      "description": "OK"
+     }
+    },
+    "summary": "Seen 1 requests",
+    "tags": [
+     "proxies"
+    ]
    }
   },
   "/{param}/v1/applications": {
@@ -398,6 +1530,7 @@
       "required": false,
       "schema": {
        "enum": [
+        "XMLHttpRequest",
         "X-Requested-With"
        ],
        "type": "string"
@@ -437,10 +1570,31 @@
          "products": {
           "items": {
            "properties": {
+            "cardInformation": {
+             "properties": {
+              "offerTypeCode": {
+               "type": "string"
+              },
+              "sourceCode": {
+               "type": "string"
+              }
+             },
+             "required": [
+              "offerTypeCode",
+              "sourceCode"
+             ],
+             "type": "object"
+            },
+            "description": {
+             "type": "string"
+            },
             "productCode": {
              "type": "string"
             },
             "subProductCode": {
+             "type": "string"
+            },
+            "subtype": {
              "type": "string"
             }
            },
@@ -457,10 +1611,8 @@
          }
         },
         "required": [
-         "applicants",
          "channel",
-         "products",
-         "tenant"
+         "products"
         ],
         "type": "object"
        }
@@ -622,9 +1774,6 @@
                 "type": "object"
                }
               },
-              "required": [
-               "primary"
-              ],
               "type": "object"
              },
              "age": {
@@ -635,7 +1784,26 @@
              "businessRelation": {},
              "campus": {},
              "cardOptions": {},
-             "citizenshipAndResidence": {},
+             "citizenshipAndResidence": {
+              "anyOf": [
+               {
+                "properties": {
+                 "additionalCountriesOfResidence": {},
+                 "countriesOfCitizenship": {},
+                 "permanentResidenceCountry": {
+                  "type": "string"
+                 }
+                },
+                "required": [
+                 "additionalCountriesOfResidence",
+                 "countriesOfCitizenship",
+                 "permanentResidenceCountry"
+                ],
+                "type": "object"
+               },
+               {}
+              ]
+             },
              "currentEmployment": {},
              "customerOpenDate": {},
              "customerSegmentIndicator": {},
@@ -674,7 +1842,37 @@
              "type": {
               "type": "string"
              },
-             "usbankActivities": {}
+             "usbankActivities": {
+              "anyOf": [
+               {
+                "properties": {
+                 "bankingActivityProducts": {},
+                 "crossBorderAmount": {
+                  "type": "string"
+                 },
+                 "descriptionOfPurposeOther": {},
+                 "monthlyCashAmount": {
+                  "type": "string"
+                 },
+                 "purposesOfAccount": {
+                  "items": {
+                   "type": "string"
+                  },
+                  "type": "array"
+                 }
+                },
+                "required": [
+                 "bankingActivityProducts",
+                 "crossBorderAmount",
+                 "descriptionOfPurposeOther",
+                 "monthlyCashAmount",
+                 "purposesOfAccount"
+                ],
+                "type": "object"
+               },
+               {}
+              ]
+             }
             },
             "required": [
              "addresses",
@@ -779,7 +1977,66 @@
              "businessArea": {
               "type": "string"
              },
-             "cardInformation": {},
+             "cardInformation": {
+              "anyOf": [
+               {
+                "properties": {
+                 "allianceClientId": {},
+                 "authorizedUsers": {},
+                 "balanceTransfers": {},
+                 "businessNameOnCard": {},
+                 "cardOfferDetail": {},
+                 "cardOnFileConsent": {
+                  "type": "boolean"
+                 },
+                 "creditIssuerAddress": {},
+                 "fcraNeeded": {},
+                 "flexPointsNumber": {},
+                 "functionId": {},
+                 "icsProductCode": {},
+                 "instantLineAccess": {},
+                 "isFlexPointsAvailable": {
+                  "type": "boolean"
+                 },
+                 "mailOfferDetail": {},
+                 "offerTypeCode": {
+                  "type": "string"
+                 },
+                 "overdraftProtectionAmount": {},
+                 "overdraftProtectionType": {},
+                 "sourceCode": {
+                  "type": "string"
+                 },
+                 "transferAmount": {},
+                 "virtualCardToken": {}
+                },
+                "required": [
+                 "allianceClientId",
+                 "authorizedUsers",
+                 "balanceTransfers",
+                 "businessNameOnCard",
+                 "cardOfferDetail",
+                 "cardOnFileConsent",
+                 "creditIssuerAddress",
+                 "fcraNeeded",
+                 "flexPointsNumber",
+                 "functionId",
+                 "icsProductCode",
+                 "instantLineAccess",
+                 "isFlexPointsAvailable",
+                 "mailOfferDetail",
+                 "offerTypeCode",
+                 "overdraftProtectionAmount",
+                 "overdraftProtectionType",
+                 "sourceCode",
+                 "transferAmount",
+                 "virtualCardToken"
+                ],
+                "type": "object"
+               },
+               {}
+              ]
+             },
              "collateralProperties": {},
              "customerProductCode": {},
              "decision": {},
@@ -807,7 +2064,9 @@
              "subProductCode": {
               "type": "string"
              },
-             "subtype": {},
+             "subtype": {
+              "type": "string"
+             },
              "vehicleInformation": {}
             },
             "required": [
@@ -882,11 +2141,83 @@
       "description": "Created"
      }
     },
-    "summary": "Seen 1 requests",
+    "summary": "Seen 2 requests",
     "tags": [
      "applications"
     ]
    }
+  },
+  "/{param}/v1/applications/environment": {
+   "get": {
+    "operationId": "acbb6fb7-43cf-40ff-b95c-6a75f777e0ef",
+    "parameters": [
+     {
+      "in": "header",
+      "name": "x-requested-with",
+      "required": false,
+      "schema": {
+       "enum": [
+        "XMLHttpRequest"
+       ],
+       "type": "string"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "content": {
+       "application/json": {
+        "example": {
+         "buildId": "05092021-02-0",
+         "dependencies": null,
+         "environment": "prod",
+         "name": "onboarding-application-intake"
+        },
+        "schema": {
+         "properties": {
+          "buildId": {
+           "type": "string"
+          },
+          "dependencies": {},
+          "environment": {
+           "type": "string"
+          },
+          "name": {
+           "type": "string"
+          }
+         },
+         "required": [
+          "buildId",
+          "dependencies",
+          "environment",
+          "name"
+         ],
+         "type": "object"
+        }
+       }
+      },
+      "description": "OK"
+     }
+    },
+    "summary": "Seen 1 requests",
+    "tags": [
+     "applications"
+    ]
+   },
+   "parameters": [
+    {
+     "in": "path",
+     "name": "param",
+     "required": true,
+     "schema": {
+      "enum": [
+       "applicationintake"
+      ],
+      "type": "string"
+     },
+     "style": "simple"
+    }
+   ]
   },
   "/{param}/v1/applications/{applicationId}/patch": {
    "parameters": [
@@ -1598,6 +2929,9 @@
  "tags": [
   {
    "name": "applications"
+  },
+  {
+   "name": "proxies"
   }
  ]
 }

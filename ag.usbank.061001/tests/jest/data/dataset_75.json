@@ -1,0 +1,28 @@
+{
+ "parameters": [
+  {
+   "name": "icsLocationCode",
+   "uuid": "4800e38b-b645-4472-8d51-3dba35842b4a"
+  },
+  {
+   "name": "offerID",
+   "uuid": "7d2336c3-5cd9-4a0a-9ff4-de42c0565146"
+  },
+  {
+   "name": "param",
+   "uuid": "aa80f885-ef0b-4bee-b277-d94b0732b530"
+  },
+  {
+   "name": "sourceCode",
+   "uuid": "e732e4f8-1483-4e38-b83a-04442186c8ef"
+  }
+ ],
+ "rows": [
+  {
+   "icsLocationCode": "18569",
+   "offerID": "1R11X29W45",
+   "param": "creditcardfees",
+   "sourceCode": "33727"
+  }
+ ]
+}

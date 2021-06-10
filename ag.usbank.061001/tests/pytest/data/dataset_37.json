@@ -1,18 +1,58 @@
 {
  "parameters": [
   {
+   "name": "description",
+   "uuid": "462d1192-a82a-4f15-b713-92cb77fe936e"
+  },
+  {
+   "name": "offerTypeCode",
+   "uuid": "45b62669-e284-4981-9bae-64943af0b05d"
+  },
+  {
    "name": "param",
    "uuid": "24dee467-619c-4bb9-b28b-c7e0a334e64a"
   },
   {
    "name": "productCode",
    "uuid": "1466bec3-fe6c-475a-bb8c-ebe445bfd826"
+  },
+  {
+   "name": "sourceCode",
+   "uuid": "3366e719-a7e3-4363-b17c-9eb34c30aadc"
+  },
+  {
+   "name": "subProductCode",
+   "uuid": "636bafdb-9a87-43a0-8ab2-95d650c4d270"
+  },
+  {
+   "name": "subtype",
+   "uuid": "f42264cb-82fe-4734-91b4-546706677a3c"
+  },
+  {
+   "name": "x_requested_with",
+   "uuid": "177d01c0-c72c-4e57-8167-cf6aee871216"
   }
  ],
  "rows": [
   {
+   "description": "Altitude\u00ae Connect Visa Signature\u00ae Card",
+   "offerTypeCode": "146",
    "param": "applicationintake",
-   "productCode": "DDA"
+   "productCode": "CCD",
+   "sourceCode": "33727",
+   "subProductCode": "1R11X29W45",
+   "subtype": "18569",
+   "x_requested_with": "XMLHttpRequest"
+  },
+  {
+   "description": "Altitude\u00ae Connect Visa Signature\u00ae Card",
+   "offerTypeCode": "146",
+   "param": "applicationintake",
+   "productCode": "DDA",
+   "sourceCode": "33727",
+   "subProductCode": "PI",
+   "subtype": "18569",
+   "x_requested_with": "X-Requested-With"
   }
  ]
 }
