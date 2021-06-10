@@ -1,5 +1,26 @@
 [
   {
-    "param": "search.keyword-94303.type-branch-atm.mp-full.html"
+    "param": "applicationintake",
+    "productCode": "DDA",
+    "usAddress": "6756 Central Ave",
+    "zipCode": "94560"
+  },
+  {
+    "param": "applicationintake",
+    "productCode": "DDA",
+    "usAddress": "",
+    "zipCode": "94560"
+  },
+  {
+    "param": "applicationintake",
+    "productCode": "DDA",
+    "usAddress": "1",
+    "zipCode": "94560"
+  },
+  {
+    "param": "applicationintake",
+    "productCode": "DDA",
+    "usAddress": "11",
+    "zipCode": "94560"
   }
 ]

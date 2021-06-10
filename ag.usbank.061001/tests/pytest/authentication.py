@@ -23,6 +23,8 @@ def authenticate(target_key: str, target: TargetService):
         pass
     elif target.config_url == 'https://onboarding.usbank.com':
         pass
+    elif target.config_url == 'https://onlinebanking.usbank.com':
+        pass
     elif target.config_url == 'https://sales.usbank.com':
         pass
     elif target.config_url == 'https://siteintercept.qualtrics.com':

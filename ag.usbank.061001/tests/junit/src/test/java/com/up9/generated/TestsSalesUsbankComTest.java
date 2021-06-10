@@ -19,12 +19,12 @@ import static com.up9.up9lib.Common.*;
 public class TestsSalesUsbankComTest
 {
     @ParameterizedTest
-    @JsonFileSource(resources = "/dataset_38.json")
-    public void testGetProductConfigurationV1ProductsUsbankParamPi38(final JsonObject json) throws MalformedURLException, IOException
+    @JsonFileSource(resources = "/dataset_41.json")
+    public void testGetProductConfigurationV1ProductsUsbankParamPi41(final JsonObject json) throws MalformedURLException, IOException
     {
         final String param = json.getString("param");
 
-        // GET https://sales.usbank.com/product-configuration/v1/products/usbank/{param}/PI (endp 38)
+        // GET https://sales.usbank.com/product-configuration/v1/products/usbank/{param}/PI (endp 41)
         final HttpTarget salesUsbankCom = getHttpClient("https://sales.usbank.com", new Authentication());
         final HttpRequest request = new HttpRequest();
         request.setHeaders(new Hashtable<String, Object>() {{

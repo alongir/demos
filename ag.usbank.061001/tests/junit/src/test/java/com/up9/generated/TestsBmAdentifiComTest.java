@@ -18,12 +18,12 @@ import static com.up9.up9lib.Common.*;
 public class TestsBmAdentifiComTest
 {
     @ParameterizedTest
-    @JsonFileSource(resources = "/dataset_30.json")
-    public void testGetPixelConvParam30(final JsonObject json) throws MalformedURLException, IOException
+    @JsonFileSource(resources = "/dataset_33.json")
+    public void testGetPixelConvParam33(final JsonObject json) throws MalformedURLException, IOException
     {
         final String param = json.getString("param");
 
-        // GET https://bm.adentifi.com/pixel/conv/{param} (endp 30)
+        // GET https://bm.adentifi.com/pixel/conv/{param} (endp 33)
         final HttpTarget bmAdentifiCom = getHttpClient("https://bm.adentifi.com", new Authentication());
         final HttpRequest request = new HttpRequest();
         final Response response = bmAdentifiCom.get(request, "/pixel/conv/" + param);

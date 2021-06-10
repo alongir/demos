@@ -19,9 +19,20 @@ import static com.up9.up9lib.Common.*;
 public class TestsWwwUsbankComTest
 {
     @Test
-    public void testGetBankAccountsCheckingAccountsHtml01() throws MalformedURLException, IOException
+    public void testGetAboutUsBankCustomerServiceHtml01() throws MalformedURLException, IOException
     {
-        // GET https://www.usbank.com/bank-accounts/checking-accounts.html (endp 1)
+        // GET https://www.usbank.com/about-us-bank/customer-service.html (endp 1)
+        final HttpTarget wwwUsbankCom = getHttpClient("https://www.usbank.com", new Authentication());
+        final HttpRequest request = new HttpRequest();
+        final Response response = wwwUsbankCom.get(request, "/about-us-bank/customer-service.html");
+        assertStatusCode(response.code(), 200);
+        assertCSSselect("html head title", "Customer service | U.S. Bank", response.body().string());
+    }
+
+    @Test
+    public void testGetBankAccountsCheckingAccountsHtml02() throws MalformedURLException, IOException
+    {
+        // GET https://www.usbank.com/bank-accounts/checking-accounts.html (endp 2)
         final HttpTarget wwwUsbankCom = getHttpClient("https://www.usbank.com", new Authentication());
         final HttpRequest request = new HttpRequest();
         final Response response = wwwUsbankCom.get(request, "/bank-accounts/checking-accounts.html");
@@ -31,9 +42,9 @@ public class TestsWwwUsbankComTest
     }
 
     @Test
-    public void testGetBankAccountsCheckingAccountsGoldCheckingAccountHtml02() throws MalformedURLException, IOException
+    public void testGetBankAccountsCheckingAccountsGoldCheckingAccountHtml03() throws MalformedURLException, IOException
     {
-        // GET https://www.usbank.com/bank-accounts/checking-accounts/gold-checking-account.html (endp 2)
+        // GET https://www.usbank.com/bank-accounts/checking-accounts/gold-checking-account.html (endp 3)
         final HttpTarget wwwUsbankCom = getHttpClient("https://www.usbank.com", new Authentication());
         final HttpRequest request = new HttpRequest();
         final Response response = wwwUsbankCom.get(request, "/bank-accounts/checking-accounts/gold-checking-account.html");
@@ -43,8 +54,8 @@ public class TestsWwwUsbankComTest
     }
 
     @ParameterizedTest
-    @JsonFileSource(resources = "/dataset_4.json")
-    public void testPostPlpxrbYloParam1Param2Param3Param4AesAeid04(final JsonObject json) throws MalformedURLException, IOException
+    @JsonFileSource(resources = "/dataset_5.json")
+    public void testPostPlpxrbYloParam1Param2Param3Param4AesAeid05(final JsonObject json) throws MalformedURLException, IOException
     {
         final String aeId = json.getString("aeId");
         final String param = json.getString("param");
@@ -53,13 +64,13 @@ public class TestsWwwUsbankComTest
         final String param3 = json.getString("param3");
         final String sensor_data = json.getString("sensor_data");
 
-        // POST https://www.usbank.com/plpXRb/YlO/{param1}/{param2}/{param3}/{param4}/aEs/{aeId} (endp 4)
+        // POST https://www.usbank.com/plpXRb/YlO/{param1}/{param2}/{param3}/{param4}/aEs/{aeId} (endp 5)
         final HttpTarget wwwUsbankCom = getHttpClient("https://www.usbank.com", new Authentication());
         final HttpRequest request = new HttpRequest();
         request.setHeaders(new Hashtable<String, Object>() {{
             put("content-type", "application/json");
         }});
-        request.setJsonBody("payload_for_endp_4.json", new Hashtable<String, Object>() {{
+        request.setJsonBody("payload_for_endp_5.json", new Hashtable<String, Object>() {{
             put("$.sensor_data", sensor_data);
         }});
         final Response response = wwwUsbankCom.post(request, "/plpXRb/YlO/" + param + "/" + param1 + "/" + param2 + "/" + param3 + "/aEs/" + aeId);
@@ -67,13 +78,13 @@ public class TestsWwwUsbankComTest
     }
 
     @ParameterizedTest
-    @JsonFileSource(resources = "/dataset_5.json")
-    public void testPostSvtUsbankShieldFetchdisclosurecontent05(final JsonObject json) throws MalformedURLException, IOException
+    @JsonFileSource(resources = "/dataset_6.json")
+    public void testPostSvtUsbankShieldFetchdisclosurecontent06(final JsonObject json) throws MalformedURLException, IOException
     {
         final String businessLines = json.getString("businessLines");
         final String disclosureTitles = json.getString("disclosureTitles");
 
-        // POST https://www.usbank.com/svt/usbank/shield/fetchDisclosureContent (endp 5)
+        // POST https://www.usbank.com/svt/usbank/shield/fetchDisclosureContent (endp 6)
         final HttpTarget wwwUsbankCom = getHttpClient("https://www.usbank.com", new Authentication());
         final HttpRequest request = new HttpRequest();
         request.setFormData(new Hashtable<String, Object>() {{

@@ -1,11 +1,11 @@
 const authenticate = require("./authentication");
 const {JSONPath, clearSession, dataset, getHttpClient} = require("./up9lib");
 
-describe.each(dataset("data/dataset_38.json"))("test_38_get_product_configuration_v1_products_usbank_param_PI", (param) => {
-    it("test_38_get_product_configuration_v1_products_usbank_param_PI", () => {
+describe.each(dataset("data/dataset_41.json"))("test_41_get_product_configuration_v1_products_usbank_param_PI", (param) => {
+    it("test_41_get_product_configuration_v1_products_usbank_param_PI", () => {
         clearSession();
 
-        // GET https://sales.usbank.com/product-configuration/v1/products/usbank/{param}/PI (endp 38)
+        // GET https://sales.usbank.com/product-configuration/v1/products/usbank/{param}/PI (endp 41)
         const sales_usbank_com = getHttpClient("https://sales.usbank.com", authenticate);
         return sales_usbank_com.fetch("/product-configuration/v1/products/usbank/" + param + "/PI", {
             headers: {

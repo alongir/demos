@@ -1,13 +1,13 @@
 {
  "parameters": [
   {
-   "name": "depositId",
-   "uuid": "375a2d75-d840-4559-9a6d-1bd6a9ff880c"
+   "name": "PRODUCT_CODE",
+   "uuid": "4f662c06-c79d-4281-8b70-c338f55197bc"
   }
  ],
  "rows": [
   {
-   "depositId": "DDA"
+   "PRODUCT_CODE": "DDA"
   }
  ]
 }

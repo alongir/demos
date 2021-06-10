@@ -7,7 +7,7 @@
  "paths": {
   "/deposits/{depositId}/PI/start": {
    "get": {
-    "operationId": "72d8632b-f81d-466f-a9d9-af026faf7acf",
+    "operationId": "d785bfd2-36f2-49de-9300-82664c05a5b3",
     "parameters": [],
     "responses": {
      "200": {
@@ -39,7 +39,7 @@
   "/proxies/v1/validateAddress": {
    "parameters": [],
    "post": {
-    "operationId": "f71074e3-a177-40a7-99aa-037673cad9db",
+    "operationId": "cff8ab34-739f-4c7a-b268-38bca30c00ff",
     "parameters": [
      {
       "description": "Origin: POST https://onboarding.usbank.com/{param}/v1/applications &rarr; header: securitytoken",
@@ -390,7 +390,7 @@
     }
    ],
    "post": {
-    "operationId": "ac17ee9d-48af-49c4-9938-11eb02e73986",
+    "operationId": "35487fba-e19d-493b-befb-569b54536aa8",
     "parameters": [
      {
       "in": "header",
@@ -917,7 +917,7 @@
     }
    ],
    "post": {
-    "operationId": "d302d519-174d-4af6-9ca6-5026c50abdbd",
+    "operationId": "bbdee71e-4cae-4324-beb8-4f2d74529647",
     "parameters": [
      {
       "description": "Origin: POST https://onboarding.usbank.com/{param}/v1/applications &rarr; header: securitytoken",

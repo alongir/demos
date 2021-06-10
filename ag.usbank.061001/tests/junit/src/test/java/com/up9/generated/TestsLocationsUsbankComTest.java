@@ -19,12 +19,12 @@ import static com.up9.up9lib.Common.*;
 public class TestsLocationsUsbankComTest
 {
     @ParameterizedTest
-    @JsonFileSource(resources = "/dataset_40.json")
-    public void testGetParam40(final JsonObject json) throws MalformedURLException, IOException
+    @JsonFileSource(resources = "/dataset_43.json")
+    public void testGetParam43(final JsonObject json) throws MalformedURLException, IOException
     {
         final String param = json.getString("param");
 
-        // GET https://locations.usbank.com/{param} (endp 40)
+        // GET https://locations.usbank.com/{param} (endp 43)
         final HttpTarget locationsUsbankCom = getHttpClient("https://locations.usbank.com", new Authentication());
         final HttpRequest request = new HttpRequest();
         final Response response = locationsUsbankCom.get(request, "/" + param);
@@ -33,9 +33,9 @@ public class TestsLocationsUsbankComTest
     }
 
     @Test
-    public void testGetSearchHtml39() throws MalformedURLException, IOException
+    public void testGetSearchHtml42() throws MalformedURLException, IOException
     {
-        // GET https://locations.usbank.com/search.html (endp 39)
+        // GET https://locations.usbank.com/search.html (endp 42)
         final HttpTarget locationsUsbankCom = getHttpClient("https://locations.usbank.com", new Authentication());
         final HttpRequest request = new HttpRequest();
         final Response response = locationsUsbankCom.get(request, "/search.html");
@@ -44,12 +44,12 @@ public class TestsLocationsUsbankComTest
     }
 
     @ParameterizedTest
-    @JsonFileSource(resources = "/dataset_41.json")
-    public void testGetSearchParam41(final JsonObject json) throws MalformedURLException, IOException
+    @JsonFileSource(resources = "/dataset_44.json")
+    public void testGetSearchParam44(final JsonObject json) throws MalformedURLException, IOException
     {
         final String param = json.getString("param");
 
-        // GET https://locations.usbank.com/search/{param} (endp 41)
+        // GET https://locations.usbank.com/search/{param} (endp 44)
         final HttpTarget locationsUsbankCom = getHttpClient("https://locations.usbank.com", new Authentication());
         final HttpRequest request = new HttpRequest();
         request.setHeaders(new Hashtable<String, Object>() {{

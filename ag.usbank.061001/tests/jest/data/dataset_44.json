@@ -1,0 +1,16 @@
+{
+ "parameters": [
+  {
+   "name": "param",
+   "uuid": "c688d613-1bc5-439f-9790-05cf6b3235e2"
+  }
+ ],
+ "rows": [
+  {
+   "param": "locationList.radius-50.lat-14--9867744.lng--85--0839456.search-user.type-branch-atm.mp-full.html"
+  },
+  {
+   "param": "locationList.radius-50.lat-37--4530553.lng--122--1178261.search-user.type-branch-atm.mp-full.html"
+  }
+ ]
+}

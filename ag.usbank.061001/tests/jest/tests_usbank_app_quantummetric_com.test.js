@@ -1,11 +1,11 @@
 const authenticate = require("./authentication");
 const {CSSselect, JSONPath, clearSession, dataset, getHttpClient, randomInteger, readFileSync, urlencode} = require("./up9lib");
 
-describe.each(dataset("data/dataset_21.json"))("test_21_post_", (H, PRODUCT_CODE, U, s) => {
-    it("test_21_post_", () => {
+describe.each(dataset("data/dataset_23.json"))("test_23_post_", (H, PRODUCT_CODE, U, s) => {
+    it("test_23_post_", () => {
         clearSession();
 
-        // GET https://apply.usbank.com/apply/apply.html (endp 33)
+        // GET https://apply.usbank.com/apply/apply.html (endp 36)
         const apply_usbank_com = getHttpClient("https://apply.usbank.com", authenticate);
         return apply_usbank_com.fetch("/apply/apply.html" + urlencode([["PRODUCT_CODE", PRODUCT_CODE], ["SUB_PRODUCT_CODE", "PI"]]))
         .then((response) => {
@@ -16,14 +16,14 @@ describe.each(dataset("data/dataset_21.json"))("test_21_post_", (H, PRODUCT_CODE
         .then((text) => {
         })
         .then((data) => {
-            // POST https://usbank-app.quantummetric.com/ (endp 21)
+            // POST https://usbank-app.quantummetric.com/ (endp 23)
             const usbank_app_quantummetric_com = getHttpClient("https://usbank-app.quantummetric.com", authenticate);
             return usbank_app_quantummetric_com.fetch("/" + urlencode([["H", H], ["N", String(randomInteger(0, 1434))], ["P", String(randomInteger(0, 15))], ["Q", "2"], ["S", String(randomInteger(0, 102475))], ["T", "B"], ["U", U], ["s", s], ["t", String(Date.now())], ["u", u], ["v", String(Date.now())], ["z", "1"]]), {
                 method: "POST",
                 headers: {
                     "content-type": "text/plain"
                 },
-                body: readFileSync("data/payload_for_endp_21.txt", "r")
+                body: readFileSync("data/payload_for_endp_23.txt", "r")
             })
             .then((response) => {
                 expect(response.status).toEqual(200);
@@ -37,11 +37,11 @@ describe.each(dataset("data/dataset_21.json"))("test_21_post_", (H, PRODUCT_CODE
     });
 });
 
-describe.each(dataset("data/dataset_22.json"))("test_22_get_", (H, Module, Q, Q_CLIENTVERSION, Q_CLIENTVERSION1, Q_InterceptID, Q_ORIGIN, s) => {
-    it("test_22_get_", () => {
+describe.each(dataset("data/dataset_24.json"))("test_24_get_", (H, Module, Q, Q_CLIENTVERSION, Q_CLIENTVERSION1, Q_InterceptID, Q_ORIGIN, s) => {
+    it("test_24_get_", () => {
         clearSession();
 
-        // GET https://www.usbank.com/index.html (endp 3)
+        // GET https://www.usbank.com/index.html (endp 4)
         const www_usbank_com = getHttpClient("https://www.usbank.com", authenticate);
         return www_usbank_com.fetch("/index.html")
         .then((response) => {
@@ -53,7 +53,7 @@ describe.each(dataset("data/dataset_22.json"))("test_22_get_", (H, Module, Q, Q_
             const Q_LOC = CSSselect("html head link[href] @href", response).text().trim();
         })
         .then((data) => {
-            // GET https://siteintercept.qualtrics.com/WRSiteInterceptEngine/Asset.php (endp 19)
+            // GET https://siteintercept.qualtrics.com/WRSiteInterceptEngine/Asset.php (endp 21)
             const siteintercept_qualtrics_com = getHttpClient("https://siteintercept.qualtrics.com", authenticate);
             return siteintercept_qualtrics_com.fetch("/WRSiteInterceptEngine/Asset.php" + urlencode([["Module", Module], ["Q_CLIENTTYPE", "web"], ["Q_CLIENTVERSION", Q_CLIENTVERSION], ["Q_InterceptID", Q_InterceptID], ["Q_ORIGIN", Q_ORIGIN], ["Version", String(randomInteger(1, 26))]]))
             .then((response) => {
@@ -73,7 +73,7 @@ describe.each(dataset("data/dataset_22.json"))("test_22_get_", (H, Module, Q, Q_
                     json: data
                 })[0];
 
-                // POST https://siteintercept.qualtrics.com/WRSiteInterceptEngine/Targeting.php (endp 20)
+                // POST https://siteintercept.qualtrics.com/WRSiteInterceptEngine/Targeting.php (endp 22)
                 return siteintercept_qualtrics_com.fetch("/WRSiteInterceptEngine/Targeting.php" + urlencode([["Q_CLIENTTYPE", "web"], ["Q_CLIENTVERSION", Q_CLIENTVERSION1], ["Q_ZoneID", Q_ZoneID]]), {
                     method: "POST",
                     headers: {
@@ -96,7 +96,7 @@ describe.each(dataset("data/dataset_22.json"))("test_22_get_", (H, Module, Q, Q_
                         json: data
                     })).toContain("LogicNode");
 
-                    // GET https://usbank-app.quantummetric.com/ (endp 22)
+                    // GET https://usbank-app.quantummetric.com/ (endp 24)
                     const usbank_app_quantummetric_com = getHttpClient("https://usbank-app.quantummetric.com", authenticate);
                     return usbank_app_quantummetric_com.fetch("/" + urlencode([["H", H], ["Q", Q], ["s", s]]))
                     .then((response) => {

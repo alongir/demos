@@ -1,10 +1,17 @@
 {
- "customerAddress": {
-  "usAddress": {
-   "city": "Newark",
-   "stateCode": "CA",
-   "zipCode": "{{zipCode}}",
-   "addressLine1": "{{usAddress}}"
+ "applicants": [
+  {
+   "addresses": {
+    "primary": {}
+   }
   }
- }
+ ],
+ "channel": "WEB",
+ "products": [
+  {
+   "productCode": "{{productCode}}",
+   "subProductCode": "PI"
+  }
+ ],
+ "tenant": "usbank"
 }

@@ -59,6 +59,21 @@ services:
     read_only: true
     volumes:
     - .:/config
+  onlinebanking.usbank.com:
+    cap_add:
+    - NET_BIND_SERVICE
+    cap_drop:
+    - all
+    command: /config/mockintosh.yml 'https://onlinebanking.usbank.com'
+    environment:
+    - MOCKINTOSH_FORCE_PORT=443
+    hostname: onlinebanking
+    image: up9inc/mockintosh:latest
+    ports:
+    - 443
+    read_only: true
+    volumes:
+    - .:/config
   sales.usbank.com:
     cap_add:
     - NET_BIND_SERVICE

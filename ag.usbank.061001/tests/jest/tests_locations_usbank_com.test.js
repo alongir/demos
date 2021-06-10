@@ -1,11 +1,11 @@
 const authenticate = require("./authentication");
 const {CSSselect, clearSession, dataset, getHttpClient} = require("./up9lib");
 
-describe.each(dataset("data/dataset_40.json"))("test_40_get_param", (param) => {
-    it("test_40_get_param", () => {
+describe.each(dataset("data/dataset_43.json"))("test_43_get_param", (param) => {
+    it("test_43_get_param", () => {
         clearSession();
 
-        // GET https://locations.usbank.com/{param} (endp 40)
+        // GET https://locations.usbank.com/{param} (endp 43)
         const locations_usbank_com = getHttpClient("https://locations.usbank.com", authenticate);
         return locations_usbank_com.fetch("/" + param)
         .then((response) => {
@@ -20,10 +20,10 @@ describe.each(dataset("data/dataset_40.json"))("test_40_get_param", (param) => {
     });
 });
 
-it("test_39_get_search_html", () => {
+it("test_42_get_search_html", () => {
     clearSession();
 
-    // GET https://locations.usbank.com/search.html (endp 39)
+    // GET https://locations.usbank.com/search.html (endp 42)
     const locations_usbank_com = getHttpClient("https://locations.usbank.com", authenticate);
     return locations_usbank_com.fetch("/search.html")
     .then((response) => {
@@ -37,11 +37,11 @@ it("test_39_get_search_html", () => {
     });
 });
 
-describe.each(dataset("data/dataset_41.json"))("test_41_get_search_param", (param) => {
-    it("test_41_get_search_param", () => {
+describe.each(dataset("data/dataset_44.json"))("test_44_get_search_param", (param) => {
+    it("test_44_get_search_param", () => {
         clearSession();
 
-        // GET https://locations.usbank.com/search/{param} (endp 41)
+        // GET https://locations.usbank.com/search/{param} (endp 44)
         const locations_usbank_com = getHttpClient("https://locations.usbank.com", authenticate);
         return locations_usbank_com.fetch("/search/" + param, {
             headers: {

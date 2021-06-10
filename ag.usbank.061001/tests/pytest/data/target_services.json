@@ -3,6 +3,7 @@
  "TARGET_BM_ADENTIFI_COM": "https://bm.adentifi.com",
  "TARGET_LOCATIONS_USBANK_COM": "https://locations.usbank.com",
  "TARGET_ONBOARDING_USBANK_COM": "https://onboarding.usbank.com",
+ "TARGET_ONLINEBANKING_USBANK_COM": "https://onlinebanking.usbank.com",
  "TARGET_SALES_USBANK_COM": "https://sales.usbank.com",
  "TARGET_SITEINTERCEPT_QUALTRICS_COM": "https://siteintercept.qualtrics.com",
  "TARGET_USBANK_APP_QUANTUMMETRIC_COM": "https://usbank-app.quantummetric.com",

@@ -2,12 +2,45 @@
  "parameters": [
   {
    "name": "param",
-   "uuid": "8bc91438-6484-4516-9ded-3db10a05e426"
+   "uuid": "24dee467-619c-4bb9-b28b-c7e0a334e64a"
+  },
+  {
+   "name": "productCode",
+   "uuid": "1466bec3-fe6c-475a-bb8c-ebe445bfd826"
+  },
+  {
+   "name": "usAddress",
+   "uuid": "4cfff091-0d07-46c2-b280-dd2ecd2b9bc7"
+  },
+  {
+   "name": "zipCode",
+   "uuid": "cd20da18-63e0-457c-9d1f-33e2bd2cc5b6"
   }
  ],
  "rows": [
   {
-   "param": "search.keyword-94303.type-branch-atm.mp-full.html"
+   "param": "applicationintake",
+   "productCode": "DDA",
+   "usAddress": "6756 Central Ave",
+   "zipCode": "94560"
+  },
+  {
+   "param": "applicationintake",
+   "productCode": "DDA",
+   "usAddress": "",
+   "zipCode": "94560"
+  },
+  {
+   "param": "applicationintake",
+   "productCode": "DDA",
+   "usAddress": "1",
+   "zipCode": "94560"
+  },
+  {
+   "param": "applicationintake",
+   "productCode": "DDA",
+   "usAddress": "11",
+   "zipCode": "94560"
   }
  ]
 }

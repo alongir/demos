@@ -3,9 +3,10 @@
  "https://bm.adentifi.com": "http://localhost:8002",
  "https://locations.usbank.com": "http://localhost:8003",
  "https://onboarding.usbank.com": "http://localhost:8004",
- "https://sales.usbank.com": "http://localhost:8005",
- "https://siteintercept.qualtrics.com": "http://localhost:8006",
- "https://usbank-app.quantummetric.com": "http://localhost:8007",
- "https://usbank-sync.quantummetric.com": "http://localhost:8008",
- "https://www.usbank.com": "http://localhost:8009"
+ "https://onlinebanking.usbank.com": "http://localhost:8005",
+ "https://sales.usbank.com": "http://localhost:8006",
+ "https://siteintercept.qualtrics.com": "http://localhost:8007",
+ "https://usbank-app.quantummetric.com": "http://localhost:8008",
+ "https://usbank-sync.quantummetric.com": "http://localhost:8009",
+ "https://www.usbank.com": "http://localhost:8010"
 }

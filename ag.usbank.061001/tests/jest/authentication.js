@@ -3,6 +3,7 @@ function authenticate(targetKey, opts) {
     } else if (opts.configUrl === "https://bm.adentifi.com") {
     } else if (opts.configUrl === "https://locations.usbank.com") {
     } else if (opts.configUrl === "https://onboarding.usbank.com") {
+    } else if (opts.configUrl === "https://onlinebanking.usbank.com") {
     } else if (opts.configUrl === "https://sales.usbank.com") {
     } else if (opts.configUrl === "https://siteintercept.qualtrics.com") {
     } else if (opts.configUrl === "https://usbank-app.quantummetric.com") {

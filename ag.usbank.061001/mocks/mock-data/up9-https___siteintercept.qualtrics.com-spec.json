@@ -8,7 +8,7 @@
   "/WRSiteInterceptEngine/": {
    "parameters": [],
    "post": {
-    "operationId": "c257ae14-8a88-4955-9f65-12ccf4326fd5",
+    "operationId": "aa0e9808-4a2f-44ef-b06c-4d4d09f8eb4e",
     "parameters": [
      {
       "description": "Origin: POST https://siteintercept.qualtrics.com/WRSiteInterceptEngine/Targeting.php &rarr; json: $.ClientSideIntercepts[*].ActionSets[*].ActionSetID",
@@ -142,7 +142,7 @@
   },
   "/WRSiteInterceptEngine/Asset.php": {
    "get": {
-    "operationId": "86bd65c6-3840-49d8-bf66-04e7636f21f0",
+    "operationId": "5159b054-980a-45a7-add1-b62bf7674810",
     "parameters": [
      {
       "in": "query",
@@ -202,7 +202,8 @@
       "schema": {
        "enum": [
         "https://www.usbank.com",
-        "https://onboarding.usbank.com"
+        "https://onboarding.usbank.com",
+        "https://onlinebanking.usbank.com"
        ],
        "type": "string"
       }
@@ -1094,7 +1095,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 32 requests",
+    "summary": "Seen 40 requests",
     "tags": [
      "WRSiteInterceptEngine"
     ]
@@ -1104,7 +1105,7 @@
   "/WRSiteInterceptEngine/Targeting.php": {
    "parameters": [],
    "post": {
-    "operationId": "26e2ef93-25b9-4b82-9848-cb397f9a415b",
+    "operationId": "a883e294-c4cf-4749-9b45-d6e19b71a5e0",
     "parameters": [
      {
       "in": "query",
@@ -2288,7 +2289,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 6 requests",
+    "summary": "Seen 8 requests",
     "tags": [
      "WRSiteInterceptEngine"
     ]

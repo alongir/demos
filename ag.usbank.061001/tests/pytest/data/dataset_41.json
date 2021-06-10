@@ -2,15 +2,12 @@
  "parameters": [
   {
    "name": "param",
-   "uuid": "a1f9c8e5-ca49-40aa-87f5-1cdedd70b332"
+   "uuid": "279c1036-d737-4139-82be-1b5b29e818b0"
   }
  ],
  "rows": [
   {
-   "param": "locationList.radius-50.lat-14--9867744.lng--85--0839456.search-user.type-branch-atm.mp-full.html"
-  },
-  {
-   "param": "locationList.radius-50.lat-37--4530553.lng--122--1178261.search-user.type-branch-atm.mp-full.html"
+   "param": "DDA"
   }
  ]
 }

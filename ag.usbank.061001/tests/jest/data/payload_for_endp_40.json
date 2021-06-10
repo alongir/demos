@@ -1,0 +1,10 @@
+{
+ "customerAddress": {
+  "usAddress": {
+   "city": "Newark",
+   "stateCode": "CA",
+   "zipCode": "{{zipCode}}",
+   "addressLine1": "{{usAddress}}"
+  }
+ }
+}

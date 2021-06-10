@@ -8,7 +8,7 @@
   "/": {
    "parameters": [],
    "post": {
-    "operationId": "ac2c1fb9-db23-4cb9-9560-b9dcedc1f8d3",
+    "operationId": "22dd377b-0455-49b3-b387-1f96f5f606af",
     "parameters": [
      {
       "in": "query",
@@ -64,7 +64,8 @@
       "required": false,
       "schema": {
        "enum": [
-        "f8d1280d50c795e4c43d82897a84fb45"
+        "f8d1280d50c795e4c43d82897a84fb45",
+        "3972f8b3a581dde336714f9005812d7c"
        ],
        "type": "string"
       }
@@ -86,7 +87,7 @@
       }
      },
      {
-      "description": "Origin: GET https://apply.usbank.com/apply/apply.html &rarr; header: location",
+      "description": "Origin: GET https://www.usbank.com/index.html &rarr; html: html head link[href] @href",
       "in": "query",
       "name": "u",
       "required": true,
@@ -139,7 +140,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 10 requests"
+    "summary": "Seen 13 requests"
    }
   }
  },

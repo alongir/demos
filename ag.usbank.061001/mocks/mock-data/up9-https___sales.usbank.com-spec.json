@@ -7,7 +7,7 @@
  "paths": {
   "/product-configuration/v1/products/usbank/{param}/PI": {
    "get": {
-    "operationId": "143821b0-442a-4d2a-81da-45939ad65c09",
+    "operationId": "021b199b-7370-497e-ab46-46078868bdc0",
     "parameters": [
      {
       "in": "header",

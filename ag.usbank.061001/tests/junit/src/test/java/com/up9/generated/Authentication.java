@@ -19,6 +19,9 @@ public class Authentication implements AuthenticationInterface
         else if (httpTarget.baseURL == "https://onboarding.usbank.com")
         {
         }
+        else if (httpTarget.baseURL == "https://onlinebanking.usbank.com")
+        {
+        }
         else if (httpTarget.baseURL == "https://sales.usbank.com")
         {
         }
