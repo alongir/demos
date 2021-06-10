@@ -706,10 +706,10 @@
  },
  "tags": [
   {
-   "name": "bank-accounts"
+   "name": "svt.usbank"
   },
   {
-   "name": "svt.usbank"
+   "name": "bank-accounts"
   }
  ]
 }
