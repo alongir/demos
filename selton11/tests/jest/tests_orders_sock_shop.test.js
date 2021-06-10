@@ -132,28 +132,9 @@ describe.each(dataset("data/dataset_37.json"))("test_37_post_orders", (items) =>
     });
 });
 
-it("test_38_get_orders_search_customerId", () => {
-    clearSession();
-
-    // GET http://user.sock-shop/login (endp 31)
-    const user_sock_shop = getHttpClient("http://user.sock-shop", authenticate);
-    return user_sock_shop.fetch("/login")
-    .then((response) => {
-        expect(response.status).toEqual(200);
-        return response.text();
-    })
-    .then((text) => {
-        return JSON.parse(text);
-    })
-    .then((data) => {
-        expect(JSONPath({
-            path: "$.user.lastName",
-            json: data
-        })).toContain("Name");
-        const custId = JSONPath({
-            path: "$.user.id",
-            json: data
-        })[0];
+describe.each(dataset("data/dataset_38.json"))("test_38_get_orders_search_customerId", (custId) => {
+    it("test_38_get_orders_search_customerId", () => {
+        clearSession();
 
         // GET http://orders.sock-shop/orders/search/customerId (endp 38)
         const orders_sock_shop = getHttpClient("http://orders.sock-shop", authenticate);

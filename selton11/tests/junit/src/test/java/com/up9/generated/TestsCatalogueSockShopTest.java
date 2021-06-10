@@ -27,15 +27,5 @@ public class TestsCatalogueSockShopTest
         final Response response = catalogueSockShop.get(request, "/catalogue/size");
         assertStatusCode(response.code(), 200);
     }
-
-    @Test
-    public void testGetTags27() throws MalformedURLException, IOException
-    {
-        // GET http://catalogue.sock-shop/tags (endp 27)
-        final HttpTarget catalogueSockShop = getHttpClient("http://catalogue.sock-shop", new Authentication());
-        final HttpRequest request = new HttpRequest();
-        final Response response = catalogueSockShop.get(request, "/tags");
-        assertStatusCode(response.code(), 200);
-    }
 }
 

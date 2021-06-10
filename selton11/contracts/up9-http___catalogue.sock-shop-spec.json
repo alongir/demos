@@ -34,12 +34,25 @@
       }
      },
      {
+      "description": "Origin: GET http://catalogue.sock-shop/tags &rarr; json: $.tags[*]",
       "in": "query",
       "name": "tags",
       "required": false,
       "schema": {
        "enum": [
+        "magic",
         ""
+       ],
+       "type": "string"
+      }
+     },
+     {
+      "in": "query",
+      "name": "sort",
+      "required": false,
+      "schema": {
+       "enum": [
+        "id"
        ],
        "type": "string"
       }
@@ -240,7 +253,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 206 requests",
+    "summary": "Seen 209 requests",
     "tags": [
      "catalogue"
     ]
@@ -289,7 +302,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 9 requests",
+    "summary": "Seen 10 requests",
     "tags": [
      "catalogue"
     ]
@@ -365,7 +378,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 156 requests",
+    "summary": "Seen 157 requests",
     "tags": [
      "catalogue"
     ]
@@ -435,7 +448,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 9 requests"
+    "summary": "Seen 10 requests"
    },
    "parameters": []
   }

@@ -80,32 +80,66 @@ public class TestsFrontEndSockShopTest
         assertStatusCode(response.code(), 202);
     }
 
-    @Test
-    public void testPostCart07() throws MalformedURLException, IOException
+    @ParameterizedTest
+    @JsonFileSource(resources = "/dataset_7.json")
+    public void testPostCart07(final JsonObject json) throws MalformedURLException, IOException
     {
-        // POST http://front-end.sock-shop/orders (endp 16)
+        final String size = json.getString("size");
+
+        // GET http://front-end.sock-shop/tags (endp 17)
         final HttpTarget frontEndSockShop = getHttpClient("http://front-end.sock-shop", new Authentication());
         final HttpRequest request = new HttpRequest();
         request.setHeaders(new Hashtable<String, Object>() {{
             put("x-requested-with", "XMLHttpRequest");
         }});
-        final Response response = frontEndSockShop.post(request, "/orders");
-        assertStatusCode(response.code(), 201);
-        assertJSONPath("$.address.city", "Glasgow", response.body().string());
-        final String id = JSONPath("$.items[*].itemId", response.body().string());
-        final String quantity = JSONPath("$.items[*].quantity", response.body().string());
+        final Response response = frontEndSockShop.get(request, "/tags");
+        assertStatusCode(response.code(), 200);
+        final String tags = JSONPath("$.tags[*]", response.body().string());
+
+        // GET http://front-end.sock-shop/catalogue (endp 11)
+        final HttpRequest request2 = new HttpRequest();
+        request2.setQueryString(new Hashtable<String, Object>() {{
+            put("page", "1");
+            put("size", size);
+            put("sort", "id");
+            put("tags", tags);
+        }});
+        request2.setHeaders(new Hashtable<String, Object>() {{
+            put("x-requested-with", "XMLHttpRequest");
+        }});
+        final Response response2 = frontEndSockShop.get(request2, "/catalogue");
+        assertStatusCode(response2.code(), 200);
+
+        // GET http://front-end.sock-shop/cart (endp 5)
+        final HttpRequest request3 = new HttpRequest();
+        request3.setHeaders(new Hashtable<String, Object>() {{
+            put("x-requested-with", "XMLHttpRequest");
+        }});
+        final Response response3 = frontEndSockShop.get(request3, "/cart");
+        assertStatusCode(response3.code(), 200);
+        final String id = JSONPath("$[*].itemId", response3.body().string());
+
+        // POST http://front-end.sock-shop/orders (endp 16)
+        final HttpRequest request4 = new HttpRequest();
+        request4.setHeaders(new Hashtable<String, Object>() {{
+            put("x-requested-with", "XMLHttpRequest");
+        }});
+        final Response response4 = frontEndSockShop.post(request4, "/orders");
+        assertStatusCode(response4.code(), 201);
+        assertJSONPath("$.address.city", "Glasgow", response4.body().string());
+        final String quantity = JSONPath("$.items[*].quantity", response4.body().string());
 
         // POST http://front-end.sock-shop/cart (endp 7)
-        final HttpRequest request2 = new HttpRequest();
-        request2.setHeaders(new Hashtable<String, Object>() {{
+        final HttpRequest request5 = new HttpRequest();
+        request5.setHeaders(new Hashtable<String, Object>() {{
             put("content-type", "application/json");
             put("x-requested-with", "XMLHttpRequest");
         }});
-        request2.setJsonBody("payload_for_endp_7.json", new Hashtable<String, Object>() {{
+        request5.setJsonBody("payload_for_endp_7.json", new Hashtable<String, Object>() {{
             put("$.id", id);
         }});
-        final Response response2 = frontEndSockShop.post(request2, "/cart");
-        assertStatusCode(response2.code(), 201);
+        final Response response5 = frontEndSockShop.post(request5, "/cart");
+        assertStatusCode(response5.code(), 201);
     }
 
     @ParameterizedTest
@@ -114,36 +148,46 @@ public class TestsFrontEndSockShopTest
     {
         final String size = json.getString("size");
 
-        // GET http://front-end.sock-shop/catalogue (endp 11)
+        // GET http://front-end.sock-shop/tags (endp 17)
         final HttpTarget frontEndSockShop = getHttpClient("http://front-end.sock-shop", new Authentication());
         final HttpRequest request = new HttpRequest();
-        request.setQueryString(new Hashtable<String, Object>() {{
-            put("page", "1");
-            put("size", size);
-            put("tags", "");
-        }});
         request.setHeaders(new Hashtable<String, Object>() {{
             put("x-requested-with", "XMLHttpRequest");
         }});
-        final Response response = frontEndSockShop.get(request, "/catalogue");
+        final Response response = frontEndSockShop.get(request, "/tags");
         assertStatusCode(response.code(), 200);
+        final String tags = JSONPath("$.tags[*]", response.body().string());
 
-        // GET http://front-end.sock-shop/cart (endp 5)
+        // GET http://front-end.sock-shop/catalogue (endp 11)
         final HttpRequest request2 = new HttpRequest();
+        request2.setQueryString(new Hashtable<String, Object>() {{
+            put("page", "1");
+            put("size", size);
+            put("sort", "id");
+            put("tags", tags);
+        }});
         request2.setHeaders(new Hashtable<String, Object>() {{
             put("x-requested-with", "XMLHttpRequest");
         }});
-        final Response response2 = frontEndSockShop.get(request2, "/cart");
+        final Response response2 = frontEndSockShop.get(request2, "/catalogue");
         assertStatusCode(response2.code(), 200);
-        final String itemId = JSONPath("$[*].itemId", response2.body().string());
 
-        // DELETE http://front-end.sock-shop/cart/{itemId} (endp 8)
+        // GET http://front-end.sock-shop/cart (endp 5)
         final HttpRequest request3 = new HttpRequest();
         request3.setHeaders(new Hashtable<String, Object>() {{
             put("x-requested-with", "XMLHttpRequest");
         }});
-        final Response response3 = frontEndSockShop.delete(request3, "/cart/" + itemId);
-        assertStatusCode(response3.code(), 202);
+        final Response response3 = frontEndSockShop.get(request3, "/cart");
+        assertStatusCode(response3.code(), 200);
+        final String itemId = JSONPath("$[*].itemId", response3.body().string());
+
+        // DELETE http://front-end.sock-shop/cart/{itemId} (endp 8)
+        final HttpRequest request4 = new HttpRequest();
+        request4.setHeaders(new Hashtable<String, Object>() {{
+            put("x-requested-with", "XMLHttpRequest");
+        }});
+        final Response response4 = frontEndSockShop.delete(request4, "/cart/" + itemId);
+        assertStatusCode(response4.code(), 202);
     }
 
     @ParameterizedTest
@@ -152,28 +196,38 @@ public class TestsFrontEndSockShopTest
     {
         final String size = json.getString("size");
 
-        // GET http://front-end.sock-shop/catalogue (endp 11)
+        // GET http://front-end.sock-shop/tags (endp 17)
         final HttpTarget frontEndSockShop = getHttpClient("http://front-end.sock-shop", new Authentication());
         final HttpRequest request = new HttpRequest();
-        request.setQueryString(new Hashtable<String, Object>() {{
-            put("page", "1");
-            put("size", size);
-            put("tags", "");
-        }});
         request.setHeaders(new Hashtable<String, Object>() {{
             put("x-requested-with", "XMLHttpRequest");
         }});
-        final Response response = frontEndSockShop.get(request, "/catalogue");
+        final Response response = frontEndSockShop.get(request, "/tags");
         assertStatusCode(response.code(), 200);
-        final String id = JSONPath("$[*].id", response.body().string());
+        final String tags = JSONPath("$.tags[*]", response.body().string());
 
-        // GET http://front-end.sock-shop/catalogue/{id} (endp 9)
+        // GET http://front-end.sock-shop/catalogue (endp 11)
         final HttpRequest request2 = new HttpRequest();
+        request2.setQueryString(new Hashtable<String, Object>() {{
+            put("page", "1");
+            put("size", size);
+            put("sort", "id");
+            put("tags", tags);
+        }});
         request2.setHeaders(new Hashtable<String, Object>() {{
             put("x-requested-with", "XMLHttpRequest");
         }});
-        final Response response2 = frontEndSockShop.get(request2, "/catalogue/" + id);
+        final Response response2 = frontEndSockShop.get(request2, "/catalogue");
         assertStatusCode(response2.code(), 200);
+        final String id = JSONPath("$[*].id", response2.body().string());
+
+        // GET http://front-end.sock-shop/catalogue/{id} (endp 9)
+        final HttpRequest request3 = new HttpRequest();
+        request3.setHeaders(new Hashtable<String, Object>() {{
+            put("x-requested-with", "XMLHttpRequest");
+        }});
+        final Response response3 = frontEndSockShop.get(request3, "/catalogue/" + id);
+        assertStatusCode(response3.code(), 200);
     }
 
     @Test
@@ -252,9 +306,9 @@ public class TestsFrontEndSockShopTest
     }
 
     @Test
-    public void testGetOrders54() throws MalformedURLException, IOException
+    public void testGetOrders64() throws MalformedURLException, IOException
     {
-        // GET http://front-end.sock-shop/orders (endp 54)
+        // GET http://front-end.sock-shop/orders (endp 64)
         final HttpTarget frontEndSockShop = getHttpClient("http://front-end.sock-shop", new Authentication());
         final HttpRequest request = new HttpRequest();
         request.setHeaders(new Hashtable<String, Object>() {{
@@ -262,19 +316,6 @@ public class TestsFrontEndSockShopTest
         }});
         final Response response = frontEndSockShop.get(request, "/orders");
         assertStatusCode(response.code(), 201);
-    }
-
-    @Test
-    public void testGetTags17() throws MalformedURLException, IOException
-    {
-        // GET http://front-end.sock-shop/tags (endp 17)
-        final HttpTarget frontEndSockShop = getHttpClient("http://front-end.sock-shop", new Authentication());
-        final HttpRequest request = new HttpRequest();
-        request.setHeaders(new Hashtable<String, Object>() {{
-            put("x-requested-with", "XMLHttpRequest");
-        }});
-        final Response response = frontEndSockShop.get(request, "/tags");
-        assertStatusCode(response.code(), 200);
     }
 }
 

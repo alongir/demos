@@ -12,9 +12,14 @@ class Tests_carts_sock_shop(unittest.TestCase):
     def test_32_delete_carts_customerId(self, data_row):
         size, = data_row
 
-        # GET http://catalogue.sock-shop/catalogue (endp 24)
+        # GET http://catalogue.sock-shop/tags (endp 27)
         catalogue_sock_shop = get_http_client('http://catalogue.sock-shop', authenticate)
-        qstr = '?' + urlencode([('page', '1'), ('size', size), ('tags', '')])
+        resp = catalogue_sock_shop.get('/tags')
+        resp.assert_status_code(200)
+        tags = jsonpath('$.tags[*]', resp)
+
+        # GET http://catalogue.sock-shop/catalogue (endp 24)
+        qstr = '?' + urlencode([('page', '1'), ('size', size), ('sort', 'id'), ('tags', tags)])
         resp = catalogue_sock_shop.get('/catalogue' + qstr)
         resp.assert_status_code(200)
 
@@ -35,9 +40,14 @@ class Tests_carts_sock_shop(unittest.TestCase):
     def test_33_post_carts_customerId_items(self, data_row):
         sessionId, size = data_row
 
-        # GET http://catalogue.sock-shop/catalogue (endp 24)
+        # GET http://catalogue.sock-shop/tags (endp 27)
         catalogue_sock_shop = get_http_client('http://catalogue.sock-shop', authenticate)
-        qstr = '?' + urlencode([('page', '1'), ('size', size), ('tags', '')])
+        resp = catalogue_sock_shop.get('/tags')
+        resp.assert_status_code(200)
+        tags = jsonpath('$.tags[*]', resp)
+
+        # GET http://catalogue.sock-shop/catalogue (endp 24)
+        qstr = '?' + urlencode([('page', '1'), ('size', size), ('sort', 'id'), ('tags', tags)])
         resp = catalogue_sock_shop.get('/catalogue' + qstr)
         resp.assert_status_code(200)
         itemId = jsonpath('$[*].id', resp)
@@ -100,13 +110,6 @@ class Tests_catalogue_sock_shop(unittest.TestCase):
         resp = catalogue_sock_shop.get('/catalogue/size' + qstr)
         resp.assert_status_code(200)
 
-    @clear_session({'spanId': 27})
-    def test_27_get_tags(self):
-        # GET http://catalogue.sock-shop/tags (endp 27)
-        catalogue_sock_shop = get_http_client('http://catalogue.sock-shop', authenticate)
-        resp = catalogue_sock_shop.get('/tags')
-        resp.assert_status_code(200)
-
 
 @data_driven_tests
 class Tests_front_end_sock_shop(unittest.TestCase):
@@ -149,14 +152,31 @@ class Tests_front_end_sock_shop(unittest.TestCase):
         resp = front_end_sock_shop.delete('/cart', headers=dict([('x-requested-with', 'XMLHttpRequest')]))
         resp.assert_status_code(202)
 
+    @json_dataset('data/dataset_7.json')
     @clear_session({'spanId': 7})
-    def test_07_post_cart(self):
-        # POST http://front-end.sock-shop/orders (endp 16)
+    def test_07_post_cart(self, data_row):
+        size, = data_row
+
+        # GET http://front-end.sock-shop/tags (endp 17)
         front_end_sock_shop = get_http_client('http://front-end.sock-shop', authenticate)
+        resp = front_end_sock_shop.get('/tags', headers=dict([('x-requested-with', 'XMLHttpRequest')]))
+        resp.assert_status_code(200)
+        tags = jsonpath('$.tags[*]', resp)
+
+        # GET http://front-end.sock-shop/catalogue (endp 11)
+        qstr = '?' + urlencode([('page', '1'), ('size', size), ('sort', 'id'), ('tags', tags)])
+        resp = front_end_sock_shop.get('/catalogue' + qstr, headers=dict([('x-requested-with', 'XMLHttpRequest')]))
+        resp.assert_status_code(200)
+
+        # GET http://front-end.sock-shop/cart (endp 5)
+        resp = front_end_sock_shop.get('/cart', headers=dict([('x-requested-with', 'XMLHttpRequest')]))
+        resp.assert_status_code(200)
+        id_ = jsonpath('$[*].itemId', resp)
+
+        # POST http://front-end.sock-shop/orders (endp 16)
         resp = front_end_sock_shop.post('/orders', headers=dict([('x-requested-with', 'XMLHttpRequest')]))
         resp.assert_status_code(201)
         resp.assert_jsonpath('$.address.city', expected_value='Glasgow')
-        id_ = jsonpath('$.items[*].itemId', resp)
         quantity = jsonpath('$.items[*].quantity', resp)
 
         # POST http://front-end.sock-shop/cart (endp 7)
@@ -171,9 +191,14 @@ class Tests_front_end_sock_shop(unittest.TestCase):
     def test_08_delete_cart_itemId(self, data_row):
         size, = data_row
 
-        # GET http://front-end.sock-shop/catalogue (endp 11)
+        # GET http://front-end.sock-shop/tags (endp 17)
         front_end_sock_shop = get_http_client('http://front-end.sock-shop', authenticate)
-        qstr = '?' + urlencode([('page', '1'), ('size', size), ('tags', '')])
+        resp = front_end_sock_shop.get('/tags', headers=dict([('x-requested-with', 'XMLHttpRequest')]))
+        resp.assert_status_code(200)
+        tags = jsonpath('$.tags[*]', resp)
+
+        # GET http://front-end.sock-shop/catalogue (endp 11)
+        qstr = '?' + urlencode([('page', '1'), ('size', size), ('sort', 'id'), ('tags', tags)])
         resp = front_end_sock_shop.get('/catalogue' + qstr, headers=dict([('x-requested-with', 'XMLHttpRequest')]))
         resp.assert_status_code(200)
 
@@ -191,9 +216,14 @@ class Tests_front_end_sock_shop(unittest.TestCase):
     def test_09_get_catalogue_id(self, data_row):
         size, = data_row
 
-        # GET http://front-end.sock-shop/catalogue (endp 11)
+        # GET http://front-end.sock-shop/tags (endp 17)
         front_end_sock_shop = get_http_client('http://front-end.sock-shop', authenticate)
-        qstr = '?' + urlencode([('page', '1'), ('size', size), ('tags', '')])
+        resp = front_end_sock_shop.get('/tags', headers=dict([('x-requested-with', 'XMLHttpRequest')]))
+        resp.assert_status_code(200)
+        tags = jsonpath('$.tags[*]', resp)
+
+        # GET http://front-end.sock-shop/catalogue (endp 11)
+        qstr = '?' + urlencode([('page', '1'), ('size', size), ('sort', 'id'), ('tags', tags)])
         resp = front_end_sock_shop.get('/catalogue' + qstr, headers=dict([('x-requested-with', 'XMLHttpRequest')]))
         resp.assert_status_code(200)
         id_ = jsonpath('$[*].id', resp)
@@ -247,19 +277,12 @@ class Tests_front_end_sock_shop(unittest.TestCase):
         resp.assert_status_code(200)
         resp.assert_cssselect('div#content div.container div div.row.same-height-row div div.box.same-height h3', expected_value='You may also like these products')
 
-    @clear_session({'spanId': 54})
-    def test_54_get_orders(self):
-        # GET http://front-end.sock-shop/orders (endp 54)
+    @clear_session({'spanId': 64})
+    def test_64_get_orders(self):
+        # GET http://front-end.sock-shop/orders (endp 64)
         front_end_sock_shop = get_http_client('http://front-end.sock-shop', authenticate)
         resp = front_end_sock_shop.get('/orders', headers=dict([('x-requested-with', 'XMLHttpRequest')]))
         resp.assert_status_code(201)
-
-    @clear_session({'spanId': 17})
-    def test_17_get_tags(self):
-        # GET http://front-end.sock-shop/tags (endp 17)
-        front_end_sock_shop = get_http_client('http://front-end.sock-shop', authenticate)
-        resp = front_end_sock_shop.get('/tags', headers=dict([('x-requested-with', 'XMLHttpRequest')]))
-        resp.assert_status_code(200)
 
 
 @data_driven_tests
@@ -328,14 +351,10 @@ class Tests_orders_sock_shop(unittest.TestCase):
         resp.assert_status_code(201)
         resp.assert_jsonpath('$.address.city', expected_value='Glasgow')
 
+    @json_dataset('data/dataset_38.json')
     @clear_session({'spanId': 38})
-    def test_38_get_orders_search_customerId(self):
-        # GET http://user.sock-shop/login (endp 31)
-        user_sock_shop = get_http_client('http://user.sock-shop', authenticate)
-        resp = user_sock_shop.get('/login')
-        resp.assert_status_code(200)
-        resp.assert_jsonpath('$.user.lastName', expected_value='Name')
-        custId = jsonpath('$.user.id', resp)
+    def test_38_get_orders_search_customerId(self, data_row):
+        custId, = data_row
 
         # GET http://orders.sock-shop/orders/search/customerId (endp 38)
         orders_sock_shop = get_http_client('http://orders.sock-shop', authenticate)

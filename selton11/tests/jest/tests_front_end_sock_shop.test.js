@@ -101,124 +101,13 @@ it("test_06_delete_cart", () => {
     });
 });
 
-it("test_07_post_cart", () => {
-    clearSession();
-
-    // POST http://front-end.sock-shop/orders (endp 16)
-    const front_end_sock_shop = getHttpClient("http://front-end.sock-shop", authenticate);
-    return front_end_sock_shop.fetch("/orders", {
-        method: "POST",
-        headers: {
-            "x-requested-with": "XMLHttpRequest"
-        }
-    })
-    .then((response) => {
-        expect(response.status).toEqual(201);
-        return response.text();
-    })
-    .then((text) => {
-        return JSON.parse(text);
-    })
-    .then((data) => {
-        expect(JSONPath({
-            path: "$.address.city",
-            json: data
-        })).toContain("Glasgow");
-        const id = JSONPath({
-            path: "$.items[*].itemId",
-            json: data
-        })[0];
-        const quantity = JSONPath({
-            path: "$.items[*].quantity",
-            json: data
-        })[0];
-
-        // POST http://front-end.sock-shop/cart (endp 7)
-        return front_end_sock_shop.fetch("/cart", {
-            method: "POST",
-            headers: {
-                "content-type": "application/json",
-                "x-requested-with": "XMLHttpRequest"
-            },
-            body: JSONBuild("data/payload_for_endp_7.json", {
-                "$.id": id
-            })
-        })
-        .then((response) => {
-            expect(response.status).toEqual(201);
-            return response.text();
-        })
-        .then((text) => {
-        })
-        .then((data) => {
-        });
-    });
-});
-
-describe.each(dataset("data/dataset_8.json"))("test_08_delete_cart_itemId", (size) => {
-    it("test_08_delete_cart_itemId", () => {
+describe.each(dataset("data/dataset_7.json"))("test_07_post_cart", (size) => {
+    it("test_07_post_cart", () => {
         clearSession();
 
-        // GET http://front-end.sock-shop/catalogue (endp 11)
+        // GET http://front-end.sock-shop/tags (endp 17)
         const front_end_sock_shop = getHttpClient("http://front-end.sock-shop", authenticate);
-        return front_end_sock_shop.fetch("/catalogue" + urlencode([["page", "1"], ["size", size], ["tags", ""]]), {
-            headers: {
-                "x-requested-with": "XMLHttpRequest"
-            }
-        })
-        .then((response) => {
-            expect(response.status).toEqual(200);
-            return response.text();
-        })
-        .then((text) => {
-        })
-        .then((data) => {
-            // GET http://front-end.sock-shop/cart (endp 5)
-            return front_end_sock_shop.fetch("/cart", {
-                headers: {
-                    "x-requested-with": "XMLHttpRequest"
-                }
-            })
-            .then((response) => {
-                expect(response.status).toEqual(200);
-                return response.text();
-            })
-            .then((text) => {
-                return JSON.parse(text);
-            })
-            .then((data) => {
-                const itemId = JSONPath({
-                    path: "$[*].itemId",
-                    json: data
-                })[0];
-
-                // DELETE http://front-end.sock-shop/cart/{itemId} (endp 8)
-                return front_end_sock_shop.fetch("/cart/" + itemId, {
-                    method: "DELETE",
-                    headers: {
-                        "x-requested-with": "XMLHttpRequest"
-                    }
-                })
-                .then((response) => {
-                    expect(response.status).toEqual(202);
-                    return response.text();
-                })
-                .then((text) => {
-                })
-                .then((data) => {
-                });
-            });
-        });
-    });
-});
-
-describe.each(dataset("data/dataset_9.json"))("test_09_get_catalogue_id", (size) => {
-    it("test_09_get_catalogue_id", () => {
-        clearSession();
-
-        // GET http://front-end.sock-shop/catalogue (endp 11)
-        const front_end_sock_shop = getHttpClient("http://front-end.sock-shop", authenticate);
-        return front_end_sock_shop.fetch("/catalogue" + urlencode([["page", "1"], ["size", size], ["tags", ""]]), {
+        return front_end_sock_shop.fetch("/tags", {
             headers: {
                 "x-requested-with": "XMLHttpRequest"
             }
@@ -231,13 +120,13 @@ describe.each(dataset("data/dataset_9.json"))("test_09_get_catalogue_id", (size)
             return JSON.parse(text);
         })
         .then((data) => {
-            const id = JSONPath({
-                path: "$[*].id",
+            const tags = JSONPath({
+                path: "$.tags[*]",
                 json: data
             })[0];
 
-            // GET http://front-end.sock-shop/catalogue/{id} (endp 9)
-            return front_end_sock_shop.fetch("/catalogue/" + id, {
+            // GET http://front-end.sock-shop/catalogue (endp 11)
+            return front_end_sock_shop.fetch("/catalogue" + urlencode([["page", "1"], ["size", size], ["sort", "id"], ["tags", tags]]), {
                 headers: {
                     "x-requested-with": "XMLHttpRequest"
                 }
@@ -249,6 +138,209 @@ describe.each(dataset("data/dataset_9.json"))("test_09_get_catalogue_id", (size)
             .then((text) => {
             })
             .then((data) => {
+                // GET http://front-end.sock-shop/cart (endp 5)
+                return front_end_sock_shop.fetch("/cart", {
+                    headers: {
+                        "x-requested-with": "XMLHttpRequest"
+                    }
+                })
+                .then((response) => {
+                    expect(response.status).toEqual(200);
+                    return response.text();
+                })
+                .then((text) => {
+                    return JSON.parse(text);
+                })
+                .then((data) => {
+                    const id = JSONPath({
+                        path: "$[*].itemId",
+                        json: data
+                    })[0];
+
+                    // POST http://front-end.sock-shop/orders (endp 16)
+                    return front_end_sock_shop.fetch("/orders", {
+                        method: "POST",
+                        headers: {
+                            "x-requested-with": "XMLHttpRequest"
+                        }
+                    })
+                    .then((response) => {
+                        expect(response.status).toEqual(201);
+                        return response.text();
+                    })
+                    .then((text) => {
+                        return JSON.parse(text);
+                    })
+                    .then((data) => {
+                        expect(JSONPath({
+                            path: "$.address.city",
+                            json: data
+                        })).toContain("Glasgow");
+                        const quantity = JSONPath({
+                            path: "$.items[*].quantity",
+                            json: data
+                        })[0];
+
+                        // POST http://front-end.sock-shop/cart (endp 7)
+                        return front_end_sock_shop.fetch("/cart", {
+                            method: "POST",
+                            headers: {
+                                "content-type": "application/json",
+                                "x-requested-with": "XMLHttpRequest"
+                            },
+                            body: JSONBuild("data/payload_for_endp_7.json", {
+                                "$.id": id
+                            })
+                        })
+                        .then((response) => {
+                            expect(response.status).toEqual(201);
+                            return response.text();
+                        })
+                        .then((text) => {
+                        })
+                        .then((data) => {
+                        });
+                    });
+                });
+            });
+        });
+    });
+});
+
+describe.each(dataset("data/dataset_8.json"))("test_08_delete_cart_itemId", (size) => {
+    it("test_08_delete_cart_itemId", () => {
+        clearSession();
+
+        // GET http://front-end.sock-shop/tags (endp 17)
+        const front_end_sock_shop = getHttpClient("http://front-end.sock-shop", authenticate);
+        return front_end_sock_shop.fetch("/tags", {
+            headers: {
+                "x-requested-with": "XMLHttpRequest"
+            }
+        })
+        .then((response) => {
+            expect(response.status).toEqual(200);
+            return response.text();
+        })
+        .then((text) => {
+            return JSON.parse(text);
+        })
+        .then((data) => {
+            const tags = JSONPath({
+                path: "$.tags[*]",
+                json: data
+            })[0];
+
+            // GET http://front-end.sock-shop/catalogue (endp 11)
+            return front_end_sock_shop.fetch("/catalogue" + urlencode([["page", "1"], ["size", size], ["sort", "id"], ["tags", tags]]), {
+                headers: {
+                    "x-requested-with": "XMLHttpRequest"
+                }
+            })
+            .then((response) => {
+                expect(response.status).toEqual(200);
+                return response.text();
+            })
+            .then((text) => {
+            })
+            .then((data) => {
+                // GET http://front-end.sock-shop/cart (endp 5)
+                return front_end_sock_shop.fetch("/cart", {
+                    headers: {
+                        "x-requested-with": "XMLHttpRequest"
+                    }
+                })
+                .then((response) => {
+                    expect(response.status).toEqual(200);
+                    return response.text();
+                })
+                .then((text) => {
+                    return JSON.parse(text);
+                })
+                .then((data) => {
+                    const itemId = JSONPath({
+                        path: "$[*].itemId",
+                        json: data
+                    })[0];
+
+                    // DELETE http://front-end.sock-shop/cart/{itemId} (endp 8)
+                    return front_end_sock_shop.fetch("/cart/" + itemId, {
+                        method: "DELETE",
+                        headers: {
+                            "x-requested-with": "XMLHttpRequest"
+                        }
+                    })
+                    .then((response) => {
+                        expect(response.status).toEqual(202);
+                        return response.text();
+                    })
+                    .then((text) => {
+                    })
+                    .then((data) => {
+                    });
+                });
+            });
+        });
+    });
+});
+
+describe.each(dataset("data/dataset_9.json"))("test_09_get_catalogue_id", (size) => {
+    it("test_09_get_catalogue_id", () => {
+        clearSession();
+
+        // GET http://front-end.sock-shop/tags (endp 17)
+        const front_end_sock_shop = getHttpClient("http://front-end.sock-shop", authenticate);
+        return front_end_sock_shop.fetch("/tags", {
+            headers: {
+                "x-requested-with": "XMLHttpRequest"
+            }
+        })
+        .then((response) => {
+            expect(response.status).toEqual(200);
+            return response.text();
+        })
+        .then((text) => {
+            return JSON.parse(text);
+        })
+        .then((data) => {
+            const tags = JSONPath({
+                path: "$.tags[*]",
+                json: data
+            })[0];
+
+            // GET http://front-end.sock-shop/catalogue (endp 11)
+            return front_end_sock_shop.fetch("/catalogue" + urlencode([["page", "1"], ["size", size], ["sort", "id"], ["tags", tags]]), {
+                headers: {
+                    "x-requested-with": "XMLHttpRequest"
+                }
+            })
+            .then((response) => {
+                expect(response.status).toEqual(200);
+                return response.text();
+            })
+            .then((text) => {
+                return JSON.parse(text);
+            })
+            .then((data) => {
+                const id = JSONPath({
+                    path: "$[*].id",
+                    json: data
+                })[0];
+
+                // GET http://front-end.sock-shop/catalogue/{id} (endp 9)
+                return front_end_sock_shop.fetch("/catalogue/" + id, {
+                    headers: {
+                        "x-requested-with": "XMLHttpRequest"
+                    }
+                })
+                .then((response) => {
+                    expect(response.status).toEqual(200);
+                    return response.text();
+                })
+                .then((text) => {
+                })
+                .then((data) => {
+                });
             });
         });
     });
@@ -374,10 +466,10 @@ it("test_14_get_detail_html", () => {
     });
 });
 
-it("test_54_get_orders", () => {
+it("test_64_get_orders", () => {
     clearSession();
 
-    // GET http://front-end.sock-shop/orders (endp 54)
+    // GET http://front-end.sock-shop/orders (endp 64)
     const front_end_sock_shop = getHttpClient("http://front-end.sock-shop", authenticate);
     return front_end_sock_shop.fetch("/orders", {
         headers: {
@@ -386,26 +478,6 @@ it("test_54_get_orders", () => {
     })
     .then((response) => {
         expect(response.status).toEqual(201);
-        return response.text();
-    })
-    .then((text) => {
-    })
-    .then((data) => {
-    });
-});
-
-it("test_17_get_tags", () => {
-    clearSession();
-
-    // GET http://front-end.sock-shop/tags (endp 17)
-    const front_end_sock_shop = getHttpClient("http://front-end.sock-shop", authenticate);
-    return front_end_sock_shop.fetch("/tags", {
-        headers: {
-            "x-requested-with": "XMLHttpRequest"
-        }
-    })
-    .then((response) => {
-        expect(response.status).toEqual(200);
         return response.text();
     })
     .then((text) => {

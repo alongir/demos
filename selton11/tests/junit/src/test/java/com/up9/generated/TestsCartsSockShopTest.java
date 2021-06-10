@@ -24,30 +24,37 @@ public class TestsCartsSockShopTest
     {
         final String size = json.getString("size");
 
-        // GET http://catalogue.sock-shop/catalogue (endp 24)
+        // GET http://catalogue.sock-shop/tags (endp 27)
         final HttpTarget catalogueSockShop = getHttpClient("http://catalogue.sock-shop", new Authentication());
         final HttpRequest request = new HttpRequest();
-        request.setQueryString(new Hashtable<String, Object>() {{
+        final Response response = catalogueSockShop.get(request, "/tags");
+        assertStatusCode(response.code(), 200);
+        final String tags = JSONPath("$.tags[*]", response.body().string());
+
+        // GET http://catalogue.sock-shop/catalogue (endp 24)
+        final HttpRequest request2 = new HttpRequest();
+        request2.setQueryString(new Hashtable<String, Object>() {{
             put("page", "1");
             put("size", size);
-            put("tags", "");
+            put("sort", "id");
+            put("tags", tags);
         }});
-        final Response response = catalogueSockShop.get(request, "/catalogue");
-        assertStatusCode(response.code(), 200);
+        final Response response2 = catalogueSockShop.get(request2, "/catalogue");
+        assertStatusCode(response2.code(), 200);
 
         // GET http://user.sock-shop/login (endp 31)
         final HttpTarget userSockShop = getHttpClient("http://user.sock-shop", new Authentication());
-        final HttpRequest request2 = new HttpRequest();
-        final Response response2 = userSockShop.get(request2, "/login");
-        assertStatusCode(response2.code(), 200);
-        assertJSONPath("$.user.lastName", "Name", response2.body().string());
-        final String customerId = JSONPath("$.user.id", response2.body().string());
+        final HttpRequest request3 = new HttpRequest();
+        final Response response3 = userSockShop.get(request3, "/login");
+        assertStatusCode(response3.code(), 200);
+        assertJSONPath("$.user.lastName", "Name", response3.body().string());
+        final String customerId = JSONPath("$.user.id", response3.body().string());
 
         // DELETE http://carts.sock-shop/carts/{customerId} (endp 32)
         final HttpTarget cartsSockShop = getHttpClient("http://carts.sock-shop", new Authentication());
-        final HttpRequest request3 = new HttpRequest();
-        final Response response3 = cartsSockShop.delete(request3, "/carts/" + customerId);
-        assertStatusCode(response3.code(), 202);
+        final HttpRequest request4 = new HttpRequest();
+        final Response response4 = cartsSockShop.delete(request4, "/carts/" + customerId);
+        assertStatusCode(response4.code(), 202);
     }
 
     @ParameterizedTest
@@ -57,54 +64,61 @@ public class TestsCartsSockShopTest
         final String sessionId = json.getString("sessionId");
         final String size = json.getString("size");
 
-        // GET http://catalogue.sock-shop/catalogue (endp 24)
+        // GET http://catalogue.sock-shop/tags (endp 27)
         final HttpTarget catalogueSockShop = getHttpClient("http://catalogue.sock-shop", new Authentication());
         final HttpRequest request = new HttpRequest();
-        request.setQueryString(new Hashtable<String, Object>() {{
+        final Response response = catalogueSockShop.get(request, "/tags");
+        assertStatusCode(response.code(), 200);
+        final String tags = JSONPath("$.tags[*]", response.body().string());
+
+        // GET http://catalogue.sock-shop/catalogue (endp 24)
+        final HttpRequest request2 = new HttpRequest();
+        request2.setQueryString(new Hashtable<String, Object>() {{
             put("page", "1");
             put("size", size);
-            put("tags", "");
+            put("sort", "id");
+            put("tags", tags);
         }});
-        final Response response = catalogueSockShop.get(request, "/catalogue");
-        assertStatusCode(response.code(), 200);
-        final String itemId = JSONPath("$[*].id", response.body().string());
-        final String id = JSONPath("$[*].id", response.body().string());
+        final Response response2 = catalogueSockShop.get(request2, "/catalogue");
+        assertStatusCode(response2.code(), 200);
+        final String itemId = JSONPath("$[*].id", response2.body().string());
+        final String id = JSONPath("$[*].id", response2.body().string());
 
         // GET http://user.sock-shop/login (endp 31)
         final HttpTarget userSockShop = getHttpClient("http://user.sock-shop", new Authentication());
-        final HttpRequest request2 = new HttpRequest();
-        final Response response2 = userSockShop.get(request2, "/login");
-        assertStatusCode(response2.code(), 200);
-        assertJSONPath("$.user.lastName", "Name", response2.body().string());
-        final String customerId = JSONPath("$.user.id", response2.body().string());
+        final HttpRequest request3 = new HttpRequest();
+        final Response response3 = userSockShop.get(request3, "/login");
+        assertStatusCode(response3.code(), 200);
+        assertJSONPath("$.user.lastName", "Name", response3.body().string());
+        final String customerId = JSONPath("$.user.id", response3.body().string());
 
         // GET http://carts.sock-shop/carts/{customerId}/merge (endp 35)
         final HttpTarget cartsSockShop = getHttpClient("http://carts.sock-shop", new Authentication());
-        final HttpRequest request3 = new HttpRequest();
-        request3.setQueryString(new Hashtable<String, Object>() {{
+        final HttpRequest request4 = new HttpRequest();
+        request4.setQueryString(new Hashtable<String, Object>() {{
             put("sessionId", sessionId);
         }});
-        final Response response3 = cartsSockShop.get(request3, "/carts/" + customerId + "/merge");
-        assertStatusCode(response3.code(), 202);
+        final Response response4 = cartsSockShop.get(request4, "/carts/" + customerId + "/merge");
+        assertStatusCode(response4.code(), 202);
 
         // GET http://catalogue.sock-shop/catalogue/{id} (endp 25)
-        final HttpRequest request4 = new HttpRequest();
-        final Response response4 = catalogueSockShop.get(request4, "/catalogue/" + id);
-        assertStatusCode(response4.code(), 200);
-        final String unitPrice = JSONPath("$.price", response4.body().string());
+        final HttpRequest request5 = new HttpRequest();
+        final Response response5 = catalogueSockShop.get(request5, "/catalogue/" + id);
+        assertStatusCode(response5.code(), 200);
+        final String unitPrice = JSONPath("$.price", response5.body().string());
 
         // POST http://carts.sock-shop/carts/{customerId}/items (endp 33)
-        final HttpRequest request5 = new HttpRequest();
-        request5.setHeaders(new Hashtable<String, Object>() {{
+        final HttpRequest request6 = new HttpRequest();
+        request6.setHeaders(new Hashtable<String, Object>() {{
             put("accept", "application/json");
             put("content-type", "application/json");
         }});
-        request5.setJsonBody("payload_for_endp_33.json", new Hashtable<String, Object>() {{
+        request6.setJsonBody("payload_for_endp_33.json", new Hashtable<String, Object>() {{
             put("$.itemId", itemId);
             put("$.unitPrice", unitPrice);
         }});
-        final Response response5 = cartsSockShop.post(request5, "/carts/" + customerId + "/items");
-        assertStatusCode(response5.code(), 201);
+        final Response response6 = cartsSockShop.post(request6, "/carts/" + customerId + "/items");
+        assertStatusCode(response6.code(), 201);
     }
 
     @Test

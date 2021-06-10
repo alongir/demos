@@ -82,26 +82,21 @@ public class TestsOrdersSockShopTest
         assertJSONPath("$.address.city", "Glasgow", response6.body().string());
     }
 
-    @Test
-    public void testGetOrdersSearchCustomerid38() throws MalformedURLException, IOException
+    @ParameterizedTest
+    @JsonFileSource(resources = "/dataset_38.json")
+    public void testGetOrdersSearchCustomerid38(final JsonObject json) throws MalformedURLException, IOException
     {
-        // GET http://user.sock-shop/login (endp 31)
-        final HttpTarget userSockShop = getHttpClient("http://user.sock-shop", new Authentication());
-        final HttpRequest request = new HttpRequest();
-        final Response response = userSockShop.get(request, "/login");
-        assertStatusCode(response.code(), 200);
-        assertJSONPath("$.user.lastName", "Name", response.body().string());
-        final String custId = JSONPath("$.user.id", response.body().string());
+        final String custId = json.getString("custId");
 
         // GET http://orders.sock-shop/orders/search/customerId (endp 38)
         final HttpTarget ordersSockShop = getHttpClient("http://orders.sock-shop", new Authentication());
-        final HttpRequest request2 = new HttpRequest();
-        request2.setQueryString(new Hashtable<String, Object>() {{
+        final HttpRequest request = new HttpRequest();
+        request.setQueryString(new Hashtable<String, Object>() {{
             put("custId", custId);
             put("sort", "date");
         }});
-        final Response response2 = ordersSockShop.get(request2, "/orders/search/customerId");
-        assertStatusCode(response2.code(), 200);
+        final Response response = ordersSockShop.get(request, "/orders/search/customerId");
+        assertStatusCode(response.code(), 200);
     }
 }
 
