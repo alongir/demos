@@ -1,0 +1,62 @@
+{
+ "id": "15",
+ "tenant": "usbank",
+ "userRole": null,
+ "productCode": "DDA",
+ "subProductCode": "PI",
+ "subtype": null,
+ "description": "U.S. Bank Gold Checking Package",
+ "enabled": true,
+ "expiryDays": 0,
+ "smsTemplate": null,
+ "funding": {
+  "digital": [
+   {
+    "min": 25,
+    "visible": true,
+    "max": 250,
+    "optimum": 100,
+    "type": "external",
+    "maxFailOver": 25,
+    "minFailOver": 25,
+    "optimumFailOver": 25
+   },
+   {
+    "min": 25,
+    "visible": true,
+    "max": 250,
+    "optimum": 100,
+    "type": "internal",
+    "maxFailOver": 25,
+    "minFailOver": 25,
+    "optimumFailOver": 25
+   },
+   {
+    "min": 25,
+    "visible": true,
+    "max": 250,
+    "optimum": 100,
+    "type": "card",
+    "maxFailOver": 25,
+    "minFailOver": 25,
+    "optimumFailOver": 25
+   },
+   {
+    "min": 25,
+    "visible": false,
+    "max": 250,
+    "optimum": 100,
+    "type": "check",
+    "maxFailOver": 25,
+    "minFailOver": 25,
+    "optimumFailOver": 25
+   }
+  ]
+ },
+ "helpPhoneNumber": "800-245-4575",
+ "ratesProductKey": null,
+ "throttleResults": null,
+ "postSubmitRetrieveEnabled": true,
+ "isJointEnabled": true,
+ "derivedProductData": null
+}

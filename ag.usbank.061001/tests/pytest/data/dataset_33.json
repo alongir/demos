@@ -1,0 +1,13 @@
+{
+ "parameters": [
+  {
+   "name": "PRODUCT_CODE",
+   "uuid": "abaf4d05-851d-4e71-b828-b41957f4270c"
+  }
+ ],
+ "rows": [
+  {
+   "PRODUCT_CODE": "DDA"
+  }
+ ]
+}

@@ -1,0 +1,74 @@
+[
+  {
+    "BrandDC": "sjc1",
+    "Module": "CR_a2AsGQKhBoo8TgV",
+    "Q_CLIENTVERSION": "1.52.0",
+    "Q_CLIENTVERSION1": "1.52.0",
+    "Q_CLIENTVERSION2": "1.52.0",
+    "Q_InterceptID": "SI_e39Wa46ASKtqbcx",
+    "Q_ORIGIN": "https://www.usbank.com"
+  },
+  {
+    "BrandDC": "sjc1",
+    "Module": "SI_e39Wa46ASKtqbcx",
+    "Q_CLIENTVERSION": "1.52.0",
+    "Q_CLIENTVERSION1": "1.52.0",
+    "Q_CLIENTVERSION2": "1.52.0",
+    "Q_InterceptID": "SI_e39Wa46ASKtqbcx",
+    "Q_ORIGIN": "https://www.usbank.com"
+  },
+  {
+    "BrandDC": "sjc1",
+    "Module": "CR_bNJ69FZUut5fiwB",
+    "Q_CLIENTVERSION": "1.52.0",
+    "Q_CLIENTVERSION1": "1.52.0",
+    "Q_CLIENTVERSION2": "1.52.0",
+    "Q_InterceptID": "SI_e39Wa46ASKtqbcx",
+    "Q_ORIGIN": "https://www.usbank.com"
+  },
+  {
+    "BrandDC": "sjc1",
+    "Module": "SI_57GL0UFxoO6mKC9",
+    "Q_CLIENTVERSION": "1.52.0",
+    "Q_CLIENTVERSION1": "1.52.0",
+    "Q_CLIENTVERSION2": "1.52.0",
+    "Q_InterceptID": "SI_e39Wa46ASKtqbcx",
+    "Q_ORIGIN": "https://www.usbank.com"
+  },
+  {
+    "BrandDC": "sjc1",
+    "Module": "CR_0JPnt5m2zBFt605",
+    "Q_CLIENTVERSION": "1.52.0",
+    "Q_CLIENTVERSION1": "1.52.0",
+    "Q_CLIENTVERSION2": "1.52.0",
+    "Q_InterceptID": "SI_e39Wa46ASKtqbcx",
+    "Q_ORIGIN": "https://www.usbank.com"
+  },
+  {
+    "BrandDC": "sjc1",
+    "Module": "SI_3ag7VqhEfbMCjml",
+    "Q_CLIENTVERSION": "1.52.0",
+    "Q_CLIENTVERSION1": "1.52.0",
+    "Q_CLIENTVERSION2": "1.52.0",
+    "Q_InterceptID": "SI_57GL0UFxoO6mKC9",
+    "Q_ORIGIN": "https://www.usbank.com"
+  },
+  {
+    "BrandDC": "sjc1",
+    "Module": "SI_errLdpEuK9y5ENf",
+    "Q_CLIENTVERSION": "1.52.0",
+    "Q_CLIENTVERSION1": "1.52.0",
+    "Q_CLIENTVERSION2": "1.52.0",
+    "Q_InterceptID": "SI_3ag7VqhEfbMCjml",
+    "Q_ORIGIN": "https://www.usbank.com"
+  },
+  {
+    "BrandDC": "sjc1",
+    "Module": "CR_2tPQefIgumb1Tnf",
+    "Q_CLIENTVERSION": "1.52.0",
+    "Q_CLIENTVERSION1": "1.52.0",
+    "Q_CLIENTVERSION2": "1.52.0",
+    "Q_InterceptID": "SI_errLdpEuK9y5ENf",
+    "Q_ORIGIN": "https://onboarding.usbank.com"
+  }
+]

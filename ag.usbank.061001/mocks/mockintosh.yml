@@ -1,0 +1,197 @@
+# This is a Mockintosh configuration file.
+# Mockintosh provides a microservices friendly, small footprint HTTP mock service.
+# A standard laptop can run dozens of Mockintosh instances, or you can run all instances in a single Docker container.
+#
+# Install Mockintosh:                 pip3 install mockintosh
+# Run locally:                        mockintosh <this-file>
+# Run with Docker:                    docker run -it -p 8000-8005:8000-8005 -v `pwd`:/tmp testrio/mockintosh /tmp/<this-file>
+# More information can be found here: https://github.com/up9inc/mockintosh
+
+---
+management:
+  port: 8000
+services:
+- name: https://apply.usbank.com
+  port: 8001
+  managementRoot: __admin
+  oas: '@mock-data/up9-https___apply.usbank.com-spec.json'
+  endpoints:
+  - path: /apply/apply.html
+    response:
+      status: 302
+- name: https://bm.adentifi.com
+  port: 8002
+  managementRoot: __admin
+  oas: '@mock-data/up9-https___bm.adentifi.com-spec.json'
+  endpoints:
+  - path: /pixel/conv/{{param}}
+    response:
+      status: 302
+      headers:
+        Content-Type: text/html
+- name: https://locations.usbank.com
+  port: 8003
+  managementRoot: __admin
+  oas: '@mock-data/up9-https___locations.usbank.com-spec.json'
+  endpoints:
+  - path: /search.html
+    response:
+      headers:
+        Content-Type: text/html
+      body: '@mock-data/resp_locations_usbank_com_39.html'
+      useTemplating: false
+  - path: /{{param}}
+    response:
+      headers:
+        Content-Type: text/html
+      body: '@mock-data/resp_locations_usbank_com_40.html'
+      useTemplating: false
+  - path: /search/{{param}}
+    response:
+      headers:
+        Content-Type: text/html
+      body: '@mock-data/resp_locations_usbank_com_41.html'
+      useTemplating: false
+- name: https://onboarding.usbank.com
+  port: 8004
+  managementRoot: __admin
+  oas: '@mock-data/up9-https___onboarding.usbank.com-spec.json'
+  endpoints:
+  - path: /{{param}}/v1/applications
+    response:
+      status: 201
+      headers:
+        Content-Type: application/json
+      body: '@mock-data/resp_onboarding_usbank_com_34.json'
+    method: post
+  - path: /{{param}}/v1/applications/{{applicationId}}/patch
+    response:
+      headers:
+        Content-Type: application/json
+      body: '@mock-data/resp_onboarding_usbank_com_35.json'
+    method: post
+  - path: /deposits/{{depositId}}/PI/start
+    response:
+      headers:
+        Content-Type: text/html
+      body: '@mock-data/resp_onboarding_usbank_com_36.html'
+      useTemplating: false
+  - path: /proxies/v1/validateAddress
+    response:
+      headers:
+        Content-Type: application/json
+      body: '@mock-data/resp_onboarding_usbank_com_37.json'
+    method: post
+- name: https://sales.usbank.com
+  port: 8005
+  managementRoot: __admin
+  oas: '@mock-data/up9-https___sales.usbank.com-spec.json'
+  endpoints:
+  - path: /product-configuration/v1/products/usbank/{{param}}/PI
+    response:
+      headers:
+        Content-Type: application/json
+      body: '@mock-data/resp_sales_usbank_com_38.json'
+      useTemplating: false
+- name: https://siteintercept.qualtrics.com
+  port: 8006
+  managementRoot: __admin
+  oas: '@mock-data/up9-https___siteintercept.qualtrics.com-spec.json'
+  endpoints:
+  - path: /WRSiteInterceptEngine/
+    response:
+      headers:
+        Content-Type: text/plain
+      body: impression stat message successfully produced
+      useTemplating: false
+    method: post
+  - path: /WRSiteInterceptEngine/Asset.php
+    response:
+      headers:
+        Content-Type: application/json
+      body: |-
+        {
+         "CreativeDefinition": {
+          "BrandID": "usbank",
+          "CreativeID": "CR_a2AsGQKhBoo8TgV",
+          "Revision": "1",
+          "Title": "Embedded Link - Apply",
+          "ZoneID": "ZN_6VxkyqYWaF9f1T7",
+          "Type": "Link",
+          "Options": {
+           "linkText": "Give feedback"
+          }
+         }
+        }
+  - path: /WRSiteInterceptEngine/Targeting.php
+    response:
+      headers:
+        Content-Type: application/json
+      body: '@mock-data/resp_siteintercept_qualtrics_com_20.json'
+    method: post
+- name: https://usbank-app.quantummetric.com
+  port: 8007
+  managementRoot: __admin
+  oas: '@mock-data/up9-https___usbank-app.quantummetric.com-spec.json'
+  endpoints:
+  - path: /
+    response:
+      headers:
+        Content-Type: application/json
+    method: post
+  - path: /
+    response:
+      headers:
+        Content-Type: application/json
+      body: '@mock-data/resp_usbank_app_quantummetric_com_22.json'
+- name: https://usbank-sync.quantummetric.com
+  port: 8008
+  managementRoot: __admin
+  oas: '@mock-data/up9-https___usbank-sync.quantummetric.com-spec.json'
+  endpoints:
+  - path: /
+    response:
+      headers:
+        Content-Type: application/json
+    method: post
+- name: https://www.usbank.com
+  port: 8009
+  managementRoot: __admin
+  oas: '@mock-data/up9-https___www.usbank.com-spec.json'
+  endpoints:
+  - path: /bank-accounts/checking-accounts.html
+    response:
+      headers:
+        Content-Type: text/html
+      body: '@mock-data/resp_www_usbank_com_1.html'
+      useTemplating: false
+  - path: /bank-accounts/checking-accounts/gold-checking-account.html
+    response:
+      headers:
+        Content-Type: text/html
+      body: '@mock-data/resp_www_usbank_com_2.html'
+      useTemplating: false
+  - path: /index.html
+    response:
+      headers:
+        Content-Type: text/html
+      body: '@mock-data/resp_www_usbank_com_3.html'
+      useTemplating: false
+  - path: /plpXRb/YlO/{{param1}}/{{param2}}/{{param3}}/{{param4}}/aEs/{{aeId}}
+    response:
+      status: 201
+      headers:
+        Content-Type: application/json
+      body: |-
+        {
+         "success": true
+        }
+      useTemplating: false
+    method: post
+  - path: /svt/usbank/shield/fetchDisclosureContent
+    response:
+      headers:
+        Content-Type: application/json
+      body: '@mock-data/resp_www_usbank_com_5.json'
+      useTemplating: false
+    method: post

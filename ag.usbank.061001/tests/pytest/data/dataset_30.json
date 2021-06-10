@@ -1,0 +1,13 @@
+{
+ "parameters": [
+  {
+   "name": "param",
+   "uuid": "073f2c41-9d66-43ed-aca3-b59b061fdce1"
+  }
+ ],
+ "rows": [
+  {
+   "param": "ppt=2024"
+  }
+ ]
+}

@@ -1,0 +1,18 @@
+{
+ "parameters": [
+  {
+   "name": "param",
+   "uuid": "8851d25c-a5ca-4d1c-9da9-b77ef2c68984"
+  },
+  {
+   "name": "productCode",
+   "uuid": "b44fe614-3a9c-4d34-93d6-913954a1baf3"
+  }
+ ],
+ "rows": [
+  {
+   "param": "applicationintake",
+   "productCode": "DDA"
+  }
+ ]
+}

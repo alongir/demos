@@ -1,0 +1,17 @@
+{
+ "applicants": [
+  {
+   "addresses": {
+    "primary": {}
+   }
+  }
+ ],
+ "channel": "WEB",
+ "products": [
+  {
+   "productCode": "{{productCode}}",
+   "subProductCode": "PI"
+  }
+ ],
+ "tenant": "usbank"
+}

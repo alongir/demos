@@ -1,0 +1,46 @@
+{
+ "info": {
+  "title": "https://apply.usbank.com",
+  "version": "0.0"
+ },
+ "openapi": "3.0.2",
+ "paths": {
+  "/apply/apply.html": {
+   "get": {
+    "operationId": "d0aa0701-5e83-4dce-bbb8-2ac811cb6b3d",
+    "parameters": [
+     {
+      "in": "query",
+      "name": "PRODUCT_CODE",
+      "required": true,
+      "schema": {
+       "enum": [
+        "DDA"
+       ],
+       "type": "string"
+      }
+     },
+     {
+      "in": "query",
+      "name": "SUB_PRODUCT_CODE",
+      "required": true,
+      "schema": {
+       "enum": [
+        "PI"
+       ],
+       "type": "string"
+      }
+     }
+    ],
+    "responses": {
+     "302": {
+      "description": "Found"
+     }
+    },
+    "summary": "Seen 1 requests"
+   },
+   "parameters": []
+  }
+ },
+ "tags": []
+}

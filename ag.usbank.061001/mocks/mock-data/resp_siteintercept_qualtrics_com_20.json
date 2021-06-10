@@ -1,0 +1,565 @@
+{
+ "Intercepts": [
+  {
+   "InterceptID": "SI_9XoIhGSaSPrtWpn",
+   "InterceptRevision": null,
+   "Decision": {
+    "ActionSetID": null,
+    "Creative": null,
+    "Target": {
+     "Type": "",
+     "URL": "",
+     "OriginalURL": null,
+     "OriginalURLOrigin": null,
+     "DisplayType": null
+    },
+    "PopUnderTarget": null
+   },
+   "DistributionID": null,
+   "DirectoryID": null,
+   "ContactID": null,
+   "SurveyID": null
+  },
+  {
+   "InterceptID": "SI_2bepQXInI9bcurP",
+   "InterceptRevision": null,
+   "Decision": {
+    "ActionSetID": null,
+    "Creative": null,
+    "Target": {
+     "Type": "",
+     "URL": "",
+     "OriginalURL": null,
+     "OriginalURLOrigin": null,
+     "DisplayType": null
+    },
+    "PopUnderTarget": null
+   },
+   "DistributionID": null,
+   "DirectoryID": null,
+   "ContactID": null,
+   "SurveyID": null
+  },
+  {
+   "InterceptID": "SI_9tO7VGAkSdck0cd",
+   "InterceptRevision": null,
+   "Decision": {
+    "ActionSetID": null,
+    "Creative": null,
+    "Target": {
+     "Type": "",
+     "URL": "",
+     "OriginalURL": null,
+     "OriginalURLOrigin": null,
+     "DisplayType": null
+    },
+    "PopUnderTarget": null
+   },
+   "DistributionID": null,
+   "DirectoryID": null,
+   "ContactID": null,
+   "SurveyID": null
+  },
+  {
+   "InterceptID": "SI_0r14EQ7Yisvnn1j",
+   "InterceptRevision": null,
+   "Decision": {
+    "ActionSetID": null,
+    "Creative": null,
+    "Target": {
+     "Type": "",
+     "URL": "",
+     "OriginalURL": null,
+     "OriginalURLOrigin": null,
+     "DisplayType": null
+    },
+    "PopUnderTarget": null
+   },
+   "DistributionID": null,
+   "DirectoryID": null,
+   "ContactID": null,
+   "SurveyID": null
+  },
+  {
+   "InterceptID": "SI_6tnF0MibCGFhGv3",
+   "InterceptRevision": null,
+   "Decision": {
+    "ActionSetID": null,
+    "Creative": null,
+    "Target": {
+     "Type": "",
+     "URL": "",
+     "OriginalURL": null,
+     "OriginalURLOrigin": null,
+     "DisplayType": null
+    },
+    "PopUnderTarget": null
+   },
+   "DistributionID": null,
+   "DirectoryID": null,
+   "ContactID": null,
+   "SurveyID": null
+  },
+  {
+   "InterceptID": "SI_cZsybNFFZrdjlsN",
+   "InterceptRevision": null,
+   "Decision": {
+    "ActionSetID": null,
+    "Creative": null,
+    "Target": {
+     "Type": "",
+     "URL": "",
+     "OriginalURL": null,
+     "OriginalURLOrigin": null,
+     "DisplayType": null
+    },
+    "PopUnderTarget": null
+   },
+   "DistributionID": null,
+   "DirectoryID": null,
+   "ContactID": null,
+   "SurveyID": null
+  },
+  {
+   "InterceptID": "SI_3ag7VqhEfbMCjml",
+   "InterceptRevision": null,
+   "Decision": {
+    "ActionSetID": null,
+    "Creative": null,
+    "Target": {
+     "Type": "",
+     "URL": "",
+     "OriginalURL": null,
+     "OriginalURLOrigin": null,
+     "DisplayType": null
+    },
+    "PopUnderTarget": null
+   },
+   "DistributionID": null,
+   "DirectoryID": null,
+   "ContactID": null,
+   "SurveyID": null
+  },
+  {
+   "InterceptID": "SI_bfq0esEjuYMrYXA",
+   "InterceptRevision": null,
+   "Decision": {
+    "ActionSetID": null,
+    "Creative": null,
+    "Target": {
+     "Type": "",
+     "URL": "",
+     "OriginalURL": null,
+     "OriginalURLOrigin": null,
+     "DisplayType": null
+    },
+    "PopUnderTarget": null
+   },
+   "DistributionID": null,
+   "DirectoryID": null,
+   "ContactID": null,
+   "SurveyID": null
+  }
+ ],
+ "ClientSideIntercepts": [
+  {
+   "InterceptID": "SI_bfq0esEjuYMrYXA",
+   "Name": "OLB Login Persistent Feedback Badge",
+   "Active": true,
+   "RandomizedActionSets": false,
+   "InterceptRevision": "{{random.int 2 26}}",
+   "PreventRepeatedDisplay": "0",
+   "HideOnLocalStorageDisabled": true,
+   "HideOnCookiesDisabled": true,
+   "LogicTree": {
+    "Value": false,
+    "Type": "ValueNode"
+   },
+   "ActionSets": [],
+   "ContactID": null,
+   "DistributionID": null,
+   "DirectoryID": null,
+   "ContactFrequencyRulesEnabled": false
+  },
+  {
+   "InterceptID": "SI_3ag7VqhEfbMCjml",
+   "Name": "Dotcom Persistent Feedback Button",
+   "Active": true,
+   "RandomizedActionSets": false,
+   "InterceptRevision": "{{random.int 2 26}}",
+   "PreventRepeatedDisplay": "0",
+   "HideOnLocalStorageDisabled": true,
+   "HideOnCookiesDisabled": true,
+   "LogicTree": {
+    "Value": false,
+    "Type": "ValueNode"
+   },
+   "ActionSets": [],
+   "ContactID": null,
+   "DistributionID": null,
+   "DirectoryID": null,
+   "ContactFrequencyRulesEnabled": false
+  },
+  {
+   "InterceptID": "SI_cZsybNFFZrdjlsN",
+   "Name": "Dotcom Mobile Intercept",
+   "Active": true,
+   "RandomizedActionSets": false,
+   "InterceptRevision": "{{random.int 2 26}}",
+   "PreventRepeatedDisplay": "90",
+   "HideOnLocalStorageDisabled": true,
+   "HideOnCookiesDisabled": true,
+   "LogicTree": {
+    "Value": false,
+    "Type": "ValueNode"
+   },
+   "ActionSets": [],
+   "ContactID": null,
+   "DistributionID": null,
+   "DirectoryID": null,
+   "ContactFrequencyRulesEnabled": false
+  },
+  {
+   "InterceptID": "SI_errLdpEuK9y5ENf",
+   "Name": "Dotcom Web Intercept",
+   "Active": true,
+   "RandomizedActionSets": false,
+   "InterceptRevision": "{{random.int 2 26}}",
+   "PreventRepeatedDisplay": "90",
+   "HideOnLocalStorageDisabled": true,
+   "HideOnCookiesDisabled": true,
+   "LogicTree": {
+    "Operator": "AND",
+    "Left": {
+     "Comparator": "GTE",
+     "Left": {
+      "LogicType": "PageCount",
+      "Expression": "Total",
+      "Type": "LogicNode"
+     },
+     "Right": {
+      "Value": "3",
+      "Type": "ValueNode"
+     },
+     "Type": "ComparatorNode"
+    },
+    "Right": {
+     "Comparator": "LTE",
+     "Left": {
+      "LogicType": "PageCount",
+      "Expression": "Total",
+      "Type": "LogicNode"
+     },
+     "Right": {
+      "Value": "5",
+      "Type": "ValueNode"
+     },
+     "Type": "ComparatorNode"
+    },
+    "Type": "ConjunctionNode"
+   },
+   "ActionSets": [
+    {
+     "ActionSetID": "AS_8G1uwkAccxLyeNf",
+     "Label": "English - Customer",
+     "Creative": {
+      "ID": "CR_2tPQefIgumb1Tnf",
+      "Name": "Desktop Web",
+      "Revision": "1",
+      "AnchorTags": {},
+      "Type": "WebResponsiveDialog"
+     },
+     "Target": {
+      "Type": "Survey",
+      "URL": "https://siteintercept.qualtrics.com/WRSiteInterceptEngine/?Q_CLIENTTYPE=web&Q_Redirect=https://usbank.az1.qualtrics.com/jfe/form/SV_eg0zcxeawRyW5tr?Q_CHL%3Dsi&Q_CID=CR_2tPQefIgumb1Tnf&Q_ASID=AS_8G1uwkAccxLyeNf&Q_SRT=bQlR%2Bvp7Bt4%2BS1rnqdrq6g%3D%3D&Q_SIID=SI_errLdpEuK9y5ENf&Q_LOC=https://www.usbank.com/index.html&Q_CLIENTVERSION=1.52.0",
+      "OriginalURL": "https://usbank.az1.qualtrics.com/jfe/form/SV_eg0zcxeawRyW5tr?Q_CHL=si",
+      "OriginalURLOrigin": "https://usbank.az1.qualtrics.com",
+      "DisplayType": "EmbeddedTarget"
+     },
+     "SurveyID": "SV_eg0zcxeawRyW5tr",
+     "ContactFrequencyPassed": null,
+     "PopUnderTarget": null,
+     "LogicTree": {
+      "Comparator": "NOT_EMPTY",
+      "Left": {
+       "LogicType": "Cookie",
+       "Expression": "riblpid",
+       "Type": "LogicNode"
+      },
+      "Right": null,
+      "Type": "ComparatorNode"
+     }
+    },
+    {
+     "ActionSetID": "AS_31373604",
+     "Label": "English - Prospect",
+     "Creative": {
+      "ID": "CR_2tPQefIgumb1Tnf",
+      "Name": "Desktop Web",
+      "Revision": "1",
+      "AnchorTags": {},
+      "Type": "WebResponsiveDialog"
+     },
+     "Target": {
+      "Type": "Survey",
+      "URL": "https://siteintercept.qualtrics.com/WRSiteInterceptEngine/?Q_CLIENTTYPE=web&Q_Redirect=https://usbank.az1.qualtrics.com/jfe/form/SV_eg0zcxeawRyW5tr?Q_CHL%3Dsi&Q_CID=CR_2tPQefIgumb1Tnf&Q_ASID=AS_31373604&Q_SRT=bQlR%2Bvp7Bt4%2BS1rnqdrq6g%3D%3D&Q_SIID=SI_errLdpEuK9y5ENf&Q_LOC=https://www.usbank.com/index.html&Q_CLIENTVERSION=1.52.0",
+      "OriginalURL": "https://usbank.az1.qualtrics.com/jfe/form/SV_eg0zcxeawRyW5tr?Q_CHL=si",
+      "OriginalURLOrigin": "https://usbank.az1.qualtrics.com",
+      "DisplayType": "EmbeddedTarget"
+     },
+     "SurveyID": "SV_eg0zcxeawRyW5tr",
+     "ContactFrequencyPassed": null,
+     "PopUnderTarget": null,
+     "LogicTree": {
+      "Comparator": "IS_EMPTY",
+      "Left": {
+       "LogicType": "Cookie",
+       "Expression": "riblpid",
+       "Type": "LogicNode"
+      },
+      "Right": null,
+      "Type": "ComparatorNode"
+     }
+    }
+   ],
+   "ContactID": null,
+   "DistributionID": null,
+   "DirectoryID": null,
+   "ContactFrequencyRulesEnabled": false
+  },
+  {
+   "InterceptID": "SI_6tnF0MibCGFhGv3",
+   "Name": "Microsurvey - CD Renewal",
+   "Active": true,
+   "RandomizedActionSets": false,
+   "InterceptRevision": "{{random.int 2 26}}",
+   "PreventRepeatedDisplay": "90",
+   "HideOnLocalStorageDisabled": true,
+   "HideOnCookiesDisabled": true,
+   "LogicTree": {
+    "Value": false,
+    "Type": "ValueNode"
+   },
+   "ActionSets": [],
+   "ContactID": null,
+   "DistributionID": null,
+   "DirectoryID": null,
+   "ContactFrequencyRulesEnabled": false
+  },
+  {
+   "InterceptID": "SI_57GL0UFxoO6mKC9",
+   "Name": "Persistent Feedback Embedded Link",
+   "Active": true,
+   "RandomizedActionSets": false,
+   "InterceptRevision": "{{random.int 2 26}}",
+   "PreventRepeatedDisplay": "0",
+   "HideOnLocalStorageDisabled": true,
+   "HideOnCookiesDisabled": true,
+   "LogicTree": {
+    "Value": true,
+    "Type": "ValueNode"
+   },
+   "ActionSets": [
+    {
+     "ActionSetID": "AS_6sxWQLZpws73aux",
+     "Label": null,
+     "Creative": {
+      "ID": "CR_bNJ69FZUut5fiwB",
+      "Name": "Embedded Link",
+      "Revision": "1",
+      "AnchorTags": {},
+      "Type": "Link"
+     },
+     "Target": {
+      "Type": "Survey",
+      "URL": "https://siteintercept.qualtrics.com/WRSiteInterceptEngine/?Q_CLIENTTYPE=web&Q_Redirect=https://usbank.az1.qualtrics.com/jfe/form/SV_4UcQWmoXvR22RSZ?Q_CHL%3Dsi&Q_CID=CR_bNJ69FZUut5fiwB&Q_ASID=AS_6sxWQLZpws73aux&Q_SRT=vsMqPf9m2DoJAcygK5Yi6Q%3D%3D&Q_SIID=SI_57GL0UFxoO6mKC9&Q_LOC=https://www.usbank.com/index.html&Q_CLIENTVERSION=1.52.0",
+      "OriginalURL": "https://usbank.az1.qualtrics.com/jfe/form/SV_4UcQWmoXvR22RSZ?Q_CHL=si",
+      "OriginalURLOrigin": "https://usbank.az1.qualtrics.com",
+      "DisplayType": "EmbeddedTarget"
+     },
+     "SurveyID": "SV_4UcQWmoXvR22RSZ",
+     "ContactFrequencyPassed": null,
+     "PopUnderTarget": null,
+     "LogicTree": {
+      "Value": true,
+      "Type": "ValueNode"
+     }
+    }
+   ],
+   "ContactID": null,
+   "DistributionID": null,
+   "DirectoryID": null,
+   "ContactFrequencyRulesEnabled": false
+  },
+  {
+   "InterceptID": "SI_0r14EQ7Yisvnn1j",
+   "Name": "OLB TUX Intercept",
+   "Active": true,
+   "RandomizedActionSets": false,
+   "InterceptRevision": "{{random.int 2 26}}",
+   "PreventRepeatedDisplay": "90",
+   "HideOnLocalStorageDisabled": true,
+   "HideOnCookiesDisabled": true,
+   "LogicTree": {
+    "Value": false,
+    "Type": "ValueNode"
+   },
+   "ActionSets": [],
+   "ContactID": null,
+   "DistributionID": null,
+   "DirectoryID": null,
+   "ContactFrequencyRulesEnabled": false
+  },
+  {
+   "InterceptID": "SI_9tO7VGAkSdck0cd",
+   "Name": "Wealth Web Intercept",
+   "Active": true,
+   "RandomizedActionSets": false,
+   "InterceptRevision": "{{random.int 2 26}}",
+   "PreventRepeatedDisplay": "60",
+   "HideOnLocalStorageDisabled": true,
+   "HideOnCookiesDisabled": true,
+   "LogicTree": {
+    "Value": false,
+    "Type": "ValueNode"
+   },
+   "ActionSets": [],
+   "ContactID": null,
+   "DistributionID": null,
+   "DirectoryID": null,
+   "ContactFrequencyRulesEnabled": false
+  },
+  {
+   "InterceptID": "SI_2bepQXInI9bcurP",
+   "Name": "OLB Web Intercept",
+   "Active": true,
+   "RandomizedActionSets": false,
+   "InterceptRevision": "{{random.int 2 26}}",
+   "PreventRepeatedDisplay": "90",
+   "HideOnLocalStorageDisabled": true,
+   "HideOnCookiesDisabled": true,
+   "LogicTree": {
+    "Value": false,
+    "Type": "ValueNode"
+   },
+   "ActionSets": [],
+   "ContactID": null,
+   "DistributionID": null,
+   "DirectoryID": null,
+   "ContactFrequencyRulesEnabled": false
+  },
+  {
+   "InterceptID": "SI_9XoIhGSaSPrtWpn",
+   "Name": "Investment Options - Intercept",
+   "Active": true,
+   "RandomizedActionSets": false,
+   "InterceptRevision": "{{random.int 2 26}}",
+   "PreventRepeatedDisplay": "1",
+   "HideOnLocalStorageDisabled": true,
+   "HideOnCookiesDisabled": true,
+   "LogicTree": {
+    "Value": false,
+    "Type": "ValueNode"
+   },
+   "ActionSets": [],
+   "ContactID": null,
+   "DistributionID": null,
+   "DirectoryID": null,
+   "ContactFrequencyRulesEnabled": false
+  },
+  {
+   "InterceptID": "SI_e39Wa46ASKtqbcx",
+   "Name": "Apply Persistent Feedback - Embedded Link",
+   "Active": true,
+   "RandomizedActionSets": false,
+   "InterceptRevision": "{{random.int 2 26}}",
+   "PreventRepeatedDisplay": "0",
+   "HideOnLocalStorageDisabled": true,
+   "HideOnCookiesDisabled": true,
+   "LogicTree": {
+    "Value": true,
+    "Type": "ValueNode"
+   },
+   "ActionSets": [
+    {
+     "ActionSetID": "AS_0dLuMiPwh9U6ukR",
+     "Label": null,
+     "Creative": {
+      "ID": "CR_a2AsGQKhBoo8TgV",
+      "Name": "Embedded Link - Apply",
+      "Revision": "1",
+      "AnchorTags": {},
+      "Type": "Link"
+     },
+     "Target": {
+      "Type": "Survey",
+      "URL": "https://siteintercept.qualtrics.com/WRSiteInterceptEngine/?Q_CLIENTTYPE=web&Q_Redirect=https://usbank.az1.qualtrics.com/jfe/form/SV_6E6UYu7Dc6nykiF?Q_CHL%3Dsi&Q_CID=CR_a2AsGQKhBoo8TgV&Q_ASID=AS_0dLuMiPwh9U6ukR&Q_SRT=Kv9%2BeCPGavdIvVO4062p6A%3D%3D&Q_SIID=SI_e39Wa46ASKtqbcx&Q_LOC=https://www.usbank.com/index.html&Q_CLIENTVERSION=1.52.0",
+      "OriginalURL": "https://usbank.az1.qualtrics.com/jfe/form/SV_6E6UYu7Dc6nykiF?Q_CHL=si",
+      "OriginalURLOrigin": "https://usbank.az1.qualtrics.com",
+      "DisplayType": "EmbeddedTarget"
+     },
+     "SurveyID": "SV_6E6UYu7Dc6nykiF",
+     "ContactFrequencyPassed": null,
+     "PopUnderTarget": null,
+     "LogicTree": {
+      "Value": true,
+      "Type": "ValueNode"
+     }
+    }
+   ],
+   "ContactID": null,
+   "DistributionID": null,
+   "DirectoryID": null,
+   "ContactFrequencyRulesEnabled": false
+  }
+ ],
+ "Modules": {
+  "Core": "latest"
+ },
+ "FeatureFlags": {
+  "DUX.ClientSideTargetingM1": true,
+  "SI.ResponsiveDialog.EnableDisplayOptions": true,
+  "isClientLoggingEnabled": false,
+  "DX.EmbeddedFeedback_NewAPIs": false,
+  "DX.PostToStart": true,
+  "deferredSliderLoadingFeatureEnabled": true,
+  "DX.EmbeddedFeedback_GA_Visitor": true,
+  "isLatencyLoggingEnabled": true
+ },
+ "RequestData": {
+  "CORSOrigin": "https://www.usbank.com",
+  "ID": "ZN_6VxkyqYWaF9f1T7",
+  "adobeSCVariable": "s",
+  "bVersion": "Published",
+  "brandDC": "sjc1.qualtrics.com",
+  "brandID": "usbank",
+  "browser": "Chrome",
+  "browserVersion": 89.0,
+  "cookieDomain": "",
+  "displayInterceptType": "",
+  "eventTrackers": {},
+  "hasBeenResolved": false,
+  "hasDependencies": true,
+  "isBrowserSupported": true,
+  "isDebug": false,
+  "isMobile": false,
+  "historyStorageType": "sessionStorage",
+  "historyStorageSize": 500,
+  "maxCookieSize": 500,
+  "osName": "Mac OS X",
+  "screenCaptureServiceBaseURL": "https://sjc1.qualtrics.com/htmltoimage/",
+  "validIntercepts": {
+   "SI_errLdpEuK9y5ENf": "DependencyResolver",
+   "SI_57GL0UFxoO6mKC9": "AS_6sxWQLZpws73aux",
+   "SI_e39Wa46ASKtqbcx": "AS_0dLuMiPwh9U6ukR"
+  },
+  "zoneManualDisplay": false,
+  "reevaluateInterceptOnUrlChange": false
+ },
+ "Dependencies": {
+  "Cookie": [
+   "riblpid"
+  ],
+  "PageCount": true
+ }
+}

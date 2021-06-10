@@ -1,0 +1,152 @@
+{
+ "parameters": [
+  {
+   "name": "countriesOfCitizenship",
+   "uuid": "c83417a7-990b-4b51-b8e8-33c0746bf702"
+  },
+  {
+   "name": "email",
+   "uuid": "351093f8-10fc-47f8-bcf6-2fc35af9697f"
+  },
+  {
+   "name": "lastName",
+   "uuid": "0f6b0daf-e6b5-4ee1-9eef-f21234b19f69"
+  },
+  {
+   "name": "monthlyHousingPayment",
+   "uuid": "48395bdf-7d18-4711-9b51-6013988cb991"
+  },
+  {
+   "name": "number",
+   "uuid": "a4ae7e2a-bf24-4235-a95b-fac83329a345"
+  },
+  {
+   "name": "op",
+   "uuid": "e0ff295d-2c70-430d-96d1-a3c9670572bd"
+  },
+  {
+   "name": "param",
+   "uuid": "8851d25c-a5ca-4d1c-9da9-b77ef2c68984"
+  },
+  {
+   "name": "path",
+   "uuid": "d4f060ec-c71d-4475-baee-e0d5813b2a63"
+  },
+  {
+   "name": "productCode",
+   "uuid": "b44fe614-3a9c-4d34-93d6-913954a1baf3"
+  }
+ ],
+ "rows": [
+  {
+   "countriesOfCitizenship": "AX",
+   "email": "john.dow.1981@protonmail.com",
+   "lastName": "Dow",
+   "monthlyHousingPayment": "10",
+   "number": "6506667766",
+   "op": "replace",
+   "param": "applicationintake",
+   "path": "/products/0/promocode",
+   "productCode": "DDA"
+  },
+  {
+   "countriesOfCitizenship": "AX",
+   "email": "john.dow.1981@protonmail.com",
+   "lastName": "Dow",
+   "monthlyHousingPayment": "10",
+   "number": "6506667766",
+   "op": "replace",
+   "param": "applicationintake",
+   "path": "/applicants/0/phones/primary",
+   "productCode": "DDA"
+  },
+  {
+   "countriesOfCitizenship": "AX",
+   "email": "john.dow.1981@protonmail.com",
+   "lastName": "Dow",
+   "monthlyHousingPayment": "10",
+   "number": "6506667766",
+   "op": "replace",
+   "param": "applicationintake",
+   "path": "/applicants/0/emails",
+   "productCode": "DDA"
+  },
+  {
+   "countriesOfCitizenship": "AX",
+   "email": "john.dow.1981@protonmail.com",
+   "lastName": "Dow",
+   "monthlyHousingPayment": "10",
+   "number": "6506667766",
+   "op": "replace",
+   "param": "applicationintake",
+   "path": "/applicants/0/name",
+   "productCode": "DDA"
+  },
+  {
+   "countriesOfCitizenship": "AX",
+   "email": "john.dow.1981@protonmail.com",
+   "lastName": "Dow",
+   "monthlyHousingPayment": "10",
+   "number": "6506667766",
+   "op": "replace",
+   "param": "applicationintake",
+   "path": "/applicants/0/housing",
+   "productCode": "DDA"
+  },
+  {
+   "countriesOfCitizenship": "AX",
+   "email": "john.dow.1981@protonmail.com",
+   "lastName": "Dow",
+   "monthlyHousingPayment": "10",
+   "number": "6506667766",
+   "op": "replace",
+   "param": "applicationintake",
+   "path": "/applicants/0/citizenshipAndResidence",
+   "productCode": "DDA"
+  },
+  {
+   "countriesOfCitizenship": "AX",
+   "email": "john.dow.1981@protonmail.com",
+   "lastName": "Dow",
+   "monthlyHousingPayment": "10",
+   "number": "6506667766",
+   "op": "replace",
+   "param": "applicationintake",
+   "path": "/applicants/0/addresses/primary/county",
+   "productCode": "DDA"
+  },
+  {
+   "countriesOfCitizenship": "AX",
+   "email": "john.dow.1981@protonmail.com",
+   "lastName": "Dow",
+   "monthlyHousingPayment": "10",
+   "number": "6506667766",
+   "op": "replace",
+   "param": "applicationintake",
+   "path": "/applicants/0/addresses/primary/zipCode",
+   "productCode": "DDA"
+  },
+  {
+   "countriesOfCitizenship": "AX",
+   "email": "john.dow.1981@protonmail.com",
+   "lastName": "Dow",
+   "monthlyHousingPayment": "10",
+   "number": "6506667766",
+   "op": "replace",
+   "param": "applicationintake",
+   "path": "/applicants/0/addresses/primary/state",
+   "productCode": "DDA"
+  },
+  {
+   "countriesOfCitizenship": "AX",
+   "email": "john.dow.1981@protonmail.com",
+   "lastName": "Dow",
+   "monthlyHousingPayment": "10",
+   "number": "6506667766",
+   "op": "replace",
+   "param": "applicationintake",
+   "path": "/applicants/0/addresses/primary/city",
+   "productCode": "DDA"
+  }
+ ]
+}

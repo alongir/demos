@@ -1,0 +1,46 @@
+{
+ "parameters": [
+  {
+   "name": "param",
+   "uuid": "8851d25c-a5ca-4d1c-9da9-b77ef2c68984"
+  },
+  {
+   "name": "productCode",
+   "uuid": "b44fe614-3a9c-4d34-93d6-913954a1baf3"
+  },
+  {
+   "name": "usAddress",
+   "uuid": "fadc2c86-8219-4733-9f8f-b43a17a5cefb"
+  },
+  {
+   "name": "zipCode",
+   "uuid": "c6a3f56a-cf6f-462a-a6fa-3892823f9c18"
+  }
+ ],
+ "rows": [
+  {
+   "param": "applicationintake",
+   "productCode": "DDA",
+   "usAddress": "6756 Central Ave",
+   "zipCode": "94560"
+  },
+  {
+   "param": "applicationintake",
+   "productCode": "DDA",
+   "usAddress": "",
+   "zipCode": "94560"
+  },
+  {
+   "param": "applicationintake",
+   "productCode": "DDA",
+   "usAddress": "1",
+   "zipCode": "94560"
+  },
+  {
+   "param": "applicationintake",
+   "productCode": "DDA",
+   "usAddress": "11",
+   "zipCode": "94560"
+  }
+ ]
+}

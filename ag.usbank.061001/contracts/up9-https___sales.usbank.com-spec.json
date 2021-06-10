@@ -1,0 +1,224 @@
+{
+ "info": {
+  "title": "https://sales.usbank.com",
+  "version": "0.0"
+ },
+ "openapi": "3.0.2",
+ "paths": {
+  "/product-configuration/v1/products/usbank/{param}/PI": {
+   "get": {
+    "operationId": "5e986a13-d65f-47d2-a507-5abb2574799e",
+    "parameters": [
+     {
+      "in": "header",
+      "name": "x-requested-with",
+      "required": false,
+      "schema": {
+       "enum": [
+        "X-Requested-With"
+       ],
+       "type": "string"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "content": {
+       "application/json": {
+        "example": {
+         "derivedProductData": null,
+         "description": "U.S. Bank Gold Checking Package",
+         "enabled": true,
+         "expiryDays": 0,
+         "funding": {
+          "digital": [
+           {
+            "max": 250,
+            "maxFailOver": 25,
+            "min": 25,
+            "minFailOver": 25,
+            "optimum": 100,
+            "optimumFailOver": 25,
+            "type": "external",
+            "visible": true
+           },
+           {
+            "max": 250,
+            "maxFailOver": 25,
+            "min": 25,
+            "minFailOver": 25,
+            "optimum": 100,
+            "optimumFailOver": 25,
+            "type": "internal",
+            "visible": true
+           },
+           {
+            "max": 250,
+            "maxFailOver": 25,
+            "min": 25,
+            "minFailOver": 25,
+            "optimum": 100,
+            "optimumFailOver": 25,
+            "type": "card",
+            "visible": true
+           },
+           {
+            "max": 250,
+            "maxFailOver": 25,
+            "min": 25,
+            "minFailOver": 25,
+            "optimum": 100,
+            "optimumFailOver": 25,
+            "type": "check",
+            "visible": false
+           }
+          ]
+         },
+         "helpPhoneNumber": "800-245-4575",
+         "id": "15",
+         "isJointEnabled": true,
+         "postSubmitRetrieveEnabled": true,
+         "productCode": "DDA",
+         "ratesProductKey": null,
+         "smsTemplate": null,
+         "subProductCode": "PI",
+         "subtype": null,
+         "tenant": "usbank",
+         "throttleResults": null,
+         "userRole": null
+        },
+        "schema": {
+         "properties": {
+          "derivedProductData": {},
+          "description": {
+           "type": "string"
+          },
+          "enabled": {
+           "type": "boolean"
+          },
+          "expiryDays": {
+           "type": "integer"
+          },
+          "funding": {
+           "properties": {
+            "digital": {
+             "items": {
+              "properties": {
+               "max": {
+                "type": "integer"
+               },
+               "maxFailOver": {
+                "type": "integer"
+               },
+               "min": {
+                "type": "integer"
+               },
+               "minFailOver": {
+                "type": "integer"
+               },
+               "optimum": {
+                "type": "integer"
+               },
+               "optimumFailOver": {
+                "type": "integer"
+               },
+               "type": {
+                "type": "string"
+               },
+               "visible": {
+                "type": "boolean"
+               }
+              },
+              "required": [
+               "max",
+               "maxFailOver",
+               "min",
+               "minFailOver",
+               "optimum",
+               "optimumFailOver",
+               "type",
+               "visible"
+              ],
+              "type": "object"
+             },
+             "type": "array"
+            }
+           },
+           "required": [
+            "digital"
+           ],
+           "type": "object"
+          },
+          "helpPhoneNumber": {
+           "type": "string"
+          },
+          "id": {
+           "type": "string"
+          },
+          "isJointEnabled": {
+           "type": "boolean"
+          },
+          "postSubmitRetrieveEnabled": {
+           "type": "boolean"
+          },
+          "productCode": {
+           "type": "string"
+          },
+          "ratesProductKey": {},
+          "smsTemplate": {},
+          "subProductCode": {
+           "type": "string"
+          },
+          "subtype": {},
+          "tenant": {
+           "type": "string"
+          },
+          "throttleResults": {},
+          "userRole": {}
+         },
+         "required": [
+          "derivedProductData",
+          "description",
+          "enabled",
+          "expiryDays",
+          "funding",
+          "helpPhoneNumber",
+          "id",
+          "isJointEnabled",
+          "postSubmitRetrieveEnabled",
+          "productCode",
+          "ratesProductKey",
+          "smsTemplate",
+          "subProductCode",
+          "subtype",
+          "tenant",
+          "throttleResults",
+          "userRole"
+         ],
+         "type": "object"
+        }
+       }
+      },
+      "description": "OK"
+     }
+    },
+    "summary": "Seen 1 requests"
+   },
+   "parameters": [
+    {
+     "in": "path",
+     "name": "param",
+     "required": true,
+     "schema": {
+      "enum": [
+       "DDA"
+      ],
+      "type": "string"
+     },
+     "style": "simple"
+    }
+   ]
+  }
+ },
+ "tags": []
+}

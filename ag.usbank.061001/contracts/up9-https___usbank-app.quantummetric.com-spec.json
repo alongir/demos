@@ -1,0 +1,411 @@
+{
+ "info": {
+  "title": "https://usbank-app.quantummetric.com",
+  "version": "0.0"
+ },
+ "openapi": "3.0.2",
+ "paths": {
+  "/": {
+   "get": {
+    "operationId": "329af87d-650c-41c9-aa31-5e05798fb590",
+    "parameters": [
+     {
+      "in": "query",
+      "name": "H",
+      "required": true,
+      "schema": {
+       "enum": [
+        "b51572b98559462c64e66839",
+        "959269ba9ce2bf0a23512e64",
+        "60dcc6baab495a0e721653cc",
+        "646509bb846ed6ff84c8c20b",
+        "951977bb3a53910e9ec94c7f"
+       ],
+       "type": "string"
+      }
+     },
+     {
+      "in": "query",
+      "name": "Q",
+      "required": true,
+      "schema": {
+       "enum": [
+        "3"
+       ],
+       "type": "string"
+      }
+     },
+     {
+      "in": "query",
+      "name": "s",
+      "required": true,
+      "schema": {
+       "enum": [
+        "f8d1280d50c795e4c43d82897a84fb45"
+       ],
+       "type": "string"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "content": {
+       "application/json": {
+        "example": {
+         "E": [
+          {
+           "i": 34,
+           "t": 1623341835077,
+           "v": ""
+          },
+          {
+           "i": 279,
+           "t": 1623341835468,
+           "v": "DTO Selectors Monitoring Campaign (Live Prod 11/17/2020):Experience B"
+          },
+          {
+           "i": 283,
+           "t": 1623341835469,
+           "v": "132608:1"
+          },
+          {
+           "i": 279,
+           "t": 1623341835469,
+           "v": "HP Master Campaign For Qualification Check (Prod 16/02/2021):Experience A"
+          },
+          {
+           "i": 283,
+           "t": 1623341835469,
+           "v": "135103:0"
+          },
+          {
+           "i": 279,
+           "t": 1623341835469,
+           "v": "OLB Global Master Campaign (Live Prod 12/20/2017):GlobalMasterOLB"
+          },
+          {
+           "i": 283,
+           "t": 1623341835469,
+           "v": "94307:0"
+          },
+          {
+           "i": 279,
+           "t": 1623341835469,
+           "v": "HP Hide Body Campaign (Live 02/05/2021):Experience A"
+          },
+          {
+           "i": 283,
+           "t": 1623341835469,
+           "v": "134834:0"
+          },
+          {
+           "i": 279,
+           "t": 1623341835469,
+           "v": "HP Master Campaign For MBOX Creation (Live 02/16/2021):Experience A"
+          },
+          {
+           "i": 283,
+           "t": 1623341835469,
+           "v": "135105:0"
+          },
+          {
+           "i": 279,
+           "t": 1623341835469,
+           "v": "DTO-4193 Cons HP BAU Checking Hero Banner test (LiveProd 06/07/2021):DTO4193RecE"
+          },
+          {
+           "i": 283,
+           "t": 1623341835469,
+           "v": "138646:4"
+          },
+          {
+           "i": 28,
+           "t": 1623341835077,
+           "v": ""
+          },
+          {
+           "i": 54,
+           "t": 1623341835077,
+           "v": "ZN_6VxkyqYWaF9f1T7"
+          },
+          {
+           "i": 553,
+           "t": 1623341835077,
+           "v": "prod:usbank.com"
+          },
+          {
+           "i": 302,
+           "t": 1623341851477,
+           "v": "usb:checking:home page"
+          },
+          {
+           "i": 28,
+           "t": 1623341851477,
+           "v": ""
+          },
+          {
+           "i": 302,
+           "t": 1623341857573,
+           "v": "usb:product:checking:u.s. bank gold checking"
+          },
+          {
+           "i": 28,
+           "t": 1623341857573,
+           "v": ""
+          },
+          {
+           "i": 302,
+           "t": 1623341861951,
+           "v": "usb:product:checking:u.s. bank gold checking"
+          },
+          {
+           "i": 28,
+           "t": 1623341861879,
+           "v": ""
+          },
+          {
+           "i": -22,
+           "t": 1623341864668,
+           "v": "DIV[cboxLoadingOverlay]: Load exceeded 6 seconds"
+          }
+         ],
+         "Ex": [],
+         "e": 11,
+         "s": 0
+        },
+        "schema": {
+         "additionalProperties": {
+          "items": {},
+          "type": "array"
+         },
+         "properties": {
+          "E": {
+           "items": {
+            "properties": {
+             "i": {
+              "type": "integer"
+             },
+             "t": {
+              "type": "integer"
+             },
+             "v": {
+              "type": "string"
+             }
+            },
+            "required": [
+             "i",
+             "t",
+             "v"
+            ],
+            "type": "object"
+           },
+           "type": "array"
+          },
+          "e": {
+           "type": "integer"
+          },
+          "s": {
+           "type": "integer"
+          }
+         },
+         "required": [
+          "E",
+          "e",
+          "s"
+         ],
+         "type": "object"
+        }
+       }
+      },
+      "description": "OK"
+     }
+    },
+    "summary": "Seen 10 requests"
+   },
+   "parameters": [],
+   "post": {
+    "operationId": "18ec5ff8-192b-4371-adbf-5d27c39072a5",
+    "parameters": [
+     {
+      "in": "query",
+      "name": "H",
+      "required": false,
+      "schema": {
+       "enum": [
+        "b51572b98559462c64e66839",
+        "959269ba9ce2bf0a23512e64",
+        "60dcc6baab495a0e721653cc",
+        "646509bb846ed6ff84c8c20b",
+        "951977bb3a53910e9ec94c7f"
+       ],
+       "type": "string"
+      }
+     },
+     {
+      "description": "Value is generated by function: randint(0, 1434)",
+      "in": "query",
+      "name": "N",
+      "required": true,
+      "schema": {
+       "enum": [
+        "11",
+        "0",
+        "35",
+        "1",
+        "101"
+       ],
+       "type": "string"
+      }
+     },
+     {
+      "description": "Value is generated by function: randint(0, 15)",
+      "in": "query",
+      "name": "P",
+      "required": true,
+      "schema": {
+       "enum": [
+        "1",
+        "0",
+        "2",
+        "3",
+        "4"
+       ],
+       "type": "string"
+      }
+     },
+     {
+      "in": "query",
+      "name": "Q",
+      "required": false,
+      "schema": {
+       "enum": [
+        "2"
+       ],
+       "type": "string"
+      }
+     },
+     {
+      "description": "Value is generated by function: randint(0, 102475)",
+      "in": "query",
+      "name": "S",
+      "required": true,
+      "schema": {
+       "enum": [
+        "4170",
+        "0",
+        "6022",
+        "2864",
+        "12951"
+       ],
+       "type": "string"
+      }
+     },
+     {
+      "in": "query",
+      "name": "T",
+      "required": true,
+      "schema": {
+       "enum": [
+        "B"
+       ],
+       "type": "string"
+      }
+     },
+     {
+      "in": "query",
+      "name": "U",
+      "required": false,
+      "schema": {
+       "enum": [
+        "26d33270fc5fdfff495eea6bc2da479e"
+       ],
+       "type": "string"
+      }
+     },
+     {
+      "in": "query",
+      "name": "s",
+      "required": false,
+      "schema": {
+       "enum": [
+        "f8d1280d50c795e4c43d82897a84fb45"
+       ],
+       "type": "string"
+      }
+     },
+     {
+      "description": "Value is generated by function: itimestamp1000()",
+      "in": "query",
+      "name": "t",
+      "required": true,
+      "schema": {
+       "enum": [
+        "1623341835077",
+        "1623341851477",
+        "1623341857573",
+        "1623341861879",
+        "1623341869126"
+       ],
+       "type": "string"
+      }
+     },
+     {
+      "description": "Origin: GET https://apply.usbank.com/apply/apply.html &rarr; header: location",
+      "in": "query",
+      "name": "u",
+      "required": true,
+      "schema": {
+       "enum": [
+        "https://www.usbank.com/index.html",
+        "https://www.usbank.com/bank-accounts/checking-accounts.html",
+        "https://www.usbank.com/bank-accounts/checking-accounts/gold-checking-account.html",
+        "https://www.usbank.com/bank-accounts/checking-accounts/gold-checking-account.html#applyGoldChecking",
+        "https://onboarding.usbank.com/deposits/DDA/PI/start"
+       ],
+       "type": "string"
+      }
+     },
+     {
+      "description": "Value is generated by function: itimestamp1000()",
+      "in": "query",
+      "name": "v",
+      "required": true,
+      "schema": {
+       "enum": [
+        "1623341835161",
+        "1623341835472",
+        "1623341835558",
+        "1623341840162",
+        "1623341840236"
+       ],
+       "type": "string"
+      }
+     },
+     {
+      "in": "query",
+      "name": "z",
+      "required": true,
+      "schema": {
+       "enum": [
+        "1"
+       ],
+       "type": "string"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "content": {
+       "application/json": {
+        "schema": {}
+       }
+      },
+      "description": "OK"
+     }
+    },
+    "summary": "Seen 92 requests"
+   }
+  }
+ },
+ "tags": []
+}

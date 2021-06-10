@@ -1,0 +1,13 @@
+{
+ "parameters": [
+  {
+   "name": "param",
+   "uuid": "300b5155-65e3-4c11-bdac-d64a418482e3"
+  }
+ ],
+ "rows": [
+  {
+   "param": "DDA"
+  }
+ ]
+}
