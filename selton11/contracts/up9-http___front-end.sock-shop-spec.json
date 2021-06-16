@@ -1364,10 +1364,10 @@
    "name": "cart"
   },
   {
-   "name": "catalogue"
+   "name": "orders"
   },
   {
-   "name": "orders"
+   "name": "catalogue"
   }
  ]
 }
