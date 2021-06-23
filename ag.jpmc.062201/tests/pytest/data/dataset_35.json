@@ -1,0 +1,82 @@
+{
+ "parameters": [
+  {
+   "name": "ssv_creativeid",
+   "uuid": "0dfedd64-430d-4652-8545-71bc631c1123"
+  },
+  {
+   "name": "ssv_locale",
+   "uuid": "6af42bff-edd9-4d5b-9c9b-9ba39afe3ba8"
+  },
+  {
+   "name": "ssv_midas_id",
+   "uuid": "1da791e7-cbf3-4f19-934e-14af19d1771e"
+  },
+  {
+   "name": "ssv_v1st",
+   "uuid": "dfe03f03-1a0b-4ea6-8237-9734c45a9f13"
+  }
+ ],
+ "rows": [
+  {
+   "ssv_creativeid": "T_65596",
+   "ssv_locale": "en-US",
+   "ssv_midas_id": "2808894671955032376_hero_T_65596",
+   "ssv_v1st": "F578EE0FC62B3100"
+  },
+  {
+   "ssv_creativeid": "T_65596",
+   "ssv_locale": "en-US",
+   "ssv_midas_id": "2808894671955032376_trip1_T_64386",
+   "ssv_v1st": "F578EE0FC62B3100"
+  },
+  {
+   "ssv_creativeid": "T_65596",
+   "ssv_locale": "en-US",
+   "ssv_midas_id": "2808894671955032376_trip2_T_62084",
+   "ssv_v1st": "F578EE0FC62B3100"
+  },
+  {
+   "ssv_creativeid": "T_65596",
+   "ssv_locale": "en-US",
+   "ssv_midas_id": "2808894671955032376_trip3_T_64102",
+   "ssv_v1st": "F578EE0FC62B3100"
+  },
+  {
+   "ssv_creativeid": "T_65596",
+   "ssv_locale": "en-US",
+   "ssv_midas_id": "875761814908451211_tile_T_65597",
+   "ssv_v1st": "F578EE0FC62B3100"
+  },
+  {
+   "ssv_creativeid": "T_65596",
+   "ssv_locale": "en-US",
+   "ssv_midas_id": "-8655682384752228023_trip1_T_66023",
+   "ssv_v1st": "F578EE0FC62B3100"
+  },
+  {
+   "ssv_creativeid": "T_65596",
+   "ssv_locale": "en-US",
+   "ssv_midas_id": "-8655682384752228023_trip2_T_64102",
+   "ssv_v1st": "F578EE0FC62B3100"
+  },
+  {
+   "ssv_creativeid": "T_65596",
+   "ssv_locale": "en-US",
+   "ssv_midas_id": "-8655682384752228023_hero_T_65596",
+   "ssv_v1st": "F578EE0FC62B3100"
+  },
+  {
+   "ssv_creativeid": "T_64386",
+   "ssv_locale": "en-US",
+   "ssv_midas_id": "-8655682384752228023_trip3_T_52153",
+   "ssv_v1st": "F578EE0FC62B3100"
+  },
+  {
+   "ssv_creativeid": "T_62084",
+   "ssv_locale": "en-US",
+   "ssv_midas_id": "-7630429600440344358_tile_T_65597",
+   "ssv_v1st": "F578EE0FC62B3100"
+  }
+ ]
+}

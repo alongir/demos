@@ -1,0 +1,18 @@
+{
+ "parameters": [
+  {
+   "name": "cid",
+   "uuid": "0664c2b0-fdb4-461d-8f3a-814686b0ae57"
+  },
+  {
+   "name": "heroeId",
+   "uuid": "77e34d18-55db-4b17-8e47-df66260b083e"
+  }
+ ],
+ "rows": [
+  {
+   "cid": "65596_cb_225-checking-only_hero_r-867.dynamic.html",
+   "heroeId": "2021"
+  }
+ ]
+}

@@ -1,0 +1,18 @@
+{
+ "parameters": [
+  {
+   "name": "cid",
+   "uuid": "3eb4a171-cffa-4c61-8727-aefc1e9f1b56"
+  },
+  {
+   "name": "tripletId",
+   "uuid": "55ae04f2-1168-45ce-bb38-a48130697ac6"
+  }
+ ],
+ "rows": [
+  {
+   "cid": "66023_cb_cfb_triplet_r-2179.dynamic.html",
+   "tripletId": "2021"
+  }
+ ]
+}

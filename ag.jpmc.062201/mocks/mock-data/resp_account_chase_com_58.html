@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# " >
+  <head>
+    <link rel='dns-prefetch preconnect' href='//fonts.gstatic.com'>
+    <link rel='dns-prefetch preconnect' href='//d3dxof23bn91c6.cloudfront.net'>
+
+    
+<!--[if lte IE 8]>
+<script src="/sites/default/files/public/js/js_-BZx8dMyzYW48df_v8KvAx1iVam3Hna7uvgtCJKhpYI.js"></script>
+<![endif]-->
+<script src="/sites/default/files/public/js/js_1z8YeSUeF7Ab6iFkmJj-nPc7oEsmUC88f4eAi_5AOBM.js"></script>
+
+    <meta charset="utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"15671615cf",applicationID:"390939282"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){d("pageHide",[p.now(),t])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1209.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<script src="https://script.crazyegg.com/pages/scripts/0073/6107.js"></script>
+<!-- Scripts --><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-150747595-2"></script>
+<script>  window.dataLayer = window.dataLayer || [];  function gtag(){dataLayer.push(arguments);}  gtag('js', new Date());   gtag('config', 'UA-150747595-2');</script>
+<meta name="google-site-verification" content="3CrQzUY6Sc8yzx6kfUoUJaDReLCeS0E2Ky9uwa2_whQ" />
+</!-- Scripts -->
+<!-- Scripts --><script src="https://cdn.optimizely.com/js/9182920105.js"></script>
+<script src="https://d3dxof23bn91c6.cloudfront.net/lib/mkloptx.min.js"></script>
+<script src="https://d3dxof23bn91c6.cloudfront.net/lib/mklpxl.min.js"></script>
+<script src="/themes/custom/jpmc/js/base/analytic/set_mkl_opt.js"></script></!-- Scripts -->
+<script src="https://www.chase.com/apps/chase/clientlibs/foundation/scripts/Reporting.js"></script>
+<link rel="canonical" href="https://account.chase.com/consumer/banking/seo" />
+<meta name="robots" content="index, follow" />
+<meta name="description" content="Enjoy $225 with a Chase Total Checking® Account with Direct Deposit. Open your Chase checking account online or bring your coupon to the branch today!" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="/themes/custom/jpmc/favicon.ico" type="image/vnd.microsoft.icon" />
+
+    <title>New Chase customer | $225 Chase Total Checking Account offer</title>
+    <link rel='preload'  media="all"  href="/sites/default/files/public/css/css_CeCKgnOGSaD7MQuIN1MGtTrsbIe9BMgciy_z0U1PsHo.css" as='style' onload="this.rel='stylesheet'"  /><noscript><link rel="stylesheet" media="all" href="/sites/default/files/public/css/css_CeCKgnOGSaD7MQuIN1MGtTrsbIe9BMgciy_z0U1PsHo.css" /></noscript>
+
+  </head>
+  <body style="display:none;" class="layout-page-sidebars-none">
+        <a href="#main-content" class="visually-hidden focusable skip-to-main-content-link">
+      Skip to main content
+    </a>
+    
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="layout-container">
+
+  <main id="main" role="main">
+    <a id="main-content" tabindex="-1"></a>
+    <div class="layout-content">
+        <div class="region region-content">
+    <div data-drupal-messages-fallback class="hidden"></div>
+<article data-history-node-id="1641" role="article" about="/consumer/banking/seo" class="node node--type-new-landing-page node--view-mode-full">
+
+  
+  
+
+  
+  <form class="email-my-coupon hidden" id="submissionForm" data-drupal-selector="email-my-coupon" action="/consumer/banking/seo?jp_aid_a=T_65597&amp;jp_aid_p=retail_checking_hp/tile" method="post" accept-charset="UTF-8">
+  <input id="validationMsg" data-drupal-selector="edit-payload-validationmsg" type="hidden" name="Payload_ValidationMsg" value="" />
+<input id="contactPoint" data-val="true" data-val-length="The field ContactPoint must be a string with a maximum length of 250." data-val-length-max="250" data-drupal-selector="edit-payload-contactpoint" type="hidden" name="Payload_ContactPoint" value="" />
+<input id="isEmailSubmission" data-val="true" data-val-required="The IsEmailSubmission field is required." data-drupal-selector="edit-payload-isemailsubmission" type="hidden" name="Payload_IsEmailSubmission" value="" />
+<input id="isDaoWithEmailSubmission" data-val="true" data-val-required="The isDaoWithEmailSubmission field is required." data-drupal-selector="edit-payload-isdaowithemailsubmission" type="hidden" name="Payload_IsDaoWithEmailSubmission" value="" />
+<input id="productSelection" data-val="true" data-val-number="The field ProductSelection must be a number." data-val-required="The ProductSelection field is required." value="-1" data-drupal-selector="edit-payload-productselection" type="hidden" name="Payload_ProductSelection" />
+<input id="device_type" value="" data-drupal-selector="edit-device-type" type="hidden" name="device_type" />
+<input id="prd_link" value="" data-drupal-selector="edit-prd-link" type="hidden" name="prd_link" />
+<input id="v1stCookie" value="" data-drupal-selector="edit-v1stcookie" type="hidden" name="v1stCookie" />
+<input id="optimizelyID" value="" data-drupal-selector="edit-optimizelyid" type="hidden" name="optimizelyID" />
+<input id="referingURL" value="https://personal.chase.com/" data-drupal-selector="edit-referingurl" type="hidden" name="referingURL" />
+<input autocomplete="off" data-drupal-selector="form-qr8crbdvvfdnbf5l3n0g8fd0lxy6x6q9vrftdqu8bno" type="hidden" name="form_build_id" value="form-QR8cRbDVvfdnBf5L3N0G8fD0lXY6X6Q9vrFTdqu8Bno" />
+<input data-drupal-selector="edit-email-my-coupon" type="hidden" name="form_id" value="email_my_coupon" />
+<div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions"><input data-drupal-selector="edit-submit" type="submit" id="edit-submit" name="op" value="Email my coupon" class="button js-form-submit form-submit" />
+</div>
+
+</form>
+
+    
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div data-block-plugin-id="landing_paragraphs_block:complex_paragraph_header" class="block block-landing-paragraphs block-landing-paragraphs-blockcomplex-paragraph-header">
+  
+    
+      
+      <div class="paragraph paragraph--type--complex-paragraph-header">
+    <div class="shadow-mask"></div>
+    <header class="header fixedsticky chase" style="background-color: #005eb8">
+      <!-- Menu -->
+      <div class="hamburger-menu" role="button" tabindex="0" aria-label="Menu" aria-expanded="false" onclick="try { CHASE.analytics.trackCustomLink('rb_hd_hamburger'); } catch (ex) { }">
+        <div class="icon-hamburger-menu"></div>
+      </div>
+      <!-- Logo -->
+              <div class="logo chase">
+          <div class="logo-text">
+            <img src="https://d3dxof23bn91c6.cloudfront.net/dao/images/Premier/5/chase-logo_text@2x.png" alt="Chase Logo Text">
+          </div>
+          <div class="logo-icon">
+            <img src="https://d3dxof23bn91c6.cloudfront.net/dao/images/Premier/5/chase-logo_icon@2x.png" alt="Chase Logo Icon">
+          </div>
+        </div>
+                        <!-- Button -->
+          </header>
+
+    <div class="hamburger-content">
+      <!-- Link list -->
+      
+            <div class="field field--name-field-reusable-paragraph2 field--type-entity-reference-revisions field--label-hidden field__item">
+
+          <div class="paragraph paragraph--type--paragraph-link-list" style=" ">
+          <!-- Link List Item -->
+      
+      <ul class="field field--name-field-reusable-paragraphs field--type-entity-reference-revisions field--label-hidden field__items"><li class="field__item">
+<a
+  href=""
+  value="390"
+  class="chaseanalytics-track-link daoSubmitCtas prodChoice equalChoice"
+  data-pt-name="rb_sm_apply_now"
+  tabindex="0"
+  role="link"
+      aria-label="Open an account"  ><span>Open an account &gt;&gt;</span></a>
+</li><li class="field__item">
+<a
+  href="#scroll-to-email-input"
+  value=""
+  class="chaseanalytics-track-link scroll-to-email-input hidden-offline"
+  data-pt-name="rb_sm_email_cpn"
+  tabindex="0"
+  role="link"
+      aria-label="Email my coupon"  ><span>Email my coupon &gt;&gt;</span></a>
+</li><li class="field__item">
+<a
+  href="#how-it-works"
+  value=""
+  class="chaseanalytics-track-link"
+  data-pt-name="rb_sm_howworks"
+  tabindex="0"
+  role="link"
+        ><span>How it works</span></a>
+</li><li class="field__item">
+<a
+  href="https://locator.chase.com/"
+  value=""
+  class="chaseanalytics-track-link"
+  data-pt-name="rb_sm_atmbranch"
+  tabindex="0"
+  role="link"
+        target="_blank"><span>Find my branch</span></a>
+</li><li class="field__item">
+<a
+  href="https://locator.chase.com/es"
+  value=""
+  class="chaseanalytics-track-link"
+  data-pt-name="rb_sm_atmbranch_span"
+  tabindex="0"
+  role="link"
+    lang="es"    target="_blank"><span>Encuentra mi sucursal</span></a>
+</li><li class="field__item">
+<a
+  href="https://account.chase.com/faq"
+  value=""
+  class="chaseanalytics-track-link"
+  data-pt-name="rb_sm_faq"
+  tabindex="0"
+  role="link"
+        target="_blank"><span>FAQ</span></a>
+</li></ul>
+  
+      </div>
+</div>
+      
+      <p id="hero-close-menu-trigger">close menu</p>
+    </div>
+
+  </div>
+
+
+  </div>
+
+    </div>
+  </div>
+
+<div class="layout layout--split-online-offline" style="">
+  <div class="container">
+                <div  class="layout__region layout__region--online online">
+        <div data-block-plugin-id="landing_paragraphs_block:paragraph_hero_universal" class="block block-landing-paragraphs block-landing-paragraphs-blockparagraph-hero-universal">
+  
+    
+      
+
+
+        
+
+      <div id="hero-universal" class="paragraph paragraph--type--paragraph-hero-universal" style="background-color:#005eb8; margin-top:70px; margin-bottom:-150px; margin-left:auto; margin-right:auto">
+        <div class="hero heroLanding">
+                            <div class="hero__h1">
+                    
+            <div class="field field--name-field-paragraph-title field--type-entity-reference-revisions field--label-hidden field__item">
+
+
+
+
+      <div  class="paragraph paragraph--type--paragraph-text"  style="  margin-bottom:20px; padding-top:20px; padding-bottom:0.5px ">
+          <h1 class="hero-header text-align-center six-hundred-hero-header"><span style="font-family:OpenSans-Bold;"><strong><span style="color:#ffffff;">Enjoy $225</span></strong></span></h1>
+
+      </div>
+</div>
+      
+                </div>
+                                        <div class="hero__text">
+                    
+            <div class="field field--name-field-paragraph-text field--type-entity-reference-revisions field--label-hidden field__item">
+
+
+
+
+      <div  class="paragraph paragraph--type--paragraph-text"  style="  margin-top:-37px; margin-bottom:24px; margin-left:auto; margin-right:auto; max-width:968px ">
+          <div class="h2 text-align-center six-hundred-hero-description" style="line-height: 1.4; margin-top: 32px"><span style="color:#ffffff;">as a new Chase checking customer, when you open a new Chase Total Checking<sup>®</sup> account</span><a class="footer-note-link footer-note-link-top-input note2 chaseanalytics-track-link white-color-link" data-pt-name="rb_sm_important_info_1" href="#note1" role="button"><span style="color:#ffffff;"><sup>1</sup></span> </a><br aria-hidden="true" class="hidden-mobile" /><span style="color:#ffffff;">and set up direct deposit within 90 days of coupon enrollment.</span><a class="footer-note-link footer-note-link-top-input note2 chaseanalytics-track-link white-color-link" data-pt-name="rb_sm_important_info_2" href="#note2" role="button"><span style="color:#ffffff;"><sup>2</sup></span></a></div>
+
+      </div>
+</div>
+      
+                </div>
+                                        
+      <div class="field field--name-field-reusable-paragraphs field--type-entity-reference-revisions field--label-hidden field__items">
+              <div class="field__item">
+
+        <div data-anchor-id="form-cta-email" class="paragraph paragraph--type--paragraph-form" style="margin-left:auto; margin-right:auto; max-width:885px">
+    <div class="headline-cta email-form" style="background-color: #ffffff;border-color: #ffffff">
+      <div class="coupon-form coupon-form-flex clearfix">
+                  <div class="form-col ">
+            <!-- CTA Button -->
+            
+            <div class="field field--name-field-reusable-paragraph-5 field--type-entity-reference-revisions field--label-hidden field__item">
+
+                          <div class="paragraph paragraph--type--paragraph-button" style=" max-width:940px; display:flex; justify-content:flex-start">
+        <a
+      style="  color: #ffffff; background-color: #178404"
+      data-background-hover-color="#19660a"
+      data-background-color="#178404"
+      href=""
+      rel=""
+      value="390"
+      class="chaseanalytics-track-link daoSubmitCtas prodChoice equalChoice   xlob-green-button"
+      data-pt-name="rb_sm_apply_now"
+      tabindex="0"
+
+      role="link"
+      target=""
+    ><p><span style="color:#ffffff;">Open an account <span aria-hidden="true">&gt;&gt;</span></span></p>
+</a>
+      </div>
+  </div>
+      
+            <span class="form-text"><span style="color:#53565a;"><span style="font-size:13px;"><span style="font-family:Open Sans,sans-serif;">$225 Checking coupon code applied when you choose "Open an account"</span></span></span></span>
+          </div>
+                          <div class="border-line">
+            <div class="circle-or">OR</div>
+          </div>
+                          <div class="form-col ">
+            <div class="email-area">
+              <div class="email-input-container">
+                <input
+                  type="email"
+                  name="email"
+                  class="email-field animateInput emailSubmitInputs"
+                  value=""
+                  required=""
+                  aria-invalid="false"
+                  autocomplete="off"
+                  aria-label="Enter email address"
+                >
+                <label class="email-placeholder" aria-hidden="true">Enter email address</label>
+              </div>
+              <div class="button-container">
+                <div class="error toggleError emailSubmitLabels">Please enter a valid email address.</div>
+                <!-- Email My Coupon Button -->
+                
+  
+
+                                <div class="paragraph paragraph--type--paragraph-button" style=" ">
+        <button
+      type="submit"
+      style="width:chaseanalytics-track-link;  background-color: #004ec1; color: #ffffff"
+      onmouseover="this.style.backgroundColor='#022a79'"
+      onmouseout="this.style.backgroundColor='#004ec1'"
+      rel=""
+      class="button pane__button button email-button emailSubmitCtas chaseanalytics-track-link"
+      data-pt-name="rb_sm_secure_email"
+      value=""
+      role="button"
+      tabindex="0"
+          >
+        <p><span style="color:#ffffff;">Email my coupon <span aria-hidden="true">&gt;&gt;</span></span></p>
+
+    </button>
+      </div>
+  
+
+                <span class="form-text"><span style="font-family:Open Sans,sans-serif;"><span style="font-size:13px;"><span style="color:#53565a;">Email address won't be used for other promotions or shared with third parties</span></span></span></span>
+              </div>
+            </div>
+          </div>
+              </div>
+    </div>
+
+  </div>
+</div>
+          </div>
+  
+                                        <div class="hero__details-link antiphishing-hidden">
+                    
+            <div class="field field--name-field-reusable-paragraph4 field--type-entity-reference-revisions field--label-hidden field__item">
+
+
+
+
+      <div  class="paragraph paragraph--type--paragraph-text"  style="  margin-top:25px; margin-bottom:5px ">
+          <span style="font-size:16px;"><span style="font-family:OpenSans-Bold;"><span style="color:#ffffff;">Account subject to approval.</span></span></span>
+      </div>
+</div>
+      
+                </div>
+                    </div>
+    </div>
+
+
+  </div>
+<div data-block-plugin-id="landing_paragraphs_block:paragraph_success" class="block block-landing-paragraphs block-landing-paragraphs-blockparagraph-success">
+  
+    
+      
+
+        <div id="thank-you-modal" class="paragraph paragraph--type--paragraph-success paragraph--type--paragraph-success">
+  <div class="thanks-overlay"></div>
+  <div class="thanks-modal" tabindex="-1" style="
+  ">
+    <div class="thanks-container">
+      <div class="thanks-content">
+                  <!-- Close Button -->
+          <a class="thanks-close chaseanalytics-track-link" data-pt-name="rb_success_exit"
+             tabindex="0" role="button" href="javascript:void(0)" aria-label="Close modal"><span style="font-family:OpenSans-Light,sans-serif;"><span style="color:#ffffff;"><span style="font-size:56px;">x</span></span></span></a>
+          <div class="thanks-header" role="heading" aria-level="2">
+            <!-- Title -->
+            
+            <div class="field field--name-field-paragraph-title field--type-entity-reference-revisions field--label-hidden field__item">
+
+
+
+
+      <div  class="paragraph paragraph--type--paragraph-text"  style="  margin-left:auto; margin-right:auto ">
+          <div class="text-align-center"><br aria-hidden="true" /><br aria-hidden="true" /><br aria-hidden="true" /><span style="color:#ffffff;">Thank you</span></div>
+<br aria-hidden="true" />
+ 
+      </div>
+</div>
+      
+          </div>
+          <div class="thanks-description">
+            <!-- Text -->
+            
+            <div class="field field--name-field-paragraph-text field--type-entity-reference-revisions field--label-hidden field__item">
+
+
+
+
+      <div  class="paragraph paragraph--type--paragraph-text"  style="  margin-left:-20px; margin-right:-20px; max-width:1024px; display:flex; justify-content:center ">
+          <p class="text-align-center; "><span style="font-family:Open Sans,sans-serif;line-height: 1.428571429;font-size:28px;"><span style="color:#ffffff;">Check your email for your Checking coupon code, then click "Open an account" </span> <span style="font-family:Open Sans,sans-serif;"><span style="color:#ffffff;">to take advantage of this offer.</span></span></span></p>
+<br aria-hidden="true" /><br aria-hidden="true" />
+ 
+      </div>
+</div>
+      
+          </div>
+              </div>
+    </div>
+  </div>
+</div>
+  
+
+
+  </div>
+
+      </div>
+      </div>
+  <div class="container">
+      </div>
+</div>
+
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div data-block-plugin-id="landing_paragraphs_block:paragraph_text" class="block block-landing-paragraphs block-landing-paragraphs-blockparagraph-text">
+  
+    
+      
+
+  
+
+
+      <div  class="paragraph paragraph--type--paragraph-text text-title"  style="  margin-top:75px; margin-bottom:-20px; margin-left:auto; margin-right:auto; max-width:940px ">
+          <div class="h2 text-align-center" id="product-details">
+<h2 class="section-header"><span style="font-family:OpenSans-Semibold;"><strong><span style="color:#001871;font-size:30px">How to waive Monthly Service Fees and other product details</span></strong></span></h2>
+</div>
+
+      </div>
+
+
+  </div>
+<div data-block-plugin-id="landing_paragraphs_block:paragraph_text" class="block block-landing-paragraphs block-landing-paragraphs-blockparagraph-text">
+  
+    
+      
+
+
+
+
+      <div  class="paragraph paragraph--type--paragraph-text"  style="  margin-left:auto; margin-right:auto; padding-right:20px; padding-left:20px; max-width:940px ">
+          <h3 class="section-sub-header"><strong><span style="font-family:OpenSans-Semibold,sans-serif;"><span style="color:#00339d;">Chase Total Checking<sup>®</sup></span></span></strong></h3>
+
+<div class="h4">
+<p> </p>
+
+<hr class="hidden-desktop" style="max-width: 240px;margin: -28px 0 -23px;border-top: 1px solid #cdcdcd;" /><p class="hidden-desktop"> </p>
+</div>
+
+<p><span aria-level="4" role="heading" style="font-family:Open Sans,sans-serif;"><span style="font-size:21px;"><span style="color:#001871;">Monthly Service Fee</span></span></span></p>
+
+<p><span style="color:#474747;"><span style="font-size:28px;"><span style="font-family:Open Sans,sans-serif;">$12 or $0</span></span></span><br aria-hidden="true" /><br aria-hidden="true" /><span style="line-height:30px;"><span style="font-size:16px;"><span style="font-family:Open Sans,sans-serif;"><span style="color:#474747;">$12 Monthly Service Fee OR $0 with one of the following, each monthly statement period:</span></span></span></span></p>
+
+<p><span style="line-height:1px;"><span style="font-size:16px;"><span style="font-family:Open Sans,sans-serif;"><span style="color:#474747;">Electronic deposits made into this account totaling $500 or more, such as payments from payroll providers or government benefit providers, by using (i) the ACH network, (ii) the Real Time Payment network, or (iii) third party services that facilitate payments to your debit card using the Visa<sup>®</sup> or Mastercard<sup>®</sup> network,</span></span></span></span></p>
+
+<p><span style="line-height:30px;"><span style="color:#474747;"><span style="font-size:16px;"><span style="font-family:Open Sans,sans-serif;">OR a balance at the beginning of each day of $1,500 or more in this account,</span></span></span></span></p>
+
+<p><span style="line-height:1px;"><span style="color:#474747;"><span style="font-size:16px;"><span style="font-family:Open Sans,sans-serif;">OR an average beginning day balance of $5,000 or more in any combination of this account and linked qualifying Chase checking, savings, and other balances</span></span></span></span></p>
+
+      </div>
+
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div data-block-plugin-id="landing_paragraphs_block:paragraph_text" class="block block-landing-paragraphs block-landing-paragraphs-blockparagraph-text">
+  
+    
+      
+
+
+
+
+      <div  class="paragraph paragraph--type--paragraph-text"  style="  margin-top:-38px; margin-left:auto; margin-right:auto; max-width:940px ">
+          <div class="mobile-padding text-saving-limits des16px">
+<p class="text-align-center"><span><span style="font-family:OpenSans-Regular;"><span style="color:#474747;">Other miscellaneous fees apply. See the </span><u><span style="color:#00447f;"><a href="https://www.chase.com/content/dam/chasecom/en/checking/documents/clear_simple_guide_total.pdf" onclick="try { CHASE.analytics.trackCustomLink(&quot;rb_lnk_simple_prodguide_pdf&quot;); } catch { }" tabindex="0" target="_blank">Clear &amp; Simple Product Guide (PDF)</a> </span></u><span style="color:#474747;">and </span><span style="color:#00447f;"><u><a href="https://www.chase.com/content/dam/chasecom/en/checking/documents/deposit_account_agreement.pdf" onclick="try { CHASE.analytics.trackCustomLink(&quot;rb_lnk_deposit_agree_pdf&quot;); } catch { }" tabindex="0" target="_blank">Deposit Account Agreement (PDF)</a></u> </span><span style="color:#474747;">for more information. </span><a class="chaseanalytics-track-link" data-pt-name="rb_lnk_get_servicefee_bonus" href="#important-info"><span style="color:#00447f;"><u>Get Service Fee, Bonus/Account </u><u>and other Important Information</u></span></a><span style="color:#53565a;">.</span></span></span></p>
+</div>
+
+      </div>
+
+
+  </div>
+
+    </div>
+  </div>
+
+  <div class="bg-image" id="find-branch-new" style="background-color: #005eb8; ">
+    <div class="layout layout--onecolbg layout--onecolbg--100 layout--onecol">
+      <div  class="layout__region layout__region--content">
+        <div data-block-plugin-id="landing_paragraphs_block:paragraph_text" class="block block-landing-paragraphs block-landing-paragraphs-blockparagraph-text">
+  
+    
+      
+
+
+
+
+      <div  class="paragraph paragraph--type--paragraph-text"  style="   ">
+          <h2 class="text-align-center" style="/* font-size: 30px; */color:#fff;font-family: OpenSans,sans-serif;">Save time, open a <span style="font-family:OpenSans-Bold;color:#fff;">Chase Savings<sup>SM</sup></span> account now, too.</h2>
+
+      </div>
+
+
+  </div>
+<div data-block-plugin-id="landing_paragraphs_block:paragraph_button" class="block block-landing-paragraphs block-landing-paragraphs-blockparagraph-button">
+  
+    
+      
+
+                                <div class="paragraph paragraph--type--paragraph-button" style=" display:flex; justify-content:center">
+        <button
+      type="submit"
+      style="width:300px;  background-color: #178404; color: #ffffff"
+      onmouseover="this.style.backgroundColor='#19660a'"
+      onmouseout="this.style.backgroundColor='#178404'"
+      rel="#checklist-modal"
+      class="button pane__button chaseanalytics-track-link"
+      data-pt-name="rb_sm_apply_now"
+      value=""
+      role="button"
+      tabindex="0"
+          >
+        <span class="details-button" style="color:#ffffff;font-family:'OpenSans-Regular';">Open both accounts <span aria-hidden="true">&gt;&gt;</span></span>
+    </button>
+      </div>
+  
+
+  </div>
+<div data-block-plugin-id="landing_paragraphs_block:paragraph_text" class="block block-landing-paragraphs block-landing-paragraphs-blockparagraph-text">
+  
+    
+      
+
+
+
+
+      <div  class="paragraph paragraph--type--paragraph-text" id="psa-small-text" style="  display:flex; justify-content:center ">
+          <div style="font-size:15px;font-weight:bold;padding:0;color:#fff;font-family:OpenSans-Bold;">Accounts subject to approval.</div>
+
+      </div>
+
+
+  </div>
+
+      </div>
+    </div>
+  </div>
+
+<div class="layout layout--onecolbg--split layout--onecolbg--split--100 layout--split-online-offline" id="how-it-works" style="background-color: #f5f5f5; ">
+      <div class="container">
+              <div  class="layout__region layout__region--online online">
+            <div data-block-plugin-id="landing_paragraphs_block:paragraph_text" class="block block-landing-paragraphs block-landing-paragraphs-blockparagraph-text">
+  
+    
+      
+
+
+
+
+      <div  class="paragraph paragraph--type--paragraph-text"  style="  max-width:940px; display:flex; justify-content:flex-start ">
+          
+      </div>
+
+
+  </div>
+<div data-block-plugin-id="landing_paragraphs_block:paragraph_text" class="block block-landing-paragraphs block-landing-paragraphs-blockparagraph-text">
+  
+    
+      
+
+
+
+
+      <div  class="paragraph paragraph--type--paragraph-text"  style="  margin-top:-70px; margin-bottom:50px ">
+          <h2 aria-level="2" class="section-header text-align-center text-left-mobile" role="heading" style="margin-top:8px;margin-bottom:-43px;"><span style="color:#001871;"><strong><span style="font-family:OpenSans-Semibold;">How it works</span></strong></span></h2>
+
+      </div>
+
+
+  </div>
+<div data-block-plugin-id="landing_paragraphs_block:paragraph_steps" class="block block-landing-paragraphs block-landing-paragraphs-blockparagraph-steps">
+  
+    
+      
+
+                      <div id="steps-section" class="paragraph paragraph--type--paragraph-steps" style="background-color:#f5f5f5; margin-bottom:30px; max-width:940px">
+    <div class="steps-25-line">
+      <!-- Step Item -->
+      
+      <ul class="field field--name-field-reusable-paragraphs field--type-entity-reference-revisions field--label-hidden field__items">
+              <li class="field__item"><div class="step-25-pane">
+  <div class="circle-step" style="background-color: #f5f5f5;;">1</div>
+  <div class="description-text-step">
+    <p class="step-header"></p>
+    <p class="step-description"><p><span style="font-size:18px;"><span style="font-family:Open Sans,sans-serif;">Open checking account by</span></span><br aria-hidden="true" /><span style="font-size:18px;"><span style="color:#474747;"><span style="font-family:Open Sans,sans-serif;">07/14/2021.</span></span></span></p>
+</p>
+  </div>
+  <div class="border-part"></div>
+</div>
+</li>
+              <li class="field__item"><div class="step-25-pane">
+  <div class="circle-step" style="background-color: #f5f5f5;;">2</div>
+  <div class="description-text-step">
+    <p class="step-header"></p>
+    <p class="step-description"><span style="color:#474747;"><span style="font-family:Open Sans,sans-serif;"><span style="font-size:18px;">Complete qualifying activities.</span></span></span></p>
+  </div>
+  <div class="border-part"></div>
+</div>
+</li>
+              <li class="field__item"><div class="step-25-pane">
+  <div class="circle-step" style="background-color: #f5f5f5;;">3</div>
+  <div class="description-text-step">
+    <p class="step-header"></p>
+    <p class="step-description"><span style="color:#474747;"><span style="font-family:Open Sans,sans-serif;"><span style="font-size:18px;">Receive your money<br aria-hidden="true" />
+within 15 days.</span></span></span></p>
+  </div>
+  <div class="border-part"></div>
+</div>
+</li>
+          </ul>
+  
+    </div>
+  </div>
+
+
+  </div>
+
+        </div>
+      </div>
+      </div>
+
+  <div class="bg-image" id="find-branch" style="background-color: #005eb8; ">
+    <div class="layout layout--onecolbg layout--onecolbg--100 layout--onecol">
+      <div  class="layout__region layout__region--content">
+        <div data-block-plugin-id="landing_paragraphs_block:paragraph_text" class="block block-landing-paragraphs block-landing-paragraphs-blockparagraph-text">
+  
+    
+      
+
+
+
+
+      <div  class="paragraph paragraph--type--paragraph-text"  style="   ">
+          <h2 style="font-family:OpenSans-Light;"><span class="text-align-center text-left-mobile" style="color:#ffffff;"><span style="display: inline;color: white;">Open a checking account</span> with your<br aria-hidden="true" class="hidden-mobile" />
+Chase coupon by <b>07/14/2021</b>.</span></h2>
+
+      </div>
+
+
+  </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-image" id="bank-on-your-terms" style="">
+    <div class="layout layout--onecolbg layout--onecolbg--100 layout--onecol">
+      <div  class="layout__region layout__region--content">
+        <div data-block-plugin-id="landing_paragraphs_block:paragraph_section_with_items" class="block block-landing-paragraphs block-landing-paragraphs-blockparagraph-section-with-items">
+  
+    
+      
+
+  <div class="psa-q2-2021 paragraph paragraph--type--paragraph-section-with-items paragraph--view-mode--default">
+          
+            <div class="text-formatted field field--name-field-header field--type-text-long field--label-hidden field__item"><p aria-level="2" role="heading" style="margin-top:40px"><strong><span style="color:#001871;"><span style="font-size:34px;"><span style="font-family:OpenSans-Semibold;">Bank on your terms</span></span></span></strong></p>
+</div>
+      
+      <div class="field field--name-field-content-items field--type-entity-reference-revisions field--label-hidden field__items">
+              <div class="field__item">  <div class="paragraph paragraph--type--content-item paragraph--view-mode--default" >
+    
+                    <img src="/sites/default/files/public/2020-07/atm.png"
+             class=""
+             alt="" />
+            
+      
+            <div class="clearfix text-formatted field field--name-field-header field--type-text-long field--label-hidden field__item"><p aria-level="3" class="mobile-padding" role="heading"><span style="color:#00339d;"><span style="font-size:24px;"><span style="font-family:OpenSans-Bold;">Convenient locations</span></span></span></p>
+</div>
+      
+      
+            <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item"><p class="mobile-padding"><span style="font-family:OpenSans-Regular,Arial,sans-serif;"><span style="color:#474747;"><span style="font-size:18px;">Access to 16,000 ATMs and<br />
+more than 4,700 branches.</span></span></span></p>
+</div>
+      
+      
+      <div class="field field--name-field-reusable-paragraphs field--type-entity-reference-revisions field--label-hidden field__items">
+              <div class="field__item">
+
+                  </div>
+          </div>
+  
+      </div>
+</div>
+              <div class="field__item">  <div class="paragraph paragraph--type--content-item paragraph--view-mode--default" >
+    
+                    <img src="/sites/default/files/public/2020-07/app_big.png"
+             class=""
+             alt="" />
+            
+      
+            <div class="clearfix text-formatted field field--name-field-header field--type-text-long field--label-hidden field__item"><p aria-level="3" class="mobile-padding" role="heading"><span style="color:#00339d;"><span style="font-family:OpenSans-Bold;"><span style="font-size:24px;">Chase Mobile<sup>®</sup> app</span></span></span></p>
+</div>
+      
+      
+            <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item"><p class="mobile-padding"><span style="font-family:OpenSans-Regular,Arial,sans-serif;"><span style="color:#474747;"><span style="font-size:18px;">Manage your accounts, deposit checks, transfer your money and more — all from your device.</span></span></span></p>
+</div>
+      
+      
+      <div class="field field--name-field-reusable-paragraphs field--type-entity-reference-revisions field--label-hidden field__items">
+              <div class="field__item">
+
+                  </div>
+          </div>
+  
+      </div>
+</div>
+              <div class="field__item">  <div class="paragraph paragraph--type--content-item paragraph--view-mode--default" >
+    
+                    <img src="/sites/default/files/public/2021-01/50_chasepay_mobilepay_blue%20%281%29.png"
+             class=""
+             alt="" />
+            
+      
+            <div class="clearfix text-formatted field field--name-field-header field--type-text-long field--label-hidden field__item"><p aria-level="3" class="mobile-padding" role="heading"><span style="color:#00339d;"><span style="font-family:OpenSans-Bold;"><span style="font-size:24px;">Chase First Banking<sup>SM</sup></span></span></span></p>
+</div>
+      
+      
+            <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item"><p class="mobile-padding"><span style="font-family:OpenSans-Regular,Arial,sans-serif;"><span style="color:#474747;"><span style="font-size:18px;">Exclusively for Chase checking customers - A debit card for teens and kids with a set of digital tools to help parents teach good money habits. Learn more at <a class="chaseanalytics-track-link modal-link" data-pt-name="sm_lnk_first_banking" href="https://account.chase.com/banking/first-banking" style="text-decoration: underline;" target="_blank"><span style="color:#00447f;">Chase.com/FirstBanking</span></a>.</span></span></span></p>
+</div>
+      
+      
+      <div class="field field--name-field-reusable-paragraphs field--type-entity-reference-revisions field--label-hidden field__items">
+              <div class="field__item">
+
+                  </div>
+          </div>
+  
+      </div>
+</div>
+          </div>
+  
+      </div>
+
+
+  </div>
+<div data-block-plugin-id="landing_paragraphs_block:paragraph_text" class="block block-landing-paragraphs block-landing-paragraphs-blockparagraph-text">
+  
+    
+      
+
+
+
+
+      <div  class="paragraph paragraph--type--paragraph-text"  style="  margin-top:-35px ">
+          <p class="text-align-center text-spanish-mobile"><span style="font-size:18px;"><span style="color:#474747;"><span style="font-family:OpenSans-Regular,Arial,sans-serif;">Already a customer? Refer friends and get rewarded. </span></span><span style="font-family:OpenSans-Regular,Arial,sans-serif;"><u><a class="chaseanalytics-track-link" data-pt-name="rb_lnk_see_details" href="https://accounts.chase.com/raf/landing" target="_blank"><span style="color:#00447f;">See details</span></a></u></span><span style="color:#474747;"><span style="font-family:Open Sans,sans-serif;">.</span></span></span></p>
+
+<p class="text-align-center" lang="es" xml:lang="es"><span style="font-size:18px;"><span style="color:#474747;"><span style="font-family:OpenSans-Regular,Arial,sans-serif;">Si tiene alguna pregunta, por favor IIame o visite una sucursal local de Chase.</span></span></span></p>
+
+      </div>
+
+
+  </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-image" id="xlob-footer" style="background-color: #f5f5f5; ">
+    <div class="layout layout--onecolbg layout--onecolbg--100 layout--onecol">
+      <div  class="layout__region layout__region--content">
+        <div data-block-plugin-id="landing_paragraphs_block:complex_paragraph_footer" class="block block-landing-paragraphs block-landing-paragraphs-blockcomplex-paragraph-footer">
+  
+    
+      
+
+
+  <div class="paragraph paragraph--type--complex-paragraph-footer" style="margin-top:-30px">
+    <div class="upper-footer">
+      <div class="footer-top-border"></div>
+      <!-- Social icons list -->
+      <div class="footer-content">
+        <div class="footer-logo" aria-label="Chase Logo"></div>
+        
+            <div class="field field--name-field-reusable-paragraph4 field--type-entity-reference-revisions field--label-hidden field__item">
+
+            <div class="paragraph paragraph--type--paragraph-social Right" style="  ">
+                    <div class="footer-share-links-text">
+            <div class="field field--name-field-name field--type-string field--label-hidden field__item">Follow us</div>
+      </div>
+            <!-- Link List Item -->
+            
+      <ul class="field field--name-field-reusable-paragraphs field--type-entity-reference-revisions field--label-hidden field__items">
+              <li class="field__item">
+    <a
+        href="https://twitter.com/Chase"
+        class="chaseanalytics-track-link footer-share-links-facebook icon-icon_twitter launch-anchor popup-leaving-open"
+        data-pt-name="rb_btn_tw"
+        target="_blank"
+        tabindex="0"
+        aria-label="Twitter"
+        role="link"
+        rel="leaving-modal"
+    >
+                
+    </a>
+
+</li>
+              <li class="field__item">
+    <a
+        href="https://www.facebook.com/chase"
+        class="chaseanalytics-track-link footer-share-links-twitter icon-icon_facebook launch-anchor popup-leaving-open"
+        data-pt-name="rb_btn_fb"
+        target="_blank"
+        tabindex="0"
+        aria-label="Facebook"
+        role="link"
+        rel="leaving-modal"
+    >
+                
+    </a>
+
+</li>
+          </ul>
+  
+                <div class="footer-middle-border mobile"></div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+      
+      </div>
+      <div class="footer-middle-border"></div>
+    </div>
+    <footer id="footer">
+      <div class="footer-notes-links">
+        <!-- Link list -->
+        
+            <div class="field field--name-field-reusable-paragraph2 field--type-entity-reference-revisions field--label-hidden field__item">
+
+                      <div class="paragraph paragraph--type--paragraph-link-list" style="background-color:#f6f6f6; ">
+          <!-- Link List Item -->
+      
+      <ul class="field field--name-field-reusable-paragraphs field--type-entity-reference-revisions field--label-hidden field__items"><li class="field__item">
+<a
+  href="https://www.chase.com/digital/resources/privacy-security"
+  value=""
+  class="chaseanalytics-track-link"
+  data-pt-name="rb_lnk_privacy_notice"
+  tabindex="0"
+  role="link"
+        target="_blank"><span>Privacy Notice</span></a>
+</li><li class="field__item">
+<a
+  href="https://www.chase.com/digital/resources/privacy-security"
+  value=""
+  class="chaseanalytics-track-link"
+  data-pt-name="rb_lnk_security"
+  tabindex="0"
+  role="link"
+        target="_blank"><span>Security</span></a>
+</li><li class="field__item">
+<a
+  href="https://www.chase.com/digital/resources/terms-of-use"
+  value=""
+  class="chaseanalytics-track-link"
+  data-pt-name="rb_lnk_terms"
+  tabindex="0"
+  role="link"
+        target="_blank"><span>Terms of Use</span></a>
+</li><li class="field__item">
+<a
+  href="https://www.chase.com/digital/resources/accessibility"
+  value=""
+  class="chaseanalytics-track-link"
+  data-pt-name="rb_lnk_accessibility"
+  tabindex="0"
+  role="link"
+        target="_blank"><span>Accessibility</span></a>
+</li></ul>
+  
+      </div>
+</div>
+      
+      </div>
+      <!-- Text -->
+      
+            <div class="field field--name-field-reusable-paragraph-3 field--type-entity-reference-revisions field--label-hidden field__item">
+
+
+
+
+      <div  class="paragraph paragraph--type--paragraph-text"  style="  max-width:965px ">
+          <div id="important-info">
+<div aria-level="2" role="heading"><span style="color:#474747;"><span style="font-size:12px;"><span style="font-family:OpenSans-Bold,sans-serif;"><strong>IMPORTANT INFORMATION</strong></span></span></span></div>
+
+<div>
+<ul><li id="note1" name="note1"><span style="color:#474747;"><span style="font-size:12px;"><span style="font-family:Open Sans,sans-serif;"><b><sup>1</sup><span class="inlineH3">Service Fee: Chase Total Checking</span></b> has no Monthly Service Fee when you do <b> at least one </b> of the following each statement period:</span></span></span>
+
+	<ul><li><span style="color:#474747;"><span style="font-size:12px;"><span style="font-family:Open Sans,sans-serif;"><b>Option #1:</b> Have electronic deposits made into this account totaling $500 or more, such as payments from payroll providers or government benefit providers, by using (i) the ACH network, (ii) the Real Time Payment network, or (iii) third party services that facilitate payments to your debit card using the Visa<sup>®</sup> or Mastercard<sup>®</sup> network; OR,</span></span></span></li>
+		<li><span style="color:#474747;"><span style="font-size:12px;"><span style="font-family:Open Sans,sans-serif;"><b>Option #2:</b> Keep a balance at the beginning of each day of $1,500 or more in your checking account; OR,</span></span></span></li>
+		<li><span style="color:#474747;"><span style="font-size:12px;"><span style="font-family:Open Sans,sans-serif;"><b>Option #3:</b> Keep an average beginning day balance of $5,000 or more in any combination of this account and linked qualifying Chase checking, savings and other balances. Otherwise a $12 Monthly Service Fee will apply.</span></span></span></li>
+	</ul><br aria-hidden="true" /><br aria-hidden="true" /><span style="color:#474747;"><span style="font-size:12px;"><span style="font-family:Open Sans,sans-serif;"><b><span class="inlineH3">Chase Savings<sup>SM</sup></span></b> has no Monthly Service Fee when you do <b> at least one </b> of the following each statement period:</span></span></span>
+
+	<ul><li><span style="color:#474747;"><span style="font-size:12px;"><span style="font-family:Open Sans,sans-serif;"><b>Option #1:</b> Keep a balance at the beginning of each day of $300 or more in your savings account; OR, </span></span></span></li>
+		<li><span style="color:#474747;"><span style="font-size:12px;"><span style="font-family:Open Sans,sans-serif;"><b>Option #2:</b> Have $25 or more in total Autosave or other repeating automatic transfers from your personal Chase checking account (available only through chase.com or Chase Mobile<sup>®</sup>); OR, </span></span></span></li>
+		<li><span style="color:#474747;"><span style="font-size:12px;"><span style="font-family:Open Sans,sans-serif;"><b>Option #3:</b> Have a Chase College Checking<sup>SM</sup> account linked to this account for Overdraft Protection; OR,</span></span></span></li>
+		<li><span style="color:#474747;"><span style="font-size:12px;"><span style="font-family:Open Sans,sans-serif;"><b>Option #4:</b> Have an account owner who is an individual younger than 18; OR, </span></span></span></li>
+		<li><span style="color:#474747;"><span style="font-size:12px;"><span style="font-family:Open Sans,sans-serif;"><b>Option #5:</b> Have a linked Chase Better Banking<sup>®</sup> Checking, Chase Premier Checking<sup>SM</sup>, Chase Premier Plus Checking<sup>SM</sup>, Chase Sapphire<sup>SM</sup> Checking, or Chase Private Client Checking<sup>SM</sup> account. Otherwise a $5 Monthly Service Fee will apply. A $5 Savings Withdrawal Limit Fee will apply for each withdrawal or transfer out of this account over six per monthly statement period. </span></span></span></li>
+	</ul><br aria-hidden="true" /><br aria-hidden="true" /><span style="font-size:12px;"><span style="font-family:Open Sans,sans-serif;"><span style="color:#474747;">Product terms subject to change. For more information, please see a banker or visit </span><a class="chaseanalytics-track-link" data-pt-name="rb_lnk_checking" href="https://personal.chase.com/personal/checking" style="color: rgb(0, 47, 108);" target="_blank">chase.com/checking</a> or <a class="chaseanalytics-track-link" data-pt-name="rb_lnk_savings" href="https://personal.chase.com/personal/savings" style="color: rgb(0, 47, 108);" target="_blank">chase.com/savings</a><font color="#474747">.</font><br aria-hidden="true" /><br aria-hidden="true" /><span style="color:#474747;"><b><span class="inlineH3">Bonus/Account Information</span>:</b> Offer not available to existing Chase checking customers, or those whose accounts have been closed within 90 days or closed with a negative balance within the last 3 years. You can receive only one new checking account opening related bonus every two years from the last coupon enrollment date and only one bonus per account. Coupon is good for one-time use. <b>To receive the bonus: 1) </b>Open a new Chase Total Checking account, which is subject to approval; <strong>AND </strong><b>2)</b> Have your direct deposit made to this account within 90 days of coupon enrollment. Your direct deposit needs to be an electronic deposit of your paycheck, pension or government benefits (such as Social Security) from your employer or the government. Person to Person payments (such as</span></span><span style="color:#474747;"><span style="font-family:Open Sans,sans-serif;"> Zelle</span><sup>®</sup><span style="font-family:Open Sans,sans-serif;">) are not considered a direct deposit. After you have completed all the above requirements, we'll deposit the bonus in your new account within 15 days. To receive this bonus, the enrolled account must not be closed or restricted at the time of payout. Bonus is considered interest and will be reported on IRS Form 1099-INT (or Form 1042-S, if applicable). </span></span></span></li>
+	<li id="note2" name="note2" style="color:#4a4a4a;font-family:Open Sans,sans-serif;font-size:12px;" tabindex="-1"><span style="color:#474747;"><span style="font-size:12px;"><b><sup>2</sup><span class="inlineH3">Account Closing</span>:</b> If the checking account is closed by the customer or Chase within six months after coupon enrollment, we will deduct the bonus amount at closing.</span></span></li>
+</ul></div>
+
+<p span="" style="font-family:Open Sans,sans-serif;"><span style="font-size:12px;"><span style="color:#474747;"><b>Chase Mobile<sup>®</sup> app</b> is available for select mobile devices. Enroll in Chase Online<sup>SM</sup> or on the Chase Mobile<sup>®</sup> app. Deposits made through the Chase Mobile<sup>®</sup> app are subject to deposit limits and funds are typically available by next business day. Deposit limits may change at any time. Other restrictions apply. See </span><a data-pt-name="rb_lnk_QD" href="https://www.chase.com/digital/mobile-deposits.html?jp_cmp=rb/digital_adoption_1505/off/digital_adoption_quickdep_1505/na" onclick="try { CHASE.analytics.trackCustomLink(&quot;rb_lnk_quick_deposit&quot;); } catch { }" tabindex="0" target="_blank"><span style="color:#002f6c;">chase.com/QuickDeposit</span></a><span style="color:#474747;"> or the Chase Mobile<sup>®</sup> app for eligible mobile devices, limitations, terms, conditions and details. Message and data rates may apply.</span></span></p>
+</div>
+
+<p><span style="color:#474747;"><span style="font-size:12px;"><span style="font-family:Open Sans,sans-serif;">JPMorgan Chase Bank, N.A. Member FDIC</span></span></span></p>
+
+<p><span style="color:#474747;"><span style="font-size:12px;"><span style="font-family:Open Sans,sans-serif;">© 2021 JPMorgan Chase &amp; Co.</span></span></span></p>
+
+<p><span style="color:#474747;"><span style="font-size:12px;">LC-DIG225SEQ2</span></span></p>
+
+<p aria-level="2" class="text-align-center" role="heading"><span style="font-size:18px;color:#323232">We're here to help you manage your money today and tomorrow</span></p>
+
+      </div>
+</div>
+      
+
+    </footer>
+
+    <ul class="footer-content-item-list">
+      <!-- Footer content items list -->
+              <li class="footer-content-item custom-icomoon-container">
+          <div class="icon icon-bank-small"></div>
+          <div class="footer-content-item-title"> <span style="font-family:OpenSans-Bold,sans-serif;"><span aria-level="3" role="heading">Chase banking</span></span> </div>
+          <div class="footer-content-item-description"> <p>We want to make <a class="chaseanalytics-track-link" data-pt-name="rb_link_banking" href="https://www.chase.com/" tabindex="0">banking</a><br />
+easy. Access your <a class="chaseanalytics-track-link" data-pt-name="rb_lnk_checking" href="https://personal.chase.com/personal/checking" tabindex="0">bank<br />
+account</a> or <a class="chaseanalytics-track-link" data-pt-name="rb_lnk_checking" href="https://personal.chase.com/personal/checking" tabindex="0">open a bank<br />
+account online</a>. <a class="chaseanalytics-track-link" data-pt-name="rb_link_banking" href="https://www.chase.com/" tabindex="0">Bank</a> from<br />
+almost anywhere via phone,<br />
+tablet or computer and<br />
+16,000 ATMs and more<br />
+than 4,700 branches.</p>
+</div>
+        </li>
+              <li class="footer-content-item custom-icomoon-container">
+          <div class="icon icosh-savings-bank-small"></div>
+          <div class="footer-content-item-title"> <span style="font-family:OpenSans-Bold,sans-serif;margin-top: 8px;"><span aria-level="3" role="heading">Savings Accounts &amp; CDs</span></span> </div>
+          <div class="footer-content-item-description"> It’s never too early to begin<br />
+saving.&nbsp;<a class="chaseanalytics-track-link" data-pt-name="rb_lnk_savings" href="https://personal.chase.com/personal/savings" tabindex="0">Open a savings<br />
+account</a> or open a Certificate<br />
+of Deposit (<a class="chaseanalytics-track-link" data-pt-name="rb_lnk_bank_cd" href="https://www.chase.com/personal/savings/bank-cd" tabindex="0">see interest rates</a>)<br />
+and start saving your money.</div>
+        </li>
+              <li class="footer-content-item custom-icomoon-container">
+          <div class="icon icon-checking-small"></div>
+          <div class="footer-content-item-title"> <span style="font-family:OpenSans-Bold,sans-serif;"><span aria-level="3" role="heading">Checking</span></span> </div>
+          <div class="footer-content-item-description"> <p>Find the <a class="chaseanalytics-track-link" data-pt-name="rb_lnk_checking" href="https://personal.chase.com/personal/checking" tabindex="0">checking account</a><br aria-hidden="true" />
+that's best for you. See our<br aria-hidden="true" />
+<a class="chaseanalytics-track-link" data-pt-name="rb_lnk_seo" href="https://account.chase.com/consumer/banking/seo"><span style="color:#004680;"><u>Chase Total Checking</u></span></a>&nbsp;offer&nbsp;for<br aria-hidden="true" />
+new customers. Check out our<br aria-hidden="true" />
+<a class="chaseanalytics-track-link" data-pt-name="rb_lnk_secure-banking" href="https://www.chase.com/personal/secure-banking" target="_blank">bank account without<br aria-hidden="true" />
+overdraft fees</a>. View FAQs,<br aria-hidden="true" />
+how-to-do videos and other<br aria-hidden="true" />
+resources to help you <a class="chaseanalytics-track-link" data-pt-name="rb_lnk_secure-banking" href="https://www.chase.com/personal/new-bank-account" target="_blank">get<br aria-hidden="true" />
+started with your new<br aria-hidden="true" />
+account.</a></p>
+</div>
+        </li>
+              <li class="footer-content-item custom-icomoon-container">
+          <div class="icon icon-bank-small"></div>
+          <div class="footer-content-item-title"> <span style="font-family:OpenSans-Bold,sans-serif;"><span aria-level="3" role="heading">Student banking</span></span> </div>
+          <div class="footer-content-item-description"> <p>Discover products and<br />
+financial education tailored<br />
+to help parents and students<br />
+at the <a class="chaseanalytics-track-link" data-pt-name="sm_student_center" href="https://www.chase.com/personal/student-banking">Student Center</a>. For<br />
+parents with kids and teens,<br />
+explore <a class="chaseanalytics-track-link" data-pt-name="sm_high_school_check" href="https://www.chase.com/personal/checking/high-school-checking">Chase High School<br />
+Checking</a> or <a class="chaseanalytics-track-link" data-pt-name="sm_first_banking" href="https://account.chase.com/banking/first-banking">Chase First<br />
+Banking</a> as an account that<br />
+helps parents teach good<br />
+money habits. Our <a class="chaseanalytics-track-link" data-pt-name="sm_college_checking" href="https://www.chase.com/personal/checking/student-checking">Chase<br />
+College Checking account</a><br />
+has great benefits for<br />
+students and new Chase<br />
+customers can enjoy this<br />
+<a class="chaseanalytics-track-link" data-pt-name="sm_special offer" href="https://account.chase.com/consumer/banking/studentLPchampion">special offer</a>.</p>
+</div>
+        </li>
+              <li class="footer-content-item custom-icomoon-container">
+          <div class="icon icon-cpc-small"></div>
+          <div class="footer-content-item-title"> <span style="font-family:OpenSans-Bold,sans-serif;"><span aria-level="3" role="heading">Refer a Friend</span></span> </div>
+          <div class="footer-content-item-description"> <a class="chaseanalytics-track-link" href="https://accounts.chase.com/raf/landing" tabindex="0" title="rb_lnk_raf">Chase Bank refer a friend</a><br />
+for checking accounts.<br />
+Existing Chase checking<br />
+customers can refer a<br />
+friend to bank with<br />
+Chase and earn a cash bonus.</div>
+        </li>
+              <li class="footer-content-item custom-icomoon-container">
+          <div class="icon icon-bank-small"></div>
+          <div class="footer-content-item-title"> <span style="font-family:OpenSans-Bold,sans-serif;"><span aria-level="3" role="heading">About us</span></span> </div>
+          <div class="footer-content-item-description"> <a class="chaseanalytics-track-link" data-pt-name="rb_lnk_banking" href="https://www.chase.com/" tabindex="0">Chase Bank</a> serves nearly half<br />
+of U.S. households with a<br />
+broad range of products. To<br />
+learn more, visit the <a class="chaseanalytics-track-link" data-pt-name="rb_lnk_banking" href="https://www.chase.com/personal/banking/education " tabindex="0">Banking<br />
+Education Center</a>. For<br />
+questions or concerns, please<br />
+contact <a class="chaseanalytics-track-link" data-pt-name="rb_lnk_customer_service" href="https://www.chase.com/digital/customer-service" tabindex="0">Chase customer<br />
+service</a> or let us know at<br />
+<a class="chaseanalytics-track-link" data-pt-name="rb_lnk_complaints_feedback" href="https://www.chase.com/digital/resources/complaints-feedback" tabindex="0">Chase complaints and<br />
+feedback</a>.</div>
+        </li>
+          </ul>
+
+  </div>
+
+
+  </div>
+<div data-block-plugin-id="landing_paragraphs_block:paragraph_text" class="block block-landing-paragraphs block-landing-paragraphs-blockparagraph-text">
+  
+    
+      
+
+
+
+
+      <div  class="paragraph paragraph--type--paragraph-text"  style="  margin-top:-90px ">
+          <div class="paragraph--type--complex-paragraph-footer">
+<div class="footer-links">
+<div class="heading">Other Products &amp; Services:</div>
+<!-- Link list -->
+
+<div class="field field--name-field-reusable-paragraph2 field--type-entity-reference-revisions field--label-hidden field__item" data-quickedit-field-id="paragraph//field_reusable_paragraph2/en/default">
+<div class="paragraph paragraph--type--paragraph-link-list" style=" "><!-- Link List Item -->
+<ul class="field field--name-field-reusable-paragraphs field--type-entity-reference-revisions field--label-hidden field__items" data-quickedit-field-id="paragraph//field_reusable_paragraphs/en/default"><li class="field__item"><a data-pt-name="" href="https://www.chase.com/digital/online-banking" role="link" style="width: fit-content;" tabindex="0" value=""><span>Online Banking</span></a></li>
+	<li class="field__item"><a data-pt-name="" href="https://www.chase.com/digital/mobile-banking" role="link" style="width: fit-content;" tabindex="0" value=""><span>Mobile Banking</span></a></li>
+	<li class="field__item"><a data-pt-name="" href="https://www.chase.com/personal/student-banking" role="link" style="width: fit-content;" tabindex="0" value=""><span>Student Center</span></a></li>
+	<li class="field__item"><a data-pt-name="" href="https://www.chase.com/personal/branch-disclosures" role="link" style="width: fit-content;" tabindex="0" value=""><span>Deposit and Prepaid Account Agreements</span></a></li>
+</ul></div>
+</div>
+</div>
+</div>
+
+      </div>
+
+
+  </div>
+<div data-block-plugin-id="landing_paragraphs_block:paragraph_leaving_page_modal" class="block block-landing-paragraphs block-landing-paragraphs-blockparagraph-leaving-page-modal">
+  
+    
+      
+  <div class="paragraph paragraph--type--paragraph-leaving-page-modal" style="">
+    <div id="leaving-modal" class="leaving-modal" role="dialog" aria-modal="true" aria-label="<h1>You're Now Leaving Chase</h1>
+">
+      <div class="leaving-modal-center">
+        <span class="leaving-popup-accessible-text" tabindex="0">Leaving popup modal</span>
+        <div class="leaving-modal-title"><h1>You're Now Leaving Chase</h1>
+</div>
+        <div class="leaving-modal-description"><p>Chase's website and/or mobile terms, privacy and security policies don't apply to the site or app you're about to visit. Please review its terms, privacy and security policies to see how they apply to you. Chase isn't responsible for (and doesn't provide) any products, services or content at this third-party site or app, except for products and services that explicitly carry the Chase name.</p>
+</div>
+        <div class="leaving-modal-cancel">
+          <!-- Cancel btn -->
+          
+            <div class="field field--name-field-paragraph-button field--type-entity-reference-revisions field--label-hidden field__item">
+
+                    <div class="paragraph paragraph--type--paragraph-button" style=" ">
+        <a
+      style="  color: #090909; background-color: #ededed"
+      data-background-hover-color="#dfe4e8"
+      data-background-color="#ededed"
+      href="javascript:void(0)"
+      rel=""
+      value=""
+      class="popup-leaving   "
+      data-pt-name=""
+      tabindex="0"
+
+      role="link"
+      target=""
+    >Cancel</a>
+      </div>
+  </div>
+      
+        </div><div class="leaving-modal-proceed">
+          <!-- Proceed btn -->
+          
+            <div class="field field--name-field-reusable-paragraph2 field--type-entity-reference-revisions field--label-hidden field__item">
+
+                    <div class="paragraph paragraph--type--paragraph-button" style=" ">
+        <a
+      style="  color: #ffffff; background-color: #0b6efd"
+      data-background-hover-color="#0a4386"
+      data-background-color="#0b6efd"
+      href=""
+      rel=""
+      value=""
+      class="popup-leaving   "
+      data-pt-name=""
+      tabindex="0"
+
+      role="link"
+      target=""
+    >Proceed</a>
+      </div>
+  </div>
+      
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-image" id="psa-modal-popup" style="">
+    <div class="layout layout--onecolbg layout--onecolbg--100 layout--onecol">
+      <div  class="layout__region layout__region--content">
+        <div data-block-plugin-id="landing_paragraphs_block:paragraph_modal_square" class="block block-landing-paragraphs block-landing-paragraphs-blockparagraph-modal-square">
+  
+    
+      
+
+
+  
+                <div class="square-modal-container">
+      <div class="square-overlay"></div>
+      <div
+        id="checklist-modal"
+        class="paragraph paragraph--type--paragraph-modal-square"
+        style="background: linear-gradient(to bottom left,#ffffff,#ffffff); 
+          "
+      >
+        <a href="#" class="square-close chaseanalytics-track-link" role="button" data-pt-name="rb_modal_exit" tabindex="0"
+           aria-label="Close modal">x</a>
+        
+      <div class="field field--name-field-reusable-paragraphs field--type-entity-reference-revisions field--label-hidden field__items">
+              <div class="field__item">
+
+  <div class="top-section-psa paragraph paragraph--type--paragraph-section-with-items paragraph--view-mode--default">
+          
+      <div class="field field--name-field-content-items field--type-entity-reference-revisions field--label-hidden field__items">
+              <div class="field__item">  <div class="paragraph paragraph--type--content-item paragraph--view-mode--default" >
+    
+                    <img src="/sites/default/files/public/2020-11/check-blue.png"
+             class=""
+             alt="" />
+            
+      
+            <div class="clearfix text-formatted field field--name-field-header field--type-text-long field--label-hidden field__item"><div class="product-description semibold">You are applying for <span style="">Chase Total Checking<sup>®</sup></span></div>
+</div>
+      
+      
+      
+      <div class="field field--name-field-reusable-paragraphs field--type-entity-reference-revisions field--label-hidden field__items">
+              <div class="field__item">
+
+                  </div>
+          </div>
+  
+      </div>
+</div>
+              <div class="field__item">  <div class="paragraph paragraph--type--content-item paragraph--view-mode--default" >
+    
+                  
+      
+      
+            <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item"><p class="plus" style="font-size: 44px;margin-top: 31px;color: #001871;">+</p>
+</div>
+      
+      
+      <div class="field field--name-field-reusable-paragraphs field--type-entity-reference-revisions field--label-hidden field__items">
+              <div class="field__item">
+
+                  </div>
+          </div>
+  
+      </div>
+</div>
+              <div class="field__item">  <div class="paragraph paragraph--type--content-item paragraph--view-mode--default" >
+    
+                    <img src="/sites/default/files/public/2020-11/piggy-bank-blue.png"
+             class=""
+             alt="" />
+            
+      
+            <div class="clearfix text-formatted field field--name-field-header field--type-text-long field--label-hidden field__item"><div class="product-description semibold">You are also applying for Chase Savings<sup>SM</sup></div>
+</div>
+      
+      
+      
+      <div class="field field--name-field-reusable-paragraphs field--type-entity-reference-revisions field--label-hidden field__items">
+              <div class="field__item">
+
+                  </div>
+          </div>
+  
+      </div>
+</div>
+          </div>
+  
+      </div>
+</div>
+              <div class="field__item">
+
+        <div data-anchor-id="form-cta" class="paragraph paragraph--type--paragraph-form" style="display:flex; justify-content:center">
+    <div class="headline-cta email-form" >
+      <div class="coupon-form  clearfix">
+                  <div class="form-col form-col-button  ">
+            <!-- CTA Button -->
+            
+            <div class="field field--name-field-reusable-paragraph-5 field--type-entity-reference-revisions field--label-hidden field__item">
+
+                    <div class="paragraph paragraph--type--paragraph-button" style=" ">
+        <a
+      style="  color: #ffffff; background-color: #178404"
+      data-background-hover-color="#19660a"
+      data-background-color="#178404"
+      href=""
+      rel=""
+      value="390-111"
+      class="chaseanalytics-track-link daoSubmitCtas   "
+      data-pt-name="rb_sm_apply_now"
+      tabindex="0"
+
+      role="link"
+      target=""
+    ><span style="font-family:'OpenSans-Regular';">Open both accounts <span aria-hidden="true">&gt;&gt;</span></span></a>
+      </div>
+  </div>
+      
+            <span class="form-text">$225 Checking coupon code applied when you choose "Open both accounts"</span>
+          </div>
+                              </div>
+    </div>
+
+  </div>
+</div>
+              <div class="field__item">
+
+  <div class="psa-pop-up-2col-section paragraph paragraph--type--paragraph-section-with-items paragraph--view-mode--default">
+          
+      <div class="field field--name-field-content-items field--type-entity-reference-revisions field--label-hidden field__items">
+              <div class="field__item">  <div class="paragraph paragraph--type--content-item paragraph--view-mode--default" >
+    
+                  
+      
+            <div class="clearfix text-formatted field field--name-field-header field--type-text-long field--label-hidden field__item"><h3 class="top-heading" style="font-family: 'OpenSans-SemiBold';color:#001871;padding-bottom:0px;">Chase Total Checking<sup>®</sup></h3>
+
+<h4 class="h4 middle-heading" style="font-family: 'OpenSans-Regular';padding-bottom:0px;"><span style="color:#001871;">Monthly Service Fee</span></h4>
+
+<div class="string-lg--h bottom-heading" style="font-family: 'OpenSans-Light';">$12 or $0</div>
+</div>
+      
+      
+            <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item"><div class="psa-modal-content"><span style="font-family:OpenSans-Regular,Arial,sans-serif;">$12 Monthly Service Fee OR $0 with one of the following, each monthly statement period:</span></div>
+
+<div class="psa-modal-content"><span style="font-family:OpenSans-Regular,Arial,sans-serif;">Electronic deposits made into this account totaling $500 or more, such as payments from payroll providers or government benefit providers, by using (i) the ACH network, (ii) the Real Time Payment network, or (iii) third party services that facilitate payments to your debit card using the Visa<sup>®</sup> or Mastercard<sup>®</sup> network,</span></div>
+
+<div class="psa-modal-content"><span style="font-family:OpenSans-Regular,Arial,sans-serif;"><span class="string-lg--b">OR</span> a balance at the beginning of each day of $1,500 or more in this account,</span></div>
+
+<div class="psa-modal-content"><span style="font-family:OpenSans-Regular,Arial,sans-serif;"><span class="string-lg--b">OR</span> an average beginning day balance of $5,000 or more in any combination of this account and linked qualifying Chase checking, savings, and other balances</span></div>
+</div>
+      
+      
+      <div class="field field--name-field-reusable-paragraphs field--type-entity-reference-revisions field--label-hidden field__items">
+              <div class="field__item">
+
+                  </div>
+          </div>
+  
+      </div>
+</div>
+              <div class="field__item">  <div class="paragraph paragraph--type--content-item paragraph--view-mode--default" >
+    
+                  
+      
+            <div class="clearfix text-formatted field field--name-field-header field--type-text-long field--label-hidden field__item"><h3 class="top-heading" style="font-family: 'OpenSans-SemiBold';color:#001871;padding-bottom:0px;">Chase Savings<sup>SM</sup></h3>
+
+<h4 class="h4 middle-heading" style="font-family: 'OpenSans-Regular';padding-bottom:0px;"><span style="color:#001871;">Monthly Service Fee</span></h4>
+
+<div class="string-lg--h bottom-heading" style="font-family: 'OpenSans-Light';">$5 or $0</div>
+</div>
+      
+      
+            <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item"><div class="psa-modal-content"><span style="font-family:OpenSans-Regular,Arial,sans-serif;">$5 Monthly Service Fee OR $0 with one of the following, each monthly statement period:</span></div>
+
+<div class="psa-modal-content"><span style="font-family:OpenSans-Regular,Arial,sans-serif;">A balance at the beginning of each day of $300 or more in this account,</span></div>
+
+<div class="psa-modal-content"><span style="font-family:OpenSans-Regular,Arial,sans-serif;"><span class="string-lg--b">OR</span> $25 or more in total Autosave or other repeating automatic transfers from your personal Chase checking account (available only though <u><a class="chaseanalytics-track-link modal-link" data-pt-name="rb_lnk_chase" href="https://www.chase.com/" style="color:#00447f;" target="_blank">chase.com</a></u> or Chase Mobile<sup>®</sup>),</span></div>
+
+<div class="psa-modal-content"><span style="font-family:OpenSans-Regular,Arial,sans-serif;"><span class="string-lg--b">OR</span> a Chase College Checking<sup>SM</sup> account linked to this account for Overdraft Protection,</span></div>
+
+<div class="psa-modal-content"><span style="font-family:OpenSans-Regular,Arial,sans-serif;"><span class="string-lg--b">OR</span> an account owner who is an individual younger than 18,</span></div>
+
+<div class="psa-modal-content"><span style="font-family:OpenSans-Regular,Arial,sans-serif;"><span class="string-lg--b">OR</span> a linked Chase Better Banking<sup>®</sup> Checking, Chase Premier Checking<sup>SM</sup>, Chase Premier Plus Checking<sup>SM</sup>, Chase Sapphire<sup>SM</sup> Checking, or Chase Private Client Checking<sup>SM</sup> account </span></div>
+</div>
+      
+      
+      <div class="field field--name-field-reusable-paragraphs field--type-entity-reference-revisions field--label-hidden field__items">
+              <div class="field__item">
+
+                  </div>
+          </div>
+  
+      </div>
+</div>
+              <div class="field__item">  <div class="paragraph paragraph--type--content-item paragraph--view-mode--default" >
+    
+                  
+      
+      
+            <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item"><div class="text-saving-limits des16px">
+<div class="psa-modal-content"><span style="font-family:OpenSans-Regular,Arial,sans-serif;"><strong style="font-family: OpenSans-Bold,sans-serif;">Savings Withdrawal Limits</strong>: $5 Savings Withdrawal Limit Fee, which is a Chase fee, applies to each withdrawal or transfer out of this account over six per monthly statement period. All withdrawals and transfers out of this account count toward this fee, including those made at a branch or at an ATM.</span></div>
+</div>
+</div>
+      
+      
+      <div class="field field--name-field-reusable-paragraphs field--type-entity-reference-revisions field--label-hidden field__items">
+              <div class="field__item">
+
+                  </div>
+          </div>
+  
+      </div>
+</div>
+              <div class="field__item">  <div class="paragraph paragraph--type--content-item paragraph--view-mode--default" >
+    
+                  
+      
+      
+            <div class="clearfix text-formatted field field--name-field-description field--type-text-long field--label-hidden field__item"><div class="text-saving-limits des16px">
+<div class="psa-modal-content"><span style="font-family:OpenSans-Regular,Arial,sans-serif;"><span style="color:#474747;">Other miscellaneous fees apply. See the </span><u><a class="modal-link" href="https://www.chase.com/content/dam/chasecom/en/checking/documents/clear_simple_guide_total.pdf" onclick="try { CHASE.analytics.trackCustomLink(&quot;rb_lnk_simple_prodguide_pdf&quot;); } catch { }" tabindex="0" target="_blank"><span style="color:#00447f;">Clear &amp; Simple Product Guide (PDF)</span></a></u><span style="color:#474747;">,</span><span style="color:#474747;"> </span><u><a class="chaseanalytics-track-link modal-link" data-pt-name="rb_lnk_interest_rates" href="https://www.chase.com/digital/disclosures-and-interest-rates?type=PER" target="_blank"><span style="color:#00447f;">Interest Rates</span></a></u><span style="color:#474747;">,</span><span style="color:#474747;"> and </span><u><a class="chaseanalytics-track-link modal-link" data-pt-name="rb_lnk_deposit_agree_pdf" href="https://www.chase.com/content/dam/chasecom/en/checking/documents/deposit_account_agreement.pdf" tabindex="0" target="_blank"><span style="color:#00447f;">Deposit Account Agreement (PDF)</span></a></u> <span style="color:#474747;">for more information. Account(s) subject to approval</span><span style="color:#53565a;">.</span></span></div>
+</div>
+</div>
+      
+      
+      <div class="field field--name-field-reusable-paragraphs field--type-entity-reference-revisions field--label-hidden field__items">
+              <div class="field__item">
+
+                  </div>
+          </div>
+  
+      </div>
+</div>
+          </div>
+  
+      </div>
+</div>
+          </div>
+  
+      </div>
+    </div>
+  
+
+  </div>
+
+      </div>
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+    </div>
+  </main>
+
+</div>
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/1641","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en","currentQuery":{"jp_aid_a":"T_65597","jp_aid_p":"retail_checking_hp\/tile"}},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ckeditorheight":{"offset":1,"line_height":1,"unit":"em","disable_autogrow":null},"globalBlock":{"isOfflineOffer":false},"ajax":[],"user":{"uid":0,"permissionsHash":"1094628451864d0404c430c159e4166bd658346b6ee64b01746cb790dcdb6540"}}</script>
+<script src="/sites/default/files/public/js/js_rsK94BQmGPoNovl8d1AF_2j05eAYViUoZ5bJD0NnSNc.js"></script>
+
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"15671615cf","applicationID":"390939282,390939283,390939284","transactionName":"Y1JUZ0JZWhcAVkRaDVoYdUZDTFsJTlBeRwtAThhdX1xRSgJUXlwMXVRXXwpWURM+WVFdBl1ZUWxAWVMB","queueTime":0,"applicationTime":838,"atts":"TxVXEQpDSRk=","errorBeacon":"bam-cell.nr-data.net","agent":""}</script></body>
+</html>

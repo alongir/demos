@@ -1,0 +1,15 @@
+{
+ "https://account.chase.com": "http://localhost:8001",
+ "https://autofinance.chase.com": "http://localhost:8002",
+ "https://creditcards.chase.com": "http://localhost:8003",
+ "https://locator.chase.com": "http://localhost:8004",
+ "https://midas.chase.com": "http://localhost:8005",
+ "https://personal.chase.com": "http://localhost:8006",
+ "https://secure01b.chase.com": "http://localhost:8007",
+ "https://secure03b.chase.com": "http://localhost:8008",
+ "https://secure05b.chase.com": "http://localhost:8009",
+ "https://secure07a.chase.com": "http://localhost:8010",
+ "https://sites.chase.com": "http://localhost:8011",
+ "https://target.chase.com": "http://localhost:8012",
+ "https://www.chase.com": "http://localhost:8013"
+}

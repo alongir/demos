@@ -1,0 +1,33 @@
+{
+ "parameters": [
+  {
+   "name": "Payload_ContactPoint",
+   "uuid": "0ee6f50c-672a-4bac-87a7-959d83c7314d"
+  },
+  {
+   "name": "Payload_ProductSelection",
+   "uuid": "e4f47b85-71db-4b2e-8cd5-a6c5887ee479"
+  },
+  {
+   "name": "form_build_id",
+   "uuid": "c338dc70-ee00-41cd-b916-f73528ea7c83"
+  },
+  {
+   "name": "referingURL",
+   "uuid": "c5f1d8cc-f9fc-48e8-b175-4a0c12f4e7dd"
+  },
+  {
+   "name": "ssv_creativeid",
+   "uuid": "326dc676-9c5d-4883-b15b-b22f59dcab4a"
+  }
+ ],
+ "rows": [
+  {
+   "Payload_ContactPoint": "john.dow.1981@protonmail.com",
+   "Payload_ProductSelection": "-1",
+   "form_build_id": "form-QR8cRbDVvfdnBf5L3N0G8fD0lXY6X6Q9vrFTdqu8Bno",
+   "referingURL": "https://personal.chase.com/",
+   "ssv_creativeid": "T_65597"
+  }
+ ]
+}

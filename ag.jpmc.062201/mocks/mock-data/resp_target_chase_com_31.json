@@ -1,0 +1,13 @@
+{
+ "status": 200,
+ "requestId": "{{jsonPath request.json '$.requestId'}}",
+ "client": "jpmcbankna",
+ "id": {
+  "tntId": "{{jsonPath request.json '$.id.tntId'}}",
+  "marketingCloudVisitorId": "18246491610380031420415917791160738241"
+ },
+ "edgeHost": "mboxedge35.tt.omtrdc.net",
+ "execute": {
+  "pageLoad": {}
+ }
+}

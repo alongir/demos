@@ -1,0 +1,412 @@
+{
+ "info": {
+  "title": "https://target.chase.com",
+  "version": "0.0"
+ },
+ "openapi": "3.0.2",
+ "paths": {
+  "/rest/v1/delivery": {
+   "parameters": [],
+   "post": {
+    "operationId": "68fdaede-c8a9-4fdc-b199-c543f8572a10",
+    "parameters": [
+     {
+      "in": "query",
+      "name": "client",
+      "required": true,
+      "schema": {
+       "enum": [
+        "jpmcbankna"
+       ],
+       "type": "string"
+      }
+     },
+     {
+      "in": "query",
+      "name": "sessionId",
+      "required": true,
+      "schema": {
+       "enum": [
+        "dc609c0b914343efb801e0a76f3aaf5f"
+       ],
+       "type": "string"
+      }
+     },
+     {
+      "in": "query",
+      "name": "version",
+      "required": true,
+      "schema": {
+       "enum": [
+        "2.3.2"
+       ],
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "properties": {
+         "context": {
+          "properties": {
+           "address": {
+            "properties": {
+             "referringUrl": {
+              "type": "string"
+             },
+             "url": {
+              "type": "string"
+             }
+            },
+            "required": [
+             "referringUrl",
+             "url"
+            ],
+            "type": "object"
+           },
+           "browser": {
+            "properties": {
+             "host": {
+              "type": "string"
+             },
+             "webGLRenderer": {
+              "type": "string"
+             }
+            },
+            "required": [
+             "host",
+             "webGLRenderer"
+            ],
+            "type": "object"
+           },
+           "channel": {
+            "type": "string"
+           },
+           "screen": {
+            "properties": {
+             "colorDepth": {
+              "type": "integer"
+             },
+             "height": {
+              "type": "integer"
+             },
+             "orientation": {
+              "type": "string"
+             },
+             "pixelRatio": {
+              "type": "integer"
+             },
+             "width": {
+              "type": "integer"
+             }
+            },
+            "required": [
+             "colorDepth",
+             "height",
+             "orientation",
+             "pixelRatio",
+             "width"
+            ],
+            "type": "object"
+           },
+           "timeOffsetInMinutes": {
+            "type": "integer"
+           },
+           "userAgent": {
+            "type": "string"
+           },
+           "window": {
+            "properties": {
+             "height": {
+              "type": "integer"
+             },
+             "width": {
+              "type": "integer"
+             }
+            },
+            "required": [
+             "height",
+             "width"
+            ],
+            "type": "object"
+           }
+          },
+          "required": [
+           "address",
+           "browser",
+           "channel",
+           "screen",
+           "timeOffsetInMinutes",
+           "userAgent",
+           "window"
+          ],
+          "type": "object"
+         },
+         "execute": {
+          "properties": {
+           "mboxes": {
+            "items": {
+             "properties": {
+              "index": {
+               "type": "integer"
+              },
+              "name": {
+               "type": "string"
+              },
+              "parameters": {
+               "properties": {
+                "mboxName": {
+                 "type": "string"
+                },
+                "pageTitle": {
+                 "type": "string"
+                }
+               },
+               "required": [
+                "mboxName",
+                "pageTitle"
+               ],
+               "type": "object"
+              },
+              "profileParameters": {
+               "additionalProperties": {
+                "type": "string"
+               },
+               "type": "object"
+              }
+             },
+             "required": [
+              "index",
+              "name",
+              "parameters",
+              "profileParameters"
+             ],
+             "type": "object"
+            },
+            "type": "array"
+           },
+           "pageLoad": {
+            "type": "object"
+           }
+          },
+          "type": "object"
+         },
+         "experienceCloud": {
+          "properties": {
+           "analytics": {
+            "properties": {
+             "logging": {
+              "type": "string"
+             }
+            },
+            "required": [
+             "logging"
+            ],
+            "type": "object"
+           },
+           "audienceManager": {
+            "properties": {
+             "locationHint": {
+              "type": "string"
+             }
+            },
+            "required": [
+             "locationHint"
+            ],
+            "type": "object"
+           }
+          },
+          "required": [
+           "analytics",
+           "audienceManager"
+          ],
+          "type": "object"
+         },
+         "id": {
+          "properties": {
+           "marketingCloudVisitorId": {
+            "type": "string"
+           },
+           "tntId": {
+            "type": "string"
+           }
+          },
+          "required": [
+           "marketingCloudVisitorId"
+          ],
+          "type": "object"
+         },
+         "property": {
+          "properties": {
+           "token": {
+            "type": "string"
+           }
+          },
+          "required": [
+           "token"
+          ],
+          "type": "object"
+         },
+         "requestId": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "context",
+         "execute",
+         "experienceCloud",
+         "id",
+         "property",
+         "requestId"
+        ],
+        "type": "object"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "content": {
+       "application/json": {
+        "example": {
+         "client": "jpmcbankna",
+         "edgeHost": "mboxedge35.tt.omtrdc.net",
+         "execute": {
+          "pageLoad": {}
+         },
+         "id": {
+          "marketingCloudVisitorId": "18246491610380031420415917791160738241",
+          "tntId": "dc609c0b914343efb801e0a76f3aaf5f.35_0"
+         },
+         "requestId": "1b34e23cba144115b789d12e0b56fa28",
+         "status": 200
+        },
+        "schema": {
+         "properties": {
+          "client": {
+           "type": "string"
+          },
+          "edgeHost": {
+           "type": "string"
+          },
+          "execute": {
+           "properties": {
+            "mboxes": {
+             "items": {
+              "properties": {
+               "analytics": {
+                "properties": {
+                 "payload": {
+                  "properties": {
+                   "pe": {
+                    "type": "string"
+                   },
+                   "tnta": {
+                    "type": "string"
+                   }
+                  },
+                  "required": [
+                   "pe",
+                   "tnta"
+                  ],
+                  "type": "object"
+                 }
+                },
+                "required": [
+                 "payload"
+                ],
+                "type": "object"
+               },
+               "index": {
+                "type": "integer"
+               },
+               "name": {
+                "type": "string"
+               },
+               "options": {
+                "items": {
+                 "properties": {
+                  "content": {
+                   "type": "string"
+                  },
+                  "responseTokens": {
+                   "type": "object"
+                  },
+                  "sourceType": {
+                   "type": "string"
+                  },
+                  "type": {
+                   "type": "string"
+                  }
+                 },
+                 "required": [
+                  "content",
+                  "responseTokens",
+                  "sourceType",
+                  "type"
+                 ],
+                 "type": "object"
+                },
+                "type": "array"
+               }
+              },
+              "required": [
+               "index",
+               "name"
+              ],
+              "type": "object"
+             },
+             "type": "array"
+            },
+            "pageLoad": {
+             "type": "object"
+            }
+           },
+           "type": "object"
+          },
+          "id": {
+           "properties": {
+            "marketingCloudVisitorId": {
+             "type": "string"
+            },
+            "tntId": {
+             "type": "string"
+            }
+           },
+           "required": [
+            "marketingCloudVisitorId",
+            "tntId"
+           ],
+           "type": "object"
+          },
+          "requestId": {
+           "type": "string"
+          },
+          "status": {
+           "type": "integer"
+          }
+         },
+         "required": [
+          "client",
+          "edgeHost",
+          "execute",
+          "id",
+          "requestId",
+          "status"
+         ],
+         "type": "object"
+        }
+       }
+      },
+      "description": "OK"
+     }
+    },
+    "summary": "Seen 6 requests"
+   }
+  }
+ },
+ "tags": []
+}

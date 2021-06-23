@@ -1,0 +1,15 @@
+{
+ "TARGET_ACCOUNT_CHASE_COM": "https://account.chase.com",
+ "TARGET_AUTOFINANCE_CHASE_COM": "https://autofinance.chase.com",
+ "TARGET_CREDITCARDS_CHASE_COM": "https://creditcards.chase.com",
+ "TARGET_LOCATOR_CHASE_COM": "https://locator.chase.com",
+ "TARGET_MIDAS_CHASE_COM": "https://midas.chase.com",
+ "TARGET_PERSONAL_CHASE_COM": "https://personal.chase.com",
+ "TARGET_SECURE01B_CHASE_COM": "https://secure01b.chase.com",
+ "TARGET_SECURE03B_CHASE_COM": "https://secure03b.chase.com",
+ "TARGET_SECURE05B_CHASE_COM": "https://secure05b.chase.com",
+ "TARGET_SECURE07A_CHASE_COM": "https://secure07a.chase.com",
+ "TARGET_SITES_CHASE_COM": "https://sites.chase.com",
+ "TARGET_TARGET_CHASE_COM": "https://target.chase.com",
+ "TARGET_WWW_CHASE_COM": "https://www.chase.com"
+}

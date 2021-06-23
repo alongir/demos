@@ -1,0 +1,13 @@
+{
+ "parameters": [
+  {
+   "name": "param",
+   "uuid": "66908f21-26be-47d9-9f20-6c1df307c99d"
+  }
+ ],
+ "rows": [
+  {
+   "param": "_jcr_content"
+  }
+ ]
+}

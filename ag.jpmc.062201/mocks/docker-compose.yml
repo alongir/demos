@@ -1,0 +1,197 @@
+services:
+  account.chase.com:
+    cap_add:
+    - NET_BIND_SERVICE
+    cap_drop:
+    - all
+    command: /config/mockintosh.yml 'https://account.chase.com'
+    environment:
+    - MOCKINTOSH_FORCE_PORT=443
+    hostname: account
+    image: up9inc/mockintosh:latest
+    ports:
+    - 443
+    read_only: true
+    volumes:
+    - .:/config
+  autofinance.chase.com:
+    cap_add:
+    - NET_BIND_SERVICE
+    cap_drop:
+    - all
+    command: /config/mockintosh.yml 'https://autofinance.chase.com'
+    environment:
+    - MOCKINTOSH_FORCE_PORT=443
+    hostname: autofinance
+    image: up9inc/mockintosh:latest
+    ports:
+    - 443
+    read_only: true
+    volumes:
+    - .:/config
+  creditcards.chase.com:
+    cap_add:
+    - NET_BIND_SERVICE
+    cap_drop:
+    - all
+    command: /config/mockintosh.yml 'https://creditcards.chase.com'
+    environment:
+    - MOCKINTOSH_FORCE_PORT=443
+    hostname: creditcards
+    image: up9inc/mockintosh:latest
+    ports:
+    - 443
+    read_only: true
+    volumes:
+    - .:/config
+  locator.chase.com:
+    cap_add:
+    - NET_BIND_SERVICE
+    cap_drop:
+    - all
+    command: /config/mockintosh.yml 'https://locator.chase.com'
+    environment:
+    - MOCKINTOSH_FORCE_PORT=443
+    hostname: locator
+    image: up9inc/mockintosh:latest
+    ports:
+    - 443
+    read_only: true
+    volumes:
+    - .:/config
+  midas.chase.com:
+    cap_add:
+    - NET_BIND_SERVICE
+    cap_drop:
+    - all
+    command: /config/mockintosh.yml 'https://midas.chase.com'
+    environment:
+    - MOCKINTOSH_FORCE_PORT=443
+    hostname: midas
+    image: up9inc/mockintosh:latest
+    ports:
+    - 443
+    read_only: true
+    volumes:
+    - .:/config
+  personal.chase.com:
+    cap_add:
+    - NET_BIND_SERVICE
+    cap_drop:
+    - all
+    command: /config/mockintosh.yml 'https://personal.chase.com'
+    environment:
+    - MOCKINTOSH_FORCE_PORT=443
+    hostname: personal
+    image: up9inc/mockintosh:latest
+    ports:
+    - 443
+    read_only: true
+    volumes:
+    - .:/config
+  secure01b.chase.com:
+    cap_add:
+    - NET_BIND_SERVICE
+    cap_drop:
+    - all
+    command: /config/mockintosh.yml 'https://secure01b.chase.com'
+    environment:
+    - MOCKINTOSH_FORCE_PORT=443
+    hostname: secure01b
+    image: up9inc/mockintosh:latest
+    ports:
+    - 443
+    read_only: true
+    volumes:
+    - .:/config
+  secure03b.chase.com:
+    cap_add:
+    - NET_BIND_SERVICE
+    cap_drop:
+    - all
+    command: /config/mockintosh.yml 'https://secure03b.chase.com'
+    environment:
+    - MOCKINTOSH_FORCE_PORT=443
+    hostname: secure03b
+    image: up9inc/mockintosh:latest
+    ports:
+    - 443
+    read_only: true
+    volumes:
+    - .:/config
+  secure05b.chase.com:
+    cap_add:
+    - NET_BIND_SERVICE
+    cap_drop:
+    - all
+    command: /config/mockintosh.yml 'https://secure05b.chase.com'
+    environment:
+    - MOCKINTOSH_FORCE_PORT=443
+    hostname: secure05b
+    image: up9inc/mockintosh:latest
+    ports:
+    - 443
+    read_only: true
+    volumes:
+    - .:/config
+  secure07a.chase.com:
+    cap_add:
+    - NET_BIND_SERVICE
+    cap_drop:
+    - all
+    command: /config/mockintosh.yml 'https://secure07a.chase.com'
+    environment:
+    - MOCKINTOSH_FORCE_PORT=443
+    hostname: secure07a
+    image: up9inc/mockintosh:latest
+    ports:
+    - 443
+    read_only: true
+    volumes:
+    - .:/config
+  sites.chase.com:
+    cap_add:
+    - NET_BIND_SERVICE
+    cap_drop:
+    - all
+    command: /config/mockintosh.yml 'https://sites.chase.com'
+    environment:
+    - MOCKINTOSH_FORCE_PORT=443
+    hostname: sites
+    image: up9inc/mockintosh:latest
+    ports:
+    - 443
+    read_only: true
+    volumes:
+    - .:/config
+  target.chase.com:
+    cap_add:
+    - NET_BIND_SERVICE
+    cap_drop:
+    - all
+    command: /config/mockintosh.yml 'https://target.chase.com'
+    environment:
+    - MOCKINTOSH_FORCE_PORT=443
+    hostname: target
+    image: up9inc/mockintosh:latest
+    ports:
+    - 443
+    read_only: true
+    volumes:
+    - .:/config
+  www.chase.com:
+    cap_add:
+    - NET_BIND_SERVICE
+    cap_drop:
+    - all
+    command: /config/mockintosh.yml 'https://www.chase.com'
+    environment:
+    - MOCKINTOSH_FORCE_PORT=443
+    hostname: www
+    image: up9inc/mockintosh:latest
+    ports:
+    - 443
+    read_only: true
+    volumes:
+    - .:/config
+version: '3.3'

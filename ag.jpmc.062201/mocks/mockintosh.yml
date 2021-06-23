@@ -1,0 +1,382 @@
+# This is a Mockintosh configuration file.
+# Mockintosh provides a microservices friendly, small footprint HTTP mock service.
+# A standard laptop can run dozens of Mockintosh instances, or you can run all instances in a single Docker container.
+#
+# Install Mockintosh:                 pip3 install mockintosh
+# Run locally:                        mockintosh <this-file>
+# Run with Docker:                    docker run -it -p 8000-8005:8000-8005 -v `pwd`:/tmp testrio/mockintosh /tmp/<this-file>
+# More information can be found here: https://github.com/up9inc/mockintosh
+
+---
+management:
+  port: 8000
+services:
+- name: https://account.chase.com
+  port: 8001
+  managementRoot: __admin
+  oas: '@mock-data/up9-https___account.chase.com-spec.json'
+  endpoints:
+  - path: /consumer/banking/seo
+    response:
+      headers:
+        Content-Type: text/html
+      body: '@mock-data/resp_account_chase_com_58.html'
+      useTemplating: false
+  - path: /consumer/banking/seo
+    response:
+      headers:
+        Content-Type: text/html
+      body: 1||DQ9224427PVA47UE
+      useTemplating: false
+    method: post
+- name: https://autofinance.chase.com
+  port: 8002
+  managementRoot: __admin
+  oas: '@mock-data/up9-https___autofinance.chase.com-spec.json'
+  endpoints:
+  - path: /auto-finance/auto-loans
+    response:
+      headers:
+        Content-Type: text/html
+      body: '@mock-data/resp_autofinance_chase_com_82.html'
+      useTemplating: false
+  - path: /auto-finance/home
+    response:
+      headers:
+        Content-Type: text/html
+      body: '@mock-data/resp_autofinance_chase_com_83.html'
+      useTemplating: false
+- name: https://creditcards.chase.com
+  port: 8003
+  managementRoot: __admin
+  oas: '@mock-data/up9-https___creditcards.chase.com-spec.json'
+  endpoints:
+  - path: /cash-back-credit-cards/freedom/flex
+    response:
+      headers:
+        Content-Type: text/html
+      body: '@mock-data/resp_creditcards_chase_com_65.html'
+      useTemplating: false
+  - path: /cash-back-credit-cards
+    response:
+      headers:
+        Content-Type: text/html
+      body: '@mock-data/resp_creditcards_chase_com_66.html'
+      useTemplating: false
+- name: https://locator.chase.com
+  port: 8004
+  managementRoot: __admin
+  oas: '@mock-data/up9-https___locator.chase.com-spec.json'
+  endpoints:
+  - path: /
+    response:
+      headers:
+        Content-Type: text/html
+      body: '@mock-data/resp_locator_chase_com_73.html'
+      useTemplating: false
+  - path: /adspace
+    response:
+      headers:
+        Content-Type: text/html
+      body: '@mock-data/resp_locator_chase_com_74.html'
+      useTemplating: false
+  - path: /atmsearch
+    response:
+      headers:
+        Content-Type: application/json
+      body: '@mock-data/resp_locator_chase_com_75.json'
+  - path: /search
+    response:
+      headers:
+        Content-Type: text/html
+      body: '@mock-data/resp_locator_chase_com_76.html'
+      useTemplating: false
+  - path: /search
+    response:
+      headers:
+        Content-Type: application/json
+      body: '@mock-data/resp_locator_chase_com_77.json'
+- name: https://midas.chase.com
+  port: 8005
+  managementRoot: __admin
+  oas: '@mock-data/up9-https___midas.chase.com-spec.json'
+  endpoints:
+  - path: /prweb/PRRestService/{{param}}/v1/MakeDecision
+    response:
+      headers:
+        Content-Type: application/json
+      body: '@mock-data/resp_midas_chase_com_32.json'
+  - path: /stream/click
+    response: {}
+  - path: /stream/tag
+    response: {}
+  - path: /stream/view
+    response: {}
+- name: https://personal.chase.com
+  port: 8006
+  managementRoot: __admin
+  oas: '@mock-data/up9-https___personal.chase.com-spec.json'
+  endpoints:
+  - path: /personal/checking
+    response:
+      headers:
+        Content-Type: text/html
+      body: '@mock-data/resp_personal_chase_com_56.html'
+      useTemplating: false
+- name: https://secure01b.chase.com
+  port: 8007
+  managementRoot: __admin
+  oas: '@mock-data/up9-https___secure01b.chase.com-spec.json'
+  endpoints:
+  - path: /events/analytics/public/v1/events/raw/
+    response: {}
+    method: post
+  - path: /events/{{eventId}}
+    response:
+      headers:
+        Content-Type: text/plain
+      body: OK(apache)|name=ruxitagentjs|featureHash=ICA27SVfhjqrux|version=|buildNumber=10173190807103944|lastModification=1624273847426
+      useTemplating: false
+    method: post
+  - path: /web/auth/logonbox
+    response:
+      headers:
+        Content-Type: text/html
+      body: '@mock-data/resp_secure01b_chase_com_43.html'
+      useTemplating: false
+- name: https://secure03b.chase.com
+  port: 8008
+  managementRoot: __admin
+  oas: '@mock-data/up9-https___secure03b.chase.com-spec.json'
+  endpoints:
+  - path: /events/analytics/public/v1/events/raw/
+    response: {}
+    method: post
+  - path: /events/{{eventId}}
+    response:
+      headers:
+        Content-Type: text/plain
+      body: OK(apache)|name=ruxitagentjs|featureHash=ICA27SVfjqrux|version=|buildNumber=10173190807103944|lastModification=1624273847426
+      useTemplating: false
+    method: post
+  - path: /web/auth/logonbox
+    response:
+      headers:
+        Content-Type: text/html
+      body: '@mock-data/resp_secure03b_chase_com_72.html'
+      useTemplating: false
+- name: https://secure05b.chase.com
+  port: 8009
+  managementRoot: __admin
+  oas: '@mock-data/up9-https___secure05b.chase.com-spec.json'
+  endpoints:
+  - path: /events/analytics/public/v1/events/raw/
+    response: {}
+    method: post
+  - path: /events/{{eventId}}
+    response:
+      headers:
+        Content-Type: text/plain
+      body: OK(apache)|name=ruxitagentjs|featureHash=ICA27SVfhjqrux|version=|buildNumber=10173190807103944|lastModification=1624273847426
+      useTemplating: false
+    method: post
+  - path: /web/auth/logonbox
+    response:
+      headers:
+        Content-Type: text/html
+      body: '@mock-data/resp_secure05b_chase_com_64.html'
+      useTemplating: false
+- name: https://secure07a.chase.com
+  port: 8010
+  managementRoot: __admin
+  oas: '@mock-data/up9-https___secure07a.chase.com-spec.json'
+  endpoints:
+  - path: /events/analytics/public/v1/events/raw/
+    response: {}
+    method: post
+  - path: /events/{{eventId}}
+    response:
+      headers:
+        Content-Type: text/plain
+      body: OK(apache)|name=ruxitagentjs|featureHash=ICA27SVfhjqrux|version=|buildNumber=10173190807103944|lastModification=1624273847426
+      useTemplating: false
+    method: post
+  - path: /web/auth/logonbox
+    response:
+      headers:
+        Content-Type: text/html
+      body: '@mock-data/resp_secure07a_chase_com_81.html'
+      useTemplating: false
+- name: https://sites.chase.com
+  port: 8011
+  managementRoot: __admin
+  oas: '@mock-data/up9-https___sites.chase.com-spec.json'
+  endpoints:
+  - path: /content/Creatives/Public/Heroes/{{heroeId}}/March/{{cid}}
+    response:
+      headers:
+        Content-Type: text/html
+      body: '@mock-data/resp_sites_chase_com_36.html'
+      useTemplating: false
+  - path: /content/Creatives/Public/Tiles/{{tileId}}/March/{{cid}}
+    response:
+      headers:
+        Content-Type: text/html
+      body: '@mock-data/resp_sites_chase_com_37.html'
+      useTemplating: false
+  - path: /content/Creatives/Public/Triplets/{{tripletId}}/July/{{cid}}
+    response:
+      headers:
+        Content-Type: text/html
+      body: '@mock-data/resp_sites_chase_com_38.html'
+      useTemplating: false
+  - path: /content/Creatives/Public/Triplets/{{tripletId}}/November/{{cid}}
+    response:
+      headers:
+        Content-Type: text/html
+      body: '@mock-data/resp_sites_chase_com_39.html'
+      useTemplating: false
+  - path: /content/Creatives/Public/Triplets/{{tripletId}}/May/{{cid}}
+    response:
+      headers:
+        Content-Type: text/html
+      body: '@mock-data/resp_sites_chase_com_40.html'
+      useTemplating: false
+- name: https://target.chase.com
+  port: 8012
+  managementRoot: __admin
+  oas: '@mock-data/up9-https___target.chase.com-spec.json'
+  endpoints:
+  - path: /rest/v1/delivery
+    response:
+      headers:
+        Content-Type: application/json
+      body: '@mock-data/resp_target_chase_com_31.json'
+    method: post
+- name: https://www.chase.com
+  port: 8013
+  managementRoot: __admin
+  oas: '@mock-data/up9-https___www.chase.com-spec.json'
+  endpoints:
+  - path: /
+    response:
+      headers:
+        Content-Type: text/html
+      body: '@mock-data/resp_www_chase_com_1.html'
+      useTemplating: false
+  - path: /apps/services/tags/https/account.chase.com/consumer/banking/seo
+    response:
+      headers:
+        Content-Type: application/json
+  - path: /apps/services/tags/https/autofinance.chase.com/auto-finance/auto-loans
+    response:
+      headers:
+        Content-Type: application/json
+  - path: /apps/services/tags/https/autofinance.chase.com/auto-finance/home
+    response:
+      headers:
+        Content-Type: application/json
+  - path: /apps/services/tags/https/creditcards.chase.com/cash-back-credit-cards
+    response:
+      headers:
+        Content-Type: application/json
+  - path: /apps/services/tags/https/creditcards.chase.com/cash-back-credit-cards/freedom/flex
+    response:
+      headers:
+        Content-Type: application/json
+  - path: /apps/services/tags/https/locator.chase.com/
+    response:
+      headers:
+        Content-Type: application/json
+  - path: /apps/services/tags/https/locator.chase.com/es
+    response:
+      headers:
+        Content-Type: application/json
+  - path: /apps/services/tags/https/locator.chase.com/search
+    response:
+      headers:
+        Content-Type: application/json
+  - path: /apps/services/tags/https/personal.chase.com/personal/checking
+    response:
+      headers:
+        Content-Type: application/json
+  - path: /apps/services/tags/https/www.chase.com/
+    response:
+      headers:
+        Content-Type: application/json
+  - path: /apps/services/tags/https/www.chase.com/content/chase-ux/en/structured/module/direct-to-dealer/primary-tool-liquid
+    response:
+      headers:
+        Content-Type: application/json
+  - path: /apps/services/tags/https/www.chase.com/personal/investments/advisor
+    response:
+      headers:
+        Content-Type: application/json
+  - path: /apps/services/tags/https/www.chase.com/personal/investments/advisor-contact-form
+    response:
+      headers:
+        Content-Type: application/json
+  - path: /apps/services/tags/https/www.chase.com/personal/offers/marketplace
+    response:
+      headers:
+        Content-Type: application/json
+  - path: /content/chase-ux/en/structured/module/{{param1}}/primary-triplet/{{param2}}/module.html
+    response:
+      headers:
+        Content-Type: text/html
+      body: '@mock-data/resp_www_chase_com_16.html'
+      useTemplating: false
+  - path: /content/chase-ux/en/structured/module/{{param}}/personal/investments/{{investmentId}}/{{iconId}}/module.html
+    response:
+      headers:
+        Content-Type: text/html
+      body: '@mock-data/resp_www_chase_com_17.html'
+      useTemplating: false
+  - path: /content/chase-ux/en/structured/module/{{param1}}/carousel-single-images_alt/{{param2}}/module.html
+    response:
+      headers:
+        Content-Type: text/html
+      body: '@mock-data/resp_www_chase_com_19.html'
+      useTemplating: false
+  - path: /content/chase-ux/en/structured/module/direct-to-dealer/primary-tool-liquid
+    response:
+      headers:
+        Content-Type: text/html
+      body: '@mock-data/resp_www_chase_com_20.html'
+      useTemplating: false
+  - path: /content/chase-ux/en/structured/module/{{param1}}/ad-geo/{{param2}}/module.html
+    response:
+      headers:
+        Content-Type: text/html
+      body: '@mock-data/resp_www_chase_com_21.html'
+      useTemplating: false
+  - path: /content/chase-ux/en/structured/module/{{param1}}/index/{{param2}}/{{param3}}/module.html
+    response:
+      headers:
+        Content-Type: text/html
+      body: '@mock-data/resp_www_chase_com_22.html'
+      useTemplating: false
+  - path: /content/chase-ux/en/structured/module/{{param1}}/prod-public-lucy-advisor-contact-form-mbox/{{param2}}/module.html
+    response:
+      headers:
+        Content-Type: text/html
+      body: '@mock-data/resp_www_chase_com_23.html'
+      useTemplating: false
+  - path: /content/experience-fragments/microsites/lucy-form/lucylandingpage/master/{{param}}/root.html
+    response:
+      headers:
+        Content-Type: text/html
+      body: '@mock-data/resp_www_chase_com_27.html'
+      useTemplating: false
+  - path: /personal/investments/advisor
+    response:
+      headers:
+        Content-Type: text/html
+      body: '@mock-data/resp_www_chase_com_28.html'
+      useTemplating: false
+  - path: /personal/investments/advisor-contact-form
+    response:
+      headers:
+        Content-Type: text/html
+      body: '@mock-data/resp_www_chase_com_29.html'
+      useTemplating: false

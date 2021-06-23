@@ -1,0 +1,18 @@
+{
+ "parameters": [
+  {
+   "name": "param",
+   "uuid": "92de8a9e-ccbb-4ca5-b5ec-2c284a7c777e"
+  },
+  {
+   "name": "param1",
+   "uuid": "cc836602-fd37-421d-8ba7-a18281f35677"
+  }
+ ],
+ "rows": [
+  {
+   "param": "mbox",
+   "param1": "_jcr_content"
+  }
+ ]
+}

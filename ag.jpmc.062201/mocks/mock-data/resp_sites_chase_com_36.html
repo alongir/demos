@@ -1,0 +1,242 @@
+<div id="DA_424795102337">
+ <div class="herolayer-version-b" data-feature="herolayer" lang="en-US">
+ <span class="accessible-text">Start of Topic</span>
+ <div class="herolayer__img sanfran sanfran-highcontrast"></div>
+  <div class="herolayer__color-layer" style="background: white; opacity: 0.1;">
+  </div>
+  <div class="hero-layer__container flexible-ad">
+    <div class="herolayer__container feature-container">
+     <div class="herolayer__inner">
+          <div class="herolayer__image">
+          </div>
+          <div class="herolayer__content">
+          <div class="herolayer__category"></div>
+            <div class="herolayer__heading"></div>
+            <div class="herolayer__desc"></div>
+          <!--   add links dynamically  -->
+          </div>
+      </div>
+    </div>
+  </div>
+  <a class="herolayer__clickable" aria-hidden="true" tabindex="-1">
+  </a>
+  <span class="accessible-text">End of Topic</span>
+</div>
+</div>
+<script>
+  require(
+      [ 'slotplacement/topic', 'jquery' ],
+      function(Topic, $) {
+        var link, title, foreGroundImage, category, bodyText, foreGroundAltText, backgroundAltText, buttonColorCls, textColor, shadow, adVariantContext, ctaType, cta,isCTABlank,textColorStyle, shadowStyle, showCTA,showButton, textAlignment, verticalAlignment, linkIsBlank,foreGroundImageAlignment;
+        var imagePaths = {};
+        var lowcontrastPaths={};
+        var backgroundAltText="";
+        var foreGroundAltText="";
+        var $ad = $("#DA_424795102337");
+        var adParentId = $ad.parent().attr('id');
+
+
+        Topic.subscribe('adUpdate', function(pageId, data) {
+          injectAd(data);
+        });
+
+        Topic.subscribe('adError', function () {
+          injectAd({});
+        });
+
+        function injectAd(data) {
+          var _a = data._a ? data._a.split(',') : [];
+          function hA(a) {
+            if ($.inArray(a, _a) > -1) {
+              return true;
+            }
+            return false;
+          }
+          
+          var rules = {};
+          
+          foreGroundAltText = "Enjoy two hundred and twenty five dollars";
+          foreGroundImageAlignment = "left";
+          
+          backgroundAltText = "";
+          
+                      imagePaths["tablet"] = "/content/mktservices/digital-assets/image.chase-blue-bg-tablet.jpg/branding-photography/Photography/Consumer_Bank/chase-blue-bg.jpg";
+                      
+                      imagePaths["desktop"] = "/content/mktservices/digital-assets/image.chase-blue-bg-desktop.jpg/branding-photography/Photography/Consumer_Bank/chase-blue-bg.jpg";
+                      
+                      imagePaths["retina"] = "/content/mktservices/digital-assets/image.chase-blue-bg-retina.jpg/branding-photography/Photography/Consumer_Bank/chase-blue-bg.jpg";
+                      
+                      imagePaths["mobile-portrait"] = "/content/mktservices/digital-assets/image.chase-blue-bg-mobile-portrait.jpg/branding-photography/Photography/Consumer_Bank/chase-blue-bg.jpg";
+                      
+                      imagePaths["mobile-landscape"] = "/content/mktservices/digital-assets/image.chase-blue-bg-mobile-landscape.jpg/branding-photography/Photography/Consumer_Bank/chase-blue-bg.jpg";
+                      
+                       lowcontrastPaths["tablet"] = "/content/mktservices/digital-assets/image.chase-blue-bg-lc-tablet.jpg/branding-photography/Photography/Consumer_Bank/chase-blue-bg.jpg";
+
+                    
+                       lowcontrastPaths["desktop"] = "/content/mktservices/digital-assets/image.chase-blue-bg-lc-desktop.jpg/branding-photography/Photography/Consumer_Bank/chase-blue-bg.jpg";
+
+                    
+                       lowcontrastPaths["retina"] = "/content/mktservices/digital-assets/image.chase-blue-bg-lc-retina.jpg/branding-photography/Photography/Consumer_Bank/chase-blue-bg.jpg";
+
+                    
+                       lowcontrastPaths["mobile-portrait"] = "/content/mktservices/digital-assets/image.chase-blue-bg-lc-mobile-portrait.jpg/branding-photography/Photography/Consumer_Bank/chase-blue-bg.jpg";
+
+                    
+                       lowcontrastPaths["mobile-landscape"] = "/content/mktservices/digital-assets/image.chase-blue-bg-lc-mobile-landscape.jpg/branding-photography/Photography/Consumer_Bank/chase-blue-bg.jpg";
+
+                    
+
+            adVariantContext="flexibleheroLinkId:default;flexibleheroBackgroundImageId:default;flexibleheroForegroundImageId:default;flexibleHeroCategoryElement:default;flexibleHerotitleElement:default;flexibleHeroBodyElement:default;flexibleHeroCalltOActionElement:default;flexibleHeroGeneralPropertiesElement:default";
+            title = "<p>New Chase customers:</p>";
+            bodyText = "<p>Open a new Chase Total Checking<sup>®</sup> account and set up direct deposit.</p>";
+            category = "<p></p>";
+            buttonColorCls = "cta--btn-green-aloe";
+            textColor = "White";
+            textColorStyle = "#000000";
+            shadow = "false";
+            shadowStyle = "";
+            ctaType = "Button";
+            cta = "Open an account";
+            link = "https://account.chase.com/consumer/banking/seo";
+            foreGroundImage = "/content/services/structured-image/image.flexibleheroforeground.png/XCRT/Flexible-Templates/Hero/FlexibleHeroNewForeground/003389_01_CH_225_Total_Checking_Banner_ads-HeroForeground.png";
+            isCTABlank = "false";
+            ctaAccessibleText = "Open an account";
+            textAlignment = "left";
+            verticalAlignment = "top";
+            adaText = "";
+            linkIsBlank="false"
+
+
+          
+
+          if(ctaType == 'Text') {
+            showCTA = "";
+            showButton = "hide";
+          }else {
+            showButton = "";
+            showCTA = "hide";
+          }
+          if (textColor == 'White') {
+            textColorStyle = '#FFFFFF';
+          }
+          if (shadow == 'true') {
+            shadowStyle = 'text-shadow';
+          }
+
+          $ad.find(".sanfran").attr("alt",backgroundAltText);
+          if(imagePaths["desktop"]) {
+            $ad.find(".herolayer__img").append(primaryBackgroundImageHighContrast(imagePaths));
+          }
+          $ad.find(".herolayer__img").append(primaryBackgroundImageLowContrast(lowcontrastPaths));
+
+
+            if("false"=="false"){
+            $ad.find(".herolayer__img").removeClass("sanfran-highcontrast");
+            $ad.find(".herolayer__img").addClass("set-contrast sanfran-lowcontrast");
+
+          }else{
+
+            $ad.find(".herolayer__img").removeClass("set-contrast sanfran-lowcontrast");
+            $ad.find(".herolayer__img").addClass("sanfran-highcontrast");
+          }
+          var foreGroundImageTag = "<img src='"+foreGroundImage+"' />";
+          var style= "color:"+ textColorStyle+";";
+         if(foreGroundImage!="" && foreGroundImage!=undefined){
+              $ad.find(".herolayer__image").addClass(foreGroundImageAlignment).addClass(verticalAlignment).append(foreGroundImageTag);
+             $ad.find(".herolayer__image").find("img").attr("alt",foreGroundAltText);
+          }
+          $ad.find(".herolayer__inner").addClass(verticalAlignment);
+          $ad.find(".herolayer__content").addClass(textAlignment).addClass(verticalAlignment);
+          $ad.find(".herolayer__category").addClass(shadowStyle).attr('style',style).html(removeBankPtag(category));
+          $ad.find(".herolayer__heading").addClass(shadowStyle).attr('style',style).html(removeBankPtag(title));
+          $ad.find(".herolayer__desc").addClass(shadowStyle).attr('style',style).html(removeBankPtag(bodyText));
+
+             if(link!="" && link!=undefined && linkIsBlank!="true"){
+                //var linkAnchor="<a class='hero-layer__content--cta-container'></a>";
+               // $ad.find(".hero-layer__content--cta-container-outer-link").append(linkAnchor);
+                 $ad.find(".herolayer__clickable").attr('href',link);
+            }
+            else{
+               $ad.find(".herolayer__clickable").remove();
+             }
+
+         if(cta!="" && cta!=undefined && isCTABlank!="true"){
+              var buttonTag = $('<div class="herolayer__button"></div>').addClass(showButton);
+              $ad.find(".herolayer__content").append(buttonTag);
+
+              var text = "<a class='btn cta cta--primary cta--large' role='button'>"+cta+"</a>";
+             $ad.find('.herolayer__button').html(text);
+            $ad.find('.herolayer__button').children().attr('href',link).addClass(buttonColorCls).attr('aria-label',cta);
+             if(adaText!="" && adaText!=undefined)
+             {
+               $ad.find('.herolayer__button').children().attr('aria-label',adaText)
+             }
+
+             //add Link
+             var ctaContainer = $('<div class="herolayer__cta"></div>');
+             $ad.find(".herolayer__content").append(ctaContainer);
+             var ctaTag = $('<a class=""></a>');
+             $ad.find(".herolayer__cta").addClass(showCTA).append(ctaTag);
+             $ad.find('.herolayer__cta').children().addClass(shadowStyle).html(cta);
+            $ad.find('.herolayer__cta').children().attr('style',style).attr('href',link).attr('aria-label',cta);
+
+            if(adaText!="" && adaText!=undefined)
+            {
+               $ad.find('.herolayer__cta').children().attr('aria-label',adaText)
+            }
+
+
+        }
+          Topic('placementComplete').publish(adParentId,adVariantContext);
+        }
+
+        function removeBankPtag(text){
+          if(text=="<p></p>"){
+            text="";
+          }
+          return text;
+        }
+
+        var userAgentString = window.navigator.userAgent.toLowerCase();
+
+          if (userAgentString.indexOf("msie") > 0 ||
+            !!navigator.userAgent.match(/Edge\/\d+/) ||
+            !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
+
+          $ad.find(".herolayer__img").removeClass("set-contrast sanfran-lowcontrast");
+          $ad.find(".herolayer__img").addClass("sanfran-highcontrast");
+
+         }
+
+        function primaryBackgroundImageHighContrast(imagePaths) {
+          var background = "background-image:url(", selector = ".sanfran-highcontrast", media = "@media only screen and ", ie8AlphaImageLoader = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='", ie8SizingMethod = "', sizingMethod='scale');";
+          var style = "<style>";
+          style += selector + "{" + background + imagePaths["mobile-portrait"] + ");}";
+          style += media + "(min-width: 480px){" + selector + "{" + background + imagePaths["mobile-portrait"] + ");}}";
+          style += media + "(min-width: 768px){" + selector + "{" + background + imagePaths["mobile-landscape"] + ");}}";
+          style += media + "(min-width: 992px){" + selector + "{" + background + imagePaths["tablet"] + ");}}";
+          style += media + "(min-width: 1200px){" + selector + "{" + background + imagePaths["desktop"] + ");}}";
+          style += media + "(min-width: 1600px){" + selector + "{" + background + imagePaths["retina"] + ");}}";
+          style += ".lt-ie9 " + selector + "{ filter: " + ie8AlphaImageLoader + imagePaths["desktop"]
+              + ie8SizingMethod + "}";
+          style += "</style>";
+          return style;
+        }
+
+        function primaryBackgroundImageLowContrast(lowcontrastPaths) {
+          var background = "background-image:url(", selector = ".sanfran-lowcontrast", media = "@media only screen and ", ie8AlphaImageLoader = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='", ie8SizingMethod = "', sizingMethod='scale');";
+          var style = "<style>";
+          style += selector + "{" + background + lowcontrastPaths["mobile-portrait"] + ");}";
+          style += media + "(min-width: 480px){" + selector + "{" + background + lowcontrastPaths["mobile-portrait"] + ");}}";
+          style += media + "(min-width: 768px){" + selector + "{" + background + lowcontrastPaths["mobile-landscape"] + ");}}";
+          style += media + "(min-width: 992px){" + selector + "{" + background + lowcontrastPaths["tablet"] + ");}}";
+          style += media + "(min-width: 1200px){" + selector + "{" + background + lowcontrastPaths["desktop"] + ");}}";
+          style += media + "(min-width: 1600px){" + selector + "{" + background + lowcontrastPaths["retina"] + ");}}";
+          style += ".lt-ie9 " + selector + "{ filter: " + ie8AlphaImageLoader + lowcontrastPaths["desktop"]
+              + ie8SizingMethod + "}";
+          style += "</style>";
+          return style;
+        }
+
+      });
+</script>

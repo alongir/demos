@@ -1,0 +1,20 @@
+[
+  {
+    "app": "408c704037bea1da",
+    "eventId": "rb_f080783c-7a3e-490c-84ba-346ef2d12e98",
+    "modifiedSince": "1624273847426",
+    "referer": "https://secure03b.chase.com/web/auth/logonbox?fromOrigin=https%3A%2F%2Fwww.chase.com&navKey=reviewCreditCardOffers&lang=en#/logonbox/index/index",
+    "session": "v_4_srv_18_sn_810D4AF9DD95E7C2CF6D6738FBAE711C_perc_100000_ol_0_mul_1_app-3A8e4c3cc543ee1dcb_1_app-3A9debe78332458b14_1",
+    "svrid": "18",
+    "visitID": "JHCIHRNKLUJAIGNAPNOPFALILPILFFCT"
+  },
+  {
+    "app": "408c704037bea1da",
+    "eventId": "rb_f080783c-7a3e-490c-84ba-346ef2d12e98",
+    "modifiedSince": "1624273847426",
+    "referer": "https://secure03b.chase.com/web/auth/logonbox?fromOrigin=https%3A%2F%2Fwww.chase.com&navKey=reviewCreditCardOffers&lang=en#/logonbox/index/index",
+    "session": "v_4_srv_18_sn_810D4AF9DD95E7C2CF6D6738FBAE711C_perc_100000_ol_0_mul_1_app-3A8e4c3cc543ee1dcb_1_app-3A9debe78332458b14_1_app-3A408c704037bea1da_1",
+    "svrid": "18",
+    "visitID": "JHCIHRNKLUJAIGNAPNOPFALILPILFFCT"
+  }
+]

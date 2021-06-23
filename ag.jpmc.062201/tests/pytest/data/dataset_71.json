@@ -1,0 +1,52 @@
+{
+ "parameters": [
+  {
+   "name": "app",
+   "uuid": "00d6be8d-c4d4-4720-9dc1-237fc09ae077"
+  },
+  {
+   "name": "eventId",
+   "uuid": "88606059-5271-4d51-a3d1-4f41d00d3429"
+  },
+  {
+   "name": "modifiedSince",
+   "uuid": "80cfa66c-4011-4747-88da-6b38675a427e"
+  },
+  {
+   "name": "referer",
+   "uuid": "cc34e7cd-6247-4d40-b787-f3a1d85fc2a7"
+  },
+  {
+   "name": "session",
+   "uuid": "ac12acf9-a5bc-4182-9963-4f3e6424823d"
+  },
+  {
+   "name": "svrid",
+   "uuid": "a5a7d1af-046a-486c-a256-341662170b98"
+  },
+  {
+   "name": "visitID",
+   "uuid": "45003da4-7a20-4d9a-8b34-5ecfcc24b8f6"
+  }
+ ],
+ "rows": [
+  {
+   "app": "408c704037bea1da",
+   "eventId": "rb_f080783c-7a3e-490c-84ba-346ef2d12e98",
+   "modifiedSince": "1624273847426",
+   "referer": "https://secure03b.chase.com/web/auth/logonbox?fromOrigin=https%3A%2F%2Fwww.chase.com&navKey=reviewCreditCardOffers&lang=en#/logonbox/index/index",
+   "session": "v_4_srv_18_sn_810D4AF9DD95E7C2CF6D6738FBAE711C_perc_100000_ol_0_mul_1_app-3A8e4c3cc543ee1dcb_1_app-3A9debe78332458b14_1",
+   "svrid": "18",
+   "visitID": "JHCIHRNKLUJAIGNAPNOPFALILPILFFCT"
+  },
+  {
+   "app": "408c704037bea1da",
+   "eventId": "rb_f080783c-7a3e-490c-84ba-346ef2d12e98",
+   "modifiedSince": "1624273847426",
+   "referer": "https://secure03b.chase.com/web/auth/logonbox?fromOrigin=https%3A%2F%2Fwww.chase.com&navKey=reviewCreditCardOffers&lang=en#/logonbox/index/index",
+   "session": "v_4_srv_18_sn_810D4AF9DD95E7C2CF6D6738FBAE711C_perc_100000_ol_0_mul_1_app-3A8e4c3cc543ee1dcb_1_app-3A9debe78332458b14_1_app-3A408c704037bea1da_1",
+   "svrid": "18",
+   "visitID": "JHCIHRNKLUJAIGNAPNOPFALILPILFFCT"
+  }
+ ]
+}

@@ -1,0 +1,18 @@
+{
+ "parameters": [
+  {
+   "name": "cid",
+   "uuid": "c75ccf9e-94d0-4464-a502-5da6a8d6b4c1"
+  },
+  {
+   "name": "tripletId",
+   "uuid": "55ae04f2-1168-45ce-bb38-a48130697ac6"
+  }
+ ],
+ "rows": [
+  {
+   "cid": "t1525271-card-triplet-responsive52133.dynamic.html",
+   "tripletId": "2018"
+  }
+ ]
+}

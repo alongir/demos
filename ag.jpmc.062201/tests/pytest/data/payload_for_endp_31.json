@@ -1,0 +1,58 @@
+{
+ "context": {
+  "address": {
+   "referringUrl": "{{referringUrl}}",
+   "url": "{{url}}"
+  },
+  "browser": {
+   "host": "www.chase.com",
+   "webGLRenderer": "{{webGLRenderer}}"
+  },
+  "channel": "web",
+  "screen": {
+   "colorDepth": "{{colorDepth}}",
+   "height": "{{height}}",
+   "orientation": "landscape",
+   "pixelRatio": 2,
+   "width": "{{width}}"
+  },
+  "timeOffsetInMinutes": "{{timeOffsetInMinutes}}",
+  "userAgent": "{{userAgent}}",
+  "window": {
+   "height": "{{height1}}",
+   "width": "{{width1}}"
+  }
+ },
+ "execute": {
+  "mboxes": [
+   {
+    "index": 0,
+    "name": "{{name}}",
+    "parameters": {
+     "mboxName": "{{mboxName}}",
+     "pageTitle": "{{pageTitle}}"
+    },
+    "profileParameters": {
+     "v1stCookie": "{{profileParameters}}"
+    }
+   }
+  ],
+  "pageLoad": {}
+ },
+ "experienceCloud": {
+  "analytics": {
+   "logging": "{{logging}}"
+  },
+  "audienceManager": {
+   "locationHint": "{{locationHint}}"
+  }
+ },
+ "id": {
+  "marketingCloudVisitorId": "{{marketingCloudVisitorId}}",
+  "tntId": "{{tntId}}"
+ },
+ "property": {
+  "token": "{{token}}"
+ },
+ "requestId": "{{requestId}}"
+}

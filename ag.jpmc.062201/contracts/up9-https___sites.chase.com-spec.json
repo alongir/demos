@@ -1,0 +1,252 @@
+{
+ "info": {
+  "title": "https://sites.chase.com",
+  "version": "0.0"
+ },
+ "openapi": "3.0.2",
+ "paths": {
+  "/content/Creatives/Public/Heroes/{heroeId}/March/{cid}": {
+   "get": {
+    "operationId": "2652e917-d7c1-4f3b-b3d9-6d3b0c889c52",
+    "parameters": [],
+    "responses": {
+     "200": {
+      "content": {
+       "text/html": {
+        "example": "<div id=\"DA_424795102337\">\r\n <div class=\"herolayer-version-b\" data-feature=\"herolayer\" lang=\"en-US\">\r\n <span class=\"accessible-text\">Start of Topic</span>\r\n <div class=\"herolayer__img sanfran sanfran-highcontrast\"></div>\r\n  <div class=\"herolayer__color-layer\" style=\"background: white; opacity: 0.1;\">\r\n  </div>\r\n  <div class=\"hero-layer__container flexible-ad\">\r\n    <div class=\"herolayer__container feature-container\">\r\n     <div class=\"herolayer__inner\">\r\n          <div class=\"herolayer__image\">\r\n          </div>\r\n          <div class=\"herolayer__content\">\r\n          <div class=\"herolayer__category\"></div>\r\n            <div class=\"herolayer__heading\"></div>\r\n            <div class=\"herolayer__desc\"></div>\r\n          <!--   add links dynamically  -->\r\n          </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <a class=\"herolayer__clickable\" aria-hidden=\"true\" tabindex=\"-1\">\r\n  </a>\r\n  <span class=\"accessible-text\">End of Topic</span>\r\n</div>\r\n</div>\r\n<script>\r\n  require(\r\n      [ 'slotplacement/topic', 'jquery' ],\r\n      function(Topic, $) {\r\n        var link, title, foreGroundImage, category, bodyText, foreGroundAltText, backgroundAltText, buttonColorCls, textColor, shadow, adVariantContext, ctaType, cta,isCTABlank,textColorStyle, shadowStyle, showCTA,showButton, textAlignment, verticalAlignment, linkIsBlank,foreGroundImageAlignment;\r\n        var imagePaths = {};\r\n        var lowcontrastPaths={};\r\n        var backgroundAltText=\"\";\r\n        var foreGroundAltText=\"\";\r\n        var $ad = $(\"#DA_424795102337\");\r\n        var adParentId = $ad.parent().attr('id');\r\n\r\n\r\n        Topic.subscribe('adUpdate', function(pageId, data) {\r\n          injectAd(data);\r\n        });\r\n\r\n        Topic.subscribe('adError', function () {\r\n          injectAd({});\r\n        });\r\n\r\n        function injectAd(data) {\r\n          var _a = data._a ? data._a.split(',') : [];\r\n          function hA(a) {\r\n            if ($.inArray(a, _a) > -1) {\r\n              return true;\r\n            }\r\n            return false;\r\n          }\r\n          \r\n          var rules = {};\r\n          \r\n          foreGroundAltText = \"Enjoy two hundred and twenty five dollars\";\r\n          foreGroundImageAlignment = \"left\";\r\n          \r\n          backgroundAltText = \"\";\r\n          \r\n                      imagePaths[\"tablet\"] = \"/content/mktservices/digital-assets/image.chase-blue-bg-tablet.jpg/branding-photography/Photography/Consumer_Bank/chase-blue-bg.jpg\";\r\n                      \r\n                      imagePaths[\"desktop\"] = \"/content/mktservices/digital-assets/image.chase-blue-bg-desktop.jpg/branding-photography/Photography/Consumer_Bank/chase-blue-bg.jpg\";\r\n                      \r\n                      imagePaths[\"retina\"] = \"/content/mktservices/digital-assets/image.chase-blue-bg-retina.jpg/branding-photography/Photography/Consumer_Bank/chase-blue-bg.jpg\";\r\n                      \r\n                      imagePaths[\"mobile-portrait\"] = \"/content/mktservices/digital-assets/image.chase-blue-bg-mobile-portrait.jpg/branding-photography/Photography/Consumer_Bank/chase-blue-bg.jpg\";\r\n                      \r\n                      imagePaths[\"mobile-landscape\"] = \"/content/mktservices/digital-assets/image.chase-blue-bg-mobile-landscape.jpg/branding-photography/Photography/Consumer_Bank/chase-blue-bg.jpg\";\r\n                      \r\n                       lowcontrastPaths[\"tablet\"] = \"/content/mktservices/digital-assets/image.chase-blue-bg-lc-tablet.jpg/branding-photography/Photography/Consumer_Bank/chase-blue-bg.jpg\";\r\n\r\n                    \r\n                       lowcontrastPaths[\"desktop\"] = \"/content/mktservices/digital-assets/image.chase-blue-bg-lc-desktop.jpg/branding-photography/Photography/Consumer_Bank/chase-blue-bg.jpg\";\r\n\r\n                    \r\n                       lowcontrastPaths[\"retina\"] = \"/content/mktservices/digital-assets/image.chase-blue-bg-lc-retina.jpg/branding-photography/Photography/Consumer_Bank/chase-blue-bg.jpg\";\r\n\r\n                    \r\n                       lowcontrastPaths[\"mobile-portrait\"] = \"/content/mktservices/digital-assets/image.chase-blue-bg-lc-mobile-portrait.jpg/branding-photography/Photography/Consumer_Bank/chase-blue-bg.jpg\";\r\n\r\n                    \r\n                       lowcontrastPaths[\"mobile-landscape\"] = \"/content/mktservices/digital-assets/image.chase-blue-bg-lc-mobile-landscape.jpg/branding-photography/Photography/Consumer_Bank/chase-blue-bg.jpg\";\r\n\r\n                    \r\n\r\n            adVariantContext=\"flexibleheroLinkId:default;flexibleheroBackgroundImageId:default;flexibleheroForegroundImageId:default;flexibleHeroCategoryElement:default;flexibleHerotitleElement:default;flexibleHeroBodyElement:default;flexibleHeroCalltOActionElement:default;flexibleHeroGeneralPropertiesElement:default\";\r\n            title = \"<p>New Chase customers:</p>\";\r\n            bodyText = \"<p>Open a new Chase Total Checking<sup>\u00ae</sup> account and set up direct deposit.</p>\";\r\n            category = \"<p></p>\";\r\n            buttonColorCls = \"cta--btn-green-aloe\";\r\n            textColor = \"White\";\r\n            textColorStyle = \"#000000\";\r\n            shadow = \"false\";\r\n            shadowStyle = \"\";\r\n            ctaType = \"Button\";\r\n            cta = \"Open an account\";\r\n            link = \"https://account.chase.com/consumer/banking/seo\";\r\n            foreGroundImage = \"/content/services/structured-image/image.flexibleheroforeground.png/XCRT/Flexible-Templates/Hero/FlexibleHeroNewForeground/003389_01_CH_225_Total_Checking_Banner_ads-HeroForeground.png\";\r\n            isCTABlank = \"false\";\r\n            ctaAccessibleText = \"Open an account\";\r\n            textAlignment = \"left\";\r\n            verticalAlignment = \"top\";\r\n            adaText = \"\";\r\n            linkIsBlank=\"false\"\r\n\r\n\r\n          \r\n\r\n          if(ctaType == 'Text') {\r\n            showCTA = \"\";\r\n            showButton = \"hide\";\r\n          }else {\r\n            showButton = \"\";\r\n            showCTA = \"hide\";\r\n          }\r\n          if (textColor == 'White') {\r\n            textColorStyle = '#FFFFFF';\r\n          }\r\n          if (shadow == 'true') {\r\n            shadowStyle = 'text-shadow';\r\n          }\r\n\r\n          $ad.find(\".sanfran\").attr(\"alt\",backgroundAltText);\r\n          if(imagePaths[\"desktop\"]) {\r\n            $ad.find(\".herolayer__img\").append(primaryBackgroundImageHighContrast(imagePaths));\r\n          }\r\n          $ad.find(\".herolayer__img\").append(primaryBackgroundImageLowContrast(lowcontrastPaths));\r\n\r\n\r\n            if(\"false\"==\"false\"){\r\n            $ad.find(\".herolayer__img\").removeClass(\"sanfran-highcontrast\");\r\n            $ad.find(\".herolayer__img\").addClass(\"set-contrast sanfran-lowcontrast\");\r\n\r\n          }else{\r\n\r\n            $ad.find(\".herolayer__img\").removeClass(\"set-contrast sanfran-lowcontrast\");\r\n            $ad.find(\".herolayer__img\").addClass(\"sanfran-highcontrast\");\r\n          }\r\n          var foreGroundImageTag = \"<img src='\"+foreGroundImage+\"' />\";\r\n          var style= \"color:\"+ textColorStyle+\";\";\r\n         if(foreGroundImage!=\"\" && foreGroundImage!=undefined){\r\n              $ad.find(\".herolayer__image\").addClass(foreGroundImageAlignment).addClass(verticalAlignment).append(foreGroundImageTag);\r\n             $ad.find(\".herolayer__image\").find(\"img\").attr(\"alt\",foreGroundAltText);\r\n          }\r\n          $ad.find(\".herolayer__inner\").addClass(verticalAlignment);\r\n          $ad.find(\".herolayer__content\").addClass(textAlignment).addClass(verticalAlignment);\r\n          $ad.find(\".herolayer__category\").addClass(shadowStyle).attr('style',style).html(removeBankPtag(category));\r\n          $ad.find(\".herolayer__heading\").addClass(shadowStyle).attr('style',style).html(removeBankPtag(title));\r\n          $ad.find(\".herolayer__desc\").addClass(shadowStyle).attr('style',style).html(removeBankPtag(bodyText));\r\n\r\n             if(link!=\"\" && link!=undefined && linkIsBlank!=\"true\"){\r\n                //var linkAnchor=\"<a class='hero-layer__content--cta-container'></a>\";\r\n               // $ad.find(\".hero-layer__content--cta-container-outer-link\").append(linkAnchor);\r\n                 $ad.find(\".herolayer__clickable\").attr('href',link);\r\n            }\r\n            else{\r\n               $ad.find(\".herolayer__clickable\").remove();\r\n             }\r\n\r\n         if(cta!=\"\" && cta!=undefined && isCTABlank!=\"true\"){\r\n              var buttonTag = $('<div class=\"herolayer__button\"></div>').addClass(showButton);\r\n              $ad.find(\".herolayer__content\").append(buttonTag);\r\n\r\n              var text = \"<a class='btn cta cta--primary cta--large' role='button'>\"+cta+\"</a>\";\r\n             $ad.find('.herolayer__button').html(text);\r\n            $ad.find('.herolayer__button').children().attr('href',link).addClass(buttonColorCls).attr('aria-label',cta);\r\n             if(adaText!=\"\" && adaText!=undefined)\r\n             {\r\n               $ad.find('.herolayer__button').children().attr('aria-label',adaText)\r\n             }\r\n\r\n             //add Link\r\n             var ctaContainer = $('<div class=\"herolayer__cta\"></div>');\r\n             $ad.find(\".herolayer__content\").append(ctaContainer);\r\n             var ctaTag = $('<a class=\"\"></a>');\r\n             $ad.find(\".herolayer__cta\").addClass(showCTA).append(ctaTag);\r\n             $ad.find('.herolayer__cta').children().addClass(shadowStyle).html(cta);\r\n            $ad.find('.herolayer__cta').children().attr('style',style).attr('href',link).attr('aria-label',cta);\r\n\r\n            if(adaText!=\"\" && adaText!=undefined)\r\n            {\r\n               $ad.find('.herolayer__cta').children().attr('aria-label',adaText)\r\n            }\r\n\r\n\r\n        }\r\n          Topic('placementComplete').publish(adParentId,adVariantContext);\r\n        }\r\n\r\n        function removeBankPtag(text){\r\n          if(text==\"<p></p>\"){\r\n            text=\"\";\r\n          }\r\n          return text;\r\n        }\r\n\r\n        var userAgentString = window.navigator.userAgent.toLowerCase();\r\n\r\n          if (userAgentString.indexOf(\"msie\") > 0 ||\r\n            !!navigator.userAgent.match(/Edge\\/\\d+/) ||\r\n            !!navigator.userAgent.match(/Trident.*rv\\:11\\./)) {\r\n\r\n          $ad.find(\".herolayer__img\").removeClass(\"set-contrast sanfran-lowcontrast\");\r\n          $ad.find(\".herolayer__img\").addClass(\"sanfran-highcontrast\");\r\n\r\n         }\r\n\r\n        function primaryBackgroundImageHighContrast(imagePaths) {\r\n          var background = \"background-image:url(\", selector = \".sanfran-highcontrast\", media = \"@media only screen and \", ie8AlphaImageLoader = \"progid:DXImageTransform.Microsoft.AlphaImageLoader(src='\", ie8SizingMethod = \"', sizingMethod='scale');\";\r\n          var style = \"<style>\";\r\n          style += selector + \"{\" + background + imagePaths[\"mobile-portrait\"] + \");}\";\r\n          style += media + \"(min-width: 480px){\" + selector + \"{\" + background + imagePaths[\"mobile-portrait\"] + \");}}\";\r\n          style += media + \"(min-width: 768px){\" + selector + \"{\" + background + imagePaths[\"mobile-landscape\"] + \");}}\";\r\n          style += media + \"(min-width: 992px){\" + selector + \"{\" + background + imagePaths[\"tablet\"] + \");}}\";\r\n          style += media + \"(min-width: 1200px){\" + selector + \"{\" + background + imagePaths[\"desktop\"] + \");}}\";\r\n          style += media + \"(min-width: 1600px){\" + selector + \"{\" + background + imagePaths[\"retina\"] + \");}}\";\r\n          style += \".lt-ie9 \" + selector + \"{ filter: \" + ie8AlphaImageLoader + imagePaths[\"desktop\"]\r\n              + ie8SizingMethod + \"}\";\r\n          style += \"</style>\";\r\n          return style;\r\n        }\r\n\r\n        function primaryBackgroundImageLowContrast(lowcontrastPaths) {\r\n          var background = \"background-image:url(\", selector = \".sanfran-lowcontrast\", media = \"@media only screen and \", ie8AlphaImageLoader = \"progid:DXImageTransform.Microsoft.AlphaImageLoader(src='\", ie8SizingMethod = \"', sizingMethod='scale');\";\r\n          var style = \"<style>\";\r\n          style += selector + \"{\" + background + lowcontrastPaths[\"mobile-portrait\"] + \");}\";\r\n          style += media + \"(min-width: 480px){\" + selector + \"{\" + background + lowcontrastPaths[\"mobile-portrait\"] + \");}}\";\r\n          style += media + \"(min-width: 768px){\" + selector + \"{\" + background + lowcontrastPaths[\"mobile-landscape\"] + \");}}\";\r\n          style += media + \"(min-width: 992px){\" + selector + \"{\" + background + lowcontrastPaths[\"tablet\"] + \");}}\";\r\n          style += media + \"(min-width: 1200px){\" + selector + \"{\" + background + lowcontrastPaths[\"desktop\"] + \");}}\";\r\n          style += media + \"(min-width: 1600px){\" + selector + \"{\" + background + lowcontrastPaths[\"retina\"] + \");}}\";\r\n          style += \".lt-ie9 \" + selector + \"{ filter: \" + ie8AlphaImageLoader + lowcontrastPaths[\"desktop\"]\r\n              + ie8SizingMethod + \"}\";\r\n          style += \"</style>\";\r\n          return style;\r\n        }\r\n\r\n      });\r\n</script>"
+       }
+      },
+      "description": "OK"
+     }
+    },
+    "summary": "Seen 3 requests",
+    "tags": [
+     "content.Creatives.Public"
+    ]
+   },
+   "parameters": [
+    {
+     "in": "path",
+     "name": "heroeId",
+     "required": true,
+     "schema": {
+      "enum": [
+       "2021"
+      ],
+      "type": "string"
+     },
+     "style": "simple"
+    },
+    {
+     "in": "path",
+     "name": "cid",
+     "required": true,
+     "schema": {
+      "enum": [
+       "65596_cb_225-checking-only_hero_r-867.dynamic.html"
+      ],
+      "type": "string"
+     },
+     "style": "simple"
+    }
+   ]
+  },
+  "/content/Creatives/Public/Tiles/{tileId}/March/{cid}": {
+   "get": {
+    "operationId": "a636c092-c1ce-41a7-9cdd-281e02c6b948",
+    "parameters": [],
+    "responses": {
+     "200": {
+      "content": {
+       "text/html": {
+        "example": "<div class=\"hero hero-version-3 row feature-container\" lang=\"en-US\">\r\n<div id=\"DA_591735241926\">\r\n<a class=\"hero__clickable\">\r\n<span class=\"accessible-text\">Start of Topic</span>\r\n  <div class=\"hero__container\">\r\n      <div class=\"hero__title\">\r\n      </div>\r\n      <div class=\"hero__img\" style=\"\">\r\n      <img>\r\n      </div>\r\n      <div class=\"hero__inner\">\r\n        <div class=\"hero__content\">\r\n          <div class=\"hero__content--area\">\r\n          </div>\r\n          <div class=\"hero__content--cta-container\">\r\n            <div class=\"hero__content--cta\">\r\n            </div>\r\n          </div>\r\n      </div>       \r\n     </div>\r\n  </div>\r\n<span class=\"accessible-text\">End of Topic</span> \r\n</a>\r\n</div>\r\n</div>\r\n\r\n<script>\r\n  require(['slotplacement/topic', 'jquery'], function (Topic, $) {\r\n    Topic.subscribe('adUpdate', function (pageId, data) {\r\n      injectAd(data);\r\n    });\r\n    \r\n    Topic.subscribe('adError', function () {         \r\n      injectAd({});\r\n    });\r\n    \r\n    function injectAd(data){  \r\n      var _a = data._a ? data._a.split(',') : [];\r\n      \r\n      function hA(a) {\r\n        if ($.inArray(a, _a) > -1) {\r\n          return true;\r\n        }\r\n        return false;\r\n      }\r\n\r\n      var rules = {};\r\n      \r\n      \r\n      // Title Rules\r\n      var title, content, ctaText, ctaLink, ctaAccessibleText, secondaryImg, secondaryImgAlt, secondaryImageAlignment, adVariantContext, ctaType, buttonColorCls,buttonSizeCls, buttonColor, buttonSize;\r\n      \r\n        title   = \"<p>Special offer for you</p>\";\r\n        content = \"<p>New Chase customers: Click &quot;Continue &amp; apply&quot; for a new Chase Total Checking<sup>\u00ae</sup> account with direct deposit.</p>\";\r\n        ctaText = \"<p>Continue &amp; apply</p>\";\r\n        ctaLink = \"https://account.chase.com/consumer/banking/seo\";\r\n        ctaAccessibleText = \"\";\r\n        secondaryImg = \"/content/services/structured-image/image.copy.jpg/XCRT/Tile-Secondary/2021/march/003389_01_CH_225_Total_Checking_Banner_ads-SmallTile-479x300.jpg\";\r\n        secondaryImgAlt = \"Enjoy two hundred and twenty five dollars\";\r\n        secondaryImageAlignment = \"left\";\r\n        adVariantContext=\"tileSecondaryImgId:default;tileTitleId:default;tileContentId:default;tileCallToActionId:default;tileLinkId:default\";\r\n        ctaType = \"Button\";\r\n        \r\n        buttonColorCls = \"cta--btn-green-aloe\";\r\n        buttonSizeCls = \"cta--small\";\r\n        buttonColor = \"GREEN ALOE\";\r\n        buttonSize = \"Small\";\r\n        \r\n\r\n      \r\n      // Dynamic Ad Injection\r\n      var $ad = $(\"#DA_591735241926\");\r\n      var adParentId=$ad.parent().parent().attr('id');\r\n      var ctaLinkText = ctaText + (ctaAccessibleText.length > 0 ? \"<span class='accessible-text'>\" + ctaAccessibleText + \"</span>\" : \"\");\r\n      if(secondaryImageAlignment == 'left'){\r\n        $ad.parent().addClass(\"left\");\r\n      }\r\n      if (ctaType == \"Button\") {\r\n        $ad.find(\".hero__content--cta\").addClass(\"cta \"+buttonColorCls+\" \"+buttonSizeCls);\r\n      }\r\n      $ad.find(\".hero__title\").html(title);\r\n      $ad.find(\".hero__content--area\").html(content);\r\n      $ad.find(\".hero__clickable\").attr(\"href\", ctaLink);\r\n      $ad.find(\".hero__content--cta\").html(ctaLinkText);\r\n      $ad.find(\".hero__img\").find(\"img\").attr({\"src\": secondaryImg, \"alt\": secondaryImgAlt});\r\n      Topic('placementComplete').publish(adParentId,adVariantContext);\r\n    }\r\n  });\r\n</script>"
+       }
+      },
+      "description": "OK"
+     }
+    },
+    "summary": "Seen 2 requests",
+    "tags": [
+     "content.Creatives.Public"
+    ]
+   },
+   "parameters": [
+    {
+     "in": "path",
+     "name": "tileId",
+     "required": true,
+     "schema": {
+      "enum": [
+       "2021"
+      ],
+      "type": "string"
+     },
+     "style": "simple"
+    },
+    {
+     "in": "path",
+     "name": "cid",
+     "required": true,
+     "schema": {
+      "enum": [
+       "65597_cb_225-checking-only_restile_r-867.dynamic.html"
+      ],
+      "type": "string"
+     },
+     "style": "simple"
+    }
+   ]
+  },
+  "/content/Creatives/Public/Triplets/{tripletId}/July/{cid}": {
+   "get": {
+    "operationId": "ae95357c-56b9-472d-b099-ec9e080c3842",
+    "parameters": [],
+    "responses": {
+     "200": {
+      "content": {
+       "text/html": {
+        "example": "<a id=\"DA_57150989707\" class=\"mosaic--tile__link flexible-ad\" href=\"\" lang=\"en-US\">\r\n    <span class='accessible-text'>Start of Topic</span>\r\n</a>\r\n<script>\r\n  require(['slotplacement/topic', 'jquery'], function (Topic, $) {\r\n    var $ad = $(\"#DA_57150989707\");\r\n    var adParentId=$ad.parent().attr('id');\r\n    var  tripletImageAlt, adVariantContext;\r\n    var imagePaths = {};\r\n    Topic.subscribe('adUpdate', function (pageId, data) {\r\n      injectAd(data);\r\n    }); \r\n    Topic.subscribe('adError', function () {         \r\n      injectAd({});\r\n    });\r\n    \r\n    function tripletImageSrc (screenWidth, imagePaths, alt) {\r\n      var size = \"tablet\";\r\n      if(screenWidth >= 768) {\r\n        size = \"desktop\"; \r\n      } else if (screenWidth <= 480) { \r\n        size = \"mobile\"; \r\n      } \r\n\r\n      var src = \"src='\"+imagePaths[size]+\"'\";\r\n      var alt = \" alt='\" + alt + \"'\";\r\n      return \"<img \" + src + alt + \" />\";\r\n    }\r\n    \r\n    function injectAd(data){  \r\n      var _a = data._a ? data._a.split(',') : [];\r\n      function hA(a) {\r\n        if ($.inArray(a, _a) > -1) {\r\n          return true;\r\n        }\r\n        return false;\r\n      }\r\n      \r\n      var rules = {};\r\n      \r\n        tripletLink = \"https://creditcards.chase.com/cash-back-credit-cards/chase-freedom-unlimited?CELL=6VFQ\";\r\n        \r\n          imagePaths[\"desktop\"] = \"/content/services/structured-image/image.desktop.jpg/XCRT/Flexible-Templates/Triplets/2021/january/Unlimited-Triplet-1-desktop.jpg\";\r\n        \r\n          imagePaths[\"tablet\"] = \"/content/services/structured-image/image.tablet.jpg/XCRT/Flexible-Templates/Triplets/2021/january/Unlimited-Triplet-1-desktop.jpg\";\r\n        \r\n          imagePaths[\"mobile\"] = \"/content/services/structured-image/image.mobile.jpg/XCRT/Flexible-Templates/Triplets/2021/january/Unlimited-Triplet-1-desktop.jpg\";\r\n        \r\n        tripletImageAlt = \"Chase Freedom Unlimited(R). Earn a two hundred dollars bonus plus no annual fee. Also earn five percent cash back on travel purchased through Chase, three percent on dining and drugstores and one point five percent on all other purchases. Learn more.\";\r\n        adVariantContext=\"tripletLinkId:default;tripletImageId:default\";\r\n      \r\n      \r\n      // Dynamic Ad Injection\r\n      var screenWidth = window.innerWidth;\r\n      $ad.append(tripletImageSrc(screenWidth, imagePaths, tripletImageAlt));\r\n      $ad.attr(\"href\", tripletLink);\r\n      $ad.append(\"<span class='accessible-text'>End of Topic</span>\");\r\n      Topic('placementComplete').publish(adParentId,adVariantContext);\r\n      $(window).on(\"resize\", function () {\r\n        var currentScreenWidth = window.innerWidth;\r\n        if (currentScreenWidth !== screenWidth) { \r\n          screenWidth = currentScreenWidth; \r\n          $ad.find(\"img\").remove(); \r\n          $ad.prepend(tripletImageSrc(screenWidth, imagePaths, tripletImageAlt)); \r\n        }\r\n      });\r\n    }\r\n  });\r\n</script>"
+       }
+      },
+      "description": "OK"
+     }
+    },
+    "summary": "Seen 3 requests",
+    "tags": [
+     "content.Creatives.Public"
+    ]
+   },
+   "parameters": [
+    {
+     "in": "path",
+     "name": "tripletId",
+     "required": true,
+     "schema": {
+      "enum": [
+       "2020",
+       "2018",
+       "2021"
+      ],
+      "type": "string"
+     },
+     "style": "simple"
+    },
+    {
+     "in": "path",
+     "name": "cid",
+     "required": true,
+     "schema": {
+      "enum": [
+       "t1525271-card-triplet-responsive52133.dynamic.html",
+       "n3131118-credit-card-related-services-triplet-responsive52153.dynamic.html"
+      ],
+      "type": "string"
+     },
+     "style": "simple"
+    }
+   ]
+  },
+  "/content/Creatives/Public/Triplets/{tripletId}/May/{cid}": {
+   "get": {
+    "operationId": "fa6fd006-6e50-4925-9a68-344ab5bb211f",
+    "parameters": [],
+    "responses": {
+     "200": {
+      "content": {
+       "text/html": {
+        "example": "<a id=\"DA_342595889767\" class=\"mosaic--tile__link flexible-ad\" href=\"\" lang=\"en-US\">\r\n    <span class='accessible-text'>Start of Topic</span>\r\n</a>\r\n<script>\r\n  require(['slotplacement/topic', 'jquery'], function (Topic, $) {\r\n    var $ad = $(\"#DA_342595889767\");\r\n    var adParentId=$ad.parent().attr('id');\r\n    var  tripletImageAlt, adVariantContext;\r\n    var imagePaths = {};\r\n    Topic.subscribe('adUpdate', function (pageId, data) {\r\n      injectAd(data);\r\n    }); \r\n    Topic.subscribe('adError', function () {         \r\n      injectAd({});\r\n    });\r\n    \r\n    function tripletImageSrc (screenWidth, imagePaths, alt) {\r\n      var size = \"tablet\";\r\n      if(screenWidth >= 768) {\r\n        size = \"desktop\"; \r\n      } else if (screenWidth <= 480) { \r\n        size = \"mobile\"; \r\n      } \r\n\r\n      var src = \"src='\"+imagePaths[size]+\"'\";\r\n      var alt = \" alt='\" + alt + \"'\";\r\n      return \"<img \" + src + alt + \" />\";\r\n    }\r\n    \r\n    function injectAd(data){  \r\n      var _a = data._a ? data._a.split(',') : [];\r\n      function hA(a) {\r\n        if ($.inArray(a, _a) > -1) {\r\n          return true;\r\n        }\r\n        return false;\r\n      }\r\n      \r\n      var rules = {};\r\n      \r\n        tripletLink = \"https://account.chase.com/banking/first-banking\";\r\n        \r\n          imagePaths[\"desktop\"] = \"/content/services/structured-image/image.desktop.jpg/XCRT/Flexible-Templates/Triplets/2021/may/CWO-51561_Triplet.jpg\";\r\n        \r\n          imagePaths[\"tablet\"] = \"/content/services/structured-image/image.tablet.jpg/XCRT/Flexible-Templates/Triplets/2021/may/CWO-51561_Triplet.jpg\";\r\n        \r\n          imagePaths[\"mobile\"] = \"/content/services/structured-image/image.mobile.jpg/XCRT/Flexible-Templates/Triplets/2021/may/CWO-51561_Triplet.jpg\";\r\n        \r\n        tripletImageAlt = \"Debit card for kids. Chase First Banking(SM). Available exclusively for Chase checking customers to help teens and kids build good money habits. Continue>>\";\r\n        adVariantContext=\"tripletLinkId:default;tripletImageId:default\";\r\n      \r\n      \r\n      // Dynamic Ad Injection\r\n      var screenWidth = window.innerWidth;\r\n      $ad.append(tripletImageSrc(screenWidth, imagePaths, tripletImageAlt));\r\n      $ad.attr(\"href\", tripletLink);\r\n      $ad.append(\"<span class='accessible-text'>End of Topic</span>\");\r\n      Topic('placementComplete').publish(adParentId,adVariantContext);\r\n      $(window).on(\"resize\", function () {\r\n        var currentScreenWidth = window.innerWidth;\r\n        if (currentScreenWidth !== screenWidth) { \r\n          screenWidth = currentScreenWidth; \r\n          $ad.find(\"img\").remove(); \r\n          $ad.prepend(tripletImageSrc(screenWidth, imagePaths, tripletImageAlt)); \r\n        }\r\n      });\r\n    }\r\n  });\r\n</script>"
+       }
+      },
+      "description": "OK"
+     }
+    },
+    "summary": "Seen 2 requests",
+    "tags": [
+     "content.Creatives.Public"
+    ]
+   },
+   "parameters": [
+    {
+     "in": "path",
+     "name": "tripletId",
+     "required": true,
+     "schema": {
+      "enum": [
+       "2020",
+       "2018",
+       "2021"
+      ],
+      "type": "string"
+     },
+     "style": "simple"
+    },
+    {
+     "in": "path",
+     "name": "cid",
+     "required": true,
+     "schema": {
+      "enum": [
+       "66023_cb_cfb_triplet_r-2179.dynamic.html"
+      ],
+      "type": "string"
+     },
+     "style": "simple"
+    }
+   ]
+  },
+  "/content/Creatives/Public/Triplets/{tripletId}/November/{cid}": {
+   "get": {
+    "operationId": "77662198-1ec5-4267-8918-1f8263bfbb46",
+    "parameters": [],
+    "responses": {
+     "200": {
+      "content": {
+       "text/html": {
+        "example": "<a id=\"DA_912171026658\" class=\"mosaic--tile__link flexible-ad\" href=\"\" lang=\"en-US\">\r\n    <span class='accessible-text'>Start of Topic</span>\r\n</a>\r\n<script>\r\n  require(['slotplacement/topic', 'jquery'], function (Topic, $) {\r\n    var $ad = $(\"#DA_912171026658\");\r\n    var adParentId=$ad.parent().attr('id');\r\n    var  tripletImageAlt, adVariantContext;\r\n    var imagePaths = {};\r\n    Topic.subscribe('adUpdate', function (pageId, data) {\r\n      injectAd(data);\r\n    }); \r\n    Topic.subscribe('adError', function () {         \r\n      injectAd({});\r\n    });\r\n    \r\n    function tripletImageSrc (screenWidth, imagePaths, alt) {\r\n      var size = \"tablet\";\r\n      if(screenWidth >= 768) {\r\n        size = \"desktop\"; \r\n      } else if (screenWidth <= 480) { \r\n        size = \"mobile\"; \r\n      } \r\n\r\n      var src = \"src='\"+imagePaths[size]+\"'\";\r\n      var alt = \" alt='\" + alt + \"'\";\r\n      return \"<img \" + src + alt + \" />\";\r\n    }\r\n    \r\n    function injectAd(data){  \r\n      var _a = data._a ? data._a.split(',') : [];\r\n      function hA(a) {\r\n        if ($.inArray(a, _a) > -1) {\r\n          return true;\r\n        }\r\n        return false;\r\n      }\r\n      \r\n      var rules = {};\r\n      \r\n        tripletLink = \"https://account.chase.com/consumer/banking/secure\";\r\n        \r\n          imagePaths[\"desktop\"] = \"/content/services/structured-image/image.desktop.jpg/XCRT/Flexible-Templates/Triplets/2021/march/003387_01_CH_100_Secure_Banking_Triplet-Desktop-384x280.jpg\";\r\n        \r\n          imagePaths[\"tablet\"] = \"/content/services/structured-image/image.tablet.jpg/XCRT/Flexible-Templates/Triplets/2021/march/003387_01_CH_100_Secure_Banking_Triplet-Desktop-384x280.jpg\";\r\n        \r\n          imagePaths[\"mobile\"] = \"/content/services/structured-image/image.mobile.jpg/XCRT/Flexible-Templates/Triplets/2021/march/003387_01_CH_100_Secure_Banking_Triplet-Desktop-384x280.jpg\";\r\n        \r\n        tripletImageAlt = \"Chase Secure Banking(SM). Enjoy one hundred dollars on us. For new Chase checking customers when you open a Chase Secure Banking account with qualifying activities. Open an account.\";\r\n        adVariantContext=\"tripletLinkId:default;tripletImageId:default\";\r\n      \r\n      \r\n      // Dynamic Ad Injection\r\n      var screenWidth = window.innerWidth;\r\n      $ad.append(tripletImageSrc(screenWidth, imagePaths, tripletImageAlt));\r\n      $ad.attr(\"href\", tripletLink);\r\n      $ad.append(\"<span class='accessible-text'>End of Topic</span>\");\r\n      Topic('placementComplete').publish(adParentId,adVariantContext);\r\n      $(window).on(\"resize\", function () {\r\n        var currentScreenWidth = window.innerWidth;\r\n        if (currentScreenWidth !== screenWidth) { \r\n          screenWidth = currentScreenWidth; \r\n          $ad.find(\"img\").remove(); \r\n          $ad.prepend(tripletImageSrc(screenWidth, imagePaths, tripletImageAlt)); \r\n        }\r\n      });\r\n    }\r\n  });\r\n</script>"
+       }
+      },
+      "description": "OK"
+     }
+    },
+    "summary": "Seen 4 requests",
+    "tags": [
+     "content.Creatives.Public"
+    ]
+   },
+   "parameters": [
+    {
+     "in": "path",
+     "name": "tripletId",
+     "required": true,
+     "schema": {
+      "enum": [
+       "2020",
+       "2018",
+       "2021"
+      ],
+      "type": "string"
+     },
+     "style": "simple"
+    },
+    {
+     "in": "path",
+     "name": "cid",
+     "required": true,
+     "schema": {
+      "enum": [
+       "64386_bb_triplet_responsivetriplet_r-1667.dynamic.html",
+       "64102_cb_secure-25-offer-triplet_responsivetriplet_r-1560.dynamic.html"
+      ],
+      "type": "string"
+     },
+     "style": "simple"
+    }
+   ]
+  }
+ },
+ "tags": [
+  {
+   "name": "content.Creatives.Public"
+  }
+ ]
+}

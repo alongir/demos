@@ -1,0 +1,18 @@
+{
+ "parameters": [
+  {
+   "name": "cid",
+   "uuid": "22a33d76-2120-4cab-84d3-75e0ac9be470"
+  },
+  {
+   "name": "tripletId",
+   "uuid": "55ae04f2-1168-45ce-bb38-a48130697ac6"
+  }
+ ],
+ "rows": [
+  {
+   "cid": "64386_bb_triplet_responsivetriplet_r-1667.dynamic.html",
+   "tripletId": "2020"
+  }
+ ]
+}

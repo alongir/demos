@@ -1,0 +1,45 @@
+{
+ "events": [
+  {
+   "app": {
+    "language": "en-us",
+    "name": "logonbox",
+    "version": "{{version}}"
+   },
+   "device": {
+    "browserLang": "en-US",
+    "browserRes": "{{browserRes}}",
+    "colorDepth": "{{colorDepth}}",
+    "isBT": null,
+    "javaScriptVer": "{{javaScriptVer}}",
+    "screenRes": "{{screenRes}}"
+   },
+   "location": {
+    "server_offset": "{{server_offset}}",
+    "timezone": "PDT",
+    "tz_offset": "{{tz_offset}}"
+   },
+   "payload": {
+    "data": {
+     "redirectScreen": "{{redirectScreen}}",
+     "referrerURL": "{{referrerURL}}"
+    },
+    "eventType": "screen",
+    "timestamp": 1624383489249
+   },
+   "screen": {
+    "currentURL": "{{currentURL}}",
+    "id": "/cpo/logon/index"
+   },
+   "site": "{{site}}",
+   "visitor": {
+    "adobeData": "{{adobeData}}",
+    "profileId": "",
+    "segment": "",
+    "visitorId": "{{visitorId}}",
+    "visitorType": "unknwn",
+    "s_vi": "{{visitor}}"
+   }
+  }
+ ]
+}

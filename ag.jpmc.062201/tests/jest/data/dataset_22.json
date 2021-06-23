@@ -1,0 +1,23 @@
+{
+ "parameters": [
+  {
+   "name": "param",
+   "uuid": "92de8a9e-ccbb-4ca5-b5ec-2c284a7c777e"
+  },
+  {
+   "name": "param1",
+   "uuid": "aadfb639-7bf8-4bd1-9451-bb3151494cf3"
+  },
+  {
+   "name": "param2",
+   "uuid": "ba00b687-15ab-4a35-bc06-aef2993ff652"
+  }
+ ],
+ "rows": [
+  {
+   "param": "mbox",
+   "param1": "carousel-single-images-bau-alt",
+   "param2": "_jcr_content"
+  }
+ ]
+}

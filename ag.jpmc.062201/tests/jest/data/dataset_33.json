@@ -1,0 +1,33 @@
+{
+ "parameters": [
+  {
+   "name": "ssv_creativeid",
+   "uuid": "13fc2dd7-1ebd-44f9-98fc-70debb675a5e"
+  },
+  {
+   "name": "ssv_midas_id",
+   "uuid": "710a2bd1-ee2b-4d94-8192-3409c9d5f7bf"
+  },
+  {
+   "name": "ssv_random",
+   "uuid": "2fdd23d4-10f6-4061-8815-0c5252611963"
+  },
+  {
+   "name": "ssv_transid",
+   "uuid": "d9f757a8-2508-432c-9811-c6494dc4205d"
+  },
+  {
+   "name": "ssv_v1st",
+   "uuid": "5d08c08d-6d98-4192-b0bb-54588c7c7f41"
+  }
+ ],
+ "rows": [
+  {
+   "ssv_creativeid": "T_65597",
+   "ssv_midas_id": "875761814908451211_tile_T_65597",
+   "ssv_random": "220",
+   "ssv_transid": "875761814908451211",
+   "ssv_v1st": "F578EE0FC62B3100"
+  }
+ ]
+}

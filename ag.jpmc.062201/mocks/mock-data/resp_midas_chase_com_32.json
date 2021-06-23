@@ -1,0 +1,29 @@
+{
+ "offers": [
+  {
+   "interactionID": "{{random.int -8655682384752228023 2808894671955032376}}",
+   "queryPassForward": false,
+   "dynamicData": {
+    "ProductIdentifier": "{{random.int 18 961}}"
+   },
+   "unidentified_id": "",
+   "adf_traceid": "web_mkt-adf-version-6_0_0_01072020_151831-AEM_F578EE0FC62B3100_1624383478689_83531983",
+   "title": "",
+   "turl": "https://midas.chase.com/stream/click?ssv_v1st=F578EE0FC62B3100&ssv_locale=en_us&ssv_random=907&ssv_channel=web&ssv_transid=-7630429600440344358&ssv_creativeid=T_65597&ssv_midas_id=-7630429600440344358_tile_T_65597",
+   "creativeId": "T_65597",
+   "url": "",
+   "target": "samewindow",
+   "wa_aid": "",
+   "ctype": "html",
+   "alttext": "",
+   "privateDestination": false,
+   "placement": "tile",
+   "targetsize": "",
+   "cid": "/content/Creatives/Public/Tiles/2021/March/65597_cb_225-checking-only_restile_r-867.dynamic.html",
+   "status": false,
+   "timestamp": {{random.float 18800.733536308 18800.734812523 2}},
+   "midas_id": "-7630429600440344358_tile_T_65597"
+  }
+ ],
+ "a": ""
+}
