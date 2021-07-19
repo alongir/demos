@@ -2,51 +2,51 @@
  "parameters": [
   {
    "name": "adobeData",
-   "uuid": "3ebb5db5-14cc-4077-ba6f-af2fb8ce2c8a"
+   "uuid": "f8c743b3-9cd1-45c5-930c-3d024c249b72"
   },
   {
    "name": "browserRes",
-   "uuid": "3acb768c-0237-4ae8-a86b-e59b45b1192b"
+   "uuid": "e8e6e220-c145-40a5-949c-1f60c8b7ba45"
   },
   {
    "name": "colorDepth",
-   "uuid": "c6bad38e-6cbe-475e-81b8-61cf23993d86"
+   "uuid": "9597774c-aa89-49ce-8bfb-db34d630a73b"
   },
   {
    "name": "currentURL",
-   "uuid": "ec917790-1147-49ca-8d9c-96956ef667f3"
+   "uuid": "2a36cefc-e523-4871-a2aa-be5fe619d784"
   },
   {
    "name": "javaScriptVer",
-   "uuid": "e47c3b78-102e-40ea-96ae-df13f2e80287"
+   "uuid": "35b06c63-72e7-4f5c-af96-395dc404e600"
   },
   {
    "name": "screenRes",
-   "uuid": "0165718f-931b-4f89-a7d2-a5e9bad0a562"
+   "uuid": "4f26403a-cdf4-4bff-91d7-1961d533e79c"
   },
   {
    "name": "server_offset",
-   "uuid": "3ff24d74-9bc2-4b8a-9acb-282d5cb82e18"
+   "uuid": "a4f1a2a2-8f48-48db-aba6-57e170e29a94"
   },
   {
    "name": "site",
-   "uuid": "7340dfb7-39f1-4d2b-9756-471592b15cf2"
+   "uuid": "3e7be76e-eca3-4a9a-adec-7444ffaad045"
   },
   {
    "name": "tz_offset",
-   "uuid": "538d08da-5354-427c-842a-3747ff1981d4"
+   "uuid": "2fda955c-7db2-461c-945b-555d14c09d21"
   },
   {
    "name": "version",
-   "uuid": "271765b4-715f-4c83-8545-19aa4df0538f"
+   "uuid": "d97ab39e-c027-4a14-937b-db51cb8ae5d4"
   },
   {
    "name": "visitor",
-   "uuid": "39ae2084-f666-4c88-a34d-55b9ff8f8217"
+   "uuid": "5dd43ca1-c781-486f-9639-92e2dd22a73d"
   },
   {
    "name": "visitorId",
-   "uuid": "94e8b848-a930-4d2b-a69e-ee7c476cb279"
+   "uuid": "457c7ab1-9e47-49c0-b34b-0107bf7761d4"
   }
  ],
  "rows": [

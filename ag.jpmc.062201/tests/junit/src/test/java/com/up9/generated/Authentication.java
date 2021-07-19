@@ -25,6 +25,9 @@ public class Authentication implements AuthenticationInterface
         else if (httpTarget.baseURL == "https://personal.chase.com")
         {
         }
+        else if (httpTarget.baseURL == "https://secure01a.chase.com")
+        {
+        }
         else if (httpTarget.baseURL == "https://secure01b.chase.com")
         {
         }

@@ -7,9 +7,10 @@
  "paths": {
   "/cash-back-credit-cards": {
    "get": {
-    "operationId": "1313acf1-71c4-4493-8ac4-e0562e7be709",
+    "operationId": "401130a7-cb48-4574-91cc-bfe7dd05383f",
     "parameters": [
      {
+      "description": "Origin: GET https://www.chase.com/ &rarr; html: div div header.header-navigation section.desktop-header section.header-navigation__content.row section nav ul li div.header-navigation__dropdown.hide ul li.colored a.regular-link.chaseanalytics-track-link[href] @href; url: ?CELL",
       "in": "query",
       "name": "CELL",
       "required": true,
@@ -51,9 +52,10 @@
   },
   "/cash-back-credit-cards/freedom/flex": {
    "get": {
-    "operationId": "dbb54b7a-bf9c-4b68-b5ef-1b8673cf012c",
+    "operationId": "0316af0e-ef43-4bec-b0a7-62258c7b6744",
     "parameters": [
      {
+      "description": "Origin: GET https://www.chase.com/ &rarr; html: div div header.header-navigation section.desktop-header section.header-navigation__content.row section nav ul li div.header-navigation__dropdown.hide ul li.colored a.regular-link.chaseanalytics-track-link[href] @href; url: ?CELL",
       "in": "query",
       "name": "CELL",
       "required": true,

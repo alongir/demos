@@ -1,0 +1,1163 @@
+execution:
+- scenario: Unknown ag.jpmc.062201
+scenarios:
+  Unknown ag.jpmc.062201:
+    requests:
+    - body:
+        locale: en_US
+      url: ${locator_chase_com}/
+    - ${locator_chase_com}/adspace
+    - ${www_chase_com}/apps/services/tags/https/account.chase.com/consumer/banking/seo
+    - ${www_chase_com}/apps/services/tags/https/autofinance.chase.com/auto-finance/auto-loans
+    - ${www_chase_com}/apps/services/tags/https/autofinance.chase.com/auto-finance/home
+    - ${www_chase_com}/apps/services/tags/https/creditcards.chase.com/cash-back-credit-cards
+    - ${www_chase_com}/apps/services/tags/https/creditcards.chase.com/cash-back-credit-cards/freedom/flex
+    - ${www_chase_com}/apps/services/tags/https/locator.chase.com/
+    - ${www_chase_com}/apps/services/tags/https/locator.chase.com/es
+    - ${www_chase_com}/apps/services/tags/https/locator.chase.com/search
+    - ${www_chase_com}/apps/services/tags/https/personal.chase.com/personal/checking
+    - ${www_chase_com}/apps/services/tags/https/www.chase.com/
+    - ${www_chase_com}/apps/services/tags/https/www.chase.com/content/chase-ux/en/structured/module/direct-to-dealer/primary-tool-liquid
+    - ${www_chase_com}/apps/services/tags/https/www.chase.com/personal/investments/advisor
+    - ${www_chase_com}/apps/services/tags/https/www.chase.com/personal/investments/advisor-contact-form
+    - ${www_chase_com}/apps/services/tags/https/www.chase.com/personal/mortgage/mortgage-refinance
+    - ${www_chase_com}/apps/services/tags/https/www.chase.com/personal/offers/marketplace
+    - body:
+        offercode: WDXDPXXX03
+      url: ${autofinance_chase_com}/auto-finance/auto-loans
+    - body:
+        offercode: WDXDPXXX03
+      url: ${autofinance_chase_com}/auto-finance/home
+    - do:
+      - extract-css-jquery:
+          CELL: div div header.header-navigation section.desktop-header section.header-navigation__content.row
+            section nav ul li div.header-navigation__dropdown.hide ul li.colored a.regular-link.chaseanalytics-track-link[href]
+            @href
+        url: ${www_chase_com}/
+      - body:
+          CELL: 6TKV
+          jp_ltg: chsecate_cashback
+        url: ${creditcards_chase_com}/cash-back-credit-cards
+      transaction: 2 steps for 'GET https://creditcards.chase.com/cash-back-credit-cards'
+    - do:
+      - extract-css-jquery:
+          CELL: div div header.header-navigation section.desktop-header section.header-navigation__content.row
+            section nav ul li div.header-navigation__dropdown.hide ul li.colored a.regular-link.chaseanalytics-track-link[href]
+            @href
+        url: ${www_chase_com}/
+      - body:
+          CELL: 6TKV
+        url: ${creditcards_chase_com}/cash-back-credit-cards/freedom/flex
+      transaction: 2 steps for 'GET https://creditcards.chase.com/cash-back-credit-cards/freedom/flex'
+    - do:
+      - set-variables:
+          pageID: chasehome_3
+          param: mbox
+          param1: _jcr_content
+          param2: _jcr_content
+          param3: carousel-single-images-bau-alt
+          param4: _jcr_content
+          param5: MIDASSVCS
+          ssv_adf_traceid: web_mkt-adf-version-8_0_0_05182021_200128_F578EE0FC62B3100_1624383377478_38100140
+          ssv_locale: en_us
+          ssv_pageLayout: ''
+          ssv_random: '524'
+          ssv_v1st: F578EE0FC62B3100
+          time: '1624383377479'
+      - ${www_chase_com}/
+      - headers:
+          x-requested-with: XMLHttpRequest
+        url: ${www_chase_com}/content/chase-ux/en/structured/module/${param}/primary-triplet/${param1}/module.html
+      - headers:
+          x-requested-with: XMLHttpRequest
+        url: ${www_chase_com}/content/chase-ux/en/structured/module/${param}/ad-geo/${param2}/module.html
+      - headers:
+          x-requested-with: XMLHttpRequest
+        url: ${www_chase_com}/content/chase-ux/en/structured/module/${param}/index/${param3}/${param4}/module.html
+      - body:
+          pageID: ${pageID}
+          ssv_accttype: ''
+          ssv_adf_traceid: ${ssv_adf_traceid}
+          ssv_channel: web
+          ssv_cigseg: ''
+          ssv_eci: ''
+          ssv_locale: ${ssv_locale}
+          ssv_origin: ''
+          ssv_pageLayout: ${ssv_pageLayout}
+          ssv_pfid: ''
+          ssv_pnpc: ''
+          ssv_product: ''
+          ssv_random: ${ssv_random}
+          ssv_siteacct: ''
+          ssv_sitebrand: ''
+          ssv_userType: ''
+          ssv_v1st: ${ssv_v1st}
+          ssv_zip: ''
+          ssvm_lids: ''
+          ssvm_pnpcs: ''
+          ssvm_products: ''
+          time: ${time}
+        extract-jsonpath:
+          ssv_creativeid: $.offers[*].turl
+        url: ${midas_chase_com}/prweb/PRRestService/${param5}/v1/MakeDecision
+      - body:
+          jp_aid_a: T_65597
+          jp_aid_p: retail_checking_hp/tile
+        url: ${account_chase_com}/consumer/banking/seo
+      transaction: 6 steps for 'GET https://account.chase.com/consumer/banking/seo'
+    - do:
+      - set-variables:
+          pageID: chasehome_3
+          param: mbox
+          param1: _jcr_content
+          param2: _jcr_content
+          param3: carousel-single-images-bau-alt
+          param4: _jcr_content
+          param5: MIDASSVCS
+          ssv_adf_traceid: web_mkt-adf-version-8_0_0_05182021_200128_F578EE0FC62B3100_1624383377478_38100140
+          ssv_locale: en_us
+          ssv_pageLayout: ''
+          ssv_random: '524'
+          ssv_v1st: F578EE0FC62B3100
+          time: '1624383377479'
+      - ${www_chase_com}/
+      - headers:
+          x-requested-with: XMLHttpRequest
+        url: ${www_chase_com}/content/chase-ux/en/structured/module/${param}/primary-triplet/${param1}/module.html
+      - headers:
+          x-requested-with: XMLHttpRequest
+        url: ${www_chase_com}/content/chase-ux/en/structured/module/${param}/ad-geo/${param2}/module.html
+      - headers:
+          x-requested-with: XMLHttpRequest
+        url: ${www_chase_com}/content/chase-ux/en/structured/module/${param}/index/${param3}/${param4}/module.html
+      - body:
+          pageID: ${pageID}
+          ssv_accttype: ''
+          ssv_adf_traceid: ${ssv_adf_traceid}
+          ssv_channel: web
+          ssv_cigseg: ''
+          ssv_eci: ''
+          ssv_locale: ${ssv_locale}
+          ssv_origin: ''
+          ssv_pageLayout: ${ssv_pageLayout}
+          ssv_pfid: ''
+          ssv_pnpc: ''
+          ssv_product: ''
+          ssv_random: ${ssv_random}
+          ssv_siteacct: ''
+          ssv_sitebrand: ''
+          ssv_userType: ''
+          ssv_v1st: ${ssv_v1st}
+          ssv_zip: ''
+          ssvm_lids: ''
+          ssvm_pnpcs: ''
+          ssvm_products: ''
+          time: ${time}
+        extract-jsonpath:
+          ssv_creativeid: $.offers[*].turl
+        url: ${midas_chase_com}/prweb/PRRestService/${param5}/v1/MakeDecision
+      - body:
+          Payload_ContactPoint: john.dow.1981@protonmail.com
+          Payload_IsDaoWithEmailSubmission: 'false'
+          Payload_IsEmailSubmission: 'true'
+          Payload_ProductSelection: '-1'
+          Payload_ValidationMsg: ''
+          device_type: Desktop
+          form_build_id: form-QR8cRbDVvfdnBf5L3N0G8fD0lXY6X6Q9vrFTdqu8Bno
+          form_id: email_my_coupon
+          gclid: ''
+          optimizelyID: default
+          prd_link: ''
+          referingURL: https://personal.chase.com/
+          v1stCookie: ''
+        headers:
+          Content-Type: application/x-www-form-urlencoded
+          x-requested-with: XMLHttpRequest
+        method: post
+        url: ${account_chase_com}/consumer/banking/seo?jp_aid_a=T_65597&jp_aid_p=retail_checking_hp/tile
+      transaction: 6 steps for 'POST https://account.chase.com/consumer/banking/seo'
+    - do:
+      - set-variables:
+          cid: 66369_CB_CHK_V1_hero_R-867.dynamic.html
+          heroeId: '2021'
+          pageID: chasehome_3
+          param: mbox
+          param1: _jcr_content
+          param2: _jcr_content
+          param3: carousel-single-images-bau-alt
+          param4: _jcr_content
+          param5: MIDASSVCS
+          ssv_adf_traceid: web_mkt-adf-version-8_0_0_05182021_200128_F578EE0FC62B3100_1624383377478_38100140
+          ssv_locale: en_us
+          ssv_pageLayout: ''
+          ssv_random: '524'
+          ssv_v1st: F578EE0FC62B3100
+          time: '1624383377479'
+      - ${www_chase_com}/
+      - headers:
+          x-requested-with: XMLHttpRequest
+        url: ${www_chase_com}/content/chase-ux/en/structured/module/${param}/primary-triplet/${param1}/module.html
+      - headers:
+          x-requested-with: XMLHttpRequest
+        url: ${www_chase_com}/content/chase-ux/en/structured/module/${param}/ad-geo/${param2}/module.html
+      - headers:
+          x-requested-with: XMLHttpRequest
+        url: ${www_chase_com}/content/chase-ux/en/structured/module/${param}/index/${param3}/${param4}/module.html
+      - body:
+          pageID: ${pageID}
+          ssv_accttype: ''
+          ssv_adf_traceid: ${ssv_adf_traceid}
+          ssv_channel: web
+          ssv_cigseg: ''
+          ssv_eci: ''
+          ssv_locale: ${ssv_locale}
+          ssv_origin: ''
+          ssv_pageLayout: ${ssv_pageLayout}
+          ssv_pfid: ''
+          ssv_pnpc: ''
+          ssv_product: ''
+          ssv_random: ${ssv_random}
+          ssv_siteacct: ''
+          ssv_sitebrand: ''
+          ssv_userType: ''
+          ssv_v1st: ${ssv_v1st}
+          ssv_zip: ''
+          ssvm_lids: ''
+          ssvm_pnpcs: ''
+          ssvm_products: ''
+          time: ${time}
+        extract-jsonpath:
+          cid: $.offers[*].cid
+        url: ${midas_chase_com}/prweb/PRRestService/${param5}/v1/MakeDecision
+      - ${sites_chase_com}/content/Creatives/Public/Heroes/${heroeId}/June/${cid}
+      transaction: 6 steps for 'GET https://sites.chase.com/content/Creatives/Public/Heroes/{heroeId}/June/{cid}'
+    - do:
+      - set-variables:
+          cid: 65597_cb_225-checking-only_restile_r-867.dynamic.html
+          pageID: chasehome_3
+          param: mbox
+          param1: _jcr_content
+          param2: _jcr_content
+          param3: carousel-single-images-bau-alt
+          param4: _jcr_content
+          param5: MIDASSVCS
+          ssv_adf_traceid: web_mkt-adf-version-8_0_0_05182021_200128_F578EE0FC62B3100_1624383377478_38100140
+          ssv_locale: en_us
+          ssv_pageLayout: ''
+          ssv_random: '524'
+          ssv_v1st: F578EE0FC62B3100
+          tileId: '2021'
+          time: '1624383377479'
+      - ${www_chase_com}/
+      - headers:
+          x-requested-with: XMLHttpRequest
+        url: ${www_chase_com}/content/chase-ux/en/structured/module/${param}/primary-triplet/${param1}/module.html
+      - headers:
+          x-requested-with: XMLHttpRequest
+        url: ${www_chase_com}/content/chase-ux/en/structured/module/${param}/ad-geo/${param2}/module.html
+      - headers:
+          x-requested-with: XMLHttpRequest
+        url: ${www_chase_com}/content/chase-ux/en/structured/module/${param}/index/${param3}/${param4}/module.html
+      - body:
+          pageID: ${pageID}
+          ssv_accttype: ''
+          ssv_adf_traceid: ${ssv_adf_traceid}
+          ssv_channel: web
+          ssv_cigseg: ''
+          ssv_eci: ''
+          ssv_locale: ${ssv_locale}
+          ssv_origin: ''
+          ssv_pageLayout: ${ssv_pageLayout}
+          ssv_pfid: ''
+          ssv_pnpc: ''
+          ssv_product: ''
+          ssv_random: ${ssv_random}
+          ssv_siteacct: ''
+          ssv_sitebrand: ''
+          ssv_userType: ''
+          ssv_v1st: ${ssv_v1st}
+          ssv_zip: ''
+          ssvm_lids: ''
+          ssvm_pnpcs: ''
+          ssvm_products: ''
+          time: ${time}
+        extract-jsonpath:
+          cid: $.offers[*].cid
+        url: ${midas_chase_com}/prweb/PRRestService/${param5}/v1/MakeDecision
+      - ${sites_chase_com}/content/Creatives/Public/Tiles/${tileId}/March/${cid}
+      transaction: 6 steps for 'GET https://sites.chase.com/content/Creatives/Public/Tiles/{tileId}/March/{cid}'
+    - do:
+      - set-variables:
+          cid: n3131118-credit-card-related-services-triplet-responsive52153.dynamic.html
+          pageID: chasehome_3
+          param: mbox
+          param1: _jcr_content
+          param2: _jcr_content
+          param3: carousel-single-images-bau-alt
+          param4: _jcr_content
+          param5: MIDASSVCS
+          ssv_adf_traceid: web_mkt-adf-version-8_0_0_05182021_200128_F578EE0FC62B3100_1624383377478_38100140
+          ssv_locale: en_us
+          ssv_pageLayout: ''
+          ssv_random: '524'
+          ssv_v1st: F578EE0FC62B3100
+          time: '1624383377479'
+          tripletId: '2020'
+      - ${www_chase_com}/
+      - headers:
+          x-requested-with: XMLHttpRequest
+        url: ${www_chase_com}/content/chase-ux/en/structured/module/${param}/primary-triplet/${param1}/module.html
+      - headers:
+          x-requested-with: XMLHttpRequest
+        url: ${www_chase_com}/content/chase-ux/en/structured/module/${param}/ad-geo/${param2}/module.html
+      - headers:
+          x-requested-with: XMLHttpRequest
+        url: ${www_chase_com}/content/chase-ux/en/structured/module/${param}/index/${param3}/${param4}/module.html
+      - body:
+          pageID: ${pageID}
+          ssv_accttype: ''
+          ssv_adf_traceid: ${ssv_adf_traceid}
+          ssv_channel: web
+          ssv_cigseg: ''
+          ssv_eci: ''
+          ssv_locale: ${ssv_locale}
+          ssv_origin: ''
+          ssv_pageLayout: ${ssv_pageLayout}
+          ssv_pfid: ''
+          ssv_pnpc: ''
+          ssv_product: ''
+          ssv_random: ${ssv_random}
+          ssv_siteacct: ''
+          ssv_sitebrand: ''
+          ssv_userType: ''
+          ssv_v1st: ${ssv_v1st}
+          ssv_zip: ''
+          ssvm_lids: ''
+          ssvm_pnpcs: ''
+          ssvm_products: ''
+          time: ${time}
+        extract-jsonpath:
+          cid: $.offers[*].cid
+        url: ${midas_chase_com}/prweb/PRRestService/${param5}/v1/MakeDecision
+      - ${sites_chase_com}/content/Creatives/Public/Triplets/${tripletId}/July/${cid}
+      transaction: 6 steps for 'GET https://sites.chase.com/content/Creatives/Public/Triplets/{tripletId}/July/{cid}'
+    - do:
+      - set-variables:
+          cid: 62235_cb_totalchecking200_triplet_r-1005.dynamic.html
+          pageID: chasehome_3
+          param: mbox
+          param1: _jcr_content
+          param2: _jcr_content
+          param3: carousel-single-images-bau-alt
+          param4: _jcr_content
+          param5: MIDASSVCS
+          ssv_adf_traceid: web_mkt-adf-version-8_0_0_05182021_200128_F578EE0FC62B3100_1624383377478_38100140
+          ssv_locale: en_us
+          ssv_pageLayout: ''
+          ssv_random: '524'
+          ssv_v1st: F578EE0FC62B3100
+          time: '1624383377479'
+          tripletId: '2020'
+      - ${www_chase_com}/
+      - headers:
+          x-requested-with: XMLHttpRequest
+        url: ${www_chase_com}/content/chase-ux/en/structured/module/${param}/primary-triplet/${param1}/module.html
+      - headers:
+          x-requested-with: XMLHttpRequest
+        url: ${www_chase_com}/content/chase-ux/en/structured/module/${param}/ad-geo/${param2}/module.html
+      - headers:
+          x-requested-with: XMLHttpRequest
+        url: ${www_chase_com}/content/chase-ux/en/structured/module/${param}/index/${param3}/${param4}/module.html
+      - body:
+          pageID: ${pageID}
+          ssv_accttype: ''
+          ssv_adf_traceid: ${ssv_adf_traceid}
+          ssv_channel: web
+          ssv_cigseg: ''
+          ssv_eci: ''
+          ssv_locale: ${ssv_locale}
+          ssv_origin: ''
+          ssv_pageLayout: ${ssv_pageLayout}
+          ssv_pfid: ''
+          ssv_pnpc: ''
+          ssv_product: ''
+          ssv_random: ${ssv_random}
+          ssv_siteacct: ''
+          ssv_sitebrand: ''
+          ssv_userType: ''
+          ssv_v1st: ${ssv_v1st}
+          ssv_zip: ''
+          ssvm_lids: ''
+          ssvm_pnpcs: ''
+          ssvm_products: ''
+          time: ${time}
+        extract-jsonpath:
+          cid: $.offers[*].cid
+        url: ${midas_chase_com}/prweb/PRRestService/${param5}/v1/MakeDecision
+      - ${sites_chase_com}/content/Creatives/Public/Triplets/${tripletId}/March/${cid}
+      transaction: 6 steps for 'GET https://sites.chase.com/content/Creatives/Public/Triplets/{tripletId}/March/{cid}'
+    - do:
+      - set-variables:
+          cid: 66023_cb_cfb_triplet_r-2179.dynamic.html
+          pageID: chasehome_3
+          param: mbox
+          param1: _jcr_content
+          param2: _jcr_content
+          param3: carousel-single-images-bau-alt
+          param4: _jcr_content
+          param5: MIDASSVCS
+          ssv_adf_traceid: web_mkt-adf-version-8_0_0_05182021_200128_F578EE0FC62B3100_1624383377478_38100140
+          ssv_locale: en_us
+          ssv_pageLayout: ''
+          ssv_random: '524'
+          ssv_v1st: F578EE0FC62B3100
+          time: '1624383377479'
+          tripletId: '2020'
+      - ${www_chase_com}/
+      - headers:
+          x-requested-with: XMLHttpRequest
+        url: ${www_chase_com}/content/chase-ux/en/structured/module/${param}/primary-triplet/${param1}/module.html
+      - headers:
+          x-requested-with: XMLHttpRequest
+        url: ${www_chase_com}/content/chase-ux/en/structured/module/${param}/ad-geo/${param2}/module.html
+      - headers:
+          x-requested-with: XMLHttpRequest
+        url: ${www_chase_com}/content/chase-ux/en/structured/module/${param}/index/${param3}/${param4}/module.html
+      - body:
+          pageID: ${pageID}
+          ssv_accttype: ''
+          ssv_adf_traceid: ${ssv_adf_traceid}
+          ssv_channel: web
+          ssv_cigseg: ''
+          ssv_eci: ''
+          ssv_locale: ${ssv_locale}
+          ssv_origin: ''
+          ssv_pageLayout: ${ssv_pageLayout}
+          ssv_pfid: ''
+          ssv_pnpc: ''
+          ssv_product: ''
+          ssv_random: ${ssv_random}
+          ssv_siteacct: ''
+          ssv_sitebrand: ''
+          ssv_userType: ''
+          ssv_v1st: ${ssv_v1st}
+          ssv_zip: ''
+          ssvm_lids: ''
+          ssvm_pnpcs: ''
+          ssvm_products: ''
+          time: ${time}
+        extract-jsonpath:
+          cid: $.offers[*].cid
+        url: ${midas_chase_com}/prweb/PRRestService/${param5}/v1/MakeDecision
+      - ${sites_chase_com}/content/Creatives/Public/Triplets/${tripletId}/May/${cid}
+      transaction: 6 steps for 'GET https://sites.chase.com/content/Creatives/Public/Triplets/{tripletId}/May/{cid}'
+    - do:
+      - set-variables:
+          cid: 64102_cb_secure-25-offer-triplet_responsivetriplet_r-1560.dynamic.html
+          pageID: chasehome_3
+          param: mbox
+          param1: _jcr_content
+          param2: _jcr_content
+          param3: carousel-single-images-bau-alt
+          param4: _jcr_content
+          param5: MIDASSVCS
+          ssv_adf_traceid: web_mkt-adf-version-8_0_0_05182021_200128_F578EE0FC62B3100_1624383377478_38100140
+          ssv_locale: en_us
+          ssv_pageLayout: ''
+          ssv_random: '524'
+          ssv_v1st: F578EE0FC62B3100
+          time: '1624383377479'
+          tripletId: '2020'
+      - ${www_chase_com}/
+      - headers:
+          x-requested-with: XMLHttpRequest
+        url: ${www_chase_com}/content/chase-ux/en/structured/module/${param}/primary-triplet/${param1}/module.html
+      - headers:
+          x-requested-with: XMLHttpRequest
+        url: ${www_chase_com}/content/chase-ux/en/structured/module/${param}/ad-geo/${param2}/module.html
+      - headers:
+          x-requested-with: XMLHttpRequest
+        url: ${www_chase_com}/content/chase-ux/en/structured/module/${param}/index/${param3}/${param4}/module.html
+      - body:
+          pageID: ${pageID}
+          ssv_accttype: ''
+          ssv_adf_traceid: ${ssv_adf_traceid}
+          ssv_channel: web
+          ssv_cigseg: ''
+          ssv_eci: ''
+          ssv_locale: ${ssv_locale}
+          ssv_origin: ''
+          ssv_pageLayout: ${ssv_pageLayout}
+          ssv_pfid: ''
+          ssv_pnpc: ''
+          ssv_product: ''
+          ssv_random: ${ssv_random}
+          ssv_siteacct: ''
+          ssv_sitebrand: ''
+          ssv_userType: ''
+          ssv_v1st: ${ssv_v1st}
+          ssv_zip: ''
+          ssvm_lids: ''
+          ssvm_pnpcs: ''
+          ssvm_products: ''
+          time: ${time}
+        extract-jsonpath:
+          cid: $.offers[*].cid
+        url: ${midas_chase_com}/prweb/PRRestService/${param5}/v1/MakeDecision
+      - ${sites_chase_com}/content/Creatives/Public/Triplets/${tripletId}/November/${cid}
+      transaction: 6 steps for 'GET https://sites.chase.com/content/Creatives/Public/Triplets/{tripletId}/November/{cid}'
+    - do:
+      - set-variables:
+          imageId: _jcr_content
+          param: mbox
+      - headers:
+          x-requested-with: XMLHttpRequest
+        url: ${www_chase_com}/content/chase-ux/en/structured/module/${param}/carousel-single-images/${imageId}/module.html
+      transaction: 1 steps for 'GET https://www.chase.com/content/chase-ux/en/structured/module/{param}/carousel-single-images/{imageId}/module.html'
+    - do:
+      - set-variables:
+          iconId: _jcr_content
+          investmentId: advisor-plan-approach-expert-3up
+          param: mbox
+      - headers:
+          x-requested-with: XMLHttpRequest
+        url: ${www_chase_com}/content/chase-ux/en/structured/module/${param}/personal/investments/${investmentId}/${iconId}/module.html
+      transaction: 1 steps for 'GET https://www.chase.com/content/chase-ux/en/structured/module/{param}/personal/investments/{investmentId}/{iconId}/module.html'
+    - do:
+      - set-variables:
+          param: mbox
+          param1: _jcr_content
+      - headers:
+          x-requested-with: XMLHttpRequest
+        url: ${www_chase_com}/content/chase-ux/en/structured/module/${param}/personal/mortgage/cta/call-online-comein-grey/${param1}/module.html
+      transaction: 1 steps for 'GET https://www.chase.com/content/chase-ux/en/structured/module/{param1}/personal/mortgage/cta/call-online-comein-grey/{param2}/module.html'
+    - do:
+      - set-variables:
+          param: mbox
+          param1: _jcr_content
+      - headers:
+          x-requested-with: XMLHttpRequest
+        url: ${www_chase_com}/content/chase-ux/en/structured/module/${param}/personal/mortgage/mortgage-refinance-hero/${param1}/module.html
+      transaction: 1 steps for 'GET https://www.chase.com/content/chase-ux/en/structured/module/{param1}/personal/mortgage/mortgage-refinance-hero/{param2}/module.html'
+    - do:
+      - set-variables:
+          param: mbox
+          param1: _jcr_content
+      - headers:
+          x-requested-with: XMLHttpRequest
+        url: ${www_chase_com}/content/chase-ux/en/structured/module/${param}/personal/mortgage/mortgage-refinance-hero/refinance-hero/${param1}/module.html
+      transaction: 1 steps for 'GET https://www.chase.com/content/chase-ux/en/structured/module/{param1}/personal/mortgage/mortgage-refinance-hero/refinance-hero/{param2}/module.html'
+    - do:
+      - set-variables:
+          param: mbox
+          param1: _jcr_content
+      - headers:
+          x-requested-with: XMLHttpRequest
+        url: ${www_chase_com}/content/chase-ux/en/structured/module/${param}/personal/mortgage/mortgage-refinance/mortgage-refinance-bucket/${param1}/module.html
+      transaction: 1 steps for 'GET https://www.chase.com/content/chase-ux/en/structured/module/{param1}/personal/mortgage/mortgage-refinance/mortgage-refinance-bucket/{param2}/module.html'
+    - do:
+      - set-variables:
+          param: mbox
+          param1: _jcr_content
+      - headers:
+          x-requested-with: XMLHttpRequest
+        url: ${www_chase_com}/content/chase-ux/en/structured/module/${param}/personal/mortgage/refinance-lp/${param1}/module.html
+      transaction: 1 steps for 'GET https://www.chase.com/content/chase-ux/en/structured/module/{param1}/personal/mortgage/refinance-lp/{param2}/module.html'
+    - do:
+      - set-variables:
+          param: mbox
+          param1: _jcr_content
+      - headers:
+          x-requested-with: XMLHttpRequest
+        url: ${www_chase_com}/content/chase-ux/en/structured/module/${param}/prod-public-lucy-advisor-contact-form-mbox/${param1}/module.html
+      transaction: 1 steps for 'GET https://www.chase.com/content/chase-ux/en/structured/module/{param1}/prod-public-lucy-advisor-contact-form-mbox/{param2}/module.html'
+    - ${www_chase_com}/content/chase-ux/en/structured/module/direct-to-dealer/primary-tool-liquid
+    - do:
+      - set-variables:
+          param: _jcr_content
+      - headers:
+          x-requested-with: XMLHttpRequest
+        url: ${www_chase_com}/content/experience-fragments/microsites/lucy-form/lucylandingpage/master/${param}/root.html
+      transaction: 1 steps for 'GET https://www.chase.com/content/experience-fragments/microsites/lucy-form/lucylandingpage/master/{param}/root.html'
+    - do:
+      - set-variables:
+          eventId: rb_f080783c-7a3e-490c-84ba-346ef2d12e98
+          session: v_4_srv_18_sn_810D4AF9DD95E7C2CF6D6738FBAE711C_perc_100000_ol_0_mul_1
+      - body: $a=1%7C2%7Crx_visittag%3Dapptel%28F578EE0FC62B3100%29%7C_rs_%7C-%7C1624383378073%7C1624383378073%7C-1$rId=RID_-480103777$rpId=1115508788$md=mdcc1%2Clocale%253Den_us%257Cpfid%253D%257Csegment%253D%257CAOC%253D%257Cpm%253D%257Capc%253D%257C$url=https%3A%2F%2Fsecure01b.chase.com%2Fweb%2Fauth%2Flogonbox%3Flang%3Den%26fromOrigin%3Dhttps%253A%252F%252Fwww.chase.com%23%2Flogonbox%2Findex%2Findex$title=Chase%20Account%20login$vd=28$latC=66$app=8e4c3cc543ee1dcb$visitID=JHCIHRNKLUJAIGNAPNOPFALILPILFFCT$vs=2$fId=183378050_586$v=10173190807103944$vID=1624383378054TG973IRH4T9JKNLB39GEFE1UH90R9T03$nV=1$nVAT=1$time=1624383378081$cs=491892330
+        headers:
+          Content-Type: text/plain
+        method: post
+        url: ${secure01b_chase_com}/events/${eventId}?app=8e4c3cc543ee1dcb&flavor=post&modifiedSince=1624273847426&referer=https://secure01b.chase.com/web/auth/logonbox?lang=en&fromOrigin=https%3A%2F%2Fwww.chase.com#/logonbox/index/index&session=${session}&svrid=18&type=js&visitID=JHCIHRNKLUJAIGNAPNOPFALILPILFFCT
+      transaction: 1 steps for 'POST https://secure01b.chase.com/events/{eventId}'
+    - do:
+      - set-variables:
+          eventId: rb_f080783c-7a3e-490c-84ba-346ef2d12e98
+          session: v_4_srv_18_sn_810D4AF9DD95E7C2CF6D6738FBAE711C_perc_100000_ol_0_mul_1_app-3A8e4c3cc543ee1dcb_1
+      - body: $a=1%7C2%7Crx_visittag%3Dapptel%28F578EE0FC62B3100%29%7C_rs_%7C-%7C1624383451393%7C1624383451393%7C-1$rId=RID_-480103777$rpId=787885520$url=https%3A%2F%2Fsecure05b.chase.com%2Fweb%2Fauth%2Flogonbox%3Flang%3Den%26fromOrigin%3Dhttps%253A%252F%252Fwww.chase.com%23%2Flogonbox%2Findex%2Findex$title=Chase%20Account%20login$vd=26$latC=116$app=9debe78332458b14$visitID=JHCIHRNKLUJAIGNAPNOPFALILPILFFCT$vs=2$fId=183451370_135$v=10173190807103944$vID=1624383378054TG973IRH4T9JKNLB39GEFE1UH90R9T03$time=1624383451399$cs=1164604401
+        headers:
+          Content-Type: text/plain
+        method: post
+        url: ${secure05b_chase_com}/events/${eventId}?app=9debe78332458b14&flavor=post&modifiedSince=1624273847426&referer=https://secure05b.chase.com/web/auth/logonbox?lang=en&fromOrigin=https%3A%2F%2Fwww.chase.com#/logonbox/index/index&session=${session}&svrid=18&type=js&visitID=JHCIHRNKLUJAIGNAPNOPFALILPILFFCT
+      transaction: 1 steps for 'POST https://secure05b.chase.com/events/{eventId}'
+    - do:
+      - set-variables:
+          eventId: rb_f080783c-7a3e-490c-84ba-346ef2d12e98
+          session: v_4_srv_18_sn_810D4AF9DD95E7C2CF6D6738FBAE711C_perc_100000_ol_0_mul_1_app-3A8e4c3cc543ee1dcb_1_app-3A9debe78332458b14_1
+      - body: $a=1%7C2%7Crx_visittag%3Dapptel%28F578EE0FC62B3100%29%7C_rs_%7C-%7C1624383468240%7C1624383468240%7C-1$rId=RID_-1094793546$rpId=-854813199$url=https%3A%2F%2Fsecure03b.chase.com%2Fweb%2Fauth%2Flogonbox%3FfromOrigin%3Dhttps%253A%252F%252Fwww.chase.com%26navKey%3DreviewCreditCardOffers%26lang%3Den%23%2Flogonbox%2Findex%2Findex$title=Chase%20Account%20login$vd=28$latC=77$app=408c704037bea1da$visitID=JHCIHRNKLUJAIGNAPNOPFALILPILFFCT$vs=2$fId=183468216_634$v=10173190807103944$vID=1624383378054TG973IRH4T9JKNLB39GEFE1UH90R9T03$time=1624383468250$cs=-684120267
+        headers:
+          Content-Type: text/plain
+        method: post
+        url: ${secure03b_chase_com}/events/${eventId}?app=408c704037bea1da&flavor=post&modifiedSince=1624273847426&referer=https://secure03b.chase.com/web/auth/logonbox?fromOrigin=https%3A%2F%2Fwww.chase.com&navKey=reviewCreditCardOffers&lang=en#/logonbox/index/index&session=${session}&svrid=18&type=js&visitID=JHCIHRNKLUJAIGNAPNOPFALILPILFFCT
+      transaction: 1 steps for 'POST https://secure03b.chase.com/events/{eventId}'
+    - do:
+      - set-variables:
+          eventId: rb_f080783c-7a3e-490c-84ba-346ef2d12e98
+          session: v_4_srv_18_sn_810D4AF9DD95E7C2CF6D6738FBAE711C_perc_100000_ol_0_mul_1_app-3A8e4c3cc543ee1dcb_1_app-3A9debe78332458b14_1_app-3A408c704037bea1da_1
+      - body: $a=1%7C2%7Crx_visittag%3Dapptel%28F578EE0FC62B3100%29%7C_rs_%7C-%7C1624383488225%7C1624383488225%7C-1$rId=RID_-480103777$rpId=802685791$md=mdcc4%2Clocale%253Den_us%257Cpfid%253D%257Csegment%253D%257CAOC%253D%257Cpm%253D%257Capc%253D%257C$url=https%3A%2F%2Fsecure07a.chase.com%2Fweb%2Fauth%2Flogonbox%3Flang%3Den%26fromOrigin%3Dhttps%253A%252F%252Fwww.chase.com%23%2Flogonbox%2Findex%2Findex$title=Chase%20Account%20login$vd=31$latC=71$app=7475b16d0f4ff140$visitID=JHCIHRNKLUJAIGNAPNOPFALILPILFFCT$vs=2$fId=183488198_769$v=10173190807103944$vID=1624383378054TG973IRH4T9JKNLB39GEFE1UH90R9T03$time=1624383488231$cs=109947626
+        headers:
+          Content-Type: text/plain
+        method: post
+        url: ${secure07a_chase_com}/events/${eventId}?app=7475b16d0f4ff140&flavor=post&modifiedSince=1624273847426&referer=https://secure07a.chase.com/web/auth/logonbox?lang=en&fromOrigin=https%3A%2F%2Fwww.chase.com#/logonbox/index/index&session=${session}&svrid=18&type=js&visitID=JHCIHRNKLUJAIGNAPNOPFALILPILFFCT
+      transaction: 1 steps for 'POST https://secure07a.chase.com/events/{eventId}'
+    - do:
+      - set-variables:
+          eventId: rb_f080783c-7a3e-490c-84ba-346ef2d12e98
+      - body: $a=1%7C2%7Crx_visittag%3Dapptel%28B8799E784FECE99D%29%7C_rs_%7C-%7C1626701075231%7C1626701075231%7C-1$rId=RID_-480103777$rpId=383699662$md=mdcc4%2Clocale%253Den_us%257Cpfid%253D%257Csegment%253D%257CAOC%253D%257Cpm%253D%257Capc%253D%257C$url=https%3A%2F%2Fsecure01a.chase.com%2Fweb%2Fauth%2Flogonbox%3Flang%3Den%26fromOrigin%3Dhttps%253A%252F%252Fwww.chase.com%23%2Flogonbox%2Findex%2Findex$title=Chase%20Account%20login$vd=25$latC=419$app=540c26f81f8bb89d$visitID=CFJEOBJNNNFNLCCJCAKPJHJLFCHDAGJJ$vs=2$fId=101075210_577$v=10173190807103944$vID=1626701075214B3DQRRVE3EU3U0R3HAL5TVLC9I9EN80F$nV=1$nVAT=1$time=1626701075237$cs=-555292127
+        headers:
+          Content-Type: text/plain
+        method: post
+        url: ${secure01a_chase_com}/events/${eventId}?app=540c26f81f8bb89d&flavor=post&modifiedSince=1626690539263&referer=https://secure01a.chase.com/web/auth/logonbox?lang=en&fromOrigin=https%3A%2F%2Fwww.chase.com#/logonbox/index/index&session=v_4_srv_1_sn_33C2918EB87DF34C47BFA0DA476520FA_perc_100000_ol_0_mul_1_app-3A540c26f81f8bb89d_1&svrid=1&type=js&visitID=CFJEOBJNNNFNLCCJCAKPJHJLFCHDAGJJ
+      transaction: 1 steps for 'POST https://secure01a.chase.com/events/{eventId}'
+    - do:
+      - extract-css-jquery:
+          referrerURL: div div header.header-navigation section.mobile-header div.row
+            section a.chaseanalytics-track-link[href] @href
+        url: ${www_chase_com}/
+      - body: |-
+          {
+           "events": [
+            {
+             "app": {
+              "language": "en-us",
+              "name": "logonbox",
+              "version": "1.3"
+             },
+             "device": {
+              "browserLang": "en-US",
+              "browserRes": "0x0",
+              "colorDepth": 30,
+              "isBT": null,
+              "javaScriptVer": "1.8.5",
+              "screenRes": "2560x1067"
+             },
+             "location": {
+              "server_offset": -50,
+              "timezone": "PDT",
+              "tz_offset": "-7"
+             },
+             "payload": {
+              "data": {
+               "redirectScreen": false,
+               "referrerURL": "https://www.chase.com/"
+              },
+              "eventType": "screen",
+              "timestamp": 1624383379288
+             },
+             "screen": {
+              "currentURL": "https://secure01b.chase.com/web/auth/logonbox?lang=en&fromOrigin=https%3A%2F%2Fwww.chase.com#/logonbox/index/index",
+              "id": "/cpo/logon/index"
+             },
+             "site": "chase3.0",
+             "visitor": {
+              "adobeData": "1914845758|MCIDTS|17564|MCMID|18246491610380031420415917791160738241|MCAID|NONE|MCOPTOUT|isoptedout-false|MCAAMLH|7|MCAAMB|6G1ynYcLPuiQxYZrsz_pkqfLG9yMXBpb2zX5dvJdYQJzPXImdj0y|MCCIDH||MCSYNCSOP|411-17568|vVersion|2.3.0",
+              "profileId": "",
+              "segment": "",
+              "visitorId": "F578EE0FC62B3100",
+              "visitorType": "unknwn",
+              "s_vi": "[CS]v1|F578EE0FC62B3100-03069A5D6AFFADB0[CE]"
+             }
+            }
+           ]
+          }
+        headers:
+          Content-Type: application/json
+        method: post
+        url: ${secure01b_chase_com}/events/analytics/public/v1/events/raw/
+      transaction: 2 steps for 'POST https://secure01b.chase.com/events/analytics/public/v1/events/raw/'
+    - do:
+      - extract-css-jquery:
+          referrerURL: div div header.header-navigation section.mobile-header div.row
+            section a.chaseanalytics-track-link[href] @href
+        url: ${www_chase_com}/
+      - body: |-
+          {
+           "events": [
+            {
+             "app": {
+              "language": "en-us",
+              "name": "logonbox",
+              "version": "1.3"
+             },
+             "device": {
+              "browserLang": "en-US",
+              "browserRes": "0x0",
+              "colorDepth": 30,
+              "isBT": null,
+              "javaScriptVer": "1.8.5",
+              "screenRes": "2560x1067"
+             },
+             "location": {
+              "server_offset": -54,
+              "timezone": "PDT",
+              "tz_offset": "-7"
+             },
+             "payload": {
+              "data": {
+               "redirectScreen": false,
+               "referrerURL": "https://www.chase.com/"
+              },
+              "eventType": "screen",
+              "timestamp": 1624383452456
+             },
+             "screen": {
+              "currentURL": "https://secure05b.chase.com/web/auth/logonbox?lang=en&fromOrigin=https%3A%2F%2Fwww.chase.com#/logonbox/index/index",
+              "id": "/cpo/logon/index"
+             },
+             "site": "chase3.0",
+             "visitor": {
+              "adobeData": "1914845758|MCIDTS|17564|MCMID|18246491610380031420415917791160738241|MCAID|NONE|MCOPTOUT|isoptedout-false|MCAAMLH|7|MCAAMB|6G1ynYcLPuiQxYZrsz_pkqfLG9yMXBpb2zX5dvJdYQJzPXImdj0y|MCCIDH||MCSYNCSOP|411-17568|vVersion|2.3.0|TESTPROFILE|false",
+              "profileId": "",
+              "segment": "",
+              "visitorId": "F578EE0FC62B3100",
+              "visitorType": "unknwn",
+              "s_vi": "[CS]v1|F578EE0FC62B3100-03069A5D6AFFADB0[CE]"
+             }
+            }
+           ]
+          }
+        headers:
+          Content-Type: application/json
+        method: post
+        url: ${secure05b_chase_com}/events/analytics/public/v1/events/raw/
+      transaction: 2 steps for 'POST https://secure05b.chase.com/events/analytics/public/v1/events/raw/'
+    - body: '{}'
+      headers:
+        Content-Type: application/json
+      method: post
+      url: ${secure03b_chase_com}/events/analytics/public/v1/events/raw/
+    - do:
+      - set-variables:
+          metaId: ATM-CA7403
+      - body:
+          l: en
+          q: '94303'
+        extract-jsonpath:
+          metaId: $.response.entities[*].profile.*[*]
+        headers:
+          accept: application/json
+        url: ${locator_chase_com}/search
+      - body:
+          metaId: ${metaId}
+        extract-jsonpath:
+          redirectScreen: $.schema.alternateWebsites.archived
+        headers:
+          accept: application/json
+        url: ${locator_chase_com}/atmsearch
+      - extract-css-jquery:
+          referrerURL: div div header.header-navigation section.mobile-header div.row
+            section a.chaseanalytics-track-link[href] @href
+        url: ${www_chase_com}/
+      - body: |-
+          {
+           "events": [
+            {
+             "app": {
+              "language": "en-us",
+              "name": "logonbox",
+              "version": "1.3"
+             },
+             "device": {
+              "browserLang": "en-US",
+              "browserRes": "0x0",
+              "colorDepth": 30,
+              "isBT": null,
+              "javaScriptVer": "1.8.5",
+              "screenRes": "2560x1067"
+             },
+             "location": {
+              "server_offset": -35,
+              "timezone": "PDT",
+              "tz_offset": "-7"
+             },
+             "payload": {
+              "data": {
+               "redirectScreen": false,
+               "referrerURL": "https://www.chase.com/"
+              },
+              "eventType": "screen",
+              "timestamp": 1624383489249
+             },
+             "screen": {
+              "currentURL": "https://secure07a.chase.com/web/auth/logonbox?lang=en&fromOrigin=https%3A%2F%2Fwww.chase.com#/logonbox/index/index",
+              "id": "/cpo/logon/index"
+             },
+             "site": "chase3.0",
+             "visitor": {
+              "adobeData": "1914845758|MCIDTS|17564|MCMID|18246491610380031420415917791160738241|MCAID|NONE|MCOPTOUT|isoptedout-false|MCAAMLH|7|MCAAMB|6G1ynYcLPuiQxYZrsz_pkqfLG9yMXBpb2zX5dvJdYQJzPXImdj0y|MCCIDH||MCSYNCSOP|411-17568|vVersion|2.3.0|TESTPROFILE|false",
+              "profileId": "",
+              "segment": "",
+              "visitorId": "F578EE0FC62B3100",
+              "visitorType": "unknwn",
+              "s_vi": "[CS]v1|F578EE0FC62B3100-03069A5D6AFFADB0[CE]"
+             }
+            }
+           ]
+          }
+        headers:
+          Content-Type: application/json
+        method: post
+        url: ${secure07a_chase_com}/events/analytics/public/v1/events/raw/
+      transaction: 4 steps for 'POST https://secure07a.chase.com/events/analytics/public/v1/events/raw/'
+    - ${personal_chase_com}/personal/checking
+    - ${www_chase_com}/personal/investments/advisor-contact-form
+    - ${www_chase_com}/personal/mortgage/mortgage-refinance
+    - do:
+      - set-variables:
+          cid: 65596_cb_225-checking-only_hero_r-867.dynamic.html
+          heroeId: '2021'
+          pageID: chasehome_3
+          param: mbox
+          param1: _jcr_content
+          param2: _jcr_content
+          param3: carousel-single-images-bau-alt
+          param4: _jcr_content
+          param5: MIDASSVCS
+          param6: _jcr_content
+          sessionId: dc609c0b914343efb801e0a76f3aaf5f
+          ssv_adf_traceid: web_mkt-adf-version-8_0_0_05182021_200128_F578EE0FC62B3100_1624383377478_38100140
+          ssv_locale: en_us
+          ssv_pageLayout: ''
+          ssv_random: '524'
+          ssv_v1st: F578EE0FC62B3100
+          time: '1624383377479'
+      - ${www_chase_com}/
+      - headers:
+          x-requested-with: XMLHttpRequest
+        url: ${www_chase_com}/content/chase-ux/en/structured/module/${param}/primary-triplet/${param1}/module.html
+      - headers:
+          x-requested-with: XMLHttpRequest
+        url: ${www_chase_com}/content/chase-ux/en/structured/module/${param}/ad-geo/${param2}/module.html
+      - headers:
+          x-requested-with: XMLHttpRequest
+        url: ${www_chase_com}/content/chase-ux/en/structured/module/${param}/index/${param3}/${param4}/module.html
+      - body:
+          pageID: ${pageID}
+          ssv_accttype: ''
+          ssv_adf_traceid: ${ssv_adf_traceid}
+          ssv_channel: web
+          ssv_cigseg: ''
+          ssv_eci: ''
+          ssv_locale: ${ssv_locale}
+          ssv_origin: ''
+          ssv_pageLayout: ${ssv_pageLayout}
+          ssv_pfid: ''
+          ssv_pnpc: ''
+          ssv_product: ''
+          ssv_random: ${ssv_random}
+          ssv_siteacct: ''
+          ssv_sitebrand: ''
+          ssv_userType: ''
+          ssv_v1st: ${ssv_v1st}
+          ssv_zip: ''
+          ssvm_lids: ''
+          ssvm_pnpcs: ''
+          ssvm_products: ''
+          time: ${time}
+        extract-jsonpath:
+          cid: $.offers[*].cid
+        url: ${midas_chase_com}/prweb/PRRestService/${param5}/v1/MakeDecision
+      - ${sites_chase_com}/content/Creatives/Public/Heroes/${heroeId}/March/${cid}
+      - headers:
+          x-requested-with: XMLHttpRequest
+        url: ${www_chase_com}/content/chase-ux/en/structured/module/${param}/carousel-single-images_alt/${param6}/module.html
+      - ${www_chase_com}/personal/investments/advisor
+      - body:
+          q: '94303'
+        extract-css-jquery:
+          url: header#Header div.Header-wrapper.l-container div.Header-mainRow div.Header-left
+            div div.js-focustrap div a.Text--expanded[href] @href
+        url: ${locator_chase_com}/search
+      - body: |-
+          {
+           "context": {
+            "address": {
+             "referringUrl": "https://www.chase.com/",
+             "url": "https://www.chase.com/"
+            },
+            "browser": {
+             "host": "www.chase.com",
+             "webGLRenderer": "ANGLE (ATI Technologies Inc., AMD Radeon Pro 5500M OpenGL Engine, OpenGL 4.1 core)"
+            },
+            "channel": "web",
+            "screen": {
+             "colorDepth": 30,
+             "height": 1067,
+             "orientation": "landscape",
+             "pixelRatio": 2,
+             "width": 2560
+            },
+            "timeOffsetInMinutes": -420,
+            "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.0 Safari/537.36",
+            "window": {
+             "height": 921,
+             "width": 2560
+            }
+           },
+           "execute": {
+            "mboxes": [
+             {
+              "index": 0,
+              "name": "carousel-single-images-bau-alt",
+              "parameters": {
+               "mboxName": "carousel-single-images-bau-alt",
+               "pageTitle": "Credit Card, Mortgage, Banking, Auto | Chase Online | Chase.com"
+              },
+              "profileParameters": {
+               "v1stCookie": "F578EE0FC62B3100"
+              }
+             }
+            ],
+            "pageLoad": {}
+           },
+           "experienceCloud": {
+            "analytics": {
+             "logging": "client_side"
+            },
+            "audienceManager": {
+             "locationHint": "7"
+            }
+           },
+           "id": {
+            "marketingCloudVisitorId": "18246491610380031420415917791160738241",
+            "tntId": "dc609c0b914343efb801e0a76f3aaf5f.35_0"
+           },
+           "property": {
+            "token": "0e815903-d1a3-d64d-7c87-ef47f1260111"
+           },
+           "requestId": "1b34e23cba144115b789d12e0b56fa28"
+          }
+        headers:
+          Content-Type: application/json
+        method: post
+        url: ${target_chase_com}/rest/v1/delivery?client=jpmcbankna&sessionId=${sessionId}&version=2.3.2
+      transaction: 10 steps for 'POST https://target.chase.com/rest/v1/delivery'
+    - do:
+      - set-variables:
+          pageID: chasehome_3
+          param: mbox
+          param1: _jcr_content
+          param2: _jcr_content
+          param3: carousel-single-images-bau-alt
+          param4: _jcr_content
+          param5: MIDASSVCS
+          ssv_adf_traceid: web_mkt-adf-version-8_0_0_05182021_200128_F578EE0FC62B3100_1624383377478_38100140
+          ssv_locale: en_us
+          ssv_pageLayout: ''
+          ssv_random1: '524'
+          ssv_v1st: F578EE0FC62B3100
+          time: '1624383377479'
+      - ${www_chase_com}/
+      - headers:
+          x-requested-with: XMLHttpRequest
+        url: ${www_chase_com}/content/chase-ux/en/structured/module/${param}/primary-triplet/${param1}/module.html
+      - headers:
+          x-requested-with: XMLHttpRequest
+        url: ${www_chase_com}/content/chase-ux/en/structured/module/${param}/ad-geo/${param2}/module.html
+      - headers:
+          x-requested-with: XMLHttpRequest
+        url: ${www_chase_com}/content/chase-ux/en/structured/module/${param}/index/${param3}/${param4}/module.html
+      - body:
+          pageID: ${pageID}
+          ssv_accttype: ''
+          ssv_adf_traceid: ${ssv_adf_traceid}
+          ssv_channel: web
+          ssv_cigseg: ''
+          ssv_eci: ''
+          ssv_locale: ${ssv_locale}
+          ssv_origin: ''
+          ssv_pageLayout: ${ssv_pageLayout}
+          ssv_pfid: ''
+          ssv_pnpc: ''
+          ssv_product: ''
+          ssv_random: ${ssv_random1}
+          ssv_siteacct: ''
+          ssv_sitebrand: ''
+          ssv_userType: ''
+          ssv_v1st: ${ssv_v1st}
+          ssv_zip: ''
+          ssvm_lids: ''
+          ssvm_pnpcs: ''
+          ssvm_products: ''
+          time: ${time}
+        extract-jsonpath:
+          ssv_transid: $.offers[*].turl
+        url: ${midas_chase_com}/prweb/PRRestService/${param5}/v1/MakeDecision
+      - body:
+          ssv_channel: web
+          ssv_creativeid: T_65597
+          ssv_locale: en_us
+          ssv_midas_id: 875761814908451211_tile_T_65597
+          ssv_random: '220'
+          ssv_transid: '875761814908451211'
+          ssv_v1st: F578EE0FC62B3100
+        url: ${midas_chase_com}/stream/click
+      transaction: 6 steps for 'GET https://midas.chase.com/stream/click'
+    - do:
+      - set-variables:
+          pageID: retail_lp_seopp
+          ssv_eid: ca_checkinghp__
+          ssv_tmc: ''
+          ssv_v1st: F578EE0FC62B3100
+      - body:
+          pageID: ${pageID}
+          ssv_eci: ''
+          ssv_eid: ${ssv_eid}
+          ssv_pfid: ''
+          ssv_productid: ''
+          ssv_src: ''
+          ssv_tmc: ${ssv_tmc}
+          ssv_v1st: ${ssv_v1st}
+        url: ${midas_chase_com}/stream/tag
+      transaction: 1 steps for 'GET https://midas.chase.com/stream/tag'
+    - do:
+      - set-variables:
+          pageID: chasehome_3
+          param: mbox
+          param1: _jcr_content
+          param2: _jcr_content
+          param3: carousel-single-images-bau-alt
+          param4: _jcr_content
+          param5: MIDASSVCS
+          ssv_adf_traceid: web_mkt-adf-version-8_0_0_05182021_200128_F578EE0FC62B3100_1624383377478_38100140
+          ssv_creativeid: T_65596
+          ssv_locale: en_us
+          ssv_locale1: en_us
+          ssv_midas_id: 2808894671955032376_hero_T_65596
+          ssv_pageLayout: ''
+          ssv_random: '524'
+          ssv_random1: '524'
+          ssv_transid: '2808894671955032376'
+          ssv_v1st: F578EE0FC62B3100
+          ssv_v1st1: F578EE0FC62B3100
+          time: '1624383377479'
+      - ${www_chase_com}/
+      - headers:
+          x-requested-with: XMLHttpRequest
+        url: ${www_chase_com}/content/chase-ux/en/structured/module/${param}/primary-triplet/${param1}/module.html
+      - headers:
+          x-requested-with: XMLHttpRequest
+        url: ${www_chase_com}/content/chase-ux/en/structured/module/${param}/ad-geo/${param2}/module.html
+      - headers:
+          x-requested-with: XMLHttpRequest
+        url: ${www_chase_com}/content/chase-ux/en/structured/module/${param}/index/${param3}/${param4}/module.html
+      - body:
+          pageID: ${pageID}
+          ssv_accttype: ''
+          ssv_adf_traceid: ${ssv_adf_traceid}
+          ssv_channel: web
+          ssv_cigseg: ''
+          ssv_eci: ''
+          ssv_locale: ${ssv_locale}
+          ssv_origin: ''
+          ssv_pageLayout: ${ssv_pageLayout}
+          ssv_pfid: ''
+          ssv_pnpc: ''
+          ssv_product: ''
+          ssv_random: ${ssv_random}
+          ssv_siteacct: ''
+          ssv_sitebrand: ''
+          ssv_userType: ''
+          ssv_v1st: ${ssv_v1st}
+          ssv_zip: ''
+          ssvm_lids: ''
+          ssvm_pnpcs: ''
+          ssvm_products: ''
+          time: ${time}
+        extract-jsonpath:
+          ssv_transid: $.offers[*].turl
+        url: ${midas_chase_com}/prweb/PRRestService/${param5}/v1/MakeDecision
+      - body:
+          ssv_channel: web
+          ssv_creativeid: ${ssv_creativeid}
+          ssv_locale: ${ssv_locale1}
+          ssv_midas_id: ${ssv_midas_id}
+          ssv_pageLayout: prospect_a
+          ssv_random: ${ssv_random1}
+          ssv_transid: ${ssv_transid}
+          ssv_v1st: ${ssv_v1st1}
+        url: ${midas_chase_com}/stream/view
+      transaction: 6 steps for 'GET https://midas.chase.com/stream/view'
+    - do:
+      - extract-css-jquery:
+          fromOrigin: html head link[href] @href
+        url: ${www_chase_com}/
+      - body:
+          fromOrigin: https://www.chase.com
+          lang: en
+        url: ${secure01b_chase_com}/web/auth/logonbox
+      transaction: 2 steps for 'GET https://secure01b.chase.com/web/auth/logonbox'
+    - do:
+      - extract-css-jquery:
+          fromOrigin: html head link[href] @href
+        url: ${www_chase_com}/
+      - body:
+          fromOrigin: https://www.chase.com
+          lang: en
+        url: ${secure05b_chase_com}/web/auth/logonbox
+      transaction: 2 steps for 'GET https://secure05b.chase.com/web/auth/logonbox'
+    - do:
+      - extract-css-jquery:
+          fromOrigin: html head link[href] @href
+        url: ${www_chase_com}/
+      - body:
+          fromOrigin: https://www.chase.com
+          lang: en
+          navKey: reviewCreditCardOffers
+        url: ${secure03b_chase_com}/web/auth/logonbox
+      transaction: 2 steps for 'GET https://secure03b.chase.com/web/auth/logonbox'
+    - do:
+      - body:
+          q: '94303'
+        extract-css-jquery:
+          fromOrigin: a#brand-logo[href] @href
+        url: ${locator_chase_com}/search
+      - body:
+          fromOrigin: https://www.chase.com
+          lang: en
+        url: ${secure07a_chase_com}/web/auth/logonbox
+      transaction: 2 steps for 'GET https://secure07a.chase.com/web/auth/logonbox'
+    - do:
+      - extract-css-jquery:
+          fromOrigin: html head link[href] @href
+        url: ${www_chase_com}/
+      - body:
+          fromOrigin: https://www.chase.com
+          lang: en
+        url: ${secure01a_chase_com}/web/auth/logonbox
+      transaction: 2 steps for 'GET https://secure01a.chase.com/web/auth/logonbox'
+    timeout: 5s
+    variables:
+      account_chase_com: https://account.chase.com
+      autofinance_chase_com: https://autofinance.chase.com
+      creditcards_chase_com: https://creditcards.chase.com
+      locator_chase_com: https://locator.chase.com
+      midas_chase_com: https://midas.chase.com
+      personal_chase_com: https://personal.chase.com
+      secure01a_chase_com: https://secure01a.chase.com
+      secure01b_chase_com: https://secure01b.chase.com
+      secure03b_chase_com: https://secure03b.chase.com
+      secure05b_chase_com: https://secure05b.chase.com
+      secure07a_chase_com: https://secure07a.chase.com
+      sites_chase_com: https://sites.chase.com
+      target_chase_com: https://target.chase.com
+      www_chase_com: https://www.chase.com

@@ -16,7 +16,7 @@ import static com.up9.up9lib.Common.*;
 public class TestsLocatorChaseComTest
 {
     @Test
-    public void testGet73() throws MalformedURLException, IOException
+    public void testGet073() throws MalformedURLException, IOException
     {
         // GET https://locator.chase.com/ (endp 73)
         final HttpTarget locatorChaseCom = getHttpClient("https://locator.chase.com", new Authentication());
@@ -31,7 +31,7 @@ public class TestsLocatorChaseComTest
     }
 
     @Test
-    public void testGetAdspace74() throws MalformedURLException, IOException
+    public void testGetAdspace074() throws MalformedURLException, IOException
     {
         // GET https://locator.chase.com/adspace (endp 74)
         final HttpTarget locatorChaseCom = getHttpClient("https://locator.chase.com", new Authentication());

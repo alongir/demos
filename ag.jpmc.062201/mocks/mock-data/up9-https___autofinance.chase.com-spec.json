@@ -7,7 +7,7 @@
  "paths": {
   "/auto-finance/auto-loans": {
    "get": {
-    "operationId": "5c223483-42d8-4181-9d85-5b240f886734",
+    "operationId": "eb00464c-ebcf-4088-8d69-7c1e8d2ca2ca",
     "parameters": [
      {
       "in": "query",
@@ -40,7 +40,7 @@
   },
   "/auto-finance/home": {
    "get": {
-    "operationId": "b956e756-130e-477b-8414-852d8a5471f3",
+    "operationId": "d8200a36-95e2-4091-b3fe-538d006b88fd",
     "parameters": [
      {
       "in": "query",

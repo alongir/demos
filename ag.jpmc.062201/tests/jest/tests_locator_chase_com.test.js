@@ -1,7 +1,7 @@
 const authenticate = require("./authentication");
 const {CSSselect, clearSession, getHttpClient, urlencode} = require("./up9lib");
 
-it("test_73_get_", () => {
+it("test_073_get_", () => {
     clearSession();
 
     // GET https://locator.chase.com/ (endp 73)
@@ -19,7 +19,7 @@ it("test_73_get_", () => {
     });
 });
 
-it("test_74_get_adspace", () => {
+it("test_074_get_adspace", () => {
     clearSession();
 
     // GET https://locator.chase.com/adspace (endp 74)

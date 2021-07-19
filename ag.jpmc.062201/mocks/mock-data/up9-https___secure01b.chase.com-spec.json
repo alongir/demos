@@ -8,7 +8,7 @@
   "/events/analytics/public/v1/events/raw/": {
    "parameters": [],
    "post": {
-    "operationId": "df069113-a50f-4f41-a608-4e1d8aa63f43",
+    "operationId": "9eeb8227-5396-461a-bb62-dcb2c7b5e135",
     "parameters": [],
     "requestBody": {
      "content": {
@@ -212,7 +212,7 @@
     }
    ],
    "post": {
-    "operationId": "7e6fe929-b236-49ef-8cad-3e9c7c9581db",
+    "operationId": "f8c83823-2ecf-4a0a-99af-184cea7e6573",
     "parameters": [
      {
       "in": "query",
@@ -323,9 +323,10 @@
   },
   "/web/auth/logonbox": {
    "get": {
-    "operationId": "86f8df62-901e-4fec-a1eb-7cb29810fceb",
+    "operationId": "1f8830b9-1dea-4c9e-b64f-69c89f89b807",
     "parameters": [
      {
+      "description": "Origin: GET https://www.chase.com/ &rarr; html: html head link[href] @href",
       "in": "query",
       "name": "fromOrigin",
       "required": true,

@@ -1,8 +1,8 @@
 const authenticate = require("./authentication");
 const {CSSselect, JSONBuild, JSONPath, clearSession, dataset, getHttpClient, readFileSync, urlencode} = require("./up9lib");
 
-describe.each(dataset("data/dataset_80.json"))("test_80_post_events_eventId", (app, eventId, modifiedSince, referer, session, svrid, visitID) => {
-    it("test_80_post_events_eventId", () => {
+describe.each(dataset("data/dataset_80.json"))("test_080_post_events_eventId", (app, eventId, modifiedSince, referer, session, svrid, visitID) => {
+    it("test_080_post_events_eventId", () => {
         clearSession();
 
         // POST https://secure07a.chase.com/events/{eventId} (endp 80)
@@ -25,8 +25,8 @@ describe.each(dataset("data/dataset_80.json"))("test_80_post_events_eventId", (a
     });
 });
 
-describe.each(dataset("data/dataset_79.json"))("test_79_post_events_analytics_public_v1_events_raw_", (adobeData, browserRes, colorDepth, currentURL, javaScriptVer, q, referrerURL, screenRes, server_offset, site, tz_offset, version, visitor, visitorId) => {
-    it("test_79_post_events_analytics_public_v1_events_raw_", () => {
+describe.each(dataset("data/dataset_79.json"))("test_079_post_events_analytics_public_v1_events_raw_", (adobeData, browserRes, colorDepth, currentURL, javaScriptVer, q, screenRes, server_offset, site, tz_offset, version, visitor, visitorId) => {
+    it("test_079_post_events_analytics_public_v1_events_raw_", () => {
         clearSession();
 
         // GET https://locator.chase.com/search (endp 77)
@@ -67,42 +67,60 @@ describe.each(dataset("data/dataset_79.json"))("test_79_post_events_analytics_pu
                 return JSON.parse(text);
             })
             .then((data) => {
+                expect(JSONPath({
+                    path: "$.response.entities[*].profile.meta.language",
+                    json: data
+                })).toContain("en");
                 const redirectScreen = JSONPath({
                     path: "$.schema.alternateWebsites.archived",
                     json: data
                 })[0];
 
-                // POST https://secure07a.chase.com/events/analytics/public/v1/events/raw/ (endp 79)
-                const secure07a_chase_com = getHttpClient("https://secure07a.chase.com", authenticate);
-                return secure07a_chase_com.fetch("/events/analytics/public/v1/events/raw/", {
-                    method: "POST",
-                    headers: {
-                        "content-type": "application/json"
-                    },
-                    body: JSONBuild("data/payload_for_endp_79.json", {
-                        "$.events[*].app.version": version,
-                        "$.events[*].device.browserRes": browserRes,
-                        "$.events[*].device.colorDepth": colorDepth,
-                        "$.events[*].device.javaScriptVer": javaScriptVer,
-                        "$.events[*].device.screenRes": screenRes,
-                        "$.events[*].location.server_offset": server_offset,
-                        "$.events[*].location.tz_offset": tz_offset,
-                        "$.events[*].payload.data.referrerURL": referrerURL,
-                        "$.events[*].payload.timestamp": parseInt(Date.now()),
-                        "$.events[*].screen.currentURL": currentURL,
-                        "$.events[*].site": site,
-                        "$.events[*].visitor.*": visitor,
-                        "$.events[*].visitor.adobeData": adobeData,
-                        "$.events[*].visitor.visitorId": visitorId
-                    })
-                })
+                // GET https://www.chase.com/ (endp 1)
+                const www_chase_com = getHttpClient("https://www.chase.com", authenticate);
+                return www_chase_com.fetch("/")
                 .then((response) => {
                     expect(response.status).toEqual(200);
                     return response.text();
                 })
                 .then((text) => {
+                    expect(CSSselect("main#main h1.accessible-text", text)).toContain("Chase.com home");
+                    expect(CSSselect("html head title", text)).toContain("Credit Card, Mortgage, Banking, Auto | Chase Online | Chase.com");
+                    const referrerURL = CSSselect("div div header.header-navigation section.mobile-header div.row section a.chaseanalytics-track-link[href] @href", response).text().trim();
                 })
                 .then((data) => {
+                    // POST https://secure07a.chase.com/events/analytics/public/v1/events/raw/ (endp 79)
+                    const secure07a_chase_com = getHttpClient("https://secure07a.chase.com", authenticate);
+                    return secure07a_chase_com.fetch("/events/analytics/public/v1/events/raw/", {
+                        method: "POST",
+                        headers: {
+                            "content-type": "application/json"
+                        },
+                        body: JSONBuild("data/payload_for_endp_79.json", {
+                            "$.events[*].app.version": version,
+                            "$.events[*].device.browserRes": browserRes,
+                            "$.events[*].device.colorDepth": colorDepth,
+                            "$.events[*].device.javaScriptVer": javaScriptVer,
+                            "$.events[*].device.screenRes": screenRes,
+                            "$.events[*].location.server_offset": server_offset,
+                            "$.events[*].location.tz_offset": tz_offset,
+                            "$.events[*].payload.data.referrerURL": referrerURL,
+                            "$.events[*].payload.timestamp": parseInt(Date.now()),
+                            "$.events[*].screen.currentURL": currentURL,
+                            "$.events[*].site": site,
+                            "$.events[*].visitor.*": visitor,
+                            "$.events[*].visitor.adobeData": adobeData,
+                            "$.events[*].visitor.visitorId": visitorId
+                        })
+                    })
+                    .then((response) => {
+                        expect(response.status).toEqual(200);
+                        return response.text();
+                    })
+                    .then((text) => {
+                    })
+                    .then((data) => {
+                    });
                 });
             });
         });
@@ -110,8 +128,8 @@ describe.each(dataset("data/dataset_79.json"))("test_79_post_events_analytics_pu
 });
 
 // authentication-related test
-describe.each(dataset("data/dataset_81.json"))("test_81_get_web_auth_logonbox", (q) => {
-    it("test_81_get_web_auth_logonbox", () => {
+describe.each(dataset("data/dataset_81.json"))("test_081_get_web_auth_logonbox", (q) => {
+    it("test_081_get_web_auth_logonbox", () => {
         clearSession();
 
         // GET https://locator.chase.com/search (endp 76)

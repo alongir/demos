@@ -22,7 +22,7 @@ public class TestsSecure07aChaseComTest
 {
     @ParameterizedTest
     @JsonFileSource(resources = "/dataset_80.json")
-    public void testPostEventsEventid80(final JsonObject json) throws MalformedURLException, IOException
+    public void testPostEventsEventid080(final JsonObject json) throws MalformedURLException, IOException
     {
         final String app = json.getString("app");
         final String eventId = json.getString("eventId");
@@ -55,7 +55,7 @@ public class TestsSecure07aChaseComTest
 
     @ParameterizedTest
     @JsonFileSource(resources = "/dataset_79.json")
-    public void testPostEventsAnalyticsPublicV1EventsRaw79(final JsonObject json) throws MalformedURLException, IOException
+    public void testPostEventsAnalyticsPublicV1EventsRaw079(final JsonObject json) throws MalformedURLException, IOException
     {
         final String adobeData = json.getString("adobeData");
         final String browserRes = json.getString("browserRes");
@@ -63,7 +63,6 @@ public class TestsSecure07aChaseComTest
         final String currentURL = json.getString("currentURL");
         final String javaScriptVer = json.getString("javaScriptVer");
         final String q = json.getString("q");
-        final String referrerURL = json.getString("referrerURL");
         final String screenRes = json.getString("screenRes");
         final int server_offset = json.getInt("server_offset");
         final String site = json.getString("site");
@@ -97,15 +96,25 @@ public class TestsSecure07aChaseComTest
         }});
         final Response response2 = locatorChaseCom.get(request2, "/atmsearch");
         assertStatusCode(response2.code(), 200);
+        assertJSONPath("$.response.entities[*].profile.meta.language", "en", response2.body().string());
         final String redirectScreen = JSONPath("$.schema.alternateWebsites.archived", response2.body().string());
+
+        // GET https://www.chase.com/ (endp 1)
+        final HttpTarget wwwChaseCom = getHttpClient("https://www.chase.com", new Authentication());
+        final HttpRequest request3 = new HttpRequest();
+        final Response response3 = wwwChaseCom.get(request3, "/");
+        assertStatusCode(response3.code(), 200);
+        assertCSSselect("main#main h1.accessible-text", "Chase.com home", response3.body().string());
+        assertCSSselect("html head title", "Credit Card, Mortgage, Banking, Auto | Chase Online | Chase.com", response3.body().string());
+        final String referrerURL = CSSselect("div div header.header-navigation section.mobile-header div.row section a.chaseanalytics-track-link[href] @href", response3.body().string());
 
         // POST https://secure07a.chase.com/events/analytics/public/v1/events/raw/ (endp 79)
         final HttpTarget secure07aChaseCom = getHttpClient("https://secure07a.chase.com", new Authentication());
-        final HttpRequest request3 = new HttpRequest();
-        request3.setHeaders(new Hashtable<String, Object>() {{
+        final HttpRequest request4 = new HttpRequest();
+        request4.setHeaders(new Hashtable<String, Object>() {{
             put("content-type", "application/json");
         }});
-        request3.setJsonBody("payload_for_endp_79.json", new Hashtable<String, Object>() {{
+        request4.setJsonBody("payload_for_endp_79.json", new Hashtable<String, Object>() {{
             put("$.events[*].app.version", version);
             put("$.events[*].device.browserRes", browserRes);
             put("$.events[*].device.colorDepth", colorDepth);
@@ -121,8 +130,8 @@ public class TestsSecure07aChaseComTest
             put("$.events[*].visitor.adobeData", adobeData);
             put("$.events[*].visitor.visitorId", visitorId);
         }});
-        final Response response3 = secure07aChaseCom.post(request3, "/events/analytics/public/v1/events/raw/");
-        assertStatusCode(response3.code(), 200);
+        final Response response4 = secure07aChaseCom.post(request4, "/events/analytics/public/v1/events/raw/");
+        assertStatusCode(response4.code(), 200);
     }
 
     /**
@@ -130,7 +139,7 @@ public class TestsSecure07aChaseComTest
      */
     @ParameterizedTest
     @JsonFileSource(resources = "/dataset_81.json")
-    public void testGetWebAuthLogonbox81(final JsonObject json) throws MalformedURLException, IOException
+    public void testGetWebAuthLogonbox081(final JsonObject json) throws MalformedURLException, IOException
     {
         final String q = json.getString("q");
 

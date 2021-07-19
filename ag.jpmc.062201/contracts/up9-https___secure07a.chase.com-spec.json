@@ -8,7 +8,7 @@
   "/events/analytics/public/v1/events/raw/": {
    "parameters": [],
    "post": {
-    "operationId": "0a0cc281-dd1a-414b-a6dd-a5886cb08415",
+    "operationId": "0068f31a-a12f-44d9-8577-a8bdc203db09",
     "parameters": [],
     "requestBody": {
      "content": {
@@ -212,7 +212,7 @@
     }
    ],
    "post": {
-    "operationId": "2a69f036-889b-4438-9d9b-b2e99309d430",
+    "operationId": "e0c7c5fa-755a-4101-8915-41d614e271c1",
     "parameters": [
      {
       "in": "query",
@@ -322,7 +322,7 @@
   },
   "/web/auth/logonbox": {
    "get": {
-    "operationId": "3265b125-cab0-4141-b30d-9a939df7c35e",
+    "operationId": "4df17353-2ab6-445f-abff-4637c140a475",
     "parameters": [
      {
       "description": "Origin: GET https://locator.chase.com/search &rarr; html: a#brand-logo[href] @href",

@@ -1,0 +1,54 @@
+{
+ "parameters": [
+  {
+   "name": "imageId",
+   "uuid": "b4836906-2a8c-455f-80e7-0246c357a4b0"
+  },
+  {
+   "name": "param",
+   "uuid": "0915b5c2-96ea-4ee9-bce7-3988805456c2"
+  }
+ ],
+ "rows": [
+  {
+   "imageId": "_jcr_content",
+   "param": "mbox"
+  },
+  {
+   "imageId": "_jcr_content",
+   "param": "geoimage"
+  },
+  {
+   "imageId": "_jcr_content",
+   "param": "adtriplet"
+  },
+  {
+   "imageId": "_jcr_content",
+   "param": "carousel"
+  },
+  {
+   "imageId": "_jcr_content",
+   "param": "secondarynavsubheader"
+  },
+  {
+   "imageId": "_jcr_content",
+   "param": "bucket"
+  },
+  {
+   "imageId": "_jcr_content",
+   "param": "heroimage"
+  },
+  {
+   "imageId": "_jcr_content",
+   "param": "twocolumnvariants"
+  },
+  {
+   "imageId": "_jcr_content",
+   "param": "tile"
+  },
+  {
+   "imageId": "_jcr_content",
+   "param": "bodycopy"
+  }
+ ]
+}

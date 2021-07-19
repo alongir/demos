@@ -1,8 +1,8 @@
 const authenticate = require("./authentication");
 const {CSSselect, clearSession, dataset, getHttpClient, urlencode} = require("./up9lib");
 
-describe.each(dataset("data/dataset_82.json"))("test_82_get_auto_finance_auto_loans", (offercode) => {
-    it("test_82_get_auto_finance_auto_loans", () => {
+describe.each(dataset("data/dataset_82.json"))("test_082_get_auto_finance_auto_loans", (offercode) => {
+    it("test_082_get_auto_finance_auto_loans", () => {
         clearSession();
 
         // GET https://autofinance.chase.com/auto-finance/auto-loans (endp 82)
@@ -20,8 +20,8 @@ describe.each(dataset("data/dataset_82.json"))("test_82_get_auto_finance_auto_lo
     });
 });
 
-describe.each(dataset("data/dataset_83.json"))("test_83_get_auto_finance_home", (offercode) => {
-    it("test_83_get_auto_finance_home", () => {
+describe.each(dataset("data/dataset_83.json"))("test_083_get_auto_finance_home", (offercode) => {
+    it("test_083_get_auto_finance_home", () => {
         clearSession();
 
         // GET https://autofinance.chase.com/auto-finance/home (endp 83)

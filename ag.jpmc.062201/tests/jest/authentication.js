@@ -5,6 +5,7 @@ function authenticate(targetKey, opts) {
     } else if (opts.configUrl === "https://locator.chase.com") {
     } else if (opts.configUrl === "https://midas.chase.com") {
     } else if (opts.configUrl === "https://personal.chase.com") {
+    } else if (opts.configUrl === "https://secure01a.chase.com") {
     } else if (opts.configUrl === "https://secure01b.chase.com") {
     } else if (opts.configUrl === "https://secure03b.chase.com") {
     } else if (opts.configUrl === "https://secure05b.chase.com") {

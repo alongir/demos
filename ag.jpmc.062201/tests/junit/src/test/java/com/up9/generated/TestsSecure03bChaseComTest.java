@@ -22,7 +22,7 @@ public class TestsSecure03bChaseComTest
 {
     @ParameterizedTest
     @JsonFileSource(resources = "/dataset_71.json")
-    public void testPostEventsEventid71(final JsonObject json) throws MalformedURLException, IOException
+    public void testPostEventsEventid071(final JsonObject json) throws MalformedURLException, IOException
     {
         final String app = json.getString("app");
         final String eventId = json.getString("eventId");
@@ -54,7 +54,7 @@ public class TestsSecure03bChaseComTest
     }
 
     @Test
-    public void testPostEventsAnalyticsPublicV1EventsRaw70() throws MalformedURLException, IOException
+    public void testPostEventsAnalyticsPublicV1EventsRaw070() throws MalformedURLException, IOException
     {
         // POST https://secure03b.chase.com/events/analytics/public/v1/events/raw/ (endp 70)
         final HttpTarget secure03bChaseCom = getHttpClient("https://secure03b.chase.com", new Authentication());
@@ -71,23 +71,17 @@ public class TestsSecure03bChaseComTest
     /**
      * authentication-related test
      */
-    @ParameterizedTest
-    @JsonFileSource(resources = "/dataset_72.json")
-    public void testGetWebAuthLogonbox72(final JsonObject json) throws MalformedURLException, IOException
+    @Test
+    public void testGetWebAuthLogonbox072() throws MalformedURLException, IOException
     {
-        final String CELL = json.getString("CELL");
-
-        // GET https://creditcards.chase.com/cash-back-credit-cards/freedom/flex (endp 65)
-        final HttpTarget creditcardsChaseCom = getHttpClient("https://creditcards.chase.com", new DummyAuth());
+        // GET https://www.chase.com/ (endp 1)
+        final HttpTarget wwwChaseCom = getHttpClient("https://www.chase.com", new DummyAuth());
         final HttpRequest request = new HttpRequest();
-        request.setQueryString(new Hashtable<String, Object>() {{
-            put("CELL", CELL);
-        }});
-        final Response response = creditcardsChaseCom.get(request, "/cash-back-credit-cards/freedom/flex");
+        final Response response = wwwChaseCom.get(request, "/");
         assertStatusCode(response.code(), 200);
-        assertCSSselect("div#leftPanel div.left-rail-inner.clearfix div.no-padding.left-rail-header.freedomflex h1.card-title sup.sm-fix", "SM", response.body().string());
-        assertCSSselect("html head title", "Chase Freedom Flex Credit Card | Chase.com", response.body().string());
-        final String fromOrigin = CSSselect("ul#hamNav-links-general li a.chaseanalytics-track-link[href] @href", response.body().string());
+        assertCSSselect("main#main h1.accessible-text", "Chase.com home", response.body().string());
+        assertCSSselect("html head title", "Credit Card, Mortgage, Banking, Auto | Chase Online | Chase.com", response.body().string());
+        final String fromOrigin = CSSselect("html head link[href] @href", response.body().string());
 
         // GET https://secure03b.chase.com/web/auth/logonbox (endp 72)
         final HttpTarget secure03bChaseCom = getHttpClient("https://secure03b.chase.com", new DummyAuth());

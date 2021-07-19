@@ -27,6 +27,8 @@ def authenticate(target_key: str, target: TargetService):
         pass
     elif target.config_url == 'https://personal.chase.com':
         pass
+    elif target.config_url == 'https://secure01a.chase.com':
+        pass
     elif target.config_url == 'https://secure01b.chase.com':
         pass
     elif target.config_url == 'https://secure03b.chase.com':

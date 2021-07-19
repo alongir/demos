@@ -8,7 +8,7 @@
   "/rest/v1/delivery": {
    "parameters": [],
    "post": {
-    "operationId": "68fdaede-c8a9-4fdc-b199-c543f8572a10",
+    "operationId": "c759a73e-fa2c-42ff-8336-6aebb6b2b720",
     "parameters": [
      {
       "in": "query",
@@ -27,7 +27,8 @@
       "required": true,
       "schema": {
        "enum": [
-        "dc609c0b914343efb801e0a76f3aaf5f"
+        "dc609c0b914343efb801e0a76f3aaf5f",
+        "2741e7ebb4cd457b840b2ce0ec3805c0"
        ],
        "type": "string"
       }
@@ -219,8 +220,7 @@
            }
           },
           "required": [
-           "analytics",
-           "audienceManager"
+           "analytics"
           ],
           "type": "object"
          },
@@ -257,7 +257,6 @@
          "context",
          "execute",
          "experienceCloud",
-         "id",
          "property",
          "requestId"
         ],
@@ -377,7 +376,6 @@
             }
            },
            "required": [
-            "marketingCloudVisitorId",
             "tntId"
            ],
            "type": "object"
@@ -404,7 +402,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 6 requests"
+    "summary": "Seen 8 requests"
    }
   }
  },

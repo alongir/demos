@@ -1,0 +1,54 @@
+{
+ "parameters": [
+  {
+   "name": "param",
+   "uuid": "0915b5c2-96ea-4ee9-bce7-3988805456c2"
+  },
+  {
+   "name": "param1",
+   "uuid": "90d789b8-556a-48a0-8895-2f51f0f0ca29"
+  }
+ ],
+ "rows": [
+  {
+   "param": "mbox",
+   "param1": "_jcr_content"
+  },
+  {
+   "param": "geoimage",
+   "param1": "_jcr_content"
+  },
+  {
+   "param": "adtriplet",
+   "param1": "_jcr_content"
+  },
+  {
+   "param": "carousel",
+   "param1": "_jcr_content"
+  },
+  {
+   "param": "secondarynavsubheader",
+   "param1": "_jcr_content"
+  },
+  {
+   "param": "bucket",
+   "param1": "_jcr_content"
+  },
+  {
+   "param": "twocolumnvariants",
+   "param1": "_jcr_content"
+  },
+  {
+   "param": "tile",
+   "param1": "_jcr_content"
+  },
+  {
+   "param": "bodycopy",
+   "param1": "_jcr_content"
+  },
+  {
+   "param": "heroimage",
+   "param1": "_jcr_content"
+  }
+ ]
+}

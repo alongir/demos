@@ -8,7 +8,7 @@
   "/events/analytics/public/v1/events/raw/": {
    "parameters": [],
    "post": {
-    "operationId": "c1d3ce30-7c25-47fa-bbdb-dff1d4137e40",
+    "operationId": "6d9f5173-571a-485a-a5f4-091bf9de874c",
     "parameters": [],
     "requestBody": {
      "content": {
@@ -47,7 +47,7 @@
     }
    ],
    "post": {
-    "operationId": "8c11771d-256c-48ee-a374-d95d8dcdd3e0",
+    "operationId": "27e45e81-3c71-4da9-880a-7b13af3caeaf",
     "parameters": [
      {
       "in": "query",
@@ -157,10 +157,10 @@
   },
   "/web/auth/logonbox": {
    "get": {
-    "operationId": "ef85e8eb-3112-4da0-87f3-56db58b7f0c1",
+    "operationId": "d0dbbf4d-6b03-4943-80f8-cf1b37e91539",
     "parameters": [
      {
-      "description": "Origin: GET https://creditcards.chase.com/cash-back-credit-cards/freedom/flex &rarr; html: ul#hamNav-links-general li a.chaseanalytics-track-link[href] @href",
+      "description": "Origin: GET https://www.chase.com/ &rarr; html: html head link[href] @href",
       "in": "query",
       "name": "fromOrigin",
       "required": true,

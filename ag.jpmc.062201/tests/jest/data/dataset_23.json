@@ -2,16 +2,52 @@
  "parameters": [
   {
    "name": "param",
-   "uuid": "92de8a9e-ccbb-4ca5-b5ec-2c284a7c777e"
+   "uuid": "0915b5c2-96ea-4ee9-bce7-3988805456c2"
   },
   {
    "name": "param1",
-   "uuid": "cc836602-fd37-421d-8ba7-a18281f35677"
+   "uuid": "cef87572-5e6b-44d9-a412-1b664e986a75"
   }
  ],
  "rows": [
   {
    "param": "mbox",
+   "param1": "_jcr_content"
+  },
+  {
+   "param": "geoimage",
+   "param1": "_jcr_content"
+  },
+  {
+   "param": "adtriplet",
+   "param1": "_jcr_content"
+  },
+  {
+   "param": "carousel",
+   "param1": "_jcr_content"
+  },
+  {
+   "param": "secondarynavsubheader",
+   "param1": "_jcr_content"
+  },
+  {
+   "param": "bucket",
+   "param1": "_jcr_content"
+  },
+  {
+   "param": "twocolumnvariants",
+   "param1": "_jcr_content"
+  },
+  {
+   "param": "tile",
+   "param1": "_jcr_content"
+  },
+  {
+   "param": "bodycopy",
+   "param1": "_jcr_content"
+  },
+  {
+   "param": "heroimage",
    "param1": "_jcr_content"
   }
  ]

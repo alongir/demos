@@ -5,9 +5,56 @@
  },
  "openapi": "3.0.2",
  "paths": {
+  "/content/Creatives/Public/Heroes/{heroeId}/June/{cid}": {
+   "get": {
+    "operationId": "ff8ca78c-fdcb-40dd-86c9-667e33ed441c",
+    "parameters": [],
+    "responses": {
+     "200": {
+      "content": {
+       "text/html": {
+        "example": "<div id=\"DA_715492666570\">\r\n <div class=\"herolayer-version-b\" data-feature=\"herolayer\" lang=\"en-US\">\r\n <span class=\"accessible-text\">Start of Topic</span>\r\n <div class=\"herolayer__img sanfran sanfran-highcontrast\"></div>\r\n  <div class=\"herolayer__color-layer\" style=\"background: white; opacity: 0.1;\">\r\n  </div>\r\n  <div class=\"hero-layer__container flexible-ad\">\r\n    <div class=\"herolayer__container feature-container\">\r\n     <div class=\"herolayer__inner\">\r\n          <div class=\"herolayer__image\">\r\n          </div>\r\n          <div class=\"herolayer__content\">\r\n          <div class=\"herolayer__category\"></div>\r\n            <div class=\"herolayer__heading\"></div>\r\n            <div class=\"herolayer__desc\"></div>\r\n          <!--   add links dynamically  -->\r\n          </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <a class=\"herolayer__clickable\" aria-hidden=\"true\" tabindex=\"-1\">\r\n  </a>\r\n  <span class=\"accessible-text\">End of Topic</span>\r\n</div>\r\n</div>\r\n<script>\r\n  require(\r\n      [ 'slotplacement/topic', 'jquery' ],\r\n      function(Topic, $) {\r\n        var link, title, foreGroundImage, category, bodyText, foreGroundAltText, backgroundAltText, buttonColorCls, textColor, shadow, adVariantContext, ctaType, cta,isCTABlank,textColorStyle, shadowStyle, showCTA,showButton, textAlignment, verticalAlignment, linkIsBlank,foreGroundImageAlignment;\r\n        var imagePaths = {};\r\n        var lowcontrastPaths={};\r\n        var backgroundAltText=\"\";\r\n        var foreGroundAltText=\"\";\r\n        var $ad = $(\"#DA_715492666570\");\r\n        var adParentId = $ad.parent().attr('id');\r\n\r\n\r\n        Topic.subscribe('adUpdate', function(pageId, data) {\r\n          injectAd(data);\r\n        });\r\n\r\n        Topic.subscribe('adError', function () {\r\n          injectAd({});\r\n        });\r\n\r\n        function injectAd(data) {\r\n          var _a = data._a ? data._a.split(',') : [];\r\n          function hA(a) {\r\n            if ($.inArray(a, _a) > -1) {\r\n              return true;\r\n            }\r\n            return false;\r\n          }\r\n          \r\n          var rules = {};\r\n          \r\n          backgroundAltText = \"\";\r\n                  \r\n                  imagePaths[\"retina\"] = \"/content/services/structured-image/image.retina.jpg/XCRT/Flexible-Templates/Hero/2021/june/003945-01_Q3_225_Hero_Test_bkrd_2560x1440_slices.jpg\";\r\n                \r\n                  imagePaths[\"desktop\"] = \"/content/services/structured-image/image.desktop.jpg/XCRT/Flexible-Templates/Hero/2021/june/003945-01_Q3_225_Hero_Test_bkrd_2560x1440_slices.jpg\";\r\n                \r\n                  imagePaths[\"tablet\"] = \"/content/services/structured-image/image.tablet.jpg/XCRT/Flexible-Templates/Hero/2021/june/003945-01_Q3_225_Hero_Test_bkrd_2560x1440_slices.jpg\";\r\n                \r\n                  imagePaths[\"mobile-landscape\"] = \"/content/services/structured-image/image.mobile-landscape.jpg/XCRT/Flexible-Templates/Hero/2021/june/003945-01_Q3_225_Hero_Test_bkrd_2560x1440_slices.jpg\";\r\n                \r\n                  imagePaths[\"mobile-portrait\"] = \"/content/services/structured-image/image.mobile-portrait.jpg/XCRT/Flexible-Templates/Hero/2021/june/003945-01_Q3_225_Hero_Test_bkrd_2560x1440_slices.jpg\";\r\n                \r\n          foreGroundAltText = \"Enjoy 225 dollars\";\r\n          foreGroundImageAlignment = \"left\";\r\n          \r\n\r\n            adVariantContext=\"flexibleheroLinkId:default;flexibleheroBackgroundImageId:default;flexibleheroForegroundImageId:default;flexibleHeroCategoryElement:default;flexibleHerotitleElement:default;flexibleHeroBodyElement:default;flexibleHeroCalltOActionElement:default;flexibleHeroGeneralPropertiesElement:default\";\r\n            title = \"<p>New Chase customers</p>\";\r\n            bodyText = \"<p>Your $225 offer: Open a Chase Total Checking<sup>\u00ae </sup>account with direct deposit. Bank virtually anywhere with the Chase Mobile<sup>\u00ae</sup> app.</p>\";\r\n            category = \"<p></p>\";\r\n            buttonColorCls = \"cta--btn-green-aloe\";\r\n            textColor = \"White\";\r\n            textColorStyle = \"#000000\";\r\n            shadow = \"false\";\r\n            shadowStyle = \"\";\r\n            ctaType = \"Button\";\r\n            cta = \"Open an account\";\r\n            link = \"https://account.chase.com/consumer/banking/seo\";\r\n            foreGroundImage = \"/content/services/structured-image/image.flexibleheroforeground.png/XCRT/Flexible-Templates/Hero/FlexibleHeroNewForeground/june/003945-01_Q3_225_Hero_Test_foreground_240x240_slices_1.png\";\r\n            isCTABlank = \"false\";\r\n            ctaAccessibleText = \"Open an account\";\r\n            textAlignment = \"left\";\r\n            verticalAlignment = \"top\";\r\n            adaText = \"Open an account\";\r\n            linkIsBlank=\"false\"\r\n\r\n\r\n          \r\n\r\n          if(ctaType == 'Text') {\r\n            showCTA = \"\";\r\n            showButton = \"hide\";\r\n          }else {\r\n            showButton = \"\";\r\n            showCTA = \"hide\";\r\n          }\r\n          if (textColor == 'White') {\r\n            textColorStyle = '#FFFFFF';\r\n          }\r\n          if (shadow == 'true') {\r\n            shadowStyle = 'text-shadow';\r\n          }\r\n\r\n          $ad.find(\".sanfran\").attr(\"alt\",backgroundAltText);\r\n          if(imagePaths[\"desktop\"]) {\r\n            $ad.find(\".herolayer__img\").append(primaryBackgroundImageHighContrast(imagePaths));\r\n          }\r\n          $ad.find(\".herolayer__img\").append(primaryBackgroundImageLowContrast(lowcontrastPaths));\r\n\r\n\r\n            if(\"true\"==\"false\"){\r\n            $ad.find(\".herolayer__img\").removeClass(\"sanfran-highcontrast\");\r\n            $ad.find(\".herolayer__img\").addClass(\"set-contrast sanfran-lowcontrast\");\r\n\r\n          }else{\r\n\r\n            $ad.find(\".herolayer__img\").removeClass(\"set-contrast sanfran-lowcontrast\");\r\n            $ad.find(\".herolayer__img\").addClass(\"sanfran-highcontrast\");\r\n          }\r\n          var foreGroundImageTag = \"<img src='\"+foreGroundImage+\"' />\";\r\n          var style= \"color:\"+ textColorStyle+\";\";\r\n         if(foreGroundImage!=\"\" && foreGroundImage!=undefined){\r\n              $ad.find(\".herolayer__image\").addClass(foreGroundImageAlignment).addClass(verticalAlignment).append(foreGroundImageTag);\r\n             $ad.find(\".herolayer__image\").find(\"img\").attr(\"alt\",foreGroundAltText);\r\n          }\r\n          $ad.find(\".herolayer__inner\").addClass(verticalAlignment);\r\n          $ad.find(\".herolayer__content\").addClass(textAlignment).addClass(verticalAlignment);\r\n          $ad.find(\".herolayer__category\").addClass(shadowStyle).attr('style',style).html(removeBankPtag(category));\r\n          $ad.find(\".herolayer__heading\").addClass(shadowStyle).attr('style',style).html(removeBankPtag(title));\r\n          $ad.find(\".herolayer__desc\").addClass(shadowStyle).attr('style',style).html(removeBankPtag(bodyText));\r\n\r\n             if(link!=\"\" && link!=undefined && linkIsBlank!=\"true\"){\r\n                //var linkAnchor=\"<a class='hero-layer__content--cta-container'></a>\";\r\n               // $ad.find(\".hero-layer__content--cta-container-outer-link\").append(linkAnchor);\r\n                 $ad.find(\".herolayer__clickable\").attr('href',link);\r\n            }\r\n            else{\r\n               $ad.find(\".herolayer__clickable\").remove();\r\n             }\r\n\r\n         if(cta!=\"\" && cta!=undefined && isCTABlank!=\"true\"){\r\n              var buttonTag = $('<div class=\"herolayer__button\"></div>').addClass(showButton);\r\n              $ad.find(\".herolayer__content\").append(buttonTag);\r\n\r\n              var text = \"<a class='btn cta cta--primary cta--large' role='button'>\"+cta+\"</a>\";\r\n             $ad.find('.herolayer__button').html(text);\r\n            $ad.find('.herolayer__button').children().attr('href',link).addClass(buttonColorCls).attr('aria-label',cta);\r\n             if(adaText!=\"\" && adaText!=undefined)\r\n             {\r\n               $ad.find('.herolayer__button').children().attr('aria-label',adaText)\r\n             }\r\n\r\n             //add Link\r\n             var ctaContainer = $('<div class=\"herolayer__cta\"></div>');\r\n             $ad.find(\".herolayer__content\").append(ctaContainer);\r\n             var ctaTag = $('<a class=\"\"></a>');\r\n             $ad.find(\".herolayer__cta\").addClass(showCTA).append(ctaTag);\r\n             $ad.find('.herolayer__cta').children().addClass(shadowStyle).html(cta);\r\n            $ad.find('.herolayer__cta').children().attr('style',style).attr('href',link).attr('aria-label',cta);\r\n\r\n            if(adaText!=\"\" && adaText!=undefined)\r\n            {\r\n               $ad.find('.herolayer__cta').children().attr('aria-label',adaText)\r\n            }\r\n\r\n\r\n        }\r\n          Topic('placementComplete').publish(adParentId,adVariantContext);\r\n        }\r\n\r\n        function removeBankPtag(text){\r\n          if(text==\"<p></p>\"){\r\n            text=\"\";\r\n          }\r\n          return text;\r\n        }\r\n\r\n        var userAgentString = window.navigator.userAgent.toLowerCase();\r\n\r\n          if (userAgentString.indexOf(\"msie\") > 0 ||\r\n            !!navigator.userAgent.match(/Edge\\/\\d+/) ||\r\n            !!navigator.userAgent.match(/Trident.*rv\\:11\\./)) {\r\n\r\n          $ad.find(\".herolayer__img\").removeClass(\"set-contrast sanfran-lowcontrast\");\r\n          $ad.find(\".herolayer__img\").addClass(\"sanfran-highcontrast\");\r\n\r\n         }\r\n\r\n        function primaryBackgroundImageHighContrast(imagePaths) {\r\n          var background = \"background-image:url(\", selector = \".sanfran-highcontrast\", media = \"@media only screen and \", ie8AlphaImageLoader = \"progid:DXImageTransform.Microsoft.AlphaImageLoader(src='\", ie8SizingMethod = \"', sizingMethod='scale');\";\r\n          var style = \"<style>\";\r\n          style += selector + \"{\" + background + imagePaths[\"mobile-portrait\"] + \");}\";\r\n          style += media + \"(min-width: 480px){\" + selector + \"{\" + background + imagePaths[\"mobile-portrait\"] + \");}}\";\r\n          style += media + \"(min-width: 768px){\" + selector + \"{\" + background + imagePaths[\"mobile-landscape\"] + \");}}\";\r\n          style += media + \"(min-width: 992px){\" + selector + \"{\" + background + imagePaths[\"tablet\"] + \");}}\";\r\n          style += media + \"(min-width: 1200px){\" + selector + \"{\" + background + imagePaths[\"desktop\"] + \");}}\";\r\n          style += media + \"(min-width: 1600px){\" + selector + \"{\" + background + imagePaths[\"retina\"] + \");}}\";\r\n          style += \".lt-ie9 \" + selector + \"{ filter: \" + ie8AlphaImageLoader + imagePaths[\"desktop\"]\r\n              + ie8SizingMethod + \"}\";\r\n          style += \"</style>\";\r\n          return style;\r\n        }\r\n\r\n        function primaryBackgroundImageLowContrast(lowcontrastPaths) {\r\n          var background = \"background-image:url(\", selector = \".sanfran-lowcontrast\", media = \"@media only screen and \", ie8AlphaImageLoader = \"progid:DXImageTransform.Microsoft.AlphaImageLoader(src='\", ie8SizingMethod = \"', sizingMethod='scale');\";\r\n          var style = \"<style>\";\r\n          style += selector + \"{\" + background + lowcontrastPaths[\"mobile-portrait\"] + \");}\";\r\n          style += media + \"(min-width: 480px){\" + selector + \"{\" + background + lowcontrastPaths[\"mobile-portrait\"] + \");}}\";\r\n          style += media + \"(min-width: 768px){\" + selector + \"{\" + background + lowcontrastPaths[\"mobile-landscape\"] + \");}}\";\r\n          style += media + \"(min-width: 992px){\" + selector + \"{\" + background + lowcontrastPaths[\"tablet\"] + \");}}\";\r\n          style += media + \"(min-width: 1200px){\" + selector + \"{\" + background + lowcontrastPaths[\"desktop\"] + \");}}\";\r\n          style += media + \"(min-width: 1600px){\" + selector + \"{\" + background + lowcontrastPaths[\"retina\"] + \");}}\";\r\n          style += \".lt-ie9 \" + selector + \"{ filter: \" + ie8AlphaImageLoader + lowcontrastPaths[\"desktop\"]\r\n              + ie8SizingMethod + \"}\";\r\n          style += \"</style>\";\r\n          return style;\r\n        }\r\n\r\n      });\r\n</script>"
+       }
+      },
+      "description": "OK"
+     }
+    },
+    "summary": "Seen 1 requests",
+    "tags": [
+     "content.Creatives.Public"
+    ]
+   },
+   "parameters": [
+    {
+     "in": "path",
+     "name": "heroeId",
+     "required": true,
+     "schema": {
+      "enum": [
+       "2021"
+      ],
+      "type": "string"
+     },
+     "style": "simple"
+    },
+    {
+     "description": "Origin: GET https://midas.chase.com/prweb/PRRestService/{param}/v1/MakeDecision &rarr; json: $.offers[*].cid; url: /7",
+     "in": "path",
+     "name": "cid",
+     "required": true,
+     "schema": {
+      "enum": [
+       "66369_CB_CHK_V1_hero_R-867.dynamic.html"
+      ],
+      "type": "string"
+     },
+     "style": "simple"
+    }
+   ]
+  },
   "/content/Creatives/Public/Heroes/{heroeId}/March/{cid}": {
    "get": {
-    "operationId": "2652e917-d7c1-4f3b-b3d9-6d3b0c889c52",
+    "operationId": "bc37df0a-5a51-4804-92f8-02af04788d11",
     "parameters": [],
     "responses": {
      "200": {
@@ -38,6 +85,7 @@
      "style": "simple"
     },
     {
+     "description": "Origin: GET https://midas.chase.com/prweb/PRRestService/{param}/v1/MakeDecision &rarr; json: $.offers[*].cid; url: /7",
      "in": "path",
      "name": "cid",
      "required": true,
@@ -53,7 +101,7 @@
   },
   "/content/Creatives/Public/Tiles/{tileId}/March/{cid}": {
    "get": {
-    "operationId": "a636c092-c1ce-41a7-9cdd-281e02c6b948",
+    "operationId": "4836e5ca-1314-4262-b1d7-5c1c0ffee6b9",
     "parameters": [],
     "responses": {
      "200": {
@@ -84,6 +132,7 @@
      "style": "simple"
     },
     {
+     "description": "Origin: GET https://midas.chase.com/prweb/PRRestService/{param}/v1/MakeDecision &rarr; json: $.offers[*].cid; url: /7",
      "in": "path",
      "name": "cid",
      "required": true,
@@ -99,7 +148,7 @@
   },
   "/content/Creatives/Public/Triplets/{tripletId}/July/{cid}": {
    "get": {
-    "operationId": "ae95357c-56b9-472d-b099-ec9e080c3842",
+    "operationId": "bec9bcd4-e42f-4f55-879f-48ec05401083",
     "parameters": [],
     "responses": {
      "200": {
@@ -111,7 +160,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 3 requests",
+    "summary": "Seen 5 requests",
     "tags": [
      "content.Creatives.Public"
     ]
@@ -132,13 +181,64 @@
      "style": "simple"
     },
     {
+     "description": "Origin: GET https://midas.chase.com/prweb/PRRestService/{param}/v1/MakeDecision &rarr; json: $.offers[*].cid; url: /7",
      "in": "path",
      "name": "cid",
      "required": true,
      "schema": {
       "enum": [
        "t1525271-card-triplet-responsive52133.dynamic.html",
-       "n3131118-credit-card-related-services-triplet-responsive52153.dynamic.html"
+       "n3131118-credit-card-related-services-triplet-responsive52153.dynamic.html",
+       "64102_Secure_dollar_25_Offer_Triplet_R-1560.dynamic.html"
+      ],
+      "type": "string"
+     },
+     "style": "simple"
+    }
+   ]
+  },
+  "/content/Creatives/Public/Triplets/{tripletId}/March/{cid}": {
+   "get": {
+    "operationId": "067ba448-fcee-4927-9483-08af49b4b572",
+    "parameters": [],
+    "responses": {
+     "200": {
+      "content": {
+       "text/html": {
+        "example": "<a id=\"DA_127563482374\" class=\"mosaic--tile__link flexible-ad\" href=\"\" lang=\"en-US\">\r\n    <span class='accessible-text'>Start of Topic</span>\r\n</a>\r\n<script>\r\n  require(['slotplacement/topic', 'jquery'], function (Topic, $) {\r\n    var $ad = $(\"#DA_127563482374\");\r\n    var adParentId=$ad.parent().attr('id');\r\n    var  tripletImageAlt, adVariantContext;\r\n    var imagePaths = {};\r\n    Topic.subscribe('adUpdate', function (pageId, data) {\r\n      injectAd(data);\r\n    }); \r\n    Topic.subscribe('adError', function () {         \r\n      injectAd({});\r\n    });\r\n    \r\n    function tripletImageSrc (screenWidth, imagePaths, alt) {\r\n      var size = \"tablet\";\r\n      if(screenWidth >= 768) {\r\n        size = \"desktop\"; \r\n      } else if (screenWidth <= 480) { \r\n        size = \"mobile\"; \r\n      } \r\n\r\n      var src = \"src='\"+imagePaths[size]+\"'\";\r\n      var alt = \" alt='\" + alt + \"'\";\r\n      return \"<img \" + src + alt + \" />\";\r\n    }\r\n    \r\n    function injectAd(data){  \r\n      var _a = data._a ? data._a.split(',') : [];\r\n      function hA(a) {\r\n        if ($.inArray(a, _a) > -1) {\r\n          return true;\r\n        }\r\n        return false;\r\n      }\r\n      \r\n      var rules = {};\r\n      \r\n        tripletLink = \"https://account.chase.com/consumer/banking/seo\";\r\n        \r\n          imagePaths[\"desktop\"] = \"/content/services/structured-image/image.desktop.jpg/XCRT/Flexible-Templates/Triplets/2021/july/003805_01_CH_225_cta_banners_Desktop_Triplet_384x280_FNL.jpg\";\r\n        \r\n          imagePaths[\"tablet\"] = \"/content/services/structured-image/image.tablet.jpg/XCRT/Flexible-Templates/Triplets/2021/july/003805_01_CH_225_cta_banners_Desktop_Triplet_384x280_FNL.jpg\";\r\n        \r\n          imagePaths[\"mobile\"] = \"/content/services/structured-image/image.mobile.jpg/XCRT/Flexible-Templates/Triplets/2021/july/003805_01_CH_225_cta_banners_Desktop_Triplet_384x280_FNL.jpg\";\r\n        \r\n        tripletImageAlt = \"Chase Total Checking(R). Enjoy two hundred and twenty five dollars. New Chase customers: Open a new Chase Total Checking(R) account and set up direct deposit. Open an account >>.\";\r\n        adVariantContext=\"tripletLinkId:default;tripletImageId:default\";\r\n      \r\n      \r\n      // Dynamic Ad Injection\r\n      var screenWidth = window.innerWidth;\r\n      $ad.append(tripletImageSrc(screenWidth, imagePaths, tripletImageAlt));\r\n      $ad.attr(\"href\", tripletLink);\r\n      $ad.append(\"<span class='accessible-text'>End of Topic</span>\");\r\n      Topic('placementComplete').publish(adParentId,adVariantContext);\r\n      $(window).on(\"resize\", function () {\r\n        var currentScreenWidth = window.innerWidth;\r\n        if (currentScreenWidth !== screenWidth) { \r\n          screenWidth = currentScreenWidth; \r\n          $ad.find(\"img\").remove(); \r\n          $ad.prepend(tripletImageSrc(screenWidth, imagePaths, tripletImageAlt)); \r\n        }\r\n      });\r\n    }\r\n  });\r\n</script>"
+       }
+      },
+      "description": "OK"
+     }
+    },
+    "summary": "Seen 1 requests",
+    "tags": [
+     "content.Creatives.Public"
+    ]
+   },
+   "parameters": [
+    {
+     "in": "path",
+     "name": "tripletId",
+     "required": true,
+     "schema": {
+      "enum": [
+       "2020",
+       "2018",
+       "2021"
+      ],
+      "type": "string"
+     },
+     "style": "simple"
+    },
+    {
+     "description": "Origin: GET https://midas.chase.com/prweb/PRRestService/{param}/v1/MakeDecision &rarr; json: $.offers[*].cid; url: /7",
+     "in": "path",
+     "name": "cid",
+     "required": true,
+     "schema": {
+      "enum": [
+       "62235_cb_totalchecking200_triplet_r-1005.dynamic.html"
       ],
       "type": "string"
      },
@@ -148,7 +248,7 @@
   },
   "/content/Creatives/Public/Triplets/{tripletId}/May/{cid}": {
    "get": {
-    "operationId": "fa6fd006-6e50-4925-9a68-344ab5bb211f",
+    "operationId": "f9b35adb-75dd-4cf6-8d31-38ae285fc35d",
     "parameters": [],
     "responses": {
      "200": {
@@ -181,6 +281,7 @@
      "style": "simple"
     },
     {
+     "description": "Origin: GET https://midas.chase.com/prweb/PRRestService/{param}/v1/MakeDecision &rarr; json: $.offers[*].cid; url: /7",
      "in": "path",
      "name": "cid",
      "required": true,
@@ -196,7 +297,7 @@
   },
   "/content/Creatives/Public/Triplets/{tripletId}/November/{cid}": {
    "get": {
-    "operationId": "77662198-1ec5-4267-8918-1f8263bfbb46",
+    "operationId": "fe0cf80b-16dd-4d0c-b50e-c4cadfd50477",
     "parameters": [],
     "responses": {
      "200": {
@@ -229,6 +330,7 @@
      "style": "simple"
     },
     {
+     "description": "Origin: GET https://midas.chase.com/prweb/PRRestService/{param}/v1/MakeDecision &rarr; json: $.offers[*].cid; url: /7",
      "in": "path",
      "name": "cid",
      "required": true,

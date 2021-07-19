@@ -22,7 +22,7 @@ public class TestsSecure01bChaseComTest
 {
     @ParameterizedTest
     @JsonFileSource(resources = "/dataset_42.json")
-    public void testPostEventsEventid42(final JsonObject json) throws MalformedURLException, IOException
+    public void testPostEventsEventid042(final JsonObject json) throws MalformedURLException, IOException
     {
         final String app = json.getString("app");
         final String eventId = json.getString("eventId");
@@ -54,14 +54,13 @@ public class TestsSecure01bChaseComTest
 
     @ParameterizedTest
     @JsonFileSource(resources = "/dataset_41.json")
-    public void testPostEventsAnalyticsPublicV1EventsRaw41(final JsonObject json) throws MalformedURLException, IOException
+    public void testPostEventsAnalyticsPublicV1EventsRaw041(final JsonObject json) throws MalformedURLException, IOException
     {
         final String adobeData = json.getString("adobeData");
         final String browserRes = json.getString("browserRes");
         final int colorDepth = json.getInt("colorDepth");
         final String currentURL = json.getString("currentURL");
         final String javaScriptVer = json.getString("javaScriptVer");
-        final String referrerURL = json.getString("referrerURL");
         final String screenRes = json.getString("screenRes");
         final int server_offset = json.getInt("server_offset");
         final String site = json.getString("site");
@@ -70,13 +69,22 @@ public class TestsSecure01bChaseComTest
         final String visitor = json.getString("visitor");
         final String visitorId = json.getString("visitorId");
 
+        // GET https://www.chase.com/ (endp 1)
+        final HttpTarget wwwChaseCom = getHttpClient("https://www.chase.com", new Authentication());
+        final HttpRequest request = new HttpRequest();
+        final Response response = wwwChaseCom.get(request, "/");
+        assertStatusCode(response.code(), 200);
+        assertCSSselect("main#main h1.accessible-text", "Chase.com home", response.body().string());
+        assertCSSselect("html head title", "Credit Card, Mortgage, Banking, Auto | Chase Online | Chase.com", response.body().string());
+        final String referrerURL = CSSselect("div div header.header-navigation section.mobile-header div.row section a.chaseanalytics-track-link[href] @href", response.body().string());
+
         // POST https://secure01b.chase.com/events/analytics/public/v1/events/raw/ (endp 41)
         final HttpTarget secure01bChaseCom = getHttpClient("https://secure01b.chase.com", new Authentication());
-        final HttpRequest request = new HttpRequest();
-        request.setHeaders(new Hashtable<String, Object>() {{
+        final HttpRequest request2 = new HttpRequest();
+        request2.setHeaders(new Hashtable<String, Object>() {{
             put("content-type", "application/json");
         }});
-        request.setJsonBody("payload_for_endp_41.json", new Hashtable<String, Object>() {{
+        request2.setJsonBody("payload_for_endp_41.json", new Hashtable<String, Object>() {{
             put("$.events[*].app.version", version);
             put("$.events[*].device.browserRes", browserRes);
             put("$.events[*].device.colorDepth", colorDepth);
@@ -92,29 +100,35 @@ public class TestsSecure01bChaseComTest
             put("$.events[*].visitor.adobeData", adobeData);
             put("$.events[*].visitor.visitorId", visitorId);
         }});
-        final Response response = secure01bChaseCom.post(request, "/events/analytics/public/v1/events/raw/");
-        assertStatusCode(response.code(), 200);
+        final Response response2 = secure01bChaseCom.post(request2, "/events/analytics/public/v1/events/raw/");
+        assertStatusCode(response2.code(), 200);
     }
 
     /**
      * authentication-related test
      */
-    @ParameterizedTest
-    @JsonFileSource(resources = "/dataset_43.json")
-    public void testGetWebAuthLogonbox43(final JsonObject json) throws MalformedURLException, IOException
+    @Test
+    public void testGetWebAuthLogonbox043() throws MalformedURLException, IOException
     {
-        final String fromOrigin = json.getString("fromOrigin");
+        // GET https://www.chase.com/ (endp 1)
+        final HttpTarget wwwChaseCom = getHttpClient("https://www.chase.com", new DummyAuth());
+        final HttpRequest request = new HttpRequest();
+        final Response response = wwwChaseCom.get(request, "/");
+        assertStatusCode(response.code(), 200);
+        assertCSSselect("main#main h1.accessible-text", "Chase.com home", response.body().string());
+        assertCSSselect("html head title", "Credit Card, Mortgage, Banking, Auto | Chase Online | Chase.com", response.body().string());
+        final String fromOrigin = CSSselect("html head link[href] @href", response.body().string());
 
         // GET https://secure01b.chase.com/web/auth/logonbox (endp 43)
         final HttpTarget secure01bChaseCom = getHttpClient("https://secure01b.chase.com", new DummyAuth());
-        final HttpRequest request = new HttpRequest();
-        request.setQueryString(new Hashtable<String, Object>() {{
+        final HttpRequest request2 = new HttpRequest();
+        request2.setQueryString(new Hashtable<String, Object>() {{
             put("fromOrigin", fromOrigin);
             put("lang", "en");
         }});
-        final Response response = secure01bChaseCom.get(request, "/web/auth/logonbox");
-        assertStatusCode(response.code(), 200);
-        assertCSSselect("html head title", "Chase Account login", response.body().string());
+        final Response response2 = secure01bChaseCom.get(request2, "/web/auth/logonbox");
+        assertStatusCode(response2.code(), 200);
+        assertCSSselect("html head title", "Chase Account login", response2.body().string());
     }
 }
 

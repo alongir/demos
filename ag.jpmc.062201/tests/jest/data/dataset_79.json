@@ -2,59 +2,55 @@
  "parameters": [
   {
    "name": "adobeData",
-   "uuid": "facbe2c1-972f-49c2-a98d-f4311765f43b"
+   "uuid": "b84c67d3-33d2-429b-8424-e5154635bd68"
   },
   {
    "name": "browserRes",
-   "uuid": "af3ded8d-5d3c-48a7-b9e1-da12a8bb09a7"
+   "uuid": "13cd3961-c493-4d07-b42c-b92348be5fac"
   },
   {
    "name": "colorDepth",
-   "uuid": "272aadad-8423-470b-a73e-3e538590fe3f"
+   "uuid": "3a9553a7-61bd-4110-b94f-6efde4db1380"
   },
   {
    "name": "currentURL",
-   "uuid": "9aff3787-08c3-4889-93f0-68353adb84ef"
+   "uuid": "a0ef8624-d931-4630-872c-49be2571a9c7"
   },
   {
    "name": "javaScriptVer",
-   "uuid": "cfcf73a1-df79-4f2b-b3c1-a5c7cae948af"
+   "uuid": "85e21f6b-f98b-4de1-b1be-7ae4277401a3"
   },
   {
    "name": "q",
-   "uuid": "56c1eede-34d9-47f1-9fb2-e25f038d9e2d"
-  },
-  {
-   "name": "referrerURL",
-   "uuid": "264aab6b-1e68-4d8c-99d2-775968e83dbc"
+   "uuid": "4767ed73-b8d9-4549-b200-b5d9ba789016"
   },
   {
    "name": "screenRes",
-   "uuid": "7a4e09ca-d84e-4213-a0b6-396adeb41f65"
+   "uuid": "25ddfb5f-44cd-4827-bd40-c7f005d3f2c8"
   },
   {
    "name": "server_offset",
-   "uuid": "de9946d9-26de-4281-b51a-169555c52230"
+   "uuid": "f74080ff-a1e7-4e15-87bb-6e8a7c7d9b0a"
   },
   {
    "name": "site",
-   "uuid": "5eeb31bb-c767-429d-ade9-ed6b6299ea32"
+   "uuid": "fe6661e2-17a8-47d8-926e-9999351cb0b0"
   },
   {
    "name": "tz_offset",
-   "uuid": "cf82236b-a93a-4df7-91f6-b2951f63044c"
+   "uuid": "347d4459-1d2f-4d12-ab7b-da8482511f6d"
   },
   {
    "name": "version",
-   "uuid": "85d81e3a-4c88-4245-9fd9-eddad0d89d5f"
+   "uuid": "cd4246e6-9f3c-4fae-b063-773ebfae6c29"
   },
   {
    "name": "visitor",
-   "uuid": "8d7338fd-a737-4eca-975b-89b13479f63f"
+   "uuid": "3a607015-7bc6-41e3-8f56-3e138d05f724"
   },
   {
    "name": "visitorId",
-   "uuid": "b76dba49-1c18-4d16-80b9-2f6e092787f7"
+   "uuid": "0e12fba5-5437-4cc2-94fb-bddfb2b508e8"
   }
  ],
  "rows": [
@@ -65,7 +61,6 @@
    "currentURL": "https://secure07a.chase.com/web/auth/logonbox?lang=en&fromOrigin=https%3A%2F%2Fwww.chase.com#/logonbox/index/index",
    "javaScriptVer": "1.8.5",
    "q": "94303",
-   "referrerURL": "https://www.chase.com/",
    "screenRes": "2560x1067",
    "server_offset": -35,
    "site": "chase3.0",

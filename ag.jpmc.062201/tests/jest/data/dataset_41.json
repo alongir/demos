@@ -2,55 +2,51 @@
  "parameters": [
   {
    "name": "adobeData",
-   "uuid": "97952710-8178-493b-b6d8-d30b453db032"
+   "uuid": "e020699c-63ae-45a0-8541-5f1de209c6ad"
   },
   {
    "name": "browserRes",
-   "uuid": "5f373381-fa5b-419c-bf17-47ede9d7f24c"
+   "uuid": "b06b9c38-a5ec-4cf9-8aa3-e03be9f87400"
   },
   {
    "name": "colorDepth",
-   "uuid": "5e5d98f3-0399-4c99-8a2f-abf39b5ddb17"
+   "uuid": "9ba539d9-0e6e-4068-809e-05b3d21fabdd"
   },
   {
    "name": "currentURL",
-   "uuid": "f3dc6036-4d33-4da0-8a4c-ebe877b70d95"
+   "uuid": "ac09d833-2357-43fc-b343-b81c42ed3fce"
   },
   {
    "name": "javaScriptVer",
-   "uuid": "308302e4-58cb-4830-8587-800ac303a68d"
-  },
-  {
-   "name": "referrerURL",
-   "uuid": "a0ede166-93ce-4fae-acf3-8ef07861388f"
+   "uuid": "7bbc0117-980a-43e5-bac9-31cb70320439"
   },
   {
    "name": "screenRes",
-   "uuid": "b8717da8-b85d-4fc3-ace8-3cd019fbe6d1"
+   "uuid": "6597d1d2-c646-4967-ac4b-9fe80fe5a0e4"
   },
   {
    "name": "server_offset",
-   "uuid": "555d0b88-9deb-42f7-aeb7-134f0bff73c9"
+   "uuid": "1749cf3d-36c3-4aa2-88ce-3b7ab0932632"
   },
   {
    "name": "site",
-   "uuid": "9c45191c-d28e-41a0-ab72-85d45a0ec928"
+   "uuid": "991858a7-287a-42fb-9057-62c476ed6658"
   },
   {
    "name": "tz_offset",
-   "uuid": "9432ff03-2290-46a5-9663-42220efaff07"
+   "uuid": "87a0961d-c1a5-4ad2-ae6b-16bbf862e093"
   },
   {
    "name": "version",
-   "uuid": "f7f4993c-efe8-413f-9b5c-980b7d050a0d"
+   "uuid": "0ee2234b-157d-461f-af70-e297f99f762d"
   },
   {
    "name": "visitor",
-   "uuid": "5f4b698d-10e5-41fa-8431-ce1e8e0e39a3"
+   "uuid": "505a13a2-9ac2-4a91-b962-2f8831411adc"
   },
   {
    "name": "visitorId",
-   "uuid": "3f2cccce-dfc6-4e8d-9380-66300b163776"
+   "uuid": "c1bb4fe9-aae1-4470-883b-735f81fcb999"
   }
  ],
  "rows": [
@@ -60,7 +56,6 @@
    "colorDepth": 30,
    "currentURL": "https://secure01b.chase.com/web/auth/logonbox?lang=en&fromOrigin=https%3A%2F%2Fwww.chase.com#/logonbox/index/index",
    "javaScriptVer": "1.8.5",
-   "referrerURL": "https://www.chase.com/",
    "screenRes": "2560x1067",
    "server_offset": -50,
    "site": "chase3.0",

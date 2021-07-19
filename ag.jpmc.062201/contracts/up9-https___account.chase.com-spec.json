@@ -7,9 +7,10 @@
  "paths": {
   "/consumer/banking/seo": {
    "get": {
-    "operationId": "a4c64a7e-b115-4f1f-a163-d3968c8d54aa",
+    "operationId": "60a9bf70-2707-44ca-85e5-2ff7a1878913",
     "parameters": [
      {
+      "description": "Origin: GET https://midas.chase.com/prweb/PRRestService/{param}/v1/MakeDecision &rarr; json: $.offers[*].turl; url: ?ssv_creativeid",
       "in": "query",
       "name": "jp_aid_a",
       "required": true,
@@ -49,9 +50,10 @@
    },
    "parameters": [],
    "post": {
-    "operationId": "fa192db6-0274-489d-9020-660e1bab719f",
+    "operationId": "6d156f52-333d-4e92-9780-a14890ff5725",
     "parameters": [
      {
+      "description": "Origin: GET https://midas.chase.com/prweb/PRRestService/{param}/v1/MakeDecision &rarr; json: $.offers[*].turl; url: ?ssv_creativeid",
       "in": "query",
       "name": "jp_aid_a",
       "required": true,

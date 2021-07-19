@@ -13,7 +13,7 @@
    "colorDepth": "{{colorDepth}}",
    "height": "{{height}}",
    "orientation": "landscape",
-   "pixelRatio": 2,
+   "pixelRatio": "{{pixelRatio}}",
    "width": "{{width}}"
   },
   "timeOffsetInMinutes": "{{timeOffsetInMinutes}}",

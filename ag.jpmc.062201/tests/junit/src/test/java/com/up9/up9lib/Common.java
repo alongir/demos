@@ -290,6 +290,19 @@ public class Common {
         }
     }
 
+    public static void assertJSONPath(String jsonPath, String responseText) {
+        try {
+            JSONPath(jsonPath, responseText);
+        } catch (RuntimeException e) {
+            throw new AssertionError(
+                String.format("JSONPath query %s didn't match response content: %s",
+                    jsonPath,
+                    shorten(responseText, 100)
+                )
+            );
+        }
+    }
+
     public static void assertCSSselect(String query, String value, String responseText) {
         String cssSelectMatchedString = CSSselect(query, responseText);
         if (cssSelectMatchedString.isEmpty()) {
@@ -306,6 +319,18 @@ public class Common {
                 String.format("Actual value at CSS select query (%s) isn't equal to expected (%s)",
                     query,
                     value
+                )
+            );
+        }
+    }
+
+    public static void assertCSSselect(String query, String responseText) {
+        String cssSelectMatchedString = CSSselect(query, responseText);
+        if (cssSelectMatchedString.isEmpty()) {
+            throw new AssertionError(
+                String.format("CSS select query %s didn't match response content: %s",
+                    query,
+                    shorten(responseText, 100)
                 )
             );
         }

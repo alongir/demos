@@ -1,10 +1,22 @@
 const authenticate = require("./authentication");
-const {CSSselect, clearSession, dataset, getHttpClient, urlencode} = require("./up9lib");
+const {CSSselect, clearSession, getHttpClient, urlPart, urlencode} = require("./up9lib");
 
-describe.each(dataset("data/dataset_66.json"))("test_66_get_cash_back_credit_cards", (CELL) => {
-    it("test_66_get_cash_back_credit_cards", () => {
-        clearSession();
+it("test_066_get_cash_back_credit_cards", () => {
+    clearSession();
 
+    // GET https://www.chase.com/ (endp 1)
+    const www_chase_com = getHttpClient("https://www.chase.com", authenticate);
+    return www_chase_com.fetch("/")
+    .then((response) => {
+        expect(response.status).toEqual(200);
+        return response.text();
+    })
+    .then((text) => {
+        expect(CSSselect("main#main h1.accessible-text", text)).toContain("Chase.com home");
+        expect(CSSselect("html head title", text)).toContain("Credit Card, Mortgage, Banking, Auto | Chase Online | Chase.com");
+        const CELL = urlPart("?CELL", CSSselect("div div header.header-navigation section.desktop-header section.header-navigation__content.row section nav ul li div.header-navigation__dropdown.hide ul li.colored a.regular-link.chaseanalytics-track-link[href] @href", response).text().trim());
+    })
+    .then((data) => {
         // GET https://creditcards.chase.com/cash-back-credit-cards (endp 66)
         const creditcards_chase_com = getHttpClient("https://creditcards.chase.com", authenticate);
         return creditcards_chase_com.fetch("/cash-back-credit-cards" + urlencode([["CELL", CELL], ["jp_ltg", "chsecate_cashback"]]))
@@ -21,10 +33,22 @@ describe.each(dataset("data/dataset_66.json"))("test_66_get_cash_back_credit_car
     });
 });
 
-describe.each(dataset("data/dataset_65.json"))("test_65_get_cash_back_credit_cards_freedom_flex", (CELL) => {
-    it("test_65_get_cash_back_credit_cards_freedom_flex", () => {
-        clearSession();
+it("test_065_get_cash_back_credit_cards_freedom_flex", () => {
+    clearSession();
 
+    // GET https://www.chase.com/ (endp 1)
+    const www_chase_com = getHttpClient("https://www.chase.com", authenticate);
+    return www_chase_com.fetch("/")
+    .then((response) => {
+        expect(response.status).toEqual(200);
+        return response.text();
+    })
+    .then((text) => {
+        expect(CSSselect("main#main h1.accessible-text", text)).toContain("Chase.com home");
+        expect(CSSselect("html head title", text)).toContain("Credit Card, Mortgage, Banking, Auto | Chase Online | Chase.com");
+        const CELL = urlPart("?CELL", CSSselect("div div header.header-navigation section.desktop-header section.header-navigation__content.row section nav ul li div.header-navigation__dropdown.hide ul li.colored a.regular-link.chaseanalytics-track-link[href] @href", response).text().trim());
+    })
+    .then((data) => {
         // GET https://creditcards.chase.com/cash-back-credit-cards/freedom/flex (endp 65)
         const creditcards_chase_com = getHttpClient("https://creditcards.chase.com", authenticate);
         return creditcards_chase_com.fetch("/cash-back-credit-cards/freedom/flex" + urlencode([["CELL", CELL]]))

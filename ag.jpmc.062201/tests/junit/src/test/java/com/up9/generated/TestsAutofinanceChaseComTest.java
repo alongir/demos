@@ -20,7 +20,7 @@ public class TestsAutofinanceChaseComTest
 {
     @ParameterizedTest
     @JsonFileSource(resources = "/dataset_82.json")
-    public void testGetAutoFinanceAutoLoans82(final JsonObject json) throws MalformedURLException, IOException
+    public void testGetAutoFinanceAutoLoans082(final JsonObject json) throws MalformedURLException, IOException
     {
         final String offercode = json.getString("offercode");
 
@@ -37,7 +37,7 @@ public class TestsAutofinanceChaseComTest
 
     @ParameterizedTest
     @JsonFileSource(resources = "/dataset_83.json")
-    public void testGetAutoFinanceHome83(final JsonObject json) throws MalformedURLException, IOException
+    public void testGetAutoFinanceHome083(final JsonObject json) throws MalformedURLException, IOException
     {
         final String offercode = json.getString("offercode");
 

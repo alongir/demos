@@ -7,7 +7,7 @@
  "paths": {
   "/personal/checking": {
    "get": {
-    "operationId": "3248b069-ee3d-487f-afb1-4fa50467723d",
+    "operationId": "fb06630b-0fba-44c1-b2b2-baff09c95d84",
     "parameters": [],
     "responses": {
      "200": {
