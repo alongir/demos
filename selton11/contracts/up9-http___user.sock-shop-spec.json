@@ -109,7 +109,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 53 requests"
+    "summary": "Seen 97 requests"
    },
    "parameters": [
     {
@@ -220,7 +220,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 52 requests"
+    "summary": "Seen 96 requests"
    },
    "parameters": [
     {
@@ -361,14 +361,14 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 131 requests",
+    "summary": "Seen 212 requests",
     "tags": [
      "customers"
     ]
    },
    "parameters": [
     {
-     "description": "Origin: GET http://user.sock-shop/login &rarr; json: $.user.id",
+     "description": "Origin: POST http://orders.sock-shop/orders &rarr; json: $.customerId",
      "in": "path",
      "name": "customerId",
      "required": true,
@@ -499,14 +499,14 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 60 requests",
+    "summary": "Seen 96 requests",
     "tags": [
      "customers"
     ]
    },
    "parameters": [
     {
-     "description": "Origin: GET http://user.sock-shop/login &rarr; json: $.user.id",
+     "description": "Origin: POST http://orders.sock-shop/orders &rarr; json: $.customerId",
      "in": "path",
      "name": "customerId",
      "required": true,
@@ -627,14 +627,14 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 60 requests",
+    "summary": "Seen 95 requests",
     "tags": [
      "customers"
     ]
    },
    "parameters": [
     {
-     "description": "Origin: GET http://user.sock-shop/login &rarr; json: $.user.id",
+     "description": "Origin: POST http://orders.sock-shop/orders &rarr; json: $.customerId",
      "in": "path",
      "name": "customerId",
      "required": true,
@@ -770,7 +770,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 90 requests"
+    "summary": "Seen 130 requests"
    },
    "parameters": []
   }

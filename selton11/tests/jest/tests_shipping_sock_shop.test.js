@@ -1,5 +1,5 @@
 const authenticate = require("./authentication");
-const {JSONBuild, clearSession, dataset, getHttpClient, uuidv4} = require("./up9lib");
+const {JSONBuild, JSONPath, clearSession, dataset, getHttpClient, uuidv4} = require("./up9lib");
 
 describe.each(dataset("data/dataset_23.json"))("test_23_post_shipping", (name) => {
     it("test_23_post_shipping", () => {
@@ -23,8 +23,13 @@ describe.each(dataset("data/dataset_23.json"))("test_23_post_shipping", (name) =
             return response.text();
         })
         .then((text) => {
+            return JSON.parse(text);
         })
         .then((data) => {
+            expect(JSONPath({
+                path: "$.id",
+                json: data
+            })).not.toBeNull();
         });
     });
 });

@@ -20,6 +20,6 @@
   "firstName": "{{firstName}}",
   "id": null,
   "lastName": "Name",
-  "username": "user"
+  "username": "{{username}}"
  }
 }

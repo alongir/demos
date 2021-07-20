@@ -19,7 +19,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 1066 requests"
+    "summary": "Seen 1109 requests"
    },
    "parameters": []
   },
@@ -145,7 +145,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 16 requests"
+    "summary": "Seen 54 requests"
    },
    "parameters": []
   },
@@ -213,7 +213,7 @@
       "description": "Accepted"
      }
     },
-    "summary": "Seen 31 requests",
+    "summary": "Seen 71 requests",
     "tags": [
      "cart"
     ]
@@ -269,7 +269,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 30 requests",
+    "summary": "Seen 107 requests",
     "tags": [
      "cart"
     ]
@@ -316,7 +316,7 @@
       "description": "Created"
      }
     },
-    "summary": "Seen 46 requests",
+    "summary": "Seen 86 requests",
     "tags": [
      "cart"
     ]
@@ -623,7 +623,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 49 requests",
+    "summary": "Seen 167 requests",
     "tags": [
      "catalogue"
     ]
@@ -706,7 +706,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 9 requests",
+    "summary": "Seen 36 requests",
     "tags": [
      "catalogue"
     ]
@@ -734,19 +734,18 @@
       "content": {
        "application/json": {
         "example": {
-         "count": 820,
-         "description": "Ready for action. Engineers: be ready to smash that next bug! Be ready, with these super-action-sport-masterpieces. This particular engineer was chased away from the office with a stick.",
-         "id": "510a0d7e-8e83-4193-b483-e27e09ddc34d",
+         "count": 1,
+         "description": "Socks fit for a Messiah. You too can experience walking in water with these special edition beauties. Each hole is lovingly proggled to leave smooth edges. The only sock approved by a higher power.",
+         "id": "03fef6ac-1896-4ce8-bd69-b798f85c6e0b",
          "imageUrl": [
-          "/catalogue/images/puma_1.jpeg",
-          "/catalogue/images/puma_2.jpeg"
+          "/catalogue/images/holy_1.jpeg",
+          "/catalogue/images/holy_2.jpeg"
          ],
-         "name": "SuperSport XL",
-         "price": 15,
+         "name": "Holy",
+         "price": 99.99,
          "tag": [
-          "sport",
-          "black",
-          "formal"
+          "magic",
+          "action"
          ]
         },
         "schema": {
@@ -795,7 +794,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 22 requests",
+    "summary": "Seen 33 requests",
     "tags": [
      "catalogue"
     ]
@@ -833,7 +832,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 26 requests"
+    "summary": "Seen 66 requests"
    },
    "parameters": []
   },
@@ -1010,7 +1009,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 25 requests"
+    "summary": "Seen 66 requests"
    },
    "parameters": []
   },
@@ -1040,7 +1039,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 28 requests"
+    "summary": "Seen 68 requests"
    },
    "parameters": []
   },
@@ -1291,7 +1290,7 @@
       "description": "Created"
      }
     },
-    "summary": "Seen 43 requests",
+    "summary": "Seen 79 requests",
     "tags": [
      "orders"
     ]
@@ -1354,20 +1353,20 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 10 requests"
+    "summary": "Seen 36 requests"
    },
    "parameters": []
   }
  },
  "tags": [
   {
-   "name": "cart"
-  },
-  {
    "name": "orders"
   },
   {
    "name": "catalogue"
+  },
+  {
+   "name": "cart"
   }
  ]
 }

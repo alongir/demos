@@ -14,21 +14,23 @@
       "description": "Accepted"
      }
     },
-    "summary": "Seen 93 requests",
+    "summary": "Seen 133 requests",
     "tags": [
      "carts"
     ]
    },
    "parameters": [
     {
-     "description": "Origin: GET http://user.sock-shop/login &rarr; json: $.user.id",
+     "description": "Origin: POST http://orders.sock-shop/orders &rarr; json: $.customerId",
      "in": "path",
      "name": "customerId",
      "required": true,
      "schema": {
       "enum": [
        "57a98d98e4b00679b4a830b2",
-       "oesRR55eO0jjx8Tf5HeUMi9CKQGVr7Gx"
+       "oesRR55eO0jjx8Tf5HeUMi9CKQGVr7Gx",
+       "7Jo9wR1rMW-pfJHLdjnVimK4yPqrM-Wd",
+       "RetA-Gs7Vtjp9EBxiWLQAqzIfIB4APyV"
       ],
       "type": "string"
      },
@@ -88,21 +90,23 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 120 requests",
+    "summary": "Seen 271 requests",
     "tags": [
      "carts"
     ]
    },
    "parameters": [
     {
-     "description": "Origin: GET http://user.sock-shop/login &rarr; json: $.user.id",
+     "description": "Origin: POST http://orders.sock-shop/orders &rarr; json: $.customerId",
      "in": "path",
      "name": "customerId",
      "required": true,
      "schema": {
       "enum": [
        "57a98d98e4b00679b4a830b2",
-       "oesRR55eO0jjx8Tf5HeUMi9CKQGVr7Gx"
+       "oesRR55eO0jjx8Tf5HeUMi9CKQGVr7Gx",
+       "7Jo9wR1rMW-pfJHLdjnVimK4yPqrM-Wd",
+       "RetA-Gs7Vtjp9EBxiWLQAqzIfIB4APyV"
       ],
       "type": "string"
      },
@@ -184,7 +188,7 @@
       "description": "Created"
      }
     },
-    "summary": "Seen 81 requests",
+    "summary": "Seen 121 requests",
     "tags": [
      "carts"
     ]
@@ -206,14 +210,16 @@
    },
    "parameters": [
     {
-     "description": "Origin: GET http://user.sock-shop/login &rarr; json: $.user.id",
+     "description": "Origin: POST http://orders.sock-shop/orders &rarr; json: $.customerId",
      "in": "path",
      "name": "customerId",
      "required": true,
      "schema": {
       "enum": [
        "57a98d98e4b00679b4a830b2",
-       "oesRR55eO0jjx8Tf5HeUMi9CKQGVr7Gx"
+       "oesRR55eO0jjx8Tf5HeUMi9CKQGVr7Gx",
+       "7Jo9wR1rMW-pfJHLdjnVimK4yPqrM-Wd",
+       "RetA-Gs7Vtjp9EBxiWLQAqzIfIB4APyV"
       ],
       "type": "string"
      },
@@ -259,21 +265,23 @@
       "description": "Accepted"
      }
     },
-    "summary": "Seen 120 requests",
+    "summary": "Seen 160 requests",
     "tags": [
      "carts"
     ]
    },
    "parameters": [
     {
-     "description": "Origin: GET http://user.sock-shop/login &rarr; json: $.user.id",
+     "description": "Origin: POST http://orders.sock-shop/orders &rarr; json: $.customerId",
      "in": "path",
      "name": "customerId",
      "required": true,
      "schema": {
       "enum": [
        "57a98d98e4b00679b4a830b2",
-       "oesRR55eO0jjx8Tf5HeUMi9CKQGVr7Gx"
+       "oesRR55eO0jjx8Tf5HeUMi9CKQGVr7Gx",
+       "7Jo9wR1rMW-pfJHLdjnVimK4yPqrM-Wd",
+       "RetA-Gs7Vtjp9EBxiWLQAqzIfIB4APyV"
       ],
       "type": "string"
      },

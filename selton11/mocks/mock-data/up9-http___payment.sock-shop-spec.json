@@ -135,7 +135,14 @@
         "schema": {
          "properties": {
           "authorised": {
-           "type": "boolean"
+           "oneOf": [
+            {
+             "type": "boolean"
+            },
+            {
+             "type": "string"
+            }
+           ]
           },
           "message": {
            "type": "string"
@@ -152,7 +159,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 328 requests"
+    "summary": "Seen 374 requests"
    }
   }
  },

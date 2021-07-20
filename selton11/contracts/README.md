@@ -5,7 +5,7 @@ This directory contains generated OpenAPI Specifications, created by [UP9](https
 Each file contains the specification for one service.
 
 ## File structure
-Each file is a valid OpenAPI Specification 3.0 (aka Swagger) correspondes to a Service infered by UP9.
+Each file is a valid OpenAPI Specification 3.0 (aka Swagger) corresponds to a Service inferred by UP9.
 
 ## Contact
 Email us at info@up9.com

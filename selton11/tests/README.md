@@ -4,19 +4,19 @@ This directory contains generated tests for your services, created by [UP9](http
 
 **Note:** The generated assertions have been commented out.
 
-### File structure 
+### File structure
 - [tests.py](/tests.py) - main file with test cases inside, grouped into classes by service.
 - [authentication.py](/authentication.py) - a file to inject authentication into tests, more information inside the file.
 - [up9lib.py](/up9lib.py) - UP9 helper library with functions and classes.
 - [data](/data) - a directory that contains datasets, body payloads and [service mapping file](#connecting-to-your-services).
 
 ### Connecting to your services
-In order to know where to run the tests, we provide a mapping file for all services.  
-The file is located in `data/target_services.json`.  
+In order to know where to run the tests, we provide a mapping file for all services.
+The file is located in `data/target_services.json`.
 Additionally, you can set the address via environment variables (e.g. `TARGET_<SERVICE_NAME>`), it will have precedence over file.
 
 ## Running tests
-`tests.py` contains ready to run test code, that can be run ad-hoc, or integrated into CI pipeline.  
+`tests.py` contains ready to run test code, that can be run ad-hoc, or integrated into CI pipeline.
 See [results](#junit-results) for more information about analyzing test results.
 
 ### Using Docker
@@ -36,7 +36,7 @@ Just install several dependencies from PyPi:
 
 ### Running a single test
 
-Locate the test you want to run, then specify its class name and test case name for Pytest:  
+Locate the test you want to run, then specify its class name and test case name for Pytest:
   `pytest -v tests.py::Tests_api_mysvc_io::test_01_post_api_v1_order__8`
 
 ## Sample
@@ -52,7 +52,7 @@ tests.py .F.............FFFFFFFFFFFFFFF...FFFFFFFFFF                     [100%]
 ```
 
 ## JUnit Results
-While pytest results are great, it also offers a way to generate JUnit.xml files, especially valuable for CI pipelines such as Jenkins.   
+While pytest results are great, it also offers a way to generate JUnit.xml files, especially valuable for CI pipelines such as Jenkins.
 Add `--junitxml=<path>` to the pytest command to generate them.
 
 ## Contact

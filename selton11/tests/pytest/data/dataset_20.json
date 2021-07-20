@@ -1,13 +1,47 @@
 {
  "parameters": [
   {
+   "name": "address",
+   "uuid": "09954449-47e4-42e0-ba8e-0ac4b582bc33"
+  },
+  {
+   "name": "card",
+   "uuid": "8905d20f-3a1d-4419-8b6a-465aed337dc3"
+  },
+  {
    "name": "cardId",
    "uuid": "dbb5c673-b35b-4175-9929-13ca82719fb2"
+  },
+  {
+   "name": "items",
+   "uuid": "4b54b8c6-45c4-4daa-91a5-cac185708f77"
+  },
+  {
+   "name": "size",
+   "uuid": "3cd11915-8370-4360-8cf5-a990a0c7981c"
   }
  ],
  "rows": [
   {
-   "cardId": "57a98d98e4b00679b4a830b1"
+   "address": "http://user/addresses/57a98d98e4b00679b4a830b0",
+   "card": "http://user/cards/57a98d98e4b00679b4a830b1",
+   "cardId": "57a98d98e4b00679b4a830b1",
+   "items": "http://carts/carts/57a98d98e4b00679b4a830b2/items",
+   "size": "5"
+  },
+  {
+   "address": "http://user/addresses/57a98d98e4b00679b4a830b0",
+   "card": "http://user/cards/57a98d98e4b00679b4a830b1",
+   "cardId": "57a98d98e4b00679b4a830b1",
+   "items": "http://carts/carts/57a98d98e4b00679b4a830b2/items",
+   "size": "6"
+  },
+  {
+   "address": "http://user/addresses/57a98d98e4b00679b4a830b0",
+   "card": "http://user/cards/57a98d98e4b00679b4a830b1",
+   "cardId": "57a98d98e4b00679b4a830b1",
+   "items": "http://carts/carts/57a98d98e4b00679b4a830b2/items",
+   "size": "3"
   }
  ]
 }

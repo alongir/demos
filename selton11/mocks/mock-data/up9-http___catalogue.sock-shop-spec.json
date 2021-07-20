@@ -74,8 +74,8 @@
           "name": "Holy",
           "price": 99.99,
           "tag": [
-           "magic",
-           "action"
+           "action",
+           "magic"
           ]
          },
          {
@@ -89,8 +89,8 @@
           "name": "Colourful",
           "price": 18,
           "tag": [
-           "blue",
-           "brown"
+           "brown",
+           "blue"
           ]
          },
          {
@@ -104,9 +104,9 @@
           "name": "SuperSport XL",
           "price": 15,
           "tag": [
-           "black",
            "sport",
-           "formal"
+           "formal",
+           "black"
           ]
          },
          {
@@ -120,10 +120,10 @@
           "name": "Crossed",
           "price": 17.32,
           "tag": [
-           "red",
-           "formal",
            "blue",
-           "action"
+           "action",
+           "red",
+           "formal"
           ]
          },
          {
@@ -137,9 +137,9 @@
           "name": "Figueroa",
           "price": 14,
           "tag": [
+           "green",
            "formal",
-           "blue",
-           "green"
+           "blue"
           ]
          },
          {
@@ -153,9 +153,9 @@
           "name": "Cat socks",
           "price": 15,
           "tag": [
-           "green",
            "brown",
-           "formal"
+           "formal",
+           "green"
           ]
          },
          {
@@ -169,8 +169,8 @@
           "name": "Nerd leg",
           "price": 7.99,
           "tag": [
-           "skin",
-           "blue"
+           "blue",
+           "skin"
           ]
          },
          {
@@ -184,8 +184,8 @@
           "name": "YouTube.sock",
           "price": 10.99,
           "tag": [
-           "geek",
-           "formal"
+           "formal",
+           "geek"
           ]
          },
          {
@@ -199,8 +199,8 @@
           "name": "Classic",
           "price": 12,
           "tag": [
-           "green",
-           "brown"
+           "brown",
+           "green"
           ]
          }
         ],
@@ -253,7 +253,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 240 requests",
+    "summary": "Seen 367 requests",
     "tags": [
      "catalogue"
     ]
@@ -302,7 +302,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 10 requests",
+    "summary": "Seen 31 requests",
     "tags": [
      "catalogue"
     ]
@@ -318,18 +318,18 @@
       "content": {
        "application/json": {
         "example": {
-         "count": 438,
-         "description": "proident occaecat irure et excepteur labore minim nisi amet irure",
-         "id": "3395a43e-2d88-40de-b95f-e00e1502085b",
+         "count": 1,
+         "description": "Socks fit for a Messiah. You too can experience walking in water with these special edition beauties. Each hole is lovingly proggled to leave smooth edges. The only sock approved by a higher power.",
+         "id": "03fef6ac-1896-4ce8-bd69-b798f85c6e0b",
          "imageUrl": [
-          "/catalogue/images/colourful_socks.jpg",
-          "/catalogue/images/colourful_socks.jpg"
+          "/catalogue/images/holy_1.jpeg",
+          "/catalogue/images/holy_2.jpeg"
          ],
-         "name": "Colourful",
-         "price": 18,
+         "name": "Holy",
+         "price": 99.99,
          "tag": [
-          "brown",
-          "blue"
+          "magic",
+          "action"
          ]
         },
         "schema": {
@@ -378,7 +378,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 183 requests",
+    "summary": "Seen 232 requests",
     "tags": [
      "catalogue"
     ]
@@ -448,7 +448,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 10 requests"
+    "summary": "Seen 31 requests"
    },
    "parameters": []
   }
