@@ -31,6 +31,10 @@ describe.each(dataset("data/dataset_25.json"))("test_25_get_catalogue_id", (size
                 return JSON.parse(text);
             })
             .then((data) => {
+                expect(JSONPath({
+                    path: "$[*].tag[*]",
+                    json: data
+                })).not.toBeNull();
                 const id = JSONPath({
                     path: "$[*].id",
                     json: data
@@ -43,8 +47,13 @@ describe.each(dataset("data/dataset_25.json"))("test_25_get_catalogue_id", (size
                     return response.text();
                 })
                 .then((text) => {
+                    return JSON.parse(text);
                 })
                 .then((data) => {
+                    expect(JSONPath({
+                        path: "$.tag[*]",
+                        json: data
+                    })).not.toBeNull();
                 });
             });
         });

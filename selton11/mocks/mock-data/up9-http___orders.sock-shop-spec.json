@@ -151,8 +151,14 @@
           "customer": {
            "properties": {
             "addresses": {
-             "items": {},
-             "type": "array"
+             "oneOf": [
+              {
+               "type": "array"
+              },
+              {
+               "type": "string"
+              }
+             ]
             },
             "cards": {
              "items": {},
@@ -251,7 +257,7 @@
       "description": "Created"
      }
     },
-    "summary": "Seen 147 requests",
+    "summary": "Seen 154 requests",
     "tags": [
      "orders"
     ]

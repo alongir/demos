@@ -9,6 +9,10 @@
    "uuid": "8905d20f-3a1d-4419-8b6a-465aed337dc3"
   },
   {
+   "name": "customer",
+   "uuid": "5d78a5fa-be38-4e87-aab1-560d452d63f6"
+  },
+  {
    "name": "items",
    "uuid": "4b54b8c6-45c4-4daa-91a5-cac185708f77"
   },
@@ -21,60 +25,70 @@
   {
    "address": "http://user/addresses/57a98d98e4b00679b4a830b0",
    "card": "http://user/cards/57a98d98e4b00679b4a830b1",
+   "customer": "http://user/customers/57a98d98e4b00679b4a830b2",
    "items": "http://carts/carts/57a98d98e4b00679b4a830b2/items",
    "sessionId": "7qBtELGVuV_BbxRPazIdbWBuw0jYf960"
   },
   {
    "address": "http://user/addresses/57a98d98e4b00679b4a830b0",
    "card": "http://user/cards/57a98d98e4b00679b4a830b1",
+   "customer": "http://user/customers/57a98d98e4b00679b4a830b2",
    "items": "http://carts/carts/57a98d98e4b00679b4a830b2/items",
    "sessionId": "AIr5-MzCAhVfGmN_MyvIptW1PUmkCAvC"
   },
   {
    "address": "http://user/addresses/57a98d98e4b00679b4a830b0",
    "card": "http://user/cards/57a98d98e4b00679b4a830b1",
+   "customer": "http://user/customers/57a98d98e4b00679b4a830b2",
    "items": "http://carts/carts/57a98d98e4b00679b4a830b2/items",
    "sessionId": "YThOEj3uj7WZqEJgEppEEcxG21nVQ-dD"
   },
   {
    "address": "http://user/addresses/57a98d98e4b00679b4a830b0",
    "card": "http://user/cards/57a98d98e4b00679b4a830b1",
+   "customer": "http://user/customers/57a98d98e4b00679b4a830b2",
    "items": "http://carts/carts/57a98d98e4b00679b4a830b2/items",
    "sessionId": "oesRR55eO0jjx8Tf5HeUMi9CKQGVr7Gx"
   },
   {
    "address": "http://user/addresses/57a98d98e4b00679b4a830b0",
    "card": "http://user/cards/57a98d98e4b00679b4a830b1",
+   "customer": "http://user/customers/57a98d98e4b00679b4a830b2",
    "items": "http://carts/carts/57a98d98e4b00679b4a830b2/items",
    "sessionId": "3ERff6JDfiJsEg_TpNATY9lAgQmfbjON"
   },
   {
    "address": "http://user/addresses/57a98d98e4b00679b4a830b0",
    "card": "http://user/cards/57a98d98e4b00679b4a830b1",
+   "customer": "http://user/customers/57a98d98e4b00679b4a830b2",
    "items": "http://carts/carts/57a98d98e4b00679b4a830b2/items",
    "sessionId": "QXin4gFGmR4O9vaGtBUomomV0b3NFGeQ"
   },
   {
    "address": "http://user/addresses/57a98d98e4b00679b4a830b0",
    "card": "http://user/cards/57a98d98e4b00679b4a830b1",
+   "customer": "http://user/customers/57a98d98e4b00679b4a830b2",
    "items": "http://carts/carts/57a98d98e4b00679b4a830b2/items",
    "sessionId": "FUgiRKc_b2diN-Ntoq-dPu9BUHi8Sq_-"
   },
   {
    "address": "http://user/addresses/57a98d98e4b00679b4a830b0",
    "card": "http://user/cards/57a98d98e4b00679b4a830b1",
+   "customer": "http://user/customers/57a98d98e4b00679b4a830b2",
    "items": "http://carts/carts/57a98d98e4b00679b4a830b2/items",
    "sessionId": "Mpb9rr-HRZ6LZunpdz4nwRbL0t8hH7L7"
   },
   {
    "address": "http://user/addresses/57a98d98e4b00679b4a830b0",
    "card": "http://user/cards/57a98d98e4b00679b4a830b1",
+   "customer": "http://user/customers/57a98d98e4b00679b4a830b2",
    "items": "http://carts/carts/57a98d98e4b00679b4a830b2/items",
    "sessionId": "k4REwREeXq-wFjcnk8cy9rn7vo7w4oP8"
   },
   {
    "address": "http://user/addresses/57a98d98e4b00679b4a830b0",
    "card": "http://user/cards/57a98d98e4b00679b4a830b1",
+   "customer": "http://user/customers/57a98d98e4b00679b4a830b2",
    "items": "http://carts/carts/57a98d98e4b00679b4a830b2/items",
    "sessionId": "TcOQ8bo3Pjon7ibGQuYRVQXzSlFAFU_i"
   }

@@ -361,7 +361,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 212 requests",
+    "summary": "Seen 221 requests",
     "tags": [
      "customers"
     ]
@@ -499,7 +499,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 96 requests",
+    "summary": "Seen 105 requests",
     "tags": [
      "customers"
     ]
@@ -627,7 +627,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 95 requests",
+    "summary": "Seen 104 requests",
     "tags": [
      "customers"
     ]
@@ -770,7 +770,7 @@
       "description": "OK"
      }
     },
-    "summary": "Seen 130 requests"
+    "summary": "Seen 145 requests"
    },
    "parameters": []
   }

@@ -1360,13 +1360,13 @@
  },
  "tags": [
   {
-   "name": "orders"
+   "name": "cart"
   },
   {
    "name": "catalogue"
   },
   {
-   "name": "cart"
+   "name": "orders"
   }
  ]
 }

@@ -41,12 +41,14 @@ public class TestsCatalogueSockShopTest
         }});
         final Response response2 = catalogueSockShop.get(request2, "/catalogue");
         assertStatusCode(response2.code(), 200);
+        assertJSONPath("$[*].tag[*]", response2.body().string());
         final String id = JSONPath("$[*].id", response2.body().string());
 
         // GET http://catalogue.sock-shop/catalogue/{id} (endp 25)
         final HttpRequest request3 = new HttpRequest();
         final Response response3 = catalogueSockShop.get(request3, "/catalogue/" + id);
         assertStatusCode(response3.code(), 200);
+        assertJSONPath("$.tag[*]", response3.body().string());
     }
 
     @Test

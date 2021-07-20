@@ -10,7 +10,7 @@ class Tests_carts_sock_shop(unittest.TestCase):
     @json_dataset('data/dataset_32.json')
     @clear_session({'spanId': 32})
     def test_32_delete_carts_customerId(self, data_row):
-        address, card, items, size = data_row
+        address, card, customer, items, size = data_row
 
         # GET http://catalogue.sock-shop/tags (endp 27)
         catalogue_sock_shop = get_http_client('http://catalogue.sock-shop', authenticate)
@@ -18,17 +18,11 @@ class Tests_carts_sock_shop(unittest.TestCase):
         resp.assert_status_code(200)
         tags = jsonpath('$.tags[*]', resp)
 
-        # GET http://user.sock-shop/login (endp 31)
-        user_sock_shop = get_http_client('http://user.sock-shop', authenticate)
-        resp = user_sock_shop.get('/login')
-        resp.assert_status_code(200)
-        resp.assert_jsonpath('$.user.lastName', expected_value='Name')
-        customer = jsonpath('$.user._links.customer.href', resp)
-
         # GET http://catalogue.sock-shop/catalogue (endp 24)
         qstr = '?' + urlencode({'page': '1', 'size': size, 'sort': 'id', 'tags': tags})
         resp = catalogue_sock_shop.get('/catalogue' + qstr)
         resp.assert_status_code(200)
+        resp.assert_jsonpath('$[*].tag[*]')
 
         # POST http://orders.sock-shop/orders (endp 37)
         orders_sock_shop = get_http_client('http://orders.sock-shop', authenticate)
@@ -51,14 +45,7 @@ class Tests_carts_sock_shop(unittest.TestCase):
     @json_dataset('data/dataset_33.json')
     @clear_session({'spanId': 33})
     def test_33_post_carts_customerId_items(self, data_row):
-        address, card, items, sessionId = data_row
-
-        # GET http://user.sock-shop/login (endp 31)
-        user_sock_shop = get_http_client('http://user.sock-shop', authenticate)
-        resp = user_sock_shop.get('/login')
-        resp.assert_status_code(200)
-        resp.assert_jsonpath('$.user.lastName', expected_value='Name')
-        customer = jsonpath('$.user._links.customer.href', resp)
+        address, card, customer, items, sessionId = data_row
 
         # POST http://orders.sock-shop/orders (endp 37)
         orders_sock_shop = get_http_client('http://orders.sock-shop', authenticate)
@@ -88,11 +75,12 @@ class Tests_carts_sock_shop(unittest.TestCase):
         apply_into_json(json_payload, '$.unitPrice', unitPrice)
         resp = carts_sock_shop.post(f'/carts/{customerId}/items', json=json_payload, headers={'accept': 'application/json'})
         resp.assert_status_code(201)
+        resp.assert_jsonpath('$.id')
 
     @json_dataset('data/dataset_34.json')
     @clear_session({'spanId': 34})
     def test_34_delete_carts_customerId_items_itemId(self, data_row):
-        address, card, items, size = data_row
+        address, card, customer, items, size = data_row
 
         # GET http://catalogue.sock-shop/tags (endp 27)
         catalogue_sock_shop = get_http_client('http://catalogue.sock-shop', authenticate)
@@ -100,17 +88,11 @@ class Tests_carts_sock_shop(unittest.TestCase):
         resp.assert_status_code(200)
         tags = jsonpath('$.tags[*]', resp)
 
-        # GET http://user.sock-shop/login (endp 31)
-        user_sock_shop = get_http_client('http://user.sock-shop', authenticate)
-        resp = user_sock_shop.get('/login')
-        resp.assert_status_code(200)
-        resp.assert_jsonpath('$.user.lastName', expected_value='Name')
-        customer = jsonpath('$.user._links.customer.href', resp)
-
         # GET http://catalogue.sock-shop/catalogue (endp 24)
         qstr = '?' + urlencode({'page': '1', 'size': size, 'sort': 'id', 'tags': tags})
         resp = catalogue_sock_shop.get('/catalogue' + qstr)
         resp.assert_status_code(200)
+        resp.assert_jsonpath('$[*].tag[*]')
 
         # POST http://orders.sock-shop/orders (endp 37)
         orders_sock_shop = get_http_client('http://orders.sock-shop', authenticate)
@@ -155,11 +137,13 @@ class Tests_catalogue_sock_shop(unittest.TestCase):
         qstr = '?' + urlencode({'page': '1', 'size': size, 'sort': 'id', 'tags': tags})
         resp = catalogue_sock_shop.get('/catalogue' + qstr)
         resp.assert_status_code(200)
+        resp.assert_jsonpath('$[*].tag[*]')
         id_ = jsonpath('$[*].id', resp)
 
         # GET http://catalogue.sock-shop/catalogue/{id} (endp 25)
         resp = catalogue_sock_shop.get(f'/catalogue/{id_}')
         resp.assert_status_code(200)
+        resp.assert_jsonpath('$.tag[*]')
 
     @clear_session({'spanId': 26})
     def test_26_get_catalogue_size(self):
@@ -383,7 +367,7 @@ class Tests_payment_sock_shop(unittest.TestCase):
     @json_dataset('data/dataset_22.json')
     @clear_session({'spanId': 22})
     def test_22_post_paymentAuth(self, data_row):
-        address, addresseId, card, cardId, items, longNum, number, size, username = data_row
+        address, addresseId, card, cardId, customer, items, longNum, number, size, username = data_row
 
         # GET http://catalogue.sock-shop/tags (endp 27)
         catalogue_sock_shop = get_http_client('http://catalogue.sock-shop', authenticate)
@@ -391,17 +375,11 @@ class Tests_payment_sock_shop(unittest.TestCase):
         resp.assert_status_code(200)
         tags = jsonpath('$.tags[*]', resp)
 
-        # GET http://user.sock-shop/login (endp 31)
-        user_sock_shop = get_http_client('http://user.sock-shop', authenticate)
-        resp = user_sock_shop.get('/login')
-        resp.assert_status_code(200)
-        resp.assert_jsonpath('$.user.lastName', expected_value='Name')
-        customer = jsonpath('$.user._links.customer.href', resp)
-
         # GET http://catalogue.sock-shop/catalogue (endp 24)
         qstr = '?' + urlencode({'page': '1', 'size': size, 'sort': 'id', 'tags': tags})
         resp = catalogue_sock_shop.get('/catalogue' + qstr)
         resp.assert_status_code(200)
+        resp.assert_jsonpath('$[*].tag[*]')
 
         # POST http://orders.sock-shop/orders (endp 37)
         orders_sock_shop = get_http_client('http://orders.sock-shop', authenticate)
@@ -423,6 +401,7 @@ class Tests_payment_sock_shop(unittest.TestCase):
         resp.assert_jsonpath('$[*].id')
 
         # GET http://user.sock-shop/customers/{customerId} (endp 21)
+        user_sock_shop = get_http_client('http://user.sock-shop', authenticate)
         resp = user_sock_shop.get(f'/customers/{customerId}', headers={'accept': 'application/hal+json'})
         resp.assert_status_code(200)
         resp.assert_jsonpath('$.lastName', expected_value='Name')
@@ -486,14 +465,7 @@ class Tests_user_sock_shop(unittest.TestCase):
     @json_dataset('data/dataset_29.json')
     @clear_session({'spanId': 29})
     def test_29_get_customers_customerId_addresses(self, data_row):
-        address, card, items = data_row
-
-        # GET http://user.sock-shop/login (endp 31)
-        user_sock_shop = get_http_client('http://user.sock-shop', authenticate)
-        resp = user_sock_shop.get('/login')
-        resp.assert_status_code(200)
-        resp.assert_jsonpath('$.user.lastName', expected_value='Name')
-        customer = jsonpath('$.user._links.customer.href', resp)
+        address, card, customer, items = data_row
 
         # POST http://orders.sock-shop/orders (endp 37)
         orders_sock_shop = get_http_client('http://orders.sock-shop', authenticate)
@@ -509,10 +481,21 @@ class Tests_user_sock_shop(unittest.TestCase):
         customerId = jsonpath('$.customerId', resp)
 
         # GET http://user.sock-shop/customers/{customerId}/cards (endp 30)
+        user_sock_shop = get_http_client('http://user.sock-shop', authenticate)
         resp = user_sock_shop.get(f'/customers/{customerId}/cards')
         resp.assert_status_code(200)
+        resp.assert_jsonpath('$._embedded.card[*]._links.card.href')
 
         # GET http://user.sock-shop/customers/{customerId}/addresses (endp 29)
         resp = user_sock_shop.get(f'/customers/{customerId}/addresses')
         resp.assert_status_code(200)
         resp.assert_jsonpath('$._embedded.address[*].city', expected_value='Glasgow')
+
+    # authentication-related test
+    @clear_session({'spanId': 31})
+    def test_31_get_login(self):
+        # GET http://user.sock-shop/login (endp 31)
+        user_sock_shop = get_http_client('http://user.sock-shop', dummy_auth)
+        resp = user_sock_shop.get('/login')
+        resp.assert_status_code(200)
+        resp.assert_jsonpath('$.user.lastName', expected_value='Name')
